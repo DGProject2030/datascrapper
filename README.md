@@ -2,7 +2,8 @@
 
 🏗️ **A comprehensive, production-ready database system for electric chainhoists used in the entertainment industry**
 
-[![Version](https://img.shields.io/badge/version-2.0.0-blue.svg)](https://github.com/yourusername/chainhoist-database)
+[![Tests](https://github.com/DGProject2030/datascrapper/actions/workflows/test.yml/badge.svg)](https://github.com/DGProject2030/datascrapper/actions/workflows/test.yml)
+[![Version](https://img.shields.io/badge/version-2.0.0-blue.svg)](https://github.com/DGProject2030/datascrapper)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 [![Node.js](https://img.shields.io/badge/node-%3E%3D16.0.0-brightgreen.svg)](https://nodejs.org/)
 
