@@ -11,7 +11,7 @@
     "build": "npm run scrape && npm run process",
     "start": "npm run serve",
     "dev": "npm run serve",
-    "test": "echo 'No tests configured yet'",
+    "test": "jest --verbose",
     "lint": "echo 'No linting configured yet'",
     "export:csv": "node -e \"require('./export-tools').exportCSV()\"",
     "export:json": "node -e \"require('./export-tools').exportJSON()\"",
@@ -66,6 +66,11 @@
   "engines": {
     "node": ">=16.0.0",
     "npm": ">=8.0.0"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "testMatch": ["**/__tests__/**/*.test.js"],
+    "verbose": true
   },
   "os": [
     "win32",
