@@ -30,6 +30,9 @@ Thumbs.db
 dist/
 build/
 
+# Test coverage
+coverage/
+
 # Cache
 .cache/
 .npm/

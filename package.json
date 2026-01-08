@@ -12,6 +12,7 @@
     "start": "npm run serve",
     "dev": "npm run serve",
     "test": "jest --verbose",
+    "test:coverage": "jest --verbose --coverage",
     "lint": "echo 'No linting configured yet'",
     "export:csv": "node -e \"require('./export-tools').exportCSV()\"",
     "export:json": "node -e \"require('./export-tools').exportJSON()\"",
@@ -70,7 +71,21 @@
   "jest": {
     "testEnvironment": "node",
     "testMatch": ["**/__tests__/**/*.test.js"],
-    "verbose": true
+    "verbose": true,
+    "collectCoverageFrom": [
+      "*.js",
+      "!jest.config.js"
+    ],
+    "coverageDirectory": "coverage",
+    "coverageReporters": ["text", "lcov", "html"],
+    "coverageThreshold": {
+      "global": {
+        "branches": 0,
+        "functions": 0,
+        "lines": 0,
+        "statements": 0
+      }
+    }
   },
   "os": [
     "win32",
