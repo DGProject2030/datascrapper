@@ -1,0 +1,90 @@
+<%- include('header') %>
+
+<h1 class="mb-4"><%= title %></h1>
+
+<% if (products.length === 0) { %>
+  <div class="alert alert-info">
+    <h4 class="alert-heading">No products to compare</h4>
+    <p>Select products from the search results to compare them.</p>
+    <a href="/search" class="btn btn-primary">Go to Search</a>
+  </div>
+<% } else { %>
+  <div class="table-responsive">
+    <table class="table table-bordered table-striped">
+      <thead class="table-dark">
+        <tr>
+          <th>Specification</th>
+          <% products.forEach(function(product) { %>
+            <th><%= product.manufacturer %> <%= product.model %></th>
+          <% }); %>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="spec-label">Series</td>
+          <% products.forEach(function(product) { %>
+            <td><%= product.series || '-' %></td>
+          <% }); %>
+        </tr>
+        <tr>
+          <td class="spec-label">Classification</td>
+          <% products.forEach(function(product) { %>
+            <td>
+              <% if (product.classification && Array.isArray(product.classification)) { %>
+                <% product.classification.forEach(function(cls) { %>
+                  <span class="badge bg-info"><%= cls.toUpperCase() %></span>
+                <% }); %>
+              <% } else { %>
+                -
+              <% } %>
+            </td>
+          <% }); %>
+        </tr>
+        <tr>
+          <td class="spec-label">Load Capacity</td>
+          <% products.forEach(function(product) { %>
+            <td><%= product.loadCapacity || '-' %></td>
+          <% }); %>
+        </tr>
+        <tr>
+          <td class="spec-label">Lifting Speed</td>
+          <% products.forEach(function(product) { %>
+            <td><%= product.liftingSpeed || '-' %></td>
+          <% }); %>
+        </tr>
+        <tr>
+          <td class="spec-label">Motor Power</td>
+          <% products.forEach(function(product) { %>
+            <td><%= product.motorPower || '-' %></td>
+          <% }); %>
+        </tr>
+        <tr>
+          <td class="spec-label">Quiet Operation</td>
+          <% products.forEach(function(product) { %>
+            <td><%= product.quietOperation ? 'Yes' : 'No' %></td>
+          <% }); %>
+        </tr>
+        <tr>
+          <td class="spec-label">Dynamic Lifting</td>
+          <% products.forEach(function(product) { %>
+            <td><%= product.dynamicLifting ? 'Yes' : 'No' %></td>
+          <% }); %>
+        </tr>
+        <tr>
+          <td class="spec-label">Lifting Over People</td>
+          <% products.forEach(function(product) { %>
+            <td><%= product.liftingOverPeople ? 'Yes' : 'No' %></td>
+          <% }); %>
+        </tr>
+        <tr>
+          <td class="spec-label">Details</td>
+          <% products.forEach(function(product) { %>
+            <td><a href="/product/<%= product.id %>" class="btn btn-sm btn-outline-primary">View Details</a></td>
+          <% }); %>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+<% } %>
+
+<%- include('footer') %>

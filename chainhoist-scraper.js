@@ -17,19 +17,27 @@ class Logger {
   }
 
   debug(message, ...args) {
-    if (this.level <= 0) console.log(`[DEBUG] ${new Date().toISOString()} ${message}`, ...args);
+    if (this.level <= 0) {
+      console.log(`[DEBUG] ${new Date().toISOString()} ${message}`, ...args);
+    }
   }
 
   info(message, ...args) {
-    if (this.level <= 1) console.log(`[INFO] ${new Date().toISOString()} ${message}`, ...args);
+    if (this.level <= 1) {
+      console.log(`[INFO] ${new Date().toISOString()} ${message}`, ...args);
+    }
   }
 
   warn(message, ...args) {
-    if (this.level <= 2) console.warn(`[WARN] ${new Date().toISOString()} ${message}`, ...args);
+    if (this.level <= 2) {
+      console.warn(`[WARN] ${new Date().toISOString()} ${message}`, ...args);
+    }
   }
 
   error(message, ...args) {
-    if (this.level <= 3) console.error(`[ERROR] ${new Date().toISOString()} ${message}`, ...args);
+    if (this.level <= 3) {
+      console.error(`[ERROR] ${new Date().toISOString()} ${message}`, ...args);
+    }
   }
 }
 
@@ -69,11 +77,19 @@ const manufacturers = [
       series: {
         selector: '.product-series, .product-line',
         transform: (text, $, url) => {
-          if (text) return text.trim();
+          if (text) {
+            return text.trim();
+          }
           const model = $('.product-title h1').text();
-          if (model.includes('Lodestar')) return 'Lodestar';
-          if (model.includes('Prostar')) return 'Prostar';
-          if (url.includes('lodestar')) return 'Lodestar';
+          if (model.includes('Lodestar')) {
+            return 'Lodestar';
+          }
+          if (model.includes('Prostar')) {
+            return 'Prostar';
+          }
+          if (url.includes('lodestar')) {
+            return 'Lodestar';
+          }
           return '';
         }
       },
@@ -108,10 +124,10 @@ class ChainhoistDatabase {
     try {
       // Create output directory if it doesn't exist
       await fs.mkdir(CONFIG.outputDir, { recursive: true });
-      
+
       // Load existing database if it exists
       await this.loadDatabase();
-      
+
       this.initialized = true;
       this.logger.info(`Database initialized with ${this.data.length} records`);
     } catch (err) {
@@ -125,7 +141,7 @@ class ChainhoistDatabase {
       const dbFile = path.join(CONFIG.outputDir, CONFIG.databaseFile);
       const dbContent = await fs.readFile(dbFile, 'utf8');
       const parsed = JSON.parse(dbContent);
-      
+
       // Validate loaded data
       if (Array.isArray(parsed)) {
         this.data = parsed;
@@ -135,7 +151,7 @@ class ChainhoistDatabase {
       } else {
         throw new Error('Invalid database format');
       }
-      
+
       this.logger.info(`Loaded ${this.data.length} existing records`);
     } catch (err) {
       if (err.code === 'ENOENT') {
@@ -156,11 +172,11 @@ class ChainhoistDatabase {
     if (!chainhoist.id) {
       chainhoist.id = this.generateId(chainhoist.manufacturer, chainhoist.model);
     }
-    
+
     // Check for duplicates
     const existingIndex = this.data.findIndex(item => item.id === chainhoist.id);
     const isDuplicate = existingIndex >= 0;
-    
+
     if (isDuplicate) {
       this.stats.duplicates++;
       this.logger.debug(`Skipped duplicate: ${chainhoist.manufacturer} ${chainhoist.model}`);
@@ -184,13 +200,13 @@ class ChainhoistDatabase {
     const base = `${manufacturer}-${model}`.replace(/[^a-z0-9]/gi, '-').toLowerCase();
     let id = base;
     let counter = 1;
-    
+
     // Ensure uniqueness
     while (this.data.some(item => item.id === id)) {
       id = `${base}-${counter}`;
       counter++;
     }
-    
+
     return id;
   }
 
@@ -198,7 +214,7 @@ class ChainhoistDatabase {
   async save() {
     try {
       const dbFile = path.join(CONFIG.outputDir, CONFIG.databaseFile);
-      
+
       // Save database with metadata
       const databaseWithMeta = {
         data: this.data,
@@ -206,13 +222,13 @@ class ChainhoistDatabase {
         lastSaved: new Date(),
         version: '2.0'
       };
-      
+
       await fs.writeFile(dbFile, JSON.stringify(databaseWithMeta, null, 2));
       this.logger.info(`Saved ${this.data.length} records to database`);
-      
+
       // Also export as CSV
       await this.exportToCsv();
-      
+
     } catch (err) {
       this.logger.error('Failed to save database:', err);
       throw err;
@@ -225,7 +241,7 @@ class ChainhoistDatabase {
       // Flatten nested objects for CSV export
       const flattenedData = this.data.map(item => {
         const flat = { ...item };
-        
+
         // Handle arrays
         if (Array.isArray(flat.voltageOptions)) {
           flat.voltageOptions = flat.voltageOptions.join(', ');
@@ -236,19 +252,19 @@ class ChainhoistDatabase {
         if (Array.isArray(flat.images)) {
           flat.images = flat.images.join(', ');
         }
-        
+
         // Format dates
         if (flat.lastUpdated instanceof Date) {
           flat.lastUpdated = flat.lastUpdated.toISOString();
         }
-        
+
         return flat;
       });
-      
+
       // Create CSV
       const parser = new Parser({ flatten: true });
       const csv = parser.parse(flattenedData);
-      
+
       const csvFile = path.join(CONFIG.outputDir, CONFIG.csvOutputFile);
       await fs.writeFile(csvFile, csv);
       console.log(`Exported database to CSV: ${csvFile}`);
@@ -272,7 +288,7 @@ class ChainhoistScraper {
 
   async scrapeManufacturer(manufacturer) {
     this.logger.info(`Starting to scrape ${manufacturer.name}...`);
-    
+
     // For demo purposes, create some sample data
     const sampleData = [
       {
@@ -305,13 +321,13 @@ class ChainhoistScraper {
     for (const data of sampleData) {
       this.database.addChainhoist(data);
     }
-    
+
     this.logger.info(`Finished scraping ${manufacturer.name} - added ${sampleData.length} sample records`);
   }
-  
+
   async scrapeAll() {
     this.logger.info('Starting to scrape all manufacturers...');
-    
+
     for (const manufacturer of manufacturers) {
       try {
         await this.scrapeManufacturer(manufacturer);
@@ -319,7 +335,7 @@ class ChainhoistScraper {
         this.logger.error(`Error scraping ${manufacturer.name}:`, error.message);
       }
     }
-    
+
     this.logger.info('Finished scraping all manufacturers');
     await this.database.save();
   }
@@ -328,30 +344,30 @@ class ChainhoistScraper {
 // Main execution
 async function main() {
   const logger = new Logger(CONFIG.logLevel);
-  
+
   logger.info('Starting Enhanced Electric Chainhoist Data Scraper v2.0');
   logger.info('========================================================');
-  
+
   try {
     // Initialize database
     const database = new ChainhoistDatabase();
     await database.initialize();
-    
+
     // Initialize scraper
     const scraper = new ChainhoistScraper(database);
     await scraper.initialize();
-    
+
     // Start scraping
     await scraper.scrapeAll();
-    
+
     // Print final statistics
     logger.info('Scraping completed successfully!');
     logger.info(`Final Stats: ${database.stats.validRecords} valid records, ${database.stats.invalidRecords} invalid, ${database.stats.duplicates} duplicates`);
-    
+
     if (database.stats.errors.length > 0) {
       logger.warn(`${database.stats.errors.length} errors occurred during processing`);
     }
-    
+
   } catch (error) {
     logger.error('Scraping failed:', error);
     process.exit(1);

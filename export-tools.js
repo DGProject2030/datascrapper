@@ -17,7 +17,7 @@ class ExportTools {
       const dataPath = path.join(this.dataDir, this.dataFile);
       const content = await fs.readFile(dataPath, 'utf8');
       const parsed = JSON.parse(content);
-      
+
       // Handle both old and new format
       return Array.isArray(parsed) ? parsed : parsed.data || [];
     } catch (error) {
@@ -34,13 +34,13 @@ class ExportTools {
 
       // Apply filters if provided
       if (options.manufacturer) {
-        exportData = exportData.filter(item => 
+        exportData = exportData.filter(item =>
           item.manufacturer?.toLowerCase().includes(options.manufacturer.toLowerCase())
         );
       }
 
       if (options.classification) {
-        exportData = exportData.filter(item => 
+        exportData = exportData.filter(item =>
           item.classification?.includes(options.classification.toLowerCase())
         );
       }
@@ -59,9 +59,9 @@ class ExportTools {
 
       const filename = options.filename || `chainhoist-export-${new Date().toISOString().split('T')[0]}.json`;
       const filepath = path.join('.', filename);
-      
+
       await fs.writeFile(filepath, JSON.stringify(exportObject, null, 2));
-      
+
       console.log(`✅ JSON export completed: ${filename}`);
       console.log(`📊 Exported ${exportData.length} records`);
       return filepath;
@@ -80,13 +80,13 @@ class ExportTools {
 
       // Apply filters
       if (options.manufacturer) {
-        exportData = exportData.filter(item => 
+        exportData = exportData.filter(item =>
           item.manufacturer?.toLowerCase().includes(options.manufacturer.toLowerCase())
         );
       }
 
       if (options.classification) {
-        exportData = exportData.filter(item => 
+        exportData = exportData.filter(item =>
           item.classification?.includes(options.classification.toLowerCase())
         );
       }
@@ -94,7 +94,7 @@ class ExportTools {
       // Flatten the data for CSV
       const flattenedData = exportData.map(item => {
         const flat = { ...item };
-        
+
         // Handle arrays by joining with semicolons
         if (Array.isArray(flat.voltageOptions)) {
           flat.voltageOptions = flat.voltageOptions.join('; ');
@@ -140,7 +140,7 @@ class ExportTools {
       });
 
       // Create CSV
-      const parser = new Parser({ 
+      const parser = new Parser({
         flatten: true,
         delimiter: ',',
         quote: '"',
@@ -150,9 +150,9 @@ class ExportTools {
 
       const filename = options.filename || `chainhoist-export-${new Date().toISOString().split('T')[0]}.csv`;
       const filepath = path.join('.', filename);
-      
+
       await fs.writeFile(filepath, csv);
-      
+
       console.log(`✅ CSV export completed: ${filename}`);
       console.log(`📊 Exported ${exportData.length} records`);
       return filepath;
@@ -167,7 +167,7 @@ class ExportTools {
   async generateStatsReport(options = {}) {
     try {
       const data = await this.loadData();
-      
+
       const stats = {
         summary: {
           totalRecords: data.length,
@@ -206,9 +206,9 @@ class ExportTools {
           if (match) {
             const capacity = parseFloat(match[1]);
             const range = capacity <= 250 ? '≤250kg' :
-                         capacity <= 500 ? '251-500kg' :
-                         capacity <= 1000 ? '501-1000kg' :
-                         capacity <= 2000 ? '1001-2000kg' : '>2000kg';
+              capacity <= 500 ? '251-500kg' :
+                capacity <= 1000 ? '501-1000kg' :
+                  capacity <= 2000 ? '1001-2000kg' : '>2000kg';
             stats.capacityDistribution[range] = (stats.capacityDistribution[range] || 0) + 1;
           }
         }
@@ -221,7 +221,7 @@ class ExportTools {
           const value = item[field];
           return value && value !== '' && (Array.isArray(value) ? value.length > 0 : true);
         }).length;
-        
+
         stats.dataCompleteness[field] = {
           filled: filledCount,
           total: data.length,
@@ -231,18 +231,18 @@ class ExportTools {
 
       const filename = options.filename || `chainhoist-stats-${new Date().toISOString().split('T')[0]}.json`;
       const filepath = path.join('.', filename);
-      
+
       await fs.writeFile(filepath, JSON.stringify(stats, null, 2));
-      
+
       console.log(`✅ Statistics report generated: ${filename}`);
       console.log(`📈 Analysis of ${data.length} records completed`);
-      
+
       // Print summary to console
       console.log('\n📊 Database Summary:');
       console.log(`   Total Records: ${stats.summary.totalRecords}`);
       console.log(`   Manufacturers: ${stats.summary.manufacturers}`);
       console.log(`   Unique Models: ${stats.summary.uniqueModels}`);
-      
+
       console.log('\n🏭 Top Manufacturers:');
       Object.entries(stats.manufacturers)
         .sort(([,a], [,b]) => b - a)
@@ -274,11 +274,11 @@ class ExportTools {
     };
 
     switch (format.toLowerCase()) {
-      case 'csv':
-        return await this.exportCSV(options);
-      case 'json':
-      default:
-        return await this.exportJSON(options);
+    case 'csv':
+      return await this.exportCSV(options);
+    case 'json':
+    default:
+      return await this.exportJSON(options);
     }
   }
 
@@ -286,24 +286,24 @@ class ExportTools {
   async exportAll(baseFilename = null) {
     const timestamp = new Date().toISOString().split('T')[0];
     const basename = baseFilename || `chainhoist-complete-${timestamp}`;
-    
+
     console.log('🚀 Starting bulk export...');
-    
+
     const results = {};
-    
+
     try {
       results.json = await this.exportJSON({ filename: `${basename}.json` });
       results.csv = await this.exportCSV({ filename: `${basename}.csv` });
       results.stats = await this.generateStatsReport({ filename: `${basename}-stats.json` });
-      
+
       console.log('\n✅ Bulk export completed successfully!');
       console.log('📁 Generated files:');
       Object.values(results).forEach(file => {
         console.log(`   ${file}`);
       });
-      
+
       return results;
-      
+
     } catch (error) {
       console.error('❌ Bulk export failed:', error);
       throw error;
@@ -314,10 +314,10 @@ class ExportTools {
 // CLI interface
 if (require.main === module) {
   const exporter = new ExportTools();
-  
+
   const command = process.argv[2];
   const options = {};
-  
+
   // Parse command line arguments
   for (let i = 3; i < process.argv.length; i += 2) {
     const key = process.argv[i]?.replace('--', '');
@@ -326,41 +326,41 @@ if (require.main === module) {
       options[key] = value;
     }
   }
-  
+
   async function runCommand() {
     try {
       switch (command) {
-        case 'json':
-          await exporter.exportJSON(options);
-          break;
-        case 'csv':
-          await exporter.exportCSV(options);
-          break;
-        case 'stats':
-          await exporter.generateStatsReport(options);
-          break;
-        case 'all':
-          await exporter.exportAll(options.basename);
-          break;
-        default:
-          console.log('Usage: node export-tools.js <command> [options]');
-          console.log('Commands:');
-          console.log('  json   - Export to JSON format');
-          console.log('  csv    - Export to CSV format');  
-          console.log('  stats  - Generate statistics report');
-          console.log('  all    - Export all formats');
-          console.log('\nOptions:');
-          console.log('  --filename <name>      - Custom filename');
-          console.log('  --manufacturer <name>  - Filter by manufacturer');
-          console.log('  --classification <cls> - Filter by classification');
-          console.log('  --basename <name>      - Base name for bulk export');
+      case 'json':
+        await exporter.exportJSON(options);
+        break;
+      case 'csv':
+        await exporter.exportCSV(options);
+        break;
+      case 'stats':
+        await exporter.generateStatsReport(options);
+        break;
+      case 'all':
+        await exporter.exportAll(options.basename);
+        break;
+      default:
+        console.log('Usage: node export-tools.js <command> [options]');
+        console.log('Commands:');
+        console.log('  json   - Export to JSON format');
+        console.log('  csv    - Export to CSV format');
+        console.log('  stats  - Generate statistics report');
+        console.log('  all    - Export all formats');
+        console.log('\nOptions:');
+        console.log('  --filename <name>      - Custom filename');
+        console.log('  --manufacturer <name>  - Filter by manufacturer');
+        console.log('  --classification <cls> - Filter by classification');
+        console.log('  --basename <name>      - Base name for bulk export');
       }
     } catch (error) {
       console.error('Export failed:', error.message);
       process.exit(1);
     }
   }
-  
+
   runCommand();
 }
 

@@ -1,0 +1,172 @@
+<%- include('header') %>
+
+<h1 class="mb-4"><%= title %></h1>
+
+<div class="row mb-4">
+  <div class="col-md-4">
+    <div class="card bg-primary text-white">
+      <div class="card-body text-center">
+        <h2><%= report.totalRecords || 0 %></h2>
+        <p class="mb-0">Total Records</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="card bg-success text-white">
+      <div class="card-body text-center">
+        <h2><%= report.processedRecords || 0 %></h2>
+        <p class="mb-0">Processed Records</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="card bg-info text-white">
+      <div class="card-body text-center">
+        <h2><%= Object.keys(report.manufacturerStats || {}).length %></h2>
+        <p class="mb-0">Manufacturers</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row mb-4">
+  <div class="col-md-6">
+    <div class="card">
+      <div class="card-header bg-dark text-white">
+        <h4 class="mb-0">Capacity Distribution</h4>
+      </div>
+      <div class="card-body">
+        <canvas id="capacityChart"></canvas>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="card">
+      <div class="card-header bg-dark text-white">
+        <h4 class="mb-0">Classification Distribution</h4>
+      </div>
+      <div class="card-body">
+        <canvas id="classificationChart"></canvas>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row mb-4">
+  <div class="col-md-6">
+    <div class="card">
+      <div class="card-header bg-dark text-white">
+        <h4 class="mb-0">Motor Power Distribution</h4>
+      </div>
+      <div class="card-body">
+        <canvas id="powerChart"></canvas>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="card">
+      <div class="card-header bg-dark text-white">
+        <h4 class="mb-0">Lifting Speed Distribution</h4>
+      </div>
+      <div class="card-body">
+        <canvas id="speedChart"></canvas>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header bg-dark text-white">
+        <h4 class="mb-0">Manufacturer Statistics</h4>
+      </div>
+      <div class="card-body">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Manufacturer</th>
+              <th>Count</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% Object.entries(report.manufacturerStats || {}).forEach(function([manufacturer, count]) { %>
+              <tr>
+                <td><a href="/search?manufacturer=<%= encodeURIComponent(manufacturer) %>"><%= manufacturer %></a></td>
+                <td><span class="badge bg-primary"><%= count %></span></td>
+              </tr>
+            <% }); %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Capacity Chart
+  const capacityCtx = document.getElementById('capacityChart').getContext('2d');
+  new Chart(capacityCtx, {
+    type: 'pie',
+    data: {
+      labels: <%= JSON.stringify(Object.keys(capacityStats)) %>,
+      datasets: [{
+        data: <%= JSON.stringify(Object.values(capacityStats)) %>,
+        backgroundColor: ['#0d6efd', '#198754', '#0dcaf0', '#ffc107', '#dc3545']
+      }]
+    }
+  });
+
+  // Classification Chart
+  const classCtx = document.getElementById('classificationChart').getContext('2d');
+  new Chart(classCtx, {
+    type: 'doughnut',
+    data: {
+      labels: <%= JSON.stringify(Object.keys(report.classificationDistribution || {})) %>,
+      datasets: [{
+        data: <%= JSON.stringify(Object.values(report.classificationDistribution || {})) %>,
+        backgroundColor: ['#0d6efd', '#198754', '#0dcaf0', '#ffc107', '#dc3545', '#6c757d']
+      }]
+    }
+  });
+
+  // Power Chart
+  const powerCtx = document.getElementById('powerChart').getContext('2d');
+  new Chart(powerCtx, {
+    type: 'bar',
+    data: {
+      labels: <%= JSON.stringify(Object.keys(powerStats)) %>,
+      datasets: [{
+        label: 'Count',
+        data: <%= JSON.stringify(Object.values(powerStats)) %>,
+        backgroundColor: '#198754'
+      }]
+    },
+    options: {
+      scales: {
+        y: { beginAtZero: true }
+      }
+    }
+  });
+
+  // Speed Chart
+  const speedCtx = document.getElementById('speedChart').getContext('2d');
+  new Chart(speedCtx, {
+    type: 'bar',
+    data: {
+      labels: <%= JSON.stringify(Object.keys(speedStats)) %>,
+      datasets: [{
+        label: 'Count',
+        data: <%= JSON.stringify(Object.values(speedStats)) %>,
+        backgroundColor: '#0dcaf0'
+      }]
+    },
+    options: {
+      scales: {
+        y: { beginAtZero: true }
+      }
+    }
+  });
+</script>
+
+<%- include('footer') %>

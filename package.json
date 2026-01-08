@@ -5,6 +5,8 @@
   "main": "server.js",
   "scripts": {
     "scrape": "node chainhoist-scraper.js",
+    "scrape:enhanced": "node chainhoist-scraper-enhanced.js",
+    "scrape:full": "node chainhoist-scraper-enhanced.js",
     "process": "node chainhoist-data-processor.js",
     "serve": "node server.js",
     "viewer": "node server.js",
@@ -13,7 +15,8 @@
     "dev": "npm run serve",
     "test": "jest --verbose",
     "test:coverage": "jest --verbose --coverage",
-    "lint": "echo 'No linting configured yet'",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
     "export:csv": "node -e \"require('./export-tools').exportCSV()\"",
     "export:json": "node -e \"require('./export-tools').exportJSON()\"",
     "validate": "node -e \"require('./validation-tools').validateDatabase()\"",

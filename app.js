@@ -136,7 +136,9 @@ app.get('/api/chainhoists', (req, res) => {
     if (req.query.minCapacity) {
       const minCap = parseFloat(req.query.minCapacity);
       results = results.filter(item => {
-        if (!item.loadCapacity) return false;
+        if (!item.loadCapacity) {
+          return false;
+        }
         const match = item.loadCapacity.match(/(\d+(?:\.\d+)?)\s*kg/i);
         return match && parseFloat(match[1]) >= minCap;
       });
@@ -145,7 +147,9 @@ app.get('/api/chainhoists', (req, res) => {
     if (req.query.maxCapacity) {
       const maxCap = parseFloat(req.query.maxCapacity);
       results = results.filter(item => {
-        if (!item.loadCapacity) return false;
+        if (!item.loadCapacity) {
+          return false;
+        }
         const match = item.loadCapacity.match(/(\d+(?:\.\d+)?)\s*kg/i);
         return match && parseFloat(match[1]) <= maxCap;
       });
@@ -333,9 +337,13 @@ app.post('/api/search', (req, res) => {
     if (searchCriteria.capacityRange) {
       const { min, max } = searchCriteria.capacityRange;
       results = results.filter(item => {
-        if (!item.loadCapacity) return false;
+        if (!item.loadCapacity) {
+          return false;
+        }
         const match = item.loadCapacity.match(/(\d+(?:\.\d+)?)\s*kg/i);
-        if (!match) return false;
+        if (!match) {
+          return false;
+        }
         const capacity = parseFloat(match[1]);
         return (min === undefined || capacity >= min) &&
                (max === undefined || capacity <= max);
@@ -455,19 +463,33 @@ app.get('/search', (req, res) => {
 
   if (req.query.capacity) {
     results = results.filter(item => {
-      if (!item.loadCapacity) return false;
+      if (!item.loadCapacity) {
+        return false;
+      }
 
       const matches = item.loadCapacity.match(/(\d+(?:\.\d+)?)\s*kg/i);
-      if (!matches) return false;
+      if (!matches) {
+        return false;
+      }
 
       const value = parseFloat(matches[1]);
       const capacityFilter = req.query.capacity;
 
-      if (capacityFilter === '≤250 kg' && value <= 250) return true;
-      if (capacityFilter === '251-500 kg' && value > 250 && value <= 500) return true;
-      if (capacityFilter === '501-1000 kg' && value > 500 && value <= 1000) return true;
-      if (capacityFilter === '1001-2000 kg' && value > 1000 && value <= 2000) return true;
-      if (capacityFilter === '>2000 kg' && value > 2000) return true;
+      if (capacityFilter === '≤250 kg' && value <= 250) {
+        return true;
+      }
+      if (capacityFilter === '251-500 kg' && value > 250 && value <= 500) {
+        return true;
+      }
+      if (capacityFilter === '501-1000 kg' && value > 500 && value <= 1000) {
+        return true;
+      }
+      if (capacityFilter === '1001-2000 kg' && value > 1000 && value <= 2000) {
+        return true;
+      }
+      if (capacityFilter === '>2000 kg' && value > 2000) {
+        return true;
+      }
 
       return false;
     });
@@ -557,9 +579,9 @@ app.get('/stats', (req, res) => {
       if (matches) {
         const value = parseFloat(matches[1]);
         const category = value <= 250 ? '≤250 kg' :
-                        value <= 500 ? '251-500 kg' :
-                        value <= 1000 ? '501-1000 kg' :
-                        value <= 2000 ? '1001-2000 kg' : '>2000 kg';
+          value <= 500 ? '251-500 kg' :
+            value <= 1000 ? '501-1000 kg' :
+              value <= 2000 ? '1001-2000 kg' : '>2000 kg';
         capacityStats[category] = (capacityStats[category] || 0) + 1;
       }
     }
@@ -569,8 +591,8 @@ app.get('/stats', (req, res) => {
       if (matches) {
         const value = parseFloat(matches[1]);
         const category = value < 0.5 ? '<0.5 kW' :
-                         value < 1 ? '0.5-1 kW' :
-                         value < 2 ? '1-2 kW' : '>2 kW';
+          value < 1 ? '0.5-1 kW' :
+            value < 2 ? '1-2 kW' : '>2 kW';
         powerStats[category] = (powerStats[category] || 0) + 1;
       }
     }
@@ -580,8 +602,8 @@ app.get('/stats', (req, res) => {
       if (matches) {
         const value = parseFloat(matches[1]);
         const category = value < 2 ? '<2 m/min' :
-                         value < 4 ? '2-4 m/min' :
-                         value < 8 ? '4-8 m/min' : '>8 m/min';
+          value < 4 ? '2-4 m/min' :
+            value < 8 ? '4-8 m/min' : '>8 m/min';
         speedStats[category] = (speedStats[category] || 0) + 1;
       }
     }

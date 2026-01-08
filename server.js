@@ -104,7 +104,7 @@ const layoutTemplate = `<!DOCTYPE html>
 fs.writeFileSync(path.join(viewsDir, 'layout.ejs'), layoutTemplate);
 
 // Create index.ejs
-const indexTemplate = `<% layout('layout.ejs') -%>
+const indexTemplate = `<%- include('header') %>
 
 <div class="row mb-4">
   <div class="col-md-12">
@@ -263,6 +263,8 @@ const indexTemplate = `<% layout('layout.ejs') -%>
 <div class="d-grid gap-2 col-md-6 mx-auto mt-4">
   <a href="/search" class="btn btn-primary">View All Chainhoists</a>
 </div>
+
+<%- include('footer') %>
 `;
 
 fs.writeFileSync(path.join(viewsDir, 'index.ejs'), indexTemplate);

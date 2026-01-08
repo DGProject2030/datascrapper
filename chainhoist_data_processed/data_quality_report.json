@@ -1,17 +1,17 @@
 {
-  "totalRecords": 2,
-  "processedRecords": 2,
+  "totalRecords": 4,
+  "processedRecords": 4,
   "skippedRecords": 0,
   "missingDataFields": {},
   "manufacturerStats": {
-    "Columbus McKinnon": 2
+    "Columbus McKinnon": 4
   },
   "capacityDistribution": {
-    "501-1000 kg": 1,
-    "251-500 kg": 1
+    "501-1000 kg": 2,
+    "251-500 kg": 2
   },
   "classificationDistribution": {
-    "d8": 2
+    "d8": 4
   },
   "processingErrors": []
 }
