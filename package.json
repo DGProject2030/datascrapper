@@ -2,12 +2,12 @@
   "name": "entertainment-chainhoist-database",
   "version": "2.0.0",
   "description": "Enhanced comprehensive database of electric chainhoists for the entertainment industry with REST API, advanced validation, and export capabilities",
-  "main": "chainhoist-database-viewer.js",
+  "main": "server.js",
   "scripts": {
     "scrape": "node chainhoist-scraper.js",
     "process": "node chainhoist-data-processor.js",
-    "serve": "node chainhoist-database-viewer.js",
-    "viewer": "node chainhoist-database-viewer.js",
+    "serve": "node server.js",
+    "viewer": "node server.js",
     "build": "npm run scrape && npm run process",
     "start": "npm run serve",
     "dev": "npm run serve",
@@ -73,17 +73,17 @@
     "testMatch": ["**/__tests__/**/*.test.js"],
     "verbose": true,
     "collectCoverageFrom": [
-      "*.js",
-      "!jest.config.js"
+      "app.js",
+      "server.js"
     ],
     "coverageDirectory": "coverage",
     "coverageReporters": ["text", "lcov", "html"],
     "coverageThreshold": {
       "global": {
-        "branches": 0,
-        "functions": 0,
-        "lines": 0,
-        "statements": 0
+        "branches": 25,
+        "functions": 50,
+        "lines": 45,
+        "statements": 45
       }
     }
   },
