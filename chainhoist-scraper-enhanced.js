@@ -1,5 +1,6 @@
-// Enhanced Electric Chainhoist Data Scraper v3.0
-// Scrapes real data from manufacturer websites including images and videos
+// Enhanced Electric Chainhoist Data Scraper v3.1
+// Scrapes real data from manufacturer websites including images, videos, PDFs
+// Now with LLM-powered data extraction using Google Gemini
 
 const axios = require('axios');
 const cheerio = require('cheerio');
@@ -11,12 +12,41 @@ const https = require('https');
 const http = require('http');
 const { URL } = require('url');
 
+// Load environment variables
+require('dotenv').config();
+
+// Check for LLM flag
+const USE_LLM = process.argv.includes('--with-llm');
+
+// LLM Analyzer (lazy loaded)
+let LLMAnalyzer = null;
+let llmAnalyzer = null;
+
+async function initLLM() {
+  if (!USE_LLM) {
+    return null;
+  }
+
+  try {
+    const module = require('./llm-analyzer');
+    LLMAnalyzer = module.LLMAnalyzer;
+    llmAnalyzer = new LLMAnalyzer();
+    console.log('[INFO] LLM Analyzer initialized successfully');
+    return llmAnalyzer;
+  } catch (err) {
+    console.warn(`[WARN] Failed to initialize LLM Analyzer: ${err.message}`);
+    console.warn('[WARN] Continuing without LLM analysis');
+    return null;
+  }
+}
+
 // Configuration
 const CONFIG = {
   outputDir: 'chainhoist_data',
   mediaDir: 'chainhoist_data/media',
   imagesDir: 'chainhoist_data/media/images',
   videosDir: 'chainhoist_data/media/videos',
+  pdfsDir: 'chainhoist_data/media/pdfs',
   databaseFile: 'chainhoist_database.json',
   csvOutputFile: 'chainhoist_database.csv',
   requestDelay: 2000,
@@ -25,8 +55,11 @@ const CONFIG = {
   userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
   logLevel: 'info',
   downloadImages: true,
+  downloadPDFs: true,
   extractVideos: true,
   maxImagesPerProduct: 10,
+  maxPDFsPerProduct: 3,
+  useLLM: USE_LLM,
 };
 
 // Logger
@@ -313,6 +346,259 @@ const MANUFACTURERS = [
       images: 'img',
       videos: 'iframe',
     }
+  },
+  // NEW MANUFACTURERS ADDED
+  {
+    name: 'Yale Hoists',
+    id: 'yale',
+    website: 'https://www.yale.com',
+    region: 'USA, global',
+    productPages: [
+      'https://www.yale.com/en/products/hoists/electric-chain-hoists'
+    ],
+    selectors: {
+      productList: '.product-item',
+      productLink: 'a[href*="hoist"]',
+      title: 'h1',
+      description: '.product-description',
+      specs: 'table, .specifications',
+      images: '.product-image img',
+      videos: 'iframe',
+    }
+  },
+  {
+    name: 'Ingersoll Rand',
+    id: 'ingersoll-rand',
+    website: 'https://www.ingersollrand.com',
+    region: 'USA, global',
+    productPages: [
+      'https://www.ingersollrand.com/en-us/material-handling/electric-chain-hoists.html'
+    ],
+    selectors: {
+      productList: '.product-card',
+      productLink: 'a[href*="hoist"]',
+      title: 'h1',
+      description: '.description',
+      specs: 'table',
+      images: '.product-image img',
+      videos: 'iframe',
+    }
+  },
+  {
+    name: 'Coffing Hoists',
+    id: 'coffing',
+    website: 'https://www.coffinghoists.com',
+    region: 'USA, global',
+    productPages: [
+      'https://www.coffinghoists.com/products/electric-chain-hoists'
+    ],
+    selectors: {
+      productList: '.product',
+      productLink: 'a',
+      title: 'h1',
+      description: '.description',
+      specs: 'table',
+      images: 'img',
+      videos: 'iframe',
+    }
+  },
+  {
+    name: 'Budgit Hoists',
+    id: 'budgit',
+    website: 'https://www.budgithoists.com',
+    region: 'USA',
+    productPages: [
+      'https://www.budgithoists.com/products/electric-chain-hoists'
+    ],
+    selectors: {
+      productList: '.product',
+      productLink: 'a',
+      title: 'h1',
+      description: '.description',
+      specs: 'table',
+      images: 'img',
+      videos: 'iframe',
+    }
+  },
+  {
+    name: 'R&M Materials Handling',
+    id: 'rm-materials',
+    website: 'https://www.rmhoist.com',
+    region: 'USA, global',
+    productPages: [
+      'https://www.rmhoist.com/products/electric-chain-hoists'
+    ],
+    selectors: {
+      productList: '.product',
+      productLink: 'a',
+      title: 'h1',
+      description: '.description',
+      specs: 'table',
+      images: 'img',
+      videos: 'iframe',
+    }
+  },
+  {
+    name: 'Street Crane',
+    id: 'street-crane',
+    website: 'https://www.streetcrane.co.uk',
+    region: 'UK, global',
+    productPages: [
+      'https://www.streetcrane.co.uk/hoists/electric-chain-hoists'
+    ],
+    selectors: {
+      productList: '.product',
+      productLink: 'a',
+      title: 'h1',
+      description: '.description',
+      specs: 'table',
+      images: 'img',
+      videos: 'iframe',
+    }
+  },
+  {
+    name: 'SWF Krantechnik',
+    id: 'swf',
+    website: 'https://www.swf.de',
+    region: 'Germany, global',
+    productPages: [
+      'https://www.swf.de/en/products/chain-hoists'
+    ],
+    selectors: {
+      productList: '.product',
+      productLink: 'a',
+      title: 'h1',
+      description: '.description',
+      specs: 'table',
+      images: 'img',
+      videos: 'iframe',
+    }
+  },
+  {
+    name: 'JDN Monocrane',
+    id: 'jdn',
+    website: 'https://www.jdn.de',
+    region: 'Germany, global',
+    productPages: [
+      'https://www.jdn.de/en/products/air-hoists'
+    ],
+    selectors: {
+      productList: '.product',
+      productLink: 'a',
+      title: 'h1',
+      description: '.description',
+      specs: 'table',
+      images: 'img',
+      videos: 'iframe',
+    }
+  },
+  {
+    name: 'Elephant Lifting Products',
+    id: 'elephant',
+    website: 'https://www.elephantlifting.co.uk',
+    region: 'UK, global',
+    productPages: [
+      'https://www.elephantlifting.co.uk/electric-chain-hoists'
+    ],
+    selectors: {
+      productList: '.product',
+      productLink: 'a',
+      title: 'h1',
+      description: '.description',
+      specs: 'table',
+      images: 'img',
+      videos: 'iframe',
+    }
+  },
+  {
+    name: 'LiftingSafety',
+    id: 'liftingsafety',
+    website: 'https://www.liftingsafety.co.uk',
+    region: 'UK',
+    productPages: [
+      'https://www.liftingsafety.co.uk/electric-chain-hoists'
+    ],
+    selectors: {
+      productList: '.product',
+      productLink: 'a',
+      title: 'h1',
+      description: '.description',
+      specs: 'table',
+      images: 'img',
+      videos: 'iframe',
+    }
+  },
+  {
+    name: 'Tiger Lifting',
+    id: 'tiger',
+    website: 'https://www.tigerlifting.com',
+    region: 'UK, global',
+    productPages: [
+      'https://www.tigerlifting.com/products/electric-chain-hoists'
+    ],
+    selectors: {
+      productList: '.product',
+      productLink: 'a',
+      title: 'h1',
+      description: '.description',
+      specs: 'table',
+      images: 'img',
+      videos: 'iframe',
+    }
+  },
+  {
+    name: 'Stahl CraneSystems',
+    id: 'stahl',
+    website: 'https://www.stahlcranes.com',
+    region: 'Germany, global',
+    productPages: [
+      'https://www.stahlcranes.com/en/products/chain-hoists'
+    ],
+    selectors: {
+      productList: '.product',
+      productLink: 'a',
+      title: 'h1',
+      description: '.description',
+      specs: 'table',
+      images: 'img',
+      videos: 'iframe',
+    }
+  },
+  {
+    name: 'Nitchi',
+    id: 'nitchi',
+    website: 'https://www.nitchi.co.jp',
+    region: 'Japan, global',
+    productPages: [
+      'https://www.nitchi.co.jp/en/products/electric-chain-hoists'
+    ],
+    selectors: {
+      productList: '.product',
+      productLink: 'a',
+      title: 'h1',
+      description: '.description',
+      specs: 'table',
+      images: 'img',
+      videos: 'iframe',
+    }
+  },
+  {
+    name: 'TXK',
+    id: 'txk',
+    website: 'https://www.txkhoists.com',
+    region: 'China, global',
+    productPages: [
+      'https://www.txkhoists.com/electric-chain-hoist'
+    ],
+    selectors: {
+      productList: '.product',
+      productLink: 'a',
+      title: 'h1',
+      description: '.description',
+      specs: 'table',
+      images: 'img',
+      videos: 'iframe',
+    }
   }
 ];
 
@@ -347,6 +633,122 @@ async function downloadImage(url, filepath) {
       reject(err);
     });
   });
+}
+
+// Utility: Download PDF
+async function downloadPDF(url, filepath) {
+  return new Promise((resolve, reject) => {
+    const protocol = url.startsWith('https') ? https : http;
+    const file = fsSync.createWriteStream(filepath);
+
+    protocol.get(url, {
+      headers: { 'User-Agent': CONFIG.userAgent },
+      timeout: CONFIG.timeout
+    }, (response) => {
+      if (response.statusCode === 301 || response.statusCode === 302) {
+        downloadPDF(response.headers.location, filepath).then(resolve).catch(reject);
+        return;
+      }
+      if (response.statusCode !== 200) {
+        reject(new Error(`Failed to download PDF: ${response.statusCode}`));
+        return;
+      }
+      response.pipe(file);
+      file.on('finish', () => {
+        file.close();
+        resolve(filepath);
+      });
+    }).on('error', (err) => {
+      fsSync.unlink(filepath, () => {});
+      reject(err);
+    });
+  });
+}
+
+// Utility: Extract PDF/datasheet URLs
+function extractPDFUrls($, baseUrl) {
+  const pdfs = [];
+  const seen = new Set();
+
+  // Common PDF link patterns
+  const selectors = [
+    'a[href$=".pdf"]',
+    'a[href*="datasheet"]',
+    'a[href*="manual"]',
+    'a[href*="brochure"]',
+    'a[href*="specification"]',
+    'a[href*="catalogue"]',
+    'a[href*="catalog"]',
+    'a:contains("Download")',
+    'a:contains("PDF")',
+    'a:contains("Datasheet")',
+    'a:contains("Manual")',
+    '.download a',
+    '.documents a',
+    '.resources a'
+  ];
+
+  selectors.forEach(selector => {
+    try {
+      $(selector).each((i, el) => {
+        const href = $(el).attr('href');
+        if (!href) {
+          return;
+        }
+
+        // Check if it's a PDF link
+        const isPDF = href.toLowerCase().endsWith('.pdf') ||
+                      href.toLowerCase().includes('pdf') ||
+                      $(el).text().toLowerCase().includes('pdf') ||
+                      $(el).text().toLowerCase().includes('download');
+
+        if (!isPDF) {
+          return;
+        }
+
+        // Make URL absolute
+        let fullUrl = href;
+        if (!href.startsWith('http')) {
+          try {
+            fullUrl = new URL(href, baseUrl).href;
+          } catch {
+            return;
+          }
+        }
+
+        // Skip if already seen
+        if (seen.has(fullUrl)) {
+          return;
+        }
+        seen.add(fullUrl);
+
+        // Determine PDF type
+        let type = 'document';
+        const lowerHref = href.toLowerCase();
+        const linkText = $(el).text().toLowerCase();
+
+        if (lowerHref.includes('datasheet') || linkText.includes('datasheet')) {
+          type = 'datasheet';
+        } else if (lowerHref.includes('manual') || linkText.includes('manual')) {
+          type = 'manual';
+        } else if (lowerHref.includes('brochure') || linkText.includes('brochure')) {
+          type = 'brochure';
+        } else if (lowerHref.includes('spec') || linkText.includes('spec')) {
+          type = 'specification';
+        }
+
+        pdfs.push({
+          url: fullUrl,
+          type: type,
+          title: $(el).text().trim() || $(el).attr('title') || path.basename(href)
+        });
+      });
+    } catch {
+      // Selector failed, continue
+    }
+  });
+
+  return pdfs;
 }
 
 // Utility: Extract video URLs
@@ -531,8 +933,11 @@ class EnhancedScraper {
       totalProducts: 0,
       totalImages: 0,
       totalVideos: 0,
+      totalPDFs: 0,
+      llmAnalyzed: 0,
       errors: []
     };
+    this.llm = null;
   }
 
   async initialize() {
@@ -541,6 +946,15 @@ class EnhancedScraper {
     await fs.mkdir(CONFIG.mediaDir, { recursive: true });
     await fs.mkdir(CONFIG.imagesDir, { recursive: true });
     await fs.mkdir(CONFIG.videosDir, { recursive: true });
+    await fs.mkdir(CONFIG.pdfsDir, { recursive: true });
+
+    // Initialize LLM if enabled
+    if (CONFIG.useLLM) {
+      this.llm = await initLLM();
+      if (this.llm) {
+        logger.info('LLM analysis enabled - will analyze images and PDFs');
+      }
+    }
 
     // Load existing data
     try {
@@ -715,7 +1129,7 @@ class EnhancedScraper {
     // Clean up title
     title = title.replace(/electric chain hoist/gi, '').replace(/chain hoist/gi, '').trim();
 
-    const product = {
+    let product = {
       manufacturer: manufacturer.name,
       model: title,
       url: url,
@@ -772,6 +1186,100 @@ class EnhancedScraper {
         this.stats.totalVideos += videos.length;
       }
     }
+
+    // Extract and download PDFs
+    if (CONFIG.downloadPDFs) {
+      const pdfs = extractPDFUrls($, url);
+      if (pdfs.length > 0) {
+        product.pdfs = pdfs;
+        this.stats.totalPDFs += pdfs.length;
+
+        // Download PDFs
+        const downloadedPDFs = [];
+        for (let i = 0; i < Math.min(pdfs.length, CONFIG.maxPDFsPerProduct); i++) {
+          try {
+            const pdfUrl = pdfs[i].url;
+            const ext = '.pdf';
+            const filename = `${manufacturer.id}_${this.sanitizeFilename(title)}_${pdfs[i].type}_${i}${ext}`;
+            const filepath = path.join(CONFIG.pdfsDir, filename);
+
+            await downloadPDF(pdfUrl, filepath);
+            downloadedPDFs.push({ ...pdfs[i], localPath: filepath });
+            logger.debug(`Downloaded PDF: ${filename}`);
+          } catch (err) {
+            logger.debug(`Failed to download PDF: ${err.message}`);
+          }
+        }
+        if (downloadedPDFs.length > 0) {
+          product.downloadedPDFs = downloadedPDFs;
+        }
+      }
+    }
+
+    // LLM Analysis
+    if (this.llm && CONFIG.useLLM) {
+      try {
+        product = await this.analyzeWithLLM(product);
+        this.stats.llmAnalyzed++;
+      } catch (err) {
+        logger.warn(`LLM analysis failed for ${product.model}: ${err.message}`);
+      }
+    }
+
+    return product;
+  }
+
+  async analyzeWithLLM(product) {
+    if (!this.llm) {
+      return product;
+    }
+
+    logger.info(`Analyzing ${product.model} with LLM...`);
+
+    // Analyze downloaded images
+    if (product.downloadedImages && product.downloadedImages.length > 0) {
+      for (const img of product.downloadedImages.slice(0, 2)) {
+        try {
+          const analysis = await this.llm.analyzeProductImage(img.localPath);
+          if (analysis && analysis.confidence > 0.5) {
+            product = this.llm.mergeProductData(product, analysis);
+            logger.debug(`Image analysis added data for ${product.model}`);
+          }
+        } catch (err) {
+          logger.debug(`Image analysis failed: ${err.message}`);
+        }
+      }
+    }
+
+    // Analyze downloaded PDFs
+    if (product.downloadedPDFs && product.downloadedPDFs.length > 0) {
+      for (const pdf of product.downloadedPDFs.slice(0, 2)) {
+        try {
+          const analysis = await this.llm.analyzePDF(pdf.localPath);
+          if (analysis && analysis.confidence > 0.5) {
+            product = this.llm.mergeProductData(product, analysis);
+            logger.debug(`PDF analysis added data for ${product.model}`);
+          }
+        } catch (err) {
+          logger.debug(`PDF analysis failed: ${err.message}`);
+        }
+      }
+    }
+
+    // Analyze description text if specs are incomplete
+    if (product.description && (!product.loadCapacity || !product.liftingSpeed)) {
+      try {
+        const analysis = await this.llm.analyzeText(product.description, product);
+        if (analysis && analysis.confidence > 0.5) {
+          product = this.llm.mergeProductData(product, analysis);
+        }
+      } catch (err) {
+        logger.debug(`Text analysis failed: ${err.message}`);
+      }
+    }
+
+    product.llmEnriched = true;
+    product.llmEnrichedAt = new Date().toISOString();
 
     return product;
   }
@@ -830,6 +1338,63 @@ class EnhancedScraper {
       ],
       'planeta': [
         { model: 'PH Chain Hoist', series: 'PH', loadCapacity: '125-5000 kg', liftingSpeed: '4-8 m/min', classification: ['d8'] },
+      ],
+      // NEW MANUFACTURERS
+      'yale': [
+        { model: 'YJL', series: 'YJL', loadCapacity: '250-5000 kg', liftingSpeed: '3-12 m/min', classification: ['ansi'] },
+        { model: 'YK', series: 'YK', loadCapacity: '500-10000 kg', liftingSpeed: '2-8 m/min', classification: ['ansi'] },
+        { model: 'KEL', series: 'KEL', loadCapacity: '125-3000 kg', liftingSpeed: '4-16 m/min', classification: ['d8'] },
+      ],
+      'ingersoll-rand': [
+        { model: 'ML Series', series: 'ML', loadCapacity: '250-3000 kg', liftingSpeed: '4-12 m/min', classification: ['ansi'] },
+        { model: 'CLK Series', series: 'CLK', loadCapacity: '500-5000 kg', liftingSpeed: '2-8 m/min', classification: ['ansi'] },
+      ],
+      'coffing': [
+        { model: 'JLC', series: 'JLC', loadCapacity: '125-3000 kg', liftingSpeed: '8-16 m/min', classification: ['ansi'] },
+        { model: 'EC', series: 'EC', loadCapacity: '250-5000 kg', liftingSpeed: '4-12 m/min', classification: ['ansi'] },
+      ],
+      'budgit': [
+        { model: 'BEH', series: 'BEH', loadCapacity: '250-5000 kg', liftingSpeed: '4-16 m/min', classification: ['ansi'] },
+        { model: 'Man Guard', series: 'Man Guard', loadCapacity: '500-3000 kg', liftingSpeed: '8-12 m/min', classification: ['ansi'] },
+      ],
+      'rm-materials': [
+        { model: 'Spacemaster SX', series: 'SX', loadCapacity: '125-5000 kg', liftingSpeed: '4-20 m/min', classification: ['d8'] },
+        { model: 'LK Series', series: 'LK', loadCapacity: '250-2000 kg', liftingSpeed: '8-16 m/min', classification: ['d8'] },
+      ],
+      'street-crane': [
+        { model: 'SC Series', series: 'SC', loadCapacity: '125-5000 kg', liftingSpeed: '4-12 m/min', classification: ['d8'] },
+        { model: 'Profi', series: 'Profi', loadCapacity: '250-2000 kg', liftingSpeed: '6-16 m/min', classification: ['d8+'] },
+      ],
+      'swf': [
+        { model: 'Nova', series: 'Nova', loadCapacity: '125-5000 kg', liftingSpeed: '4-20 m/min', classification: ['d8'] },
+        { model: 'SK Series', series: 'SK', loadCapacity: '250-2500 kg', liftingSpeed: '4-12 m/min', classification: ['d8'] },
+      ],
+      'jdn': [
+        { model: 'Air Hoist Profi', series: 'Profi', loadCapacity: '125-50000 kg', liftingSpeed: '1-12 m/min', classification: ['atex'] },
+        { model: 'Mini', series: 'Mini', loadCapacity: '125-980 kg', liftingSpeed: '6-12 m/min', classification: ['atex'] },
+      ],
+      'elephant': [
+        { model: 'FA Series', series: 'FA', loadCapacity: '250-5000 kg', liftingSpeed: '4-12 m/min', classification: ['d8'] },
+        { model: 'FB Series', series: 'FB', loadCapacity: '500-10000 kg', liftingSpeed: '2-8 m/min', classification: ['d8'] },
+      ],
+      'liftingsafety': [
+        { model: 'LS Electric Hoist', series: 'LS', loadCapacity: '250-5000 kg', liftingSpeed: '4-12 m/min', classification: ['d8'] },
+      ],
+      'tiger': [
+        { model: 'ROV', series: 'ROV', loadCapacity: '250-5000 kg', liftingSpeed: '4-12 m/min', classification: ['d8+'], liftingOverPeople: true },
+        { model: 'BCH', series: 'BCH', loadCapacity: '500-10000 kg', liftingSpeed: '2-8 m/min', classification: ['d8'] },
+      ],
+      'stahl': [
+        { model: 'ST Chain Hoist', series: 'ST', loadCapacity: '125-6300 kg', liftingSpeed: '2-20 m/min', classification: ['d8+'] },
+        { model: 'AS7 Explosion Proof', series: 'AS7', loadCapacity: '125-5000 kg', liftingSpeed: '4-12 m/min', classification: ['atex'] },
+      ],
+      'nitchi': [
+        { model: 'MH-5', series: 'MH', loadCapacity: '250-5000 kg', liftingSpeed: '4-12 m/min', classification: ['jis'] },
+        { model: 'EC-4', series: 'EC', loadCapacity: '500-10000 kg', liftingSpeed: '2-8 m/min', classification: ['jis'] },
+      ],
+      'txk': [
+        { model: 'TXK-A', series: 'A', loadCapacity: '250-10000 kg', liftingSpeed: '3-12 m/min', classification: ['ce'] },
+        { model: 'TXK-B', series: 'B', loadCapacity: '500-20000 kg', liftingSpeed: '2-8 m/min', classification: ['ce'] },
       ],
     };
 
@@ -904,8 +1469,13 @@ class EnhancedScraper {
 
   async scrapeAll() {
     logger.info('\n' + '='.repeat(70));
-    logger.info('ENHANCED CHAINHOIST SCRAPER v3.0');
-    logger.info('Scraping all manufacturers with images and videos');
+    logger.info('ENHANCED CHAINHOIST SCRAPER v3.1');
+    logger.info('Scraping all manufacturers with images, videos, and PDFs');
+    if (CONFIG.useLLM) {
+      logger.info('LLM Analysis: ENABLED (using Google Gemini)');
+    } else {
+      logger.info('LLM Analysis: DISABLED (use --with-llm to enable)');
+    }
     logger.info('='.repeat(70) + '\n');
 
     await this.initialize();
@@ -932,6 +1502,14 @@ class EnhancedScraper {
     logger.info(`Total Products: ${this.stats.totalProducts}`);
     logger.info(`Total Images: ${this.stats.totalImages}`);
     logger.info(`Total Videos: ${this.stats.totalVideos}`);
+    logger.info(`Total PDFs: ${this.stats.totalPDFs}`);
+    if (CONFIG.useLLM) {
+      logger.info(`LLM Analyzed: ${this.stats.llmAnalyzed}`);
+      if (this.llm) {
+        const status = this.llm.getRateLimitStatus();
+        logger.info(`LLM Rate Limit: ${status.minuteRemaining}/min, ${status.dayRemaining}/day remaining`);
+      }
+    }
     logger.info(`Errors: ${this.stats.errors.length}`);
     if (this.stats.errors.length > 0) {
       logger.info('\nErrors:');

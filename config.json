@@ -13,7 +13,40 @@
     "backupOnError": true,
     "enableCache": true,
     "cacheDir": "cache",
-    "cacheExpiry": 86400000
+    "cacheExpiry": 86400000,
+    "downloadPDFs": true,
+    "maxPDFsPerProduct": 3,
+    "pdfDirectory": "chainhoist_data/media/pdfs",
+    "enableLLM": true
+  },
+  "llm": {
+    "provider": "gemini",
+    "model": "gemini-1.5-flash",
+    "maxTokens": 4096,
+    "rateLimit": {
+      "requestsPerMinute": 15,
+      "requestsPerDay": 1500
+    },
+    "cache": {
+      "enabled": true,
+      "directory": "chainhoist_data/llm_cache",
+      "expiryDays": 7
+    },
+    "analyzeImages": true,
+    "analyzePDFs": true,
+    "analyzeDescriptions": true
+  },
+  "scheduler": {
+    "enabled": true,
+    "cronExpression": "0 2 * * 0",
+    "timezone": "UTC",
+    "runOnStart": false,
+    "notifications": {
+      "onError": true,
+      "onSuccess": false
+    },
+    "historyFile": "scheduler_history.json",
+    "logFile": "logs/scheduler.log"
   },
   "processor": {
     "inputDir": "chainhoist_data",

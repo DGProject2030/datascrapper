@@ -1,14 +1,22 @@
-# Enhanced Entertainment Industry Electric Chainhoist Database v2.0
+# Enhanced Entertainment Industry Electric Chainhoist Database v2.1
 
 🏗️ **A comprehensive, production-ready database system for electric chainhoists used in the entertainment industry**
 
 [![Tests](https://github.com/DGProject2030/datascrapper/actions/workflows/test.yml/badge.svg)](https://github.com/DGProject2030/datascrapper/actions/workflows/test.yml)
 [![codecov](https://codecov.io/gh/DGProject2030/datascrapper/branch/master/graph/badge.svg)](https://codecov.io/gh/DGProject2030/datascrapper)
-[![Version](https://img.shields.io/badge/version-2.0.0-blue.svg)](https://github.com/DGProject2030/datascrapper)
+[![Version](https://img.shields.io/badge/version-2.1.0-blue.svg)](https://github.com/DGProject2030/datascrapper)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 [![Node.js](https://img.shields.io/badge/node-%3E%3D16.0.0-brightgreen.svg)](https://nodejs.org/)
 
-## 🚀 What's New in v2.0
+## 🚀 What's New in v2.1
+
+- **LLM-Powered Data Extraction** - Uses Google Gemini to analyze images and PDFs
+- **PDF/Datasheet Scraping** - Automatically downloads and extracts specs from datasheets
+- **Scheduled Scraping** - Weekly automated data collection with cron
+- **Smart Caching** - LLM response caching to reduce API costs
+- **Rate Limiting** - Intelligent rate limiting for LLM API calls
+
+## 🚀 What's in v2.0
 
 - **REST API** - Full programmatic access with comprehensive endpoints
 - **Advanced Validation** - Enhanced data quality assurance and error handling
@@ -35,12 +43,29 @@
 ## ✨ Features
 
 ### 🕷️ **Enhanced Data Scraper**
-- Multi-manufacturer support (Columbus McKinnon, Chainmaster, Verlinde, Movecat, GIS AG)
+- Multi-manufacturer support (27 manufacturers including Columbus McKinnon, Chainmaster, Verlinde, Movecat, GIS AG)
 - Intelligent error handling and retry mechanisms
 - Data validation and quality assurance
 - Caching system for improved performance
 - Configurable delays and concurrent processing
 - Automated backup and recovery
+- PDF/datasheet download and extraction
+- Image and video collection
+
+### 🤖 **LLM-Powered Analysis (NEW)**
+- **Google Gemini Integration** - Vision and text analysis
+- **Image Analysis** - Extract specs from product photos
+- **PDF Analysis** - Parse datasheets and user manuals
+- **Smart Merging** - Combines LLM-extracted data with scraped data
+- **Response Caching** - Reduces API costs with 7-day cache
+- **Rate Limiting** - Respects API limits (15/min, 1500/day)
+
+### ⏰ **Scheduled Scraping (NEW)**
+- **Weekly Automation** - Runs every Sunday at 2am UTC
+- **Cron Scheduling** - Configurable cron expressions
+- **Run History** - Tracks all runs with success/failure stats
+- **Manual Trigger** - Run on-demand with `npm run scheduler:run`
+- **Logging** - Detailed logs in `logs/scheduler.log`
 
 ### 🔧 **Advanced Data Processor**
 - Unit conversion and standardization
@@ -115,6 +140,22 @@ npm run scrape
 
 This creates a `chainhoist_data` directory with raw scraped data in JSON and CSV formats.
 
+### LLM-Enhanced Scraping
+Scrape with AI-powered data extraction from images and PDFs:
+```bash
+# Set your Gemini API key first
+cp .env.example .env
+# Edit .env and add your GEMINI_API_KEY
+
+# Run with LLM analysis
+npm run scrape:llm
+```
+
+This uses Google Gemini to:
+- Analyze product images for visual specifications
+- Extract data from downloaded PDF datasheets
+- Enhance incomplete product descriptions
+
 ### Data Processing
 Clean, normalize, and enhance the collected data:
 ```bash
@@ -142,6 +183,25 @@ Execute the entire workflow:
 ```bash
 npm run build && npm start
 ```
+
+### Scheduled Scraping
+Set up automated weekly data collection:
+```bash
+# Start the scheduler (runs weekly on Sunday 2am UTC)
+npm run scheduler:start
+
+# Run immediately without waiting for schedule
+npm run scheduler:run
+
+# Check scheduler status
+npm run scheduler:status
+```
+
+The scheduler:
+- Runs the full scrape + process pipeline
+- Logs all activity to `logs/scheduler.log`
+- Maintains run history in `scheduler_history.json`
+- Supports custom cron expressions via `config.json`
 
 ## 🧪 Testing
 

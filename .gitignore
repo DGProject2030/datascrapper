@@ -36,6 +36,10 @@ coverage/
 # Cache
 .cache/
 .npm/
+chainhoist_data/llm_cache/
+
+# Scheduler
+scheduler_history.json
 
 # Claude Code local settings
 .claude/
