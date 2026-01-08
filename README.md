@@ -194,9 +194,37 @@ This project uses **GitHub Actions** for automated testing:
 - Tests run automatically on every push to `master`/`main`
 - Tests run on all pull requests
 - Tests against Node.js 18.x and 20.x
+- ESLint runs before tests
 - Coverage reports uploaded to Codecov
 
 View CI status: [GitHub Actions](https://github.com/DGProject2030/datascrapper/actions)
+
+### Pre-commit Hooks
+
+This project uses **Husky** and **lint-staged** to ensure code quality before commits.
+
+**What happens on commit:**
+```
+git add file.js     →  Stage changes
+git commit          →  Pre-commit hook triggers
+                    →  ESLint runs on staged *.js files
+                    →  Auto-fixes applied and re-staged
+                    →  Commit proceeds (or fails if unfixable errors)
+```
+
+**Setup (automatic on npm install):**
+```bash
+npm install         # Husky hooks installed via "prepare" script
+```
+
+**Manual setup (if hooks aren't working):**
+```bash
+npx husky install
+```
+
+**Configuration:**
+- `.husky/pre-commit` - Hook script
+- `package.json` → `lint-staged` - Files to lint
 
 ## 🔌 API Documentation
 
