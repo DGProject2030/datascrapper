@@ -1,0 +1,17 @@
+{
+  "totalRecords": 2,
+  "processedRecords": 2,
+  "skippedRecords": 0,
+  "missingDataFields": {},
+  "manufacturerStats": {
+    "Columbus McKinnon": 2
+  },
+  "capacityDistribution": {
+    "501-1000 kg": 1,
+    "251-500 kg": 1
+  },
+  "classificationDistribution": {
+    "d8": 2
+  },
+  "processingErrors": []
+}

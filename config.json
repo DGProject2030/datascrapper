@@ -1,0 +1,64 @@
+{
+  "scraper": {
+    "outputDir": "chainhoist_data",
+    "databaseFile": "chainhoist_database.json",
+    "csvOutputFile": "chainhoist_database.csv",
+    "requestDelay": 2000,
+    "maxRetries": 3,
+    "timeout": 30000,
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+    "logLevel": "info",
+    "maxConcurrency": 2,
+    "validateData": true,
+    "backupOnError": true,
+    "enableCache": true,
+    "cacheDir": "cache",
+    "cacheExpiry": 86400000
+  },
+  "processor": {
+    "inputDir": "chainhoist_data",
+    "inputFile": "chainhoist_database.json",
+    "outputDir": "chainhoist_data_processed",
+    "processedFile": "chainhoist_database_processed.json",
+    "csvOutputFile": "chainhoist_database_processed.csv",
+    "reportFile": "data_quality_report.json",
+    "missingDataThreshold": 0.4
+  },
+  "viewer": {
+    "port": 3000,
+    "dataDir": "chainhoist_data_processed",
+    "dataFile": "chainhoist_database_processed.json",
+    "reportFile": "data_quality_report.json",
+    "enableAPI": true,
+    "apiRateLimit": {
+      "windowMs": 900000,
+      "max": 100
+    }
+  },
+  "database": {
+    "version": "2.0",
+    "schema": {
+      "requiredFields": ["manufacturer", "model"],
+      "optionalFields": [
+        "series", "yearIntroduced", "productionStatus",
+        "loadCapacity", "liftingSpeed", "secondarySpeed",
+        "chainFall", "motorPower", "dutyCycle", "voltageOptions",
+        "weight", "dimensions", "chainContainer", "bodyMaterial",
+        "chainMaterial", "noiseLevel", "hookType",
+        "classification", "quietOperation", "bodyColor",
+        "positionFeedback", "dynamicLifting", "liftingOverPeople",
+        "commonApplications", "upperLimitSwitch", "lowerLimitSwitch",
+        "overloadProtection", "emergencyStop", "additionalSafety",
+        "certifications", "price", "warranty", "extendedWarranty",
+        "leadTime", "rentalRate", "supportInfo",
+        "url", "datasheet", "images"
+      ]
+    }
+  },
+  "export": {
+    "formats": ["json", "csv", "xlsx", "pdf"],
+    "defaultFormat": "json",
+    "includeMetadata": true,
+    "dateFormat": "ISO"
+  }
+}

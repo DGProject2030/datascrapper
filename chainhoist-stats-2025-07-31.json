@@ -1,0 +1,52 @@
+{
+  "summary": {
+    "totalRecords": 2,
+    "manufacturers": 1,
+    "uniqueModels": 2,
+    "lastUpdated": "2025-07-31T21:53:25.660Z"
+  },
+  "manufacturers": {
+    "Columbus McKinnon": 2
+  },
+  "classifications": {
+    "d8": 2
+  },
+  "capacityDistribution": {
+    "501-1000kg": 1,
+    "251-500kg": 1
+  },
+  "speedDistribution": {},
+  "powerDistribution": {},
+  "dataCompleteness": {
+    "loadCapacity": {
+      "filled": 2,
+      "total": 2,
+      "percentage": "100.0"
+    },
+    "liftingSpeed": {
+      "filled": 2,
+      "total": 2,
+      "percentage": "100.0"
+    },
+    "motorPower": {
+      "filled": 2,
+      "total": 2,
+      "percentage": "100.0"
+    },
+    "classification": {
+      "filled": 2,
+      "total": 2,
+      "percentage": "100.0"
+    },
+    "series": {
+      "filled": 2,
+      "total": 2,
+      "percentage": "100.0"
+    },
+    "url": {
+      "filled": 2,
+      "total": 2,
+      "percentage": "100.0"
+    }
+  }
+}

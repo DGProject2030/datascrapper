@@ -1,0 +1,49 @@
+{
+  "data": [
+    {
+      "manufacturer": "Columbus McKinnon (CM)",
+      "model": "Lodestar 1000",
+      "series": "Lodestar",
+      "loadCapacity": "1000 kg (2200 lbs)",
+      "liftingSpeed": "4 m/min (13 ft/min)",
+      "motorPower": "1.5 kW (2 HP)",
+      "classification": [
+        "d8"
+      ],
+      "url": "https://www.columbusmckinnon.com",
+      "scrapedFrom": "https://www.columbusmckinnon.com",
+      "confidence": 0.8,
+      "id": "columbus-mckinnon--cm--lodestar-1000",
+      "lastUpdated": "2025-07-31T21:35:07.934Z",
+      "createdDate": "2025-07-31T21:35:07.934Z",
+      "updateCount": 0
+    },
+    {
+      "manufacturer": "Columbus McKinnon (CM)",
+      "model": "Lodestar 500",
+      "series": "Lodestar",
+      "loadCapacity": "500 kg (1100 lbs)",
+      "liftingSpeed": "8 m/min (26 ft/min)",
+      "motorPower": "1.1 kW (1.5 HP)",
+      "classification": [
+        "d8"
+      ],
+      "url": "https://www.columbusmckinnon.com",
+      "scrapedFrom": "https://www.columbusmckinnon.com",
+      "confidence": 0.8,
+      "id": "columbus-mckinnon--cm--lodestar-500",
+      "lastUpdated": "2025-07-31T21:35:07.934Z",
+      "createdDate": "2025-07-31T21:35:07.934Z",
+      "updateCount": 0
+    }
+  ],
+  "stats": {
+    "totalRecords": 2,
+    "validRecords": 2,
+    "invalidRecords": 0,
+    "duplicates": 0,
+    "errors": []
+  },
+  "lastSaved": "2025-07-31T21:35:07.934Z",
+  "version": "2.0"
+}

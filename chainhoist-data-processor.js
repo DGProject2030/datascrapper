@@ -1,0 +1,609 @@
+// Electric Chainhoist Data Processor
+// This script cleans, normalizes, and enriches the scraped chainhoist data
+
+const fs = require('fs/promises');
+const path = require('path');
+const _ = require('lodash');
+const csv = require('csv-parser');
+const createCsvWriter = require('csv-writer').createObjectCsvWriter;
+const { createReadStream } = require('fs');
+
+// Configuration
+const CONFIG = {
+  inputDir: 'chainhoist_data',
+  inputFile: 'chainhoist_database.json',
+  outputDir: 'chainhoist_data_processed',
+  processedFile: 'chainhoist_database_processed.json',
+  csvOutputFile: 'chainhoist_database_processed.csv',
+  reportFile: 'data_quality_report.json',
+  missingDataThreshold: 0.4, // Threshold for reporting missing data
+};
+
+// Define unit conversion factors
+const UNIT_CONVERSIONS = {
+  weight: {
+    kgToLbs: 2.20462,
+    lbsToKg: 0.453592,
+  },
+  capacity: {
+    kgToLbs: 2.20462,
+    lbsToKg: 0.453592,
+    tonToKg: 1000,
+    tonToLbs: 2000,
+    metricTonToKg: 1000,
+    shortTonToLbs: 2000,
+  },
+  speed: {
+    mPerMinToFtPerMin: 3.28084,
+    ftPerMinToMPerMin: 0.3048,
+  },
+  power: {
+    kWToHP: 1.34102,
+    hpToKW: 0.745699,
+  },
+};
+
+// Classification standards and their aliases
+const CLASSIFICATION_ALIASES = {
+  'd8': ['d8', 'bgv-d8', 'bgvd8', 'd8standard'],
+  'd8+': ['d8+', 'd8plus', 'bgv-d8+', 'bgvd8+', 'bgv-d8plus'],
+  'bgv-c1': ['bgv-c1', 'bgvc1', 'c1'],
+  'ansi': ['ansi', 'asme'],
+};
+
+// Data Processor Class
+class ChainhoistDataProcessor {
+  constructor() {
+    this.data = [];
+    this.processedData = [];
+    this.report = {
+      totalRecords: 0,
+      processedRecords: 0,
+      skippedRecords: 0,
+      missingDataFields: {},
+      manufacturerStats: {},
+      capacityDistribution: {},
+      classificationDistribution: {},
+      processingErrors: [],
+    };
+  }
+
+  async initialize() {
+    try {
+      // Create output directory if it doesn't exist
+      await fs.mkdir(CONFIG.outputDir, { recursive: true });
+      
+      // Load the database
+      const dbFile = path.join(CONFIG.inputDir, CONFIG.inputFile);
+      const dbContent = await fs.readFile(dbFile, 'utf8');
+      const parsed = JSON.parse(dbContent);
+      
+      // Handle both old and new database formats
+      if (Array.isArray(parsed)) {
+        this.data = parsed;
+      } else if (parsed.data && Array.isArray(parsed.data)) {
+        this.data = parsed.data;
+      } else {
+        throw new Error('Invalid database format - no data array found');
+      }
+      
+      this.report.totalRecords = this.data.length;
+      
+      console.log(`Loaded ${this.data.length} records for processing`);
+    } catch (err) {
+      console.error('Failed to initialize data processor:', err);
+      throw err;
+    }
+  }
+
+  // Process all records
+  async processAll() {
+    console.log('Starting data processing...');
+    
+    for (const record of this.data) {
+      try {
+        const processed = this.processRecord(record);
+        if (processed) {
+          this.processedData.push(processed);
+          this.report.processedRecords++;
+          
+          // Update manufacturer stats
+          const mfr = processed.manufacturer;
+          if (!this.report.manufacturerStats[mfr]) {
+            this.report.manufacturerStats[mfr] = 1;
+          } else {
+            this.report.manufacturerStats[mfr]++;
+          }
+          
+          // Update capacity distribution
+          const cap = this.getCapacityCategory(processed.loadCapacity);
+          if (cap) {
+            if (!this.report.capacityDistribution[cap]) {
+              this.report.capacityDistribution[cap] = 1;
+            } else {
+              this.report.capacityDistribution[cap]++;
+            }
+          }
+          
+          // Update classification distribution
+          if (processed.classification && Array.isArray(processed.classification)) {
+            for (const cls of processed.classification) {
+              if (!this.report.classificationDistribution[cls]) {
+                this.report.classificationDistribution[cls] = 1;
+              } else {
+                this.report.classificationDistribution[cls]++;
+              }
+            }
+          }
+        } else {
+          this.report.skippedRecords++;
+        }
+      } catch (error) {
+        console.error(`Error processing record ${record.id || 'unknown'}:`, error.message);
+        this.report.processingErrors.push({
+          id: record.id || 'unknown',
+          error: error.message,
+        });
+        this.report.skippedRecords++;
+      }
+    }
+    
+    // Calculate missing data statistics
+    this.calculateMissingDataStats();
+    
+    console.log(`Processed ${this.report.processedRecords} records successfully`);
+    console.log(`Skipped ${this.report.skippedRecords} records due to errors or insufficient data`);
+  }
+
+  // Process a single record
+  processRecord(record) {
+    // Skip if missing critical data
+    if (!record.model || !record.manufacturer) {
+      return null;
+    }
+    
+    const processed = { ...record };
+    
+    // Clean and normalize fields
+    processed.manufacturer = this.cleanManufacturerName(processed.manufacturer);
+    processed.model = this.cleanModelName(processed.model);
+    
+    // Process load capacity
+    processed.loadCapacity = this.processLoadCapacity(processed.loadCapacity);
+    
+    // Process lifting speed
+    processed.liftingSpeed = this.processLiftingSpeed(processed.liftingSpeed);
+    
+    // Process motor power
+    processed.motorPower = this.processMotorPower(processed.motorPower);
+    
+    // Normalize classification
+    processed.classification = this.normalizeClassification(processed.classification);
+    
+    // Convert boolean fields
+    processed.quietOperation = this.processBoolean(processed.quietOperation);
+    processed.dynamicLifting = this.processBoolean(processed.dynamicLifting);
+    processed.liftingOverPeople = this.processBoolean(processed.liftingOverPeople);
+    
+    // Make sure arrays are arrays
+    if (!Array.isArray(processed.voltageOptions) && processed.voltageOptions) {
+      processed.voltageOptions = [processed.voltageOptions];
+    }
+    if (!Array.isArray(processed.bodyColor) && processed.bodyColor) {
+      processed.bodyColor = [processed.bodyColor];
+    }
+    if (!Array.isArray(processed.commonApplications) && processed.commonApplications) {
+      processed.commonApplications = [processed.commonApplications];
+    }
+    if (!Array.isArray(processed.additionalSafety) && processed.additionalSafety) {
+      processed.additionalSafety = [processed.additionalSafety];
+    }
+    
+    // Ensure objects are objects
+    if (typeof processed.controlCompatibility !== 'object' || processed.controlCompatibility === null) {
+      processed.controlCompatibility = {};
+    }
+    if (typeof processed.positionFeedback !== 'object' || processed.positionFeedback === null) {
+      processed.positionFeedback = {};
+    }
+    if (typeof processed.certifications !== 'object' || processed.certifications === null) {
+      processed.certifications = {};
+    }
+    
+    // Standardize common fields based on manufacturer patterns
+    this.applyManufacturerSpecificProcessing(processed);
+    
+    // Add additional metadata
+    processed.processedDate = new Date();
+    
+    return processed;
+  }
+
+  // Clean manufacturer name
+  cleanManufacturerName(name) {
+    if (!name) return '';
+    
+    // Standardize manufacturer names
+    const nameMap = {
+      'Columbus McKinnon (CM)': 'Columbus McKinnon',
+      'CM': 'Columbus McKinnon',
+      'CM Lodestar': 'Columbus McKinnon',
+      'CM Works': 'Columbus McKinnon',
+      'Chainmaster GmbH': 'Chainmaster',
+      'Verlinde (Stagemaker)': 'Verlinde',
+      'Stagemaker': 'Verlinde',
+      'Movecat GmbH': 'Movecat',
+      'GIS AG Switzerland': 'GIS AG',
+    };
+    
+    return nameMap[name] || name;
+  }
+
+  // Clean model name
+  cleanModelName(name) {
+    if (!name) return '';
+    
+    // Remove common prefixes/suffixes
+    name = name.replace(/electric chain hoist/i, '')
+      .replace(/chain hoist/i, '')
+      .replace(/hoist/i, '')
+      .replace(/series/i, '')
+      .trim();
+    
+    return name;
+  }
+
+  // Process load capacity
+  processLoadCapacity(capacity) {
+    if (!capacity) return '';
+    
+    // Convert to string if not already
+    capacity = String(capacity);
+    
+    // Extract numeric value and unit
+    const matches = capacity.match(/(\d+(?:\.\d+)?)\s*([a-z]+)/i);
+    if (!matches) return capacity;
+    
+    const value = parseFloat(matches[1]);
+    const unit = matches[2].toLowerCase();
+    
+    // Normalize to standard format
+    if (unit.includes('kg')) {
+      return `${value} kg (${Math.round(value * UNIT_CONVERSIONS.capacity.kgToLbs)} lbs)`;
+    } else if (unit.includes('lb') || unit.includes('lbs')) {
+      return `${Math.round(value * UNIT_CONVERSIONS.capacity.lbsToKg)} kg (${value} lbs)`;
+    } else if (unit.includes('ton') && !unit.includes('metric')) {
+      return `${value * UNIT_CONVERSIONS.capacity.tonToKg} kg (${value * UNIT_CONVERSIONS.capacity.tonToLbs} lbs)`;
+    }
+    
+    return capacity;
+  }
+
+  // Process lifting speed
+  processLiftingSpeed(speed) {
+    if (!speed) return '';
+    
+    // Convert to string if not already
+    speed = String(speed);
+    
+    // Extract numeric value and unit
+    const matches = speed.match(/(\d+(?:\.\d+)?)\s*([a-z\/]+)/i);
+    if (!matches) return speed;
+    
+    const value = parseFloat(matches[1]);
+    const unit = matches[2].toLowerCase();
+    
+    // Normalize to standard format
+    if (unit.includes('m/min') || unit.includes('m/min')) {
+      return `${value} m/min (${Math.round(value * UNIT_CONVERSIONS.speed.mPerMinToFtPerMin)} ft/min)`;
+    } else if (unit.includes('ft/min') || unit.includes('fpm')) {
+      return `${(value * UNIT_CONVERSIONS.speed.ftPerMinToMPerMin).toFixed(1)} m/min (${value} ft/min)`;
+    }
+    
+    return speed;
+  }
+
+  // Process motor power
+  processMotorPower(power) {
+    if (!power) return '';
+    
+    // Convert to string if not already
+    power = String(power);
+    
+    // Extract numeric value and unit
+    const matches = power.match(/(\d+(?:\.\d+)?)\s*([a-z]+)/i);
+    if (!matches) return power;
+    
+    const value = parseFloat(matches[1]);
+    const unit = matches[2].toLowerCase();
+    
+    // Normalize to standard format
+    if (unit.includes('kw')) {
+      return `${value} kW (${(value * UNIT_CONVERSIONS.power.kWToHP).toFixed(1)} HP)`;
+    } else if (unit.includes('hp')) {
+      return `${(value * UNIT_CONVERSIONS.power.hpToKW).toFixed(2)} kW (${value} HP)`;
+    }
+    
+    return power;
+  }
+
+  // Normalize classification
+  normalizeClassification(classification) {
+    if (!classification) return [];
+    
+    // If string, convert to array
+    if (typeof classification === 'string') {
+      classification = classification.split(/[,;\/]/);
+    } else if (!Array.isArray(classification)) {
+      return [];
+    }
+    
+    // Normalize each classification
+    const normalized = [];
+    for (let cls of classification) {
+      if (!cls) continue;
+      
+      cls = cls.toString().trim().toLowerCase();
+      
+      // Match to standard classifications
+      let found = false;
+      for (const [standard, aliases] of Object.entries(CLASSIFICATION_ALIASES)) {
+        if (aliases.includes(cls)) {
+          normalized.push(standard);
+          found = true;
+          break;
+        }
+      }
+      
+      if (!found) {
+        normalized.push(cls);
+      }
+    }
+    
+    // Remove duplicates
+    return [...new Set(normalized)];
+  }
+
+  // Process boolean values
+  processBoolean(value) {
+    if (typeof value === 'boolean') return value;
+    if (typeof value === 'string') {
+      value = value.toLowerCase().trim();
+      return value === 'yes' || value === 'true' || value === 'y' || value === '1';
+    }
+    if (typeof value === 'number') {
+      return value !== 0;
+    }
+    return false;
+  }
+
+  // Apply manufacturer-specific processing
+  applyManufacturerSpecificProcessing(record) {
+    const manufacturer = record.manufacturer;
+    
+    if (manufacturer === 'Columbus McKinnon') {
+      // CM-specific processing
+      if (record.model.includes('Lodestar')) {
+        record.series = 'Lodestar';
+        
+        // Lodestar is typically D8 unless specified otherwise
+        if (!record.classification || record.classification.length === 0) {
+          record.classification = ['d8'];
+        }
+      }
+    } else if (manufacturer === 'Chainmaster') {
+      // Chainmaster-specific processing
+      if (record.model.includes('D8+')) {
+        if (!record.classification || record.classification.length === 0) {
+          record.classification = ['d8+'];
+        }
+      } else if (record.model.includes('D8')) {
+        if (!record.classification || record.classification.length === 0) {
+          record.classification = ['d8'];
+        }
+      }
+    } else if (manufacturer === 'Verlinde') {
+      // Verlinde-specific processing
+      if (record.model.includes('SR')) {
+        record.series = 'Stagemaker SR';
+      } else if (record.model.includes('SL')) {
+        record.series = 'Stagemaker SL';
+      }
+    }
+    
+    return record;
+  }
+
+  // Get capacity category for reporting
+  getCapacityCategory(capacity) {
+    if (!capacity) return null;
+    
+    // Try to extract numeric value
+    const matches = capacity.match(/(\d+(?:\.\d+)?)\s*kg/i);
+    if (!matches) return null;
+    
+    const value = parseFloat(matches[1]);
+    
+    // Categorize based on capacity
+    if (value <= 250) return '≤250 kg';
+    if (value <= 500) return '251-500 kg';
+    if (value <= 1000) return '501-1000 kg';
+    if (value <= 2000) return '1001-2000 kg';
+    return '>2000 kg';
+  }
+
+  // Calculate missing data statistics
+  calculateMissingDataStats() {
+    // Count missing fields
+    const fieldCounts = {};
+    const totalRecords = this.processedData.length;
+    
+    for (const record of this.processedData) {
+      for (const field of Object.keys(record)) {
+        if (record[field] === null || record[field] === undefined || record[field] === '') {
+          if (!fieldCounts[field]) {
+            fieldCounts[field] = 1;
+          } else {
+            fieldCounts[field]++;
+          }
+        }
+      }
+    }
+    
+    // Calculate percentages and report fields above threshold
+    for (const [field, count] of Object.entries(fieldCounts)) {
+      const percentage = count / totalRecords;
+      if (percentage >= CONFIG.missingDataThreshold) {
+        this.report.missingDataFields[field] = {
+          count,
+          percentage: (percentage * 100).toFixed(1) + '%',
+        };
+      }
+    }
+  }
+
+  // Save processed data
+  async save() {
+    try {
+      // Save processed data
+      const processedFile = path.join(CONFIG.outputDir, CONFIG.processedFile);
+      await fs.writeFile(processedFile, JSON.stringify(this.processedData, null, 2));
+      console.log(`Saved ${this.processedData.length} processed records to ${processedFile}`);
+      
+      // Save report
+      const reportFile = path.join(CONFIG.outputDir, CONFIG.reportFile);
+      await fs.writeFile(reportFile, JSON.stringify(this.report, null, 2));
+      console.log(`Saved data quality report to ${reportFile}`);
+      
+      // Export to CSV
+      await this.exportToCsv();
+    } catch (err) {
+      console.error('Failed to save processed data:', err);
+      throw err;
+    }
+  }
+
+  // Export to CSV
+  async exportToCsv() {
+    try {
+      // Flatten nested objects for CSV export
+      const flattenedData = this.processedData.map(item => {
+        const flat = { ...item };
+        
+        // Handle arrays
+        if (Array.isArray(flat.voltageOptions)) {
+          flat.voltageOptions = flat.voltageOptions.join(', ');
+        }
+        if (Array.isArray(flat.classification)) {
+          flat.classification = flat.classification.join(', ');
+        }
+        if (Array.isArray(flat.bodyColor)) {
+          flat.bodyColor = flat.bodyColor.join(', ');
+        }
+        if (Array.isArray(flat.commonApplications)) {
+          flat.commonApplications = flat.commonApplications.join(', ');
+        }
+        if (Array.isArray(flat.additionalSafety)) {
+          flat.additionalSafety = flat.additionalSafety.join(', ');
+        }
+        if (Array.isArray(flat.images)) {
+          flat.images = flat.images.join(', ');
+        }
+        
+        // Handle objects
+        if (typeof flat.controlCompatibility === 'object' && flat.controlCompatibility !== null) {
+          Object.keys(flat.controlCompatibility).forEach(key => {
+            flat[`controlCompatibility_${key}`] = flat.controlCompatibility[key];
+          });
+          delete flat.controlCompatibility;
+        }
+        
+        if (typeof flat.positionFeedback === 'object' && flat.positionFeedback !== null) {
+          Object.keys(flat.positionFeedback).forEach(key => {
+            flat[`positionFeedback_${key}`] = flat.positionFeedback[key];
+          });
+          delete flat.positionFeedback;
+        }
+        
+        if (typeof flat.certifications === 'object' && flat.certifications !== null) {
+          Object.keys(flat.certifications).forEach(key => {
+            flat[`certification_${key}`] = flat.certifications[key];
+          });
+          delete flat.certifications;
+        }
+        
+        if (typeof flat.price === 'object' && flat.price !== null) {
+          flat.priceValue = flat.price.value;
+          flat.priceCurrency = flat.price.currency;
+          delete flat.price;
+        }
+        
+        if (typeof flat.rentalRate === 'object' && flat.rentalRate !== null) {
+          flat.rentalRateDaily = flat.rentalRate.daily;
+          flat.rentalRateWeekly = flat.rentalRate.weekly;
+          delete flat.rentalRate;
+        }
+        
+        if (typeof flat.supportInfo === 'object' && flat.supportInfo !== null) {
+          Object.keys(flat.supportInfo).forEach(key => {
+            flat[`supportInfo_${key}`] = flat.supportInfo[key];
+          });
+          delete flat.supportInfo;
+        }
+        
+        // Format dates
+        if (flat.lastUpdated instanceof Date) {
+          flat.lastUpdated = flat.lastUpdated.toISOString();
+        }
+        if (flat.processedDate instanceof Date) {
+          flat.processedDate = flat.processedDate.toISOString();
+        }
+        
+        return flat;
+      });
+      
+      // Get all possible headers
+      const headers = new Set();
+      for (const record of flattenedData) {
+        Object.keys(record).forEach(key => headers.add(key));
+      }
+      
+      // Create CSV writer
+      const csvWriter = createCsvWriter({
+        path: path.join(CONFIG.outputDir, CONFIG.csvOutputFile),
+        header: Array.from(headers).map(id => ({ id, title: id })),
+      });
+      
+      // Write CSV
+      await csvWriter.writeRecords(flattenedData);
+      console.log(`Exported processed data to CSV: ${CONFIG.csvOutputFile}`);
+    } catch (err) {
+      console.error('Failed to export to CSV:', err);
+      throw err;
+    }
+  }
+}
+
+// Main execution
+async function main() {
+  console.log('Starting Electric Chainhoist Data Processor');
+  console.log('------------------------------------------');
+  
+  // Initialize processor
+  const processor = new ChainhoistDataProcessor();
+  await processor.initialize();
+  
+  // Process data
+  await processor.processAll();
+  
+  // Save processed data
+  await processor.save();
+  
+  console.log('Processing completed successfully');
+}
+
+// Execute the main function
+main().catch(error => {
+  console.error('An error occurred:', error);
+  process.exit(1);
+});
