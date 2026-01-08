@@ -24,7 +24,9 @@
 - [Quick Start](#-quick-start)
 - [Installation](#-installation)
 - [Usage](#-usage)
+- [Testing](#-testing)
 - [API Documentation](#-api-documentation)
+- [Project Architecture](#-project-architecture)
 - [Configuration](#-configuration)
 - [Data Structure](#-data-structure)
 - [Contributing](#-contributing)
@@ -141,6 +143,61 @@ Execute the entire workflow:
 npm run build && npm start
 ```
 
+## 🧪 Testing
+
+This project uses **Jest** and **Supertest** for testing the API endpoints.
+
+### Running Tests
+
+```bash
+# Run all tests
+npm test
+
+# Run tests with coverage report
+npm run test:coverage
+```
+
+### Test Coverage
+
+Current coverage metrics:
+- **Statements:** ~50%
+- **Branches:** ~28%
+- **Functions:** ~56%
+- **Lines:** ~53%
+
+Coverage reports are generated in the `coverage/` directory with HTML reports viewable at `coverage/lcov-report/index.html`.
+
+### Test Structure
+
+```
+__tests__/
+└── api.test.js    # API endpoint tests (24 tests)
+```
+
+### Test Suites
+
+| Suite | Tests | Description |
+|-------|-------|-------------|
+| API Documentation | 1 | Verifies `/api` returns docs |
+| GET /api/chainhoists | 7 | List, pagination, filtering |
+| GET /api/chainhoists/:id | 2 | Get by ID, 404 handling |
+| GET /api/manufacturers | 2 | Manufacturer statistics |
+| GET /api/classifications | 2 | Classification counts |
+| GET /api/stats | 2 | Database statistics |
+| POST /api/search | 6 | Advanced search |
+| Error Handling | 2 | Invalid parameter handling |
+
+### Continuous Integration
+
+This project uses **GitHub Actions** for automated testing:
+
+- Tests run automatically on every push to `master`/`main`
+- Tests run on all pull requests
+- Tests against Node.js 18.x and 20.x
+- Coverage reports uploaded to Codecov
+
+View CI status: [GitHub Actions](https://github.com/DGProject2030/datascrapper/actions)
+
 ## 🔌 API Documentation
 
 ### Base URL
@@ -197,9 +254,55 @@ Content-Type: application/json
 GET /api/manufacturers
 ```
 
+**Response:**
+```json
+{
+  "success": true,
+  "data": [
+    { "name": "Columbus McKinnon", "count": 45, "models": 12 },
+    { "name": "Chainmaster", "count": 32, "models": 8 }
+  ]
+}
+```
+
+#### Get Classifications
+```http
+GET /api/classifications
+```
+
+**Response:**
+```json
+{
+  "success": true,
+  "data": [
+    { "name": "d8", "count": 85 },
+    { "name": "d8+", "count": 42 },
+    { "name": "bgv-c1", "count": 38 }
+  ]
+}
+```
+
 #### Get Statistics
 ```http
 GET /api/stats
+```
+
+**Response:**
+```json
+{
+  "success": true,
+  "data": {
+    "totalRecords": 150,
+    "manufacturers": 5,
+    "classifications": 3,
+    "capacityRange": { "min": 125, "max": 5000 },
+    "dataCompleteness": {
+      "loadCapacity": 0.95,
+      "liftingSpeed": 0.87,
+      "motorPower": 0.72
+    }
+  }
+}
 ```
 
 ### Response Format
@@ -215,6 +318,63 @@ GET /api/stats
   }
 }
 ```
+
+### Error Responses
+```json
+{
+  "success": false,
+  "error": "Error description",
+  "message": "Detailed error message"
+}
+```
+
+| Status Code | Description |
+|-------------|-------------|
+| 200 | Success |
+| 404 | Resource not found |
+| 500 | Internal server error |
+
+## 🏗️ Project Architecture
+
+The project follows a modular architecture separating concerns for better testability and maintainability.
+
+### File Structure
+
+```
+datascrapper/
+├── app.js                      # Express app configuration & routes (testable)
+├── server.js                   # Server startup (imports app.js)
+├── chainhoist-scraper.js       # Data collection from manufacturers
+├── chainhoist-data-processor.js # Data cleaning & normalization
+├── export-tools.js             # Export utilities (CSV, JSON, Excel, PDF)
+├── config.json                 # Application configuration
+├── package.json                # Dependencies & scripts
+├── __tests__/
+│   └── api.test.js             # API test suite
+├── .github/
+│   └── workflows/
+│       └── test.yml            # GitHub Actions CI/CD
+├── views/                      # EJS templates
+├── chainhoist_data/            # Raw scraped data
+└── chainhoist_data_processed/  # Processed database
+```
+
+### Key Components
+
+| File | Purpose |
+|------|---------|
+| `app.js` | Express application with all routes. Exported for testing. |
+| `server.js` | Server startup, template initialization. Imports `app.js`. |
+| `chainhoist-scraper.js` | Web scraper for manufacturer data |
+| `chainhoist-data-processor.js` | Data normalization and quality checks |
+| `export-tools.js` | Multi-format export utilities |
+
+### Design Decisions
+
+- **Separated `app.js` from `server.js`** - Allows importing Express app for testing without starting server
+- **Modular scrapers** - Each manufacturer can have custom extraction logic
+- **JSON data storage** - Simple, portable, no database setup required
+- **EJS templating** - Server-side rendering for web interface
 
 ## ⚙️ Configuration
 
@@ -305,15 +465,20 @@ interface Chainhoist {
 
 ### Available Scripts
 
-- `npm run scrape` - Run data scraper
-- `npm run process` - Process scraped data
-- `npm run serve` - Start web server
-- `npm run build` - Complete pipeline
-- `npm start` - Start web server (production)
-- `npm run dev` - Development mode with auto-reload
-- `npm test` - Run tests (when implemented)
-- `npm run validate` - Validate database integrity
-- `npm run stats` - Generate statistics report
+| Command | Description |
+|---------|-------------|
+| `npm run scrape` | Run data scraper |
+| `npm run process` | Process scraped data |
+| `npm run serve` | Start web server |
+| `npm run build` | Complete pipeline (scrape + process) |
+| `npm start` | Start web server (production) |
+| `npm run dev` | Development mode |
+| `npm test` | Run test suite |
+| `npm run test:coverage` | Run tests with coverage report |
+| `npm run validate` | Validate database integrity |
+| `npm run stats` | Generate statistics report |
+| `npm run export:csv` | Export database to CSV |
+| `npm run export:json` | Export database to JSON |
 
 ### Adding New Manufacturers
 
@@ -377,7 +542,7 @@ We welcome contributions! Here's how you can help:
 2. **Data Accuracy** - Improve extraction and validation
 3. **UI/UX Enhancement** - Better user interface design
 4. **API Features** - Additional endpoints and functionality
-5. **Testing** - Unit and integration tests
+5. **Test Coverage** - Increase test coverage above 80%
 6. **Documentation** - Improve guides and examples
 
 ### Contribution Process
