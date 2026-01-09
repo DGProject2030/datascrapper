@@ -1,17 +1,65 @@
 {
-  "totalRecords": 4,
-  "processedRecords": 4,
+  "totalRecords": 260,
+  "processedRecords": 260,
   "skippedRecords": 0,
-  "missingDataFields": {},
+  "missingDataFields": {
+    "loadCapacity": {
+      "count": 212,
+      "percentage": "81.5%"
+    },
+    "liftingSpeed": {
+      "count": 212,
+      "percentage": "81.5%"
+    },
+    "motorPower": {
+      "count": 256,
+      "percentage": "98.5%"
+    }
+  },
   "manufacturerStats": {
-    "Columbus McKinnon": 4
+    "Columbus McKinnon": 193,
+    "Konecranes": 2,
+    "Demag": 2,
+    "Harrington Hoists": 2,
+    "ABUS Kransysteme": 2,
+    "GIS AG": 1,
+    "Verlinde": 2,
+    "Chainmaster": 2,
+    "Movecat": 2,
+    "Kito": 2,
+    "Hitachi Industrial Equipment": 1,
+    "Donati Sollevamenti": 5,
+    "PLANETA-Hebetechnik": 10,
+    "Gorbel": 7,
+    "Yale Hoists": 3,
+    "Ingersoll Rand": 2,
+    "Coffing Hoists": 2,
+    "Budgit Hoists": 2,
+    "R&M Materials Handling": 2,
+    "Street Crane": 2,
+    "SWF Krantechnik": 2,
+    "JDN Monocrane": 2,
+    "Elephant Lifting Products": 2,
+    "LiftingSafety": 1,
+    "Tiger Lifting": 2,
+    "Stahl CraneSystems": 1,
+    "Nitchi": 2,
+    "TXK": 2
   },
   "capacityDistribution": {
-    "501-1000 kg": 2,
-    "251-500 kg": 2
+    "501-1000 kg": 4,
+    "251-500 kg": 3,
+    ">2000 kg": 32,
+    "1001-2000 kg": 9
   },
   "classificationDistribution": {
-    "d8": 4
+    "d8": 23,
+    "d8+": 9,
+    "ansi": 10,
+    "bgv-c1": 2,
+    "jis": 3,
+    "atex": 2,
+    "ce": 2
   },
   "processingErrors": []
 }
