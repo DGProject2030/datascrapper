@@ -65,12 +65,12 @@
           </div>
           <div class="card-body">
             <form action="/search" method="GET" class="row g-3">
-              <div class="col-md-3">
+              <div class="col-md-4">
                 <label for="q" class="form-label">Search Terms</label>
                 <input type="text" class="form-control" id="q" name="q" value="<%= query %>">
               </div>
-              
-              <div class="col-md-3">
+
+              <div class="col-md-4">
                 <label for="manufacturer" class="form-label">Manufacturer</label>
                 <select name="manufacturer" id="manufacturer" class="form-select">
                   <option value="">Any Manufacturer</option>
@@ -79,8 +79,8 @@
                   <% }); %>
                 </select>
               </div>
-              
-              <div class="col-md-2">
+
+              <div class="col-md-4">
                 <label for="capacity" class="form-label">Load Capacity</label>
                 <select name="capacity" id="capacity" class="form-select">
                   <option value="">Any Capacity</option>
@@ -89,8 +89,8 @@
                   <% }); %>
                 </select>
               </div>
-              
-              <div class="col-md-2">
+
+              <div class="col-md-3">
                 <label for="classification" class="form-label">Classification</label>
                 <select name="classification" id="classification" class="form-select">
                   <option value="">Any Classification</option>
@@ -99,8 +99,28 @@
                   <% }); %>
                 </select>
               </div>
-              
-              <div class="col-md-2 d-flex align-items-end">
+
+              <div class="col-md-3">
+                <label for="category" class="form-label">Category</label>
+                <select name="category" id="category" class="form-select">
+                  <option value="">Any Category</option>
+                  <% categories.forEach(function(category) { %>
+                    <option value="<%= category %>" <%= filters.category === category ? 'selected' : '' %>><%= category %></option>
+                  <% }); %>
+                </select>
+              </div>
+
+              <div class="col-md-3">
+                <label for="speedType" class="form-label">Speed Type</label>
+                <select name="speedType" id="speedType" class="form-select">
+                  <option value="">Any Speed Type</option>
+                  <% speedTypes.forEach(function(speedType) { %>
+                    <option value="<%= speedType %>" <%= filters.speedType === speedType ? 'selected' : '' %>><%= speedType %></option>
+                  <% }); %>
+                </select>
+              </div>
+
+              <div class="col-md-3 d-flex align-items-end">
                 <button type="submit" class="btn btn-primary w-100">Apply Filters</button>
               </div>
             </form>
