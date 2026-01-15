@@ -1,17 +1,30 @@
-# Enhanced Entertainment Industry Electric Chainhoist Database v2.2
+# Enhanced Entertainment Industry Electric Chainhoist Database v2.3
 
 🏗️ **A comprehensive, production-ready database system for electric chainhoists used in the entertainment industry**
 
 [![Tests](https://github.com/DGProject2030/datascrapper/actions/workflows/test.yml/badge.svg)](https://github.com/DGProject2030/datascrapper/actions/workflows/test.yml)
 [![codecov](https://codecov.io/gh/DGProject2030/datascrapper/branch/master/graph/badge.svg)](https://codecov.io/gh/DGProject2030/datascrapper)
-[![Version](https://img.shields.io/badge/version-2.2.0-blue.svg)](https://github.com/DGProject2030/datascrapper)
+[![Version](https://img.shields.io/badge/version-2.3.0-blue.svg)](https://github.com/DGProject2030/datascrapper)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 [![Node.js](https://img.shields.io/badge/node-%3E%3D16.0.0-brightgreen.svg)](https://nodejs.org/)
+
+## 🚀 What's New in v2.3
+
+- **Product Images** - Scraped from manufacturer websites, displayed in product cards and detail pages
+- **Image Galleries** - Thumbnail navigation with main image display on product pages
+- **Video Embedding** - YouTube, Vimeo, and MP4 videos embedded on product pages
+- **PDF Downloads** - Datasheets, manuals, and brochures available for download
+- **Downloads Page** - Dedicated `/downloads` page to browse all PDFs by manufacturer
+- **Static Media Serving** - Direct access to media files at `/media/pdfs/` and `/media/images/`
+- **Expanded Database** - 432 products from 28 manufacturers
+- **83 Products with Images** - Product photos from manufacturer websites
+- **82 PDF Documents** - Datasheets, manuals, and brochures
+- **8 Products with Videos** - Embedded video demonstrations
 
 ## 🚀 What's New in v2.2
 
 - **Personality Data Integration** - Technical configuration data from XML personality files
-- **Merged Unified Database** - 258 products combining web-scraped and personality data
+- **Merged Unified Database** - Combining web-scraped and personality data
 - **Tuning Parameters** - PID gains, drive speeds, brake delays for each product
 - **Speed Control Data** - Min/max speeds, acceleration, deceleration settings
 - **Load Parameters** - Underload/overload limits, encoder scaling, loadcell scaling
@@ -54,14 +67,23 @@
 ## ✨ Features
 
 ### 🕷️ **Enhanced Data Scraper**
-- Multi-manufacturer support (27 manufacturers including Columbus McKinnon, Chainmaster, Verlinde, Movecat, GIS AG)
+- Multi-manufacturer support (28 manufacturers including Columbus McKinnon, Chainmaster, Verlinde, Movecat, GIS AG)
 - Intelligent error handling and retry mechanisms
 - Data validation and quality assurance
 - Caching system for improved performance
 - Configurable delays and concurrent processing
 - Automated backup and recovery
 - PDF/datasheet download and extraction
-- Image and video collection
+- Image scraping with local storage
+- Video URL collection (YouTube, Vimeo, MP4)
+
+### 🖼️ **Rich Media Support (NEW)**
+- **Product Images** - Scraped from manufacturer websites
+- **Image Galleries** - Thumbnail navigation on product pages
+- **Video Embedding** - YouTube, Vimeo iframes and HTML5 video players
+- **PDF Documents** - Datasheets, manuals, brochures (82 documents)
+- **Downloads Page** - Browse all PDFs by manufacturer at `/downloads`
+- **Static Media** - Direct access at `/media/pdfs/` and `/media/images/`
 
 ### 🤖 **LLM-Powered Analysis (NEW)**
 - **Google Gemini Integration** - Vision and text analysis
@@ -89,10 +111,11 @@
 ### 🌐 **Modern Web Interface**
 - Responsive design with Bootstrap 5
 - Advanced search and filtering
-- Product comparison tools
+- Product image galleries and video players
+- PDF document downloads
 - Visual statistics and charts
 - Mobile-friendly interface
-- Real-time data updates
+- Dedicated downloads page
 
 ### 🔌 **RESTful API**
 - Full CRUD operations
@@ -480,10 +503,16 @@ datascrapper/
 │   └── workflows/
 │       └── test.yml            # GitHub Actions CI/CD
 ├── views/                      # EJS templates
+│   ├── downloads.ejs           # PDF downloads page
+│   ├── product.ejs             # Product detail with images/videos
+│   └── ...                     # Other templates
 ├── public/
 │   └── Personality/            # XML personality files by manufacturer
 ├── chainhoist_data/            # Raw scraped data + personality databases
-└── chainhoist_data_processed/  # Merged processed database (258 products)
+│   └── media/
+│       ├── images/             # Downloaded product images
+│       └── pdfs/               # Downloaded PDF documents (82 files)
+└── chainhoist_data_processed/  # Merged processed database (432 products)
 ```
 
 ### Key Components
