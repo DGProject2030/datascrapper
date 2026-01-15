@@ -182,9 +182,44 @@
     tr.clickable-row:hover td {
       background-color: #e9ecef;
     }
+    /* Loading overlay */
+    .loading-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.8);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .loading-overlay.show {
+      display: flex;
+    }
+    .loading-spinner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+    .loading-spinner .spinner-border {
+      width: 3rem;
+      height: 3rem;
+    }
   </style>
 </head>
 <body>
+  <!-- Loading Overlay -->
+  <div class="loading-overlay" id="loadingOverlay">
+    <div class="loading-spinner">
+      <div class="spinner-border text-primary" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+      <span class="text-muted">Loading results...</span>
+    </div>
+  </div>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
     <div class="container">
       <a class="navbar-brand" href="/">Entertainment Chainhoist DB</a>
@@ -554,13 +589,42 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script>
+    const loadingOverlay = document.getElementById('loadingOverlay');
+
+    function showLoading() {
+      loadingOverlay.classList.add('show');
+    }
+
     // Change page size function
     function changePageSize(newLimit) {
+      showLoading();
       const url = new URL(window.location.href);
       url.searchParams.set('limit', newLimit);
-      url.searchParams.set('page', '1'); // Reset to first page
+      url.searchParams.set('page', '1');
       window.location.href = url.toString();
     }
+
+    // Show loading on filter form submit
+    document.querySelector('form[action="/search"]')?.addEventListener('submit', showLoading);
+
+    // Show loading on sort header clicks
+    document.querySelectorAll('.sortable a').forEach(link => {
+      link.addEventListener('click', showLoading);
+    });
+
+    // Show loading on pagination clicks
+    document.querySelectorAll('.pagination a.page-link').forEach(link => {
+      link.addEventListener('click', (e) => {
+        if (!link.closest('.disabled')) {
+          showLoading();
+        }
+      });
+    });
+
+    // Show loading on filter chip remove clicks
+    document.querySelectorAll('.chip-remove').forEach(link => {
+      link.addEventListener('click', showLoading);
+    });
 
     // Keyboard support for clickable rows
     document.querySelectorAll('.clickable-row').forEach(row => {
