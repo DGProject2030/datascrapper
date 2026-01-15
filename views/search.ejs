@@ -175,6 +175,13 @@
         gap: 1rem;
       }
     }
+    /* Clickable table rows */
+    tr.clickable-row {
+      cursor: pointer;
+    }
+    tr.clickable-row:hover td {
+      background-color: #e9ecef;
+    }
   </style>
 </head>
 <body>
@@ -389,7 +396,7 @@
           </thead>
           <tbody>
             <% data.forEach(function(item) { %>
-              <tr>
+              <tr class="clickable-row" onclick="window.location='/product/<%= item.id %>'" role="link" tabindex="0">
                 <td>
                   <% if (item.images && item.images.length > 0) { %>
                     <img src="<%= item.images[0].url %>" alt="<%= item.manufacturer %> <%= item.model %>" class="product-thumb" onerror="this.onerror=null; this.outerHTML='<div class=\'no-thumb\'>N/A</div>';">
@@ -554,6 +561,16 @@
       url.searchParams.set('page', '1'); // Reset to first page
       window.location.href = url.toString();
     }
+
+    // Keyboard support for clickable rows
+    document.querySelectorAll('.clickable-row').forEach(row => {
+      row.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          row.click();
+        }
+      });
+    });
   </script>
 </body>
 </html>
