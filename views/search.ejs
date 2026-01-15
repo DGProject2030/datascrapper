@@ -173,8 +173,10 @@
                 </select>
               </div>
 
-              <div class="col-md-3 d-flex align-items-end">
-                <button type="submit" class="btn btn-primary w-100">Apply Filters</button>
+              <div class="col-md-3 d-flex align-items-end gap-2">
+                <button type="submit" class="btn btn-primary flex-grow-1">Apply</button>
+                <% const hasFilters = query || filters.manufacturer || filters.capacity || filters.classification || filters.category || filters.speedType; %>
+                <a href="/search" class="btn btn-outline-secondary <%= !hasFilters ? 'disabled' : '' %>" title="Clear all filters">Clear</a>
               </div>
             </form>
           </div>
