@@ -639,6 +639,14 @@ app.get('/search', (req, res) => {
     });
   }
 
+  if (req.query.category) {
+    results = results.filter(item => item.category === req.query.category);
+  }
+
+  if (req.query.speedType) {
+    results = results.filter(item => item.speedType === req.query.speedType);
+  }
+
   const manufacturers = [...new Set(data.map(item => item.manufacturer))].sort();
   const capacities = Object.keys(report.capacityDistribution || {}).sort((a, b) => {
     const getNumber = (str) => {
@@ -648,6 +656,8 @@ app.get('/search', (req, res) => {
     return getNumber(a) - getNumber(b);
   });
   const classifications = Object.keys(report.classificationDistribution || {}).sort();
+  const categories = Object.keys(report.categoryDistribution || {}).filter(c => c !== 'Unknown').sort();
+  const speedTypes = Object.keys(report.speedTypeDistribution || {}).filter(s => s !== 'Unknown').sort();
 
   res.render('search', {
     data: results,
@@ -656,6 +666,8 @@ app.get('/search', (req, res) => {
     manufacturers,
     capacities,
     classifications,
+    categories,
+    speedTypes,
     filters: req.query,
     resultsCount: results.length,
     title: `Search Results for "${query}"`

@@ -1,6 +1,6 @@
 {
   "name": "entertainment-chainhoist-database",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "description": "Enhanced comprehensive database of electric chainhoists for the entertainment industry with REST API, advanced validation, and export capabilities",
   "main": "server.js",
   "scripts": {

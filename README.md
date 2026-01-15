@@ -1,12 +1,23 @@
-# Enhanced Entertainment Industry Electric Chainhoist Database v2.1
+# Enhanced Entertainment Industry Electric Chainhoist Database v2.2
 
 🏗️ **A comprehensive, production-ready database system for electric chainhoists used in the entertainment industry**
 
 [![Tests](https://github.com/DGProject2030/datascrapper/actions/workflows/test.yml/badge.svg)](https://github.com/DGProject2030/datascrapper/actions/workflows/test.yml)
 [![codecov](https://codecov.io/gh/DGProject2030/datascrapper/branch/master/graph/badge.svg)](https://codecov.io/gh/DGProject2030/datascrapper)
-[![Version](https://img.shields.io/badge/version-2.1.0-blue.svg)](https://github.com/DGProject2030/datascrapper)
+[![Version](https://img.shields.io/badge/version-2.2.0-blue.svg)](https://github.com/DGProject2030/datascrapper)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 [![Node.js](https://img.shields.io/badge/node-%3E%3D16.0.0-brightgreen.svg)](https://nodejs.org/)
+
+## 🚀 What's New in v2.2
+
+- **Personality Data Integration** - Technical configuration data from XML personality files
+- **Merged Unified Database** - 258 products combining web-scraped and personality data
+- **Tuning Parameters** - PID gains, drive speeds, brake delays for each product
+- **Speed Control Data** - Min/max speeds, acceleration, deceleration settings
+- **Load Parameters** - Underload/overload limits, encoder scaling, loadcell scaling
+- **Product Categories** - Electric Chain Hoist, Winch, Beam Trolley, Revolve/Turntable
+- **Speed Type Classification** - Variable Speed, Fixed Speed identification
+- **25 Manufacturers** - Including Lodestar, Kinesys, WiMotion, EXE, GIS, Prolyft, and more
 
 ## 🚀 What's New in v2.1
 
@@ -202,6 +213,29 @@ The scheduler:
 - Logs all activity to `logs/scheduler.log`
 - Maintains run history in `scheduler_history.json`
 - Supports custom cron expressions via `config.json`
+
+### Personality Data Processing
+Extract and enrich data from XML personality configuration files:
+```bash
+# Parse personality XML files
+npm run personality:parse
+
+# Enrich with manufacturer website data
+npm run personality:enrich
+
+# Merge personality data into main database
+npm run merge
+
+# Full pipeline: parse, enrich, and merge
+npm run build:full
+```
+
+This processes XML personality files from motion control systems and extracts:
+- Variable speed control parameters (min/max speed, acceleration, deceleration)
+- PID tuning parameters (proportional, integral, derivative gains)
+- Load parameters (underload/overload limits, loadcell scaling)
+- Encoder scaling and position feedback settings
+- Product categorization and speed type classification
 
 ## 🧪 Testing
 
@@ -434,6 +468,9 @@ datascrapper/
 ├── server.js                   # Server startup (imports app.js)
 ├── chainhoist-scraper.js       # Data collection from manufacturers
 ├── chainhoist-data-processor.js # Data cleaning & normalization
+├── personality-parser.js       # XML personality file parser
+├── personality-web-scraper.js  # Personality data web enrichment
+├── merge-databases.js          # Merge personality into main database
 ├── export-tools.js             # Export utilities (CSV, JSON, Excel, PDF)
 ├── config.json                 # Application configuration
 ├── package.json                # Dependencies & scripts
@@ -443,8 +480,10 @@ datascrapper/
 │   └── workflows/
 │       └── test.yml            # GitHub Actions CI/CD
 ├── views/                      # EJS templates
-├── chainhoist_data/            # Raw scraped data
-└── chainhoist_data_processed/  # Processed database
+├── public/
+│   └── Personality/            # XML personality files by manufacturer
+├── chainhoist_data/            # Raw scraped data + personality databases
+└── chainhoist_data_processed/  # Merged processed database (258 products)
 ```
 
 ### Key Components
@@ -455,6 +494,9 @@ datascrapper/
 | `server.js` | Server startup, template initialization. Imports `app.js`. |
 | `chainhoist-scraper.js` | Web scraper for manufacturer data |
 | `chainhoist-data-processor.js` | Data normalization and quality checks |
+| `personality-parser.js` | Parses XML personality files for technical parameters |
+| `personality-web-scraper.js` | Enriches personality data with manufacturer info |
+| `merge-databases.js` | Combines web-scraped and personality data |
 | `export-tools.js` | Multi-format export utilities |
 
 ### Design Decisions
@@ -503,42 +545,72 @@ interface Chainhoist {
   manufacturer: string;
   model: string;
   series?: string;
-  
+
   // Technical Specifications
   loadCapacity?: string;      // "500 kg (1100 lbs)"
   liftingSpeed?: string;      // "4 m/min (13 ft/min)"
   motorPower?: string;        // "1.1 kW (1.5 HP)"
   dutyCycle?: string;
   voltageOptions?: string[];
-  
+
   // Physical Characteristics
   weight?: string;
   dimensions?: string;
   noiseLevel?: string;
-  
+
   // Entertainment Industry Specifics
   classification?: string[];   // ["d8", "bgv-c1"]
   quietOperation?: boolean;
   dynamicLifting?: boolean;
   liftingOverPeople?: boolean;
-  
+  category?: string;           // "Electric Chain Hoist", "Winch", "Beam Trolley"
+  speedType?: string;          // "Variable Speed", "Fixed Speed"
+  entertainmentIndustry?: boolean;
+
+  // Variable Speed Control (from personality files)
+  variableSpeedControl?: {
+    minSpeed: number;
+    maxSpeed: number;
+    defaultSpeed: number;
+    maxAccel: number;
+    maxDecel: number;
+    errorStop: number;
+  };
+
+  // PID Tuning Parameters (from personality files)
+  tuningParameters?: {
+    "Proportional Gain": number;
+    "Integral Gain": number;
+    "Derivative Gain": number;
+    "Min Drive Speed": number;
+    "Max Drive Speed": number;
+    "Brake Delay": number;
+  };
+
+  // Load Parameters (from personality files)
+  underloadLimit?: number;
+  overloadLimit?: number;
+  loadcellScaling?: number;
+  encoderScaling?: number;
+
   // Safety Features
   upperLimitSwitch?: string;
   lowerLimitSwitch?: string;
   overloadProtection?: string;
   emergencyStop?: string;
-  
+
   // Commercial Information
   price?: { value: number, currency: string };
   warranty?: string;
   leadTime?: string;
-  
+
   // Metadata
   url?: string;
   datasheet?: string;
   images?: string[];
   lastUpdated: Date;
   confidence: number;         // Data quality score (0-1)
+  source?: string;            // "web" or "personality"
 }
 ```
 
@@ -567,6 +639,10 @@ interface Chainhoist {
 | `npm run stats` | Generate statistics report |
 | `npm run export:csv` | Export database to CSV |
 | `npm run export:json` | Export database to JSON |
+| `npm run personality:parse` | Parse personality XML files |
+| `npm run personality:enrich` | Enrich personality data from web |
+| `npm run merge` | Merge personality into main database |
+| `npm run build:full` | Full pipeline (parse + enrich + merge) |
 
 ### Adding New Manufacturers
 
