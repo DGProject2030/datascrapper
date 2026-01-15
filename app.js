@@ -743,10 +743,11 @@ app.get('/search', (req, res) => {
 
 app.get('/product/:id', (req, res) => {
   const data = loadData();
+  const report = loadReport();
   const id = req.params.id;
 
-  const currentIndex = data.findIndex(item => item.id === id);
-  const product = currentIndex >= 0 ? data[currentIndex] : null;
+  // Find the product first
+  const product = data.find(item => item.id === id);
 
   if (!product) {
     return res.status(404).render('error', {
@@ -755,9 +756,145 @@ app.get('/product/:id', (req, res) => {
     });
   }
 
-  // Get previous and next products
-  const prevProduct = currentIndex > 0 ? data[currentIndex - 1] : null;
-  const nextProduct = currentIndex < data.length - 1 ? data[currentIndex + 1] : null;
+  // Apply same filters as search page to get filtered results for navigation
+  let filteredData = [...data];
+  const query = req.query.q?.toLowerCase() || '';
+
+  if (query) {
+    filteredData = filteredData.filter(item => {
+      return (
+        (item.manufacturer?.toLowerCase().includes(query)) ||
+        (item.model?.toLowerCase().includes(query)) ||
+        (item.series?.toLowerCase().includes(query)) ||
+        (item.loadCapacity?.toLowerCase().includes(query)) ||
+        (item.classification?.join(' ').toLowerCase().includes(query))
+      );
+    });
+  }
+
+  if (req.query.manufacturer) {
+    filteredData = filteredData.filter(item => item.manufacturer === req.query.manufacturer);
+  }
+
+  if (req.query.capacity) {
+    filteredData = filteredData.filter(item => {
+      if (!item.loadCapacity) {
+        return false;
+      }
+      const matches = item.loadCapacity.match(/(\d+(?:\.\d+)?)\s*kg/i);
+      if (!matches) {
+        return false;
+      }
+      const value = parseFloat(matches[1]);
+      const capacityFilter = req.query.capacity;
+      if (capacityFilter === '≤250 kg' && value <= 250) {
+        return true;
+      }
+      if (capacityFilter === '251-500 kg' && value > 250 && value <= 500) {
+        return true;
+      }
+      if (capacityFilter === '501-1000 kg' && value > 500 && value <= 1000) {
+        return true;
+      }
+      if (capacityFilter === '1001-2000 kg' && value > 1000 && value <= 2000) {
+        return true;
+      }
+      if (capacityFilter === '>2000 kg' && value > 2000) {
+        return true;
+      }
+      return false;
+    });
+  }
+
+  if (req.query.classification) {
+    filteredData = filteredData.filter(item => {
+      return item.classification &&
+        Array.isArray(item.classification) &&
+        item.classification.includes(req.query.classification);
+    });
+  }
+
+  if (req.query.category) {
+    filteredData = filteredData.filter(item => item.category === req.query.category);
+  }
+
+  if (req.query.speedType) {
+    filteredData = filteredData.filter(item => item.speedType === req.query.speedType);
+  }
+
+  // Apply sorting if specified
+  const sortBy = req.query.sortBy || '';
+  const sortOrder = req.query.sortOrder || 'asc';
+
+  if (sortBy) {
+    filteredData.sort((a, b) => {
+      let aVal, bVal;
+      const fieldMap = {
+        manufacturer: 'manufacturer',
+        model: 'model',
+        series: 'series',
+        capacity: 'loadCapacity',
+        speed: 'liftingSpeed',
+        classification: 'classification'
+      };
+      const field = fieldMap[sortBy] || sortBy;
+
+      if (sortBy === 'capacity' || sortBy === 'speed') {
+        const aMatch = (a[field] || '').match(/(\d+(?:\.\d+)?)/);
+        const bMatch = (b[field] || '').match(/(\d+(?:\.\d+)?)/);
+        aVal = aMatch ? parseFloat(aMatch[1]) : 0;
+        bVal = bMatch ? parseFloat(bMatch[1]) : 0;
+      } else if (sortBy === 'classification') {
+        aVal = Array.isArray(a[field]) ? a[field].join(' ') : (a[field] || '');
+        bVal = Array.isArray(b[field]) ? b[field].join(' ') : (b[field] || '');
+      } else {
+        aVal = a[field] || '';
+        bVal = b[field] || '';
+      }
+
+      if (typeof aVal === 'number' && typeof bVal === 'number') {
+        return sortOrder === 'asc' ? aVal - bVal : bVal - aVal;
+      }
+      return sortOrder === 'asc'
+        ? String(aVal).localeCompare(String(bVal))
+        : String(bVal).localeCompare(String(aVal));
+    });
+  }
+
+  // Find current index within filtered results
+  const currentIndex = filteredData.findIndex(item => item.id === id);
+
+  // Get previous and next products from filtered results
+  const prevProduct = currentIndex > 0 ? filteredData[currentIndex - 1] : null;
+  const nextProduct = currentIndex < filteredData.length - 1 ? filteredData[currentIndex + 1] : null;
+
+  // Build query string for navigation links
+  const searchParams = new URLSearchParams();
+  if (req.query.q) {
+    searchParams.set('q', req.query.q);
+  }
+  if (req.query.manufacturer) {
+    searchParams.set('manufacturer', req.query.manufacturer);
+  }
+  if (req.query.capacity) {
+    searchParams.set('capacity', req.query.capacity);
+  }
+  if (req.query.classification) {
+    searchParams.set('classification', req.query.classification);
+  }
+  if (req.query.category) {
+    searchParams.set('category', req.query.category);
+  }
+  if (req.query.speedType) {
+    searchParams.set('speedType', req.query.speedType);
+  }
+  if (req.query.sortBy) {
+    searchParams.set('sortBy', req.query.sortBy);
+  }
+  if (req.query.sortOrder) {
+    searchParams.set('sortOrder', req.query.sortOrder);
+  }
+  const queryString = searchParams.toString();
 
   const similarProducts = data.filter(item =>
     item.id !== id &&
@@ -770,9 +907,11 @@ app.get('/product/:id', (req, res) => {
     product,
     prevProduct,
     nextProduct,
-    currentIndex: currentIndex + 1,
-    totalProducts: data.length,
+    currentIndex: currentIndex >= 0 ? currentIndex + 1 : 1,
+    totalProducts: filteredData.length,
     similarProducts,
+    searchContext: queryString,
+    hasSearchContext: queryString.length > 0,
     title: `${product.manufacturer} - ${product.model}`
   });
 });

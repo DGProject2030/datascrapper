@@ -254,6 +254,9 @@
           <li class="nav-item">
             <a class="nav-link" href="/stats">Statistics</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/downloads">Downloads</a>
+          </li>
         </ul>
       </div>
     </div>
@@ -409,6 +412,21 @@
       <!-- Desktop Table View -->
       <div class="table-responsive desktop-table">
         <%
+          // Helper to build product URL with search context
+          const buildProductUrl = (productId) => {
+            const params = new URLSearchParams();
+            if (query) params.set('q', query);
+            if (filters.manufacturer) params.set('manufacturer', filters.manufacturer);
+            if (filters.capacity) params.set('capacity', filters.capacity);
+            if (filters.classification) params.set('classification', filters.classification);
+            if (filters.category) params.set('category', filters.category);
+            if (filters.speedType) params.set('speedType', filters.speedType);
+            if (sort.by) params.set('sortBy', sort.by);
+            if (sort.by) params.set('sortOrder', sort.order);
+            const qs = params.toString();
+            return '/product/' + productId + (qs ? '?' + qs : '');
+          };
+
           // Helper to build sort URL
           const buildSortUrl = (field) => {
             const params = new URLSearchParams();
@@ -444,7 +462,7 @@
           </thead>
           <tbody>
             <% data.forEach(function(item) { %>
-              <tr class="clickable-row" onclick="window.location='/product/<%= item.id %>'" role="link" tabindex="0">
+              <tr class="clickable-row" onclick="window.location='<%= buildProductUrl(item.id) %>'" role="link" tabindex="0">
                 <td>
                   <% if (item.images && item.images.length > 0) { %>
                     <img src="<%= item.images[0].url %>" alt="<%= item.manufacturer %> <%= item.model %>" class="product-thumb" onerror="this.onerror=null; this.outerHTML='<div class=\'no-thumb\'>N/A</div>';">
@@ -467,7 +485,7 @@
                   <% } %>
                 </td>
                 <td>
-                  <a href="/product/<%= item.id %>" class="btn btn-sm btn-outline-primary">Details</a>
+                  <a href="<%= buildProductUrl(item.id) %>" class="btn btn-sm btn-outline-primary">Details</a>
                 </td>
               </tr>
             <% }); %>
@@ -512,7 +530,7 @@
                 </span>
               </div>
               <div class="spec-item">
-                <a href="/product/<%= item.id %>" class="btn btn-sm btn-primary">View Details</a>
+                <a href="<%= buildProductUrl(item.id) %>" class="btn btn-sm btn-primary">View Details</a>
               </div>
             </div>
           </div>

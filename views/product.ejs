@@ -134,21 +134,31 @@
     </nav>
     <div class="product-nav">
       <% if (prevProduct) { %>
-        <a href="/product/<%= prevProduct.id %>" class="nav-btn" title="<%= prevProduct.manufacturer %> <%= prevProduct.model %>">
+        <a href="/product/<%= prevProduct.id %><%= searchContext ? '?' + searchContext : '' %>" class="nav-btn" title="<%= prevProduct.manufacturer %> <%= prevProduct.model %>">
           &larr; Prev
         </a>
       <% } else { %>
         <span class="nav-btn disabled">&larr; Prev</span>
       <% } %>
-      <span class="nav-info">Product <%= currentIndex %> of <%= totalProducts %></span>
+      <span class="nav-info">
+        Product <%= currentIndex %> of <%= totalProducts %>
+        <% if (hasSearchContext) { %>
+          <span class="text-muted">(filtered)</span>
+        <% } %>
+      </span>
       <% if (nextProduct) { %>
-        <a href="/product/<%= nextProduct.id %>" class="nav-btn" title="<%= nextProduct.manufacturer %> <%= nextProduct.model %>">
+        <a href="/product/<%= nextProduct.id %><%= searchContext ? '?' + searchContext : '' %>" class="nav-btn" title="<%= nextProduct.manufacturer %> <%= nextProduct.model %>">
           Next &rarr;
         </a>
       <% } else { %>
         <span class="nav-btn disabled">Next &rarr;</span>
       <% } %>
     </div>
+    <% if (hasSearchContext) { %>
+      <div class="mb-3">
+        <a href="/search?<%= searchContext %>" class="btn btn-sm btn-outline-secondary">&larr; Back to search results</a>
+      </div>
+    <% } %>
   </div>
 </div>
 
