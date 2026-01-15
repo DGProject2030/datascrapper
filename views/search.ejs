@@ -303,13 +303,11 @@
   </nav>
 
   <div class="container mb-5">
-    <h1 class="mb-4"><%= title %></h1>
-
     <div class="row mb-4">
       <div class="col-md-12">
-        <div class="card">
-          <div class="card-header bg-primary text-white">
-            <h4 class="mb-0">Filter Results</h4>
+        <div class="card" style="border: none; box-shadow: 0 2px 12px rgba(0,0,0,0.08); border-radius: 12px; overflow: hidden;">
+          <div class="card-header" style="background: linear-gradient(135deg, var(--brand-primary) 0%, #2d4a6f 100%); color: white;">
+            <h4 class="mb-0"><i class="bi bi-funnel me-2" style="color: var(--brand-secondary);"></i>Filter Results</h4>
           </div>
           <div class="card-body">
             <form action="/search" method="GET" class="row g-3">
@@ -369,7 +367,7 @@
               </div>
 
               <div class="col-md-3 d-flex align-items-end gap-2">
-                <button type="submit" id="applyBtn" class="btn btn-primary flex-grow-1">Apply</button>
+                <button type="submit" id="applyBtn" class="btn flex-grow-1" style="background: var(--brand-secondary); color: white;">Apply</button>
                 <% const hasFilters = query || filters.manufacturer || filters.capacity || filters.classification || filters.category || filters.speedType; %>
                 <a href="/search" class="btn btn-outline-secondary <%= !hasFilters ? 'disabled' : '' %>" title="Clear all filters">Clear</a>
               </div>
@@ -634,28 +632,35 @@
     <% } %>
   </div>
 
-  <footer class="bg-dark text-white py-4 mt-5">
+  <footer class="py-4 mt-5" style="background: linear-gradient(135deg, var(--brand-primary) 0%, #2d4a6f 100%);">
     <div class="container">
-      <div class="row">
-        <div class="col-md-6">
-          <h5>Entertainment Industry Chainhoist Database</h5>
-          <p class="text-muted">A comprehensive collection of electric chainhoists used in the entertainment industry.</p>
+      <div class="row text-white">
+        <div class="col-md-5">
+          <h5 class="d-flex align-items-center gap-2 mb-3">
+            <i class="bi bi-link-45deg" style="color: var(--brand-secondary); font-size: 1.5rem;"></i>
+            ChainhoistDB
+          </h5>
+          <p class="opacity-75 mb-0">A comprehensive collection of electric chainhoists used in the entertainment industry.</p>
         </div>
         <div class="col-md-3">
-          <h5>Quick Links</h5>
-          <ul class="list-unstyled">
-            <li><a href="/" class="text-white">Home</a></li>
-            <li><a href="/stats" class="text-white">Statistics</a></li>
-            <li><a href="/search" class="text-white">Search</a></li>
+          <h6 class="text-uppercase mb-3" style="letter-spacing: 0.05em;">Quick Links</h6>
+          <ul class="list-unstyled mb-0">
+            <li class="mb-2"><a href="/" class="text-white text-decoration-none opacity-75 d-flex align-items-center gap-2"><i class="bi bi-house-door"></i> Home</a></li>
+            <li class="mb-2"><a href="/search" class="text-white text-decoration-none opacity-75 d-flex align-items-center gap-2"><i class="bi bi-search"></i> Search</a></li>
+            <li class="mb-2"><a href="/stats" class="text-white text-decoration-none opacity-75 d-flex align-items-center gap-2"><i class="bi bi-bar-chart-line"></i> Statistics</a></li>
+            <li><a href="/downloads" class="text-white text-decoration-none opacity-75 d-flex align-items-center gap-2"><i class="bi bi-download"></i> Downloads</a></li>
           </ul>
         </div>
-        <div class="col-md-3">
-          <h5>Disclaimer</h5>
-          <p class="small text-muted">This database is for informational purposes only. Always consult manufacturer specifications for critical applications.</p>
+        <div class="col-md-4">
+          <h6 class="text-uppercase mb-3" style="letter-spacing: 0.05em;">Disclaimer</h6>
+          <p class="small opacity-75 mb-0">This database is for informational purposes only. Always consult manufacturer specifications for critical applications.</p>
         </div>
       </div>
-      <hr>
-      <p class="text-center text-muted mb-0">&copy; <%= new Date().getFullYear() %> Entertainment Industry Chainhoist Database</p>
+      <hr class="opacity-25 my-4">
+      <div class="d-flex flex-column flex-md-row justify-content-between align-items-center text-white opacity-75">
+        <p class="small mb-2 mb-md-0">&copy; <%= new Date().getFullYear() %> ChainhoistDB. All rights reserved.</p>
+        <p class="small mb-0">Built for the entertainment industry</p>
+      </div>
     </div>
   </footer>
 
