@@ -30,8 +30,8 @@ const MANUFACTURER_URLS = {
   },
   'Liftket': {
     brand: 'Liftket',
-    website: 'https://www.liftket.de',
-    searchUrl: 'https://www.liftket.de/en/products/electric-chain-hoists/'
+    website: 'https://liftket.com',
+    searchUrl: 'https://liftket.com/entertainment/'
   },
   'Kinesys': {
     brand: 'Kinesys',
@@ -40,18 +40,18 @@ const MANUFACTURER_URLS = {
   },
   'EXE': {
     brand: 'EXE Technology',
-    website: 'https://www.exe-technology.com',
-    searchUrl: 'https://www.exe-technology.com/en/products/'
+    website: 'https://www.exetechnology.com',
+    searchUrl: 'https://www.exetechnology.com/electric-chain-hoist/'
   },
   'Prolyft': {
-    brand: 'Prolyft',
-    website: 'https://www.prolyft.com',
-    searchUrl: 'https://www.prolyft.com/products/'
+    brand: 'Prolyft (Prolyte)',
+    website: 'https://www.prolyte.com',
+    searchUrl: 'https://www.prolyte.com/products/prolyft/electric-chain-hoists/aetos'
   },
   'GIS': {
     brand: 'GIS AG',
     website: 'https://gis-ag.ch',
-    searchUrl: 'https://gis-ag.ch/en/products/'
+    searchUrl: 'https://gis-ag.ch/en/industry/products/chain-hoists-and-trolleys'
   },
   'Chainmaster': {
     brand: 'Chainmaster',
@@ -61,12 +61,12 @@ const MANUFACTURER_URLS = {
   'WiMotion': {
     brand: 'Wicreations',
     website: 'https://www.wicreations.com',
-    searchUrl: 'https://www.wicreations.com/products/'
+    searchUrl: 'https://www.wicreations.com/categories/technologies'
   },
   'Atlanta Rigging Systems': {
     brand: 'Atlanta Rigging Systems',
     website: 'https://www.atlantarigging.com',
-    searchUrl: 'https://www.atlantarigging.com/products/'
+    searchUrl: 'https://www.atlantarigging.com/sales-and-installations/'
   }
 };
 
