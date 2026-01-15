@@ -181,6 +181,112 @@
       width: 3rem;
       height: 3rem;
     }
+
+    /* Mobile Responsive Styles */
+    @media (max-width: 767.98px) {
+      /* Product navigation - stack on mobile */
+      .product-nav {
+        flex-direction: column;
+        gap: 0.75rem;
+        text-align: center;
+      }
+      .product-nav .nav-btn {
+        padding: 0.5rem 0.75rem;
+        font-size: 0.875rem;
+      }
+      .product-nav .nav-info {
+        order: -1;
+        font-size: 0.8rem;
+      }
+
+      /* Product card header - smaller text */
+      .spec-card .card-header h2 {
+        font-size: 1.25rem;
+      }
+      .spec-card .card-header h4,
+      .spec-card .card-header h5 {
+        font-size: 1rem;
+      }
+
+      /* Section titles - smaller */
+      .section-title {
+        font-size: 1.1rem;
+      }
+
+      /* Tables - horizontal scroll */
+      .table-responsive-mobile {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+      }
+      .table {
+        font-size: 0.875rem;
+      }
+      .table td, .table th {
+        padding: 0.625rem 0.5rem;
+        white-space: nowrap;
+      }
+      .spec-label {
+        min-width: 120px;
+      }
+
+      /* Image gallery - smaller thumbnails */
+      .product-thumbnail {
+        width: 60px;
+        height: 60px;
+      }
+
+      /* Buttons - stack and full width */
+      .btn-group-mobile {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+      .btn-group-mobile .btn {
+        width: 100%;
+      }
+
+      /* Similar products - more compact */
+      .similar-product-item {
+        padding: 0.75rem 0;
+      }
+
+      /* Footer - stack columns */
+      footer .row > div {
+        margin-bottom: 1.5rem;
+      }
+      footer .row > div:last-child {
+        margin-bottom: 0;
+      }
+
+      /* Breadcrumb - smaller */
+      .breadcrumb {
+        font-size: 0.8rem;
+      }
+
+      /* Back button - full width */
+      .btn-back-mobile {
+        display: block;
+        width: 100%;
+        text-align: center;
+      }
+    }
+
+    /* Small mobile (< 576px) */
+    @media (max-width: 575.98px) {
+      .product-nav .nav-btn {
+        width: 100%;
+        justify-content: center;
+      }
+      .spec-card .card-header h2 {
+        font-size: 1.1rem;
+      }
+      .product-main-image {
+        max-height: 200px;
+      }
+      .no-image-placeholder {
+        height: 150px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -235,28 +341,28 @@
     <div class="product-nav">
       <% if (prevProduct) { %>
         <a href="/product/<%= prevProduct.id %><%= searchContext ? '?' + searchContext : '' %>" class="nav-btn" title="<%= prevProduct.manufacturer %> <%= prevProduct.model %>">
-          &larr; Prev
+          <i class="bi bi-chevron-left d-none d-sm-inline"></i> Prev
         </a>
       <% } else { %>
-        <span class="nav-btn disabled">&larr; Prev</span>
+        <span class="nav-btn disabled"><i class="bi bi-chevron-left d-none d-sm-inline"></i> Prev</span>
       <% } %>
       <span class="nav-info">
-        Product <%= currentIndex %> of <%= totalProducts %>
+        <span class="d-none d-sm-inline">Product </span><%= currentIndex %> of <%= totalProducts %>
         <% if (hasSearchContext) { %>
-          <span class="text-muted">(filtered)</span>
+          <span class="text-muted d-none d-sm-inline">(filtered)</span>
         <% } %>
       </span>
       <% if (nextProduct) { %>
         <a href="/product/<%= nextProduct.id %><%= searchContext ? '?' + searchContext : '' %>" class="nav-btn" title="<%= nextProduct.manufacturer %> <%= nextProduct.model %>">
-          Next &rarr;
+          Next <i class="bi bi-chevron-right d-none d-sm-inline"></i>
         </a>
       <% } else { %>
-        <span class="nav-btn disabled">Next &rarr;</span>
+        <span class="nav-btn disabled">Next <i class="bi bi-chevron-right d-none d-sm-inline"></i></span>
       <% } %>
     </div>
     <% if (hasSearchContext) { %>
       <div class="mb-3">
-        <a href="/search?<%= searchContext %>" class="btn btn-sm" style="background: var(--brand-primary); color: white;"><i class="bi bi-arrow-left"></i> Back to search results</a>
+        <a href="/search?<%= searchContext %>" class="btn btn-sm btn-back-mobile" style="background: var(--brand-primary); color: white;"><i class="bi bi-arrow-left"></i> Back to search results</a>
       </div>
     <% } %>
   </div>
@@ -673,19 +779,18 @@
         </div>
         <% } %>
 
-        <% if (product.url) { %>
-          <div class="mt-4">
-            <a href="<%= product.url %>" target="_blank" class="btn" style="background: var(--brand-secondary); color: white;">
-              <i class="bi bi-box-arrow-up-right"></i> View Original Source
-            </a>
-          </div>
-        <% } %>
-
-        <% if (product.datasheet) { %>
-          <div class="mt-2">
-            <a href="<%= product.datasheet %>" target="_blank" class="btn btn-outline-primary">
-              <i class="bi bi-file-earmark-pdf"></i> Download Datasheet
-            </a>
+        <% if (product.url || product.datasheet) { %>
+          <div class="mt-4 btn-group-mobile">
+            <% if (product.url) { %>
+              <a href="<%= product.url %>" target="_blank" class="btn" style="background: var(--brand-secondary); color: white;">
+                <i class="bi bi-box-arrow-up-right"></i> View Original Source
+              </a>
+            <% } %>
+            <% if (product.datasheet) { %>
+              <a href="<%= product.datasheet %>" target="_blank" class="btn btn-outline-primary">
+                <i class="bi bi-file-earmark-pdf"></i> Download Datasheet
+              </a>
+            <% } %>
           </div>
         <% } %>
 
