@@ -1,10 +1,12 @@
 /**
  * LLM Analyzer Module
- * Uses Google Gemini for intelligent data extraction from images and PDFs
- * @version 1.0.0
+ * Supports both OpenAI and Google Gemini for intelligent data extraction
+ * @version 2.0.0
  */
 
 const { GoogleGenerativeAI } = require('@google/generative-ai');
+const OpenAI = require('openai');
+const Anthropic = require('@anthropic-ai/sdk');
 const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');
@@ -50,7 +52,7 @@ const logger = new Logger('LLM-Analyzer');
  * Rate limiter for API calls
  */
 class RateLimiter {
-  constructor(requestsPerMinute = 15, requestsPerDay = 1500) {
+  constructor(requestsPerMinute = 60, requestsPerDay = 10000) {
     this.requestsPerMinute = requestsPerMinute;
     this.requestsPerDay = requestsPerDay;
     this.minuteQueue = [];
@@ -68,23 +70,19 @@ class RateLimiter {
   async waitForSlot() {
     const now = Date.now();
 
-    // Reset daily counter at midnight
     if (now >= this.dailyResetTime) {
       this.dayQueue = [];
       this.dailyResetTime = this.getNextMidnight();
     }
 
-    // Clean up old minute entries
     this.minuteQueue = this.minuteQueue.filter(t => now - t < 60000);
 
-    // Check daily limit
     if (this.dayQueue.length >= this.requestsPerDay) {
       const waitTime = this.dailyResetTime - now;
       logger.warn(`Daily rate limit reached. Waiting until midnight (${Math.round(waitTime / 3600000)}h)`);
       throw new Error('Daily rate limit exceeded');
     }
 
-    // Check minute limit
     if (this.minuteQueue.length >= this.requestsPerMinute) {
       const oldestRequest = this.minuteQueue[0];
       const waitTime = 60000 - (now - oldestRequest) + 100;
@@ -92,7 +90,6 @@ class RateLimiter {
       await new Promise(resolve => setTimeout(resolve, waitTime));
     }
 
-    // Record this request
     this.minuteQueue.push(now);
     this.dayQueue.push(now);
   }
@@ -139,7 +136,6 @@ class CacheManager {
     if (fs.existsSync(cachePath)) {
       try {
         const cached = JSON.parse(fs.readFileSync(cachePath, 'utf8'));
-        // Check if cache is still valid (7 days)
         const cacheAge = Date.now() - cached.timestamp;
         if (cacheAge < 7 * 24 * 60 * 60 * 1000) {
           logger.debug(`Cache hit for ${contentHash.substring(0, 8)}...`);
@@ -155,10 +151,7 @@ class CacheManager {
   set(contentHash, data) {
     const cachePath = this.getCacheFilePath(contentHash);
     try {
-      const cacheEntry = {
-        timestamp: Date.now(),
-        data: data
-      };
+      const cacheEntry = { timestamp: Date.now(), data: data };
       fs.writeFileSync(cachePath, JSON.stringify(cacheEntry, null, 2));
       logger.debug(`Cached result for ${contentHash.substring(0, 8)}...`);
     } catch (err) {
@@ -178,40 +171,178 @@ class CacheManager {
 }
 
 /**
- * Main LLM Analyzer class
+ * Main LLM Analyzer class - supports OpenAI, Gemini, and Claude
  */
 class LLMAnalyzer {
-  constructor(apiKey = null, options = {}) {
-    this.apiKey = apiKey || process.env.GEMINI_API_KEY;
+  constructor(options = {}) {
+    // Determine provider from environment or options
+    this.provider = options.provider || process.env.LLM_PROVIDER || config.llm?.provider || 'claude';
 
-    if (!this.apiKey) {
-      throw new Error(
-        'GEMINI_API_KEY not found. Please set it in your environment or pass it to the constructor.\n' +
-        'Get your API key from: https://makersuite.google.com/app/apikey'
-      );
+    // Get API keys
+    const openaiKey = options.openaiApiKey || process.env.OPENAI_API_KEY;
+    const geminiKey = options.geminiApiKey || process.env.GEMINI_API_KEY;
+    const anthropicKey = options.anthropicApiKey || process.env.ANTHROPIC_API_KEY;
+
+    // Auto-detect provider based on available keys
+    if (anthropicKey && !openaiKey && !geminiKey) {
+      this.provider = 'claude';
+    } else if (openaiKey && !geminiKey && !anthropicKey) {
+      this.provider = 'openai';
+    } else if (geminiKey && !openaiKey && !anthropicKey) {
+      this.provider = 'gemini';
+    } else if (anthropicKey) {
+      this.provider = 'claude'; // Prefer Claude if multiple keys exist
     }
 
+    // Set default model based on provider
+    const defaultModels = {
+      'claude': 'claude-sonnet-4-20250514',
+      'openai': 'gpt-4o-mini',
+      'gemini': 'gemini-2.0-flash'
+    };
+
     this.options = {
-      model: options.model || config.llm?.model || 'gemini-1.5-flash',
+      model: options.model || config.llm?.model || defaultModels[this.provider],
       maxTokens: options.maxTokens || config.llm?.maxTokens || 4096,
       cacheEnabled: options.cacheEnabled ?? config.llm?.cache?.enabled ?? true,
       cacheDir: options.cacheDir || config.llm?.cache?.directory || 'chainhoist_data/llm_cache',
-      requestsPerMinute: options.requestsPerMinute || config.llm?.rateLimit?.requestsPerMinute || 15,
-      requestsPerDay: options.requestsPerDay || config.llm?.rateLimit?.requestsPerDay || 1500
+      requestsPerMinute: options.requestsPerMinute || config.llm?.rateLimit?.requestsPerMinute || 60,
+      requestsPerDay: options.requestsPerDay || config.llm?.rateLimit?.requestsPerDay || 10000
     };
 
-    this.genAI = new GoogleGenerativeAI(this.apiKey);
-    this.model = this.genAI.getGenerativeModel({ model: this.options.model });
+    // Initialize the appropriate client
+    if (this.provider === 'claude') {
+      if (!anthropicKey) {
+        throw new Error(
+          'ANTHROPIC_API_KEY not found. Please set it in your environment or .env file.\n' +
+          'Get your API key from: https://console.anthropic.com/settings/keys'
+        );
+      }
+      this.anthropic = new Anthropic({ apiKey: anthropicKey });
+      this.options.model = options.model || process.env.ANTHROPIC_MODEL || 'claude-sonnet-4-20250514';
+    } else if (this.provider === 'openai') {
+      if (!openaiKey) {
+        throw new Error(
+          'OPENAI_API_KEY not found. Please set it in your environment or .env file.\n' +
+          'Get your API key from: https://platform.openai.com/api-keys'
+        );
+      }
+      this.openai = new OpenAI({ apiKey: openaiKey });
+      this.options.model = options.model || process.env.OPENAI_MODEL || 'gpt-4o-mini';
+    } else {
+      if (!geminiKey) {
+        throw new Error(
+          'GEMINI_API_KEY not found. Please set it in your environment or .env file.\n' +
+          'Get your API key from: https://makersuite.google.com/app/apikey'
+        );
+      }
+      this.genAI = new GoogleGenerativeAI(geminiKey);
+      this.geminiModel = this.genAI.getGenerativeModel({ model: this.options.model });
+    }
+
     this.rateLimiter = new RateLimiter(this.options.requestsPerMinute, this.options.requestsPerDay);
     this.cache = this.options.cacheEnabled ? new CacheManager(this.options.cacheDir) : null;
 
-    logger.info(`LLM Analyzer initialized with model: ${this.options.model}`);
+    logger.info(`LLM Analyzer initialized with provider: ${this.provider}, model: ${this.options.model}`);
+  }
+
+  /**
+   * Generate content using the configured provider
+   */
+  async generateContent(prompt, imageData = null) {
+    await this.rateLimiter.waitForSlot();
+
+    if (this.provider === 'claude') {
+      return this.generateWithClaude(prompt, imageData);
+    } else if (this.provider === 'openai') {
+      return this.generateWithOpenAI(prompt, imageData);
+    } else {
+      return this.generateWithGemini(prompt, imageData);
+    }
+  }
+
+  /**
+   * Generate content with Claude
+   */
+  async generateWithClaude(prompt, imageData = null) {
+    const content = [];
+
+    if (imageData) {
+      // Vision request with image
+      content.push({
+        type: 'image',
+        source: {
+          type: 'base64',
+          media_type: imageData.mimeType,
+          data: imageData.data
+        }
+      });
+    }
+
+    content.push({ type: 'text', text: prompt });
+
+    const response = await this.anthropic.messages.create({
+      model: this.options.model,
+      max_tokens: this.options.maxTokens,
+      messages: [{ role: 'user', content }]
+    });
+
+    return response.content[0].text;
+  }
+
+  /**
+   * Generate content with OpenAI
+   */
+  async generateWithOpenAI(prompt, imageData = null) {
+    const messages = [];
+
+    if (imageData) {
+      messages.push({
+        role: 'user',
+        content: [
+          { type: 'text', text: prompt },
+          {
+            type: 'image_url',
+            image_url: {
+              url: `data:${imageData.mimeType};base64,${imageData.data}`
+            }
+          }
+        ]
+      });
+    } else {
+      messages.push({ role: 'user', content: prompt });
+    }
+
+    const response = await this.openai.chat.completions.create({
+      model: this.options.model,
+      messages: messages,
+      max_tokens: this.options.maxTokens,
+      response_format: { type: 'json_object' }
+    });
+
+    return response.choices[0].message.content;
+  }
+
+  /**
+   * Generate content with Gemini
+   */
+  async generateWithGemini(prompt, imageData = null) {
+    let result;
+
+    if (imageData) {
+      result = await this.geminiModel.generateContent([
+        prompt,
+        { inlineData: { mimeType: imageData.mimeType, data: imageData.data } }
+      ]);
+    } else {
+      result = await this.geminiModel.generateContent(prompt);
+    }
+
+    return result.response.text();
   }
 
   /**
    * Analyze a product image to extract specifications
-   * @param {string} imagePath - Path to the image file
-   * @returns {Promise<Object>} Extracted specifications
    */
   async analyzeProductImage(imagePath) {
     logger.info(`Analyzing image: ${path.basename(imagePath)}`);
@@ -223,7 +354,6 @@ class LLMAnalyzer {
     const imageBuffer = fs.readFileSync(imagePath);
     const contentHash = this.cache?.getContentHash(imageBuffer);
 
-    // Check cache
     if (this.cache) {
       const cached = this.cache.get(contentHash);
       if (cached) {
@@ -231,49 +361,30 @@ class LLMAnalyzer {
       }
     }
 
-    await this.rateLimiter.waitForSlot();
-
     const mimeType = this.getMimeType(imagePath);
-    const imageData = imageBuffer.toString('base64');
+    const imageData = { mimeType, data: imageBuffer.toString('base64') };
 
-    const prompt = `Analyze this electric chainhoist product image and extract all visible specifications and features.
+    const prompt = `Analyze this electric chainhoist product image and extract all visible specifications.
 
-Return a JSON object with the following structure:
+Return a JSON object with these fields (only include fields where data is visible):
 {
   "model": "model name if visible",
   "manufacturer": "manufacturer name if visible",
-  "loadCapacity": "capacity in kg if visible (e.g., '1000 kg')",
-  "liftingSpeed": "speed if visible (e.g., '4 m/min')",
-  "motorPower": "power rating if visible (e.g., '1.5 kW')",
+  "loadCapacity": "capacity in kg if visible",
+  "liftingSpeed": "speed if visible",
+  "motorPower": "power rating if visible",
   "weight": "weight if visible",
   "dimensions": "dimensions if visible",
-  "bodyColor": ["colors visible"],
-  "hookType": "hook type if visible (e.g., 'swivel', 'rigid')",
-  "chainType": "chain type if visible",
-  "controlType": "control type if visible (e.g., 'pendant', 'wireless')",
   "features": ["list of visible features"],
   "safetyFeatures": ["visible safety features"],
   "certificationLogos": ["any certification logos visible"],
   "confidence": 0.0 to 1.0
-}
-
-Only include fields where you can see relevant information. Set confidence based on image clarity and visible details.`;
+}`;
 
     try {
-      const result = await this.model.generateContent([
-        prompt,
-        {
-          inlineData: {
-            mimeType: mimeType,
-            data: imageData
-          }
-        }
-      ]);
-
-      const response = result.response.text();
+      const response = await this.generateContent(prompt, imageData);
       const parsed = this.parseJSONResponse(response);
 
-      // Cache the result
       if (this.cache && parsed) {
         this.cache.set(contentHash, parsed);
       }
@@ -286,9 +397,57 @@ Only include fields where you can see relevant information. Set confidence based
   }
 
   /**
-   * Analyze a PDF document (datasheet/manual) to extract specifications
-   * @param {string} pdfPath - Path to the PDF file
-   * @returns {Promise<Object>} Extracted specifications
+   * Analyze scanned PDF using vision capabilities
+   */
+  async analyzeScannedPDF(pdfPath) {
+    logger.info(`Analyzing scanned PDF with ${this.provider} vision: ${path.basename(pdfPath)}`);
+
+    const pdfBuffer = fs.readFileSync(pdfPath);
+
+    // OpenAI and Claude don't support PDF directly via vision
+    if (this.provider === 'openai' || this.provider === 'claude') {
+      logger.warn(`${this.provider} does not support direct PDF vision analysis. Using text extraction only.`);
+      return { error: `${this.provider} does not support scanned PDF analysis`, confidence: 0 };
+    }
+
+    const pdfData = { mimeType: 'application/pdf', data: pdfBuffer.toString('base64') };
+
+    const prompt = `This is a scanned PDF document for electric chainhoist or lifting equipment.
+Analyze all visible content including tables, specifications, and text.
+
+Return a JSON object with these fields (only include fields where data is found):
+{
+  "model": "model name",
+  "manufacturer": "manufacturer name",
+  "series": "product series",
+  "loadCapacity": "capacity with unit",
+  "liftingSpeed": "speed with unit",
+  "motorPower": "power with unit",
+  "dutyCycle": "duty cycle",
+  "voltageOptions": ["available voltages"],
+  "weight": "weight with unit",
+  "dimensions": "dimensions",
+  "classification": ["certifications"],
+  "safetyFeatures": {},
+  "certifications": ["CE", "UL", etc.],
+  "applications": ["typical applications"],
+  "protectionClass": "IP rating",
+  "confidence": 0.0 to 1.0
+}`;
+
+    try {
+      const response = await this.generateContent(prompt, pdfData);
+      const parsed = this.parseJSONResponse(response);
+      parsed.extractionMethod = `${this.provider}-vision`;
+      return parsed;
+    } catch (error) {
+      logger.error(`Vision PDF analysis failed: ${error.message}`);
+      throw error;
+    }
+  }
+
+  /**
+   * Analyze a PDF document to extract specifications
    */
   async analyzePDF(pdfPath) {
     logger.info(`Analyzing PDF: ${path.basename(pdfPath)}`);
@@ -297,12 +456,10 @@ Only include fields where you can see relevant information. Set confidence based
       throw new Error(`PDF not found: ${pdfPath}`);
     }
 
-    // Import pdf-parse dynamically
     const pdfParse = require('pdf-parse');
     const pdfBuffer = fs.readFileSync(pdfPath);
     const contentHash = this.cache?.getContentHash(pdfBuffer);
 
-    // Check cache
     if (this.cache) {
       const cached = this.cache.get(contentHash);
       if (cached) {
@@ -316,20 +473,28 @@ Only include fields where you can see relevant information. Set confidence based
       const pdfData = await pdfParse(pdfBuffer);
       pdfText = pdfData.text;
     } catch (err) {
-      logger.warn(`PDF text extraction failed: ${err.message}. Trying as image...`);
-      // If text extraction fails, we could potentially convert to image
-      // For now, return empty result
-      return { error: 'PDF text extraction failed', confidence: 0 };
+      logger.warn(`PDF text extraction failed: ${err.message}`);
+      pdfText = null;
     }
 
-    if (!pdfText || pdfText.trim().length < 50) {
-      logger.warn('PDF contains little or no text');
+    // If text extraction failed, try vision (Gemini only)
+    if (!pdfText || pdfText.trim().length < 100) {
+      logger.info('PDF contains little or no text, trying vision analysis...');
+      if (this.provider === 'gemini') {
+        try {
+          const visionResult = await this.analyzeScannedPDF(pdfPath);
+          if (this.cache && visionResult) {
+            this.cache.set(contentHash, visionResult);
+          }
+          return visionResult;
+        } catch (visionErr) {
+          logger.error(`Vision analysis failed: ${visionErr.message}`);
+        }
+      }
       return { error: 'PDF contains no extractable text', confidence: 0 };
     }
 
-    await this.rateLimiter.waitForSlot();
-
-    // Truncate text if too long (Gemini has token limits)
+    // Truncate text if too long
     const maxChars = 30000;
     if (pdfText.length > maxChars) {
       pdfText = pdfText.substring(0, maxChars) + '\n...[truncated]';
@@ -340,15 +505,15 @@ Only include fields where you can see relevant information. Set confidence based
 Document text:
 ${pdfText}
 
-Return a JSON object with the following structure:
+Return a JSON object with these fields (only include fields with actual data):
 {
   "model": "model name",
   "manufacturer": "manufacturer name",
   "series": "product series",
   "loadCapacity": "capacity with unit (e.g., '1000 kg (2200 lbs)')",
-  "liftingSpeed": "speed with unit (e.g., '4 m/min (13 ft/min)')",
-  "motorPower": "power with unit (e.g., '1.5 kW (2 HP)')",
-  "dutyCycle": "duty cycle (e.g., '40%', 'M4', 'H4')",
+  "liftingSpeed": "speed with unit (e.g., '4 m/min')",
+  "motorPower": "power with unit (e.g., '1.5 kW')",
+  "dutyCycle": "duty cycle (e.g., '40%', 'M4')",
   "voltageOptions": ["available voltages"],
   "weight": "weight with unit",
   "dimensions": "dimensions",
@@ -368,16 +533,13 @@ Return a JSON object with the following structure:
   "noiseLevel": "noise level in dB",
   "warranty": "warranty period",
   "confidence": 0.0 to 1.0
-}
-
-Extract as much information as possible from the document. Only include fields with actual data found.`;
+}`;
 
     try {
-      const result = await this.model.generateContent(prompt);
-      const response = result.response.text();
+      const response = await this.generateContent(prompt);
       const parsed = this.parseJSONResponse(response);
+      parsed.extractionMethod = 'text';
 
-      // Cache the result
       if (this.cache && parsed) {
         this.cache.set(contentHash, parsed);
       }
@@ -390,10 +552,7 @@ Extract as much information as possible from the document. Only include fields w
   }
 
   /**
-   * Analyze product description text to extract structured data
-   * @param {string} text - Product description text
-   * @param {Object} existingData - Existing product data to enhance
-   * @returns {Promise<Object>} Extracted/enhanced specifications
+   * Analyze product description text
    */
   async analyzeText(text, existingData = {}) {
     if (!text || text.trim().length < 20) {
@@ -402,15 +561,12 @@ Extract as much information as possible from the document. Only include fields w
 
     const contentHash = this.cache?.getContentHash(text + JSON.stringify(existingData));
 
-    // Check cache
     if (this.cache) {
       const cached = this.cache.get(contentHash);
       if (cached) {
         return cached;
       }
     }
-
-    await this.rateLimiter.waitForSlot();
 
     const prompt = `Extract electric chainhoist specifications from this product description.
 
@@ -430,19 +586,13 @@ Return a JSON object with extracted/enhanced specifications:
   "features": ["key features"],
   "applications": ["typical uses"],
   "confidence": 0.0 to 1.0
-}
-
-Merge with existing data, preferring more complete/accurate values.`;
+}`;
 
     try {
-      const result = await this.model.generateContent(prompt);
-      const response = result.response.text();
+      const response = await this.generateContent(prompt);
       const parsed = this.parseJSONResponse(response);
-
-      // Merge with existing data
       const merged = { ...existingData, ...parsed };
 
-      // Cache the result
       if (this.cache && parsed) {
         this.cache.set(contentHash, merged);
       }
@@ -455,9 +605,7 @@ Merge with existing data, preferring more complete/accurate values.`;
   }
 
   /**
-   * Batch analyze multiple items with rate limiting
-   * @param {Array} items - Array of {type: 'image'|'pdf'|'text', path?: string, content?: string}
-   * @returns {Promise<Array>} Array of results
+   * Batch analyze multiple items
    */
   async analyzeMultiple(items) {
     const results = [];
@@ -486,7 +634,6 @@ Merge with existing data, preferring more complete/accurate values.`;
         results.push({ success: false, error: error.message, item });
       }
 
-      // Small delay between requests
       if (i < items.length - 1) {
         await new Promise(resolve => setTimeout(resolve, 500));
       }
@@ -497,14 +644,10 @@ Merge with existing data, preferring more complete/accurate values.`;
 
   /**
    * Merge LLM-extracted data with existing product data
-   * @param {Object} existingProduct - Existing product data
-   * @param {Object} llmData - Data extracted by LLM
-   * @returns {Object} Merged product data
    */
   mergeProductData(existingProduct, llmData) {
     const merged = { ...existingProduct };
 
-    // Fields to potentially update from LLM
     const updateableFields = [
       'loadCapacity', 'liftingSpeed', 'motorPower', 'dutyCycle',
       'weight', 'dimensions', 'voltageOptions', 'classification',
@@ -514,7 +657,6 @@ Merge with existing data, preferring more complete/accurate values.`;
 
     for (const field of updateableFields) {
       if (llmData[field] !== undefined && llmData[field] !== null) {
-        // Only update if existing field is empty/missing or LLM has higher confidence
         const existingEmpty = !existingProduct[field] ||
           (Array.isArray(existingProduct[field]) && existingProduct[field].length === 0);
 
@@ -524,23 +666,21 @@ Merge with existing data, preferring more complete/accurate values.`;
       }
     }
 
-    // Update confidence score
     if (llmData.confidence) {
       merged.confidence = Math.max(existingProduct.confidence || 0, llmData.confidence);
     }
 
-    // Add LLM metadata
     merged.llmEnriched = true;
     merged.llmEnrichedAt = new Date().toISOString();
+    merged.llmProvider = this.provider;
 
     return merged;
   }
 
   /**
-   * Parse JSON from LLM response (handles markdown code blocks)
+   * Parse JSON from LLM response
    */
   parseJSONResponse(response) {
-    // Remove markdown code blocks if present
     let jsonStr = response;
     const codeBlockMatch = response.match(/```(?:json)?\s*([\s\S]*?)```/);
     if (codeBlockMatch) {
@@ -551,13 +691,11 @@ Merge with existing data, preferring more complete/accurate values.`;
       return JSON.parse(jsonStr.trim());
     } catch (error) {
       logger.warn(`Failed to parse LLM response as JSON: ${error.message}`);
-      // Try to extract JSON object from response
       const jsonMatch = response.match(/\{[\s\S]*\}/);
       if (jsonMatch) {
         try {
           return JSON.parse(jsonMatch[0]);
         } catch {
-          // Return raw response if parsing fails
           return { rawResponse: response, confidence: 0 };
         }
       }
@@ -581,16 +719,10 @@ Merge with existing data, preferring more complete/accurate values.`;
     return mimeTypes[ext] || 'application/octet-stream';
   }
 
-  /**
-   * Get rate limit status
-   */
   getRateLimitStatus() {
     return this.rateLimiter.getStatus();
   }
 
-  /**
-   * Clear the analysis cache
-   */
   clearCache() {
     if (this.cache) {
       this.cache.clear();
