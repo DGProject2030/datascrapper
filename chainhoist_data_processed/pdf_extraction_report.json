@@ -1,147 +1,1034 @@
 {
-  "startTime": "2026-01-15T22:39:08.830Z",
+  "startTime": "2026-01-15T22:51:14.643Z",
   "totalPDFs": 27,
-  "processed": 11,
-  "successful": 0,
-  "failed": 27,
-  "productsUpdated": 0,
+  "processed": 27,
+  "successful": 16,
+  "failed": 11,
+  "productsUpdated": 105,
   "extractions": [
     {
       "filename": "donati_donati-cranes_brochure_0.pdf",
-      "status": "error",
-      "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash\nPlease retry in 48.511947967s. [{\"@type\":\"type.googleapis.com/google.rpc.Help\",\"links\":[{\"description\":\"Learn more about Gemini API quotas\",\"url\":\"https://ai.google.dev/gemini-api/docs/rate-limits\"}]},{\"@type\":\"type.googleapis.com/google.rpc.QuotaFailure\",\"violations\":[{\"quotaMetric\":\"generativelanguage.googleapis.com/generate_content_free_tier_requests\",\"quotaId\":\"GenerateRequestsPerDayPerProjectPerModel-FreeTier\",\"quotaDimensions\":{\"location\":\"global\",\"model\":\"gemini-2.0-flash\"}},{\"quotaMetric\":\"generativelanguage.googleapis.com/generate_content_free_tier_requests\",\"quotaId\":\"GenerateRequestsPerMinutePerProjectPerModel-FreeTier\",\"quotaDimensions\":{\"location\":\"global\",\"model\":\"gemini-2.0-flash\"}},{\"quotaMetric\":\"generativelanguage.googleapis.com/generate_content_free_tier_input_token_count\",\"quotaId\":\"GenerateContentInputTokensPerModelPerMinute-FreeTier\",\"quotaDimensions\":{\"location\":\"global\",\"model\":\"gemini-2.0-flash\"}}]},{\"@type\":\"type.googleapis.com/google.rpc.RetryInfo\",\"retryDelay\":\"48s\"}]"
+      "status": "success",
+      "extractedData": {
+        "model": "DMK Series Electric Chain Hoist",
+        "manufacturer": "Not specified in document",
+        "series": "DMK",
+        "loadCapacity": "100 to 4,000 kg",
+        "liftingSpeed": "4, 6.3, 8, or 16 m/min (1 fall); 3.2 or 4 m/min (2 fall); Two speeds: 4/1.2, 6.3/2.1, 8/2.5 m/min (1 fall); 2.5/0.8, 3.2/1 m/min (2 fall)",
+        "motorPower": "0.2 to 2.5 kW",
+        "dutyCycle": "FEM 1Bm (M3), 1Am (M4), 2m (M5)",
+        "voltageOptions": [
+          "400V 3-phase 50Hz",
+          "230V single-phase 50Hz (DMK 1-2-3, one speed, up to 800kg)"
+        ],
+        "weight": "23 to 190 kg (depending on model and configuration)",
+        "dimensions": "Varies by size - DMK1: 275x253x385mm to DMK4: 670x395x583mm",
+        "chainFall": "1 or 2 chain falls",
+        "classification": [
+          "FEM 1Bm (M3)",
+          "FEM 1Am (M4)",
+          "FEM 2m (M5)"
+        ],
+        "safetyFeatures": {
+          "overloadProtection": true,
+          "upperLimitSwitch": true,
+          "lowerLimitSwitch": true,
+          "emergencyStop": true,
+          "slipClutch": true
+        },
+        "certifications": [
+          "CE",
+          "CSA (upon request)"
+        ],
+        "applications": [
+          "lifting unguided loads",
+          "combined with trolleys for horizontal movement",
+          "jib cranes",
+          "bridge cranes",
+          "monorails",
+          "fixed position configurations"
+        ],
+        "operatingTemperature": "-10°C to +40°C",
+        "protectionClass": "Motor: IP55, Brake: IP23, Limit switch: IP65, Control box: IP55, Push button: IP65",
+        "noiseLevel": "Less than 85 dB(A) when fully loaded",
+        "warranty": "Not specified in document",
+        "confidence": 0.95,
+        "extractionMethod": "text"
+      },
+      "matchedProducts": [
+        {
+          "id": "donati-donati-cranes",
+          "manufacturer": "Donati Sollevamenti",
+          "model": "Donati Cranes"
+        },
+        {
+          "id": "donati-donati-lifting-designer",
+          "manufacturer": "Donati Sollevamenti",
+          "model": "Donati Lifting Designer"
+        },
+        {
+          "id": "donati-demagcranes",
+          "manufacturer": "Donati Sollevamenti",
+          "model": "Demagcranes"
+        },
+        {
+          "id": "donati-donati-sollevamenti",
+          "manufacturer": "Donati Sollevamenti",
+          "model": "Donati Sollevamenti"
+        },
+        {
+          "id": "donati-drupal",
+          "manufacturer": "Donati Sollevamenti",
+          "model": "Drupal"
+        }
+      ]
     },
     {
       "filename": "donati_donati-cranes_document_0.pdf",
-      "status": "error",
-      "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash\nPlease retry in 48.356397153s. [{\"@type\":\"type.googleapis.com/google.rpc.Help\",\"links\":[{\"description\":\"Learn more about Gemini API quotas\",\"url\":\"https://ai.google.dev/gemini-api/docs/rate-limits\"}]},{\"@type\":\"type.googleapis.com/google.rpc.QuotaFailure\",\"violations\":[{\"quotaMetric\":\"generativelanguage.googleapis.com/generate_content_free_tier_requests\",\"quotaId\":\"GenerateRequestsPerDayPerProjectPerModel-FreeTier\",\"quotaDimensions\":{\"model\":\"gemini-2.0-flash\",\"location\":\"global\"}},{\"quotaMetric\":\"generativelanguage.googleapis.com/generate_content_free_tier_requests\",\"quotaId\":\"GenerateRequestsPerMinutePerProjectPerModel-FreeTier\",\"quotaDimensions\":{\"location\":\"global\",\"model\":\"gemini-2.0-flash\"}},{\"quotaMetric\":\"generativelanguage.googleapis.com/generate_content_free_tier_input_token_count\",\"quotaId\":\"GenerateContentInputTokensPerModelPerMinute-FreeTier\",\"quotaDimensions\":{\"location\":\"global\",\"model\":\"gemini-2.0-flash\"}}]},{\"@type\":\"type.googleapis.com/google.rpc.RetryInfo\",\"retryDelay\":\"48s\"}]"
+      "status": "success",
+      "extractedData": {
+        "manufacturer": "DONATI SOLLEVAMENTI S.r.l.",
+        "certifications": [
+          "ISO 3834-2:2021"
+        ],
+        "applications": [
+          "Assembly by welding of hoists, jib cranes, and components for lifting"
+        ],
+        "confidence": 0.3,
+        "extractionMethod": "text"
+      },
+      "matchedProducts": [
+        {
+          "id": "donati-donati-cranes",
+          "manufacturer": "Donati Sollevamenti",
+          "model": "Donati Cranes"
+        },
+        {
+          "id": "donati-donati-lifting-designer",
+          "manufacturer": "Donati Sollevamenti",
+          "model": "Donati Lifting Designer"
+        },
+        {
+          "id": "donati-demagcranes",
+          "manufacturer": "Donati Sollevamenti",
+          "model": "Demagcranes"
+        },
+        {
+          "id": "donati-donati-sollevamenti",
+          "manufacturer": "Donati Sollevamenti",
+          "model": "Donati Sollevamenti"
+        },
+        {
+          "id": "donati-drupal",
+          "manufacturer": "Donati Sollevamenti",
+          "model": "Drupal"
+        }
+      ]
     },
     {
       "filename": "donati_donati-cranes_document_1.pdf",
-      "status": "error",
-      "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\nPlease retry in 48.051706415s. [{\"@type\":\"type.googleapis.com/google.rpc.Help\",\"links\":[{\"description\":\"Learn more about Gemini API quotas\",\"url\":\"https://ai.google.dev/gemini-api/docs/rate-limits\"}]},{\"@type\":\"type.googleapis.com/google.rpc.QuotaFailure\",\"violations\":[{\"quotaMetric\":\"generativelanguage.googleapis.com/generate_content_free_tier_input_token_count\",\"quotaId\":\"GenerateContentInputTokensPerModelPerMinute-FreeTier\",\"quotaDimensions\":{\"location\":\"global\",\"model\":\"gemini-2.0-flash\"}},{\"quotaMetric\":\"generativelanguage.googleapis.com/generate_content_free_tier_requests\",\"quotaId\":\"GenerateRequestsPerMinutePerProjectPerModel-FreeTier\",\"quotaDimensions\":{\"model\":\"gemini-2.0-flash\",\"location\":\"global\"}},{\"quotaMetric\":\"generativelanguage.googleapis.com/generate_content_free_tier_requests\",\"quotaId\":\"GenerateRequestsPerDayPerProjectPerModel-FreeTier\",\"quotaDimensions\":{\"location\":\"global\",\"model\":\"gemini-2.0-flash\"}}]},{\"@type\":\"type.googleapis.com/google.rpc.RetryInfo\",\"retryDelay\":\"48s\"}]"
+      "status": "success",
+      "extractedData": {
+        "model": "DMK Series",
+        "manufacturer": "DONATI SOLLEVAMENTI S.r.l.",
+        "series": "DMK",
+        "voltageOptions": [
+          "48V"
+        ],
+        "safetyFeatures": {
+          "overloadProtection": true,
+          "upperLimitSwitch": true,
+          "lowerLimitSwitch": true,
+          "emergencyStop": false,
+          "slipClutch": true
+        },
+        "applications": [
+          "Industrial lifting",
+          "Material handling"
+        ],
+        "confidence": 0.6,
+        "extractionMethod": "text"
+      },
+      "matchedProducts": [
+        {
+          "id": "donati-donati-cranes",
+          "manufacturer": "Donati Sollevamenti",
+          "model": "Donati Cranes"
+        },
+        {
+          "id": "donati-donati-lifting-designer",
+          "manufacturer": "Donati Sollevamenti",
+          "model": "Donati Lifting Designer"
+        },
+        {
+          "id": "donati-demagcranes",
+          "manufacturer": "Donati Sollevamenti",
+          "model": "Demagcranes"
+        },
+        {
+          "id": "donati-donati-sollevamenti",
+          "manufacturer": "Donati Sollevamenti",
+          "model": "Donati Sollevamenti"
+        },
+        {
+          "id": "donati-drupal",
+          "manufacturer": "Donati Sollevamenti",
+          "model": "Drupal"
+        }
+      ]
     },
     {
       "filename": "donati_donati-cranes_document_2.pdf",
-      "status": "error",
-      "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash\nPlease retry in 47.846941783s. [{\"@type\":\"type.googleapis.com/google.rpc.Help\",\"links\":[{\"description\":\"Learn more about Gemini API quotas\",\"url\":\"https://ai.google.dev/gemini-api/docs/rate-limits\"}]},{\"@type\":\"type.googleapis.com/google.rpc.QuotaFailure\",\"violations\":[{\"quotaMetric\":\"generativelanguage.googleapis.com/generate_content_free_tier_requests\",\"quotaId\":\"GenerateRequestsPerDayPerProjectPerModel-FreeTier\",\"quotaDimensions\":{\"location\":\"global\",\"model\":\"gemini-2.0-flash\"}},{\"quotaMetric\":\"generativelanguage.googleapis.com/generate_content_free_tier_requests\",\"quotaId\":\"GenerateRequestsPerMinutePerProjectPerModel-FreeTier\",\"quotaDimensions\":{\"location\":\"global\",\"model\":\"gemini-2.0-flash\"}},{\"quotaMetric\":\"generativelanguage.googleapis.com/generate_content_free_tier_input_token_count\",\"quotaId\":\"GenerateContentInputTokensPerModelPerMinute-FreeTier\",\"quotaDimensions\":{\"location\":\"global\",\"model\":\"gemini-2.0-flash\"}}]},{\"@type\":\"type.googleapis.com/google.rpc.RetryInfo\",\"retryDelay\":\"47s\"}]"
+      "status": "success",
+      "extractedData": {
+        "manufacturer": "Konecranes Global Oy",
+        "certifications": [
+          "ISO/IEC 27001:2022"
+        ],
+        "confidence": 0,
+        "extractionMethod": "text"
+      },
+      "matchedProducts": [
+        {
+          "id": "donati-donati-cranes",
+          "manufacturer": "Donati Sollevamenti",
+          "model": "Donati Cranes"
+        },
+        {
+          "id": "donati-donati-lifting-designer",
+          "manufacturer": "Donati Sollevamenti",
+          "model": "Donati Lifting Designer"
+        },
+        {
+          "id": "donati-demagcranes",
+          "manufacturer": "Donati Sollevamenti",
+          "model": "Demagcranes"
+        },
+        {
+          "id": "donati-donati-sollevamenti",
+          "manufacturer": "Donati Sollevamenti",
+          "model": "Donati Sollevamenti"
+        },
+        {
+          "id": "donati-drupal",
+          "manufacturer": "Donati Sollevamenti",
+          "model": "Drupal"
+        }
+      ]
     },
     {
       "filename": "donati_donati-cranes_manual_2.pdf",
-      "status": "error",
-      "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\nPlease retry in 47.502987175s. [{\"@type\":\"type.googleapis.com/google.rpc.Help\",\"links\":[{\"description\":\"Learn more about Gemini API quotas\",\"url\":\"https://ai.google.dev/gemini-api/docs/rate-limits\"}]},{\"@type\":\"type.googleapis.com/google.rpc.QuotaFailure\",\"violations\":[{\"quotaMetric\":\"generativelanguage.googleapis.com/generate_content_free_tier_input_token_count\",\"quotaId\":\"GenerateContentInputTokensPerModelPerMinute-FreeTier\",\"quotaDimensions\":{\"location\":\"global\",\"model\":\"gemini-2.0-flash\"}},{\"quotaMetric\":\"generativelanguage.googleapis.com/generate_content_free_tier_requests\",\"quotaId\":\"GenerateRequestsPerMinutePerProjectPerModel-FreeTier\",\"quotaDimensions\":{\"model\":\"gemini-2.0-flash\",\"location\":\"global\"}},{\"quotaMetric\":\"generativelanguage.googleapis.com/generate_content_free_tier_requests\",\"quotaId\":\"GenerateRequestsPerDayPerProjectPerModel-FreeTier\",\"quotaDimensions\":{\"model\":\"gemini-2.0-flash\",\"location\":\"global\"}}]},{\"@type\":\"type.googleapis.com/google.rpc.RetryInfo\",\"retryDelay\":\"47s\"}]"
+      "status": "success",
+      "extractedData": {
+        "model": "DMK 1/2/3/4",
+        "manufacturer": "DONATI Sollevamenti S.r.l.",
+        "series": "DMK Series",
+        "loadCapacity": "125-2000 kg",
+        "liftingSpeed": "2-16 m/min",
+        "motorPower": "0.2-2.5 kW",
+        "dutyCycle": "40% (1 speed), 40/20% (2 speed)",
+        "voltageOptions": [
+          "230V single-phase",
+          "400V three-phase"
+        ],
+        "weight": "29-130 kg (depending on model and configuration)",
+        "chainFall": "1 or 2 chain falls (DMK4 available in 2-fall configuration)",
+        "classification": [
+          "FEM 9.511",
+          "FEM 9.671",
+          "FEM 9.755",
+          "2 m/M5",
+          "1 Am/M4"
+        ],
+        "safetyFeatures": {
+          "overloadProtection": true,
+          "upperLimitSwitch": true,
+          "lowerLimitSwitch": true,
+          "slipClutch": true
+        },
+        "certifications": [
+          "CE",
+          "EN ISO 12100",
+          "Machine Directive 2006/42/CE",
+          "ISO 9001",
+          "UNI EN 29001"
+        ],
+        "protectionClass": "IP55",
+        "noiseLevel": "78.5-84.9 dB(A)",
+        "confidence": 0.9,
+        "extractionMethod": "text"
+      },
+      "matchedProducts": [
+        {
+          "id": "donati-donati-cranes",
+          "manufacturer": "Donati Sollevamenti",
+          "model": "Donati Cranes"
+        },
+        {
+          "id": "donati-donati-lifting-designer",
+          "manufacturer": "Donati Sollevamenti",
+          "model": "Donati Lifting Designer"
+        },
+        {
+          "id": "donati-demagcranes",
+          "manufacturer": "Donati Sollevamenti",
+          "model": "Demagcranes"
+        },
+        {
+          "id": "donati-donati-sollevamenti",
+          "manufacturer": "Donati Sollevamenti",
+          "model": "Donati Sollevamenti"
+        },
+        {
+          "id": "donati-drupal",
+          "manufacturer": "Donati Sollevamenti",
+          "model": "Drupal"
+        }
+      ]
     },
     {
       "filename": "gorbel_ceiling-mounted-bridge-crane_brochure_0.pdf",
-      "status": "error",
-      "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\nPlease retry in 47.243186055s. [{\"@type\":\"type.googleapis.com/google.rpc.Help\",\"links\":[{\"description\":\"Learn more about Gemini API quotas\",\"url\":\"https://ai.google.dev/gemini-api/docs/rate-limits\"}]},{\"@type\":\"type.googleapis.com/google.rpc.QuotaFailure\",\"violations\":[{\"quotaMetric\":\"generativelanguage.googleapis.com/generate_content_free_tier_input_token_count\",\"quotaId\":\"GenerateContentInputTokensPerModelPerMinute-FreeTier\",\"quotaDimensions\":{\"location\":\"global\",\"model\":\"gemini-2.0-flash\"}},{\"quotaMetric\":\"generativelanguage.googleapis.com/generate_content_free_tier_requests\",\"quotaId\":\"GenerateRequestsPerMinutePerProjectPerModel-FreeTier\",\"quotaDimensions\":{\"location\":\"global\",\"model\":\"gemini-2.0-flash\"}},{\"quotaMetric\":\"generativelanguage.googleapis.com/generate_content_free_tier_requests\",\"quotaId\":\"GenerateRequestsPerDayPerProjectPerModel-FreeTier\",\"quotaDimensions\":{\"location\":\"global\",\"model\":\"gemini-2.0-flash\"}}]},{\"@type\":\"type.googleapis.com/google.rpc.RetryInfo\",\"retryDelay\":\"47s\"}]"
+      "status": "success",
+      "extractedData": {
+        "manufacturer": "Gorbel",
+        "series": "Work Station Bridge Cranes and Monorails",
+        "loadCapacity": "50 lbs to 4,000 lbs",
+        "liftingSpeed": "up to 50 f.p.m.",
+        "dimensions": "Bridge lengths up to 34', Runway lengths up to 124', Support distances 20', 25', 30'",
+        "safetyFeatures": {
+          "overloadProtection": false,
+          "upperLimitSwitch": false,
+          "lowerLimitSwitch": false,
+          "emergencyStop": false,
+          "slipClutch": false
+        },
+        "certifications": [
+          "ANSI B30.11"
+        ],
+        "applications": [
+          "Material handling",
+          "Manufacturing",
+          "Assembly",
+          "Maintenance",
+          "Sheet metal fabrication",
+          "Paper roll handling"
+        ],
+        "operatingTemperature": "+5°F to +200°F",
+        "warranty": "10 year (20,000 hour) warranty on manually operated crane systems",
+        "confidence": 0.9,
+        "extractionMethod": "text"
+      },
+      "matchedProducts": [
+        {
+          "id": "gorbel-contact-us",
+          "manufacturer": "Gorbel",
+          "model": "Contact Us"
+        },
+        {
+          "id": "gorbel-we-improve-people-s-lives",
+          "manufacturer": "Gorbel",
+          "model": "We Improve People's Lives"
+        },
+        {
+          "id": "gorbel-workstation-cranes-jib-cranes-gantry-cranes-and-he",
+          "manufacturer": "Gorbel",
+          "model": "Workstation Cranes, Jib Cranes, Gantry Cranes and Heavy Lifting by Cleveland Tramrail"
+        },
+        {
+          "id": "gorbel-workstation-cranes-and-monorails",
+          "manufacturer": "Gorbel",
+          "model": "Workstation Cranes and Monorails"
+        },
+        {
+          "id": "gorbel-free-standing-bridge-crane",
+          "manufacturer": "Gorbel",
+          "model": "Free Standing Bridge Crane"
+        },
+        {
+          "id": "gorbel-ceiling-mounted-bridge-crane",
+          "manufacturer": "Gorbel",
+          "model": "Ceiling Mounted Bridge Crane"
+        },
+        {
+          "id": "gorbel-monorails",
+          "manufacturer": "Gorbel",
+          "model": "Monorails"
+        }
+      ]
     },
     {
       "filename": "gorbel_ceiling-mounted-bridge-crane_brochure_1.pdf",
-      "status": "error",
-      "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash\nPlease retry in 47.064304615s. [{\"@type\":\"type.googleapis.com/google.rpc.Help\",\"links\":[{\"description\":\"Learn more about Gemini API quotas\",\"url\":\"https://ai.google.dev/gemini-api/docs/rate-limits\"}]},{\"@type\":\"type.googleapis.com/google.rpc.QuotaFailure\",\"violations\":[{\"quotaMetric\":\"generativelanguage.googleapis.com/generate_content_free_tier_requests\",\"quotaId\":\"GenerateRequestsPerDayPerProjectPerModel-FreeTier\",\"quotaDimensions\":{\"location\":\"global\",\"model\":\"gemini-2.0-flash\"}},{\"quotaMetric\":\"generativelanguage.googleapis.com/generate_content_free_tier_requests\",\"quotaId\":\"GenerateRequestsPerMinutePerProjectPerModel-FreeTier\",\"quotaDimensions\":{\"model\":\"gemini-2.0-flash\",\"location\":\"global\"}},{\"quotaMetric\":\"generativelanguage.googleapis.com/generate_content_free_tier_input_token_count\",\"quotaId\":\"GenerateContentInputTokensPerModelPerMinute-FreeTier\",\"quotaDimensions\":{\"model\":\"gemini-2.0-flash\",\"location\":\"global\"}}]},{\"@type\":\"type.googleapis.com/google.rpc.RetryInfo\",\"retryDelay\":\"47s\"}]"
+      "status": "success",
+      "extractedData": {
+        "manufacturer": "Gorbel",
+        "series": "Interlock/Transfer Cranes",
+        "loadCapacity": "up to 4000 lbs",
+        "safetyFeatures": {
+          "overloadProtection": false,
+          "upperLimitSwitch": false,
+          "lowerLimitSwitch": false,
+          "emergencyStop": false,
+          "slipClutch": false
+        },
+        "applications": [
+          "Transfer loads from bridge crane to monorail spurs or storage rails",
+          "Move loads to separate rooms or work cells",
+          "Bridge to monorail spur applications",
+          "Bridge to bridge via monorail spur"
+        ],
+        "confidence": 0.3,
+        "extractionMethod": "text"
+      },
+      "matchedProducts": [
+        {
+          "id": "gorbel-contact-us",
+          "manufacturer": "Gorbel",
+          "model": "Contact Us"
+        },
+        {
+          "id": "gorbel-we-improve-people-s-lives",
+          "manufacturer": "Gorbel",
+          "model": "We Improve People's Lives"
+        },
+        {
+          "id": "gorbel-workstation-cranes-jib-cranes-gantry-cranes-and-he",
+          "manufacturer": "Gorbel",
+          "model": "Workstation Cranes, Jib Cranes, Gantry Cranes and Heavy Lifting by Cleveland Tramrail"
+        },
+        {
+          "id": "gorbel-workstation-cranes-and-monorails",
+          "manufacturer": "Gorbel",
+          "model": "Workstation Cranes and Monorails"
+        },
+        {
+          "id": "gorbel-free-standing-bridge-crane",
+          "manufacturer": "Gorbel",
+          "model": "Free Standing Bridge Crane"
+        },
+        {
+          "id": "gorbel-ceiling-mounted-bridge-crane",
+          "manufacturer": "Gorbel",
+          "model": "Ceiling Mounted Bridge Crane"
+        },
+        {
+          "id": "gorbel-monorails",
+          "manufacturer": "Gorbel",
+          "model": "Monorails"
+        }
+      ]
     },
     {
       "filename": "gorbel_ceiling-mounted-bridge-crane_brochure_2.pdf",
-      "status": "error",
-      "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\nPlease retry in 46.87327438s. [{\"@type\":\"type.googleapis.com/google.rpc.Help\",\"links\":[{\"description\":\"Learn more about Gemini API quotas\",\"url\":\"https://ai.google.dev/gemini-api/docs/rate-limits\"}]},{\"@type\":\"type.googleapis.com/google.rpc.QuotaFailure\",\"violations\":[{\"quotaMetric\":\"generativelanguage.googleapis.com/generate_content_free_tier_input_token_count\",\"quotaId\":\"GenerateContentInputTokensPerModelPerMinute-FreeTier\",\"quotaDimensions\":{\"location\":\"global\",\"model\":\"gemini-2.0-flash\"}},{\"quotaMetric\":\"generativelanguage.googleapis.com/generate_content_free_tier_requests\",\"quotaId\":\"GenerateRequestsPerMinutePerProjectPerModel-FreeTier\",\"quotaDimensions\":{\"location\":\"global\",\"model\":\"gemini-2.0-flash\"}},{\"quotaMetric\":\"generativelanguage.googleapis.com/generate_content_free_tier_requests\",\"quotaId\":\"GenerateRequestsPerDayPerProjectPerModel-FreeTier\",\"quotaDimensions\":{\"location\":\"global\",\"model\":\"gemini-2.0-flash\"}}]},{\"@type\":\"type.googleapis.com/google.rpc.RetryInfo\",\"retryDelay\":\"46s\"}]"
+      "status": "success",
+      "extractedData": {
+        "manufacturer": "Gorbel",
+        "series": "Tractor Drive",
+        "motorPower": "1/3 HP",
+        "voltageOptions": [
+          "208-460 volt 3 phase",
+          "575 volt"
+        ],
+        "applications": [
+          "Heavy and/or awkward-shaped loads",
+          "Operations requiring taller trolley saddle heights",
+          "Operations where the operator should be safely distanced from the load"
+        ],
+        "warranty": "2 year",
+        "confidence": 0.85,
+        "extractionMethod": "text"
+      },
+      "matchedProducts": [
+        {
+          "id": "gorbel-contact-us",
+          "manufacturer": "Gorbel",
+          "model": "Contact Us"
+        },
+        {
+          "id": "gorbel-we-improve-people-s-lives",
+          "manufacturer": "Gorbel",
+          "model": "We Improve People's Lives"
+        },
+        {
+          "id": "gorbel-workstation-cranes-jib-cranes-gantry-cranes-and-he",
+          "manufacturer": "Gorbel",
+          "model": "Workstation Cranes, Jib Cranes, Gantry Cranes and Heavy Lifting by Cleveland Tramrail"
+        },
+        {
+          "id": "gorbel-workstation-cranes-and-monorails",
+          "manufacturer": "Gorbel",
+          "model": "Workstation Cranes and Monorails"
+        },
+        {
+          "id": "gorbel-free-standing-bridge-crane",
+          "manufacturer": "Gorbel",
+          "model": "Free Standing Bridge Crane"
+        },
+        {
+          "id": "gorbel-ceiling-mounted-bridge-crane",
+          "manufacturer": "Gorbel",
+          "model": "Ceiling Mounted Bridge Crane"
+        },
+        {
+          "id": "gorbel-monorails",
+          "manufacturer": "Gorbel",
+          "model": "Monorails"
+        }
+      ]
     },
     {
       "filename": "gorbel_free-standing-bridge-crane_brochure_0.pdf",
-      "status": "error",
-      "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\nPlease retry in 46.628861729s. [{\"@type\":\"type.googleapis.com/google.rpc.Help\",\"links\":[{\"description\":\"Learn more about Gemini API quotas\",\"url\":\"https://ai.google.dev/gemini-api/docs/rate-limits\"}]},{\"@type\":\"type.googleapis.com/google.rpc.QuotaFailure\",\"violations\":[{\"quotaMetric\":\"generativelanguage.googleapis.com/generate_content_free_tier_input_token_count\",\"quotaId\":\"GenerateContentInputTokensPerModelPerMinute-FreeTier\",\"quotaDimensions\":{\"model\":\"gemini-2.0-flash\",\"location\":\"global\"}},{\"quotaMetric\":\"generativelanguage.googleapis.com/generate_content_free_tier_requests\",\"quotaId\":\"GenerateRequestsPerMinutePerProjectPerModel-FreeTier\",\"quotaDimensions\":{\"location\":\"global\",\"model\":\"gemini-2.0-flash\"}},{\"quotaMetric\":\"generativelanguage.googleapis.com/generate_content_free_tier_requests\",\"quotaId\":\"GenerateRequestsPerDayPerProjectPerModel-FreeTier\",\"quotaDimensions\":{\"location\":\"global\",\"model\":\"gemini-2.0-flash\"}}]},{\"@type\":\"type.googleapis.com/google.rpc.RetryInfo\",\"retryDelay\":\"46s\"}]"
+      "status": "success",
+      "extractedData": {
+        "manufacturer": "Gorbel",
+        "series": "Work Station Bridge Cranes and Monorails",
+        "loadCapacity": "50 lbs to 4,000 lbs",
+        "liftingSpeed": "up to 50 f.p.m.",
+        "dimensions": "Bridge lengths up to 34', Runway lengths up to 124', Support distances 20', 25', 30'",
+        "safetyFeatures": {
+          "overloadProtection": false,
+          "upperLimitSwitch": false,
+          "lowerLimitSwitch": false,
+          "emergencyStop": false,
+          "slipClutch": false
+        },
+        "certifications": [
+          "ANSI B30.11"
+        ],
+        "applications": [
+          "Material handling",
+          "Manufacturing",
+          "Assembly",
+          "Maintenance",
+          "Sheet metal fabrication",
+          "Paper roll handling"
+        ],
+        "operatingTemperature": "+5°F to +200°F",
+        "warranty": "10 year (20,000 hour) warranty on manually operated crane systems",
+        "confidence": 0.9,
+        "extractionMethod": "text"
+      },
+      "matchedProducts": [
+        {
+          "id": "gorbel-contact-us",
+          "manufacturer": "Gorbel",
+          "model": "Contact Us"
+        },
+        {
+          "id": "gorbel-we-improve-people-s-lives",
+          "manufacturer": "Gorbel",
+          "model": "We Improve People's Lives"
+        },
+        {
+          "id": "gorbel-workstation-cranes-jib-cranes-gantry-cranes-and-he",
+          "manufacturer": "Gorbel",
+          "model": "Workstation Cranes, Jib Cranes, Gantry Cranes and Heavy Lifting by Cleveland Tramrail"
+        },
+        {
+          "id": "gorbel-workstation-cranes-and-monorails",
+          "manufacturer": "Gorbel",
+          "model": "Workstation Cranes and Monorails"
+        },
+        {
+          "id": "gorbel-free-standing-bridge-crane",
+          "manufacturer": "Gorbel",
+          "model": "Free Standing Bridge Crane"
+        },
+        {
+          "id": "gorbel-ceiling-mounted-bridge-crane",
+          "manufacturer": "Gorbel",
+          "model": "Ceiling Mounted Bridge Crane"
+        },
+        {
+          "id": "gorbel-monorails",
+          "manufacturer": "Gorbel",
+          "model": "Monorails"
+        }
+      ]
     },
     {
       "filename": "gorbel_free-standing-bridge-crane_brochure_1.pdf",
-      "status": "error",
-      "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash\nPlease retry in 46.436030443s. [{\"@type\":\"type.googleapis.com/google.rpc.Help\",\"links\":[{\"description\":\"Learn more about Gemini API quotas\",\"url\":\"https://ai.google.dev/gemini-api/docs/rate-limits\"}]},{\"@type\":\"type.googleapis.com/google.rpc.QuotaFailure\",\"violations\":[{\"quotaMetric\":\"generativelanguage.googleapis.com/generate_content_free_tier_requests\",\"quotaId\":\"GenerateRequestsPerDayPerProjectPerModel-FreeTier\",\"quotaDimensions\":{\"model\":\"gemini-2.0-flash\",\"location\":\"global\"}},{\"quotaMetric\":\"generativelanguage.googleapis.com/generate_content_free_tier_requests\",\"quotaId\":\"GenerateRequestsPerMinutePerProjectPerModel-FreeTier\",\"quotaDimensions\":{\"model\":\"gemini-2.0-flash\",\"location\":\"global\"}},{\"quotaMetric\":\"generativelanguage.googleapis.com/generate_content_free_tier_input_token_count\",\"quotaId\":\"GenerateContentInputTokensPerModelPerMinute-FreeTier\",\"quotaDimensions\":{\"location\":\"global\",\"model\":\"gemini-2.0-flash\"}}]},{\"@type\":\"type.googleapis.com/google.rpc.RetryInfo\",\"retryDelay\":\"46s\"}]"
+      "status": "success",
+      "extractedData": {
+        "manufacturer": "Gorbel",
+        "series": "Interlock/Transfer Cranes",
+        "loadCapacity": "up to 4000 lbs",
+        "safetyFeatures": {
+          "overloadProtection": false,
+          "upperLimitSwitch": false,
+          "lowerLimitSwitch": false,
+          "emergencyStop": false,
+          "slipClutch": false
+        },
+        "applications": [
+          "Transfer loads from bridge crane to monorail spurs or storage rails",
+          "Move loads to separate rooms or work cells",
+          "Bridge to monorail spur applications",
+          "Bridge to bridge via monorail spur"
+        ],
+        "confidence": 0.3,
+        "extractionMethod": "text"
+      },
+      "matchedProducts": [
+        {
+          "id": "gorbel-contact-us",
+          "manufacturer": "Gorbel",
+          "model": "Contact Us"
+        },
+        {
+          "id": "gorbel-we-improve-people-s-lives",
+          "manufacturer": "Gorbel",
+          "model": "We Improve People's Lives"
+        },
+        {
+          "id": "gorbel-workstation-cranes-jib-cranes-gantry-cranes-and-he",
+          "manufacturer": "Gorbel",
+          "model": "Workstation Cranes, Jib Cranes, Gantry Cranes and Heavy Lifting by Cleveland Tramrail"
+        },
+        {
+          "id": "gorbel-workstation-cranes-and-monorails",
+          "manufacturer": "Gorbel",
+          "model": "Workstation Cranes and Monorails"
+        },
+        {
+          "id": "gorbel-free-standing-bridge-crane",
+          "manufacturer": "Gorbel",
+          "model": "Free Standing Bridge Crane"
+        },
+        {
+          "id": "gorbel-ceiling-mounted-bridge-crane",
+          "manufacturer": "Gorbel",
+          "model": "Ceiling Mounted Bridge Crane"
+        },
+        {
+          "id": "gorbel-monorails",
+          "manufacturer": "Gorbel",
+          "model": "Monorails"
+        }
+      ]
     },
     {
       "filename": "gorbel_free-standing-bridge-crane_brochure_2.pdf",
-      "status": "error",
-      "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash\nPlease retry in 46.246465286s. [{\"@type\":\"type.googleapis.com/google.rpc.Help\",\"links\":[{\"description\":\"Learn more about Gemini API quotas\",\"url\":\"https://ai.google.dev/gemini-api/docs/rate-limits\"}]},{\"@type\":\"type.googleapis.com/google.rpc.QuotaFailure\",\"violations\":[{\"quotaMetric\":\"generativelanguage.googleapis.com/generate_content_free_tier_requests\",\"quotaId\":\"GenerateRequestsPerDayPerProjectPerModel-FreeTier\",\"quotaDimensions\":{\"location\":\"global\",\"model\":\"gemini-2.0-flash\"}},{\"quotaMetric\":\"generativelanguage.googleapis.com/generate_content_free_tier_requests\",\"quotaId\":\"GenerateRequestsPerMinutePerProjectPerModel-FreeTier\",\"quotaDimensions\":{\"model\":\"gemini-2.0-flash\",\"location\":\"global\"}},{\"quotaMetric\":\"generativelanguage.googleapis.com/generate_content_free_tier_input_token_count\",\"quotaId\":\"GenerateContentInputTokensPerModelPerMinute-FreeTier\",\"quotaDimensions\":{\"location\":\"global\",\"model\":\"gemini-2.0-flash\"}}]},{\"@type\":\"type.googleapis.com/google.rpc.RetryInfo\",\"retryDelay\":\"46s\"}]"
+      "status": "success",
+      "extractedData": {
+        "manufacturer": "Gorbel",
+        "series": "Tractor Drive",
+        "motorPower": "1/3 HP",
+        "voltageOptions": [
+          "208-460 volt 3 phase",
+          "575 volt"
+        ],
+        "applications": [
+          "Heavy and/or awkward-shaped loads",
+          "Operations requiring taller trolley saddle heights",
+          "Operations where the operator should be safely distanced from the load"
+        ],
+        "warranty": "2 year",
+        "confidence": 0.85,
+        "extractionMethod": "text"
+      },
+      "matchedProducts": [
+        {
+          "id": "gorbel-contact-us",
+          "manufacturer": "Gorbel",
+          "model": "Contact Us"
+        },
+        {
+          "id": "gorbel-we-improve-people-s-lives",
+          "manufacturer": "Gorbel",
+          "model": "We Improve People's Lives"
+        },
+        {
+          "id": "gorbel-workstation-cranes-jib-cranes-gantry-cranes-and-he",
+          "manufacturer": "Gorbel",
+          "model": "Workstation Cranes, Jib Cranes, Gantry Cranes and Heavy Lifting by Cleveland Tramrail"
+        },
+        {
+          "id": "gorbel-workstation-cranes-and-monorails",
+          "manufacturer": "Gorbel",
+          "model": "Workstation Cranes and Monorails"
+        },
+        {
+          "id": "gorbel-free-standing-bridge-crane",
+          "manufacturer": "Gorbel",
+          "model": "Free Standing Bridge Crane"
+        },
+        {
+          "id": "gorbel-ceiling-mounted-bridge-crane",
+          "manufacturer": "Gorbel",
+          "model": "Ceiling Mounted Bridge Crane"
+        },
+        {
+          "id": "gorbel-monorails",
+          "manufacturer": "Gorbel",
+          "model": "Monorails"
+        }
+      ]
     },
     {
       "filename": "gorbel_monorails_brochure_0.pdf",
-      "status": "error",
-      "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\nPlease retry in 46.000837969s. [{\"@type\":\"type.googleapis.com/google.rpc.Help\",\"links\":[{\"description\":\"Learn more about Gemini API quotas\",\"url\":\"https://ai.google.dev/gemini-api/docs/rate-limits\"}]},{\"@type\":\"type.googleapis.com/google.rpc.QuotaFailure\",\"violations\":[{\"quotaMetric\":\"generativelanguage.googleapis.com/generate_content_free_tier_input_token_count\",\"quotaId\":\"GenerateContentInputTokensPerModelPerMinute-FreeTier\",\"quotaDimensions\":{\"location\":\"global\",\"model\":\"gemini-2.0-flash\"}},{\"quotaMetric\":\"generativelanguage.googleapis.com/generate_content_free_tier_requests\",\"quotaId\":\"GenerateRequestsPerMinutePerProjectPerModel-FreeTier\",\"quotaDimensions\":{\"location\":\"global\",\"model\":\"gemini-2.0-flash\"}},{\"quotaMetric\":\"generativelanguage.googleapis.com/generate_content_free_tier_requests\",\"quotaId\":\"GenerateRequestsPerDayPerProjectPerModel-FreeTier\",\"quotaDimensions\":{\"location\":\"global\",\"model\":\"gemini-2.0-flash\"}}]},{\"@type\":\"type.googleapis.com/google.rpc.RetryInfo\",\"retryDelay\":\"46s\"}]"
+      "status": "success",
+      "extractedData": {
+        "manufacturer": "Gorbel",
+        "series": "Work Station Bridge Cranes and Monorails",
+        "loadCapacity": "50 lbs to 4,000 lbs",
+        "liftingSpeed": "up to 50 f.p.m.",
+        "dimensions": "Bridge lengths up to 34', Runway lengths up to 124', Support distances 20', 25', 30'",
+        "safetyFeatures": {
+          "overloadProtection": false,
+          "upperLimitSwitch": false,
+          "lowerLimitSwitch": false,
+          "emergencyStop": false,
+          "slipClutch": false
+        },
+        "certifications": [
+          "ANSI B30.11"
+        ],
+        "applications": [
+          "Material handling",
+          "Manufacturing",
+          "Assembly",
+          "Maintenance",
+          "Sheet metal fabrication",
+          "Paper roll handling"
+        ],
+        "operatingTemperature": "+5°F to +200°F",
+        "warranty": "10 year (20,000 hour) warranty on manually operated crane systems",
+        "confidence": 0.9,
+        "extractionMethod": "text"
+      },
+      "matchedProducts": [
+        {
+          "id": "gorbel-contact-us",
+          "manufacturer": "Gorbel",
+          "model": "Contact Us"
+        },
+        {
+          "id": "gorbel-we-improve-people-s-lives",
+          "manufacturer": "Gorbel",
+          "model": "We Improve People's Lives"
+        },
+        {
+          "id": "gorbel-workstation-cranes-jib-cranes-gantry-cranes-and-he",
+          "manufacturer": "Gorbel",
+          "model": "Workstation Cranes, Jib Cranes, Gantry Cranes and Heavy Lifting by Cleveland Tramrail"
+        },
+        {
+          "id": "gorbel-workstation-cranes-and-monorails",
+          "manufacturer": "Gorbel",
+          "model": "Workstation Cranes and Monorails"
+        },
+        {
+          "id": "gorbel-free-standing-bridge-crane",
+          "manufacturer": "Gorbel",
+          "model": "Free Standing Bridge Crane"
+        },
+        {
+          "id": "gorbel-ceiling-mounted-bridge-crane",
+          "manufacturer": "Gorbel",
+          "model": "Ceiling Mounted Bridge Crane"
+        },
+        {
+          "id": "gorbel-monorails",
+          "manufacturer": "Gorbel",
+          "model": "Monorails"
+        }
+      ]
     },
     {
       "filename": "gorbel_monorails_brochure_1.pdf",
-      "status": "error",
-      "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash\nPlease retry in 45.823612504s. [{\"@type\":\"type.googleapis.com/google.rpc.Help\",\"links\":[{\"description\":\"Learn more about Gemini API quotas\",\"url\":\"https://ai.google.dev/gemini-api/docs/rate-limits\"}]},{\"@type\":\"type.googleapis.com/google.rpc.QuotaFailure\",\"violations\":[{\"quotaMetric\":\"generativelanguage.googleapis.com/generate_content_free_tier_requests\",\"quotaId\":\"GenerateRequestsPerDayPerProjectPerModel-FreeTier\",\"quotaDimensions\":{\"location\":\"global\",\"model\":\"gemini-2.0-flash\"}},{\"quotaMetric\":\"generativelanguage.googleapis.com/generate_content_free_tier_requests\",\"quotaId\":\"GenerateRequestsPerMinutePerProjectPerModel-FreeTier\",\"quotaDimensions\":{\"location\":\"global\",\"model\":\"gemini-2.0-flash\"}},{\"quotaMetric\":\"generativelanguage.googleapis.com/generate_content_free_tier_input_token_count\",\"quotaId\":\"GenerateContentInputTokensPerModelPerMinute-FreeTier\",\"quotaDimensions\":{\"model\":\"gemini-2.0-flash\",\"location\":\"global\"}}]},{\"@type\":\"type.googleapis.com/google.rpc.RetryInfo\",\"retryDelay\":\"45s\"}]"
+      "status": "success",
+      "extractedData": {
+        "manufacturer": "Gorbel",
+        "series": "Interlock/Transfer Cranes",
+        "loadCapacity": "up to 4000 lbs",
+        "safetyFeatures": {
+          "overloadProtection": false,
+          "upperLimitSwitch": false,
+          "lowerLimitSwitch": false,
+          "emergencyStop": false,
+          "slipClutch": false
+        },
+        "applications": [
+          "Transfer loads from bridge crane to monorail spurs or storage rails",
+          "Move loads to separate rooms or work cells",
+          "Bridge to monorail spur applications",
+          "Bridge to bridge via monorail spur"
+        ],
+        "confidence": 0.3,
+        "extractionMethod": "text"
+      },
+      "matchedProducts": [
+        {
+          "id": "gorbel-contact-us",
+          "manufacturer": "Gorbel",
+          "model": "Contact Us"
+        },
+        {
+          "id": "gorbel-we-improve-people-s-lives",
+          "manufacturer": "Gorbel",
+          "model": "We Improve People's Lives"
+        },
+        {
+          "id": "gorbel-workstation-cranes-jib-cranes-gantry-cranes-and-he",
+          "manufacturer": "Gorbel",
+          "model": "Workstation Cranes, Jib Cranes, Gantry Cranes and Heavy Lifting by Cleveland Tramrail"
+        },
+        {
+          "id": "gorbel-workstation-cranes-and-monorails",
+          "manufacturer": "Gorbel",
+          "model": "Workstation Cranes and Monorails"
+        },
+        {
+          "id": "gorbel-free-standing-bridge-crane",
+          "manufacturer": "Gorbel",
+          "model": "Free Standing Bridge Crane"
+        },
+        {
+          "id": "gorbel-ceiling-mounted-bridge-crane",
+          "manufacturer": "Gorbel",
+          "model": "Ceiling Mounted Bridge Crane"
+        },
+        {
+          "id": "gorbel-monorails",
+          "manufacturer": "Gorbel",
+          "model": "Monorails"
+        }
+      ]
     },
     {
       "filename": "gorbel_monorails_document_2.pdf",
-      "status": "error",
-      "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash\nPlease retry in 45.612030882s. [{\"@type\":\"type.googleapis.com/google.rpc.Help\",\"links\":[{\"description\":\"Learn more about Gemini API quotas\",\"url\":\"https://ai.google.dev/gemini-api/docs/rate-limits\"}]},{\"@type\":\"type.googleapis.com/google.rpc.QuotaFailure\",\"violations\":[{\"quotaMetric\":\"generativelanguage.googleapis.com/generate_content_free_tier_requests\",\"quotaId\":\"GenerateRequestsPerDayPerProjectPerModel-FreeTier\",\"quotaDimensions\":{\"location\":\"global\",\"model\":\"gemini-2.0-flash\"}},{\"quotaMetric\":\"generativelanguage.googleapis.com/generate_content_free_tier_requests\",\"quotaId\":\"GenerateRequestsPerMinutePerProjectPerModel-FreeTier\",\"quotaDimensions\":{\"location\":\"global\",\"model\":\"gemini-2.0-flash\"}},{\"quotaMetric\":\"generativelanguage.googleapis.com/generate_content_free_tier_input_token_count\",\"quotaId\":\"GenerateContentInputTokensPerModelPerMinute-FreeTier\",\"quotaDimensions\":{\"model\":\"gemini-2.0-flash\",\"location\":\"global\"}}]},{\"@type\":\"type.googleapis.com/google.rpc.RetryInfo\",\"retryDelay\":\"45s\"}]"
+      "status": "success",
+      "extractedData": {
+        "manufacturer": "Gorbel",
+        "loadCapacity": "1000 lbs to 4000 lbs",
+        "safetyFeatures": {
+          "overloadProtection": false,
+          "upperLimitSwitch": false,
+          "lowerLimitSwitch": false,
+          "emergencyStop": false,
+          "slipClutch": false
+        },
+        "applications": [
+          "automotive engine assembly",
+          "material handling",
+          "production line support",
+          "tool positioning"
+        ],
+        "confidence": 0.4,
+        "extractionMethod": "text"
+      },
+      "matchedProducts": [
+        {
+          "id": "gorbel-contact-us",
+          "manufacturer": "Gorbel",
+          "model": "Contact Us"
+        },
+        {
+          "id": "gorbel-we-improve-people-s-lives",
+          "manufacturer": "Gorbel",
+          "model": "We Improve People's Lives"
+        },
+        {
+          "id": "gorbel-workstation-cranes-jib-cranes-gantry-cranes-and-he",
+          "manufacturer": "Gorbel",
+          "model": "Workstation Cranes, Jib Cranes, Gantry Cranes and Heavy Lifting by Cleveland Tramrail"
+        },
+        {
+          "id": "gorbel-workstation-cranes-and-monorails",
+          "manufacturer": "Gorbel",
+          "model": "Workstation Cranes and Monorails"
+        },
+        {
+          "id": "gorbel-free-standing-bridge-crane",
+          "manufacturer": "Gorbel",
+          "model": "Free Standing Bridge Crane"
+        },
+        {
+          "id": "gorbel-ceiling-mounted-bridge-crane",
+          "manufacturer": "Gorbel",
+          "model": "Ceiling Mounted Bridge Crane"
+        },
+        {
+          "id": "gorbel-monorails",
+          "manufacturer": "Gorbel",
+          "model": "Monorails"
+        }
+      ]
     },
     {
       "filename": "gorbel_workstation-cranes-jib-cranes-gantry-cranes-and-he_brochure_0.pdf",
-      "status": "error",
-      "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash\nPlease retry in 45.443197371s. [{\"@type\":\"type.googleapis.com/google.rpc.Help\",\"links\":[{\"description\":\"Learn more about Gemini API quotas\",\"url\":\"https://ai.google.dev/gemini-api/docs/rate-limits\"}]},{\"@type\":\"type.googleapis.com/google.rpc.QuotaFailure\",\"violations\":[{\"quotaMetric\":\"generativelanguage.googleapis.com/generate_content_free_tier_requests\",\"quotaId\":\"GenerateRequestsPerDayPerProjectPerModel-FreeTier\",\"quotaDimensions\":{\"location\":\"global\",\"model\":\"gemini-2.0-flash\"}},{\"quotaMetric\":\"generativelanguage.googleapis.com/generate_content_free_tier_requests\",\"quotaId\":\"GenerateRequestsPerMinutePerProjectPerModel-FreeTier\",\"quotaDimensions\":{\"location\":\"global\",\"model\":\"gemini-2.0-flash\"}},{\"quotaMetric\":\"generativelanguage.googleapis.com/generate_content_free_tier_input_token_count\",\"quotaId\":\"GenerateContentInputTokensPerModelPerMinute-FreeTier\",\"quotaDimensions\":{\"model\":\"gemini-2.0-flash\",\"location\":\"global\"}}]},{\"@type\":\"type.googleapis.com/google.rpc.RetryInfo\",\"retryDelay\":\"45s\"}]"
+      "status": "success",
+      "extractedData": {
+        "manufacturer": "Gorbel",
+        "series": "Tractor Drive",
+        "motorPower": "1/3 HP",
+        "voltageOptions": [
+          "208-460 volt 3 phase",
+          "575 volt"
+        ],
+        "applications": [
+          "Heavy and/or awkward-shaped loads",
+          "Operations requiring taller trolley saddle heights",
+          "Operations where the operator should be safely distanced from the load"
+        ],
+        "warranty": "2 year",
+        "confidence": 0.85,
+        "extractionMethod": "text"
+      },
+      "matchedProducts": [
+        {
+          "id": "gorbel-contact-us",
+          "manufacturer": "Gorbel",
+          "model": "Contact Us"
+        },
+        {
+          "id": "gorbel-we-improve-people-s-lives",
+          "manufacturer": "Gorbel",
+          "model": "We Improve People's Lives"
+        },
+        {
+          "id": "gorbel-workstation-cranes-jib-cranes-gantry-cranes-and-he",
+          "manufacturer": "Gorbel",
+          "model": "Workstation Cranes, Jib Cranes, Gantry Cranes and Heavy Lifting by Cleveland Tramrail"
+        },
+        {
+          "id": "gorbel-workstation-cranes-and-monorails",
+          "manufacturer": "Gorbel",
+          "model": "Workstation Cranes and Monorails"
+        },
+        {
+          "id": "gorbel-free-standing-bridge-crane",
+          "manufacturer": "Gorbel",
+          "model": "Free Standing Bridge Crane"
+        },
+        {
+          "id": "gorbel-ceiling-mounted-bridge-crane",
+          "manufacturer": "Gorbel",
+          "model": "Ceiling Mounted Bridge Crane"
+        },
+        {
+          "id": "gorbel-monorails",
+          "manufacturer": "Gorbel",
+          "model": "Monorails"
+        }
+      ]
     },
     {
       "filename": "planeta_atex-hoists_document_0.pdf",
       "status": "error",
-      "error": "Both text extraction and vision analysis failed"
+      "error": "PDF contains no extractable text"
     },
     {
       "filename": "planeta_compressed-air-hoists_document_0.pdf",
       "status": "error",
-      "error": "Both text extraction and vision analysis failed"
+      "error": "PDF contains no extractable text"
     },
     {
       "filename": "planeta_contact-us_document_0.pdf",
       "status": "error",
-      "error": "Both text extraction and vision analysis failed"
+      "error": "PDF contains no extractable text"
     },
     {
       "filename": "planeta_industrial-services_document_0.pdf",
-      "status": "error",
-      "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\nPlease retry in 47.694929265s. [{\"@type\":\"type.googleapis.com/google.rpc.Help\",\"links\":[{\"description\":\"Learn more about Gemini API quotas\",\"url\":\"https://ai.google.dev/gemini-api/docs/rate-limits\"}]},{\"@type\":\"type.googleapis.com/google.rpc.QuotaFailure\",\"violations\":[{\"quotaMetric\":\"generativelanguage.googleapis.com/generate_content_free_tier_input_token_count\",\"quotaId\":\"GenerateContentInputTokensPerModelPerMinute-FreeTier\",\"quotaDimensions\":{\"location\":\"global\",\"model\":\"gemini-2.0-flash\"}},{\"quotaMetric\":\"generativelanguage.googleapis.com/generate_content_free_tier_requests\",\"quotaId\":\"GenerateRequestsPerMinutePerProjectPerModel-FreeTier\",\"quotaDimensions\":{\"location\":\"global\",\"model\":\"gemini-2.0-flash\"}},{\"quotaMetric\":\"generativelanguage.googleapis.com/generate_content_free_tier_requests\",\"quotaId\":\"GenerateRequestsPerDayPerProjectPerModel-FreeTier\",\"quotaDimensions\":{\"model\":\"gemini-2.0-flash\",\"location\":\"global\"}}]},{\"@type\":\"type.googleapis.com/google.rpc.RetryInfo\",\"retryDelay\":\"47s\"}]"
+      "status": "success",
+      "extractedData": {
+        "confidence": 0,
+        "extractionMethod": "text"
+      },
+      "matchedProducts": [
+        {
+          "id": "planeta-planeta-lifting-technology",
+          "manufacturer": "PLANETA-Hebetechnik",
+          "model": "PLANETA lifting technology"
+        },
+        {
+          "id": "planeta-our-challenge-medium-sized-companies-that-are-fun-",
+          "manufacturer": "PLANETA-Hebetechnik",
+          "model": "Our challenge: Medium-sized companies that are fun!"
+        },
+        {
+          "id": "planeta-industrial-services",
+          "manufacturer": "PLANETA-Hebetechnik",
+          "model": "Industrial services"
+        },
+        {
+          "id": "planeta-contact-us",
+          "manufacturer": "PLANETA-Hebetechnik",
+          "model": "Contact us"
+        },
+        {
+          "id": "planeta-lifting-technology",
+          "manufacturer": "PLANETA-Hebetechnik",
+          "model": "Lifting technology"
+        },
+        {
+          "id": "planeta-slings-lashing-straps",
+          "manufacturer": "PLANETA-Hebetechnik",
+          "model": "Slings & lashing straps"
+        },
+        {
+          "id": "planeta-atex-hoists",
+          "manufacturer": "PLANETA-Hebetechnik",
+          "model": "ATEX s"
+        },
+        {
+          "id": "planeta-compressed-air-hoists",
+          "manufacturer": "PLANETA-Hebetechnik",
+          "model": "Compressed air s"
+        },
+        {
+          "id": "planeta-s-wire-rope-hoists",
+          "manufacturer": "PLANETA-Hebetechnik",
+          "model": "s & wire rope s"
+        },
+        {
+          "id": "planeta-manual-hoists",
+          "manufacturer": "PLANETA-Hebetechnik",
+          "model": "Manual s"
+        }
+      ]
     },
     {
       "filename": "planeta_industrial-services_document_1.pdf",
       "status": "error",
-      "error": "Both text extraction and vision analysis failed"
+      "error": "PDF contains no extractable text"
     },
     {
       "filename": "planeta_lifting-technology_document_0.pdf",
       "status": "error",
-      "error": "Both text extraction and vision analysis failed"
+      "error": "PDF contains no extractable text"
     },
     {
       "filename": "planeta_manual-hoists_document_0.pdf",
       "status": "error",
-      "error": "Both text extraction and vision analysis failed"
+      "error": "PDF contains no extractable text"
     },
     {
       "filename": "planeta_our-challenge-medium-sized-companies-that-are-fun-_document_0.pdf",
       "status": "error",
-      "error": "Both text extraction and vision analysis failed"
+      "error": "PDF contains no extractable text"
     },
     {
       "filename": "planeta_our-challenge-medium-sized-companies-that-are-fun-_document_1.pdf",
       "status": "error",
-      "error": "Both text extraction and vision analysis failed"
+      "error": "PDF contains no extractable text"
     },
     {
       "filename": "planeta_planeta-lifting-technology_document_0.pdf",
       "status": "error",
-      "error": "Both text extraction and vision analysis failed"
+      "error": "PDF contains no extractable text"
     },
     {
       "filename": "planeta_s-wire-rope-hoists_document_0.pdf",
       "status": "error",
-      "error": "Both text extraction and vision analysis failed"
+      "error": "PDF contains no extractable text"
     },
     {
       "filename": "planeta_slings-lashing-straps_document_0.pdf",
       "status": "error",
-      "error": "Both text extraction and vision analysis failed"
+      "error": "PDF contains no extractable text"
     }
   ],
-  "endTime": "2026-01-15T22:40:12.913Z",
-  "duration": 64083
+  "endTime": "2026-01-15T22:52:25.965Z",
+  "duration": 71322
 }

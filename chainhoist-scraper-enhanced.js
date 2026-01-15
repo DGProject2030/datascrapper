@@ -137,7 +137,7 @@ const MANUFACTURERS = [
     website: 'https://www.demagcranes.com',
     region: 'Germany, global',
     productPages: [
-      'https://www.demagcranes.com/en/products/chain-hoists'
+      'https://www.demagcranes.com/en-us/products/hoist-units/chain-hoists'
     ],
     selectors: {
       productList: '.product-teaser, [class*="product"]',
@@ -155,7 +155,7 @@ const MANUFACTURERS = [
     website: 'https://www.harringtonhoists.com',
     region: 'USA, global',
     productPages: [
-      'https://www.harringtonhoists.com/electric-chain-hoists'
+      'https://www.harringtonhoists.com/electric-hoists'
     ],
     selectors: {
       productList: '.product-item, .product',
@@ -173,7 +173,7 @@ const MANUFACTURERS = [
     website: 'https://www.abuscranes.com',
     region: 'Germany, global',
     productPages: [
-      'https://www.abuscranes.com/en/products/electric-chain-hoists'
+      'https://www.abuscranes.com/hoists/electric-chain-hoists'
     ],
     selectors: {
       productList: '.product-item, [class*="product"]',
@@ -191,7 +191,7 @@ const MANUFACTURERS = [
     website: 'https://gis-ag.ch',
     region: 'Switzerland',
     productPages: [
-      'https://gis-ag.ch/en/products/chain-hoists'
+      'https://gis-ag.ch/en/industry/products/chain-hoists-and-trolleys'
     ],
     selectors: {
       productList: '.product, [class*="product"]',
@@ -209,7 +209,7 @@ const MANUFACTURERS = [
     website: 'https://www.verlinde.com',
     region: 'France, global',
     productPages: [
-      'https://www.verlinde.com/en/products/electric-chain-hoists'
+      'https://www.stagemaker.com/stagemaker-europe/products/stagemaker-sl-chain-hoists/'
     ],
     selectors: {
       productList: '.product-item',
@@ -245,7 +245,7 @@ const MANUFACTURERS = [
     website: 'https://www.movecat.de',
     region: 'Germany',
     productPages: [
-      'https://www.movecat.de/en/products/chain-hoists'
+      'https://www.movecat.de/en/products/'
     ],
     selectors: {
       productList: '.product',
@@ -260,10 +260,10 @@ const MANUFACTURERS = [
   {
     name: 'Kito',
     id: 'kito',
-    website: 'https://www.kito.com',
+    website: 'https://www.kito.net',
     region: 'Japan, global',
     productPages: [
-      'https://www.kito.com/products/electric-chain-hoists'
+      'https://www.kito.net/en/producttype/electric-chain-hoists/'
     ],
     selectors: {
       productList: '.product-item',
@@ -281,7 +281,7 @@ const MANUFACTURERS = [
     website: 'https://www.hitachi-ies.com',
     region: 'Japan, global',
     productPages: [
-      'https://www.hitachi-ies.com/products/hoists'
+      'https://www.hitachi-ies.com/products/hst/bh/index.htm'
     ],
     selectors: {
       productList: '.product',
@@ -299,7 +299,8 @@ const MANUFACTURERS = [
     website: 'https://donaticranes.com',
     region: 'Italy, global',
     productPages: [
-      'https://donaticranes.com/en/products/electric-chain-hoists'
+      'https://donaticranes.com/en/products/electric-chain-hoists',
+      'https://donaticranes.com/en/frontpage'
     ],
     selectors: {
       productList: '.product',
@@ -335,7 +336,7 @@ const MANUFACTURERS = [
     website: 'https://www.gorbel.com',
     region: 'USA, global',
     productPages: [
-      'https://www.gorbel.com/products/hoists'
+      'https://www.gorbel.com/products/ergonomic-lifting/hoists'
     ],
     selectors: {
       productList: '.product',
@@ -351,10 +352,10 @@ const MANUFACTURERS = [
   {
     name: 'Yale Hoists',
     id: 'yale',
-    website: 'https://www.yale.com',
+    website: 'https://www.cmco.com',
     region: 'USA, global',
     productPages: [
-      'https://www.yale.com/en/products/hoists/electric-chain-hoists'
+      'https://www.cmco.com/en-us/products/hoisting-lifting-equipment/electric-air-hoists/electric-chain-hoists/'
     ],
     selectors: {
       productList: '.product-item',
@@ -369,10 +370,10 @@ const MANUFACTURERS = [
   {
     name: 'Ingersoll Rand',
     id: 'ingersoll-rand',
-    website: 'https://www.ingersollrand.com',
+    website: 'https://liftingsolutions.ingersollrand.com',
     region: 'USA, global',
     productPages: [
-      'https://www.ingersollrand.com/en-us/material-handling/electric-chain-hoists.html'
+      'https://liftingsolutions.ingersollrand.com/en/hoists/'
     ],
     selectors: {
       productList: '.product-card',
@@ -387,10 +388,10 @@ const MANUFACTURERS = [
   {
     name: 'Coffing Hoists',
     id: 'coffing',
-    website: 'https://www.coffinghoists.com',
+    website: 'https://www.cmco.com',
     region: 'USA, global',
     productPages: [
-      'https://www.coffinghoists.com/products/electric-chain-hoists'
+      'https://www.cmco.com/en-us/our-brands/coffing-hoists/'
     ],
     selectors: {
       productList: '.product',
@@ -405,10 +406,10 @@ const MANUFACTURERS = [
   {
     name: 'Budgit Hoists',
     id: 'budgit',
-    website: 'https://www.budgithoists.com',
+    website: 'https://www.cmco.com',
     region: 'USA',
     productPages: [
-      'https://www.budgithoists.com/products/electric-chain-hoists'
+      'https://www.cmco.com/en-us/our-brands/budgit/'
     ],
     selectors: {
       productList: '.product',
@@ -423,10 +424,10 @@ const MANUFACTURERS = [
   {
     name: 'R&M Materials Handling',
     id: 'rm-materials',
-    website: 'https://www.rmhoist.com',
+    website: 'https://rmhoist.com',
     region: 'USA, global',
     productPages: [
-      'https://www.rmhoist.com/products/electric-chain-hoists'
+      'https://rmhoist.com/products/electric-chain-hoists-overview'
     ],
     selectors: {
       productList: '.product',
@@ -441,10 +442,10 @@ const MANUFACTURERS = [
   {
     name: 'Street Crane',
     id: 'street-crane',
-    website: 'https://www.streetcrane.co.uk',
+    website: 'https://streetcrane.co.uk',
     region: 'UK, global',
     productPages: [
-      'https://www.streetcrane.co.uk/hoists/electric-chain-hoists'
+      'https://streetcrane.co.uk/hoists/chain-hoists/'
     ],
     selectors: {
       productList: '.product',
@@ -459,10 +460,10 @@ const MANUFACTURERS = [
   {
     name: 'SWF Krantechnik',
     id: 'swf',
-    website: 'https://www.swf.de',
+    website: 'https://www.swfkrantechnik.com',
     region: 'Germany, global',
     productPages: [
-      'https://www.swf.de/en/products/chain-hoists'
+      'https://www.swfkrantechnik.com/en/products/chainster/'
     ],
     selectors: {
       productList: '.product',
@@ -475,12 +476,12 @@ const MANUFACTURERS = [
     }
   },
   {
-    name: 'JDN Monocrane',
+    name: 'J.D. Neuhaus',
     id: 'jdn',
-    website: 'https://www.jdn.de',
+    website: 'https://www.jdngroup.com',
     region: 'Germany, global',
     productPages: [
-      'https://www.jdn.de/en/products/air-hoists'
+      'https://www.jdngroup.com/products/profi/'
     ],
     selectors: {
       productList: '.product',
@@ -495,10 +496,10 @@ const MANUFACTURERS = [
   {
     name: 'Elephant Lifting Products',
     id: 'elephant',
-    website: 'https://www.elephantlifting.co.uk',
-    region: 'UK, global',
+    website: 'https://elephantlifting.com',
+    region: 'USA, global',
     productPages: [
-      'https://www.elephantlifting.co.uk/electric-chain-hoists'
+      'https://elephantlifting.com/product/electric-chain-hoists/'
     ],
     selectors: {
       productList: '.product',
@@ -516,7 +517,7 @@ const MANUFACTURERS = [
     website: 'https://www.liftingsafety.co.uk',
     region: 'UK',
     productPages: [
-      'https://www.liftingsafety.co.uk/electric-chain-hoists'
+      'https://www.liftingsafety.co.uk/category/electric-hoists-6.html'
     ],
     selectors: {
       productList: '.product',
@@ -531,10 +532,10 @@ const MANUFACTURERS = [
   {
     name: 'Tiger Lifting',
     id: 'tiger',
-    website: 'https://www.tigerlifting.com',
+    website: 'https://tigerlifting.com',
     region: 'UK, global',
     productPages: [
-      'https://www.tigerlifting.com/products/electric-chain-hoists'
+      'https://tigerlifting.com/'
     ],
     selectors: {
       productList: '.product',
@@ -549,10 +550,10 @@ const MANUFACTURERS = [
   {
     name: 'Stahl CraneSystems',
     id: 'stahl',
-    website: 'https://www.stahlcranes.com',
+    website: 'https://www.cmco.com',
     region: 'Germany, global',
     productPages: [
-      'https://www.stahlcranes.com/en/products/chain-hoists'
+      'https://www.cmco.com/en-us/our-brands/stahlcranes/'
     ],
     selectors: {
       productList: '.product',
@@ -564,31 +565,14 @@ const MANUFACTURERS = [
       videos: 'iframe',
     }
   },
-  {
-    name: 'Nitchi',
-    id: 'nitchi',
-    website: 'https://www.nitchi.co.jp',
-    region: 'Japan, global',
-    productPages: [
-      'https://www.nitchi.co.jp/en/products/electric-chain-hoists'
-    ],
-    selectors: {
-      productList: '.product',
-      productLink: 'a',
-      title: 'h1',
-      description: '.description',
-      specs: 'table',
-      images: 'img',
-      videos: 'iframe',
-    }
-  },
+  // Note: Nitchi closed operations in June 2023
   {
     name: 'TXK',
     id: 'txk',
-    website: 'https://www.txkhoists.com',
+    website: 'https://www.txk.net.cn',
     region: 'China, global',
     productPages: [
-      'https://www.txkhoists.com/electric-chain-hoist'
+      'https://www.txk.net.cn/electric-chain-hoist/'
     ],
     selectors: {
       productList: '.product',
@@ -1434,10 +1418,7 @@ class EnhancedScraper {
         { model: 'ST Chain Hoist', series: 'ST', loadCapacity: '125-6300 kg', liftingSpeed: '2-20 m/min', classification: ['d8+'] },
         { model: 'AS7 Explosion Proof', series: 'AS7', loadCapacity: '125-5000 kg', liftingSpeed: '4-12 m/min', classification: ['atex'] },
       ],
-      'nitchi': [
-        { model: 'MH-5', series: 'MH', loadCapacity: '250-5000 kg', liftingSpeed: '4-12 m/min', classification: ['jis'] },
-        { model: 'EC-4', series: 'EC', loadCapacity: '500-10000 kg', liftingSpeed: '2-8 m/min', classification: ['jis'] },
-      ],
+      // Nitchi closed operations in June 2023
       'txk': [
         { model: 'TXK-A', series: 'A', loadCapacity: '250-10000 kg', liftingSpeed: '3-12 m/min', classification: ['ce'] },
         { model: 'TXK-B', series: 'B', loadCapacity: '500-20000 kg', liftingSpeed: '2-8 m/min', classification: ['ce'] },
