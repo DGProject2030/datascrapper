@@ -60,6 +60,36 @@
       width: auto;
       display: inline-block;
     }
+    .filter-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.35rem 0.75rem;
+      background: #e9ecef;
+      border-radius: 20px;
+      font-size: 0.875rem;
+      color: #495057;
+    }
+    .filter-chip .chip-label {
+      font-weight: 500;
+      color: #6c757d;
+    }
+    .filter-chip .chip-remove {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 18px;
+      height: 18px;
+      background: #adb5bd;
+      border-radius: 50%;
+      color: white;
+      text-decoration: none;
+      font-size: 0.75rem;
+      line-height: 1;
+    }
+    .filter-chip .chip-remove:hover {
+      background: #6c757d;
+    }
     .product-thumb {
       width: 50px;
       height: 50px;
@@ -183,6 +213,49 @@
         </div>
       </div>
     </div>
+
+    <%
+      // Build URL without specific filter
+      const buildFilterRemoveUrl = (excludeFilter) => {
+        const params = new URLSearchParams();
+        if (query && excludeFilter !== 'q') params.set('q', query);
+        if (filters.manufacturer && excludeFilter !== 'manufacturer') params.set('manufacturer', filters.manufacturer);
+        if (filters.capacity && excludeFilter !== 'capacity') params.set('capacity', filters.capacity);
+        if (filters.classification && excludeFilter !== 'classification') params.set('classification', filters.classification);
+        if (filters.category && excludeFilter !== 'category') params.set('category', filters.category);
+        if (filters.speedType && excludeFilter !== 'speedType') params.set('speedType', filters.speedType);
+        if (sort.by) {
+          params.set('sortBy', sort.by);
+          params.set('sortOrder', sort.order);
+        }
+        params.set('limit', pagination.limit);
+        return '/search?' + params.toString();
+      };
+
+      const activeFilters = [];
+      if (query) activeFilters.push({ key: 'q', label: 'Search', value: query });
+      if (filters.manufacturer) activeFilters.push({ key: 'manufacturer', label: 'Manufacturer', value: filters.manufacturer });
+      if (filters.capacity) activeFilters.push({ key: 'capacity', label: 'Capacity', value: filters.capacity });
+      if (filters.classification) activeFilters.push({ key: 'classification', label: 'Classification', value: filters.classification.toUpperCase() });
+      if (filters.category) activeFilters.push({ key: 'category', label: 'Category', value: filters.category });
+      if (filters.speedType) activeFilters.push({ key: 'speedType', label: 'Speed Type', value: filters.speedType });
+    %>
+
+    <% if (activeFilters.length > 0) { %>
+      <div class="mb-3 d-flex flex-wrap gap-2 align-items-center">
+        <span class="text-muted me-1">Active filters:</span>
+        <% activeFilters.forEach(filter => { %>
+          <span class="filter-chip">
+            <span class="chip-label"><%= filter.label %>:</span>
+            <%= filter.value %>
+            <a href="<%= buildFilterRemoveUrl(filter.key) %>" class="chip-remove" title="Remove filter">&times;</a>
+          </span>
+        <% }); %>
+        <% if (activeFilters.length > 1) { %>
+          <a href="/search" class="btn btn-sm btn-outline-secondary ms-2">Clear all</a>
+        <% } %>
+      </div>
+    <% } %>
 
     <div class="pagination-info mb-3">
       <div>
