@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<MotorModel ManufacturerId="018" ProductId="001">
+  <Name>[018-001] Apex1250 1250kg</Name>
+  <Protocol>EVO</Protocol>
+  <VariableSpeedControl>
+    <DefaultSpeed>100</DefaultSpeed>
+    <DefaultAccel>100</DefaultAccel>
+    <DefaultDecel>100</DefaultDecel>
+    <MaxSpeedClamp>200</MaxSpeedClamp>
+    <MaxAccelClamp>400</MaxAccelClamp>
+    <MaxDecelClamp>400</MaxDecelClamp>
+    <MinSpeedClamp>0</MinSpeedClamp>
+    <MinAccelClamp>0</MinAccelClamp>
+    <MinDecelClamp>0</MinDecelClamp>
+    <ErrorStopClamp>400</ErrorStopClamp>
+  </VariableSpeedControl>
+  <UnderloadLimit>0</UnderloadLimit>
+  <OverloadLimit>1250</OverloadLimit>
+  <LoadcellScaling>8495</LoadcellScaling>
+  <EncoderScaling>278873</EncoderScaling>
+    <PreMoveBrakeDelay>800</PreMoveBrakeDelay>
+    <PostMoveBrakeDelay>2000</PostMoveBrakeDelay>
+  <EncoderScaling2>31000000</EncoderScaling2>
+</MotorModel>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<!--
+V1.2 - Encoder Scaling Changed
+Note Second Encoder 75.17 = 44853093 
+-->
+<MotorModel ManufacturerId="003" ProductId="014">
+  <Name>[003-014] ALFA S30 Winch (250kg 1000mm/s)</Name>
+  <Protocol>EVO</Protocol>
+  <VariableSpeedControl>
+    <MinSpeedClamp>0</MinSpeedClamp>
+    <MinAccelClamp>0</MinAccelClamp>
+    <MinDecelClamp>0</MinDecelClamp>
+    <MaxSpeedClamp>1000</MaxSpeedClamp>
+    <MaxAccelClamp>1800</MaxAccelClamp>
+    <MaxDecelClamp>1800</MaxDecelClamp>
+    <ErrorStopClamp>1800</ErrorStopClamp>
+    <DefaultSpeed>100</DefaultSpeed>
+    <DefaultAccel>100</DefaultAccel>
+    <DefaultDecel>100</DefaultDecel>
+  </VariableSpeedControl>
+  <UnderloadLimit>0</UnderloadLimit>
+  <OverloadLimit>300</OverloadLimit>
+  <LoadcellScaling>2731</LoadcellScaling>
+  <EncoderScaling>4397362</EncoderScaling>
+  <PreMoveBrakeDelay>800</PreMoveBrakeDelay>
+  <PostMoveBrakeDelay>1000</PostMoveBrakeDelay>
+</MotorModel>

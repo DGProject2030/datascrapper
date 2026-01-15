@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<!--
+V1.1 - MGH created
+-->
+<MotorModel ManufacturerId="011" ProductId="012">
+  <Name>[011-012] KMH Lift (1,2,3,4,8,9,10)</Name>
+  <Protocol>EVO</Protocol>
+  <VariableSpeedControl>
+    <MinSpeedClamp>0</MinSpeedClamp>
+    <MinAccelClamp>0</MinAccelClamp>
+    <MinDecelClamp>0</MinDecelClamp>
+    <MaxSpeedClamp>28</MaxSpeedClamp>
+    <MaxAccelClamp>50</MaxAccelClamp>
+    <MaxDecelClamp>250</MaxDecelClamp>
+    <ErrorStopClamp>250</ErrorStopClamp>
+    <DefaultSpeed>28</DefaultSpeed>
+    <DefaultAccel>5</DefaultAccel>
+    <DefaultDecel>100</DefaultDecel>
+  </VariableSpeedControl>
+  <UnderloadLimit>0</UnderloadLimit>
+  <OverloadLimit>0</OverloadLimit>
+  <LoadcellScaling>0</LoadcellScaling>
+  <PreMoveBrakeDelay>500</PreMoveBrakeDelay>
+  <PostMoveBrakeDelay>4000</PostMoveBrakeDelay>
+  <EncoderScaling>176562</EncoderScaling>
+</MotorModel>

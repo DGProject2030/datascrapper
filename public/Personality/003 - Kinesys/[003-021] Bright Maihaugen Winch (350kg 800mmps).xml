@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotorModel ManufacturerId="003" ProductId="021">
+  <EncoderScaling>5144529</EncoderScaling>
+  <Name>[003-021] Bright Maihaugen Winch (350kg 800mm/s)</Name>
+  <Protocol>EVO</Protocol>
+  <VariableSpeedControl>
+    <DefaultAccel>100</DefaultAccel>
+    <DefaultDecel>100</DefaultDecel>
+    <DefaultSpeed>100</DefaultSpeed>
+    <ErrorStopClamp>1600</ErrorStopClamp>
+    <MaxAccelClamp>1600</MaxAccelClamp>
+    <MaxDecelClamp>1600</MaxDecelClamp>
+    <MaxSpeedClamp>800</MaxSpeedClamp>
+    <MinAccelClamp>80</MinAccelClamp>
+    <MinDecelClamp>80</MinDecelClamp>
+    <MinSpeedClamp>0</MinSpeedClamp>
+  </VariableSpeedControl>
+</MotorModel>

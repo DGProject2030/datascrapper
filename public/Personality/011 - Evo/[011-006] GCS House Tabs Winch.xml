@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<!--
+V1.0 - MGH created
+-->
+<MotorModel ManufacturerId="011" ProductId="006">
+  <Name>[011-006] GCS House Tabs Winch</Name>
+  <Protocol>EVO</Protocol>
+  <VariableSpeedControl>
+    <MinSpeedClamp>0</MinSpeedClamp>
+    <MinAccelClamp>0</MinAccelClamp>
+    <MinDecelClamp>0</MinDecelClamp>
+    <MaxSpeedClamp>2500</MaxSpeedClamp>
+    <MaxAccelClamp>5000</MaxAccelClamp>
+    <MaxDecelClamp>5000</MaxDecelClamp>
+    <ErrorStopClamp>5000</ErrorStopClamp>
+    <DefaultSpeed>100</DefaultSpeed>
+    <DefaultAccel>100</DefaultAccel>
+    <DefaultDecel>100</DefaultDecel>
+  </VariableSpeedControl>
+  <UnderloadLimit>0</UnderloadLimit>
+  <OverloadLimit>0</OverloadLimit>
+  <LoadcellScaling>0</LoadcellScaling>
+  <PreMoveBrakeDelay>500</PreMoveBrakeDelay>
+  <PostMoveBrakeDelay>4000</PostMoveBrakeDelay>
+  <EncoderScaling>10163585</EncoderScaling>
+</MotorModel>

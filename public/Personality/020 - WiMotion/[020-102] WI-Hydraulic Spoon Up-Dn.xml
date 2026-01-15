@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<MotorModel ManufacturerId="020" ProductId="102">
+  <Name>[020-102] WI-Hydraulic Spoon Up-Dn</Name>
+  <ImageFile></ImageFile>
+  <VariableSpeedControl>
+    <DefaultSpeed>200</DefaultSpeed>
+    <DefaultAccel>30</DefaultAccel>
+    <DefaultDecel>30</DefaultDecel>
+    <MaxSpeedClamp>500</MaxSpeedClamp>
+    <MaxAccelClamp>1500</MaxAccelClamp>
+    <MaxDecelClamp>1500</MaxDecelClamp>
+    <MinSpeedClamp>0</MinSpeedClamp>
+    <MinAccelClamp>0</MinAccelClamp>
+    <MinDecelClamp>0</MinDecelClamp>
+    <ErrorStopClamp>1500</ErrorStopClamp>
+  </VariableSpeedControl>
+  <UnderloadLimit>40</UnderloadLimit>
+  <OverloadLimit>500</OverloadLimit>
+  <LoadcellScaling>0</LoadcellScaling>
+  <EncoderScaling>105654</EncoderScaling>
+  <TuningParameter ParameterIndex="1">
+    <TuningParameterName>Proportional Gain</TuningParameterName>
+    <TuningParameterValue>1000</TuningParameterValue>
+  </TuningParameter>
+  <TuningParameter ParameterIndex="2">
+    <TuningParameterName>Integral Gain</TuningParameterName>
+    <TuningParameterValue>300</TuningParameterValue>
+  </TuningParameter>
+  <TuningParameter ParameterIndex="3">
+    <TuningParameterName>Derivative Gain</TuningParameterName>
+    <TuningParameterValue>0</TuningParameterValue>
+  </TuningParameter>
+  <TuningParameter ParameterIndex="4">
+    <TuningParameterName>Min Drive Speed</TuningParameterName>
+    <TuningParameterValue>150</TuningParameterValue>
+  </TuningParameter>
+  <TuningParameter ParameterIndex="5">
+    <TuningParameterName>Max Drive Speed</TuningParameterName>
+    <TuningParameterValue>3000000</TuningParameterValue>
+  </TuningParameter>
+  <TuningParameter ParameterIndex="6">
+    <TuningParameterName>Min Live/Sim Difference</TuningParameterName>
+    <TuningParameterValue>300</TuningParameterValue>
+  </TuningParameter>
+  <TuningParameter ParameterIndex="7">
+    <TuningParameterName>Brake Delay</TuningParameterName>
+    <TuningParameterValue>0</TuningParameterValue>
+  </TuningParameter>
+</MotorModel>

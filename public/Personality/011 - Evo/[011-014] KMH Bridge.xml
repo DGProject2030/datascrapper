@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<!--
+V1.1 - MGH created
+-->
+<MotorModel ManufacturerId="011" ProductId="014">
+  <EncoderScaling>610158</EncoderScaling>
+  <Protocol>EVO</Protocol>
+  <LoadcellScaling>0</LoadcellScaling>
+  <Name>[011-014] KMH Bridge</Name>
+  <OverloadLimit>500</OverloadLimit>
+  <UnderloadLimit>40</UnderloadLimit>
+  <VariableSpeedControl>
+    <DefaultAccel>100</DefaultAccel>
+    <DefaultDecel>100</DefaultDecel>
+    <DefaultSpeed>100</DefaultSpeed>
+    <ErrorStopClamp>750</ErrorStopClamp>
+    <MaxAccelClamp>150</MaxAccelClamp>
+    <MaxDecelClamp>750</MaxDecelClamp>
+    <MaxSpeedClamp>150</MaxSpeedClamp>
+    <MinAccelClamp>0</MinAccelClamp>
+    <MinDecelClamp>0</MinDecelClamp>
+    <MinSpeedClamp>0</MinSpeedClamp>
+  </VariableSpeedControl>
+  <PreMoveBrakeDelay>500</PreMoveBrakeDelay>
+  <PostMoveBrakeDelay>4000</PostMoveBrakeDelay>
+</MotorModel>

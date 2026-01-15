@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<MotorModel ManufacturerId="011" ProductId="001">
+  <Name>[011-001] EVO 500kg 24m/min (GIS)</Name>
+  <Protocol>EVO</Protocol>
+  <VariableSpeedControl>
+    <MinSpeedClamp>0</MinSpeedClamp>
+    <MinAccelClamp>0</MinAccelClamp>
+    <MinDecelClamp>0</MinDecelClamp>
+    <MaxSpeedClamp>400</MaxSpeedClamp>
+    <MaxAccelClamp>2500</MaxAccelClamp>
+    <MaxDecelClamp>2500</MaxDecelClamp>
+    <ErrorStopClamp>2500</ErrorStopClamp>
+    <DefaultSpeed>100</DefaultSpeed>
+    <DefaultAccel>100</DefaultAccel>
+    <DefaultDecel>100</DefaultDecel>
+  </VariableSpeedControl>
+  <UnderloadLimit>40</UnderloadLimit>
+  <OverloadLimit>500</OverloadLimit>
+  <LoadcellScaling>500</LoadcellScaling>
+  <PreMoveBrakeDelay>500</PreMoveBrakeDelay>
+  <PostMoveBrakeDelay>4000</PostMoveBrakeDelay>
+  <EncoderScaling>890300</EncoderScaling>
+</MotorModel>

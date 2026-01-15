@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotorModel ManufacturerId="003" ProductId="020">
+  <Name>[003-020] Bright Pit Lift - Vasa</Name>
+  <VariableSpeedControl>
+    <MinSpeedClamp>0</MinSpeedClamp>
+    <MaxSpeedClamp>28</MaxSpeedClamp>
+    <MinAccelClamp>0</MinAccelClamp>
+    <MaxAccelClamp>60</MaxAccelClamp>
+    <MinDecelClamp>0</MinDecelClamp>
+    <MaxDecelClamp>250</MaxDecelClamp>
+    <ErrorStopClamp>250</ErrorStopClamp>
+    <DefaultSpeed>28</DefaultSpeed>
+    <DefaultAccel>14</DefaultAccel>
+    <DefaultDecel>250</DefaultDecel>
+  </VariableSpeedControl>
+  <EncoderScaling>177559</EncoderScaling>
+</MotorModel>

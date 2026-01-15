@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<MotorModel ManufacturerId="005" ProductId="000">
+  <Name>[005-000] Kinesys Beam Trolley 2000kg 18m/min - (Enc Toothed Belt)</Name>
+  <ImageFile></ImageFile>
+  <VariableSpeedControl>
+      <MinSpeedClamp>10</MinSpeedClamp>
+      <MinAccelClamp>0</MinAccelClamp>
+      <MinDecelClamp>0</MinDecelClamp>
+      <MaxSpeedClamp>320</MaxSpeedClamp>
+      <MaxAccelClamp>700</MaxAccelClamp>
+      <MaxDecelClamp>700</MaxDecelClamp>
+      <ErrorStopClamp>700</ErrorStopClamp>
+      <!-- What should defaults be? -->
+      <DefaultSpeed>100</DefaultSpeed>
+      <DefaultAccel>100</DefaultAccel>
+      <DefaultDecel>100</DefaultDecel>
+  </VariableSpeedControl>
+  <UnderloadLimit>40</UnderloadLimit>
+  <OverloadLimit>2000</OverloadLimit>
+  <LoadcellScaling>1024</LoadcellScaling>
+  <EncoderScaling>5372</EncoderScaling>
+  <TuningParameter ParameterIndex="1">
+        <TuningParameterName>P1 Proportional Gain</TuningParameterName>
+    <TuningParameterValue>25000</TuningParameterValue>
+  </TuningParameter>
+  <TuningParameter ParameterIndex="2">
+        <TuningParameterName>P2 Integral Gain</TuningParameterName>
+    <TuningParameterValue>1000</TuningParameterValue>
+  </TuningParameter>
+  <TuningParameter ParameterIndex="3">
+        <TuningParameterName>P3 Derivative Gain</TuningParameterName>
+    <TuningParameterValue>250</TuningParameterValue>
+  </TuningParameter>
+  <TuningParameter ParameterIndex="4">
+        <TuningParameterName>P4 Min Drive Speed</TuningParameterName>
+        <TuningParameterValue>50</TuningParameterValue>
+  </TuningParameter>
+  <TuningParameter ParameterIndex="5">
+        <TuningParameterName>P5 Max Drive Speed</TuningParameterName>
+    <TuningParameterValue>5000</TuningParameterValue>
+  </TuningParameter>
+  <TuningParameter ParameterIndex="6">
+        <TuningParameterName>P6 Max Live/Sim Error (mm)</TuningParameterName>
+    <TuningParameterValue>300</TuningParameterValue>
+  </TuningParameter>
+  <TuningParameter ParameterIndex="7">
+        <TuningParameterName>P7 Brake Delay on Start (x10ms)</TuningParameterName>
+    <TuningParameterValue>0</TuningParameterValue>
+  </TuningParameter>
+     <MotorParamCategory Name="Drive Parameters"> 
+        <MotorParam Location="11.0">
+            <MotorParamName>Max output frequency</MotorParamName>
+            <Minimum>1000000</Minimum>
+            <Maximum>1000000</Maximum>
+            <DefaultValue>1000000</DefaultValue>
+            <AutoUpload>false</AutoUpload>
+            <RuntimeMonitor>false</RuntimeMonitor>
+            <ReadOnly>false</ReadOnly>
+            <Description>1000000 = 100hz</Description>
+        </MotorParam>
+
+        <MotorParam Location="15.0">
+            <MotorParamName>V/F Freq</MotorParamName>
+            <Minimum>500000</Minimum>
+            <Maximum>500000</Maximum>
+            <DefaultValue>500000</DefaultValue>
+            <AutoUpload>false</AutoUpload>
+            <RuntimeMonitor>false</RuntimeMonitor>
+            <ReadOnly>false</ReadOnly>
+            <Description>500000 = 50hz</Description>
+        </MotorParam>
+           
+        <MotorParam Location="16.0">
+            <MotorParamName>Boost</MotorParamName>
+            <Minimum>0</Minimum>
+            <Maximum>80000</Maximum>
+            <DefaultValue>45000</DefaultValue>
+            <AutoUpload>false</AutoUpload>
+            <RuntimeMonitor>false</RuntimeMonitor>
+            <ReadOnly>false</ReadOnly>
+            <Description>Motor boost 45000 = 4.5%</Description>
+        </MotorParam>
+
+        <MotorParam Location="18.0">
+            <MotorParamName>Switching Freq</MotorParamName>
+            <Minimum>20000</Minimum>
+            <Maximum>20000</Maximum>
+            <DefaultValue>20000</DefaultValue>
+            <AutoUpload>false</AutoUpload>
+            <RuntimeMonitor>false</RuntimeMonitor>
+            <ReadOnly>false</ReadOnly>
+            <Description>Inverter Switching Freq 20000 = 8khz</Description>
+        </MotorParam>
+    </MotorParamCategory>   
+</MotorModel>

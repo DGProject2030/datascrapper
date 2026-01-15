@@ -1,23 +1,23 @@
 {
-  "totalRecords": 260,
-  "processedRecords": 260,
+  "totalRecords": 86,
+  "processedRecords": 86,
   "skippedRecords": 0,
   "missingDataFields": {
     "loadCapacity": {
-      "count": 212,
-      "percentage": "81.5%"
+      "count": 38,
+      "percentage": "44.2%"
     },
     "liftingSpeed": {
-      "count": 212,
-      "percentage": "81.5%"
+      "count": 38,
+      "percentage": "44.2%"
     },
     "motorPower": {
-      "count": 256,
-      "percentage": "98.5%"
+      "count": 82,
+      "percentage": "95.3%"
     }
   },
   "manufacturerStats": {
-    "Columbus McKinnon": 193,
+    "Columbus McKinnon": 22,
     "Konecranes": 2,
     "Demag": 2,
     "Harrington Hoists": 2,
@@ -28,7 +28,7 @@
     "Movecat": 2,
     "Kito": 2,
     "Hitachi Industrial Equipment": 1,
-    "Donati Sollevamenti": 5,
+    "Donati Sollevamenti": 2,
     "PLANETA-Hebetechnik": 10,
     "Gorbel": 7,
     "Yale Hoists": 3,

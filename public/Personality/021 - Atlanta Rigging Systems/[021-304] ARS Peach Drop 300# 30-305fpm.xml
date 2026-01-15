@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<MotorModel ManufacturerId = "021" ProductId = "304">
+  <Name>(ARS-304) ARS Peach Drop 300# 30-305fpm</Name>
+  <ImageFile></ImageFile>
+    <DefaultSpeed>100</DefaultSpeed>
+    <DefaultAccel>100</DefaultAccel>
+    <DefaultDecel>100</DefaultDecel>
+  <VariableSpeedControl>
+    <MinSpeedClamp>150</MinSpeedClamp>
+    <MinAccelClamp>0</MinAccelClamp>
+    <MinDecelClamp>0</MinDecelClamp>
+    <MaxSpeedClamp>1550</MaxSpeedClamp>
+    <MaxAccelClamp>1500</MaxAccelClamp>
+    <MaxDecelClamp>1500</MaxDecelClamp>
+    <ErrorStopClamp>1500</ErrorStopClamp>
+  </VariableSpeedControl> 
+  <EncoderScaling>15595</EncoderScaling>
+  <!--EncoderResolution  4096  -->    
+  <LoadcellScaling>0</LoadcellScaling>
+  <!-- <MinWeightClamp></MinWeightClamp> -->
+  <!-- <MaxWeightClamp></MaxWeightClamp> -->
+  <UnderloadLimit>0</UnderloadLimit>
+  <OverloadLimit>0</OverloadLimit>
+  <TuningParameter ParameterIndex="1">
+    <TuningParameterName>Proportional Gain</TuningParameterName>
+    <TuningParameterValue>25000</TuningParameterValue>
+  </TuningParameter>
+  <TuningParameter ParameterIndex="2">
+    <TuningParameterName>Integral Gain</TuningParameterName>
+    <TuningParameterValue>1000</TuningParameterValue>
+  </TuningParameter>
+  <TuningParameter ParameterIndex="3">
+    <TuningParameterName>Derivative Gain</TuningParameterName>
+    <TuningParameterValue>250</TuningParameterValue>
+  </TuningParameter>
+  <TuningParameter ParameterIndex="4">
+    <TuningParameterName>Min Drive Speed</TuningParameterName>
+    <TuningParameterValue>50</TuningParameterValue>
+  </TuningParameter>
+  <TuningParameter ParameterIndex="5">
+    <TuningParameterName>Max Drive Speed</TuningParameterName>
+    <TuningParameterValue>5000</TuningParameterValue>
+  </TuningParameter>
+  <TuningParameter ParameterIndex="6">
+    <TuningParameterName>Min Live/Sim Difference</TuningParameterName>
+    <TuningParameterValue>300</TuningParameterValue>
+  </TuningParameter>
+  <TuningParameter ParameterIndex="7">
+    <TuningParameterName>Brake Delay</TuningParameterName>
+    <TuningParameterValue>20</TuningParameterValue>
+  </TuningParameter>
+
+    <!-- Max Output Freq   Lenze C0011 750000   Hz. * 10,000  -->    
+    <!-- Operating Mode   Lenze C0014 2  -->
+    <!-- V/F Rated Freq   Lenze C0015 600000   Hz. * 10,000  -->
+    <!-- Boost   Lenze C0016 25000   % * 10,000  -->
+    <!-- Chopper Freq   Lenze C0018 30000   Hz.  -->
+    <!-- Motor Speed   Lenze C0087 17150000   rpm * 10,000  -->
+    <!-- Rated Current   Lenze C0088 600000   Amp Rating * 10,000  -->
+    <!-- Rated Freq.   Lenze C0089 600000   Rated Freq. * 10,000  -->
+    <!-- Rated Voltage   Lenze C0090 2300000   Rated Voltage * 10,000  -->
+
+</MotorModel>

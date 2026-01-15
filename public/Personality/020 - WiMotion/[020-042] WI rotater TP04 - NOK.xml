@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<MotorModel ManufacturerId="020" ProductId="042">
+  <Name>[020-042] WI-Rotater TP04</Name>
+  <ImageFile></ImageFile>
+  <VariableSpeedControl>
+    <DefaultSpeed>50</DefaultSpeed>
+    <DefaultAccel>50</DefaultAccel>
+    <DefaultDecel>50</DefaultDecel>
+    <MaxSpeedClamp>100</MaxSpeedClamp>
+    <MaxAccelClamp>250</MaxAccelClamp>
+    <MaxDecelClamp>250</MaxDecelClamp>
+    <ErrorStopClamp>2500</ErrorStopClamp>
+    <MinSpeedClamp>10</MinSpeedClamp>
+    <MinAccelClamp>0</MinAccelClamp>
+    <MinDecelClamp>0</MinDecelClamp>
+  </VariableSpeedControl>
+  <EncoderScaling>1887771</EncoderScaling>
+ <PreMoveBrakeDelay>0</PreMoveBrakeDelay>
+  <PostMoveBrakeDelay>4000</PostMoveBrakeDelay>
+  <TuningParameter ParameterIndex="8">
+    <TuningParameterName>Pre Move Brake Delay</TuningParameterName>
+    <TuningParameterValue>0</TuningParameterValue>
+  </TuningParameter>
+  <TuningParameter ParameterIndex="9">
+    <TuningParameterName>Post Move Brake Delay</TuningParameterName>
+    <TuningParameterValue>4000</TuningParameterValue>
+  </TuningParameter>
+</MotorModel>

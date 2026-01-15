@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotorModel ManufacturerId="003" ProductId="007">
+<!--  
+
+Notes
+Travel 360 mechanically limited
+Gearing total  981.307 : 1
+Motor 2000 RPM == approx. 2RPM max speed
+12.2 degrees per sec
+-->
+  <Name>[003-007] Kinesys RH1 Revovle (2r/min:3600)</Name>
+  <!-- <Revolve/> -->
+  <!-- image? -->
+  <MinPositionClamp>0</MinPositionClamp>
+  <MaxPositionClamp>3600</MaxPositionClamp>
+  <VariableSpeedControl>
+    <MinSpeedClamp>0</MinSpeedClamp>
+    <MaxSpeedClamp>122</MaxSpeedClamp>
+    <MinAccelClamp>0</MinAccelClamp>
+    <MaxAccelClamp>200</MaxAccelClamp>
+    <MinDecelClamp>0</MinDecelClamp>
+    <MaxDecelClamp>200</MaxDecelClamp>
+    <ErrorStopClamp>200</ErrorStopClamp>
+    <DefaultSpeed>20</DefaultSpeed>
+    <DefaultAccel>200</DefaultAccel>
+    <DefaultDecel>200</DefaultDecel>
+  </VariableSpeedControl>
+  <PreMoveBrakeDelay>10</PreMoveBrakeDelay>
+  <PostMoveBrakeDelay>1000</PostMoveBrakeDelay>
+  <EncoderScaling>366858</EncoderScaling>
+  <UnderloadLimit>0</UnderloadLimit>
+  <OverloadLimit>0</OverloadLimit>
+  <LoadcellScaling>0</LoadcellScaling>
+  <!-- bool    invertDirection; -->
+  <!-- <TuningParam Index Name Value /> -->
+  <MotorParameterFile Name="kinesys/kinposrev.html" />
+</MotorModel>

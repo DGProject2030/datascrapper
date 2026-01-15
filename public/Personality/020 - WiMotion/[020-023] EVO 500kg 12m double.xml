@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<MotorModel ManufacturerId="020" ProductId="023">
+  <Name>[020-023] WI-EVO 500kg 12m/min double reeved</Name>
+  <ImageFile></ImageFile>
+  <VariableSpeedControl>  
+    <MinSpeedClamp>0</MinSpeedClamp>
+    <MinAccelClamp>0</MinAccelClamp>
+    <MinDecelClamp>0</MinDecelClamp>
+    <MaxSpeedClamp>200</MaxSpeedClamp>
+    <MaxAccelClamp>2500</MaxAccelClamp>
+    <MaxDecelClamp>2500</MaxDecelClamp>
+    <ErrorStopClamp>4000</ErrorStopClamp>
+    <DefaultSpeed>100</DefaultSpeed>
+    <DefaultAccel>100</DefaultAccel>
+    <DefaultDecel>100</DefaultDecel>
+  </VariableSpeedControl>
+  <UnderloadLimit>40</UnderloadLimit>
+  <OverloadLimit>500</OverloadLimit>
+  <LoadcellScaling>1000</LoadcellScaling>
+  <PreMoveBrakeDelay>0</PreMoveBrakeDelay>
+  <PostMoveBrakeDelay>4000</PostMoveBrakeDelay>
+  <EncoderScaling>445150</EncoderScaling>
+  <TuningParameter ParameterIndex="8">
+    <TuningParameterName>Pre Move Brake Delay</TuningParameterName>
+    <TuningParameterValue>0</TuningParameterValue>
+  </TuningParameter>
+  <TuningParameter ParameterIndex="9">
+    <TuningParameterName>Post Move Brake Delay</TuningParameterName>
+    <TuningParameterValue>4000</TuningParameterValue>
+  </TuningParameter>
+</MotorModel>

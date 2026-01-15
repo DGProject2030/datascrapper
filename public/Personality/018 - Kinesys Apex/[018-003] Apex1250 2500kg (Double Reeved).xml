@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<MotorModel ManufacturerId="018" ProductId="003">
+  <Name>[018-003] Apex1250 2500kg (Double Reeved)</Name>
+  <Protocol>EVO</Protocol>
+  <VariableSpeedControl>
+    <DefaultSpeed>100</DefaultSpeed>
+    <DefaultAccel>100</DefaultAccel>
+    <DefaultDecel>100</DefaultDecel>
+    <MaxSpeedClamp>100</MaxSpeedClamp>
+    <MaxAccelClamp>200</MaxAccelClamp>
+    <MaxDecelClamp>200</MaxDecelClamp>
+    <MinSpeedClamp>0</MinSpeedClamp>
+    <MinAccelClamp>0</MinAccelClamp>
+    <MinDecelClamp>0</MinDecelClamp>
+    <ErrorStopClamp>200</ErrorStopClamp>
+  </VariableSpeedControl>
+  <UnderloadLimit>0</UnderloadLimit>
+  <OverloadLimit>2500</OverloadLimit>
+  <LoadcellScaling>8495</LoadcellScaling>
+  <EncoderScaling>139437</EncoderScaling>
+    <PreMoveBrakeDelay>800</PreMoveBrakeDelay>
+    <PostMoveBrakeDelay>2000</PostMoveBrakeDelay>
+  <EncoderScaling2>15500000</EncoderScaling2>
+</MotorModel>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<MotorModel ManufacturerId="014" ProductId="008">
+  <Name>[014-008] EXE Rise (EXE Limit) 2000kg 4mpm</Name>
+  <ImageFile></ImageFile>
+  <VariableSpeedControl>
+    <DefaultSpeed>100</DefaultSpeed>
+    <DefaultAccel>100</DefaultAccel>
+    <DefaultDecel>100</DefaultDecel>
+    <MaxSpeedClamp>85</MaxSpeedClamp>
+    <MaxAccelClamp>1500</MaxAccelClamp>
+    <MaxDecelClamp>1500</MaxDecelClamp>
+    <MinSpeedClamp>10</MinSpeedClamp>
+    <MinAccelClamp>0</MinAccelClamp>
+    <MinDecelClamp>0</MinDecelClamp>
+    <ErrorStopClamp>1500</ErrorStopClamp>
+  </VariableSpeedControl>
+  <UnderloadLimit>0</UnderloadLimit>
+  <OverloadLimit>2000</OverloadLimit>
+  <LoadcellScaling>1024</LoadcellScaling>
+  <EncoderScaling>29691</EncoderScaling>
+  <TuningParameter ParameterIndex="1">
+    <TuningParameterName>Proportional Gain</TuningParameterName>
+    <TuningParameterValue>25000</TuningParameterValue>
+  </TuningParameter>
+  <TuningParameter ParameterIndex="2">
+    <TuningParameterName>Integral Gain</TuningParameterName>
+    <TuningParameterValue>1000</TuningParameterValue>
+  </TuningParameter>
+  <TuningParameter ParameterIndex="3">
+    <TuningParameterName>Derivative Gain</TuningParameterName>
+    <TuningParameterValue>250</TuningParameterValue>
+  </TuningParameter>
+  <TuningParameter ParameterIndex="4">
+    <TuningParameterName>Min Drive Speed</TuningParameterName>
+    <TuningParameterValue>150</TuningParameterValue>
+  </TuningParameter>
+  <TuningParameter ParameterIndex="5">
+    <TuningParameterName>Max Drive Speed</TuningParameterName>
+    <TuningParameterValue>5000</TuningParameterValue>
+  </TuningParameter>
+  <TuningParameter ParameterIndex="6">
+    <TuningParameterName>Min Live/Sim Difference</TuningParameterName>
+    <TuningParameterValue>300</TuningParameterValue>
+  </TuningParameter>
+  <TuningParameter ParameterIndex="7">
+    <TuningParameterName>Brake Delay</TuningParameterName>
+    <TuningParameterValue>10</TuningParameterValue>
+  </TuningParameter>
+  <TuningParameter ParameterIndex="8">
+    <TuningParameterName></TuningParameterName>
+    <TuningParameterValue>0</TuningParameterValue>
+  </TuningParameter>
+  <TuningParameter ParameterIndex="9">
+    <TuningParameterName></TuningParameterName>
+    <TuningParameterValue>0</TuningParameterValue>
+  </TuningParameter>
+  <TuningParameter ParameterIndex="10">
+    <TuningParameterName></TuningParameterName>
+    <TuningParameterValue>0</TuningParameterValue>
+  </TuningParameter>
+  <TuningParameter ParameterIndex="11">
+    <TuningParameterName></TuningParameterName>
+    <TuningParameterValue>0</TuningParameterValue>
+  </TuningParameter>
+  <TuningParameter ParameterIndex="12">
+    <TuningParameterName></TuningParameterName>
+    <TuningParameterValue>0</TuningParameterValue>
+  </TuningParameter>
+  <TuningParameter ParameterIndex="13">
+    <TuningParameterName></TuningParameterName>
+    <TuningParameterValue>0</TuningParameterValue>
+  </TuningParameter>
+  <TuningParameter ParameterIndex="14">
+    <TuningParameterName></TuningParameterName>
+    <TuningParameterValue>0</TuningParameterValue>
+  </TuningParameter>
+  <TuningParameter ParameterIndex="15">
+    <TuningParameterName></TuningParameterName>
+    <TuningParameterValue>0</TuningParameterValue>
+  </TuningParameter>
+  <TuningParameter ParameterIndex="16">
+    <TuningParameterName></TuningParameterName>
+    <TuningParameterValue>0</TuningParameterValue>
+  </TuningParameter>
+  <TuningParameter ParameterIndex="17">
+    <TuningParameterName></TuningParameterName>
+    <TuningParameterValue>0</TuningParameterValue>
+  </TuningParameter>
+  <TuningParameter ParameterIndex="18">
+    <TuningParameterName></TuningParameterName>
+    <TuningParameterValue>0</TuningParameterValue>
+  </TuningParameter>
+  <TuningParameter ParameterIndex="19">
+    <TuningParameterName></TuningParameterName>
+    <TuningParameterValue>0</TuningParameterValue>
+  </TuningParameter>
+  <TuningParameter ParameterIndex="20">
+    <TuningParameterName></TuningParameterName>
+    <TuningParameterValue>0</TuningParameterValue>
+  </TuningParameter>
+</MotorModel>

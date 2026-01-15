@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<MotorModel ManufacturerId="023" ProductId="001">
+  <EncoderScaling>55060</EncoderScaling>
+  <ImageFile/>
+  <LoadcellScaling>1024</LoadcellScaling>
+  <MotorParamCategory Name="Drive Parameters">
+    <MotorParam Location="11.0">
+      <AutoUpload>false</AutoUpload>
+      <DefaultValue>1000000</DefaultValue>
+      <Description>1000000 = 100hz    </Description>
+      <Maximum>1000000</Maximum>
+      <Minimum>1000000</Minimum>
+      <MotorParamName>Max output frequency</MotorParamName>
+      <ReadOnly>false</ReadOnly>
+      <RuntimeMonitor>false</RuntimeMonitor>
+    </MotorParam>
+    <MotorParam Location="15.0">
+      <AutoUpload>false</AutoUpload>
+      <DefaultValue>600000</DefaultValue>
+      <Description>600000 = 60hz</Description>
+      <Maximum>600000</Maximum>
+      <Minimum>600000</Minimum>
+      <MotorParamName>V/F Freq</MotorParamName>
+      <ReadOnly>false</ReadOnly>
+      <RuntimeMonitor>false</RuntimeMonitor>
+    </MotorParam>
+    <MotorParam Location="16.0">
+      <AutoUpload>false</AutoUpload>
+      <DefaultValue>45000</DefaultValue>
+      <Description>Motor boost 45000 = 4.5%    </Description>
+      <Maximum>45000</Maximum>
+      <Minimum>0</Minimum>
+      <MotorParamName>Boost</MotorParamName>
+      <ReadOnly>false</ReadOnly>
+      <RuntimeMonitor>false</RuntimeMonitor>
+    </MotorParam>
+    <MotorParam Location="18.0">
+      <AutoUpload>false</AutoUpload>
+      <DefaultValue>20000</DefaultValue>
+      <Description>Inverter Switching Freq 20000 = 8khz    </Description>
+      <Maximum>20000</Maximum>
+      <Minimum>20000</Minimum>
+      <MotorParamName>Switching Freq</MotorParamName>
+      <ReadOnly>false</ReadOnly>
+      <RuntimeMonitor>false</RuntimeMonitor>
+    </MotorParam>
+  </MotorParamCategory>
+  <Name>[23-001] Upstaging 60Hz Liftket 1000kg 9-6mpm  </Name>
+  <OverloadLimit>1000</OverloadLimit>
+  <TuningParameter ParameterIndex="1">
+    <TuningParameterName>P1 Proportional Gain</TuningParameterName>
+    <TuningParameterValue>25000</TuningParameterValue>
+  </TuningParameter>
+  <TuningParameter ParameterIndex="2">
+    <TuningParameterName>P2 Integral Gain</TuningParameterName>
+    <TuningParameterValue>1000</TuningParameterValue>
+  </TuningParameter>
+  <TuningParameter ParameterIndex="3">
+    <TuningParameterName>P3 Derivative Gain</TuningParameterName>
+    <TuningParameterValue>250</TuningParameterValue>
+  </TuningParameter>
+  <TuningParameter ParameterIndex="4">
+    <TuningParameterName>P4 Min Drive Speed</TuningParameterName>
+    <TuningParameterValue>50</TuningParameterValue>
+  </TuningParameter>
+  <TuningParameter ParameterIndex="5">
+    <TuningParameterName>P5 Max Drive Speed</TuningParameterName>
+    <TuningParameterValue>5000</TuningParameterValue>
+  </TuningParameter>
+  <TuningParameter ParameterIndex="6">
+    <TuningParameterName>P6 Max Live/Sim Error (mm)</TuningParameterName>
+    <TuningParameterValue>300</TuningParameterValue>
+  </TuningParameter>
+  <TuningParameter ParameterIndex="7">
+    <TuningParameterName>P7 Brake Delay on Start (x10ms)</TuningParameterName>
+    <TuningParameterValue>0</TuningParameterValue>
+  </TuningParameter>
+  <UnderloadLimit>40</UnderloadLimit>
+  <VariableSpeedControl>
+    <DefaultAccel>100</DefaultAccel>
+    <DefaultDecel>100</DefaultDecel>
+    <DefaultSpeed>100</DefaultSpeed>
+    <ErrorStopClamp>1500</ErrorStopClamp>
+    <MaxAccelClamp>1500</MaxAccelClamp>
+    <MaxDecelClamp>1500</MaxDecelClamp>
+    <MaxSpeedClamp>160</MaxSpeedClamp>
+    <MinAccelClamp>0</MinAccelClamp>
+    <MinDecelClamp>0</MinDecelClamp>
+    <MinSpeedClamp>16</MinSpeedClamp>
+  </VariableSpeedControl>
+</MotorModel>

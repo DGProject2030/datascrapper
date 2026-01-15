@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<MotorModel ManufacturerId="020" ProductId="025">
+  <Name>[020-025] WI-EVO 800kg 12m/min(GIS)</Name>
+  <ImageFile></ImageFile>
+  <VariableSpeedControl>  
+    <MinSpeedClamp>0</MinSpeedClamp>
+    <MinAccelClamp>0</MinAccelClamp>
+    <MinDecelClamp>0</MinDecelClamp>
+    <MaxSpeedClamp>200</MaxSpeedClamp>
+    <MaxAccelClamp>2500</MaxAccelClamp>
+    <MaxDecelClamp>2500</MaxDecelClamp>
+    <ErrorStopClamp>4000</ErrorStopClamp>
+    <DefaultSpeed>75</DefaultSpeed>
+    <DefaultAccel>75</DefaultAccel>
+    <DefaultDecel>75</DefaultDecel>
+  </VariableSpeedControl>
+  <UnderloadLimit>80</UnderloadLimit>
+  <OverloadLimit>800</OverloadLimit>
+  <LoadcellScaling>2000</LoadcellScaling>
+  <PreMoveBrakeDelay>0</PreMoveBrakeDelay>
+  <PostMoveBrakeDelay>4000</PostMoveBrakeDelay>
+  <EncoderScaling>446600</EncoderScaling>
+  <TuningParameter ParameterIndex="8">
+    <TuningParameterName>Pre Move Brake Delay</TuningParameterName>
+    <TuningParameterValue>0</TuningParameterValue>
+  </TuningParameter>
+  <TuningParameter ParameterIndex="9">
+    <TuningParameterName>Post Move Brake Delay</TuningParameterName>
+    <TuningParameterValue>4000</TuningParameterValue>
+  </TuningParameter>
+</MotorModel>

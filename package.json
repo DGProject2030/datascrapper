@@ -26,6 +26,8 @@
     "scheduler:start": "node scheduler.js start",
     "scheduler:run": "node scheduler.js run-now",
     "scheduler:status": "node scheduler.js status",
+    "personality:parse": "node personality-parser.js parse",
+    "personality:enrich": "node personality-web-scraper.js enrich",
     "prepare": "husky"
   },
   "keywords": [
@@ -69,7 +71,8 @@
     "pdf-parse": "^1.1.1",
     "pdfkit": "^0.14.0",
     "winston": "^3.11.0",
-    "xlsx": "^0.18.5"
+    "xlsx": "^0.18.5",
+    "xml2js": "^0.6.2"
   },
   "devDependencies": {
     "eslint": "^8.56.0",

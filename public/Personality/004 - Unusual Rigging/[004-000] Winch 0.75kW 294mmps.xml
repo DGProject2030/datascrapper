@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<MotorModel ManufacturerId="004" ProductId="000">
+  <Name>[004-000] Winch 0.75kW 294mm/s</Name>
+  <ImageFile></ImageFile>
+  <!-- What should position clamps be? -->
+  <MinPositionClamp>-60000</MinPositionClamp>
+  <MaxPositionClamp>60000</MaxPositionClamp>
+  <VariableSpeedControl>
+    <MinSpeedClamp>0</MinSpeedClamp>
+    <MinAccelClamp>0</MinAccelClamp>
+    <MinDecelClamp>0</MinDecelClamp>
+    <MaxSpeedClamp>294</MaxSpeedClamp>
+    <MaxAccelClamp>1500</MaxAccelClamp>
+    <MaxDecelClamp>1500</MaxDecelClamp>
+    <ErrorStopClamp>1500</ErrorStopClamp>
+    <!-- What should defaults be? -->
+    <DefaultSpeed>100</DefaultSpeed>
+    <DefaultAccel>100</DefaultAccel>
+    <DefaultDecel>100</DefaultDecel>
+  </VariableSpeedControl>
+  <UnderloadLimit>40</UnderloadLimit>
+  <OverloadLimit>500</OverloadLimit>
+  <LoadcellScaling>0</LoadcellScaling>
+  <EncoderScaling>1000000</EncoderScaling>
+</MotorModel>

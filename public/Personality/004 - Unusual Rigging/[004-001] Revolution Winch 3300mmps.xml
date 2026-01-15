@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<MotorModel ManufacturerId="004" ProductId="001">
+  <Name>[004-001] Revolution Winch 3300mm/s</Name>
+  <ImageFile></ImageFile>
+  <!-- What should position clamps be? -->
+  <MinPositionClamp>-60000</MinPositionClamp>
+  <MaxPositionClamp>60000</MaxPositionClamp>
+  <VariableSpeedControl>
+    <MinSpeedClamp>0</MinSpeedClamp>
+    <MinAccelClamp>0</MinAccelClamp>
+    <MinDecelClamp>0</MinDecelClamp>
+    <MaxSpeedClamp>3300</MaxSpeedClamp>
+    <MaxAccelClamp>3600</MaxAccelClamp>
+    <MaxDecelClamp>3600</MaxDecelClamp>
+    <ErrorStopClamp>3600</ErrorStopClamp>
+    <!-- What should defaults be? -->
+    <DefaultSpeed>200</DefaultSpeed>
+    <DefaultAccel>200</DefaultAccel>
+    <DefaultDecel>200</DefaultDecel>
+  </VariableSpeedControl>
+  <PreMoveBrakeDelay>1000</PreMoveBrakeDelay>
+  <PostMoveBrakeDelay>4000</PostMoveBrakeDelay>
+  <UnderloadLimit>40</UnderloadLimit>
+  <OverloadLimit>500</OverloadLimit>
+  <LoadcellScaling>0</LoadcellScaling>
+  <EncoderScaling>6842000</EncoderScaling>
+  <TuningParameter ParameterIndex="8">
+    <TuningParameterName>Pre Move Brake Delay</TuningParameterName>
+    <TuningParameterValue>1000</TuningParameterValue>
+  </TuningParameter>
+  <TuningParameter ParameterIndex="9">
+    <TuningParameterName>Post Move Brake Delay</TuningParameterName>
+    <TuningParameterValue>4000</TuningParameterValue>
+  </TuningParameter>
+</MotorModel>

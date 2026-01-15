@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotorModel ManufacturerId="003" ProductId="011">
+  <Name>[003-011] Kinesys F500 Winch</Name>
+  <!-- <Revolve/> -->
+  <!-- image? -->
+  <VariableSpeedControl>
+    <MinSpeedClamp>0</MinSpeedClamp>
+    <MaxSpeedClamp>12000</MaxSpeedClamp>
+    <MinAccelClamp>0</MinAccelClamp>
+    <MaxAccelClamp>24000</MaxAccelClamp>
+    <MinDecelClamp>0</MinDecelClamp>
+    <MaxDecelClamp>24000</MaxDecelClamp>
+    <ErrorStopClamp>24000</ErrorStopClamp>
+    <DefaultSpeed>200</DefaultSpeed>
+    <DefaultAccel>200</DefaultAccel>
+    <DefaultDecel>200</DefaultDecel>
+  </VariableSpeedControl>
+  <PreMoveBrakeDelay>200</PreMoveBrakeDelay>
+  <PostMoveBrakeDelay>1000</PostMoveBrakeDelay>
+  <EncoderScaling>31258847</EncoderScaling>
+  <UnderloadLimit>0</UnderloadLimit>
+  <OverloadLimit>0</OverloadLimit>
+  <LoadcellScaling>15739</LoadcellScaling>
+  <!-- bool    invertDirection; -->
+  <!-- <TuningParam Index Name Value /> -->
+  <MotorParameterFile Name="kinesys/kinpos.html" />
+</MotorModel>

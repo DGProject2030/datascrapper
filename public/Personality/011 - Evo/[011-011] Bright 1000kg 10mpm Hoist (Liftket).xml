@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<!--
+V1.1 - MGH created
+-->
+<MotorModel ManufacturerId="011" ProductId="011">
+  <Name>[011-011] Bright 1000kg 10m/min (Liftket)</Name>
+  <Protocol>EVO</Protocol>
+  <VariableSpeedControl>
+    <MinSpeedClamp>0</MinSpeedClamp>
+    <MinAccelClamp>0</MinAccelClamp>
+    <MinDecelClamp>0</MinDecelClamp>
+    <MaxSpeedClamp>160</MaxSpeedClamp>
+    <MaxAccelClamp>300</MaxAccelClamp>
+    <MaxDecelClamp>300</MaxDecelClamp>
+    <ErrorStopClamp>300</ErrorStopClamp>
+    <DefaultSpeed>100</DefaultSpeed>
+    <DefaultAccel>100</DefaultAccel>
+    <DefaultDecel>100</DefaultDecel>
+  </VariableSpeedControl>
+  <UnderloadLimit>0</UnderloadLimit>
+  <OverloadLimit>0</OverloadLimit>
+  <LoadcellScaling>0</LoadcellScaling>
+  <EncoderScaling>323065</EncoderScaling>
+  	<PreMoveBrakeDelay>500</PreMoveBrakeDelay>
+  	<PostMoveBrakeDelay>1000</PostMoveBrakeDelay>
+</MotorModel>

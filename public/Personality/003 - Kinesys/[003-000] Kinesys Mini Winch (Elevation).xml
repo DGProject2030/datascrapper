@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotorModel ManufacturerId="003" ProductId="000">
+  <Name>[003-000] Kinesys Mini Winch (Elevation)</Name>
+  <!-- <Revolve/> -->
+  <!-- image? -->
+  <MinPositionClamp>-60000</MinPositionClamp>
+  <MaxPositionClamp>60000</MaxPositionClamp>
+  <VariableSpeedControl>
+    <MinSpeedClamp>50</MinSpeedClamp>
+    <MaxSpeedClamp>650</MaxSpeedClamp>
+    <MinAccelClamp>0</MinAccelClamp>
+    <MaxAccelClamp>1500</MaxAccelClamp>
+    <MinDecelClamp>0</MinDecelClamp>
+    <MaxDecelClamp>1500</MaxDecelClamp>
+    <ErrorStopClamp>1500</ErrorStopClamp>
+    <DefaultSpeed>200</DefaultSpeed>
+    <DefaultAccel>500</DefaultAccel>
+    <DefaultDecel>500</DefaultDecel>
+  </VariableSpeedControl>
+  <UnderloadLimit>5</UnderloadLimit>
+  <OverloadLimit>20</OverloadLimit>
+  <LoadcellScaling>0</LoadcellScaling>
+  <EncoderScaling>5870</EncoderScaling>
+  <!-- bool    invertDirection; -->
+  <TuningParameter ParameterIndex="1">
+    <TuningParameterName>Proportional Gain</TuningParameterName>
+    <TuningParameterValue>25000</TuningParameterValue>
+  </TuningParameter>
+  <TuningParameter ParameterIndex="2">
+    <TuningParameterName>Integral Gain</TuningParameterName>
+    <TuningParameterValue>1000</TuningParameterValue>
+  </TuningParameter>
+  <TuningParameter ParameterIndex="3">
+    <TuningParameterName>Derivative Gain</TuningParameterName>
+    <TuningParameterValue>250</TuningParameterValue>
+  </TuningParameter>
+  <TuningParameter ParameterIndex="4">
+    <TuningParameterName>Min Drive Speed</TuningParameterName>
+    <TuningParameterValue>150</TuningParameterValue>
+  </TuningParameter>
+  <TuningParameter ParameterIndex="5">
+    <TuningParameterName>Max Drive Speed</TuningParameterName>
+    <TuningParameterValue>5000</TuningParameterValue>
+  </TuningParameter>
+  <TuningParameter ParameterIndex="6">
+    <TuningParameterName>Min Live/Sim Difference</TuningParameterName>
+    <TuningParameterValue>300</TuningParameterValue>
+  </TuningParameter>
+  <TuningParameter ParameterIndex="7">
+    <TuningParameterName>Brake Delay</TuningParameterName>
+    <TuningParameterValue>20</TuningParameterValue>
+  </TuningParameter>
+</MotorModel>

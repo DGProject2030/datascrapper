@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotorModel ManufacturerId="003" ProductId="006">
+  <Name>[003-006] Kinesys ZF200-20-08 Winch</Name>
+  <!-- <Revolve/> -->
+  <!-- image? -->
+  <MinPositionClamp>0</MinPositionClamp>
+  <MaxPositionClamp>15000</MaxPositionClamp>
+  <VariableSpeedControl>
+    <MinSpeedClamp>0</MinSpeedClamp>
+    <MaxSpeedClamp>800</MaxSpeedClamp>
+    <MinAccelClamp>0</MinAccelClamp>
+    <MaxAccelClamp>2000</MaxAccelClamp>
+    <MinDecelClamp>0</MinDecelClamp>
+    <MaxDecelClamp>2000</MaxDecelClamp>
+    <ErrorStopClamp>2000</ErrorStopClamp>
+    <DefaultSpeed>200</DefaultSpeed>
+    <DefaultAccel>200</DefaultAccel>
+    <DefaultDecel>200</DefaultDecel>
+  </VariableSpeedControl>
+  <PreMoveBrakeDelay>300</PreMoveBrakeDelay>
+  <PostMoveBrakeDelay>1000</PostMoveBrakeDelay>
+  <EncoderScaling>2342752</EncoderScaling>
+  <UnderloadLimit>0</UnderloadLimit>
+  <OverloadLimit>0</OverloadLimit>
+  <LoadcellScaling>0</LoadcellScaling>
+  <!-- bool    invertDirection; -->
+  <!-- <TuningParam Index Name Value /> -->
+  <MotorParameterFile Name="kinesys/kinpossmsafety.html" />
+</MotorModel>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<!--
+V1.2 - Encoder Scaling Changed
+Note Second Encoder 75.17 = 33159921 
+-->
+<MotorModel ManufacturerId="003" ProductId="013">
+  <Name>[003-013] DLM K3 Winch (300kg 1000mm/s)</Name>
+  <ImageFile></ImageFile>
+  <VariableSpeedControl>
+    <MinSpeedClamp>0</MinSpeedClamp>
+    <MinAccelClamp>0</MinAccelClamp>
+    <MinDecelClamp>0</MinDecelClamp>
+    <MaxSpeedClamp>1000</MaxSpeedClamp>
+    <MaxAccelClamp>1000</MaxAccelClamp>
+    <MaxDecelClamp>1000</MaxDecelClamp>
+    <ErrorStopClamp>1000</ErrorStopClamp>
+    <DefaultSpeed>100</DefaultSpeed>
+    <DefaultAccel>100</DefaultAccel>
+    <DefaultDecel>100</DefaultDecel>
+  </VariableSpeedControl>
+  <UnderloadLimit>0</UnderloadLimit>
+  <OverloadLimit>300</OverloadLimit>
+  <LoadcellScaling>0</LoadcellScaling>
+  <EncoderScaling>4160063</EncoderScaling>
+  <TuningParameter ParameterIndex="8">
+    <TuningParameterName>Pre Move Brake Delay</TuningParameterName>
+    <TuningParameterValue>400</TuningParameterValue>
+  </TuningParameter>
+  <TuningParameter ParameterIndex="9">
+    <TuningParameterName>Post Move Brake Delay</TuningParameterName>
+    <TuningParameterValue>4000</TuningParameterValue>
+  </TuningParameter>
+</MotorModel>

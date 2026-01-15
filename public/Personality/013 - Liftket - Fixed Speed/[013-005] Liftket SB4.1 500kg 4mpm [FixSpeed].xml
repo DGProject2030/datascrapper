@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<MotorModel ManufacturerId="013" ProductId="005">
+    <!-- Boost   Lenze C0016 45000   % * 10,000 -->
+    <EncoderScaling>55000</EncoderScaling>
+    <EncoderType>3</EncoderType>
+    <ImageFile/>
+    <LoadcellScaling>1024</LoadcellScaling>
+    <Name>[013-005] Liftket SB4.1 500kg 4m/min (FixSpeed)</Name>
+    <OverloadLimit>1000</OverloadLimit>
+    <UnderloadLimit>0</UnderloadLimit>
+  <FixedSpeedControl>
+    <FixedSpeed>33</FixedSpeed>
+    <FixedAccel>1500</FixedAccel>
+    <FixedDecel>1500</FixedDecel>
+  </FixedSpeedControl>
+</MotorModel>

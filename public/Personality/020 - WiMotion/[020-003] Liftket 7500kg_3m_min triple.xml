@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<MotorModel ManufacturerId = "020" ProductId = "003">
+  <Name>[020-003] Liftket 7.5T 2.6m/min (45mm/s) triple reeved</Name>
+  <ImageFile></ImageFile>
+  <VariableSpeedControl>
+    <DefaultSpeed>25</DefaultSpeed>
+    <DefaultAccel>100</DefaultAccel>
+    <DefaultDecel>100</DefaultDecel>
+    <MaxSpeedClamp>45</MaxSpeedClamp>
+    <MaxAccelClamp>1500</MaxAccelClamp>
+    <MaxDecelClamp>1500</MaxDecelClamp>
+    <ErrorStopClamp>1500</ErrorStopClamp>
+    <MinSpeedClamp>4</MinSpeedClamp>
+    <MinAccelClamp>0</MinAccelClamp>
+    <MinDecelClamp>0</MinDecelClamp>
+  </VariableSpeedControl>
+  <UnderloadLimit>40</UnderloadLimit>
+  <OverloadLimit>4750</OverloadLimit>
+  <LoadcellScaling>0</LoadcellScaling>
+  <EncoderScaling>25828</EncoderScaling>
+  <TuningParameter ParameterIndex="1">
+      <TuningParameterName>Proportional Gain</TuningParameterName>
+      <TuningParameterValue>25000</TuningParameterValue>    
+  </TuningParameter>
+  <TuningParameter ParameterIndex="2">
+      <TuningParameterName>Integral Gain</TuningParameterName>
+      <TuningParameterValue>1000</TuningParameterValue>    
+  </TuningParameter>
+  <TuningParameter ParameterIndex="3">
+      <TuningParameterName>Derivative Gain</TuningParameterName>
+      <TuningParameterValue>250</TuningParameterValue>    
+  </TuningParameter>
+  <TuningParameter ParameterIndex="4">
+      <TuningParameterName>Min Drive Speed</TuningParameterName>
+      <TuningParameterValue>150</TuningParameterValue>    
+  </TuningParameter>
+  <TuningParameter ParameterIndex="5">
+      <TuningParameterName>Max Drive Speed</TuningParameterName>
+      <TuningParameterValue>5000</TuningParameterValue>    
+  </TuningParameter>
+  <TuningParameter ParameterIndex="6">
+      <TuningParameterName>Min Live/Sim Difference</TuningParameterName>
+      <TuningParameterValue>300</TuningParameterValue>    
+  </TuningParameter>
+  <TuningParameter ParameterIndex="7">
+      <TuningParameterName>Brake Delay</TuningParameterName>
+      <TuningParameterValue>0</TuningParameterValue>    
+  </TuningParameter>
+  <!-- Boost   Lenze C0016 45000   % * 10,000 -->
+</MotorModel>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotorModel ManufacturerId="003" ProductId="002">
+  <Name>[003-002] Kinesys G2 Winch</Name>
+  <!-- <Revolve/> -->
+  <!-- image? -->
+  <MinPositionClamp>-60000</MinPositionClamp>
+  <MaxPositionClamp>60000</MaxPositionClamp>
+  <VariableSpeedControl>
+    <MinSpeedClamp>0</MinSpeedClamp>
+    <MaxSpeedClamp>1000</MaxSpeedClamp>
+    <MinAccelClamp>0</MinAccelClamp>
+    <MaxAccelClamp>5000</MaxAccelClamp>
+    <MinDecelClamp>0</MinDecelClamp>
+    <MaxDecelClamp>5000</MaxDecelClamp>
+    <ErrorStopClamp>5000</ErrorStopClamp>
+    <DefaultSpeed>200</DefaultSpeed>
+    <DefaultAccel>200</DefaultAccel>
+    <DefaultDecel>200</DefaultDecel>
+  </VariableSpeedControl>
+  <PreMoveBrakeDelay>10</PreMoveBrakeDelay>
+  <PostMoveBrakeDelay>1000</PostMoveBrakeDelay>
+  <EncoderScaling>4067358</EncoderScaling>
+  <UnderloadLimit>40</UnderloadLimit>
+  <OverloadLimit>500</OverloadLimit>
+  <LoadcellScaling>0</LoadcellScaling>
+  <!-- bool    invertDirection; -->
+  <!-- <TuningParam Index Name Value /> -->
+  <TuningParameter ParameterIndex="8">
+    <TuningParameterName>Pre Move Brake Delay</TuningParameterName>
+    <TuningParameterValue>10</TuningParameterValue>
+  </TuningParameter>
+  <TuningParameter ParameterIndex="9">
+    <TuningParameterName>Post Move Brake Delay</TuningParameterName>
+    <TuningParameterValue>1000</TuningParameterValue>
+  </TuningParameter>
+</MotorModel>

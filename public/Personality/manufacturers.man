@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Manufacturers>
+  <Manufacturer ManufacturerId="000">
+    <ManufacturerName>000 - Lodestar</ManufacturerName>
+  </Manufacturer>
+  <Manufacturer ManufacturerId="001">
+    <ManufacturerName>001 - Liftket</ManufacturerName>
+  </Manufacturer>
+  <Manufacturer ManufacturerId="002">
+    <ManufacturerName>002 - Prostar</ManufacturerName>
+  </Manufacturer>
+  <Manufacturer ManufacturerId="003">
+    <ManufacturerName>003 - Kinesys</ManufacturerName>
+  </Manufacturer>
+  <Manufacturer ManufacturerId="004">
+    <ManufacturerName>004 - Unusual Rigging</ManufacturerName>
+  </Manufacturer>
+  <Manufacturer ManufacturerId="005">
+    <ManufacturerName>005 - Beam Trolley</ManufacturerName>
+  </Manufacturer>
+  <Manufacturer ManufacturerId="006">
+    <ManufacturerName>006 - Summit Steel</ManufacturerName>
+  </Manufacturer>
+  <Manufacturer ManufacturerId="007">
+    <ManufacturerName>007 - Flying by Foy</ManufacturerName>
+  </Manufacturer>
+  <Manufacturer ManufacturerId="008">
+    <ManufacturerName>008 - Lodestar New Body</ManufacturerName>
+  </Manufacturer>
+  <Manufacturer ManufacturerId="009">
+    <ManufacturerName>009 - Varistar</ManufacturerName>
+  </Manufacturer>
+  <Manufacturer ManufacturerId="010">
+    <ManufacturerName>010 - Gis - Fixed Speed</ManufacturerName>
+  </Manufacturer>
+  <Manufacturer ManufacturerId="011">
+    <ManufacturerName>011 - Evo</ManufacturerName>
+  </Manufacturer>
+  <Manufacturer ManufacturerId="012">
+    <ManufacturerName>012 - Revolve</ManufacturerName>
+  </Manufacturer>
+  <Manufacturer ManufacturerId="013">
+    <ManufacturerName>013 - Liftket - Fixed Speed</ManufacturerName>
+  </Manufacturer>
+  <Manufacturer ManufacturerId="014">
+    <ManufacturerName>014 - EXE - VariSpeed</ManufacturerName>
+  </Manufacturer>
+  <Manufacturer ManufacturerId="015">
+    <ManufacturerName>015 - Prolyft - Fixed Speed</ManufacturerName>
+  </Manufacturer>
+  <Manufacturer ManufacturerId="016">
+    <ManufacturerName>016 - EXE - Fixed Speed</ManufacturerName>
+  </Manufacturer>
+  <Manufacturer ManufacturerId="017">
+    <ManufacturerName>017 - LoadGuard - Fixed Speed</ManufacturerName>
+  </Manufacturer>
+  <Manufacturer ManufacturerId="018">
+    <ManufacturerName>018 - Kinesys Apex</ManufacturerName>
+  </Manufacturer>
+  <Manufacturer ManufacturerId="020">
+    <ManufacturerName>020 - WiMotion</ManufacturerName>
+  </Manufacturer>
+  <Manufacturer ManufacturerId="021">
+    <ManufacturerName>021 - Atlanta Rigging Systems</ManufacturerName>
+  </Manufacturer>
+  <Manufacturer ManufacturerId="023">
+    <ManufacturerName>023 - Upstaging</ManufacturerName>
+  </Manufacturer>
+  <Manufacturer ManufacturerId="099">
+    <ManufacturerName>099 - custom</ManufacturerName>
+  </Manufacturer>
+</Manufacturers>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<MotorModel ManufacturerId="010" ProductId="001">
+  <Name>[010-001] GIS LP 500kg 8m/min Fixed Speed </Name>
+  <ImageFile></ImageFile>
+  <FixedSpeedControl>
+    <FixedSpeed>133</FixedSpeed>
+    <FixedAccel>2500</FixedAccel>
+    <FixedDecel>2500</FixedDecel>
+  </FixedSpeedControl>
+  <UnderloadLimit>40</UnderloadLimit>
+  <OverloadLimit>500</OverloadLimit>
+  <LoadcellScaling>0</LoadcellScaling>
+  <EncoderScaling>3750</EncoderScaling>
+  <EncoderType>3</EncoderType>
+</MotorModel>

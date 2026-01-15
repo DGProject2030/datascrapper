@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<!--
+V1.0 - DJW Added 
+-->
+<MotorModel ManufacturerId="003" ProductId="009">
+  <Name>[003-009] Kinesys Pilewind Winch 125kg 240mm/s</Name>
+  <ImageFile></ImageFile>
+  <VariableSpeedControl>
+    <MinSpeedClamp>20</MinSpeedClamp>
+    <MinAccelClamp>0</MinAccelClamp>
+    <MinDecelClamp>0</MinDecelClamp>
+    <MaxSpeedClamp>240</MaxSpeedClamp>
+    <MaxAccelClamp>1500</MaxAccelClamp>
+    <MaxDecelClamp>1500</MaxDecelClamp>
+    <ErrorStopClamp>1500</ErrorStopClamp>
+    <DefaultSpeed>100</DefaultSpeed>
+    <DefaultAccel>100</DefaultAccel>
+    <DefaultDecel>100</DefaultDecel>
+  </VariableSpeedControl>
+  <UnderloadLimit>0</UnderloadLimit>
+  <OverloadLimit>125</OverloadLimit>
+  <LoadcellScaling>0</LoadcellScaling>
+  <EncoderScaling>13427</EncoderScaling>
+</MotorModel>

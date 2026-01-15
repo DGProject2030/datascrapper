@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotorModel ManufacturerId="003" ProductId="001">
+  <Name>[003-001] Kinesys Mini Winch (Velocity)</Name>
+  <!-- <Revolve/> -->
+  <!-- image? -->
+  <MinPositionClamp>-60000</MinPositionClamp>
+  <MaxPositionClamp>60000</MaxPositionClamp>
+  <VariableSpeedControl>
+    <MinSpeedClamp>0</MinSpeedClamp>
+    <MaxSpeedClamp>650</MaxSpeedClamp>
+    <MinAccelClamp>0</MinAccelClamp>
+    <MaxAccelClamp>1500</MaxAccelClamp>
+    <MinDecelClamp>0</MinDecelClamp>
+    <MaxDecelClamp>1500</MaxDecelClamp>
+    <ErrorStopClamp>1500</ErrorStopClamp>
+    <DefaultSpeed>200</DefaultSpeed>
+    <DefaultAccel>500</DefaultAccel>
+    <DefaultDecel>500</DefaultDecel>
+  </VariableSpeedControl>
+  <PreMoveBrakeDelay>0</PreMoveBrakeDelay>
+  <PostMoveBrakeDelay>0</PostMoveBrakeDelay>
+  <UnderloadLimit>5</UnderloadLimit>
+  <OverloadLimit>20</OverloadLimit>
+  <LoadcellScaling>0</LoadcellScaling>
+  <EncoderScaling>1346046</EncoderScaling>
+  <!-- bool    invertDirection; -->
+  <!-- <MinWeightClamp></MinWeightClamp> -->
+  <!-- <MaxWeightClamp></MaxWeightClamp> -->
+  <!-- bool    invertDirection; -->
+  <!-- <TuningParam Index Name Value /> -->
+  <TuningParameter ParameterIndex="8">
+    <TuningParameterName>Pre Move Brake Delay</TuningParameterName>
+    <TuningParameterValue>0</TuningParameterValue>
+  </TuningParameter>
+  <TuningParameter ParameterIndex="9">
+    <TuningParameterName>Post Move Brake Delay</TuningParameterName>
+    <TuningParameterValue>0</TuningParameterValue>
+  </TuningParameter>
+</MotorModel>

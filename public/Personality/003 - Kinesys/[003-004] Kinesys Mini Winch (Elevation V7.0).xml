@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotorModel ManufacturerId="003" ProductId="004">
+  <Name>[003-004] Kinesys Mini Winch (Elevation V7.0)</Name>
+  <!-- <Revolve/> -->
+  <!-- image? -->
+  <MinPositionClamp>-60000</MinPositionClamp>
+  <MaxPositionClamp>60000</MaxPositionClamp>
+  <VariableSpeedControl>
+    <MinSpeedClamp>50</MinSpeedClamp>
+    <MaxSpeedClamp>650</MaxSpeedClamp>
+    <MinAccelClamp>0</MinAccelClamp>
+    <MaxAccelClamp>1500</MaxAccelClamp>
+    <MinDecelClamp>0</MinDecelClamp>
+    <MaxDecelClamp>1500</MaxDecelClamp>
+    <ErrorStopClamp>1500</ErrorStopClamp>
+    <DefaultSpeed>200</DefaultSpeed>
+    <DefaultAccel>500</DefaultAccel>
+    <DefaultDecel>500</DefaultDecel>
+  </VariableSpeedControl>
+  <UnderloadLimit>5</UnderloadLimit>
+  <OverloadLimit>20</OverloadLimit>
+  <LoadcellScaling>0</LoadcellScaling>
+  <EncoderScaling>5870</EncoderScaling>
+  <!-- bool    invertDirection; -->
+  <MotorParameterFile Name="kinesys/params.xml" />
+  <MotorParam Location="0.600.0">
+    <!-- Proportional Gain -->
+    <LocalValue>25000</LocalValue>
+    <RuntimeMonitor />
+    <AutoUpload />
+  </MotorParam>
+  <MotorParam Location="0.601.0">
+    <!-- Integral Gain -->
+    <LocalValue>1000</LocalValue>
+  </MotorParam>
+  <MotorParam Location="0.602.0">
+    <!-- Derivative Gain -->
+    <LocalValue>250</LocalValue>
+  </MotorParam>
+  <MotorParam Location="0.502.0">
+    <!-- Min Speed -->
+    <LocalValue>150</LocalValue>
+  </MotorParam>
+  <MotorParam Location="0.500.0">
+    <!-- Max Speed -->
+    <LocalValue>5000</LocalValue>
+  </MotorParam>
+  <MotorParam Location="0.620.0">
+    <!-- Min Live/Sim Difference -->
+    <LocalValue>300</LocalValue>
+  </MotorParam>
+  <MotorParam Location="0.610.0">
+    <!-- Pre Mag Delay -->
+    <LocalValue>20</LocalValue>
+  </MotorParam>
+</MotorModel>

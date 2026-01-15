@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+
+<MotorParams ManufacturerId="011">
+
+    <MotorParamCategory Name="Configuration Parameters"> 
+    
+        <MotorParam Location="7501">
+            <MotorParamName>UP Soft Limit</MotorParamName>
+            <Minimum>0</Minimum>
+            <Maximum>12000</Maximum>
+            <DefaultValue>8000</DefaultValue>
+            <AutoUpload>false</AutoUpload>
+            <RuntimeMonitor>false</RuntimeMonitor>
+            <ReadOnly>false</ReadOnly>
+            <Description></Description>
+        </MotorParam>
+        
+        <MotorParam Location="7502">
+            <MotorParamName>Dn Soft Limit</MotorParamName>
+            <Minimum>0</Minimum>
+            <Maximum>12000</Maximum>
+            <DefaultValue>0</DefaultValue>
+            <AutoUpload>false</AutoUpload>
+            <RuntimeMonitor>false</RuntimeMonitor>
+            <ReadOnly>false</ReadOnly>
+            <Description></Description>
+        </MotorParam>
+          
+        <MotorParam Location="7503">
+            <MotorParamName>Max Speed Clamp</MotorParamName>
+            <Minimum>0</Minimum>
+            <Maximum>1000</Maximum>
+            <DefaultValue>400</DefaultValue>
+            <AutoUpload>false</AutoUpload>
+            <RuntimeMonitor>false</RuntimeMonitor>
+            <ReadOnly>false</ReadOnly>
+            <Description></Description>
+        </MotorParam>      
+        
+         <MotorParam Location="7504">
+             <MotorParamName>Min Speed</MotorParamName>
+             <Minimum>0</Minimum>
+             <Maximum>1000</Maximum>
+             <DefaultValue>0</DefaultValue>
+             <AutoUpload>false</AutoUpload>
+             <RuntimeMonitor>false</RuntimeMonitor>
+             <ReadOnly>false</ReadOnly>
+             <Description></Description>
+        </MotorParam>   
+        
+         <MotorParam Location="7505">
+             <MotorParamName>Max Rate</MotorParamName>
+             <Minimum>0</Minimum>
+             <Maximum>5000</Maximum>
+             <DefaultValue>2500</DefaultValue>
+             <AutoUpload>false</AutoUpload>
+             <RuntimeMonitor>false</RuntimeMonitor>
+             <ReadOnly>false</ReadOnly>
+             <Description></Description>
+        </MotorParam>   
+        
+        <MotorParam Location="7506">
+             <MotorParamName>Min Rate</MotorParamName>
+             <Minimum>0</Minimum>
+             <Maximum>5000</Maximum>
+             <DefaultValue>0</DefaultValue>
+             <AutoUpload>false</AutoUpload>
+             <RuntimeMonitor>false</RuntimeMonitor>
+             <ReadOnly>false</ReadOnly>
+             <Description></Description>
+        </MotorParam>  
+        
+        <MotorParam Location="7507">
+             <MotorParamName>Estop Rate</MotorParamName>
+             <Minimum>0</Minimum>
+             <Maximum>5000</Maximum>
+             <DefaultValue>2500</DefaultValue>
+             <AutoUpload>false</AutoUpload>
+             <RuntimeMonitor>false</RuntimeMonitor>
+             <ReadOnly>false</ReadOnly>
+             <Description></Description>
+        </MotorParam>  
+        
+        <MotorParam Location="7508">
+             <MotorParamName>Pre Move Delay</MotorParamName>
+             <Minimum>0</Minimum>
+             <Maximum>10000</Maximum>
+             <DefaultValue>0</DefaultValue>
+             <AutoUpload>false</AutoUpload>
+             <RuntimeMonitor>false</RuntimeMonitor>
+             <ReadOnly>false</ReadOnly>
+             <Description></Description>
+        </MotorParam>  
+        
+        <MotorParam Location="7509">
+             <MotorParamName>Post Move Delay</MotorParamName>
+             <Minimum>0</Minimum>
+             <Maximum>10000</Maximum>
+             <DefaultValue>4000</DefaultValue>
+             <AutoUpload>false</AutoUpload>
+             <RuntimeMonitor>false</RuntimeMonitor>
+             <ReadOnly>false</ReadOnly>
+             <Description></Description>
+        </MotorParam> 
+        
+        <MotorParam Location="7510">
+             <MotorParamName>Encoded Scaling Factor</MotorParamName>
+             <Minimum>0</Minimum>
+             <Maximum>100000</Maximum>
+             <DefaultValue>100000</DefaultValue>
+             <AutoUpload>false</AutoUpload>
+             <RuntimeMonitor>false</RuntimeMonitor>
+             <ReadOnly>false</ReadOnly>
+             <Description></Description>
+        </MotorParam> 
+        
+        <MotorParam Location="7511">
+             <MotorParamName>Loadcell Scaling Factor</MotorParamName>
+             <Minimum>0</Minimum>
+             <Maximum>1000</Maximum>
+             <DefaultValue>500</DefaultValue>
+             <AutoUpload>false</AutoUpload>
+             <RuntimeMonitor>false</RuntimeMonitor>
+             <ReadOnly>false</ReadOnly>
+             <Description></Description>
+        </MotorParam> 
+        
+        <MotorParam Location="7512">
+             <MotorParamName>Loadcell Underload Trip</MotorParamName>
+             <Minimum>0</Minimum>
+             <Maximum>250</Maximum>
+             <DefaultValue>40</DefaultValue>
+             <AutoUpload>false</AutoUpload>
+             <RuntimeMonitor>false</RuntimeMonitor>
+             <ReadOnly>false</ReadOnly>
+             <Description></Description>
+        </MotorParam> 
+        
+        <MotorParam Location="7513">
+             <MotorParamName>Loadcell Overload Trip</MotorParamName>
+             <Minimum>0</Minimum>
+             <Maximum>1000</Maximum>
+             <DefaultValue>500</DefaultValue>
+             <AutoUpload>false</AutoUpload>
+             <RuntimeMonitor>false</RuntimeMonitor>
+             <ReadOnly>false</ReadOnly>
+             <Description></Description>
+        </MotorParam> 
+    
+   
+        <MotorParam Location="2032">
+            <MotorParamName>Current</MotorParamName>
+            <Minimum>0</Minimum>
+            <Maximum>12000</Maximum>
+            <DefaultValue>0</DefaultValue>
+            <AutoUpload>false</AutoUpload>
+            <RuntimeMonitor>true</RuntimeMonitor>
+            <ReadOnly>true</ReadOnly>
+            <Description></Description>
+            <DisplayType Type="0" Divisor="100"/>
+        </MotorParam>
+   
+        <MotorParam Location="2033">
+            <MotorParamName>Torque</MotorParamName>
+            <Minimum>0</Minimum>
+            <Maximum>12000</Maximum>
+            <DefaultValue>0</DefaultValue>
+            <AutoUpload>false</AutoUpload>
+            <RuntimeMonitor>true</RuntimeMonitor>
+            <ReadOnly>true</ReadOnly>
+            <Description></Description>
+        </MotorParam>
+   
+        <MotorParam Location="2034">
+            <MotorParamName>Error</MotorParamName>
+            <Minimum>0</Minimum>
+            <Maximum>12000</Maximum>
+            <DefaultValue>0</DefaultValue>
+            <AutoUpload>false</AutoUpload>
+            <RuntimeMonitor>true</RuntimeMonitor>
+            <ReadOnly>true</ReadOnly>
+            <Description></Description>
+        </MotorParam>
+   
+        <MotorParam Location="2035">
+            <MotorParamName>Follow</MotorParamName>
+            <Minimum>0</Minimum>
+            <Maximum>12000</Maximum>
+            <DefaultValue>0</DefaultValue>
+            <AutoUpload>false</AutoUpload>
+            <RuntimeMonitor>true</RuntimeMonitor>
+            <ReadOnly>true</ReadOnly>
+            <Description></Description>
+        </MotorParam>
+        
+    </MotorParamCategory>
+    
+</MotorParams>

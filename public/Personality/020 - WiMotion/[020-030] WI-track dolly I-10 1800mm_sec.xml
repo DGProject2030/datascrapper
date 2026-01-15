@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<MotorModel ManufacturerId = "020" ProductId = "030">
+  <Name>[020-030] WI-Track I10 1800mm/s</Name>
+  <ImageFile></ImageFile>
+  <VariableSpeedControl>
+    <DefaultSpeed>50</DefaultSpeed>
+    <DefaultAccel>50</DefaultAccel>
+    <DefaultDecel>50</DefaultDecel>
+    <MaxSpeedClamp>1800</MaxSpeedClamp>
+    <MaxAccelClamp>2500</MaxAccelClamp>
+    <MaxDecelClamp>2500</MaxDecelClamp>
+    <ErrorStopClamp>5000</ErrorStopClamp>
+    <MinSpeedClamp>0</MinSpeedClamp>
+    <MinAccelClamp>0</MinAccelClamp>
+    <MinDecelClamp>0</MinDecelClamp>
+  </VariableSpeedControl>
+  <EncoderScaling>3450150</EncoderScaling>
+  <PreMoveBrakeDelay>0</PreMoveBrakeDelay>
+  <PostMoveBrakeDelay>4000</PostMoveBrakeDelay>
+  <TuningParameter ParameterIndex="1">
+      <TuningParameterName>Proportional Gain</TuningParameterName>
+      <TuningParameterValue>25000</TuningParameterValue>    
+  </TuningParameter>
+  <TuningParameter ParameterIndex="2">
+      <TuningParameterName>Integral Gain</TuningParameterName>
+      <TuningParameterValue>1000</TuningParameterValue>    
+  </TuningParameter>
+  <TuningParameter ParameterIndex="3">
+      <TuningParameterName>Derivative Gain</TuningParameterName>
+      <TuningParameterValue>250</TuningParameterValue>    
+  </TuningParameter>
+  <TuningParameter ParameterIndex="4">
+      <TuningParameterName>Min Drive Speed</TuningParameterName>
+      <TuningParameterValue>150</TuningParameterValue>    
+  </TuningParameter>
+  <TuningParameter ParameterIndex="5">
+      <TuningParameterName>Max Drive Speed</TuningParameterName>
+      <TuningParameterValue>5000</TuningParameterValue>    
+  </TuningParameter>
+  <TuningParameter ParameterIndex="6">
+      <TuningParameterName>Min Live/Sim Difference</TuningParameterName>
+      <TuningParameterValue>300</TuningParameterValue>    
+  </TuningParameter>
+  <TuningParameter ParameterIndex="7">
+      <TuningParameterName>Brake Delay</TuningParameterName>
+      <TuningParameterValue>0</TuningParameterValue>    
+  </TuningParameter>
+</MotorModel>

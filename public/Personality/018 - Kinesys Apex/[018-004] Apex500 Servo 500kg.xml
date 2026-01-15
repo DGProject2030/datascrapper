@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<MotorModel ManufacturerId="018" ProductId="004">
+  <Name>[018-004] Apex500 Servo 500kg</Name>
+  <Protocol>EVO</Protocol>
+  <VariableSpeedControl>
+    <DefaultSpeed>100</DefaultSpeed>
+    <DefaultAccel>100</DefaultAccel>
+    <DefaultDecel>100</DefaultDecel>
+    <MaxSpeedClamp>620</MaxSpeedClamp>
+    <MaxAccelClamp>1240</MaxAccelClamp>
+    <MaxDecelClamp>1240</MaxDecelClamp>
+    <MinSpeedClamp>0</MinSpeedClamp>
+    <MinAccelClamp>0</MinAccelClamp>
+    <MinDecelClamp>0</MinDecelClamp>
+    <ErrorStopClamp>1240</ErrorStopClamp>
+  </VariableSpeedControl>
+  <UnderloadLimit>0</UnderloadLimit>
+  <OverloadLimit>500</OverloadLimit>
+  <LoadcellScaling>2549</LoadcellScaling>
+  <EncoderScaling>1104398</EncoderScaling>
+    <PreMoveBrakeDelay>500</PreMoveBrakeDelay>
+    <PostMoveBrakeDelay>2000</PostMoveBrakeDelay>
+  <EncoderScaling2>5190671</EncoderScaling2>
+</MotorModel>

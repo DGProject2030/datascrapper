@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<MotorModel ManufacturerId="016" ProductId="002">
+  <!-- Boost   Lenze C0016 45000   % * 10,000 -->
+  <EncoderScaling>17239</EncoderScaling>
+  <EncoderType>3</EncoderType>
+  <ImageFile/>
+  <LoadcellScaling>1024</LoadcellScaling>
+  <Name>[016-002] EXE 500Kg 4mpm D8+ (FixSpeed 208V 60Hz US)</Name>
+  <OverloadLimit>500</OverloadLimit>
+  <UnderloadLimit>0</UnderloadLimit>
+<FixedSpeedControl>
+  <FixedAccel>1500</FixedAccel>
+  <FixedDecel>1500</FixedDecel>
+  <FixedSpeed>67</FixedSpeed>
+</FixedSpeedControl>
+</MotorModel>

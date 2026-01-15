@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<MotorModel ManufacturerId="018" ProductId="000">
+  <Name>[018-000] Apex500 500kg</Name>
+  <Protocol>EVO</Protocol>
+  <VariableSpeedControl>
+    <DefaultSpeed>100</DefaultSpeed>
+    <DefaultAccel>100</DefaultAccel>
+    <DefaultDecel>100</DefaultDecel>
+    <MaxSpeedClamp>500</MaxSpeedClamp>
+    <MaxAccelClamp>1000</MaxAccelClamp>
+    <MaxDecelClamp>1000</MaxDecelClamp>
+    <MinSpeedClamp>0</MinSpeedClamp>
+    <MinAccelClamp>0</MinAccelClamp>
+    <MinDecelClamp>0</MinDecelClamp>
+    <ErrorStopClamp>1000</ErrorStopClamp>
+  </VariableSpeedControl>
+  <UnderloadLimit>0</UnderloadLimit>
+  <OverloadLimit>500</OverloadLimit>
+  <LoadcellScaling>1698</LoadcellScaling>
+  <EncoderScaling>710856</EncoderScaling>
+    <PreMoveBrakeDelay>500</PreMoveBrakeDelay>
+    <PostMoveBrakeDelay>2000</PostMoveBrakeDelay>
+  <EncoderScaling2>22000000</EncoderScaling2>
+</MotorModel>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<MotorModel ManufacturerId="017" ProductId="001">
+  <EncoderScaling>7000</EncoderScaling>
+  <EncoderType>3</EncoderType>
+  <ImageFile/>
+  <LoadcellScaling>1024</LoadcellScaling>
+  <Name>[017-001] LoadGuard LG250-2-N 3.2m/min (FixSpeed 50Hz)</Name>
+  <OverloadLimit>1000</OverloadLimit>
+  <UnderloadLimit>0</UnderloadLimit>
+<FixedSpeedControl>
+  <FixedAccel>1500</FixedAccel>
+  <FixedDecel>1500</FixedDecel>
+  <FixedSpeed>53</FixedSpeed>
+</FixedSpeedControl>
+</MotorModel>
