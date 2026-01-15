@@ -25,6 +25,30 @@
       font-size: 0.8rem;
       margin-right: 0.3rem;
     }
+    .sortable {
+      cursor: pointer;
+      user-select: none;
+      position: relative;
+      padding-right: 20px !important;
+    }
+    .sortable:hover {
+      background-color: #343a40;
+    }
+    .sortable::after {
+      content: '⇅';
+      position: absolute;
+      right: 8px;
+      opacity: 0.5;
+      font-size: 0.8rem;
+    }
+    .sortable.asc::after {
+      content: '↑';
+      opacity: 1;
+    }
+    .sortable.desc::after {
+      content: '↓';
+      opacity: 1;
+    }
   </style>
 </head>
 <body>
@@ -138,15 +162,15 @@
       </div>
     <% } else { %>
       <div class="table-responsive">
-        <table class="table table-striped table-hover">
+        <table class="table table-striped table-hover" id="searchResultsTable">
           <thead class="table-dark">
             <tr>
-              <th>Manufacturer</th>
-              <th>Model</th>
-              <th>Series</th>
-              <th>Capacity</th>
-              <th>Speed</th>
-              <th>Classification</th>
+              <th class="sortable" data-sort="0" data-type="string">Manufacturer</th>
+              <th class="sortable" data-sort="1" data-type="string">Model</th>
+              <th class="sortable" data-sort="2" data-type="string">Series</th>
+              <th class="sortable" data-sort="3" data-type="number">Capacity</th>
+              <th class="sortable" data-sort="4" data-type="number">Speed</th>
+              <th class="sortable" data-sort="5" data-type="string">Classification</th>
               <th>Actions</th>
             </tr>
           </thead>
@@ -205,5 +229,56 @@
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    // Table sorting functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const table = document.getElementById('searchResultsTable');
+      if (!table) return;
+
+      const headers = table.querySelectorAll('th.sortable');
+      const tbody = table.querySelector('tbody');
+
+      headers.forEach(header => {
+        header.addEventListener('click', function() {
+          const colIndex = parseInt(this.dataset.sort);
+          const type = this.dataset.type;
+          const isAsc = this.classList.contains('asc');
+
+          // Remove sort classes from all headers
+          headers.forEach(h => h.classList.remove('asc', 'desc'));
+
+          // Set new sort direction
+          this.classList.add(isAsc ? 'desc' : 'asc');
+
+          // Get rows and sort
+          const rows = Array.from(tbody.querySelectorAll('tr'));
+
+          rows.sort((a, b) => {
+            let aVal = a.cells[colIndex].textContent.trim();
+            let bVal = b.cells[colIndex].textContent.trim();
+
+            // Handle numeric values (extract numbers from strings like "500 kg" or "4 m/min")
+            if (type === 'number') {
+              const aNum = parseFloat(aVal.replace(/[^\d.-]/g, '')) || 0;
+              const bNum = parseFloat(bVal.replace(/[^\d.-]/g, '')) || 0;
+              return isAsc ? bNum - aNum : aNum - bNum;
+            }
+
+            // Handle '-' as empty
+            if (aVal === '-') aVal = '';
+            if (bVal === '-') bVal = '';
+
+            // String comparison
+            return isAsc
+              ? bVal.localeCompare(aVal)
+              : aVal.localeCompare(bVal);
+          });
+
+          // Re-append sorted rows
+          rows.forEach(row => tbody.appendChild(row));
+        });
+      });
+    });
+  </script>
 </body>
 </html>
