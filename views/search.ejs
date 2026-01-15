@@ -182,6 +182,23 @@
     tr.clickable-row:hover td {
       background-color: #e9ecef;
     }
+    /* Filterable links in table */
+    .filter-link {
+      color: inherit;
+      text-decoration: none;
+      border-bottom: 1px dashed #6c757d;
+    }
+    .filter-link:hover {
+      color: #0d6efd;
+      border-bottom-color: #0d6efd;
+    }
+    .classification-badge.clickable {
+      cursor: pointer;
+      transition: transform 0.1s;
+    }
+    .classification-badge.clickable:hover {
+      transform: scale(1.1);
+    }
     /* Loading overlay */
     .loading-overlay {
       display: none;
@@ -439,7 +456,7 @@
                     <div class="no-thumb">N/A</div>
                   <% } %>
                 </td>
-                <td><%= item.manufacturer %></td>
+                <td><a href="/search?manufacturer=<%= encodeURIComponent(item.manufacturer) %>" class="filter-link" onclick="event.stopPropagation()"><%= item.manufacturer %></a></td>
                 <td><%= item.model %></td>
                 <td><%= item.series || '-' %></td>
                 <td><%= item.loadCapacity || '-' %></td>
@@ -447,7 +464,7 @@
                 <td>
                   <% if (item.classification && Array.isArray(item.classification)) { %>
                     <% item.classification.forEach(function(cls) { %>
-                      <span class="badge bg-info classification-badge"><%= cls.toUpperCase() %></span>
+                      <a href="/search?classification=<%= encodeURIComponent(cls) %>" onclick="event.stopPropagation()"><span class="badge bg-info classification-badge clickable"><%= cls.toUpperCase() %></span></a>
                     <% }); %>
                   <% } else { %>
                     -
@@ -468,7 +485,7 @@
           <div class="product-card-mobile">
             <div class="card-header-mobile">
               <div>
-                <h3 class="card-title-mobile"><%= item.manufacturer %></h3>
+                <h3 class="card-title-mobile"><a href="/search?manufacturer=<%= encodeURIComponent(item.manufacturer) %>" class="filter-link"><%= item.manufacturer %></a></h3>
                 <div class="card-subtitle-mobile"><%= item.model %><%= item.series ? ' - ' + item.series : '' %></div>
               </div>
               <% if (item.images && item.images.length > 0) { %>
@@ -490,7 +507,9 @@
                 <span class="spec-label">Classification</span>
                 <span>
                   <% if (item.classification && Array.isArray(item.classification)) { %>
-                    <%= item.classification.map(c => c.toUpperCase()).join(', ') %>
+                    <% item.classification.forEach(function(cls) { %>
+                      <a href="/search?classification=<%= encodeURIComponent(cls) %>"><span class="badge bg-info classification-badge clickable"><%= cls.toUpperCase() %></span></a>
+                    <% }); %>
                   <% } else { %>
                     -
                   <% } %>
