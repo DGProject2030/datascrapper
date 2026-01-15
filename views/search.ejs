@@ -351,7 +351,8 @@
         <p>Try adjusting your search criteria or filters to find more chainhoists.</p>
       </div>
     <% } else { %>
-      <div class="table-responsive">
+      <!-- Desktop Table View -->
+      <div class="table-responsive desktop-table">
         <%
           // Helper to build sort URL
           const buildSortUrl = (field) => {
@@ -417,6 +418,48 @@
             <% }); %>
           </tbody>
         </table>
+      </div>
+
+      <!-- Mobile Card View -->
+      <div class="mobile-cards">
+        <% data.forEach(function(item) { %>
+          <div class="product-card-mobile">
+            <div class="card-header-mobile">
+              <div>
+                <h3 class="card-title-mobile"><%= item.manufacturer %></h3>
+                <div class="card-subtitle-mobile"><%= item.model %><%= item.series ? ' - ' + item.series : '' %></div>
+              </div>
+              <% if (item.images && item.images.length > 0) { %>
+                <img src="<%= item.images[0].url %>" alt="<%= item.manufacturer %>" class="card-thumb" onerror="this.onerror=null; this.outerHTML='<div class=\'no-thumb-mobile\'>N/A</div>';">
+              <% } else { %>
+                <div class="no-thumb-mobile">N/A</div>
+              <% } %>
+            </div>
+            <div class="card-specs">
+              <div class="spec-item">
+                <span class="spec-label">Capacity</span>
+                <span><%= item.loadCapacity || '-' %></span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Speed</span>
+                <span><%= item.liftingSpeed || '-' %></span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Classification</span>
+                <span>
+                  <% if (item.classification && Array.isArray(item.classification)) { %>
+                    <%= item.classification.map(c => c.toUpperCase()).join(', ') %>
+                  <% } else { %>
+                    -
+                  <% } %>
+                </span>
+              </div>
+              <div class="spec-item">
+                <a href="/product/<%= item.id %>" class="btn btn-sm btn-primary">View Details</a>
+              </div>
+            </div>
+          </div>
+        <% }); %>
       </div>
 
       <% if (pagination.totalPages > 1) { %>
