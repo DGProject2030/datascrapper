@@ -100,13 +100,19 @@
     .no-thumb {
       width: 50px;
       height: 50px;
-      background: linear-gradient(135deg, #e9ecef 0%, #dee2e6 100%);
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
       border-radius: 4px;
       display: flex;
       align-items: center;
       justify-content: center;
       color: #adb5bd;
-      font-size: 0.7rem;
+      font-size: 0.65rem;
+      border: 1px dashed #dee2e6;
+    }
+    .no-thumb::before {
+      content: "📷";
+      font-size: 1.2rem;
+      opacity: 0.4;
     }
     /* Mobile card view */
     .mobile-cards {
@@ -157,13 +163,19 @@
     .product-card-mobile .no-thumb-mobile {
       width: 60px;
       height: 60px;
-      background: linear-gradient(135deg, #e9ecef 0%, #dee2e6 100%);
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
       border-radius: 6px;
       display: flex;
       align-items: center;
       justify-content: center;
       color: #adb5bd;
       font-size: 0.65rem;
+      border: 1px dashed #dee2e6;
+    }
+    .product-card-mobile .no-thumb-mobile::before {
+      content: "📷";
+      font-size: 1.4rem;
+      opacity: 0.4;
     }
     @media (max-width: 767.98px) {
       .desktop-table {
@@ -329,7 +341,7 @@
               </div>
 
               <div class="col-md-3 d-flex align-items-end gap-2">
-                <button type="submit" class="btn btn-primary flex-grow-1">Apply</button>
+                <button type="submit" id="applyBtn" class="btn btn-primary flex-grow-1">Apply</button>
                 <% const hasFilters = query || filters.manufacturer || filters.capacity || filters.classification || filters.category || filters.speedType; %>
                 <a href="/search" class="btn btn-outline-secondary <%= !hasFilters ? 'disabled' : '' %>" title="Clear all filters">Clear</a>
               </div>
@@ -465,9 +477,9 @@
               <tr class="clickable-row" onclick="window.location='<%= buildProductUrl(item.id) %>'" role="link" tabindex="0">
                 <td>
                   <% if (item.images && item.images.length > 0) { %>
-                    <img src="<%= item.images[0].url %>" alt="<%= item.manufacturer %> <%= item.model %>" class="product-thumb" onerror="this.onerror=null; this.outerHTML='<div class=\'no-thumb\'>N/A</div>';">
+                    <img src="<%= item.images[0].url %>" alt="<%= item.manufacturer %> <%= item.model %>" class="product-thumb" onerror="this.onerror=null; this.outerHTML='<div class=\'no-thumb\'></div>';">
                   <% } else { %>
-                    <div class="no-thumb">N/A</div>
+                    <div class="no-thumb"></div>
                   <% } %>
                 </td>
                 <td><a href="/search?manufacturer=<%= encodeURIComponent(item.manufacturer) %>" class="filter-link" onclick="event.stopPropagation()"><%= item.manufacturer %></a></td>
@@ -503,9 +515,9 @@
                 <div class="card-subtitle-mobile"><%= item.model %><%= item.series ? ' - ' + item.series : '' %></div>
               </div>
               <% if (item.images && item.images.length > 0) { %>
-                <img src="<%= item.images[0].url %>" alt="<%= item.manufacturer %>" class="card-thumb" onerror="this.onerror=null; this.outerHTML='<div class=\'no-thumb-mobile\'>N/A</div>';">
+                <img src="<%= item.images[0].url %>" alt="<%= item.manufacturer %>" class="card-thumb" onerror="this.onerror=null; this.outerHTML='<div class=\'no-thumb-mobile\'></div>';">
               <% } else { %>
-                <div class="no-thumb-mobile">N/A</div>
+                <div class="no-thumb-mobile"></div>
               <% } %>
             </div>
             <div class="card-specs">
@@ -668,6 +680,44 @@
         }
       });
     });
+
+    // Filter preview count
+    const applyBtn = document.getElementById('applyBtn');
+    const filterForm = document.querySelector('form[action="/search"]');
+    let countTimeout = null;
+
+    async function updateFilterCount() {
+      const formData = new FormData(filterForm);
+      const params = new URLSearchParams();
+
+      for (const [key, value] of formData.entries()) {
+        if (value) params.set(key, value);
+      }
+
+      try {
+        applyBtn.innerHTML = '<span class="spinner-border spinner-border-sm me-1"></span>';
+        const response = await fetch('/api/count?' + params.toString());
+        const data = await response.json();
+        applyBtn.textContent = `Apply (${data.count})`;
+      } catch (error) {
+        applyBtn.textContent = 'Apply';
+      }
+    }
+
+    // Debounced filter change handler
+    function onFilterChange() {
+      clearTimeout(countTimeout);
+      countTimeout = setTimeout(updateFilterCount, 300);
+    }
+
+    // Listen to all filter inputs
+    filterForm?.querySelectorAll('select, input').forEach(input => {
+      input.addEventListener('change', onFilterChange);
+      input.addEventListener('input', onFilterChange);
+    });
+
+    // Initial count on page load
+    updateFilterCount();
   </script>
 </body>
 </html>

@@ -426,6 +426,81 @@ app.post('/api/search', (req, res) => {
   }
 });
 
+// GET /api/count - Get count of results for given filters (for live preview)
+app.get('/api/count', (req, res) => {
+  try {
+    const data = loadData();
+    let results = [...data];
+    const query = req.query.q?.toLowerCase() || '';
+
+    if (query) {
+      results = results.filter(item => {
+        return (
+          (item.manufacturer?.toLowerCase().includes(query)) ||
+          (item.model?.toLowerCase().includes(query)) ||
+          (item.series?.toLowerCase().includes(query)) ||
+          (item.loadCapacity?.toLowerCase().includes(query)) ||
+          (item.classification?.join(' ').toLowerCase().includes(query))
+        );
+      });
+    }
+
+    if (req.query.manufacturer) {
+      results = results.filter(item => item.manufacturer === req.query.manufacturer);
+    }
+
+    if (req.query.capacity) {
+      results = results.filter(item => {
+        if (!item.loadCapacity) {
+          return false;
+        }
+        const matches = item.loadCapacity.match(/(\d+(?:\.\d+)?)\s*kg/i);
+        if (!matches) {
+          return false;
+        }
+        const value = parseFloat(matches[1]);
+        const capacityFilter = req.query.capacity;
+        if (capacityFilter === '≤250 kg' && value <= 250) {
+          return true;
+        }
+        if (capacityFilter === '251-500 kg' && value > 250 && value <= 500) {
+          return true;
+        }
+        if (capacityFilter === '501-1000 kg' && value > 500 && value <= 1000) {
+          return true;
+        }
+        if (capacityFilter === '1001-2000 kg' && value > 1000 && value <= 2000) {
+          return true;
+        }
+        if (capacityFilter === '>2000 kg' && value > 2000) {
+          return true;
+        }
+        return false;
+      });
+    }
+
+    if (req.query.classification) {
+      results = results.filter(item => {
+        return item.classification &&
+          Array.isArray(item.classification) &&
+          item.classification.includes(req.query.classification);
+      });
+    }
+
+    if (req.query.category) {
+      results = results.filter(item => item.category === req.query.category);
+    }
+
+    if (req.query.speedType) {
+      results = results.filter(item => item.speedType === req.query.speedType);
+    }
+
+    res.json({ count: results.length });
+  } catch (error) {
+    res.status(500).json({ count: 0, error: error.message });
+  }
+});
+
 // ============ Personality API Routes ============
 
 // GET /api/personality - Get all personality products
