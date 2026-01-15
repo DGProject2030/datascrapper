@@ -605,21 +605,39 @@ const MANUFACTURERS = [
 // Utility: Delay function
 const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
-// Utility: Download image
+// Utility: Download image with proper error handling
 async function downloadImage(url, filepath) {
   return new Promise((resolve, reject) => {
     const protocol = url.startsWith('https') ? https : http;
-    const file = fsSync.createWriteStream(filepath);
+    let file;
+
+    try {
+      file = fsSync.createWriteStream(filepath);
+    } catch (err) {
+      reject(new Error(`Failed to create file stream: ${err.message}`));
+      return;
+    }
+
+    // Handle file stream errors
+    file.on('error', (err) => {
+      file.close();
+      fsSync.unlink(filepath, () => {});
+      reject(new Error(`File write error: ${err.message}`));
+    });
 
     protocol.get(url, {
       headers: { 'User-Agent': CONFIG.userAgent },
       timeout: CONFIG.timeout
     }, (response) => {
       if (response.statusCode === 301 || response.statusCode === 302) {
+        file.close();
+        fsSync.unlink(filepath, () => {});
         downloadImage(response.headers.location, filepath).then(resolve).catch(reject);
         return;
       }
       if (response.statusCode !== 200) {
+        file.close();
+        fsSync.unlink(filepath, () => {});
         reject(new Error(`Failed to download: ${response.statusCode}`));
         return;
       }
@@ -629,27 +647,46 @@ async function downloadImage(url, filepath) {
         resolve(filepath);
       });
     }).on('error', (err) => {
+      file.close();
       fsSync.unlink(filepath, () => {});
       reject(err);
     });
   });
 }
 
-// Utility: Download PDF
+// Utility: Download PDF with proper error handling
 async function downloadPDF(url, filepath) {
   return new Promise((resolve, reject) => {
     const protocol = url.startsWith('https') ? https : http;
-    const file = fsSync.createWriteStream(filepath);
+    let file;
+
+    try {
+      file = fsSync.createWriteStream(filepath);
+    } catch (err) {
+      reject(new Error(`Failed to create file stream: ${err.message}`));
+      return;
+    }
+
+    // Handle file stream errors
+    file.on('error', (err) => {
+      file.close();
+      fsSync.unlink(filepath, () => {});
+      reject(new Error(`File write error: ${err.message}`));
+    });
 
     protocol.get(url, {
       headers: { 'User-Agent': CONFIG.userAgent },
       timeout: CONFIG.timeout
     }, (response) => {
       if (response.statusCode === 301 || response.statusCode === 302) {
+        file.close();
+        fsSync.unlink(filepath, () => {});
         downloadPDF(response.headers.location, filepath).then(resolve).catch(reject);
         return;
       }
       if (response.statusCode !== 200) {
+        file.close();
+        fsSync.unlink(filepath, () => {});
         reject(new Error(`Failed to download PDF: ${response.statusCode}`));
         return;
       }
@@ -659,6 +696,7 @@ async function downloadPDF(url, filepath) {
         resolve(filepath);
       });
     }).on('error', (err) => {
+      file.close();
       fsSync.unlink(filepath, () => {});
       reject(err);
     });
@@ -1161,7 +1199,15 @@ class EnhancedScraper {
         for (let i = 0; i < Math.min(images.length, 3); i++) {
           try {
             const imgUrl = images[i].url;
-            const ext = path.extname(new URL(imgUrl).pathname) || '.jpg';
+            if (!imgUrl || !imgUrl.startsWith('http')) {
+              continue;
+            }
+            let ext = '.jpg';
+            try {
+              ext = path.extname(new URL(imgUrl).pathname) || '.jpg';
+            } catch {
+              // Use default extension if URL parsing fails
+            }
             const filename = `${manufacturer.id}_${this.sanitizeFilename(title)}_${i}${ext}`;
             const filepath = path.join(CONFIG.imagesDir, filename);
 

@@ -1,23 +1,23 @@
 {
-  "totalRecords": 258,
-  "processedRecords": 86,
+  "totalRecords": 432,
+  "processedRecords": 260,
   "skippedRecords": 0,
   "missingDataFields": {
     "loadCapacity": {
-      "count": 38,
-      "percentage": "44.2%"
+      "count": 212,
+      "percentage": "81.5%"
     },
     "liftingSpeed": {
-      "count": 38,
-      "percentage": "44.2%"
+      "count": 212,
+      "percentage": "81.5%"
     },
     "motorPower": {
-      "count": 82,
-      "percentage": "95.3%"
+      "count": 256,
+      "percentage": "98.5%"
     }
   },
   "manufacturerStats": {
-    "Columbus McKinnon": 22,
+    "Columbus McKinnon": 193,
     "Konecranes": 2,
     "Demag": 2,
     "Harrington Hoists": 2,
@@ -28,7 +28,7 @@
     "Movecat": 2,
     "Kito": 2,
     "Hitachi Industrial Equipment": 1,
-    "Donati Sollevamenti": 2,
+    "Donati Sollevamenti": 5,
     "PLANETA-Hebetechnik": 10,
     "Gorbel": 7,
     "Yale Hoists": 3,
@@ -47,7 +47,7 @@
     "TXK": 2
   },
   "capacityDistribution": {
-    "≤250 kg": 130,
+    "≤250 kg": 304,
     "251-500 kg": 37,
     "501-1000 kg": 31,
     "1001-2000 kg": 25,
@@ -64,7 +64,7 @@
   },
   "processingErrors": [],
   "categoryDistribution": {
-    "Unknown": 86,
+    "Unknown": 260,
     "Electric Chain Hoist": 130,
     "Winch": 21,
     "Beam Trolley": 13,
@@ -72,14 +72,14 @@
     "Revolve/Turntable": 7
   },
   "speedTypeDistribution": {
-    "Unknown": 153,
+    "Unknown": 327,
     "Variable Speed": 85,
     "Fixed Speed": 20
   },
   "sourceDistribution": {
-    "web": 86,
+    "web": 260,
     "personality": 172
   },
   "personalityProducts": 172,
-  "lastMerged": "2026-01-15T19:59:03.970Z"
+  "lastMerged": "2026-01-15T20:15:13.459Z"
 }
