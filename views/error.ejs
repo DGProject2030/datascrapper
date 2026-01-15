@@ -1,17 +1,70 @@
 <%- include('header') %>
 
+<style>
+  .error-card {
+    border: none;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    border-radius: 16px;
+    overflow: hidden;
+  }
+  .error-card .card-header {
+    background: linear-gradient(135deg, var(--brand-primary) 0%, #2d4a6f 100%);
+    color: white;
+    padding: 1.5rem;
+  }
+  .error-card .card-header i {
+    color: var(--brand-secondary);
+  }
+  .error-code {
+    font-size: 8rem;
+    font-weight: 700;
+    color: var(--brand-primary);
+    line-height: 1;
+    opacity: 0.15;
+  }
+  .error-icon {
+    font-size: 5rem;
+    color: var(--brand-secondary);
+    margin-bottom: 1rem;
+  }
+  .error-message {
+    color: var(--brand-primary);
+    font-weight: 600;
+  }
+</style>
+
 <div class="row justify-content-center">
-  <div class="col-md-6">
-    <div class="card border-danger">
-      <div class="card-header bg-danger text-white">
-        <h4 class="mb-0">Error</h4>
+  <div class="col-md-8 col-lg-6">
+    <div class="card error-card">
+      <div class="card-header text-center">
+        <h4 class="mb-0 d-flex align-items-center justify-content-center gap-2">
+          <i class="bi bi-exclamation-triangle"></i>
+          Oops! Something went wrong
+        </h4>
       </div>
-      <div class="card-body text-center">
-        <h1 class="display-1 text-danger">404</h1>
-        <p class="lead"><%= message %></p>
-        <a href="/" class="btn btn-primary">Return to Home</a>
-        <a href="/search" class="btn btn-outline-secondary">Search Database</a>
+      <div class="card-body text-center py-5">
+        <div class="position-relative mb-4">
+          <div class="error-code">404</div>
+          <i class="bi bi-search error-icon position-absolute top-50 start-50 translate-middle"></i>
+        </div>
+        <h5 class="error-message mb-3"><%= message %></h5>
+        <p class="text-muted mb-4">The page you're looking for doesn't exist or has been moved.</p>
+        <div class="d-flex flex-column flex-sm-row gap-2 justify-content-center">
+          <a href="/" class="btn" style="background: var(--brand-primary); color: white;">
+            <i class="bi bi-house-door me-1"></i> Return to Home
+          </a>
+          <a href="/search" class="btn" style="background: var(--brand-secondary); color: white;">
+            <i class="bi bi-search me-1"></i> Search Database
+          </a>
+        </div>
       </div>
+    </div>
+
+    <div class="text-center mt-4">
+      <p class="text-muted small">
+        <i class="bi bi-info-circle me-1"></i>
+        If you believe this is an error, please try again or contact support.
+      </p>
     </div>
   </div>
 </div>
