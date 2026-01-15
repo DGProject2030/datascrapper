@@ -1,39 +1,110 @@
 <%- include('header') %>
 
-<h1 class="mb-4"><%= title %></h1>
+<style>
+  .hero-card {
+    background: linear-gradient(135deg, #1a365d 0%, #2d4a6f 100%);
+    color: white;
+    border: none;
+  }
+  .hero-card .card-title {
+    font-size: 2rem;
+    font-weight: 700;
+  }
+  .hero-card .lead {
+    font-size: 1.1rem;
+    opacity: 0.9;
+  }
+  .stat-card {
+    border: none;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    transition: transform 0.2s, box-shadow 0.2s;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .stat-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+  }
+  .stat-card .stat-value {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--brand-primary);
+  }
+  .stat-card .stat-label {
+    font-size: 1rem;
+    color: #6c757d;
+  }
+  .stat-card .stat-icon {
+    font-size: 2.5rem;
+    color: var(--brand-secondary);
+  }
+  .chart-card {
+    border: none;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .chart-card .card-header {
+    background: linear-gradient(135deg, var(--brand-primary) 0%, #2d4a6f 100%);
+    color: white;
+    font-weight: 600;
+    padding: 1rem 1.25rem;
+  }
+  .chart-card .card-header i {
+    color: var(--brand-secondary);
+    margin-right: 0.5rem;
+  }
+</style>
 
 <div class="row mb-4">
-  <div class="col-md-4">
-    <div class="card bg-primary text-white">
-      <div class="card-body text-center">
-        <h2><%= report.totalRecords || 0 %></h2>
-        <p class="mb-0">Total Records</p>
-      </div>
-    </div>
-  </div>
-  <div class="col-md-4">
-    <div class="card bg-success text-white">
-      <div class="card-body text-center">
-        <h2><%= report.processedRecords || 0 %></h2>
-        <p class="mb-0">Processed Records</p>
-      </div>
-    </div>
-  </div>
-  <div class="col-md-4">
-    <div class="card bg-info text-white">
-      <div class="card-body text-center">
-        <h2><%= Object.keys(report.manufacturerStats || {}).length %></h2>
-        <p class="mb-0">Manufacturers</p>
+  <div class="col-md-12">
+    <div class="card hero-card">
+      <div class="card-body py-4">
+        <div class="d-flex align-items-center gap-3 mb-2">
+          <i class="bi bi-bar-chart-line" style="font-size: 2.5rem; color: #e67e22;"></i>
+          <h1 class="card-title mb-0"><%= title %></h1>
+        </div>
+        <p class="lead mb-0">Comprehensive analytics and insights from the chainhoist database</p>
       </div>
     </div>
   </div>
 </div>
 
-<div class="row mb-4">
+<div class="row mb-4 g-4">
+  <div class="col-md-4">
+    <div class="card stat-card h-100">
+      <div class="card-body text-center py-4">
+        <i class="bi bi-database stat-icon"></i>
+        <div class="stat-value"><%= report.totalRecords || 0 %></div>
+        <div class="stat-label">Total Records</div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="card stat-card h-100">
+      <div class="card-body text-center py-4">
+        <i class="bi bi-check-circle stat-icon"></i>
+        <div class="stat-value"><%= report.processedRecords || 0 %></div>
+        <div class="stat-label">Processed Records</div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="card stat-card h-100">
+      <div class="card-body text-center py-4">
+        <i class="bi bi-building stat-icon"></i>
+        <div class="stat-value"><%= Object.keys(report.manufacturerStats || {}).length %></div>
+        <div class="stat-label">Manufacturers</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row mb-4 g-4">
   <div class="col-md-6">
-    <div class="card">
-      <div class="card-header bg-dark text-white">
-        <h4 class="mb-0">Capacity Distribution</h4>
+    <div class="card chart-card h-100">
+      <div class="card-header">
+        <h5 class="mb-0"><i class="bi bi-pie-chart"></i> Capacity Distribution</h5>
       </div>
       <div class="card-body">
         <canvas id="capacityChart"></canvas>
@@ -41,9 +112,9 @@
     </div>
   </div>
   <div class="col-md-6">
-    <div class="card">
-      <div class="card-header bg-dark text-white">
-        <h4 class="mb-0">Classification Distribution</h4>
+    <div class="card chart-card h-100">
+      <div class="card-header">
+        <h5 class="mb-0"><i class="bi bi-diagram-3"></i> Classification Distribution</h5>
       </div>
       <div class="card-body">
         <canvas id="classificationChart"></canvas>
@@ -52,11 +123,11 @@
   </div>
 </div>
 
-<div class="row mb-4">
+<div class="row mb-4 g-4">
   <div class="col-md-6">
-    <div class="card">
-      <div class="card-header bg-dark text-white">
-        <h4 class="mb-0">Motor Power Distribution</h4>
+    <div class="card chart-card h-100">
+      <div class="card-header">
+        <h5 class="mb-0"><i class="bi bi-lightning-charge"></i> Motor Power Distribution</h5>
       </div>
       <div class="card-body">
         <canvas id="powerChart"></canvas>
@@ -64,9 +135,9 @@
     </div>
   </div>
   <div class="col-md-6">
-    <div class="card">
-      <div class="card-header bg-dark text-white">
-        <h4 class="mb-0">Lifting Speed Distribution</h4>
+    <div class="card chart-card h-100">
+      <div class="card-header">
+        <h5 class="mb-0"><i class="bi bi-speedometer2"></i> Lifting Speed Distribution</h5>
       </div>
       <div class="card-body">
         <canvas id="speedChart"></canvas>
@@ -77,23 +148,23 @@
 
 <div class="row">
   <div class="col-md-12">
-    <div class="card">
-      <div class="card-header bg-dark text-white">
-        <h4 class="mb-0">Manufacturer Statistics</h4>
+    <div class="card chart-card">
+      <div class="card-header">
+        <h5 class="mb-0"><i class="bi bi-building"></i> Manufacturer Statistics</h5>
       </div>
       <div class="card-body">
         <table class="table table-striped">
           <thead>
             <tr>
               <th>Manufacturer</th>
-              <th>Count</th>
+              <th>Products</th>
             </tr>
           </thead>
           <tbody>
             <% Object.entries(report.manufacturerStats || {}).forEach(function([manufacturer, count]) { %>
               <tr>
-                <td><a href="/search?manufacturer=<%= encodeURIComponent(manufacturer) %>"><%= manufacturer %></a></td>
-                <td><span class="badge bg-primary"><%= count %></span></td>
+                <td><a href="/search?manufacturer=<%= encodeURIComponent(manufacturer) %>" class="text-decoration-none" style="color: var(--brand-primary);"><%= manufacturer %></a></td>
+                <td><span class="badge" style="background: var(--brand-secondary);"><%= count %></span></td>
               </tr>
             <% }); %>
           </tbody>
@@ -104,6 +175,9 @@
 </div>
 
 <script>
+  // Brand colors for charts
+  const brandColors = ['#1a365d', '#e67e22', '#27ae60', '#3498db', '#9b59b6', '#e74c3c', '#1abc9c', '#f39c12'];
+
   // Capacity Chart
   const capacityCtx = document.getElementById('capacityChart').getContext('2d');
   new Chart(capacityCtx, {
@@ -112,8 +186,15 @@
       labels: <%= JSON.stringify(Object.keys(capacityStats)) %>,
       datasets: [{
         data: <%= JSON.stringify(Object.values(capacityStats)) %>,
-        backgroundColor: ['#0d6efd', '#198754', '#0dcaf0', '#ffc107', '#dc3545']
+        backgroundColor: brandColors
       }]
+    },
+    options: {
+      plugins: {
+        legend: {
+          position: 'bottom'
+        }
+      }
     }
   });
 
@@ -125,8 +206,15 @@
       labels: <%= JSON.stringify(Object.keys(report.classificationDistribution || {})) %>,
       datasets: [{
         data: <%= JSON.stringify(Object.values(report.classificationDistribution || {})) %>,
-        backgroundColor: ['#0d6efd', '#198754', '#0dcaf0', '#ffc107', '#dc3545', '#6c757d']
+        backgroundColor: brandColors
       }]
+    },
+    options: {
+      plugins: {
+        legend: {
+          position: 'bottom'
+        }
+      }
     }
   });
 
@@ -139,10 +227,15 @@
       datasets: [{
         label: 'Count',
         data: <%= JSON.stringify(Object.values(powerStats)) %>,
-        backgroundColor: '#198754'
+        backgroundColor: '#1a365d'
       }]
     },
     options: {
+      plugins: {
+        legend: {
+          display: false
+        }
+      },
       scales: {
         y: { beginAtZero: true }
       }
@@ -158,10 +251,15 @@
       datasets: [{
         label: 'Count',
         data: <%= JSON.stringify(Object.values(speedStats)) %>,
-        backgroundColor: '#0dcaf0'
+        backgroundColor: '#e67e22'
       }]
     },
     options: {
+      plugins: {
+        legend: {
+          display: false
+        }
+      },
       scales: {
         y: { beginAtZero: true }
       }
