@@ -46,7 +46,7 @@ const MANUFACTURER_URLS = {
   'Prolyft': {
     brand: 'Prolyft (Prolyte)',
     website: 'https://www.prolyte.com',
-    searchUrl: 'https://www.prolyte.com/products/prolyft/electric-chain-hoists/aetos'
+    searchUrl: 'https://www.prolyte.com/products/prolyft/nero-chain-hoists'
   },
   'GIS': {
     brand: 'GIS AG',

@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generatedAt": "2026-01-15T18:18:01.036Z",
+  "generatedAt": "2026-01-15T18:36:00.557Z",
   "source": "Personality XML Files + Web Enrichment",
   "totalProducts": 172,
   "manufacturers": 25,
@@ -794,8 +794,13 @@
       "category": "Electric Chain Hoist",
       "speedType": "Variable Speed",
       "entertainmentIndustry": true,
-      "manufacturerWebsite": "https://www.liftket.de",
-      "manufacturerBrand": "Liftket"
+      "manufacturerWebsite": "https://liftket.com",
+      "manufacturerBrand": "Liftket",
+      "webSearchResults": {
+        "website": "https://liftket.com",
+        "brand": "Liftket",
+        "matchingProducts": []
+      }
     },
     {
       "manufacturerId": "001",
@@ -845,8 +850,13 @@
       "category": "Electric Chain Hoist",
       "speedType": "Variable Speed",
       "entertainmentIndustry": true,
-      "manufacturerWebsite": "https://www.liftket.de",
-      "manufacturerBrand": "Liftket"
+      "manufacturerWebsite": "https://liftket.com",
+      "manufacturerBrand": "Liftket",
+      "webSearchResults": {
+        "website": "https://liftket.com",
+        "brand": "Liftket",
+        "matchingProducts": []
+      }
     },
     {
       "manufacturerId": "001",
@@ -896,8 +906,13 @@
       "category": "Electric Chain Hoist",
       "speedType": "Variable Speed",
       "entertainmentIndustry": true,
-      "manufacturerWebsite": "https://www.liftket.de",
-      "manufacturerBrand": "Liftket"
+      "manufacturerWebsite": "https://liftket.com",
+      "manufacturerBrand": "Liftket",
+      "webSearchResults": {
+        "website": "https://liftket.com",
+        "brand": "Liftket",
+        "matchingProducts": []
+      }
     },
     {
       "manufacturerId": "001",
@@ -947,8 +962,13 @@
       "category": "Electric Chain Hoist",
       "speedType": "Variable Speed",
       "entertainmentIndustry": true,
-      "manufacturerWebsite": "https://www.liftket.de",
-      "manufacturerBrand": "Liftket"
+      "manufacturerWebsite": "https://liftket.com",
+      "manufacturerBrand": "Liftket",
+      "webSearchResults": {
+        "website": "https://liftket.com",
+        "brand": "Liftket",
+        "matchingProducts": []
+      }
     },
     {
       "manufacturerId": "001",
@@ -998,8 +1018,13 @@
       "category": "Electric Chain Hoist",
       "speedType": "Variable Speed",
       "entertainmentIndustry": true,
-      "manufacturerWebsite": "https://www.liftket.de",
-      "manufacturerBrand": "Liftket"
+      "manufacturerWebsite": "https://liftket.com",
+      "manufacturerBrand": "Liftket",
+      "webSearchResults": {
+        "website": "https://liftket.com",
+        "brand": "Liftket",
+        "matchingProducts": []
+      }
     },
     {
       "manufacturerId": "001",
@@ -1049,8 +1074,13 @@
       "category": "Electric Chain Hoist",
       "speedType": "Variable Speed",
       "entertainmentIndustry": true,
-      "manufacturerWebsite": "https://www.liftket.de",
-      "manufacturerBrand": "Liftket"
+      "manufacturerWebsite": "https://liftket.com",
+      "manufacturerBrand": "Liftket",
+      "webSearchResults": {
+        "website": "https://liftket.com",
+        "brand": "Liftket",
+        "matchingProducts": []
+      }
     },
     {
       "manufacturerId": "001",
@@ -1100,8 +1130,13 @@
       "category": "Electric Chain Hoist",
       "speedType": "Variable Speed",
       "entertainmentIndustry": true,
-      "manufacturerWebsite": "https://www.liftket.de",
-      "manufacturerBrand": "Liftket"
+      "manufacturerWebsite": "https://liftket.com",
+      "manufacturerBrand": "Liftket",
+      "webSearchResults": {
+        "website": "https://liftket.com",
+        "brand": "Liftket",
+        "matchingProducts": []
+      }
     },
     {
       "manufacturerId": "001",
@@ -1151,8 +1186,13 @@
       "category": "Electric Chain Hoist",
       "speedType": "Variable Speed",
       "entertainmentIndustry": true,
-      "manufacturerWebsite": "https://www.liftket.de",
-      "manufacturerBrand": "Liftket"
+      "manufacturerWebsite": "https://liftket.com",
+      "manufacturerBrand": "Liftket",
+      "webSearchResults": {
+        "website": "https://liftket.com",
+        "brand": "Liftket",
+        "matchingProducts": []
+      }
     },
     {
       "manufacturerId": "002",
@@ -3678,7 +3718,17 @@
       "speedType": "Fixed Speed",
       "entertainmentIndustry": true,
       "manufacturerWebsite": "https://gis-ag.ch",
-      "manufacturerBrand": "GIS AG"
+      "manufacturerBrand": "GIS AG",
+      "webSearchResults": {
+        "website": "https://gis-ag.ch",
+        "brand": "GIS AG",
+        "matchingProducts": [
+          {
+            "href": "https://gis-ag.ch/en/industry/products/special-products/67-manual-chain-hoist/",
+            "text": "Manual chain hoist\n                                                    GISHKZ, up to 3000 kg"
+          }
+        ]
+      }
     },
     {
       "manufacturerId": "010",
@@ -3721,7 +3771,17 @@
       "speedType": "Fixed Speed",
       "entertainmentIndustry": true,
       "manufacturerWebsite": "https://gis-ag.ch",
-      "manufacturerBrand": "GIS AG"
+      "manufacturerBrand": "GIS AG",
+      "webSearchResults": {
+        "website": "https://gis-ag.ch",
+        "brand": "GIS AG",
+        "matchingProducts": [
+          {
+            "href": "https://gis-ag.ch/en/industry/products/special-products/67-manual-chain-hoist/",
+            "text": "Manual chain hoist\n                                                    GISHKZ, up to 3000 kg"
+          }
+        ]
+      }
     },
     {
       "manufacturerId": "010",
@@ -3764,7 +3824,17 @@
       "speedType": "Fixed Speed",
       "entertainmentIndustry": true,
       "manufacturerWebsite": "https://gis-ag.ch",
-      "manufacturerBrand": "GIS AG"
+      "manufacturerBrand": "GIS AG",
+      "webSearchResults": {
+        "website": "https://gis-ag.ch",
+        "brand": "GIS AG",
+        "matchingProducts": [
+          {
+            "href": "https://gis-ag.ch/en/industry/products/special-products/67-manual-chain-hoist/",
+            "text": "Manual chain hoist\n                                                    GISHKZ, up to 3000 kg"
+          }
+        ]
+      }
     },
     {
       "manufacturerId": "011",
@@ -4666,8 +4736,13 @@
       "category": "Electric Chain Hoist",
       "speedType": "Fixed Speed",
       "entertainmentIndustry": true,
-      "manufacturerWebsite": "https://www.liftket.de",
-      "manufacturerBrand": "Liftket"
+      "manufacturerWebsite": "https://liftket.com",
+      "manufacturerBrand": "Liftket",
+      "webSearchResults": {
+        "website": "https://liftket.com",
+        "brand": "Liftket",
+        "matchingProducts": []
+      }
     },
     {
       "manufacturerId": "013",
@@ -4709,8 +4784,13 @@
       "category": "Electric Chain Hoist",
       "speedType": "Fixed Speed",
       "entertainmentIndustry": true,
-      "manufacturerWebsite": "https://www.liftket.de",
-      "manufacturerBrand": "Liftket"
+      "manufacturerWebsite": "https://liftket.com",
+      "manufacturerBrand": "Liftket",
+      "webSearchResults": {
+        "website": "https://liftket.com",
+        "brand": "Liftket",
+        "matchingProducts": []
+      }
     },
     {
       "manufacturerId": "013",
@@ -4752,8 +4832,13 @@
       "category": "Electric Chain Hoist",
       "speedType": "Fixed Speed",
       "entertainmentIndustry": true,
-      "manufacturerWebsite": "https://www.liftket.de",
-      "manufacturerBrand": "Liftket"
+      "manufacturerWebsite": "https://liftket.com",
+      "manufacturerBrand": "Liftket",
+      "webSearchResults": {
+        "website": "https://liftket.com",
+        "brand": "Liftket",
+        "matchingProducts": []
+      }
     },
     {
       "manufacturerId": "013",
@@ -4795,8 +4880,13 @@
       "category": "Electric Chain Hoist",
       "speedType": "Fixed Speed",
       "entertainmentIndustry": true,
-      "manufacturerWebsite": "https://www.liftket.de",
-      "manufacturerBrand": "Liftket"
+      "manufacturerWebsite": "https://liftket.com",
+      "manufacturerBrand": "Liftket",
+      "webSearchResults": {
+        "website": "https://liftket.com",
+        "brand": "Liftket",
+        "matchingProducts": []
+      }
     },
     {
       "manufacturerId": "013",
@@ -4838,8 +4928,13 @@
       "category": "Electric Chain Hoist",
       "speedType": "Fixed Speed",
       "entertainmentIndustry": true,
-      "manufacturerWebsite": "https://www.liftket.de",
-      "manufacturerBrand": "Liftket"
+      "manufacturerWebsite": "https://liftket.com",
+      "manufacturerBrand": "Liftket",
+      "webSearchResults": {
+        "website": "https://liftket.com",
+        "brand": "Liftket",
+        "matchingProducts": []
+      }
     },
     {
       "manufacturerId": "013",
@@ -4881,8 +4976,13 @@
       "category": "Electric Chain Hoist",
       "speedType": "Fixed Speed",
       "entertainmentIndustry": true,
-      "manufacturerWebsite": "https://www.liftket.de",
-      "manufacturerBrand": "Liftket"
+      "manufacturerWebsite": "https://liftket.com",
+      "manufacturerBrand": "Liftket",
+      "webSearchResults": {
+        "website": "https://liftket.com",
+        "brand": "Liftket",
+        "matchingProducts": []
+      }
     },
     {
       "manufacturerId": "013",
@@ -4924,8 +5024,13 @@
       "category": "Electric Chain Hoist",
       "speedType": "Fixed Speed",
       "entertainmentIndustry": true,
-      "manufacturerWebsite": "https://www.liftket.de",
-      "manufacturerBrand": "Liftket"
+      "manufacturerWebsite": "https://liftket.com",
+      "manufacturerBrand": "Liftket",
+      "webSearchResults": {
+        "website": "https://liftket.com",
+        "brand": "Liftket",
+        "matchingProducts": []
+      }
     },
     {
       "manufacturerId": "013",
@@ -4967,8 +5072,13 @@
       "category": "Electric Chain Hoist",
       "speedType": "Fixed Speed",
       "entertainmentIndustry": true,
-      "manufacturerWebsite": "https://www.liftket.de",
-      "manufacturerBrand": "Liftket"
+      "manufacturerWebsite": "https://liftket.com",
+      "manufacturerBrand": "Liftket",
+      "webSearchResults": {
+        "website": "https://liftket.com",
+        "brand": "Liftket",
+        "matchingProducts": []
+      }
     },
     {
       "manufacturerId": "014",
@@ -5018,8 +5128,34 @@
       "category": "Electric Chain Hoist",
       "speedType": "Variable Speed",
       "entertainmentIndustry": true,
-      "manufacturerWebsite": "https://www.exe-technology.com",
-      "manufacturerBrand": "EXE Technology"
+      "manufacturerWebsite": "https://www.exetechnology.com",
+      "manufacturerBrand": "EXE Technology",
+      "webSearchResults": {
+        "website": "https://www.exetechnology.com",
+        "brand": "EXE Technology",
+        "matchingProducts": [
+          {
+            "href": "https://www.exetechnology.com/electric-chain-hoist/exe-rise/",
+            "text": "EXE Rise"
+          },
+          {
+            "href": "https://www.exetechnology.com/electric-chain-hoist/exe-vario/",
+            "text": "EXE Vario"
+          },
+          {
+            "href": "https://www.exetechnology.com/electric-chain-hoist/exe-rise",
+            "text": "D8+  EXE Rise"
+          },
+          {
+            "href": "https://www.exetechnology.com/electric-chain-hoist/exe-rise/",
+            "text": "EXE Rise"
+          },
+          {
+            "href": "https://www.exetechnology.com/electric-chain-hoist/exe-vario/",
+            "text": "EXE Vario"
+          }
+        ]
+      }
     },
     {
       "manufacturerId": "014",
@@ -5069,8 +5205,34 @@
       "category": "Electric Chain Hoist",
       "speedType": "Variable Speed",
       "entertainmentIndustry": true,
-      "manufacturerWebsite": "https://www.exe-technology.com",
-      "manufacturerBrand": "EXE Technology"
+      "manufacturerWebsite": "https://www.exetechnology.com",
+      "manufacturerBrand": "EXE Technology",
+      "webSearchResults": {
+        "website": "https://www.exetechnology.com",
+        "brand": "EXE Technology",
+        "matchingProducts": [
+          {
+            "href": "https://www.exetechnology.com/electric-chain-hoist/exe-rise/",
+            "text": "EXE Rise"
+          },
+          {
+            "href": "https://www.exetechnology.com/electric-chain-hoist/exe-vario/",
+            "text": "EXE Vario"
+          },
+          {
+            "href": "https://www.exetechnology.com/electric-chain-hoist/exe-rise",
+            "text": "D8+  EXE Rise"
+          },
+          {
+            "href": "https://www.exetechnology.com/electric-chain-hoist/exe-rise/",
+            "text": "EXE Rise"
+          },
+          {
+            "href": "https://www.exetechnology.com/electric-chain-hoist/exe-vario/",
+            "text": "EXE Vario"
+          }
+        ]
+      }
     },
     {
       "manufacturerId": "014",
@@ -5120,8 +5282,34 @@
       "category": "Electric Chain Hoist",
       "speedType": "Variable Speed",
       "entertainmentIndustry": true,
-      "manufacturerWebsite": "https://www.exe-technology.com",
-      "manufacturerBrand": "EXE Technology"
+      "manufacturerWebsite": "https://www.exetechnology.com",
+      "manufacturerBrand": "EXE Technology",
+      "webSearchResults": {
+        "website": "https://www.exetechnology.com",
+        "brand": "EXE Technology",
+        "matchingProducts": [
+          {
+            "href": "https://www.exetechnology.com/electric-chain-hoist/exe-rise/",
+            "text": "EXE Rise"
+          },
+          {
+            "href": "https://www.exetechnology.com/electric-chain-hoist/exe-vario/",
+            "text": "EXE Vario"
+          },
+          {
+            "href": "https://www.exetechnology.com/electric-chain-hoist/exe-rise",
+            "text": "D8+  EXE Rise"
+          },
+          {
+            "href": "https://www.exetechnology.com/electric-chain-hoist/exe-rise/",
+            "text": "EXE Rise"
+          },
+          {
+            "href": "https://www.exetechnology.com/electric-chain-hoist/exe-vario/",
+            "text": "EXE Vario"
+          }
+        ]
+      }
     },
     {
       "manufacturerId": "014",
@@ -5171,8 +5359,34 @@
       "category": "Electric Chain Hoist",
       "speedType": "Variable Speed",
       "entertainmentIndustry": true,
-      "manufacturerWebsite": "https://www.exe-technology.com",
-      "manufacturerBrand": "EXE Technology"
+      "manufacturerWebsite": "https://www.exetechnology.com",
+      "manufacturerBrand": "EXE Technology",
+      "webSearchResults": {
+        "website": "https://www.exetechnology.com",
+        "brand": "EXE Technology",
+        "matchingProducts": [
+          {
+            "href": "https://www.exetechnology.com/electric-chain-hoist/exe-rise/",
+            "text": "EXE Rise"
+          },
+          {
+            "href": "https://www.exetechnology.com/electric-chain-hoist/exe-vario/",
+            "text": "EXE Vario"
+          },
+          {
+            "href": "https://www.exetechnology.com/electric-chain-hoist/exe-rise",
+            "text": "D8+  EXE Rise"
+          },
+          {
+            "href": "https://www.exetechnology.com/electric-chain-hoist/exe-rise/",
+            "text": "EXE Rise"
+          },
+          {
+            "href": "https://www.exetechnology.com/electric-chain-hoist/exe-vario/",
+            "text": "EXE Vario"
+          }
+        ]
+      }
     },
     {
       "manufacturerId": "014",
@@ -5222,8 +5436,34 @@
       "category": "Electric Chain Hoist",
       "speedType": "Variable Speed",
       "entertainmentIndustry": true,
-      "manufacturerWebsite": "https://www.exe-technology.com",
-      "manufacturerBrand": "EXE Technology"
+      "manufacturerWebsite": "https://www.exetechnology.com",
+      "manufacturerBrand": "EXE Technology",
+      "webSearchResults": {
+        "website": "https://www.exetechnology.com",
+        "brand": "EXE Technology",
+        "matchingProducts": [
+          {
+            "href": "https://www.exetechnology.com/electric-chain-hoist/exe-rise/",
+            "text": "EXE Rise"
+          },
+          {
+            "href": "https://www.exetechnology.com/electric-chain-hoist/exe-vario/",
+            "text": "EXE Vario"
+          },
+          {
+            "href": "https://www.exetechnology.com/electric-chain-hoist/exe-rise",
+            "text": "D8+  EXE Rise"
+          },
+          {
+            "href": "https://www.exetechnology.com/electric-chain-hoist/exe-rise/",
+            "text": "EXE Rise"
+          },
+          {
+            "href": "https://www.exetechnology.com/electric-chain-hoist/exe-vario/",
+            "text": "EXE Vario"
+          }
+        ]
+      }
     },
     {
       "manufacturerId": "014",
@@ -5273,8 +5513,34 @@
       "category": "Electric Chain Hoist",
       "speedType": "Variable Speed",
       "entertainmentIndustry": true,
-      "manufacturerWebsite": "https://www.exe-technology.com",
-      "manufacturerBrand": "EXE Technology"
+      "manufacturerWebsite": "https://www.exetechnology.com",
+      "manufacturerBrand": "EXE Technology",
+      "webSearchResults": {
+        "website": "https://www.exetechnology.com",
+        "brand": "EXE Technology",
+        "matchingProducts": [
+          {
+            "href": "https://www.exetechnology.com/electric-chain-hoist/exe-rise/",
+            "text": "EXE Rise"
+          },
+          {
+            "href": "https://www.exetechnology.com/electric-chain-hoist/exe-vario/",
+            "text": "EXE Vario"
+          },
+          {
+            "href": "https://www.exetechnology.com/electric-chain-hoist/exe-rise",
+            "text": "D8+  EXE Rise"
+          },
+          {
+            "href": "https://www.exetechnology.com/electric-chain-hoist/exe-rise/",
+            "text": "EXE Rise"
+          },
+          {
+            "href": "https://www.exetechnology.com/electric-chain-hoist/exe-vario/",
+            "text": "EXE Vario"
+          }
+        ]
+      }
     },
     {
       "manufacturerId": "014",
@@ -5324,8 +5590,34 @@
       "category": "Electric Chain Hoist",
       "speedType": "Variable Speed",
       "entertainmentIndustry": true,
-      "manufacturerWebsite": "https://www.exe-technology.com",
-      "manufacturerBrand": "EXE Technology"
+      "manufacturerWebsite": "https://www.exetechnology.com",
+      "manufacturerBrand": "EXE Technology",
+      "webSearchResults": {
+        "website": "https://www.exetechnology.com",
+        "brand": "EXE Technology",
+        "matchingProducts": [
+          {
+            "href": "https://www.exetechnology.com/electric-chain-hoist/exe-rise/",
+            "text": "EXE Rise"
+          },
+          {
+            "href": "https://www.exetechnology.com/electric-chain-hoist/exe-vario/",
+            "text": "EXE Vario"
+          },
+          {
+            "href": "https://www.exetechnology.com/electric-chain-hoist/exe-rise",
+            "text": "D8+  EXE Rise"
+          },
+          {
+            "href": "https://www.exetechnology.com/electric-chain-hoist/exe-rise/",
+            "text": "EXE Rise"
+          },
+          {
+            "href": "https://www.exetechnology.com/electric-chain-hoist/exe-vario/",
+            "text": "EXE Vario"
+          }
+        ]
+      }
     },
     {
       "manufacturerId": "014",
@@ -5375,8 +5667,34 @@
       "category": "Electric Chain Hoist",
       "speedType": "Variable Speed",
       "entertainmentIndustry": true,
-      "manufacturerWebsite": "https://www.exe-technology.com",
-      "manufacturerBrand": "EXE Technology"
+      "manufacturerWebsite": "https://www.exetechnology.com",
+      "manufacturerBrand": "EXE Technology",
+      "webSearchResults": {
+        "website": "https://www.exetechnology.com",
+        "brand": "EXE Technology",
+        "matchingProducts": [
+          {
+            "href": "https://www.exetechnology.com/electric-chain-hoist/exe-rise/",
+            "text": "EXE Rise"
+          },
+          {
+            "href": "https://www.exetechnology.com/electric-chain-hoist/exe-vario/",
+            "text": "EXE Vario"
+          },
+          {
+            "href": "https://www.exetechnology.com/electric-chain-hoist/exe-rise",
+            "text": "D8+  EXE Rise"
+          },
+          {
+            "href": "https://www.exetechnology.com/electric-chain-hoist/exe-rise/",
+            "text": "EXE Rise"
+          },
+          {
+            "href": "https://www.exetechnology.com/electric-chain-hoist/exe-vario/",
+            "text": "EXE Vario"
+          }
+        ]
+      }
     },
     {
       "manufacturerId": "014",
@@ -5426,8 +5744,34 @@
       "category": "Electric Chain Hoist",
       "speedType": "Variable Speed",
       "entertainmentIndustry": true,
-      "manufacturerWebsite": "https://www.exe-technology.com",
-      "manufacturerBrand": "EXE Technology"
+      "manufacturerWebsite": "https://www.exetechnology.com",
+      "manufacturerBrand": "EXE Technology",
+      "webSearchResults": {
+        "website": "https://www.exetechnology.com",
+        "brand": "EXE Technology",
+        "matchingProducts": [
+          {
+            "href": "https://www.exetechnology.com/electric-chain-hoist/exe-rise/",
+            "text": "EXE Rise"
+          },
+          {
+            "href": "https://www.exetechnology.com/electric-chain-hoist/exe-vario/",
+            "text": "EXE Vario"
+          },
+          {
+            "href": "https://www.exetechnology.com/electric-chain-hoist/exe-rise",
+            "text": "D8+  EXE Rise"
+          },
+          {
+            "href": "https://www.exetechnology.com/electric-chain-hoist/exe-rise/",
+            "text": "EXE Rise"
+          },
+          {
+            "href": "https://www.exetechnology.com/electric-chain-hoist/exe-vario/",
+            "text": "EXE Vario"
+          }
+        ]
+      }
     },
     {
       "manufacturerId": "015",
@@ -5469,8 +5813,8 @@
       "category": "Electric Chain Hoist",
       "speedType": "Fixed Speed",
       "entertainmentIndustry": true,
-      "manufacturerWebsite": "https://www.prolyft.com",
-      "manufacturerBrand": "Prolyft"
+      "manufacturerWebsite": "https://www.prolyte.com",
+      "manufacturerBrand": "Prolyft (Prolyte)"
     },
     {
       "manufacturerId": "016",
@@ -5512,8 +5856,34 @@
       "category": "Electric Chain Hoist",
       "speedType": "Fixed Speed",
       "entertainmentIndustry": true,
-      "manufacturerWebsite": "https://www.exe-technology.com",
-      "manufacturerBrand": "EXE Technology"
+      "manufacturerWebsite": "https://www.exetechnology.com",
+      "manufacturerBrand": "EXE Technology",
+      "webSearchResults": {
+        "website": "https://www.exetechnology.com",
+        "brand": "EXE Technology",
+        "matchingProducts": [
+          {
+            "href": "https://www.exetechnology.com/electric-chain-hoist/exe-rise/",
+            "text": "EXE Rise"
+          },
+          {
+            "href": "https://www.exetechnology.com/electric-chain-hoist/exe-vario/",
+            "text": "EXE Vario"
+          },
+          {
+            "href": "https://www.exetechnology.com/electric-chain-hoist/exe-rise",
+            "text": "D8+  EXE Rise"
+          },
+          {
+            "href": "https://www.exetechnology.com/electric-chain-hoist/exe-rise/",
+            "text": "EXE Rise"
+          },
+          {
+            "href": "https://www.exetechnology.com/electric-chain-hoist/exe-vario/",
+            "text": "EXE Vario"
+          }
+        ]
+      }
     },
     {
       "manufacturerId": "016",
@@ -5555,8 +5925,34 @@
       "category": "Electric Chain Hoist",
       "speedType": "Fixed Speed",
       "entertainmentIndustry": true,
-      "manufacturerWebsite": "https://www.exe-technology.com",
-      "manufacturerBrand": "EXE Technology"
+      "manufacturerWebsite": "https://www.exetechnology.com",
+      "manufacturerBrand": "EXE Technology",
+      "webSearchResults": {
+        "website": "https://www.exetechnology.com",
+        "brand": "EXE Technology",
+        "matchingProducts": [
+          {
+            "href": "https://www.exetechnology.com/electric-chain-hoist/exe-rise/",
+            "text": "EXE Rise"
+          },
+          {
+            "href": "https://www.exetechnology.com/electric-chain-hoist/exe-vario/",
+            "text": "EXE Vario"
+          },
+          {
+            "href": "https://www.exetechnology.com/electric-chain-hoist/exe-rise",
+            "text": "D8+  EXE Rise"
+          },
+          {
+            "href": "https://www.exetechnology.com/electric-chain-hoist/exe-rise/",
+            "text": "EXE Rise"
+          },
+          {
+            "href": "https://www.exetechnology.com/electric-chain-hoist/exe-vario/",
+            "text": "EXE Vario"
+          }
+        ]
+      }
     },
     {
       "manufacturerId": "016",
@@ -5598,8 +5994,34 @@
       "category": "Electric Chain Hoist",
       "speedType": "Fixed Speed",
       "entertainmentIndustry": true,
-      "manufacturerWebsite": "https://www.exe-technology.com",
-      "manufacturerBrand": "EXE Technology"
+      "manufacturerWebsite": "https://www.exetechnology.com",
+      "manufacturerBrand": "EXE Technology",
+      "webSearchResults": {
+        "website": "https://www.exetechnology.com",
+        "brand": "EXE Technology",
+        "matchingProducts": [
+          {
+            "href": "https://www.exetechnology.com/electric-chain-hoist/exe-rise/",
+            "text": "EXE Rise"
+          },
+          {
+            "href": "https://www.exetechnology.com/electric-chain-hoist/exe-vario/",
+            "text": "EXE Vario"
+          },
+          {
+            "href": "https://www.exetechnology.com/electric-chain-hoist/exe-rise",
+            "text": "D8+  EXE Rise"
+          },
+          {
+            "href": "https://www.exetechnology.com/electric-chain-hoist/exe-rise/",
+            "text": "EXE Rise"
+          },
+          {
+            "href": "https://www.exetechnology.com/electric-chain-hoist/exe-vario/",
+            "text": "EXE Vario"
+          }
+        ]
+      }
     },
     {
       "manufacturerId": "017",
@@ -5924,7 +6346,12 @@
       "speedType": "Variable Speed",
       "entertainmentIndustry": true,
       "manufacturerWebsite": "https://www.wicreations.com",
-      "manufacturerBrand": "Wicreations"
+      "manufacturerBrand": "Wicreations",
+      "webSearchResults": {
+        "website": "https://www.wicreations.com",
+        "brand": "Wicreations",
+        "matchingProducts": []
+      }
     },
     {
       "manufacturerId": "020",
@@ -5975,7 +6402,12 @@
       "speedType": "Variable Speed",
       "entertainmentIndustry": true,
       "manufacturerWebsite": "https://www.wicreations.com",
-      "manufacturerBrand": "Wicreations"
+      "manufacturerBrand": "Wicreations",
+      "webSearchResults": {
+        "website": "https://www.wicreations.com",
+        "brand": "Wicreations",
+        "matchingProducts": []
+      }
     },
     {
       "manufacturerId": "020",
@@ -6026,7 +6458,12 @@
       "speedType": "Variable Speed",
       "entertainmentIndustry": true,
       "manufacturerWebsite": "https://www.wicreations.com",
-      "manufacturerBrand": "Wicreations"
+      "manufacturerBrand": "Wicreations",
+      "webSearchResults": {
+        "website": "https://www.wicreations.com",
+        "brand": "Wicreations",
+        "matchingProducts": []
+      }
     },
     {
       "manufacturerId": "020",
@@ -6077,7 +6514,12 @@
       "speedType": "Variable Speed",
       "entertainmentIndustry": true,
       "manufacturerWebsite": "https://www.wicreations.com",
-      "manufacturerBrand": "Wicreations"
+      "manufacturerBrand": "Wicreations",
+      "webSearchResults": {
+        "website": "https://www.wicreations.com",
+        "brand": "Wicreations",
+        "matchingProducts": []
+      }
     },
     {
       "manufacturerId": "020",
@@ -6128,7 +6570,12 @@
       "speedType": "Variable Speed",
       "entertainmentIndustry": true,
       "manufacturerWebsite": "https://www.wicreations.com",
-      "manufacturerBrand": "Wicreations"
+      "manufacturerBrand": "Wicreations",
+      "webSearchResults": {
+        "website": "https://www.wicreations.com",
+        "brand": "Wicreations",
+        "matchingProducts": []
+      }
     },
     {
       "manufacturerId": "020",
@@ -6179,7 +6626,12 @@
       "speedType": "Variable Speed",
       "entertainmentIndustry": true,
       "manufacturerWebsite": "https://www.wicreations.com",
-      "manufacturerBrand": "Wicreations"
+      "manufacturerBrand": "Wicreations",
+      "webSearchResults": {
+        "website": "https://www.wicreations.com",
+        "brand": "Wicreations",
+        "matchingProducts": []
+      }
     },
     {
       "manufacturerId": "020",
@@ -6230,7 +6682,12 @@
       "speedType": "Unknown",
       "entertainmentIndustry": true,
       "manufacturerWebsite": "https://www.wicreations.com",
-      "manufacturerBrand": "Wicreations"
+      "manufacturerBrand": "Wicreations",
+      "webSearchResults": {
+        "website": "https://www.wicreations.com",
+        "brand": "Wicreations",
+        "matchingProducts": []
+      }
     },
     {
       "manufacturerId": "020",
@@ -6281,7 +6738,12 @@
       "speedType": "Unknown",
       "entertainmentIndustry": true,
       "manufacturerWebsite": "https://www.wicreations.com",
-      "manufacturerBrand": "Wicreations"
+      "manufacturerBrand": "Wicreations",
+      "webSearchResults": {
+        "website": "https://www.wicreations.com",
+        "brand": "Wicreations",
+        "matchingProducts": []
+      }
     },
     {
       "manufacturerId": "020",
@@ -6327,7 +6789,12 @@
       "speedType": "Unknown",
       "entertainmentIndustry": true,
       "manufacturerWebsite": "https://www.wicreations.com",
-      "manufacturerBrand": "Wicreations"
+      "manufacturerBrand": "Wicreations",
+      "webSearchResults": {
+        "website": "https://www.wicreations.com",
+        "brand": "Wicreations",
+        "matchingProducts": []
+      }
     },
     {
       "manufacturerId": "020",
@@ -6373,7 +6840,12 @@
       "speedType": "Unknown",
       "entertainmentIndustry": true,
       "manufacturerWebsite": "https://www.wicreations.com",
-      "manufacturerBrand": "Wicreations"
+      "manufacturerBrand": "Wicreations",
+      "webSearchResults": {
+        "website": "https://www.wicreations.com",
+        "brand": "Wicreations",
+        "matchingProducts": []
+      }
     },
     {
       "manufacturerId": "020",
@@ -6419,7 +6891,12 @@
       "speedType": "Unknown",
       "entertainmentIndustry": true,
       "manufacturerWebsite": "https://www.wicreations.com",
-      "manufacturerBrand": "Wicreations"
+      "manufacturerBrand": "Wicreations",
+      "webSearchResults": {
+        "website": "https://www.wicreations.com",
+        "brand": "Wicreations",
+        "matchingProducts": []
+      }
     },
     {
       "manufacturerId": "020",
@@ -6465,7 +6942,12 @@
       "speedType": "Unknown",
       "entertainmentIndustry": true,
       "manufacturerWebsite": "https://www.wicreations.com",
-      "manufacturerBrand": "Wicreations"
+      "manufacturerBrand": "Wicreations",
+      "webSearchResults": {
+        "website": "https://www.wicreations.com",
+        "brand": "Wicreations",
+        "matchingProducts": []
+      }
     },
     {
       "manufacturerId": "020",
@@ -6511,7 +6993,12 @@
       "speedType": "Unknown",
       "entertainmentIndustry": true,
       "manufacturerWebsite": "https://www.wicreations.com",
-      "manufacturerBrand": "Wicreations"
+      "manufacturerBrand": "Wicreations",
+      "webSearchResults": {
+        "website": "https://www.wicreations.com",
+        "brand": "Wicreations",
+        "matchingProducts": []
+      }
     },
     {
       "manufacturerId": "020",
@@ -6562,7 +7049,12 @@
       "speedType": "Unknown",
       "entertainmentIndustry": true,
       "manufacturerWebsite": "https://www.wicreations.com",
-      "manufacturerBrand": "Wicreations"
+      "manufacturerBrand": "Wicreations",
+      "webSearchResults": {
+        "website": "https://www.wicreations.com",
+        "brand": "Wicreations",
+        "matchingProducts": []
+      }
     },
     {
       "manufacturerId": "020",
@@ -6613,7 +7105,12 @@
       "speedType": "Unknown",
       "entertainmentIndustry": true,
       "manufacturerWebsite": "https://www.wicreations.com",
-      "manufacturerBrand": "Wicreations"
+      "manufacturerBrand": "Wicreations",
+      "webSearchResults": {
+        "website": "https://www.wicreations.com",
+        "brand": "Wicreations",
+        "matchingProducts": []
+      }
     },
     {
       "manufacturerId": "020",
@@ -6664,7 +7161,12 @@
       "speedType": "Unknown",
       "entertainmentIndustry": true,
       "manufacturerWebsite": "https://www.wicreations.com",
-      "manufacturerBrand": "Wicreations"
+      "manufacturerBrand": "Wicreations",
+      "webSearchResults": {
+        "website": "https://www.wicreations.com",
+        "brand": "Wicreations",
+        "matchingProducts": []
+      }
     },
     {
       "manufacturerId": "020",
@@ -6715,7 +7217,12 @@
       "speedType": "Unknown",
       "entertainmentIndustry": true,
       "manufacturerWebsite": "https://www.wicreations.com",
-      "manufacturerBrand": "Wicreations"
+      "manufacturerBrand": "Wicreations",
+      "webSearchResults": {
+        "website": "https://www.wicreations.com",
+        "brand": "Wicreations",
+        "matchingProducts": []
+      }
     },
     {
       "manufacturerId": "020",
@@ -6761,7 +7268,12 @@
       "speedType": "Variable Speed",
       "entertainmentIndustry": true,
       "manufacturerWebsite": "https://www.wicreations.com",
-      "manufacturerBrand": "Wicreations"
+      "manufacturerBrand": "Wicreations",
+      "webSearchResults": {
+        "website": "https://www.wicreations.com",
+        "brand": "Wicreations",
+        "matchingProducts": []
+      }
     },
     {
       "manufacturerId": "020",
@@ -6807,7 +7319,12 @@
       "speedType": "Variable Speed",
       "entertainmentIndustry": true,
       "manufacturerWebsite": "https://www.wicreations.com",
-      "manufacturerBrand": "Wicreations"
+      "manufacturerBrand": "Wicreations",
+      "webSearchResults": {
+        "website": "https://www.wicreations.com",
+        "brand": "Wicreations",
+        "matchingProducts": []
+      }
     },
     {
       "manufacturerId": "020",
@@ -6858,7 +7375,12 @@
       "speedType": "Unknown",
       "entertainmentIndustry": true,
       "manufacturerWebsite": "https://www.wicreations.com",
-      "manufacturerBrand": "Wicreations"
+      "manufacturerBrand": "Wicreations",
+      "webSearchResults": {
+        "website": "https://www.wicreations.com",
+        "brand": "Wicreations",
+        "matchingProducts": []
+      }
     },
     {
       "manufacturerId": "020",
@@ -6909,7 +7431,12 @@
       "speedType": "Unknown",
       "entertainmentIndustry": true,
       "manufacturerWebsite": "https://www.wicreations.com",
-      "manufacturerBrand": "Wicreations"
+      "manufacturerBrand": "Wicreations",
+      "webSearchResults": {
+        "website": "https://www.wicreations.com",
+        "brand": "Wicreations",
+        "matchingProducts": []
+      }
     },
     {
       "manufacturerId": "020",
@@ -6960,7 +7487,12 @@
       "speedType": "Unknown",
       "entertainmentIndustry": true,
       "manufacturerWebsite": "https://www.wicreations.com",
-      "manufacturerBrand": "Wicreations"
+      "manufacturerBrand": "Wicreations",
+      "webSearchResults": {
+        "website": "https://www.wicreations.com",
+        "brand": "Wicreations",
+        "matchingProducts": []
+      }
     },
     {
       "manufacturerId": "020",
@@ -7011,7 +7543,12 @@
       "speedType": "Unknown",
       "entertainmentIndustry": true,
       "manufacturerWebsite": "https://www.wicreations.com",
-      "manufacturerBrand": "Wicreations"
+      "manufacturerBrand": "Wicreations",
+      "webSearchResults": {
+        "website": "https://www.wicreations.com",
+        "brand": "Wicreations",
+        "matchingProducts": []
+      }
     },
     {
       "manufacturerId": "020",
@@ -7062,7 +7599,12 @@
       "speedType": "Unknown",
       "entertainmentIndustry": true,
       "manufacturerWebsite": "https://www.wicreations.com",
-      "manufacturerBrand": "Wicreations"
+      "manufacturerBrand": "Wicreations",
+      "webSearchResults": {
+        "website": "https://www.wicreations.com",
+        "brand": "Wicreations",
+        "matchingProducts": []
+      }
     },
     {
       "manufacturerId": "020",
@@ -7113,7 +7655,12 @@
       "speedType": "Unknown",
       "entertainmentIndustry": true,
       "manufacturerWebsite": "https://www.wicreations.com",
-      "manufacturerBrand": "Wicreations"
+      "manufacturerBrand": "Wicreations",
+      "webSearchResults": {
+        "website": "https://www.wicreations.com",
+        "brand": "Wicreations",
+        "matchingProducts": []
+      }
     },
     {
       "manufacturerId": "020",
@@ -7164,7 +7711,12 @@
       "speedType": "Unknown",
       "entertainmentIndustry": true,
       "manufacturerWebsite": "https://www.wicreations.com",
-      "manufacturerBrand": "Wicreations"
+      "manufacturerBrand": "Wicreations",
+      "webSearchResults": {
+        "website": "https://www.wicreations.com",
+        "brand": "Wicreations",
+        "matchingProducts": []
+      }
     },
     {
       "manufacturerId": "020",
@@ -7215,7 +7767,12 @@
       "speedType": "Unknown",
       "entertainmentIndustry": true,
       "manufacturerWebsite": "https://www.wicreations.com",
-      "manufacturerBrand": "Wicreations"
+      "manufacturerBrand": "Wicreations",
+      "webSearchResults": {
+        "website": "https://www.wicreations.com",
+        "brand": "Wicreations",
+        "matchingProducts": []
+      }
     },
     {
       "manufacturerId": "020",
@@ -7266,7 +7823,12 @@
       "speedType": "Unknown",
       "entertainmentIndustry": true,
       "manufacturerWebsite": "https://www.wicreations.com",
-      "manufacturerBrand": "Wicreations"
+      "manufacturerBrand": "Wicreations",
+      "webSearchResults": {
+        "website": "https://www.wicreations.com",
+        "brand": "Wicreations",
+        "matchingProducts": []
+      }
     },
     {
       "manufacturerId": "020",
@@ -7317,7 +7879,12 @@
       "speedType": "Unknown",
       "entertainmentIndustry": true,
       "manufacturerWebsite": "https://www.wicreations.com",
-      "manufacturerBrand": "Wicreations"
+      "manufacturerBrand": "Wicreations",
+      "webSearchResults": {
+        "website": "https://www.wicreations.com",
+        "brand": "Wicreations",
+        "matchingProducts": []
+      }
     },
     {
       "manufacturerId": "020",
@@ -7368,7 +7935,12 @@
       "speedType": "Unknown",
       "entertainmentIndustry": true,
       "manufacturerWebsite": "https://www.wicreations.com",
-      "manufacturerBrand": "Wicreations"
+      "manufacturerBrand": "Wicreations",
+      "webSearchResults": {
+        "website": "https://www.wicreations.com",
+        "brand": "Wicreations",
+        "matchingProducts": []
+      }
     },
     {
       "manufacturerId": "020",
@@ -7419,7 +7991,12 @@
       "speedType": "Unknown",
       "entertainmentIndustry": true,
       "manufacturerWebsite": "https://www.wicreations.com",
-      "manufacturerBrand": "Wicreations"
+      "manufacturerBrand": "Wicreations",
+      "webSearchResults": {
+        "website": "https://www.wicreations.com",
+        "brand": "Wicreations",
+        "matchingProducts": []
+      }
     },
     {
       "manufacturerId": "020",
@@ -7470,7 +8047,12 @@
       "speedType": "Unknown",
       "entertainmentIndustry": true,
       "manufacturerWebsite": "https://www.wicreations.com",
-      "manufacturerBrand": "Wicreations"
+      "manufacturerBrand": "Wicreations",
+      "webSearchResults": {
+        "website": "https://www.wicreations.com",
+        "brand": "Wicreations",
+        "matchingProducts": []
+      }
     },
     {
       "manufacturerId": "020",
@@ -7521,7 +8103,12 @@
       "speedType": "Unknown",
       "entertainmentIndustry": true,
       "manufacturerWebsite": "https://www.wicreations.com",
-      "manufacturerBrand": "Wicreations"
+      "manufacturerBrand": "Wicreations",
+      "webSearchResults": {
+        "website": "https://www.wicreations.com",
+        "brand": "Wicreations",
+        "matchingProducts": []
+      }
     },
     {
       "manufacturerId": "020",
@@ -7572,7 +8159,12 @@
       "speedType": "Unknown",
       "entertainmentIndustry": true,
       "manufacturerWebsite": "https://www.wicreations.com",
-      "manufacturerBrand": "Wicreations"
+      "manufacturerBrand": "Wicreations",
+      "webSearchResults": {
+        "website": "https://www.wicreations.com",
+        "brand": "Wicreations",
+        "matchingProducts": []
+      }
     },
     {
       "manufacturerId": "20",
@@ -7672,7 +8264,12 @@
       "speedType": "Variable Speed",
       "entertainmentIndustry": true,
       "manufacturerWebsite": "https://www.atlantarigging.com",
-      "manufacturerBrand": "Atlanta Rigging Systems"
+      "manufacturerBrand": "Atlanta Rigging Systems",
+      "webSearchResults": {
+        "website": "https://www.atlantarigging.com",
+        "brand": "Atlanta Rigging Systems",
+        "matchingProducts": []
+      }
     },
     {
       "manufacturerId": "021",
@@ -7723,7 +8320,12 @@
       "speedType": "Variable Speed",
       "entertainmentIndustry": true,
       "manufacturerWebsite": "https://www.atlantarigging.com",
-      "manufacturerBrand": "Atlanta Rigging Systems"
+      "manufacturerBrand": "Atlanta Rigging Systems",
+      "webSearchResults": {
+        "website": "https://www.atlantarigging.com",
+        "brand": "Atlanta Rigging Systems",
+        "matchingProducts": []
+      }
     },
     {
       "manufacturerId": "021",
@@ -7774,7 +8376,12 @@
       "speedType": "Variable Speed",
       "entertainmentIndustry": true,
       "manufacturerWebsite": "https://www.atlantarigging.com",
-      "manufacturerBrand": "Atlanta Rigging Systems"
+      "manufacturerBrand": "Atlanta Rigging Systems",
+      "webSearchResults": {
+        "website": "https://www.atlantarigging.com",
+        "brand": "Atlanta Rigging Systems",
+        "matchingProducts": []
+      }
     },
     {
       "manufacturerId": "021",
@@ -7825,7 +8432,12 @@
       "speedType": "Variable Speed",
       "entertainmentIndustry": true,
       "manufacturerWebsite": "https://www.atlantarigging.com",
-      "manufacturerBrand": "Atlanta Rigging Systems"
+      "manufacturerBrand": "Atlanta Rigging Systems",
+      "webSearchResults": {
+        "website": "https://www.atlantarigging.com",
+        "brand": "Atlanta Rigging Systems",
+        "matchingProducts": []
+      }
     },
     {
       "manufacturerId": "021",
@@ -7876,7 +8488,12 @@
       "speedType": "Variable Speed",
       "entertainmentIndustry": true,
       "manufacturerWebsite": "https://www.atlantarigging.com",
-      "manufacturerBrand": "Atlanta Rigging Systems"
+      "manufacturerBrand": "Atlanta Rigging Systems",
+      "webSearchResults": {
+        "website": "https://www.atlantarigging.com",
+        "brand": "Atlanta Rigging Systems",
+        "matchingProducts": []
+      }
     },
     {
       "manufacturerId": "021",
@@ -7927,7 +8544,12 @@
       "speedType": "Variable Speed",
       "entertainmentIndustry": true,
       "manufacturerWebsite": "https://www.atlantarigging.com",
-      "manufacturerBrand": "Atlanta Rigging Systems"
+      "manufacturerBrand": "Atlanta Rigging Systems",
+      "webSearchResults": {
+        "website": "https://www.atlantarigging.com",
+        "brand": "Atlanta Rigging Systems",
+        "matchingProducts": []
+      }
     },
     {
       "manufacturerId": "021",
@@ -7978,7 +8600,12 @@
       "speedType": "Variable Speed",
       "entertainmentIndustry": true,
       "manufacturerWebsite": "https://www.atlantarigging.com",
-      "manufacturerBrand": "Atlanta Rigging Systems"
+      "manufacturerBrand": "Atlanta Rigging Systems",
+      "webSearchResults": {
+        "website": "https://www.atlantarigging.com",
+        "brand": "Atlanta Rigging Systems",
+        "matchingProducts": []
+      }
     },
     {
       "manufacturerId": "021",
@@ -8029,7 +8656,12 @@
       "speedType": "Variable Speed",
       "entertainmentIndustry": true,
       "manufacturerWebsite": "https://www.atlantarigging.com",
-      "manufacturerBrand": "Atlanta Rigging Systems"
+      "manufacturerBrand": "Atlanta Rigging Systems",
+      "webSearchResults": {
+        "website": "https://www.atlantarigging.com",
+        "brand": "Atlanta Rigging Systems",
+        "matchingProducts": []
+      }
     },
     {
       "manufacturerId": "021",
@@ -8080,7 +8712,12 @@
       "speedType": "Variable Speed",
       "entertainmentIndustry": true,
       "manufacturerWebsite": "https://www.atlantarigging.com",
-      "manufacturerBrand": "Atlanta Rigging Systems"
+      "manufacturerBrand": "Atlanta Rigging Systems",
+      "webSearchResults": {
+        "website": "https://www.atlantarigging.com",
+        "brand": "Atlanta Rigging Systems",
+        "matchingProducts": []
+      }
     },
     {
       "manufacturerId": "021",
@@ -8131,7 +8768,12 @@
       "speedType": "Variable Speed",
       "entertainmentIndustry": true,
       "manufacturerWebsite": "https://www.atlantarigging.com",
-      "manufacturerBrand": "Atlanta Rigging Systems"
+      "manufacturerBrand": "Atlanta Rigging Systems",
+      "webSearchResults": {
+        "website": "https://www.atlantarigging.com",
+        "brand": "Atlanta Rigging Systems",
+        "matchingProducts": []
+      }
     },
     {
       "manufacturerId": "021",
@@ -8182,7 +8824,12 @@
       "speedType": "Unknown",
       "entertainmentIndustry": true,
       "manufacturerWebsite": "https://www.atlantarigging.com",
-      "manufacturerBrand": "Atlanta Rigging Systems"
+      "manufacturerBrand": "Atlanta Rigging Systems",
+      "webSearchResults": {
+        "website": "https://www.atlantarigging.com",
+        "brand": "Atlanta Rigging Systems",
+        "matchingProducts": []
+      }
     },
     {
       "manufacturerId": "021",
@@ -8233,7 +8880,12 @@
       "speedType": "Variable Speed",
       "entertainmentIndustry": true,
       "manufacturerWebsite": "https://www.atlantarigging.com",
-      "manufacturerBrand": "Atlanta Rigging Systems"
+      "manufacturerBrand": "Atlanta Rigging Systems",
+      "webSearchResults": {
+        "website": "https://www.atlantarigging.com",
+        "brand": "Atlanta Rigging Systems",
+        "matchingProducts": []
+      }
     },
     {
       "manufacturerId": "021",
@@ -8284,7 +8936,12 @@
       "speedType": "Unknown",
       "entertainmentIndustry": true,
       "manufacturerWebsite": "https://www.atlantarigging.com",
-      "manufacturerBrand": "Atlanta Rigging Systems"
+      "manufacturerBrand": "Atlanta Rigging Systems",
+      "webSearchResults": {
+        "website": "https://www.atlantarigging.com",
+        "brand": "Atlanta Rigging Systems",
+        "matchingProducts": []
+      }
     },
     {
       "manufacturerId": "021",
@@ -8335,7 +8992,12 @@
       "speedType": "Unknown",
       "entertainmentIndustry": true,
       "manufacturerWebsite": "https://www.atlantarigging.com",
-      "manufacturerBrand": "Atlanta Rigging Systems"
+      "manufacturerBrand": "Atlanta Rigging Systems",
+      "webSearchResults": {
+        "website": "https://www.atlantarigging.com",
+        "brand": "Atlanta Rigging Systems",
+        "matchingProducts": []
+      }
     },
     {
       "manufacturerId": "021",
@@ -8386,7 +9048,12 @@
       "speedType": "Variable Speed",
       "entertainmentIndustry": true,
       "manufacturerWebsite": "https://www.atlantarigging.com",
-      "manufacturerBrand": "Atlanta Rigging Systems"
+      "manufacturerBrand": "Atlanta Rigging Systems",
+      "webSearchResults": {
+        "website": "https://www.atlantarigging.com",
+        "brand": "Atlanta Rigging Systems",
+        "matchingProducts": []
+      }
     },
     {
       "manufacturerId": "021",
@@ -8437,7 +9104,12 @@
       "speedType": "Unknown",
       "entertainmentIndustry": true,
       "manufacturerWebsite": "https://www.atlantarigging.com",
-      "manufacturerBrand": "Atlanta Rigging Systems"
+      "manufacturerBrand": "Atlanta Rigging Systems",
+      "webSearchResults": {
+        "website": "https://www.atlantarigging.com",
+        "brand": "Atlanta Rigging Systems",
+        "matchingProducts": []
+      }
     },
     {
       "manufacturerId": "023",
