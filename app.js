@@ -22,6 +22,7 @@ app.set('views', path.join(__dirname, 'views'));
 
 // Middleware
 app.use(express.static('public'));
+app.use('/media', express.static(path.join(__dirname, 'chainhoist_data', 'media')));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
@@ -838,6 +839,56 @@ app.get('/stats', (req, res) => {
     powerStats,
     speedStats,
     title: 'Database Statistics'
+  });
+});
+
+// GET /downloads - Downloads page for PDFs and documents
+app.get('/downloads', (req, res) => {
+  const data = loadData();
+  const mediaDir = path.join(__dirname, 'chainhoist_data', 'media', 'pdfs');
+
+  // Get list of PDF files
+  let pdfFiles = [];
+  try {
+    const files = fs.readdirSync(mediaDir);
+    pdfFiles = files
+      .filter(f => f.endsWith('.pdf'))
+      .map(f => {
+        const parts = f.replace('.pdf', '').split('_');
+        const manufacturer = parts[0] || 'Unknown';
+        const product = parts[1] || 'Document';
+        const type = parts[2] || 'document';
+        return {
+          filename: f,
+          manufacturer: manufacturer.charAt(0).toUpperCase() + manufacturer.slice(1).replace(/-/g, ' '),
+          product: product.replace(/-/g, ' '),
+          type: type,
+          url: `/media/pdfs/${f}`,
+          size: fs.statSync(path.join(mediaDir, f)).size
+        };
+      });
+  } catch (err) {
+    console.error('Error reading PDFs directory:', err);
+  }
+
+  // Group by manufacturer
+  const pdfsByManufacturer = {};
+  pdfFiles.forEach(pdf => {
+    if (!pdfsByManufacturer[pdf.manufacturer]) {
+      pdfsByManufacturer[pdf.manufacturer] = [];
+    }
+    pdfsByManufacturer[pdf.manufacturer].push(pdf);
+  });
+
+  // Count products with PDFs in database
+  const productsWithPdfs = data.filter(p => p.pdfs && p.pdfs.length > 0).length;
+
+  res.render('downloads', {
+    title: 'Downloads',
+    pdfsByManufacturer,
+    totalPdfs: pdfFiles.length,
+    productsWithPdfs,
+    manufacturers: Object.keys(pdfsByManufacturer).sort()
   });
 });
 

@@ -1,0 +1,127 @@
+<%- include('header') %>
+
+<div class="row mb-4">
+  <div class="col-12">
+    <h1>Downloads</h1>
+    <p class="text-muted">
+      Datasheets, manuals, and brochures from chainhoist manufacturers.
+      <strong><%= totalPdfs %></strong> documents available.
+    </p>
+  </div>
+</div>
+
+<div class="row mb-4">
+  <div class="col-md-3">
+    <div class="card">
+      <div class="card-header bg-primary text-white">
+        <h5 class="mb-0">Filter by Manufacturer</h5>
+      </div>
+      <div class="card-body" style="max-height: 400px; overflow-y: auto;">
+        <div class="list-group list-group-flush">
+          <a href="#all" class="list-group-item list-group-item-action active" onclick="filterManufacturer('all', this)">
+            All Manufacturers
+            <span class="badge bg-secondary float-end"><%= totalPdfs %></span>
+          </a>
+          <% manufacturers.forEach(function(mfr) { %>
+            <a href="#<%= mfr.replace(/\s+/g, '-').toLowerCase() %>"
+               class="list-group-item list-group-item-action"
+               onclick="filterManufacturer('<%= mfr.replace(/'/g, "\\'") %>', this)">
+              <%= mfr %>
+              <span class="badge bg-secondary float-end"><%= pdfsByManufacturer[mfr].length %></span>
+            </a>
+          <% }); %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-9">
+    <% manufacturers.forEach(function(mfr) { %>
+      <div class="card mb-4 manufacturer-section" data-manufacturer="<%= mfr %>">
+        <div class="card-header bg-light">
+          <h5 class="mb-0"><%= mfr %></h5>
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th>Document</th>
+                  <th>Type</th>
+                  <th>Size</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% pdfsByManufacturer[mfr].forEach(function(pdf) { %>
+                  <tr>
+                    <td>
+                      <strong><%= pdf.product %></strong>
+                    </td>
+                    <td>
+                      <% if (pdf.type === 'datasheet') { %>
+                        <span class="badge bg-info">Datasheet</span>
+                      <% } else if (pdf.type === 'manual') { %>
+                        <span class="badge bg-warning text-dark">Manual</span>
+                      <% } else if (pdf.type === 'brochure') { %>
+                        <span class="badge bg-success">Brochure</span>
+                      <% } else if (pdf.type === 'specification') { %>
+                        <span class="badge bg-primary">Specification</span>
+                      <% } else { %>
+                        <span class="badge bg-secondary">Document</span>
+                      <% } %>
+                    </td>
+                    <td>
+                      <%
+                        const sizeKB = (pdf.size / 1024).toFixed(1);
+                        const sizeMB = (pdf.size / (1024 * 1024)).toFixed(1);
+                      %>
+                      <%= pdf.size > 1024 * 1024 ? sizeMB + ' MB' : sizeKB + ' KB' %>
+                    </td>
+                    <td>
+                      <a href="<%= pdf.url %>" class="btn btn-sm btn-outline-primary" target="_blank" download>
+                        Download
+                      </a>
+                      <a href="<%= pdf.url %>" class="btn btn-sm btn-outline-secondary" target="_blank">
+                        View
+                      </a>
+                    </td>
+                  </tr>
+                <% }); %>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    <% }); %>
+
+    <% if (totalPdfs === 0) { %>
+      <div class="alert alert-info">
+        <h4>No PDFs Available</h4>
+        <p>Run the enhanced scraper to download PDFs from manufacturer websites:</p>
+        <code>npm run scrape:enhanced</code>
+      </div>
+    <% } %>
+  </div>
+</div>
+
+<script>
+  function filterManufacturer(manufacturer, element) {
+    // Update active state
+    document.querySelectorAll('.list-group-item').forEach(item => {
+      item.classList.remove('active');
+    });
+    element.classList.add('active');
+
+    // Show/hide sections
+    document.querySelectorAll('.manufacturer-section').forEach(section => {
+      if (manufacturer === 'all' || section.dataset.manufacturer === manufacturer) {
+        section.style.display = 'block';
+      } else {
+        section.style.display = 'none';
+      }
+    });
+  }
+</script>
+
+<%- include('footer') %>
