@@ -12,6 +12,8 @@ const CONFIG = {
   dataDir: 'chainhoist_data_processed',
   dataFile: 'chainhoist_database_processed.json',
   reportFile: 'data_quality_report.json',
+  personalityDir: 'chainhoist_data',
+  personalityFile: 'personality_enriched.json',
 };
 
 // Set up templating engine
@@ -44,6 +46,18 @@ function loadReport() {
   } catch (error) {
     console.error('Error loading report:', error);
     return { totalRecords: 0 };
+  }
+}
+
+// Load personality data helper
+function loadPersonalityData() {
+  try {
+    const dataPath = path.join(__dirname, CONFIG.personalityDir, CONFIG.personalityFile);
+    const data = JSON.parse(fs.readFileSync(dataPath, 'utf8'));
+    return data;
+  } catch (error) {
+    console.error('Error loading personality data:', error);
+    return { products: [], totalProducts: 0, manufacturers: 0 };
   }
 }
 
@@ -411,6 +425,128 @@ app.post('/api/search', (req, res) => {
   }
 });
 
+// ============ Personality API Routes ============
+
+// GET /api/personality - Get all personality products
+app.get('/api/personality', (req, res) => {
+  try {
+    const data = loadPersonalityData();
+    let results = [...data.products];
+
+    // Filter by manufacturer
+    if (req.query.manufacturer) {
+      results = results.filter(item =>
+        item.manufacturer?.toLowerCase().includes(req.query.manufacturer.toLowerCase())
+      );
+    }
+
+    // Filter by category
+    if (req.query.category) {
+      results = results.filter(item =>
+        item.category?.toLowerCase() === req.query.category.toLowerCase()
+      );
+    }
+
+    // Filter by speed type
+    if (req.query.speedType) {
+      results = results.filter(item =>
+        item.speedType?.toLowerCase() === req.query.speedType.toLowerCase()
+      );
+    }
+
+    // Filter entertainment only
+    if (req.query.entertainmentOnly === 'true') {
+      results = results.filter(item => item.entertainmentIndustry === true);
+    }
+
+    // Pagination
+    const page = parseInt(req.query.page) || 1;
+    const limit = parseInt(req.query.limit) || 50;
+    const startIndex = (page - 1) * limit;
+    const paginatedResults = results.slice(startIndex, startIndex + limit);
+
+    res.json({
+      success: true,
+      data: paginatedResults,
+      pagination: {
+        page,
+        limit,
+        total: results.length,
+        pages: Math.ceil(results.length / limit)
+      },
+      summary: {
+        totalProducts: data.totalProducts,
+        manufacturers: data.manufacturers,
+        categories: data.categories,
+        speedTypes: data.speedTypes,
+        entertainmentProducts: data.entertainmentProducts
+      }
+    });
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      error: 'Failed to fetch personality data',
+      message: error.message
+    });
+  }
+});
+
+// GET /api/personality/stats - Get personality database statistics
+app.get('/api/personality/stats', (req, res) => {
+  try {
+    const data = loadPersonalityData();
+
+    res.json({
+      success: true,
+      data: {
+        version: data.version,
+        generatedAt: data.generatedAt,
+        source: data.source,
+        totalProducts: data.totalProducts,
+        manufacturers: data.manufacturers,
+        categories: data.categories,
+        speedTypes: data.speedTypes,
+        entertainmentProducts: data.entertainmentProducts
+      }
+    });
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      error: 'Failed to fetch personality stats',
+      message: error.message
+    });
+  }
+});
+
+// GET /api/personality/:id - Get specific personality product
+app.get('/api/personality/:manufacturerId/:productId', (req, res) => {
+  try {
+    const data = loadPersonalityData();
+    const product = data.products.find(item =>
+      item.manufacturerId === req.params.manufacturerId &&
+      item.productId === req.params.productId
+    );
+
+    if (!product) {
+      return res.status(404).json({
+        success: false,
+        error: 'Product not found'
+      });
+    }
+
+    res.json({
+      success: true,
+      data: product
+    });
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      error: 'Failed to fetch product',
+      message: error.message
+    });
+  }
+});
+
 // ============ Web Routes ============
 
 app.get('/', (req, res) => {
@@ -615,6 +751,90 @@ app.get('/stats', (req, res) => {
     powerStats,
     speedStats,
     title: 'Database Statistics'
+  });
+});
+
+// Personality data web route
+app.get('/personality', (req, res) => {
+  const data = loadPersonalityData();
+  let products = [...data.products];
+
+  // Apply filters
+  if (req.query.manufacturer) {
+    products = products.filter(item =>
+      item.manufacturer === req.query.manufacturer
+    );
+  }
+
+  if (req.query.category) {
+    products = products.filter(item =>
+      item.category === req.query.category
+    );
+  }
+
+  if (req.query.speedType) {
+    products = products.filter(item =>
+      item.speedType === req.query.speedType
+    );
+  }
+
+  if (req.query.q) {
+    const query = req.query.q.toLowerCase();
+    products = products.filter(item =>
+      item.name?.toLowerCase().includes(query) ||
+      item.manufacturer?.toLowerCase().includes(query) ||
+      item.searchTerms?.model?.toLowerCase().includes(query)
+    );
+  }
+
+  // Get unique values for filters
+  const manufacturers = [...new Set(data.products.map(p => p.manufacturer))].sort();
+  const categories = Object.keys(data.categories || {});
+  const speedTypes = Object.keys(data.speedTypes || {});
+
+  res.render('personality', {
+    products,
+    allProducts: data.products,
+    summary: {
+      totalProducts: data.totalProducts,
+      manufacturers: data.manufacturers,
+      categories: data.categories,
+      speedTypes: data.speedTypes,
+      entertainmentProducts: data.entertainmentProducts
+    },
+    manufacturerList: manufacturers,
+    categoryList: categories,
+    speedTypeList: speedTypes,
+    filters: req.query,
+    title: 'Personality Database'
+  });
+});
+
+// Personality product detail route
+app.get('/personality/:manufacturerId/:productId', (req, res) => {
+  const data = loadPersonalityData();
+  const product = data.products.find(item =>
+    item.manufacturerId === req.params.manufacturerId &&
+    item.productId === req.params.productId
+  );
+
+  if (!product) {
+    return res.status(404).render('error', {
+      message: 'Product not found',
+      title: 'Error'
+    });
+  }
+
+  // Find similar products
+  const similarProducts = data.products.filter(item =>
+    item.manufacturer === product.manufacturer &&
+    item.manufacturerId !== product.manufacturerId
+  ).slice(0, 5);
+
+  res.render('personality-detail', {
+    product,
+    similarProducts,
+    title: `${product.manufacturer} - ${product.name}`
   });
 });
 

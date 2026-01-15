@@ -56,6 +56,9 @@ const layoutTemplate = `<!DOCTYPE html>
             <a class="nav-link" href="/">Home</a>
           </li>
           <li class="nav-item">
+            <a class="nav-link" href="/personality">Personality DB</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" href="/stats">Statistics</a>
           </li>
         </ul>
@@ -268,6 +271,388 @@ const indexTemplate = `<%- include('header') %>
 `;
 
 fs.writeFileSync(path.join(viewsDir, 'index.ejs'), indexTemplate);
+
+// Create personality.ejs
+const personalityTemplate = `<%- include('header') %>
+
+<div class="row mb-4">
+  <div class="col-md-12">
+    <div class="card border-success">
+      <div class="card-body">
+        <h1 class="card-title">Personality Database</h1>
+        <p class="card-text">Technical configuration data extracted from <%= summary.totalProducts %> equipment personality files.</p>
+
+        <div class="row mt-4">
+          <div class="col-md-3">
+            <div class="card bg-light h-100">
+              <div class="card-body text-center">
+                <h3 class="text-success"><%= summary.totalProducts %></h3>
+                <p class="mb-0">Total Products</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card bg-light h-100">
+              <div class="card-body text-center">
+                <h3 class="text-primary"><%= summary.manufacturers %></h3>
+                <p class="mb-0">Manufacturers</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card bg-light h-100">
+              <div class="card-body text-center">
+                <h3 class="text-info"><%= summary.entertainmentProducts %></h3>
+                <p class="mb-0">Entertainment Products</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card bg-light h-100">
+              <div class="card-body text-center">
+                <h3 class="text-warning"><%= summary.speedTypes['Variable Speed'] || 0 %></h3>
+                <p class="mb-0">Variable Speed</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row mb-4">
+  <div class="col-md-6">
+    <div class="card">
+      <div class="card-header bg-success text-white">
+        <h5 class="mb-0">By Category</h5>
+      </div>
+      <div class="card-body">
+        <ul class="list-group list-group-flush">
+          <% Object.entries(summary.categories || {}).forEach(function([cat, count]) { %>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              <%= cat %>
+              <span class="badge bg-success rounded-pill"><%= count %></span>
+            </li>
+          <% }); %>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="card">
+      <div class="card-header bg-info text-white">
+        <h5 class="mb-0">By Speed Type</h5>
+      </div>
+      <div class="card-body">
+        <ul class="list-group list-group-flush">
+          <% Object.entries(summary.speedTypes || {}).forEach(function([type, count]) { %>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              <%= type %>
+              <span class="badge bg-info rounded-pill"><%= count %></span>
+            </li>
+          <% }); %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row mb-4">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header bg-primary text-white">
+        <h4 class="mb-0">Filter Products</h4>
+      </div>
+      <div class="card-body">
+        <form action="/personality" method="GET" class="row g-3">
+          <div class="col-md-3">
+            <label for="manufacturer" class="form-label">Manufacturer</label>
+            <select name="manufacturer" id="manufacturer" class="form-select">
+              <option value="">All Manufacturers</option>
+              <% manufacturerList.forEach(function(mfr) { %>
+                <option value="<%= mfr %>" <%= filters.manufacturer === mfr ? 'selected' : '' %>><%= mfr %></option>
+              <% }); %>
+            </select>
+          </div>
+          <div class="col-md-3">
+            <label for="category" class="form-label">Category</label>
+            <select name="category" id="category" class="form-select">
+              <option value="">All Categories</option>
+              <% categoryList.forEach(function(cat) { %>
+                <option value="<%= cat %>" <%= filters.category === cat ? 'selected' : '' %>><%= cat %></option>
+              <% }); %>
+            </select>
+          </div>
+          <div class="col-md-3">
+            <label for="speedType" class="form-label">Speed Type</label>
+            <select name="speedType" id="speedType" class="form-select">
+              <option value="">All Speed Types</option>
+              <% speedTypeList.forEach(function(st) { %>
+                <option value="<%= st %>" <%= filters.speedType === st ? 'selected' : '' %>><%= st %></option>
+              <% }); %>
+            </select>
+          </div>
+          <div class="col-md-3 d-flex align-items-end">
+            <button type="submit" class="btn btn-primary w-100">Filter</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h2 class="mb-4">Products (<%= products.length %> results)</h2>
+
+<div class="table-responsive">
+  <table class="table table-striped table-hover">
+    <thead class="table-dark">
+      <tr>
+        <th>Manufacturer</th>
+        <th>Name</th>
+        <th>Category</th>
+        <th>Load Capacity</th>
+        <th>Speed</th>
+        <th>Speed Type</th>
+        <th>Entertainment</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% products.slice(0, 100).forEach(function(product) { %>
+        <tr>
+          <td><%= product.manufacturer %></td>
+          <td>
+            <a href="/personality/<%= product.manufacturerId %>/<%= product.productId %>">
+              <%= product.name %>
+            </a>
+          </td>
+          <td><span class="badge bg-secondary"><%= product.category %></span></td>
+          <td><%= product.loadCapacity || '-' %></td>
+          <td><%= product.liftingSpeed || '-' %></td>
+          <td>
+            <% if (product.speedType === 'Variable Speed') { %>
+              <span class="badge bg-success">Variable</span>
+            <% } else if (product.speedType === 'Fixed Speed') { %>
+              <span class="badge bg-warning">Fixed</span>
+            <% } else { %>
+              <span class="badge bg-secondary">Unknown</span>
+            <% } %>
+          </td>
+          <td>
+            <% if (product.entertainmentIndustry) { %>
+              <span class="badge bg-info">Yes</span>
+            <% } else { %>
+              <span class="badge bg-light text-dark">No</span>
+            <% } %>
+          </td>
+        </tr>
+      <% }); %>
+    </tbody>
+  </table>
+</div>
+
+<% if (products.length > 100) { %>
+  <p class="text-muted">Showing first 100 of <%= products.length %> results. Use filters to narrow down.</p>
+<% } %>
+
+<%- include('footer') %>
+`;
+
+fs.writeFileSync(path.join(viewsDir, 'personality.ejs'), personalityTemplate);
+
+// Create personality-detail.ejs
+const personalityDetailTemplate = `<%- include('header') %>
+
+<nav aria-label="breadcrumb" class="mb-4">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/">Home</a></li>
+    <li class="breadcrumb-item"><a href="/personality">Personality DB</a></li>
+    <li class="breadcrumb-item active"><%= product.name %></li>
+  </ol>
+</nav>
+
+<div class="row">
+  <div class="col-md-8">
+    <div class="card mb-4">
+      <div class="card-header bg-success text-white">
+        <h2 class="mb-0"><%= product.manufacturer %></h2>
+      </div>
+      <div class="card-body">
+        <h4 class="card-title"><%= product.name %></h4>
+
+        <div class="row mt-4">
+          <div class="col-md-6">
+            <h5>Basic Specifications</h5>
+            <table class="table table-sm">
+              <tr>
+                <th>Load Capacity:</th>
+                <td><%= product.loadCapacity || '-' %></td>
+              </tr>
+              <tr>
+                <th>Lifting Speed:</th>
+                <td><%= product.liftingSpeed || '-' %></td>
+              </tr>
+              <tr>
+                <th>Category:</th>
+                <td><span class="badge bg-secondary"><%= product.category %></span></td>
+              </tr>
+              <tr>
+                <th>Speed Type:</th>
+                <td>
+                  <% if (product.speedType === 'Variable Speed') { %>
+                    <span class="badge bg-success">Variable Speed</span>
+                  <% } else if (product.speedType === 'Fixed Speed') { %>
+                    <span class="badge bg-warning">Fixed Speed</span>
+                  <% } else { %>
+                    <span class="badge bg-secondary">Unknown</span>
+                  <% } %>
+                </td>
+              </tr>
+              <tr>
+                <th>Entertainment Industry:</th>
+                <td>
+                  <% if (product.entertainmentIndustry) { %>
+                    <span class="badge bg-info">Yes</span>
+                  <% } else { %>
+                    <span class="badge bg-light text-dark">No</span>
+                  <% } %>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div class="col-md-6">
+            <h5>Speed Control Parameters</h5>
+            <% if (product.variableSpeedControl) { %>
+              <table class="table table-sm">
+                <tr>
+                  <th>Min Speed:</th>
+                  <td><%= product.variableSpeedControl.minSpeed || '-' %></td>
+                </tr>
+                <tr>
+                  <th>Max Speed:</th>
+                  <td><%= product.variableSpeedControl.maxSpeed || '-' %></td>
+                </tr>
+                <tr>
+                  <th>Default Speed:</th>
+                  <td><%= product.variableSpeedControl.defaultSpeed || '-' %></td>
+                </tr>
+                <tr>
+                  <th>Max Accel:</th>
+                  <td><%= product.variableSpeedControl.maxAccel || '-' %></td>
+                </tr>
+                <tr>
+                  <th>Max Decel:</th>
+                  <td><%= product.variableSpeedControl.maxDecel || '-' %></td>
+                </tr>
+              </table>
+            <% } else { %>
+              <p class="text-muted">No speed control data available</p>
+            <% } %>
+          </div>
+        </div>
+
+        <div class="row mt-4">
+          <div class="col-md-6">
+            <h5>Load Parameters</h5>
+            <table class="table table-sm">
+              <tr>
+                <th>Underload Limit:</th>
+                <td><%= product.underloadLimit || '-' %></td>
+              </tr>
+              <tr>
+                <th>Overload Limit:</th>
+                <td><%= product.overloadLimit || '-' %></td>
+              </tr>
+              <tr>
+                <th>Loadcell Scaling:</th>
+                <td><%= product.loadcellScaling || '-' %></td>
+              </tr>
+              <tr>
+                <th>Encoder Scaling:</th>
+                <td><%= product.encoderScaling || '-' %></td>
+              </tr>
+            </table>
+          </div>
+          <div class="col-md-6">
+            <h5>Tuning Parameters</h5>
+            <% if (product.tuningParameters) { %>
+              <table class="table table-sm">
+                <% Object.entries(product.tuningParameters).forEach(function([key, value]) { %>
+                  <tr>
+                    <th><%= key %>:</th>
+                    <td><%= value %></td>
+                  </tr>
+                <% }); %>
+              </table>
+            <% } else { %>
+              <p class="text-muted">No tuning parameters available</p>
+            <% } %>
+          </div>
+        </div>
+
+        <% if (product.manufacturerWebsite) { %>
+          <div class="mt-4">
+            <a href="<%= product.manufacturerWebsite %>" target="_blank" class="btn btn-outline-primary">
+              Visit Manufacturer Website
+            </a>
+          </div>
+        <% } %>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+    <div class="card">
+      <div class="card-header bg-info text-white">
+        <h5 class="mb-0">Similar Products</h5>
+      </div>
+      <div class="card-body">
+        <% if (similarProducts.length > 0) { %>
+          <ul class="list-group list-group-flush">
+            <% similarProducts.forEach(function(similar) { %>
+              <li class="list-group-item">
+                <a href="/personality/<%= similar.manufacturerId %>/<%= similar.productId %>">
+                  <%= similar.name %>
+                </a>
+                <br>
+                <small class="text-muted"><%= similar.loadCapacity || '' %></small>
+              </li>
+            <% }); %>
+          </ul>
+        <% } else { %>
+          <p class="text-muted">No similar products found</p>
+        <% } %>
+      </div>
+    </div>
+
+    <div class="card mt-3">
+      <div class="card-header bg-secondary text-white">
+        <h5 class="mb-0">File Information</h5>
+      </div>
+      <div class="card-body">
+        <table class="table table-sm">
+          <tr>
+            <th>File Name:</th>
+            <td><small><%= product.fileName %></small></td>
+          </tr>
+          <tr>
+            <th>Manufacturer ID:</th>
+            <td><%= product.manufacturerId %></td>
+          </tr>
+          <tr>
+            <th>Product ID:</th>
+            <td><%= product.productId %></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%- include('footer') %>
+`;
+
+fs.writeFileSync(path.join(viewsDir, 'personality-detail.ejs'), personalityDetailTemplate);
 
 // Create search.ejs (simplified - templates already exist from original file)
 // The views should already exist from previous runs

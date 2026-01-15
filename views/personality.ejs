@@ -1,0 +1,183 @@
+<%- include('header') %>
+
+<div class="row mb-4">
+  <div class="col-md-12">
+    <div class="card border-success">
+      <div class="card-body">
+        <h1 class="card-title">Personality Database</h1>
+        <p class="card-text">Technical configuration data extracted from <%= summary.totalProducts %> equipment personality files.</p>
+
+        <div class="row mt-4">
+          <div class="col-md-3">
+            <div class="card bg-light h-100">
+              <div class="card-body text-center">
+                <h3 class="text-success"><%= summary.totalProducts %></h3>
+                <p class="mb-0">Total Products</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card bg-light h-100">
+              <div class="card-body text-center">
+                <h3 class="text-primary"><%= summary.manufacturers %></h3>
+                <p class="mb-0">Manufacturers</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card bg-light h-100">
+              <div class="card-body text-center">
+                <h3 class="text-info"><%= summary.entertainmentProducts %></h3>
+                <p class="mb-0">Entertainment Products</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card bg-light h-100">
+              <div class="card-body text-center">
+                <h3 class="text-warning"><%= summary.speedTypes['Variable Speed'] || 0 %></h3>
+                <p class="mb-0">Variable Speed</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row mb-4">
+  <div class="col-md-6">
+    <div class="card">
+      <div class="card-header bg-success text-white">
+        <h5 class="mb-0">By Category</h5>
+      </div>
+      <div class="card-body">
+        <ul class="list-group list-group-flush">
+          <% Object.entries(summary.categories || {}).forEach(function([cat, count]) { %>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              <%= cat %>
+              <span class="badge bg-success rounded-pill"><%= count %></span>
+            </li>
+          <% }); %>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="card">
+      <div class="card-header bg-info text-white">
+        <h5 class="mb-0">By Speed Type</h5>
+      </div>
+      <div class="card-body">
+        <ul class="list-group list-group-flush">
+          <% Object.entries(summary.speedTypes || {}).forEach(function([type, count]) { %>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              <%= type %>
+              <span class="badge bg-info rounded-pill"><%= count %></span>
+            </li>
+          <% }); %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row mb-4">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header bg-primary text-white">
+        <h4 class="mb-0">Filter Products</h4>
+      </div>
+      <div class="card-body">
+        <form action="/personality" method="GET" class="row g-3">
+          <div class="col-md-3">
+            <label for="manufacturer" class="form-label">Manufacturer</label>
+            <select name="manufacturer" id="manufacturer" class="form-select">
+              <option value="">All Manufacturers</option>
+              <% manufacturerList.forEach(function(mfr) { %>
+                <option value="<%= mfr %>" <%= filters.manufacturer === mfr ? 'selected' : '' %>><%= mfr %></option>
+              <% }); %>
+            </select>
+          </div>
+          <div class="col-md-3">
+            <label for="category" class="form-label">Category</label>
+            <select name="category" id="category" class="form-select">
+              <option value="">All Categories</option>
+              <% categoryList.forEach(function(cat) { %>
+                <option value="<%= cat %>" <%= filters.category === cat ? 'selected' : '' %>><%= cat %></option>
+              <% }); %>
+            </select>
+          </div>
+          <div class="col-md-3">
+            <label for="speedType" class="form-label">Speed Type</label>
+            <select name="speedType" id="speedType" class="form-select">
+              <option value="">All Speed Types</option>
+              <% speedTypeList.forEach(function(st) { %>
+                <option value="<%= st %>" <%= filters.speedType === st ? 'selected' : '' %>><%= st %></option>
+              <% }); %>
+            </select>
+          </div>
+          <div class="col-md-3 d-flex align-items-end">
+            <button type="submit" class="btn btn-primary w-100">Filter</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h2 class="mb-4">Products (<%= products.length %> results)</h2>
+
+<div class="table-responsive">
+  <table class="table table-striped table-hover">
+    <thead class="table-dark">
+      <tr>
+        <th>Manufacturer</th>
+        <th>Name</th>
+        <th>Category</th>
+        <th>Load Capacity</th>
+        <th>Speed</th>
+        <th>Speed Type</th>
+        <th>Entertainment</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% products.slice(0, 100).forEach(function(product) { %>
+        <tr>
+          <td><%= product.manufacturer %></td>
+          <td>
+            <a href="/personality/<%= product.manufacturerId %>/<%= product.productId %>">
+              <%= product.name %>
+            </a>
+          </td>
+          <td><span class="badge bg-secondary"><%= product.category %></span></td>
+          <td><%= product.loadCapacity || '-' %></td>
+          <td><%= product.liftingSpeed || '-' %></td>
+          <td>
+            <% if (product.speedType === 'Variable Speed') { %>
+              <span class="badge bg-success">Variable</span>
+            <% } else if (product.speedType === 'Fixed Speed') { %>
+              <span class="badge bg-warning">Fixed</span>
+            <% } else { %>
+              <span class="badge bg-secondary">Unknown</span>
+            <% } %>
+          </td>
+          <td>
+            <% if (product.entertainmentIndustry) { %>
+              <span class="badge bg-info">Yes</span>
+            <% } else { %>
+              <span class="badge bg-light text-dark">No</span>
+            <% } %>
+          </td>
+        </tr>
+      <% }); %>
+    </tbody>
+  </table>
+</div>
+
+<% if (products.length > 100) { %>
+  <p class="text-muted">Showing first 100 of <%= products.length %> results. Use filters to narrow down.</p>
+<% } %>
+
+<%- include('footer') %>
