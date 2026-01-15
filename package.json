@@ -28,6 +28,8 @@
     "scheduler:status": "node scheduler.js status",
     "personality:parse": "node personality-parser.js parse",
     "personality:enrich": "node personality-web-scraper.js enrich",
+    "merge": "node merge-databases.js",
+    "build:full": "npm run personality:parse && npm run personality:enrich && npm run merge",
     "prepare": "husky"
   },
   "keywords": [

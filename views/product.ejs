@@ -250,6 +250,127 @@
           </div>
         </div>
         
+        <% if (product.variableSpeedControl || product.tuningParameters) { %>
+        <div class="row mt-4">
+          <% if (product.variableSpeedControl) { %>
+          <div class="col-md-6">
+            <h4>Speed Control Parameters</h4>
+            <table class="table table-striped">
+              <tbody>
+                <tr>
+                  <td class="spec-label">Min Speed</td>
+                  <td><%= product.variableSpeedControl.minSpeed || 'Not specified' %></td>
+                </tr>
+                <tr>
+                  <td class="spec-label">Max Speed</td>
+                  <td><%= product.variableSpeedControl.maxSpeed || 'Not specified' %></td>
+                </tr>
+                <tr>
+                  <td class="spec-label">Default Speed</td>
+                  <td><%= product.variableSpeedControl.defaultSpeed || 'Not specified' %></td>
+                </tr>
+                <tr>
+                  <td class="spec-label">Max Acceleration</td>
+                  <td><%= product.variableSpeedControl.maxAccel || 'Not specified' %></td>
+                </tr>
+                <tr>
+                  <td class="spec-label">Max Deceleration</td>
+                  <td><%= product.variableSpeedControl.maxDecel || 'Not specified' %></td>
+                </tr>
+                <tr>
+                  <td class="spec-label">Error Stop</td>
+                  <td><%= product.variableSpeedControl.errorStop || 'Not specified' %></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <% } %>
+
+          <% if (product.tuningParameters) { %>
+          <div class="col-md-6">
+            <h4>Tuning Parameters</h4>
+            <table class="table table-striped">
+              <tbody>
+                <% Object.entries(product.tuningParameters).forEach(function([key, value]) { %>
+                <tr>
+                  <td class="spec-label"><%= key %></td>
+                  <td><%= value %></td>
+                </tr>
+                <% }); %>
+              </tbody>
+            </table>
+          </div>
+          <% } %>
+        </div>
+        <% } %>
+
+        <% if (product.underloadLimit || product.overloadLimit || product.encoderScaling) { %>
+        <div class="row mt-4">
+          <div class="col-md-6">
+            <h4>Load & Encoder Parameters</h4>
+            <table class="table table-striped">
+              <tbody>
+                <tr>
+                  <td class="spec-label">Underload Limit</td>
+                  <td><%= product.underloadLimit || 'Not specified' %></td>
+                </tr>
+                <tr>
+                  <td class="spec-label">Overload Limit</td>
+                  <td><%= product.overloadLimit || 'Not specified' %></td>
+                </tr>
+                <tr>
+                  <td class="spec-label">Loadcell Scaling</td>
+                  <td><%= product.loadcellScaling || 'Not specified' %></td>
+                </tr>
+                <tr>
+                  <td class="spec-label">Encoder Scaling</td>
+                  <td><%= product.encoderScaling || 'Not specified' %></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="col-md-6">
+            <% if (product.category || product.speedType) { %>
+            <h4>Classification</h4>
+            <table class="table table-striped">
+              <tbody>
+                <tr>
+                  <td class="spec-label">Category</td>
+                  <td><%= product.category || 'Not specified' %></td>
+                </tr>
+                <tr>
+                  <td class="spec-label">Speed Type</td>
+                  <td>
+                    <% if (product.speedType === 'Variable Speed') { %>
+                      <span class="badge bg-success">Variable Speed</span>
+                    <% } else if (product.speedType === 'Fixed Speed') { %>
+                      <span class="badge bg-warning">Fixed Speed</span>
+                    <% } else { %>
+                      <%= product.speedType || 'Not specified' %>
+                    <% } %>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="spec-label">Entertainment Industry</td>
+                  <td>
+                    <% if (product.entertainmentIndustry) { %>
+                      <span class="badge bg-info">Yes</span>
+                    <% } else { %>
+                      No
+                    <% } %>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="spec-label">Data Source</td>
+                  <td><%= product.source === 'personality' ? 'Personality XML' : 'Web Scraped' %></td>
+                </tr>
+              </tbody>
+            </table>
+            <% } %>
+          </div>
+        </div>
+        <% } %>
+
         <% if (product.url) { %>
           <div class="mt-4">
             <a href="<%= product.url %>" target="_blank" class="btn btn-outline-primary">

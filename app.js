@@ -754,8 +754,13 @@ app.get('/stats', (req, res) => {
   });
 });
 
-// Personality data web route
+// Redirect /personality to main search (databases are now merged)
 app.get('/personality', (req, res) => {
+  res.redirect('/search?source=personality');
+});
+
+// Legacy personality data web route (kept for backwards compatibility)
+app.get('/personality-legacy', (req, res) => {
   const data = loadPersonalityData();
   let products = [...data.products];
 

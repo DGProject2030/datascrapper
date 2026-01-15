@@ -1,5 +1,5 @@
 {
-  "totalRecords": 86,
+  "totalRecords": 258,
   "processedRecords": 86,
   "skippedRecords": 0,
   "missingDataFields": {
@@ -47,10 +47,11 @@
     "TXK": 2
   },
   "capacityDistribution": {
-    "501-1000 kg": 4,
-    "251-500 kg": 3,
-    ">2000 kg": 32,
-    "1001-2000 kg": 9
+    "≤250 kg": 130,
+    "251-500 kg": 37,
+    "501-1000 kg": 31,
+    "1001-2000 kg": 25,
+    ">2000 kg": 35
   },
   "classificationDistribution": {
     "d8": 23,
@@ -61,5 +62,24 @@
     "atex": 2,
     "ce": 2
   },
-  "processingErrors": []
+  "processingErrors": [],
+  "categoryDistribution": {
+    "Unknown": 86,
+    "Electric Chain Hoist": 130,
+    "Winch": 21,
+    "Beam Trolley": 13,
+    "Flying System": 1,
+    "Revolve/Turntable": 7
+  },
+  "speedTypeDistribution": {
+    "Unknown": 153,
+    "Variable Speed": 85,
+    "Fixed Speed": 20
+  },
+  "sourceDistribution": {
+    "web": 86,
+    "personality": 172
+  },
+  "personalityProducts": 172,
+  "lastMerged": "2026-01-15T19:12:42.537Z"
 }

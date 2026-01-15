@@ -56,7 +56,7 @@ const layoutTemplate = `<!DOCTYPE html>
             <a class="nav-link" href="/">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/personality">Personality DB</a>
+            <a class="nav-link" href="/search">Browse All</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/stats">Statistics</a>
