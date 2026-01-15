@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generatedAt": "2026-01-15T18:36:00.557Z",
+  "generatedAt": "2026-01-15T18:55:31.708Z",
   "source": "Personality XML Files + Web Enrichment",
   "totalProducts": 172,
   "manufacturers": 25,
@@ -5814,7 +5814,21 @@
       "speedType": "Fixed Speed",
       "entertainmentIndustry": true,
       "manufacturerWebsite": "https://www.prolyte.com",
-      "manufacturerBrand": "Prolyft (Prolyte)"
+      "manufacturerBrand": "Prolyft (Prolyte)",
+      "webSearchResults": {
+        "website": "https://www.prolyte.com",
+        "brand": "Prolyft (Prolyte)",
+        "matchingProducts": [
+          {
+            "href": "https://www.prolyte.com/products/chain-hoists",
+            "text": "Prolyft"
+          },
+          {
+            "href": "https://www.prolyte.com/products/chain-hoists",
+            "text": "Prolyft"
+          }
+        ]
+      }
     },
     {
       "manufacturerId": "016",
