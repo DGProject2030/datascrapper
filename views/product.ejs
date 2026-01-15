@@ -93,9 +93,44 @@
       color: #6c757d;
       font-size: 0.9rem;
     }
+    /* Loading overlay */
+    .loading-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.8);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .loading-overlay.show {
+      display: flex;
+    }
+    .loading-spinner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+    .loading-spinner .spinner-border {
+      width: 3rem;
+      height: 3rem;
+    }
   </style>
 </head>
 <body>
+  <!-- Loading Overlay -->
+  <div class="loading-overlay" id="loadingOverlay">
+    <div class="loading-spinner">
+      <div class="spinner-border text-primary" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+      <span class="text-muted">Loading...</span>
+    </div>
+  </div>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
     <div class="container">
       <a class="navbar-brand" href="/">Entertainment Chainhoist DB</a>
@@ -176,7 +211,7 @@
         <% if (product.classification && Array.isArray(product.classification)) { %>
           <div class="mb-3">
             <% product.classification.forEach(function(cls) { %>
-              <span class="badge bg-info classification-badge"><%= cls.toUpperCase() %></span>
+              <a href="/search?classification=<%= encodeURIComponent(cls) %>" class="text-decoration-none"><span class="badge bg-info classification-badge" style="cursor:pointer;"><%= cls.toUpperCase() %></span></a>
             <% }); %>
           </div>
         <% } %>
@@ -259,128 +294,166 @@
             <h4>Technical Specifications</h4>
             <table class="table table-striped">
               <tbody>
+                <% if (product.loadCapacity) { %>
                 <tr>
                   <td class="spec-label">Load Capacity</td>
-                  <td><%= product.loadCapacity || 'Not specified' %></td>
+                  <td><%= product.loadCapacity %></td>
                 </tr>
+                <% } %>
+                <% if (product.liftingSpeed) { %>
                 <tr>
                   <td class="spec-label">Lifting Speed</td>
-                  <td><%= product.liftingSpeed || 'Not specified' %></td>
+                  <td><%= product.liftingSpeed %></td>
                 </tr>
+                <% } %>
+                <% if (product.secondarySpeed) { %>
                 <tr>
                   <td class="spec-label">Secondary Speed</td>
-                  <td><%= product.secondarySpeed || 'Not specified' %></td>
+                  <td><%= product.secondarySpeed %></td>
                 </tr>
+                <% } %>
+                <% if (product.chainFall) { %>
                 <tr>
                   <td class="spec-label">Chain Fall</td>
-                  <td><%= product.chainFall || 'Not specified' %></td>
+                  <td><%= product.chainFall %></td>
                 </tr>
+                <% } %>
+                <% if (product.motorPower) { %>
                 <tr>
                   <td class="spec-label">Motor Power</td>
-                  <td><%= product.motorPower || 'Not specified' %></td>
+                  <td><%= product.motorPower %></td>
                 </tr>
+                <% } %>
+                <% if (product.dutyCycle) { %>
                 <tr>
                   <td class="spec-label">Duty Cycle</td>
-                  <td><%= product.dutyCycle || 'Not specified' %></td>
+                  <td><%= product.dutyCycle %></td>
                 </tr>
+                <% } %>
+                <% if (product.voltageOptions && (Array.isArray(product.voltageOptions) ? product.voltageOptions.length > 0 : true)) { %>
                 <tr>
                   <td class="spec-label">Voltage Options</td>
                   <td>
-                    <% if (product.voltageOptions && Array.isArray(product.voltageOptions)) { %>
+                    <% if (Array.isArray(product.voltageOptions)) { %>
                       <%= product.voltageOptions.join(', ') %>
-                    <% } else if (product.voltageOptions) { %>
-                      <%= product.voltageOptions %>
                     <% } else { %>
-                      Not specified
+                      <%= product.voltageOptions %>
                     <% } %>
                   </td>
                 </tr>
+                <% } %>
               </tbody>
             </table>
           </div>
         </div>
 
+        <%
+          // Check if any entertainment specs exist
+          const hasEntertainmentSpecs = product.quietOperation || product.bodyColor || product.dynamicLifting || product.liftingOverPeople || product.commonApplications;
+          // Check if any safety specs exist
+          const hasSafetySpecs = product.upperLimitSwitch || product.lowerLimitSwitch || product.overloadProtection || product.emergencyStop || product.additionalSafety;
+        %>
+        <% if (hasEntertainmentSpecs || hasSafetySpecs) { %>
         <div class="row mt-4">
+          <% if (hasEntertainmentSpecs) { %>
           <div class="col-md-6">
             <h4>Entertainment Industry Specifics</h4>
             <table class="table table-striped">
               <tbody>
+                <% if (product.quietOperation !== undefined) { %>
                 <tr>
                   <td class="spec-label">Quiet Operation</td>
                   <td><%= product.quietOperation ? 'Yes' : 'No' %></td>
                 </tr>
+                <% } %>
+                <% if (product.bodyColor) { %>
                 <tr>
                   <td class="spec-label">Body Color</td>
                   <td>
-                    <% if (product.bodyColor && Array.isArray(product.bodyColor)) { %>
+                    <% if (Array.isArray(product.bodyColor)) { %>
                       <%= product.bodyColor.join(', ') %>
-                    <% } else if (product.bodyColor) { %>
-                      <%= product.bodyColor %>
                     <% } else { %>
-                      Not specified
+                      <%= product.bodyColor %>
                     <% } %>
                   </td>
                 </tr>
+                <% } %>
+                <% if (product.dynamicLifting !== undefined) { %>
                 <tr>
                   <td class="spec-label">Dynamic Lifting Approved</td>
                   <td><%= product.dynamicLifting ? 'Yes' : 'No' %></td>
                 </tr>
+                <% } %>
+                <% if (product.liftingOverPeople !== undefined) { %>
                 <tr>
                   <td class="spec-label">Lifting Over People Approved</td>
                   <td><%= product.liftingOverPeople ? 'Yes' : 'No' %></td>
                 </tr>
+                <% } %>
+                <% if (product.commonApplications) { %>
                 <tr>
                   <td class="spec-label">Common Applications</td>
                   <td>
-                    <% if (product.commonApplications && Array.isArray(product.commonApplications)) { %>
+                    <% if (Array.isArray(product.commonApplications)) { %>
                       <%= product.commonApplications.join(', ') %>
-                    <% } else if (product.commonApplications) { %>
-                      <%= product.commonApplications %>
                     <% } else { %>
-                      Not specified
+                      <%= product.commonApplications %>
                     <% } %>
                   </td>
                 </tr>
+                <% } %>
               </tbody>
             </table>
           </div>
-          
+          <% } %>
+
+          <% if (hasSafetySpecs) { %>
           <div class="col-md-6">
             <h4>Safety Features</h4>
             <table class="table table-striped">
               <tbody>
+                <% if (product.upperLimitSwitch) { %>
                 <tr>
                   <td class="spec-label">Upper Limit Switch</td>
-                  <td><%= product.upperLimitSwitch || 'Not specified' %></td>
+                  <td><%= product.upperLimitSwitch %></td>
                 </tr>
+                <% } %>
+                <% if (product.lowerLimitSwitch) { %>
                 <tr>
                   <td class="spec-label">Lower Limit Switch</td>
-                  <td><%= product.lowerLimitSwitch || 'Not specified' %></td>
+                  <td><%= product.lowerLimitSwitch %></td>
                 </tr>
+                <% } %>
+                <% if (product.overloadProtection) { %>
                 <tr>
                   <td class="spec-label">Overload Protection</td>
-                  <td><%= product.overloadProtection || 'Not specified' %></td>
+                  <td><%= product.overloadProtection %></td>
                 </tr>
+                <% } %>
+                <% if (product.emergencyStop) { %>
                 <tr>
                   <td class="spec-label">Emergency Stop</td>
-                  <td><%= product.emergencyStop || 'Not specified' %></td>
+                  <td><%= product.emergencyStop %></td>
                 </tr>
+                <% } %>
+                <% if (product.additionalSafety) { %>
                 <tr>
                   <td class="spec-label">Additional Safety Features</td>
                   <td>
-                    <% if (product.additionalSafety && Array.isArray(product.additionalSafety)) { %>
+                    <% if (Array.isArray(product.additionalSafety)) { %>
                       <%= product.additionalSafety.join(', ') %>
-                    <% } else if (product.additionalSafety) { %>
-                      <%= product.additionalSafety %>
                     <% } else { %>
-                      Not specified
+                      <%= product.additionalSafety %>
                     <% } %>
                   </td>
                 </tr>
+                <% } %>
               </tbody>
             </table>
           </div>
+          <% } %>
         </div>
+        <% } %>
         
         <% if (product.variableSpeedControl || product.tuningParameters) { %>
         <div class="row mt-4">
@@ -389,45 +462,59 @@
             <h4>Speed Control Parameters</h4>
             <table class="table table-striped">
               <tbody>
+                <% if (product.variableSpeedControl.minSpeed) { %>
                 <tr>
                   <td class="spec-label">Min Speed</td>
-                  <td><%= product.variableSpeedControl.minSpeed || 'Not specified' %></td>
+                  <td><%= product.variableSpeedControl.minSpeed %></td>
                 </tr>
+                <% } %>
+                <% if (product.variableSpeedControl.maxSpeed) { %>
                 <tr>
                   <td class="spec-label">Max Speed</td>
-                  <td><%= product.variableSpeedControl.maxSpeed || 'Not specified' %></td>
+                  <td><%= product.variableSpeedControl.maxSpeed %></td>
                 </tr>
+                <% } %>
+                <% if (product.variableSpeedControl.defaultSpeed) { %>
                 <tr>
                   <td class="spec-label">Default Speed</td>
-                  <td><%= product.variableSpeedControl.defaultSpeed || 'Not specified' %></td>
+                  <td><%= product.variableSpeedControl.defaultSpeed %></td>
                 </tr>
+                <% } %>
+                <% if (product.variableSpeedControl.maxAccel) { %>
                 <tr>
                   <td class="spec-label">Max Acceleration</td>
-                  <td><%= product.variableSpeedControl.maxAccel || 'Not specified' %></td>
+                  <td><%= product.variableSpeedControl.maxAccel %></td>
                 </tr>
+                <% } %>
+                <% if (product.variableSpeedControl.maxDecel) { %>
                 <tr>
                   <td class="spec-label">Max Deceleration</td>
-                  <td><%= product.variableSpeedControl.maxDecel || 'Not specified' %></td>
+                  <td><%= product.variableSpeedControl.maxDecel %></td>
                 </tr>
+                <% } %>
+                <% if (product.variableSpeedControl.errorStop) { %>
                 <tr>
                   <td class="spec-label">Error Stop</td>
-                  <td><%= product.variableSpeedControl.errorStop || 'Not specified' %></td>
+                  <td><%= product.variableSpeedControl.errorStop %></td>
                 </tr>
+                <% } %>
               </tbody>
             </table>
           </div>
           <% } %>
 
-          <% if (product.tuningParameters) { %>
+          <% if (product.tuningParameters && Object.keys(product.tuningParameters).length > 0) { %>
           <div class="col-md-6">
             <h4>Tuning Parameters</h4>
             <table class="table table-striped">
               <tbody>
                 <% Object.entries(product.tuningParameters).forEach(function([key, value]) { %>
+                <% if (value) { %>
                 <tr>
                   <td class="spec-label"><%= key %></td>
                   <td><%= value %></td>
                 </tr>
+                <% } %>
                 <% }); %>
               </tbody>
             </table>
@@ -436,40 +523,53 @@
         </div>
         <% } %>
 
-        <% if (product.underloadLimit || product.overloadLimit || product.encoderScaling) { %>
+        <% if (product.underloadLimit || product.overloadLimit || product.encoderScaling || product.loadcellScaling || product.category || product.speedType) { %>
         <div class="row mt-4">
+          <% if (product.underloadLimit || product.overloadLimit || product.encoderScaling || product.loadcellScaling) { %>
           <div class="col-md-6">
             <h4>Load & Encoder Parameters</h4>
             <table class="table table-striped">
               <tbody>
+                <% if (product.underloadLimit) { %>
                 <tr>
                   <td class="spec-label">Underload Limit</td>
-                  <td><%= product.underloadLimit || 'Not specified' %></td>
+                  <td><%= product.underloadLimit %></td>
                 </tr>
+                <% } %>
+                <% if (product.overloadLimit) { %>
                 <tr>
                   <td class="spec-label">Overload Limit</td>
-                  <td><%= product.overloadLimit || 'Not specified' %></td>
+                  <td><%= product.overloadLimit %></td>
                 </tr>
+                <% } %>
+                <% if (product.loadcellScaling) { %>
                 <tr>
                   <td class="spec-label">Loadcell Scaling</td>
-                  <td><%= product.loadcellScaling || 'Not specified' %></td>
+                  <td><%= product.loadcellScaling %></td>
                 </tr>
+                <% } %>
+                <% if (product.encoderScaling) { %>
                 <tr>
                   <td class="spec-label">Encoder Scaling</td>
-                  <td><%= product.encoderScaling || 'Not specified' %></td>
+                  <td><%= product.encoderScaling %></td>
                 </tr>
+                <% } %>
               </tbody>
             </table>
           </div>
+          <% } %>
+          <% if (product.category || product.speedType) { %>
           <div class="col-md-6">
-            <% if (product.category || product.speedType) { %>
             <h4>Classification</h4>
             <table class="table table-striped">
               <tbody>
+                <% if (product.category) { %>
                 <tr>
                   <td class="spec-label">Category</td>
-                  <td><%= product.category || 'Not specified' %></td>
+                  <td><%= product.category %></td>
                 </tr>
+                <% } %>
+                <% if (product.speedType) { %>
                 <tr>
                   <td class="spec-label">Speed Type</td>
                   <td>
@@ -478,10 +578,12 @@
                     <% } else if (product.speedType === 'Fixed Speed') { %>
                       <span class="badge bg-warning">Fixed Speed</span>
                     <% } else { %>
-                      <%= product.speedType || 'Not specified' %>
+                      <%= product.speedType %>
                     <% } %>
                   </td>
                 </tr>
+                <% } %>
+                <% if (product.entertainmentIndustry !== undefined) { %>
                 <tr>
                   <td class="spec-label">Entertainment Industry</td>
                   <td>
@@ -492,14 +594,17 @@
                     <% } %>
                   </td>
                 </tr>
+                <% } %>
+                <% if (product.source) { %>
                 <tr>
                   <td class="spec-label">Data Source</td>
                   <td><%= product.source === 'personality' ? 'Personality XML' : 'Web Scraped' %></td>
                 </tr>
+                <% } %>
               </tbody>
             </table>
-            <% } %>
           </div>
+          <% } %>
         </div>
         <% } %>
 
@@ -634,6 +739,26 @@
       });
       thumbnail.classList.add('active');
     }
+
+    // Loading overlay
+    const loadingOverlay = document.getElementById('loadingOverlay');
+
+    function showLoading() {
+      loadingOverlay.classList.add('show');
+    }
+
+    // Show loading on nav button clicks
+    document.querySelectorAll('.product-nav .nav-btn:not(.disabled)').forEach(link => {
+      link.addEventListener('click', showLoading);
+    });
+
+    // Show loading on similar product clicks
+    document.querySelectorAll('.card-body a[href^="/product/"]').forEach(link => {
+      link.addEventListener('click', showLoading);
+    });
+
+    // Show loading on "Back to search results" click
+    document.querySelector('a[href^="/search?"]')?.addEventListener('click', showLoading);
   </script>
 </body>
 </html>
