@@ -54,6 +54,99 @@
     color: var(--brand-secondary);
     margin-right: 0.5rem;
   }
+
+  /* Mobile Responsive Styles */
+  @media (max-width: 767.98px) {
+    /* Hero card - smaller text */
+    .hero-card .card-title {
+      font-size: 1.5rem;
+    }
+    .hero-card .lead {
+      font-size: 0.95rem;
+    }
+    .hero-card .card-body {
+      padding: 1rem;
+    }
+    .hero-card .d-flex {
+      gap: 0.75rem !important;
+    }
+    .hero-card i {
+      font-size: 2rem !important;
+    }
+
+    /* Stat cards - compact */
+    .stat-card .stat-value {
+      font-size: 2rem;
+    }
+    .stat-card .stat-icon {
+      font-size: 2rem;
+    }
+    .stat-card .stat-label {
+      font-size: 0.875rem;
+    }
+    .stat-card .card-body {
+      padding: 1rem;
+    }
+
+    /* Chart cards */
+    .chart-card .card-header {
+      padding: 0.75rem 1rem;
+    }
+    .chart-card .card-header h5 {
+      font-size: 1rem;
+    }
+    .chart-card .card-body {
+      padding: 0.75rem;
+    }
+
+    /* Table - horizontal scroll */
+    .table-responsive {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+    .table {
+      font-size: 0.875rem;
+    }
+    .table td, .table th {
+      padding: 0.5rem;
+      white-space: nowrap;
+    }
+
+    /* Footer spacing */
+    footer .row > div {
+      margin-bottom: 1.5rem;
+    }
+    footer .row > div:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  /* Small mobile (< 576px) */
+  @media (max-width: 575.98px) {
+    .hero-card .card-title {
+      font-size: 1.25rem;
+    }
+    .hero-card .lead {
+      font-size: 0.85rem;
+    }
+    .hero-card i {
+      font-size: 1.75rem !important;
+    }
+
+    .stat-card .stat-value {
+      font-size: 1.75rem;
+    }
+    .stat-card .stat-icon {
+      font-size: 1.5rem;
+    }
+    .stat-card .stat-label {
+      font-size: 0.8rem;
+    }
+
+    .chart-card .card-header h5 {
+      font-size: 0.9rem;
+    }
+  }
 </style>
 
 <div class="row mb-4">
@@ -152,14 +245,15 @@
       <div class="card-header">
         <h5 class="mb-0"><i class="bi bi-building"></i> Manufacturer Statistics</h5>
       </div>
-      <div class="card-body">
-        <table class="table table-striped">
-          <thead>
-            <tr>
-              <th>Manufacturer</th>
-              <th>Products</th>
-            </tr>
-          </thead>
+      <div class="card-body p-0 p-md-3">
+        <div class="table-responsive">
+          <table class="table table-striped mb-0">
+            <thead>
+              <tr>
+                <th>Manufacturer</th>
+                <th>Products</th>
+              </tr>
+            </thead>
           <tbody>
             <% Object.entries(report.manufacturerStats || {}).forEach(function([manufacturer, count]) { %>
               <tr>
@@ -168,7 +262,8 @@
               </tr>
             <% }); %>
           </tbody>
-        </table>
+          </table>
+        </div>
       </div>
     </div>
   </div>
