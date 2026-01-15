@@ -659,8 +659,17 @@ app.get('/search', (req, res) => {
   const categories = Object.keys(report.categoryDistribution || {}).filter(c => c !== 'Unknown').sort();
   const speedTypes = Object.keys(report.speedTypeDistribution || {}).filter(s => s !== 'Unknown').sort();
 
+  // Pagination
+  const page = parseInt(req.query.page) || 1;
+  const limit = parseInt(req.query.limit) || 25;
+  const totalResults = results.length;
+  const totalPages = Math.ceil(totalResults / limit);
+  const startIndex = (page - 1) * limit;
+  const endIndex = startIndex + limit;
+  const paginatedResults = results.slice(startIndex, endIndex);
+
   res.render('search', {
-    data: results,
+    data: paginatedResults,
     query,
     report,
     manufacturers,
@@ -669,8 +678,16 @@ app.get('/search', (req, res) => {
     categories,
     speedTypes,
     filters: req.query,
-    resultsCount: results.length,
-    title: `Search Results for "${query}"`
+    resultsCount: totalResults,
+    pagination: {
+      page,
+      limit,
+      totalPages,
+      totalResults,
+      hasNext: page < totalPages,
+      hasPrev: page > 1
+    },
+    title: query ? `Search Results for "${query}"` : 'Browse Chainhoists'
   });
 });
 
