@@ -200,6 +200,50 @@
           </div>
         </div>
 
+        <!-- Product Videos Section -->
+        <% if (product.videos && product.videos.length > 0) { %>
+        <div class="row mb-4">
+          <div class="col-12">
+            <h4>Product Videos</h4>
+            <div class="row">
+              <% product.videos.slice(0, 4).forEach(function(video, index) { %>
+                <div class="col-md-6 mb-3">
+                  <% if (video.type === 'youtube') { %>
+                    <div class="ratio ratio-16x9">
+                      <iframe src="<%= video.embed %>"
+                              title="Product Video <%= index + 1 %>"
+                              frameborder="0"
+                              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                              allowfullscreen>
+                      </iframe>
+                    </div>
+                  <% } else if (video.type === 'vimeo') { %>
+                    <div class="ratio ratio-16x9">
+                      <iframe src="<%= video.embed %>"
+                              title="Product Video <%= index + 1 %>"
+                              frameborder="0"
+                              allow="autoplay; fullscreen; picture-in-picture"
+                              allowfullscreen>
+                      </iframe>
+                    </div>
+                  <% } else if (video.type === 'mp4') { %>
+                    <div class="ratio ratio-16x9">
+                      <video controls preload="metadata">
+                        <source src="<%= video.url %>" type="video/mp4">
+                        Your browser does not support the video tag.
+                      </video>
+                    </div>
+                  <% } %>
+                </div>
+              <% }); %>
+            </div>
+            <% if (product.videos.length > 4) { %>
+              <p class="text-muted"><small>Showing 4 of <%= product.videos.length %> videos</small></p>
+            <% } %>
+          </div>
+        </div>
+        <% } %>
+
         <div class="row mt-4">
           <div class="col-md-6">
             <h4>Technical Specifications</h4>
