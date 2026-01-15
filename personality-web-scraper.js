@@ -106,6 +106,80 @@ function sleep(ms) {
 }
 
 /**
+ * Extract product images from a page
+ */
+function extractImages($, baseUrl, productName) {
+  const images = [];
+  const seen = new Set();
+
+  // Common image selectors for product pages
+  const selectors = [
+    'img[src*="product"]',
+    'img[src*="hoist"]',
+    '.product-image img',
+    '.gallery img',
+    '.main-image img',
+    '.product-gallery img',
+    '[class*="product"] img',
+    'img[alt*="hoist"]',
+    'img[alt*="chain"]',
+    'article img',
+    '.content img'
+  ];
+
+  selectors.forEach(selector => {
+    try {
+      $(selector).each((_, el) => {
+        let src = $(el).attr('src') || $(el).attr('data-src') || $(el).attr('data-lazy-src');
+        if (!src) {
+          return;
+        }
+
+        // Skip small icons, logos, and tracking pixels
+        const width = parseInt($(el).attr('width')) || 0;
+        const height = parseInt($(el).attr('height')) || 0;
+        if ((width > 0 && width < 80) || (height > 0 && height < 80)) {
+          return;
+        }
+        if (src.includes('pixel') || src.includes('tracking') || src.includes('icon') ||
+            src.includes('logo') || src.includes('avatar') || src.includes('placeholder')) {
+          return;
+        }
+
+        // Make URL absolute
+        if (!src.startsWith('http')) {
+          try {
+            src = new URL(src, baseUrl).href;
+          } catch {
+            return;
+          }
+        }
+
+        // Skip duplicates
+        if (seen.has(src)) {
+          return;
+        }
+        seen.add(src);
+
+        // Get alt text
+        const alt = $(el).attr('alt') || $(el).attr('title') || '';
+
+        images.push({
+          url: src,
+          alt: alt,
+          title: $(el).attr('title') || ''
+        });
+      });
+    } catch {
+      // Selector failed, continue
+    }
+  });
+
+  // Return max 5 images
+  return images.slice(0, 5);
+}
+
+/**
  * Search for product info on manufacturer website
  */
 async function searchManufacturerSite(product, mfrInfo) {
@@ -138,10 +212,14 @@ async function searchManufacturerSite(product, mfrInfo) {
       }
     });
 
+    // Extract images from the page
+    const images = extractImages($, mfrInfo.searchUrl, product.name);
+
     return {
       website: mfrInfo.website,
       brand: mfrInfo.brand,
-      matchingProducts: productLinks.slice(0, 5)
+      matchingProducts: productLinks.slice(0, 5),
+      images: images
     };
   } catch (err) {
     console.warn(`  Error searching ${mfrInfo.brand}: ${err.message}`);
@@ -309,6 +387,11 @@ async function enrichProduct(product) {
     const searchResult = await searchManufacturerSite(product, mfrInfo);
     if (searchResult) {
       enriched.webSearchResults = searchResult;
+
+      // Store images if found
+      if (searchResult.images && searchResult.images.length > 0) {
+        enriched.images = searchResult.images;
+      }
     }
 
     await sleep(CONFIG.requestDelay);
@@ -422,7 +505,8 @@ function exportEnrichedCSV(products) {
     'Underload Limit',
     'Overload Limit',
     'Encoder Scaling',
-    'Website'
+    'Website',
+    'Image URL'
   ];
 
   const rows = products.map(p => [
@@ -442,7 +526,8 @@ function exportEnrichedCSV(products) {
     p.underloadLimit || '',
     p.overloadLimit || '',
     p.encoderScaling || '',
-    p.manufacturerWebsite || ''
+    p.manufacturerWebsite || '',
+    p.images && p.images.length > 0 ? p.images[0].url : ''
   ]);
 
   const csvContent = [

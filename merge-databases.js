@@ -84,6 +84,9 @@ function convertPersonalityProduct(p) {
     personalityFileName: p.fileName,
     personalityName: p.name,
 
+    // Product images
+    images: p.images || [],
+
     // Standard flags
     quietOperation: false,
     dynamicLifting: p.speedType === 'Variable Speed',
@@ -128,7 +131,8 @@ function mergeDatabases() {
   let added = 0;
   let skipped = 0;
 
-  // Add personality products
+  // Add/update personality products
+  let updated = 0;
   if (personalityDb.products) {
     for (const product of personalityDb.products) {
       const converted = convertPersonalityProduct(product);
@@ -139,6 +143,23 @@ function mergeDatabases() {
         existingIds.add(converted.id);
         added++;
       } else {
+        // Update existing product with new data (especially images)
+        const existingIndex = mergedDb.findIndex(p => p.id === converted.id);
+        if (existingIndex >= 0) {
+          const existing = mergedDb[existingIndex];
+          // Update images if the new product has them and existing doesn't
+          if (converted.images && converted.images.length > 0 && (!existing.images || existing.images.length === 0)) {
+            existing.images = converted.images;
+            updated++;
+          }
+          // Also update other fields that might be missing
+          if (!existing.variableSpeedControl && converted.variableSpeedControl) {
+            existing.variableSpeedControl = converted.variableSpeedControl;
+          }
+          if (!existing.tuningParameters && converted.tuningParameters) {
+            existing.tuningParameters = converted.tuningParameters;
+          }
+        }
         skipped++;
       }
     }
@@ -146,7 +167,8 @@ function mergeDatabases() {
 
   console.log('\nMerge results:');
   console.log(`  Added from personality: ${added}`);
-  console.log(`  Skipped (duplicates): ${skipped}`);
+  console.log(`  Updated with images: ${updated}`);
+  console.log(`  Skipped (unchanged): ${skipped - updated}`);
   console.log(`  Total products: ${mergedDb.length}`);
 
   // Save merged database

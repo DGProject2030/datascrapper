@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generatedAt": "2026-01-15T18:55:31.708Z",
+  "generatedAt": "2026-01-15T19:43:59.763Z",
   "source": "Personality XML Files + Web Enrichment",
   "totalProducts": 172,
   "manufacturers": 25,
@@ -71,7 +71,8 @@
       "webSearchResults": {
         "website": "https://www.columbusmckinnon.com",
         "brand": "CM Lodestar",
-        "matchingProducts": []
+        "matchingProducts": [],
+        "images": []
       }
     },
     {
@@ -127,7 +128,8 @@
       "webSearchResults": {
         "website": "https://www.columbusmckinnon.com",
         "brand": "CM Lodestar",
-        "matchingProducts": []
+        "matchingProducts": [],
+        "images": []
       }
     },
     {
@@ -183,7 +185,8 @@
       "webSearchResults": {
         "website": "https://www.columbusmckinnon.com",
         "brand": "CM Lodestar",
-        "matchingProducts": []
+        "matchingProducts": [],
+        "images": []
       }
     },
     {
@@ -239,7 +242,8 @@
       "webSearchResults": {
         "website": "https://www.columbusmckinnon.com",
         "brand": "CM Lodestar",
-        "matchingProducts": []
+        "matchingProducts": [],
+        "images": []
       }
     },
     {
@@ -295,7 +299,8 @@
       "webSearchResults": {
         "website": "https://www.columbusmckinnon.com",
         "brand": "CM Lodestar",
-        "matchingProducts": []
+        "matchingProducts": [],
+        "images": []
       }
     },
     {
@@ -351,7 +356,8 @@
       "webSearchResults": {
         "website": "https://www.columbusmckinnon.com",
         "brand": "CM Lodestar",
-        "matchingProducts": []
+        "matchingProducts": [],
+        "images": []
       }
     },
     {
@@ -407,7 +413,8 @@
       "webSearchResults": {
         "website": "https://www.columbusmckinnon.com",
         "brand": "CM Lodestar",
-        "matchingProducts": []
+        "matchingProducts": [],
+        "images": []
       }
     },
     {
@@ -463,7 +470,8 @@
       "webSearchResults": {
         "website": "https://www.columbusmckinnon.com",
         "brand": "CM Lodestar",
-        "matchingProducts": []
+        "matchingProducts": [],
+        "images": []
       }
     },
     {
@@ -519,7 +527,8 @@
       "webSearchResults": {
         "website": "https://www.columbusmckinnon.com",
         "brand": "CM Lodestar",
-        "matchingProducts": []
+        "matchingProducts": [],
+        "images": []
       }
     },
     {
@@ -575,7 +584,8 @@
       "webSearchResults": {
         "website": "https://www.columbusmckinnon.com",
         "brand": "CM Lodestar",
-        "matchingProducts": []
+        "matchingProducts": [],
+        "images": []
       }
     },
     {
@@ -631,7 +641,8 @@
       "webSearchResults": {
         "website": "https://www.columbusmckinnon.com",
         "brand": "CM Lodestar",
-        "matchingProducts": []
+        "matchingProducts": [],
+        "images": []
       }
     },
     {
@@ -687,7 +698,8 @@
       "webSearchResults": {
         "website": "https://www.columbusmckinnon.com",
         "brand": "CM Lodestar",
-        "matchingProducts": []
+        "matchingProducts": [],
+        "images": []
       }
     },
     {
@@ -743,7 +755,8 @@
       "webSearchResults": {
         "website": "https://www.columbusmckinnon.com",
         "brand": "CM Lodestar",
-        "matchingProducts": []
+        "matchingProducts": [],
+        "images": []
       }
     },
     {
@@ -799,7 +812,8 @@
       "webSearchResults": {
         "website": "https://liftket.com",
         "brand": "Liftket",
-        "matchingProducts": []
+        "matchingProducts": [],
+        "images": []
       }
     },
     {
@@ -855,7 +869,8 @@
       "webSearchResults": {
         "website": "https://liftket.com",
         "brand": "Liftket",
-        "matchingProducts": []
+        "matchingProducts": [],
+        "images": []
       }
     },
     {
@@ -911,7 +926,8 @@
       "webSearchResults": {
         "website": "https://liftket.com",
         "brand": "Liftket",
-        "matchingProducts": []
+        "matchingProducts": [],
+        "images": []
       }
     },
     {
@@ -967,7 +983,8 @@
       "webSearchResults": {
         "website": "https://liftket.com",
         "brand": "Liftket",
-        "matchingProducts": []
+        "matchingProducts": [],
+        "images": []
       }
     },
     {
@@ -1023,7 +1040,8 @@
       "webSearchResults": {
         "website": "https://liftket.com",
         "brand": "Liftket",
-        "matchingProducts": []
+        "matchingProducts": [],
+        "images": []
       }
     },
     {
@@ -1079,7 +1097,8 @@
       "webSearchResults": {
         "website": "https://liftket.com",
         "brand": "Liftket",
-        "matchingProducts": []
+        "matchingProducts": [],
+        "images": []
       }
     },
     {
@@ -1135,7 +1154,8 @@
       "webSearchResults": {
         "website": "https://liftket.com",
         "brand": "Liftket",
-        "matchingProducts": []
+        "matchingProducts": [],
+        "images": []
       }
     },
     {
@@ -1191,7 +1211,8 @@
       "webSearchResults": {
         "website": "https://liftket.com",
         "brand": "Liftket",
-        "matchingProducts": []
+        "matchingProducts": [],
+        "images": []
       }
     },
     {
@@ -1354,8 +1375,62 @@
             "href": "https://kinesys.com/range/kinesys-digihoist/",
             "text": "Kinesys DigiHoist"
           }
+        ],
+        "images": [
+          {
+            "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Apex-Drive-v2-1500x530.png",
+            "alt": "Kinesys Apex Drive v2",
+            "title": ""
+          },
+          {
+            "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Kinesys-Apex-Hoist-500-Black-1500x1036.png",
+            "alt": "Kinesys Apex Hoist",
+            "title": ""
+          },
+          {
+            "url": "https://kinesys.com/wp-content/uploads/2024/10/500-Servo-Black-labelled.png",
+            "alt": "Kinesys Apex Hoist 500kg Servo",
+            "title": ""
+          },
+          {
+            "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Elevation-Drive-v2-black-1500x497.png",
+            "alt": "Kinesys Elevation Drive v2",
+            "title": ""
+          },
+          {
+            "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Elevation-Hoist-1500x973.png",
+            "alt": "Kinesys Elevation Hoist",
+            "title": ""
+          }
         ]
-      }
+      },
+      "images": [
+        {
+          "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Apex-Drive-v2-1500x530.png",
+          "alt": "Kinesys Apex Drive v2",
+          "title": ""
+        },
+        {
+          "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Kinesys-Apex-Hoist-500-Black-1500x1036.png",
+          "alt": "Kinesys Apex Hoist",
+          "title": ""
+        },
+        {
+          "url": "https://kinesys.com/wp-content/uploads/2024/10/500-Servo-Black-labelled.png",
+          "alt": "Kinesys Apex Hoist 500kg Servo",
+          "title": ""
+        },
+        {
+          "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Elevation-Drive-v2-black-1500x497.png",
+          "alt": "Kinesys Elevation Drive v2",
+          "title": ""
+        },
+        {
+          "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Elevation-Hoist-1500x973.png",
+          "alt": "Kinesys Elevation Hoist",
+          "title": ""
+        }
+      ]
     },
     {
       "manufacturerId": "003",
@@ -1414,8 +1489,62 @@
             "href": "https://kinesys.com/range/kinesys-digihoist/",
             "text": "Kinesys DigiHoist"
           }
+        ],
+        "images": [
+          {
+            "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Apex-Drive-v2-1500x530.png",
+            "alt": "Kinesys Apex Drive v2",
+            "title": ""
+          },
+          {
+            "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Kinesys-Apex-Hoist-500-Black-1500x1036.png",
+            "alt": "Kinesys Apex Hoist",
+            "title": ""
+          },
+          {
+            "url": "https://kinesys.com/wp-content/uploads/2024/10/500-Servo-Black-labelled.png",
+            "alt": "Kinesys Apex Hoist 500kg Servo",
+            "title": ""
+          },
+          {
+            "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Elevation-Drive-v2-black-1500x497.png",
+            "alt": "Kinesys Elevation Drive v2",
+            "title": ""
+          },
+          {
+            "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Elevation-Hoist-1500x973.png",
+            "alt": "Kinesys Elevation Hoist",
+            "title": ""
+          }
         ]
-      }
+      },
+      "images": [
+        {
+          "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Apex-Drive-v2-1500x530.png",
+          "alt": "Kinesys Apex Drive v2",
+          "title": ""
+        },
+        {
+          "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Kinesys-Apex-Hoist-500-Black-1500x1036.png",
+          "alt": "Kinesys Apex Hoist",
+          "title": ""
+        },
+        {
+          "url": "https://kinesys.com/wp-content/uploads/2024/10/500-Servo-Black-labelled.png",
+          "alt": "Kinesys Apex Hoist 500kg Servo",
+          "title": ""
+        },
+        {
+          "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Elevation-Drive-v2-black-1500x497.png",
+          "alt": "Kinesys Elevation Drive v2",
+          "title": ""
+        },
+        {
+          "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Elevation-Hoist-1500x973.png",
+          "alt": "Kinesys Elevation Hoist",
+          "title": ""
+        }
+      ]
     },
     {
       "manufacturerId": "003",
@@ -1474,8 +1603,62 @@
             "href": "https://kinesys.com/range/kinesys-digihoist/",
             "text": "Kinesys DigiHoist"
           }
+        ],
+        "images": [
+          {
+            "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Apex-Drive-v2-1500x530.png",
+            "alt": "Kinesys Apex Drive v2",
+            "title": ""
+          },
+          {
+            "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Kinesys-Apex-Hoist-500-Black-1500x1036.png",
+            "alt": "Kinesys Apex Hoist",
+            "title": ""
+          },
+          {
+            "url": "https://kinesys.com/wp-content/uploads/2024/10/500-Servo-Black-labelled.png",
+            "alt": "Kinesys Apex Hoist 500kg Servo",
+            "title": ""
+          },
+          {
+            "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Elevation-Drive-v2-black-1500x497.png",
+            "alt": "Kinesys Elevation Drive v2",
+            "title": ""
+          },
+          {
+            "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Elevation-Hoist-1500x973.png",
+            "alt": "Kinesys Elevation Hoist",
+            "title": ""
+          }
         ]
-      }
+      },
+      "images": [
+        {
+          "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Apex-Drive-v2-1500x530.png",
+          "alt": "Kinesys Apex Drive v2",
+          "title": ""
+        },
+        {
+          "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Kinesys-Apex-Hoist-500-Black-1500x1036.png",
+          "alt": "Kinesys Apex Hoist",
+          "title": ""
+        },
+        {
+          "url": "https://kinesys.com/wp-content/uploads/2024/10/500-Servo-Black-labelled.png",
+          "alt": "Kinesys Apex Hoist 500kg Servo",
+          "title": ""
+        },
+        {
+          "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Elevation-Drive-v2-black-1500x497.png",
+          "alt": "Kinesys Elevation Drive v2",
+          "title": ""
+        },
+        {
+          "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Elevation-Hoist-1500x973.png",
+          "alt": "Kinesys Elevation Hoist",
+          "title": ""
+        }
+      ]
     },
     {
       "manufacturerId": "003",
@@ -1531,8 +1714,62 @@
             "href": "https://kinesys.com/range/kinesys-digihoist/",
             "text": "Kinesys DigiHoist"
           }
+        ],
+        "images": [
+          {
+            "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Apex-Drive-v2-1500x530.png",
+            "alt": "Kinesys Apex Drive v2",
+            "title": ""
+          },
+          {
+            "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Kinesys-Apex-Hoist-500-Black-1500x1036.png",
+            "alt": "Kinesys Apex Hoist",
+            "title": ""
+          },
+          {
+            "url": "https://kinesys.com/wp-content/uploads/2024/10/500-Servo-Black-labelled.png",
+            "alt": "Kinesys Apex Hoist 500kg Servo",
+            "title": ""
+          },
+          {
+            "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Elevation-Drive-v2-black-1500x497.png",
+            "alt": "Kinesys Elevation Drive v2",
+            "title": ""
+          },
+          {
+            "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Elevation-Hoist-1500x973.png",
+            "alt": "Kinesys Elevation Hoist",
+            "title": ""
+          }
         ]
-      }
+      },
+      "images": [
+        {
+          "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Apex-Drive-v2-1500x530.png",
+          "alt": "Kinesys Apex Drive v2",
+          "title": ""
+        },
+        {
+          "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Kinesys-Apex-Hoist-500-Black-1500x1036.png",
+          "alt": "Kinesys Apex Hoist",
+          "title": ""
+        },
+        {
+          "url": "https://kinesys.com/wp-content/uploads/2024/10/500-Servo-Black-labelled.png",
+          "alt": "Kinesys Apex Hoist 500kg Servo",
+          "title": ""
+        },
+        {
+          "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Elevation-Drive-v2-black-1500x497.png",
+          "alt": "Kinesys Elevation Drive v2",
+          "title": ""
+        },
+        {
+          "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Elevation-Hoist-1500x973.png",
+          "alt": "Kinesys Elevation Hoist",
+          "title": ""
+        }
+      ]
     },
     {
       "manufacturerId": "003",
@@ -1591,8 +1828,62 @@
             "href": "https://kinesys.com/range/kinesys-digihoist/",
             "text": "Kinesys DigiHoist"
           }
+        ],
+        "images": [
+          {
+            "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Apex-Drive-v2-1500x530.png",
+            "alt": "Kinesys Apex Drive v2",
+            "title": ""
+          },
+          {
+            "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Kinesys-Apex-Hoist-500-Black-1500x1036.png",
+            "alt": "Kinesys Apex Hoist",
+            "title": ""
+          },
+          {
+            "url": "https://kinesys.com/wp-content/uploads/2024/10/500-Servo-Black-labelled.png",
+            "alt": "Kinesys Apex Hoist 500kg Servo",
+            "title": ""
+          },
+          {
+            "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Elevation-Drive-v2-black-1500x497.png",
+            "alt": "Kinesys Elevation Drive v2",
+            "title": ""
+          },
+          {
+            "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Elevation-Hoist-1500x973.png",
+            "alt": "Kinesys Elevation Hoist",
+            "title": ""
+          }
         ]
-      }
+      },
+      "images": [
+        {
+          "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Apex-Drive-v2-1500x530.png",
+          "alt": "Kinesys Apex Drive v2",
+          "title": ""
+        },
+        {
+          "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Kinesys-Apex-Hoist-500-Black-1500x1036.png",
+          "alt": "Kinesys Apex Hoist",
+          "title": ""
+        },
+        {
+          "url": "https://kinesys.com/wp-content/uploads/2024/10/500-Servo-Black-labelled.png",
+          "alt": "Kinesys Apex Hoist 500kg Servo",
+          "title": ""
+        },
+        {
+          "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Elevation-Drive-v2-black-1500x497.png",
+          "alt": "Kinesys Elevation Drive v2",
+          "title": ""
+        },
+        {
+          "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Elevation-Hoist-1500x973.png",
+          "alt": "Kinesys Elevation Hoist",
+          "title": ""
+        }
+      ]
     },
     {
       "manufacturerId": "003",
@@ -1648,8 +1939,62 @@
             "href": "https://kinesys.com/range/kinesys-digihoist/",
             "text": "Kinesys DigiHoist"
           }
+        ],
+        "images": [
+          {
+            "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Apex-Drive-v2-1500x530.png",
+            "alt": "Kinesys Apex Drive v2",
+            "title": ""
+          },
+          {
+            "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Kinesys-Apex-Hoist-500-Black-1500x1036.png",
+            "alt": "Kinesys Apex Hoist",
+            "title": ""
+          },
+          {
+            "url": "https://kinesys.com/wp-content/uploads/2024/10/500-Servo-Black-labelled.png",
+            "alt": "Kinesys Apex Hoist 500kg Servo",
+            "title": ""
+          },
+          {
+            "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Elevation-Drive-v2-black-1500x497.png",
+            "alt": "Kinesys Elevation Drive v2",
+            "title": ""
+          },
+          {
+            "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Elevation-Hoist-1500x973.png",
+            "alt": "Kinesys Elevation Hoist",
+            "title": ""
+          }
         ]
-      }
+      },
+      "images": [
+        {
+          "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Apex-Drive-v2-1500x530.png",
+          "alt": "Kinesys Apex Drive v2",
+          "title": ""
+        },
+        {
+          "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Kinesys-Apex-Hoist-500-Black-1500x1036.png",
+          "alt": "Kinesys Apex Hoist",
+          "title": ""
+        },
+        {
+          "url": "https://kinesys.com/wp-content/uploads/2024/10/500-Servo-Black-labelled.png",
+          "alt": "Kinesys Apex Hoist 500kg Servo",
+          "title": ""
+        },
+        {
+          "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Elevation-Drive-v2-black-1500x497.png",
+          "alt": "Kinesys Elevation Drive v2",
+          "title": ""
+        },
+        {
+          "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Elevation-Hoist-1500x973.png",
+          "alt": "Kinesys Elevation Hoist",
+          "title": ""
+        }
+      ]
     },
     {
       "manufacturerId": "003",
@@ -1705,8 +2050,62 @@
             "href": "https://kinesys.com/range/kinesys-digihoist/",
             "text": "Kinesys DigiHoist"
           }
+        ],
+        "images": [
+          {
+            "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Apex-Drive-v2-1500x530.png",
+            "alt": "Kinesys Apex Drive v2",
+            "title": ""
+          },
+          {
+            "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Kinesys-Apex-Hoist-500-Black-1500x1036.png",
+            "alt": "Kinesys Apex Hoist",
+            "title": ""
+          },
+          {
+            "url": "https://kinesys.com/wp-content/uploads/2024/10/500-Servo-Black-labelled.png",
+            "alt": "Kinesys Apex Hoist 500kg Servo",
+            "title": ""
+          },
+          {
+            "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Elevation-Drive-v2-black-1500x497.png",
+            "alt": "Kinesys Elevation Drive v2",
+            "title": ""
+          },
+          {
+            "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Elevation-Hoist-1500x973.png",
+            "alt": "Kinesys Elevation Hoist",
+            "title": ""
+          }
         ]
-      }
+      },
+      "images": [
+        {
+          "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Apex-Drive-v2-1500x530.png",
+          "alt": "Kinesys Apex Drive v2",
+          "title": ""
+        },
+        {
+          "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Kinesys-Apex-Hoist-500-Black-1500x1036.png",
+          "alt": "Kinesys Apex Hoist",
+          "title": ""
+        },
+        {
+          "url": "https://kinesys.com/wp-content/uploads/2024/10/500-Servo-Black-labelled.png",
+          "alt": "Kinesys Apex Hoist 500kg Servo",
+          "title": ""
+        },
+        {
+          "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Elevation-Drive-v2-black-1500x497.png",
+          "alt": "Kinesys Elevation Drive v2",
+          "title": ""
+        },
+        {
+          "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Elevation-Hoist-1500x973.png",
+          "alt": "Kinesys Elevation Hoist",
+          "title": ""
+        }
+      ]
     },
     {
       "manufacturerId": "003",
@@ -1762,8 +2161,62 @@
             "href": "https://kinesys.com/range/kinesys-digihoist/",
             "text": "Kinesys DigiHoist"
           }
+        ],
+        "images": [
+          {
+            "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Apex-Drive-v2-1500x530.png",
+            "alt": "Kinesys Apex Drive v2",
+            "title": ""
+          },
+          {
+            "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Kinesys-Apex-Hoist-500-Black-1500x1036.png",
+            "alt": "Kinesys Apex Hoist",
+            "title": ""
+          },
+          {
+            "url": "https://kinesys.com/wp-content/uploads/2024/10/500-Servo-Black-labelled.png",
+            "alt": "Kinesys Apex Hoist 500kg Servo",
+            "title": ""
+          },
+          {
+            "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Elevation-Drive-v2-black-1500x497.png",
+            "alt": "Kinesys Elevation Drive v2",
+            "title": ""
+          },
+          {
+            "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Elevation-Hoist-1500x973.png",
+            "alt": "Kinesys Elevation Hoist",
+            "title": ""
+          }
         ]
-      }
+      },
+      "images": [
+        {
+          "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Apex-Drive-v2-1500x530.png",
+          "alt": "Kinesys Apex Drive v2",
+          "title": ""
+        },
+        {
+          "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Kinesys-Apex-Hoist-500-Black-1500x1036.png",
+          "alt": "Kinesys Apex Hoist",
+          "title": ""
+        },
+        {
+          "url": "https://kinesys.com/wp-content/uploads/2024/10/500-Servo-Black-labelled.png",
+          "alt": "Kinesys Apex Hoist 500kg Servo",
+          "title": ""
+        },
+        {
+          "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Elevation-Drive-v2-black-1500x497.png",
+          "alt": "Kinesys Elevation Drive v2",
+          "title": ""
+        },
+        {
+          "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Elevation-Hoist-1500x973.png",
+          "alt": "Kinesys Elevation Hoist",
+          "title": ""
+        }
+      ]
     },
     {
       "manufacturerId": "003",
@@ -1819,8 +2272,62 @@
             "href": "https://kinesys.com/range/kinesys-digihoist/",
             "text": "Kinesys DigiHoist"
           }
+        ],
+        "images": [
+          {
+            "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Apex-Drive-v2-1500x530.png",
+            "alt": "Kinesys Apex Drive v2",
+            "title": ""
+          },
+          {
+            "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Kinesys-Apex-Hoist-500-Black-1500x1036.png",
+            "alt": "Kinesys Apex Hoist",
+            "title": ""
+          },
+          {
+            "url": "https://kinesys.com/wp-content/uploads/2024/10/500-Servo-Black-labelled.png",
+            "alt": "Kinesys Apex Hoist 500kg Servo",
+            "title": ""
+          },
+          {
+            "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Elevation-Drive-v2-black-1500x497.png",
+            "alt": "Kinesys Elevation Drive v2",
+            "title": ""
+          },
+          {
+            "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Elevation-Hoist-1500x973.png",
+            "alt": "Kinesys Elevation Hoist",
+            "title": ""
+          }
         ]
-      }
+      },
+      "images": [
+        {
+          "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Apex-Drive-v2-1500x530.png",
+          "alt": "Kinesys Apex Drive v2",
+          "title": ""
+        },
+        {
+          "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Kinesys-Apex-Hoist-500-Black-1500x1036.png",
+          "alt": "Kinesys Apex Hoist",
+          "title": ""
+        },
+        {
+          "url": "https://kinesys.com/wp-content/uploads/2024/10/500-Servo-Black-labelled.png",
+          "alt": "Kinesys Apex Hoist 500kg Servo",
+          "title": ""
+        },
+        {
+          "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Elevation-Drive-v2-black-1500x497.png",
+          "alt": "Kinesys Elevation Drive v2",
+          "title": ""
+        },
+        {
+          "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Elevation-Hoist-1500x973.png",
+          "alt": "Kinesys Elevation Hoist",
+          "title": ""
+        }
+      ]
     },
     {
       "manufacturerId": "003",
@@ -1867,8 +2374,62 @@
       "webSearchResults": {
         "website": "https://www.kinesys.com",
         "brand": "Kinesys",
-        "matchingProducts": []
-      }
+        "matchingProducts": [],
+        "images": [
+          {
+            "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Apex-Drive-v2-1500x530.png",
+            "alt": "Kinesys Apex Drive v2",
+            "title": ""
+          },
+          {
+            "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Kinesys-Apex-Hoist-500-Black-1500x1036.png",
+            "alt": "Kinesys Apex Hoist",
+            "title": ""
+          },
+          {
+            "url": "https://kinesys.com/wp-content/uploads/2024/10/500-Servo-Black-labelled.png",
+            "alt": "Kinesys Apex Hoist 500kg Servo",
+            "title": ""
+          },
+          {
+            "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Elevation-Drive-v2-black-1500x497.png",
+            "alt": "Kinesys Elevation Drive v2",
+            "title": ""
+          },
+          {
+            "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Elevation-Hoist-1500x973.png",
+            "alt": "Kinesys Elevation Hoist",
+            "title": ""
+          }
+        ]
+      },
+      "images": [
+        {
+          "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Apex-Drive-v2-1500x530.png",
+          "alt": "Kinesys Apex Drive v2",
+          "title": ""
+        },
+        {
+          "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Kinesys-Apex-Hoist-500-Black-1500x1036.png",
+          "alt": "Kinesys Apex Hoist",
+          "title": ""
+        },
+        {
+          "url": "https://kinesys.com/wp-content/uploads/2024/10/500-Servo-Black-labelled.png",
+          "alt": "Kinesys Apex Hoist 500kg Servo",
+          "title": ""
+        },
+        {
+          "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Elevation-Drive-v2-black-1500x497.png",
+          "alt": "Kinesys Elevation Drive v2",
+          "title": ""
+        },
+        {
+          "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Elevation-Hoist-1500x973.png",
+          "alt": "Kinesys Elevation Hoist",
+          "title": ""
+        }
+      ]
     },
     {
       "manufacturerId": "003",
@@ -1924,8 +2485,62 @@
             "href": "https://kinesys.com/range/kinesys-digihoist/",
             "text": "Kinesys DigiHoist"
           }
+        ],
+        "images": [
+          {
+            "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Apex-Drive-v2-1500x530.png",
+            "alt": "Kinesys Apex Drive v2",
+            "title": ""
+          },
+          {
+            "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Kinesys-Apex-Hoist-500-Black-1500x1036.png",
+            "alt": "Kinesys Apex Hoist",
+            "title": ""
+          },
+          {
+            "url": "https://kinesys.com/wp-content/uploads/2024/10/500-Servo-Black-labelled.png",
+            "alt": "Kinesys Apex Hoist 500kg Servo",
+            "title": ""
+          },
+          {
+            "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Elevation-Drive-v2-black-1500x497.png",
+            "alt": "Kinesys Elevation Drive v2",
+            "title": ""
+          },
+          {
+            "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Elevation-Hoist-1500x973.png",
+            "alt": "Kinesys Elevation Hoist",
+            "title": ""
+          }
         ]
-      }
+      },
+      "images": [
+        {
+          "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Apex-Drive-v2-1500x530.png",
+          "alt": "Kinesys Apex Drive v2",
+          "title": ""
+        },
+        {
+          "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Kinesys-Apex-Hoist-500-Black-1500x1036.png",
+          "alt": "Kinesys Apex Hoist",
+          "title": ""
+        },
+        {
+          "url": "https://kinesys.com/wp-content/uploads/2024/10/500-Servo-Black-labelled.png",
+          "alt": "Kinesys Apex Hoist 500kg Servo",
+          "title": ""
+        },
+        {
+          "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Elevation-Drive-v2-black-1500x497.png",
+          "alt": "Kinesys Elevation Drive v2",
+          "title": ""
+        },
+        {
+          "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Elevation-Hoist-1500x973.png",
+          "alt": "Kinesys Elevation Hoist",
+          "title": ""
+        }
+      ]
     },
     {
       "manufacturerId": "003",
@@ -1981,8 +2596,62 @@
             "href": "https://kinesys.com/range/kinesys-digihoist/",
             "text": "Kinesys DigiHoist"
           }
+        ],
+        "images": [
+          {
+            "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Apex-Drive-v2-1500x530.png",
+            "alt": "Kinesys Apex Drive v2",
+            "title": ""
+          },
+          {
+            "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Kinesys-Apex-Hoist-500-Black-1500x1036.png",
+            "alt": "Kinesys Apex Hoist",
+            "title": ""
+          },
+          {
+            "url": "https://kinesys.com/wp-content/uploads/2024/10/500-Servo-Black-labelled.png",
+            "alt": "Kinesys Apex Hoist 500kg Servo",
+            "title": ""
+          },
+          {
+            "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Elevation-Drive-v2-black-1500x497.png",
+            "alt": "Kinesys Elevation Drive v2",
+            "title": ""
+          },
+          {
+            "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Elevation-Hoist-1500x973.png",
+            "alt": "Kinesys Elevation Hoist",
+            "title": ""
+          }
         ]
-      }
+      },
+      "images": [
+        {
+          "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Apex-Drive-v2-1500x530.png",
+          "alt": "Kinesys Apex Drive v2",
+          "title": ""
+        },
+        {
+          "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Kinesys-Apex-Hoist-500-Black-1500x1036.png",
+          "alt": "Kinesys Apex Hoist",
+          "title": ""
+        },
+        {
+          "url": "https://kinesys.com/wp-content/uploads/2024/10/500-Servo-Black-labelled.png",
+          "alt": "Kinesys Apex Hoist 500kg Servo",
+          "title": ""
+        },
+        {
+          "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Elevation-Drive-v2-black-1500x497.png",
+          "alt": "Kinesys Elevation Drive v2",
+          "title": ""
+        },
+        {
+          "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Elevation-Hoist-1500x973.png",
+          "alt": "Kinesys Elevation Hoist",
+          "title": ""
+        }
+      ]
     },
     {
       "manufacturerId": "003",
@@ -2032,8 +2701,62 @@
       "webSearchResults": {
         "website": "https://www.kinesys.com",
         "brand": "Kinesys",
-        "matchingProducts": []
-      }
+        "matchingProducts": [],
+        "images": [
+          {
+            "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Apex-Drive-v2-1500x530.png",
+            "alt": "Kinesys Apex Drive v2",
+            "title": ""
+          },
+          {
+            "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Kinesys-Apex-Hoist-500-Black-1500x1036.png",
+            "alt": "Kinesys Apex Hoist",
+            "title": ""
+          },
+          {
+            "url": "https://kinesys.com/wp-content/uploads/2024/10/500-Servo-Black-labelled.png",
+            "alt": "Kinesys Apex Hoist 500kg Servo",
+            "title": ""
+          },
+          {
+            "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Elevation-Drive-v2-black-1500x497.png",
+            "alt": "Kinesys Elevation Drive v2",
+            "title": ""
+          },
+          {
+            "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Elevation-Hoist-1500x973.png",
+            "alt": "Kinesys Elevation Hoist",
+            "title": ""
+          }
+        ]
+      },
+      "images": [
+        {
+          "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Apex-Drive-v2-1500x530.png",
+          "alt": "Kinesys Apex Drive v2",
+          "title": ""
+        },
+        {
+          "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Kinesys-Apex-Hoist-500-Black-1500x1036.png",
+          "alt": "Kinesys Apex Hoist",
+          "title": ""
+        },
+        {
+          "url": "https://kinesys.com/wp-content/uploads/2024/10/500-Servo-Black-labelled.png",
+          "alt": "Kinesys Apex Hoist 500kg Servo",
+          "title": ""
+        },
+        {
+          "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Elevation-Drive-v2-black-1500x497.png",
+          "alt": "Kinesys Elevation Drive v2",
+          "title": ""
+        },
+        {
+          "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Elevation-Hoist-1500x973.png",
+          "alt": "Kinesys Elevation Hoist",
+          "title": ""
+        }
+      ]
     },
     {
       "manufacturerId": "003",
@@ -2080,8 +2803,62 @@
       "webSearchResults": {
         "website": "https://www.kinesys.com",
         "brand": "Kinesys",
-        "matchingProducts": []
-      }
+        "matchingProducts": [],
+        "images": [
+          {
+            "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Apex-Drive-v2-1500x530.png",
+            "alt": "Kinesys Apex Drive v2",
+            "title": ""
+          },
+          {
+            "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Kinesys-Apex-Hoist-500-Black-1500x1036.png",
+            "alt": "Kinesys Apex Hoist",
+            "title": ""
+          },
+          {
+            "url": "https://kinesys.com/wp-content/uploads/2024/10/500-Servo-Black-labelled.png",
+            "alt": "Kinesys Apex Hoist 500kg Servo",
+            "title": ""
+          },
+          {
+            "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Elevation-Drive-v2-black-1500x497.png",
+            "alt": "Kinesys Elevation Drive v2",
+            "title": ""
+          },
+          {
+            "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Elevation-Hoist-1500x973.png",
+            "alt": "Kinesys Elevation Hoist",
+            "title": ""
+          }
+        ]
+      },
+      "images": [
+        {
+          "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Apex-Drive-v2-1500x530.png",
+          "alt": "Kinesys Apex Drive v2",
+          "title": ""
+        },
+        {
+          "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Kinesys-Apex-Hoist-500-Black-1500x1036.png",
+          "alt": "Kinesys Apex Hoist",
+          "title": ""
+        },
+        {
+          "url": "https://kinesys.com/wp-content/uploads/2024/10/500-Servo-Black-labelled.png",
+          "alt": "Kinesys Apex Hoist 500kg Servo",
+          "title": ""
+        },
+        {
+          "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Elevation-Drive-v2-black-1500x497.png",
+          "alt": "Kinesys Elevation Drive v2",
+          "title": ""
+        },
+        {
+          "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Elevation-Hoist-1500x973.png",
+          "alt": "Kinesys Elevation Hoist",
+          "title": ""
+        }
+      ]
     },
     {
       "manufacturerId": "003",
@@ -2128,8 +2905,62 @@
       "webSearchResults": {
         "website": "https://www.kinesys.com",
         "brand": "Kinesys",
-        "matchingProducts": []
-      }
+        "matchingProducts": [],
+        "images": [
+          {
+            "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Apex-Drive-v2-1500x530.png",
+            "alt": "Kinesys Apex Drive v2",
+            "title": ""
+          },
+          {
+            "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Kinesys-Apex-Hoist-500-Black-1500x1036.png",
+            "alt": "Kinesys Apex Hoist",
+            "title": ""
+          },
+          {
+            "url": "https://kinesys.com/wp-content/uploads/2024/10/500-Servo-Black-labelled.png",
+            "alt": "Kinesys Apex Hoist 500kg Servo",
+            "title": ""
+          },
+          {
+            "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Elevation-Drive-v2-black-1500x497.png",
+            "alt": "Kinesys Elevation Drive v2",
+            "title": ""
+          },
+          {
+            "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Elevation-Hoist-1500x973.png",
+            "alt": "Kinesys Elevation Hoist",
+            "title": ""
+          }
+        ]
+      },
+      "images": [
+        {
+          "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Apex-Drive-v2-1500x530.png",
+          "alt": "Kinesys Apex Drive v2",
+          "title": ""
+        },
+        {
+          "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Kinesys-Apex-Hoist-500-Black-1500x1036.png",
+          "alt": "Kinesys Apex Hoist",
+          "title": ""
+        },
+        {
+          "url": "https://kinesys.com/wp-content/uploads/2024/10/500-Servo-Black-labelled.png",
+          "alt": "Kinesys Apex Hoist 500kg Servo",
+          "title": ""
+        },
+        {
+          "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Elevation-Drive-v2-black-1500x497.png",
+          "alt": "Kinesys Elevation Drive v2",
+          "title": ""
+        },
+        {
+          "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Elevation-Hoist-1500x973.png",
+          "alt": "Kinesys Elevation Hoist",
+          "title": ""
+        }
+      ]
     },
     {
       "manufacturerId": "003",
@@ -2176,8 +3007,62 @@
       "webSearchResults": {
         "website": "https://www.kinesys.com",
         "brand": "Kinesys",
-        "matchingProducts": []
-      }
+        "matchingProducts": [],
+        "images": [
+          {
+            "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Apex-Drive-v2-1500x530.png",
+            "alt": "Kinesys Apex Drive v2",
+            "title": ""
+          },
+          {
+            "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Kinesys-Apex-Hoist-500-Black-1500x1036.png",
+            "alt": "Kinesys Apex Hoist",
+            "title": ""
+          },
+          {
+            "url": "https://kinesys.com/wp-content/uploads/2024/10/500-Servo-Black-labelled.png",
+            "alt": "Kinesys Apex Hoist 500kg Servo",
+            "title": ""
+          },
+          {
+            "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Elevation-Drive-v2-black-1500x497.png",
+            "alt": "Kinesys Elevation Drive v2",
+            "title": ""
+          },
+          {
+            "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Elevation-Hoist-1500x973.png",
+            "alt": "Kinesys Elevation Hoist",
+            "title": ""
+          }
+        ]
+      },
+      "images": [
+        {
+          "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Apex-Drive-v2-1500x530.png",
+          "alt": "Kinesys Apex Drive v2",
+          "title": ""
+        },
+        {
+          "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Kinesys-Apex-Hoist-500-Black-1500x1036.png",
+          "alt": "Kinesys Apex Hoist",
+          "title": ""
+        },
+        {
+          "url": "https://kinesys.com/wp-content/uploads/2024/10/500-Servo-Black-labelled.png",
+          "alt": "Kinesys Apex Hoist 500kg Servo",
+          "title": ""
+        },
+        {
+          "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Elevation-Drive-v2-black-1500x497.png",
+          "alt": "Kinesys Elevation Drive v2",
+          "title": ""
+        },
+        {
+          "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Elevation-Hoist-1500x973.png",
+          "alt": "Kinesys Elevation Hoist",
+          "title": ""
+        }
+      ]
     },
     {
       "manufacturerId": "003",
@@ -2224,8 +3109,62 @@
       "webSearchResults": {
         "website": "https://www.kinesys.com",
         "brand": "Kinesys",
-        "matchingProducts": []
-      }
+        "matchingProducts": [],
+        "images": [
+          {
+            "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Apex-Drive-v2-1500x530.png",
+            "alt": "Kinesys Apex Drive v2",
+            "title": ""
+          },
+          {
+            "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Kinesys-Apex-Hoist-500-Black-1500x1036.png",
+            "alt": "Kinesys Apex Hoist",
+            "title": ""
+          },
+          {
+            "url": "https://kinesys.com/wp-content/uploads/2024/10/500-Servo-Black-labelled.png",
+            "alt": "Kinesys Apex Hoist 500kg Servo",
+            "title": ""
+          },
+          {
+            "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Elevation-Drive-v2-black-1500x497.png",
+            "alt": "Kinesys Elevation Drive v2",
+            "title": ""
+          },
+          {
+            "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Elevation-Hoist-1500x973.png",
+            "alt": "Kinesys Elevation Hoist",
+            "title": ""
+          }
+        ]
+      },
+      "images": [
+        {
+          "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Apex-Drive-v2-1500x530.png",
+          "alt": "Kinesys Apex Drive v2",
+          "title": ""
+        },
+        {
+          "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Kinesys-Apex-Hoist-500-Black-1500x1036.png",
+          "alt": "Kinesys Apex Hoist",
+          "title": ""
+        },
+        {
+          "url": "https://kinesys.com/wp-content/uploads/2024/10/500-Servo-Black-labelled.png",
+          "alt": "Kinesys Apex Hoist 500kg Servo",
+          "title": ""
+        },
+        {
+          "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Elevation-Drive-v2-black-1500x497.png",
+          "alt": "Kinesys Elevation Drive v2",
+          "title": ""
+        },
+        {
+          "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Elevation-Hoist-1500x973.png",
+          "alt": "Kinesys Elevation Hoist",
+          "title": ""
+        }
+      ]
     },
     {
       "manufacturerId": "004",
@@ -3198,7 +4137,8 @@
       "webSearchResults": {
         "website": "https://www.columbusmckinnon.com",
         "brand": "CM Lodestar",
-        "matchingProducts": []
+        "matchingProducts": [],
+        "images": []
       }
     },
     {
@@ -3254,7 +4194,8 @@
       "webSearchResults": {
         "website": "https://www.columbusmckinnon.com",
         "brand": "CM Lodestar",
-        "matchingProducts": []
+        "matchingProducts": [],
+        "images": []
       }
     },
     {
@@ -3310,7 +4251,8 @@
       "webSearchResults": {
         "website": "https://www.columbusmckinnon.com",
         "brand": "CM Lodestar",
-        "matchingProducts": []
+        "matchingProducts": [],
+        "images": []
       }
     },
     {
@@ -3366,7 +4308,8 @@
       "webSearchResults": {
         "website": "https://www.columbusmckinnon.com",
         "brand": "CM Lodestar",
-        "matchingProducts": []
+        "matchingProducts": [],
+        "images": []
       }
     },
     {
@@ -3422,7 +4365,8 @@
       "webSearchResults": {
         "website": "https://www.columbusmckinnon.com",
         "brand": "CM Lodestar",
-        "matchingProducts": []
+        "matchingProducts": [],
+        "images": []
       }
     },
     {
@@ -3478,7 +4422,8 @@
       "webSearchResults": {
         "website": "https://www.columbusmckinnon.com",
         "brand": "CM Lodestar",
-        "matchingProducts": []
+        "matchingProducts": [],
+        "images": []
       }
     },
     {
@@ -3727,8 +4672,62 @@
             "href": "https://gis-ag.ch/en/industry/products/special-products/67-manual-chain-hoist/",
             "text": "Manual chain hoist\n                                                    GISHKZ, up to 3000 kg"
           }
+        ],
+        "images": [
+          {
+            "url": "https://gis-ag.ch/gis%20ag/mediathek/images/produkte/01-elektrokettenz%C3%BCge/gp/freigestellte%20bilder/image-thumb__277__product-preview/Elektrokettenzug%20GP%2C%20freigestellt.png",
+            "alt": "Electric chain hoist for goods handling for lifting loads up to 6300 kg",
+            "title": "Electric chain hoist GP"
+          },
+          {
+            "url": "https://gis-ag.ch/gis%20ag/mediathek/images/produkte/02-spezialprodukte/freigestellte%20bilder/image-thumb__327__product-preview/Rostbest%C3%A4ndiger%20Kettenzug%20GPR500%2C%20freigestellt_step1.png",
+            "alt": "Electric chain hoist for outdoor application and use in food production",
+            "title": "Corrosion resistant electric chain hoist GPR"
+          },
+          {
+            "url": "https://gis-ag.ch/gis%20ag/mediathek/images/produkte/02-spezialprodukte/freigestellte%20bilder/image-thumb__307__product-preview/GP500%20ATEX%20Kettenzug%2C%20freigestellt_step1.png",
+            "alt": "Electric chain hoist explosion proof ATEX version",
+            "title": "Electric chain hoist explosion proof"
+          },
+          {
+            "url": "https://gis-ag.ch/gis%20ag/mediathek/images/produkte/02-spezialprodukte/freigestellte%20bilder/image-thumb__308__product-preview/GP500%20Kettenzug%20Frequenzumrichter%20gelb%2C%20freigestellt_step1.png",
+            "alt": "Electric chain hoist with frequency inverter for continuous operation and precise positioning of the load ",
+            "title": "Electric chain hoist frequency controlled GPFU500"
+          },
+          {
+            "url": "https://gis-ag.ch/gis%20ag/mediathek/images/produkte/02-spezialprodukte/freigestellte%20bilder/image-thumb__305__product-preview/GP%20500%20Kettenhandy%2C%20freigestellt_step3.png",
+            "alt": "Handy chain model for quick and easy positioning of loads",
+            "title": "Handy chain model GPH500"
+          }
         ]
-      }
+      },
+      "images": [
+        {
+          "url": "https://gis-ag.ch/gis%20ag/mediathek/images/produkte/01-elektrokettenz%C3%BCge/gp/freigestellte%20bilder/image-thumb__277__product-preview/Elektrokettenzug%20GP%2C%20freigestellt.png",
+          "alt": "Electric chain hoist for goods handling for lifting loads up to 6300 kg",
+          "title": "Electric chain hoist GP"
+        },
+        {
+          "url": "https://gis-ag.ch/gis%20ag/mediathek/images/produkte/02-spezialprodukte/freigestellte%20bilder/image-thumb__327__product-preview/Rostbest%C3%A4ndiger%20Kettenzug%20GPR500%2C%20freigestellt_step1.png",
+          "alt": "Electric chain hoist for outdoor application and use in food production",
+          "title": "Corrosion resistant electric chain hoist GPR"
+        },
+        {
+          "url": "https://gis-ag.ch/gis%20ag/mediathek/images/produkte/02-spezialprodukte/freigestellte%20bilder/image-thumb__307__product-preview/GP500%20ATEX%20Kettenzug%2C%20freigestellt_step1.png",
+          "alt": "Electric chain hoist explosion proof ATEX version",
+          "title": "Electric chain hoist explosion proof"
+        },
+        {
+          "url": "https://gis-ag.ch/gis%20ag/mediathek/images/produkte/02-spezialprodukte/freigestellte%20bilder/image-thumb__308__product-preview/GP500%20Kettenzug%20Frequenzumrichter%20gelb%2C%20freigestellt_step1.png",
+          "alt": "Electric chain hoist with frequency inverter for continuous operation and precise positioning of the load ",
+          "title": "Electric chain hoist frequency controlled GPFU500"
+        },
+        {
+          "url": "https://gis-ag.ch/gis%20ag/mediathek/images/produkte/02-spezialprodukte/freigestellte%20bilder/image-thumb__305__product-preview/GP%20500%20Kettenhandy%2C%20freigestellt_step3.png",
+          "alt": "Handy chain model for quick and easy positioning of loads",
+          "title": "Handy chain model GPH500"
+        }
+      ]
     },
     {
       "manufacturerId": "010",
@@ -3780,8 +4779,62 @@
             "href": "https://gis-ag.ch/en/industry/products/special-products/67-manual-chain-hoist/",
             "text": "Manual chain hoist\n                                                    GISHKZ, up to 3000 kg"
           }
+        ],
+        "images": [
+          {
+            "url": "https://gis-ag.ch/gis%20ag/mediathek/images/produkte/01-elektrokettenz%C3%BCge/gp/freigestellte%20bilder/image-thumb__277__product-preview/Elektrokettenzug%20GP%2C%20freigestellt.png",
+            "alt": "Electric chain hoist for goods handling for lifting loads up to 6300 kg",
+            "title": "Electric chain hoist GP"
+          },
+          {
+            "url": "https://gis-ag.ch/gis%20ag/mediathek/images/produkte/02-spezialprodukte/freigestellte%20bilder/image-thumb__327__product-preview/Rostbest%C3%A4ndiger%20Kettenzug%20GPR500%2C%20freigestellt_step1.png",
+            "alt": "Electric chain hoist for outdoor application and use in food production",
+            "title": "Corrosion resistant electric chain hoist GPR"
+          },
+          {
+            "url": "https://gis-ag.ch/gis%20ag/mediathek/images/produkte/02-spezialprodukte/freigestellte%20bilder/image-thumb__307__product-preview/GP500%20ATEX%20Kettenzug%2C%20freigestellt_step1.png",
+            "alt": "Electric chain hoist explosion proof ATEX version",
+            "title": "Electric chain hoist explosion proof"
+          },
+          {
+            "url": "https://gis-ag.ch/gis%20ag/mediathek/images/produkte/02-spezialprodukte/freigestellte%20bilder/image-thumb__308__product-preview/GP500%20Kettenzug%20Frequenzumrichter%20gelb%2C%20freigestellt_step1.png",
+            "alt": "Electric chain hoist with frequency inverter for continuous operation and precise positioning of the load ",
+            "title": "Electric chain hoist frequency controlled GPFU500"
+          },
+          {
+            "url": "https://gis-ag.ch/gis%20ag/mediathek/images/produkte/02-spezialprodukte/freigestellte%20bilder/image-thumb__305__product-preview/GP%20500%20Kettenhandy%2C%20freigestellt_step3.png",
+            "alt": "Handy chain model for quick and easy positioning of loads",
+            "title": "Handy chain model GPH500"
+          }
         ]
-      }
+      },
+      "images": [
+        {
+          "url": "https://gis-ag.ch/gis%20ag/mediathek/images/produkte/01-elektrokettenz%C3%BCge/gp/freigestellte%20bilder/image-thumb__277__product-preview/Elektrokettenzug%20GP%2C%20freigestellt.png",
+          "alt": "Electric chain hoist for goods handling for lifting loads up to 6300 kg",
+          "title": "Electric chain hoist GP"
+        },
+        {
+          "url": "https://gis-ag.ch/gis%20ag/mediathek/images/produkte/02-spezialprodukte/freigestellte%20bilder/image-thumb__327__product-preview/Rostbest%C3%A4ndiger%20Kettenzug%20GPR500%2C%20freigestellt_step1.png",
+          "alt": "Electric chain hoist for outdoor application and use in food production",
+          "title": "Corrosion resistant electric chain hoist GPR"
+        },
+        {
+          "url": "https://gis-ag.ch/gis%20ag/mediathek/images/produkte/02-spezialprodukte/freigestellte%20bilder/image-thumb__307__product-preview/GP500%20ATEX%20Kettenzug%2C%20freigestellt_step1.png",
+          "alt": "Electric chain hoist explosion proof ATEX version",
+          "title": "Electric chain hoist explosion proof"
+        },
+        {
+          "url": "https://gis-ag.ch/gis%20ag/mediathek/images/produkte/02-spezialprodukte/freigestellte%20bilder/image-thumb__308__product-preview/GP500%20Kettenzug%20Frequenzumrichter%20gelb%2C%20freigestellt_step1.png",
+          "alt": "Electric chain hoist with frequency inverter for continuous operation and precise positioning of the load ",
+          "title": "Electric chain hoist frequency controlled GPFU500"
+        },
+        {
+          "url": "https://gis-ag.ch/gis%20ag/mediathek/images/produkte/02-spezialprodukte/freigestellte%20bilder/image-thumb__305__product-preview/GP%20500%20Kettenhandy%2C%20freigestellt_step3.png",
+          "alt": "Handy chain model for quick and easy positioning of loads",
+          "title": "Handy chain model GPH500"
+        }
+      ]
     },
     {
       "manufacturerId": "010",
@@ -3833,8 +4886,62 @@
             "href": "https://gis-ag.ch/en/industry/products/special-products/67-manual-chain-hoist/",
             "text": "Manual chain hoist\n                                                    GISHKZ, up to 3000 kg"
           }
+        ],
+        "images": [
+          {
+            "url": "https://gis-ag.ch/gis%20ag/mediathek/images/produkte/01-elektrokettenz%C3%BCge/gp/freigestellte%20bilder/image-thumb__277__product-preview/Elektrokettenzug%20GP%2C%20freigestellt.png",
+            "alt": "Electric chain hoist for goods handling for lifting loads up to 6300 kg",
+            "title": "Electric chain hoist GP"
+          },
+          {
+            "url": "https://gis-ag.ch/gis%20ag/mediathek/images/produkte/02-spezialprodukte/freigestellte%20bilder/image-thumb__327__product-preview/Rostbest%C3%A4ndiger%20Kettenzug%20GPR500%2C%20freigestellt_step1.png",
+            "alt": "Electric chain hoist for outdoor application and use in food production",
+            "title": "Corrosion resistant electric chain hoist GPR"
+          },
+          {
+            "url": "https://gis-ag.ch/gis%20ag/mediathek/images/produkte/02-spezialprodukte/freigestellte%20bilder/image-thumb__307__product-preview/GP500%20ATEX%20Kettenzug%2C%20freigestellt_step1.png",
+            "alt": "Electric chain hoist explosion proof ATEX version",
+            "title": "Electric chain hoist explosion proof"
+          },
+          {
+            "url": "https://gis-ag.ch/gis%20ag/mediathek/images/produkte/02-spezialprodukte/freigestellte%20bilder/image-thumb__308__product-preview/GP500%20Kettenzug%20Frequenzumrichter%20gelb%2C%20freigestellt_step1.png",
+            "alt": "Electric chain hoist with frequency inverter for continuous operation and precise positioning of the load ",
+            "title": "Electric chain hoist frequency controlled GPFU500"
+          },
+          {
+            "url": "https://gis-ag.ch/gis%20ag/mediathek/images/produkte/02-spezialprodukte/freigestellte%20bilder/image-thumb__305__product-preview/GP%20500%20Kettenhandy%2C%20freigestellt_step3.png",
+            "alt": "Handy chain model for quick and easy positioning of loads",
+            "title": "Handy chain model GPH500"
+          }
         ]
-      }
+      },
+      "images": [
+        {
+          "url": "https://gis-ag.ch/gis%20ag/mediathek/images/produkte/01-elektrokettenz%C3%BCge/gp/freigestellte%20bilder/image-thumb__277__product-preview/Elektrokettenzug%20GP%2C%20freigestellt.png",
+          "alt": "Electric chain hoist for goods handling for lifting loads up to 6300 kg",
+          "title": "Electric chain hoist GP"
+        },
+        {
+          "url": "https://gis-ag.ch/gis%20ag/mediathek/images/produkte/02-spezialprodukte/freigestellte%20bilder/image-thumb__327__product-preview/Rostbest%C3%A4ndiger%20Kettenzug%20GPR500%2C%20freigestellt_step1.png",
+          "alt": "Electric chain hoist for outdoor application and use in food production",
+          "title": "Corrosion resistant electric chain hoist GPR"
+        },
+        {
+          "url": "https://gis-ag.ch/gis%20ag/mediathek/images/produkte/02-spezialprodukte/freigestellte%20bilder/image-thumb__307__product-preview/GP500%20ATEX%20Kettenzug%2C%20freigestellt_step1.png",
+          "alt": "Electric chain hoist explosion proof ATEX version",
+          "title": "Electric chain hoist explosion proof"
+        },
+        {
+          "url": "https://gis-ag.ch/gis%20ag/mediathek/images/produkte/02-spezialprodukte/freigestellte%20bilder/image-thumb__308__product-preview/GP500%20Kettenzug%20Frequenzumrichter%20gelb%2C%20freigestellt_step1.png",
+          "alt": "Electric chain hoist with frequency inverter for continuous operation and precise positioning of the load ",
+          "title": "Electric chain hoist frequency controlled GPFU500"
+        },
+        {
+          "url": "https://gis-ag.ch/gis%20ag/mediathek/images/produkte/02-spezialprodukte/freigestellte%20bilder/image-thumb__305__product-preview/GP%20500%20Kettenhandy%2C%20freigestellt_step3.png",
+          "alt": "Handy chain model for quick and easy positioning of loads",
+          "title": "Handy chain model GPH500"
+        }
+      ]
     },
     {
       "manufacturerId": "011",
@@ -4741,7 +5848,8 @@
       "webSearchResults": {
         "website": "https://liftket.com",
         "brand": "Liftket",
-        "matchingProducts": []
+        "matchingProducts": [],
+        "images": []
       }
     },
     {
@@ -4789,7 +5897,8 @@
       "webSearchResults": {
         "website": "https://liftket.com",
         "brand": "Liftket",
-        "matchingProducts": []
+        "matchingProducts": [],
+        "images": []
       }
     },
     {
@@ -4837,7 +5946,8 @@
       "webSearchResults": {
         "website": "https://liftket.com",
         "brand": "Liftket",
-        "matchingProducts": []
+        "matchingProducts": [],
+        "images": []
       }
     },
     {
@@ -4885,7 +5995,8 @@
       "webSearchResults": {
         "website": "https://liftket.com",
         "brand": "Liftket",
-        "matchingProducts": []
+        "matchingProducts": [],
+        "images": []
       }
     },
     {
@@ -4933,7 +6044,8 @@
       "webSearchResults": {
         "website": "https://liftket.com",
         "brand": "Liftket",
-        "matchingProducts": []
+        "matchingProducts": [],
+        "images": []
       }
     },
     {
@@ -4981,7 +6093,8 @@
       "webSearchResults": {
         "website": "https://liftket.com",
         "brand": "Liftket",
-        "matchingProducts": []
+        "matchingProducts": [],
+        "images": []
       }
     },
     {
@@ -5029,7 +6142,8 @@
       "webSearchResults": {
         "website": "https://liftket.com",
         "brand": "Liftket",
-        "matchingProducts": []
+        "matchingProducts": [],
+        "images": []
       }
     },
     {
@@ -5077,7 +6191,8 @@
       "webSearchResults": {
         "website": "https://liftket.com",
         "brand": "Liftket",
-        "matchingProducts": []
+        "matchingProducts": [],
+        "images": []
       }
     },
     {
@@ -5154,8 +6269,22 @@
             "href": "https://www.exetechnology.com/electric-chain-hoist/exe-vario/",
             "text": "EXE Vario"
           }
+        ],
+        "images": [
+          {
+            "url": "https://www.exetechnology.com/wp-content/uploads/2024/05/exe_hero_verticale_02-225x300.jpg",
+            "alt": "EXE Rise electric chain hoist D8 plus",
+            "title": ""
+          }
         ]
-      }
+      },
+      "images": [
+        {
+          "url": "https://www.exetechnology.com/wp-content/uploads/2024/05/exe_hero_verticale_02-225x300.jpg",
+          "alt": "EXE Rise electric chain hoist D8 plus",
+          "title": ""
+        }
+      ]
     },
     {
       "manufacturerId": "014",
@@ -5231,8 +6360,22 @@
             "href": "https://www.exetechnology.com/electric-chain-hoist/exe-vario/",
             "text": "EXE Vario"
           }
+        ],
+        "images": [
+          {
+            "url": "https://www.exetechnology.com/wp-content/uploads/2024/05/exe_hero_verticale_02-225x300.jpg",
+            "alt": "EXE Rise electric chain hoist D8 plus",
+            "title": ""
+          }
         ]
-      }
+      },
+      "images": [
+        {
+          "url": "https://www.exetechnology.com/wp-content/uploads/2024/05/exe_hero_verticale_02-225x300.jpg",
+          "alt": "EXE Rise electric chain hoist D8 plus",
+          "title": ""
+        }
+      ]
     },
     {
       "manufacturerId": "014",
@@ -5308,8 +6451,22 @@
             "href": "https://www.exetechnology.com/electric-chain-hoist/exe-vario/",
             "text": "EXE Vario"
           }
+        ],
+        "images": [
+          {
+            "url": "https://www.exetechnology.com/wp-content/uploads/2024/05/exe_hero_verticale_02-225x300.jpg",
+            "alt": "EXE Rise electric chain hoist D8 plus",
+            "title": ""
+          }
         ]
-      }
+      },
+      "images": [
+        {
+          "url": "https://www.exetechnology.com/wp-content/uploads/2024/05/exe_hero_verticale_02-225x300.jpg",
+          "alt": "EXE Rise electric chain hoist D8 plus",
+          "title": ""
+        }
+      ]
     },
     {
       "manufacturerId": "014",
@@ -5385,8 +6542,22 @@
             "href": "https://www.exetechnology.com/electric-chain-hoist/exe-vario/",
             "text": "EXE Vario"
           }
+        ],
+        "images": [
+          {
+            "url": "https://www.exetechnology.com/wp-content/uploads/2024/05/exe_hero_verticale_02-225x300.jpg",
+            "alt": "EXE Rise electric chain hoist D8 plus",
+            "title": ""
+          }
         ]
-      }
+      },
+      "images": [
+        {
+          "url": "https://www.exetechnology.com/wp-content/uploads/2024/05/exe_hero_verticale_02-225x300.jpg",
+          "alt": "EXE Rise electric chain hoist D8 plus",
+          "title": ""
+        }
+      ]
     },
     {
       "manufacturerId": "014",
@@ -5462,8 +6633,22 @@
             "href": "https://www.exetechnology.com/electric-chain-hoist/exe-vario/",
             "text": "EXE Vario"
           }
+        ],
+        "images": [
+          {
+            "url": "https://www.exetechnology.com/wp-content/uploads/2024/05/exe_hero_verticale_02-225x300.jpg",
+            "alt": "EXE Rise electric chain hoist D8 plus",
+            "title": ""
+          }
         ]
-      }
+      },
+      "images": [
+        {
+          "url": "https://www.exetechnology.com/wp-content/uploads/2024/05/exe_hero_verticale_02-225x300.jpg",
+          "alt": "EXE Rise electric chain hoist D8 plus",
+          "title": ""
+        }
+      ]
     },
     {
       "manufacturerId": "014",
@@ -5539,8 +6724,22 @@
             "href": "https://www.exetechnology.com/electric-chain-hoist/exe-vario/",
             "text": "EXE Vario"
           }
+        ],
+        "images": [
+          {
+            "url": "https://www.exetechnology.com/wp-content/uploads/2024/05/exe_hero_verticale_02-225x300.jpg",
+            "alt": "EXE Rise electric chain hoist D8 plus",
+            "title": ""
+          }
         ]
-      }
+      },
+      "images": [
+        {
+          "url": "https://www.exetechnology.com/wp-content/uploads/2024/05/exe_hero_verticale_02-225x300.jpg",
+          "alt": "EXE Rise electric chain hoist D8 plus",
+          "title": ""
+        }
+      ]
     },
     {
       "manufacturerId": "014",
@@ -5616,8 +6815,22 @@
             "href": "https://www.exetechnology.com/electric-chain-hoist/exe-vario/",
             "text": "EXE Vario"
           }
+        ],
+        "images": [
+          {
+            "url": "https://www.exetechnology.com/wp-content/uploads/2024/05/exe_hero_verticale_02-225x300.jpg",
+            "alt": "EXE Rise electric chain hoist D8 plus",
+            "title": ""
+          }
         ]
-      }
+      },
+      "images": [
+        {
+          "url": "https://www.exetechnology.com/wp-content/uploads/2024/05/exe_hero_verticale_02-225x300.jpg",
+          "alt": "EXE Rise electric chain hoist D8 plus",
+          "title": ""
+        }
+      ]
     },
     {
       "manufacturerId": "014",
@@ -5693,8 +6906,22 @@
             "href": "https://www.exetechnology.com/electric-chain-hoist/exe-vario/",
             "text": "EXE Vario"
           }
+        ],
+        "images": [
+          {
+            "url": "https://www.exetechnology.com/wp-content/uploads/2024/05/exe_hero_verticale_02-225x300.jpg",
+            "alt": "EXE Rise electric chain hoist D8 plus",
+            "title": ""
+          }
         ]
-      }
+      },
+      "images": [
+        {
+          "url": "https://www.exetechnology.com/wp-content/uploads/2024/05/exe_hero_verticale_02-225x300.jpg",
+          "alt": "EXE Rise electric chain hoist D8 plus",
+          "title": ""
+        }
+      ]
     },
     {
       "manufacturerId": "014",
@@ -5770,8 +6997,22 @@
             "href": "https://www.exetechnology.com/electric-chain-hoist/exe-vario/",
             "text": "EXE Vario"
           }
+        ],
+        "images": [
+          {
+            "url": "https://www.exetechnology.com/wp-content/uploads/2024/05/exe_hero_verticale_02-225x300.jpg",
+            "alt": "EXE Rise electric chain hoist D8 plus",
+            "title": ""
+          }
         ]
-      }
+      },
+      "images": [
+        {
+          "url": "https://www.exetechnology.com/wp-content/uploads/2024/05/exe_hero_verticale_02-225x300.jpg",
+          "alt": "EXE Rise electric chain hoist D8 plus",
+          "title": ""
+        }
+      ]
     },
     {
       "manufacturerId": "015",
@@ -5827,8 +7068,22 @@
             "href": "https://www.prolyte.com/products/chain-hoists",
             "text": "Prolyft"
           }
+        ],
+        "images": [
+          {
+            "url": "https://www.prolyte.com/Prolyte/media/static-media/38ace0e6-41cb-4a29-9415-f464c0f6042a@product-list.jpg",
+            "alt": "NERO",
+            "title": ""
+          }
         ]
-      }
+      },
+      "images": [
+        {
+          "url": "https://www.prolyte.com/Prolyte/media/static-media/38ace0e6-41cb-4a29-9415-f464c0f6042a@product-list.jpg",
+          "alt": "NERO",
+          "title": ""
+        }
+      ]
     },
     {
       "manufacturerId": "016",
@@ -5896,8 +7151,22 @@
             "href": "https://www.exetechnology.com/electric-chain-hoist/exe-vario/",
             "text": "EXE Vario"
           }
+        ],
+        "images": [
+          {
+            "url": "https://www.exetechnology.com/wp-content/uploads/2024/05/exe_hero_verticale_02-225x300.jpg",
+            "alt": "EXE Rise electric chain hoist D8 plus",
+            "title": ""
+          }
         ]
-      }
+      },
+      "images": [
+        {
+          "url": "https://www.exetechnology.com/wp-content/uploads/2024/05/exe_hero_verticale_02-225x300.jpg",
+          "alt": "EXE Rise electric chain hoist D8 plus",
+          "title": ""
+        }
+      ]
     },
     {
       "manufacturerId": "016",
@@ -5965,8 +7234,22 @@
             "href": "https://www.exetechnology.com/electric-chain-hoist/exe-vario/",
             "text": "EXE Vario"
           }
+        ],
+        "images": [
+          {
+            "url": "https://www.exetechnology.com/wp-content/uploads/2024/05/exe_hero_verticale_02-225x300.jpg",
+            "alt": "EXE Rise electric chain hoist D8 plus",
+            "title": ""
+          }
         ]
-      }
+      },
+      "images": [
+        {
+          "url": "https://www.exetechnology.com/wp-content/uploads/2024/05/exe_hero_verticale_02-225x300.jpg",
+          "alt": "EXE Rise electric chain hoist D8 plus",
+          "title": ""
+        }
+      ]
     },
     {
       "manufacturerId": "016",
@@ -6034,8 +7317,22 @@
             "href": "https://www.exetechnology.com/electric-chain-hoist/exe-vario/",
             "text": "EXE Vario"
           }
+        ],
+        "images": [
+          {
+            "url": "https://www.exetechnology.com/wp-content/uploads/2024/05/exe_hero_verticale_02-225x300.jpg",
+            "alt": "EXE Rise electric chain hoist D8 plus",
+            "title": ""
+          }
         ]
-      }
+      },
+      "images": [
+        {
+          "url": "https://www.exetechnology.com/wp-content/uploads/2024/05/exe_hero_verticale_02-225x300.jpg",
+          "alt": "EXE Rise electric chain hoist D8 plus",
+          "title": ""
+        }
+      ]
     },
     {
       "manufacturerId": "017",
@@ -6164,8 +7461,62 @@
       "webSearchResults": {
         "website": "https://www.kinesys.com",
         "brand": "Kinesys",
-        "matchingProducts": []
-      }
+        "matchingProducts": [],
+        "images": [
+          {
+            "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Apex-Drive-v2-1500x530.png",
+            "alt": "Kinesys Apex Drive v2",
+            "title": ""
+          },
+          {
+            "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Kinesys-Apex-Hoist-500-Black-1500x1036.png",
+            "alt": "Kinesys Apex Hoist",
+            "title": ""
+          },
+          {
+            "url": "https://kinesys.com/wp-content/uploads/2024/10/500-Servo-Black-labelled.png",
+            "alt": "Kinesys Apex Hoist 500kg Servo",
+            "title": ""
+          },
+          {
+            "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Elevation-Drive-v2-black-1500x497.png",
+            "alt": "Kinesys Elevation Drive v2",
+            "title": ""
+          },
+          {
+            "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Elevation-Hoist-1500x973.png",
+            "alt": "Kinesys Elevation Hoist",
+            "title": ""
+          }
+        ]
+      },
+      "images": [
+        {
+          "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Apex-Drive-v2-1500x530.png",
+          "alt": "Kinesys Apex Drive v2",
+          "title": ""
+        },
+        {
+          "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Kinesys-Apex-Hoist-500-Black-1500x1036.png",
+          "alt": "Kinesys Apex Hoist",
+          "title": ""
+        },
+        {
+          "url": "https://kinesys.com/wp-content/uploads/2024/10/500-Servo-Black-labelled.png",
+          "alt": "Kinesys Apex Hoist 500kg Servo",
+          "title": ""
+        },
+        {
+          "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Elevation-Drive-v2-black-1500x497.png",
+          "alt": "Kinesys Elevation Drive v2",
+          "title": ""
+        },
+        {
+          "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Elevation-Hoist-1500x973.png",
+          "alt": "Kinesys Elevation Hoist",
+          "title": ""
+        }
+      ]
     },
     {
       "manufacturerId": "018",
@@ -6212,8 +7563,62 @@
       "webSearchResults": {
         "website": "https://www.kinesys.com",
         "brand": "Kinesys",
-        "matchingProducts": []
-      }
+        "matchingProducts": [],
+        "images": [
+          {
+            "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Apex-Drive-v2-1500x530.png",
+            "alt": "Kinesys Apex Drive v2",
+            "title": ""
+          },
+          {
+            "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Kinesys-Apex-Hoist-500-Black-1500x1036.png",
+            "alt": "Kinesys Apex Hoist",
+            "title": ""
+          },
+          {
+            "url": "https://kinesys.com/wp-content/uploads/2024/10/500-Servo-Black-labelled.png",
+            "alt": "Kinesys Apex Hoist 500kg Servo",
+            "title": ""
+          },
+          {
+            "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Elevation-Drive-v2-black-1500x497.png",
+            "alt": "Kinesys Elevation Drive v2",
+            "title": ""
+          },
+          {
+            "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Elevation-Hoist-1500x973.png",
+            "alt": "Kinesys Elevation Hoist",
+            "title": ""
+          }
+        ]
+      },
+      "images": [
+        {
+          "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Apex-Drive-v2-1500x530.png",
+          "alt": "Kinesys Apex Drive v2",
+          "title": ""
+        },
+        {
+          "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Kinesys-Apex-Hoist-500-Black-1500x1036.png",
+          "alt": "Kinesys Apex Hoist",
+          "title": ""
+        },
+        {
+          "url": "https://kinesys.com/wp-content/uploads/2024/10/500-Servo-Black-labelled.png",
+          "alt": "Kinesys Apex Hoist 500kg Servo",
+          "title": ""
+        },
+        {
+          "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Elevation-Drive-v2-black-1500x497.png",
+          "alt": "Kinesys Elevation Drive v2",
+          "title": ""
+        },
+        {
+          "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Elevation-Hoist-1500x973.png",
+          "alt": "Kinesys Elevation Hoist",
+          "title": ""
+        }
+      ]
     },
     {
       "manufacturerId": "018",
@@ -6260,8 +7665,62 @@
       "webSearchResults": {
         "website": "https://www.kinesys.com",
         "brand": "Kinesys",
-        "matchingProducts": []
-      }
+        "matchingProducts": [],
+        "images": [
+          {
+            "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Apex-Drive-v2-1500x530.png",
+            "alt": "Kinesys Apex Drive v2",
+            "title": ""
+          },
+          {
+            "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Kinesys-Apex-Hoist-500-Black-1500x1036.png",
+            "alt": "Kinesys Apex Hoist",
+            "title": ""
+          },
+          {
+            "url": "https://kinesys.com/wp-content/uploads/2024/10/500-Servo-Black-labelled.png",
+            "alt": "Kinesys Apex Hoist 500kg Servo",
+            "title": ""
+          },
+          {
+            "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Elevation-Drive-v2-black-1500x497.png",
+            "alt": "Kinesys Elevation Drive v2",
+            "title": ""
+          },
+          {
+            "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Elevation-Hoist-1500x973.png",
+            "alt": "Kinesys Elevation Hoist",
+            "title": ""
+          }
+        ]
+      },
+      "images": [
+        {
+          "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Apex-Drive-v2-1500x530.png",
+          "alt": "Kinesys Apex Drive v2",
+          "title": ""
+        },
+        {
+          "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Kinesys-Apex-Hoist-500-Black-1500x1036.png",
+          "alt": "Kinesys Apex Hoist",
+          "title": ""
+        },
+        {
+          "url": "https://kinesys.com/wp-content/uploads/2024/10/500-Servo-Black-labelled.png",
+          "alt": "Kinesys Apex Hoist 500kg Servo",
+          "title": ""
+        },
+        {
+          "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Elevation-Drive-v2-black-1500x497.png",
+          "alt": "Kinesys Elevation Drive v2",
+          "title": ""
+        },
+        {
+          "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Elevation-Hoist-1500x973.png",
+          "alt": "Kinesys Elevation Hoist",
+          "title": ""
+        }
+      ]
     },
     {
       "manufacturerId": "018",
@@ -6308,8 +7767,62 @@
       "webSearchResults": {
         "website": "https://www.kinesys.com",
         "brand": "Kinesys",
-        "matchingProducts": []
-      }
+        "matchingProducts": [],
+        "images": [
+          {
+            "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Apex-Drive-v2-1500x530.png",
+            "alt": "Kinesys Apex Drive v2",
+            "title": ""
+          },
+          {
+            "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Kinesys-Apex-Hoist-500-Black-1500x1036.png",
+            "alt": "Kinesys Apex Hoist",
+            "title": ""
+          },
+          {
+            "url": "https://kinesys.com/wp-content/uploads/2024/10/500-Servo-Black-labelled.png",
+            "alt": "Kinesys Apex Hoist 500kg Servo",
+            "title": ""
+          },
+          {
+            "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Elevation-Drive-v2-black-1500x497.png",
+            "alt": "Kinesys Elevation Drive v2",
+            "title": ""
+          },
+          {
+            "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Elevation-Hoist-1500x973.png",
+            "alt": "Kinesys Elevation Hoist",
+            "title": ""
+          }
+        ]
+      },
+      "images": [
+        {
+          "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Apex-Drive-v2-1500x530.png",
+          "alt": "Kinesys Apex Drive v2",
+          "title": ""
+        },
+        {
+          "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Kinesys-Apex-Hoist-500-Black-1500x1036.png",
+          "alt": "Kinesys Apex Hoist",
+          "title": ""
+        },
+        {
+          "url": "https://kinesys.com/wp-content/uploads/2024/10/500-Servo-Black-labelled.png",
+          "alt": "Kinesys Apex Hoist 500kg Servo",
+          "title": ""
+        },
+        {
+          "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Elevation-Drive-v2-black-1500x497.png",
+          "alt": "Kinesys Elevation Drive v2",
+          "title": ""
+        },
+        {
+          "url": "https://kinesys.com/wp-content/uploads/2024/10/HERO-Elevation-Hoist-1500x973.png",
+          "alt": "Kinesys Elevation Hoist",
+          "title": ""
+        }
+      ]
     },
     {
       "manufacturerId": "020",
@@ -6364,7 +7877,8 @@
       "webSearchResults": {
         "website": "https://www.wicreations.com",
         "brand": "Wicreations",
-        "matchingProducts": []
+        "matchingProducts": [],
+        "images": []
       }
     },
     {
@@ -6420,7 +7934,8 @@
       "webSearchResults": {
         "website": "https://www.wicreations.com",
         "brand": "Wicreations",
-        "matchingProducts": []
+        "matchingProducts": [],
+        "images": []
       }
     },
     {
@@ -6476,7 +7991,8 @@
       "webSearchResults": {
         "website": "https://www.wicreations.com",
         "brand": "Wicreations",
-        "matchingProducts": []
+        "matchingProducts": [],
+        "images": []
       }
     },
     {
@@ -6532,7 +8048,8 @@
       "webSearchResults": {
         "website": "https://www.wicreations.com",
         "brand": "Wicreations",
-        "matchingProducts": []
+        "matchingProducts": [],
+        "images": []
       }
     },
     {
@@ -6588,7 +8105,8 @@
       "webSearchResults": {
         "website": "https://www.wicreations.com",
         "brand": "Wicreations",
-        "matchingProducts": []
+        "matchingProducts": [],
+        "images": []
       }
     },
     {
@@ -6644,7 +8162,8 @@
       "webSearchResults": {
         "website": "https://www.wicreations.com",
         "brand": "Wicreations",
-        "matchingProducts": []
+        "matchingProducts": [],
+        "images": []
       }
     },
     {
@@ -6700,7 +8219,8 @@
       "webSearchResults": {
         "website": "https://www.wicreations.com",
         "brand": "Wicreations",
-        "matchingProducts": []
+        "matchingProducts": [],
+        "images": []
       }
     },
     {
@@ -6756,7 +8276,8 @@
       "webSearchResults": {
         "website": "https://www.wicreations.com",
         "brand": "Wicreations",
-        "matchingProducts": []
+        "matchingProducts": [],
+        "images": []
       }
     },
     {
@@ -6807,7 +8328,8 @@
       "webSearchResults": {
         "website": "https://www.wicreations.com",
         "brand": "Wicreations",
-        "matchingProducts": []
+        "matchingProducts": [],
+        "images": []
       }
     },
     {
@@ -6858,7 +8380,8 @@
       "webSearchResults": {
         "website": "https://www.wicreations.com",
         "brand": "Wicreations",
-        "matchingProducts": []
+        "matchingProducts": [],
+        "images": []
       }
     },
     {
@@ -6909,7 +8432,8 @@
       "webSearchResults": {
         "website": "https://www.wicreations.com",
         "brand": "Wicreations",
-        "matchingProducts": []
+        "matchingProducts": [],
+        "images": []
       }
     },
     {
@@ -6960,7 +8484,8 @@
       "webSearchResults": {
         "website": "https://www.wicreations.com",
         "brand": "Wicreations",
-        "matchingProducts": []
+        "matchingProducts": [],
+        "images": []
       }
     },
     {
@@ -7011,7 +8536,8 @@
       "webSearchResults": {
         "website": "https://www.wicreations.com",
         "brand": "Wicreations",
-        "matchingProducts": []
+        "matchingProducts": [],
+        "images": []
       }
     },
     {
@@ -7067,7 +8593,8 @@
       "webSearchResults": {
         "website": "https://www.wicreations.com",
         "brand": "Wicreations",
-        "matchingProducts": []
+        "matchingProducts": [],
+        "images": []
       }
     },
     {
@@ -7123,7 +8650,8 @@
       "webSearchResults": {
         "website": "https://www.wicreations.com",
         "brand": "Wicreations",
-        "matchingProducts": []
+        "matchingProducts": [],
+        "images": []
       }
     },
     {
@@ -7179,7 +8707,8 @@
       "webSearchResults": {
         "website": "https://www.wicreations.com",
         "brand": "Wicreations",
-        "matchingProducts": []
+        "matchingProducts": [],
+        "images": []
       }
     },
     {
@@ -7235,7 +8764,8 @@
       "webSearchResults": {
         "website": "https://www.wicreations.com",
         "brand": "Wicreations",
-        "matchingProducts": []
+        "matchingProducts": [],
+        "images": []
       }
     },
     {
@@ -7286,7 +8816,8 @@
       "webSearchResults": {
         "website": "https://www.wicreations.com",
         "brand": "Wicreations",
-        "matchingProducts": []
+        "matchingProducts": [],
+        "images": []
       }
     },
     {
@@ -7337,7 +8868,8 @@
       "webSearchResults": {
         "website": "https://www.wicreations.com",
         "brand": "Wicreations",
-        "matchingProducts": []
+        "matchingProducts": [],
+        "images": []
       }
     },
     {
@@ -7393,7 +8925,8 @@
       "webSearchResults": {
         "website": "https://www.wicreations.com",
         "brand": "Wicreations",
-        "matchingProducts": []
+        "matchingProducts": [],
+        "images": []
       }
     },
     {
@@ -7449,7 +8982,8 @@
       "webSearchResults": {
         "website": "https://www.wicreations.com",
         "brand": "Wicreations",
-        "matchingProducts": []
+        "matchingProducts": [],
+        "images": []
       }
     },
     {
@@ -7505,7 +9039,8 @@
       "webSearchResults": {
         "website": "https://www.wicreations.com",
         "brand": "Wicreations",
-        "matchingProducts": []
+        "matchingProducts": [],
+        "images": []
       }
     },
     {
@@ -7561,7 +9096,8 @@
       "webSearchResults": {
         "website": "https://www.wicreations.com",
         "brand": "Wicreations",
-        "matchingProducts": []
+        "matchingProducts": [],
+        "images": []
       }
     },
     {
@@ -7617,7 +9153,8 @@
       "webSearchResults": {
         "website": "https://www.wicreations.com",
         "brand": "Wicreations",
-        "matchingProducts": []
+        "matchingProducts": [],
+        "images": []
       }
     },
     {
@@ -7673,7 +9210,8 @@
       "webSearchResults": {
         "website": "https://www.wicreations.com",
         "brand": "Wicreations",
-        "matchingProducts": []
+        "matchingProducts": [],
+        "images": []
       }
     },
     {
@@ -7729,7 +9267,8 @@
       "webSearchResults": {
         "website": "https://www.wicreations.com",
         "brand": "Wicreations",
-        "matchingProducts": []
+        "matchingProducts": [],
+        "images": []
       }
     },
     {
@@ -7785,7 +9324,8 @@
       "webSearchResults": {
         "website": "https://www.wicreations.com",
         "brand": "Wicreations",
-        "matchingProducts": []
+        "matchingProducts": [],
+        "images": []
       }
     },
     {
@@ -7841,7 +9381,8 @@
       "webSearchResults": {
         "website": "https://www.wicreations.com",
         "brand": "Wicreations",
-        "matchingProducts": []
+        "matchingProducts": [],
+        "images": []
       }
     },
     {
@@ -7897,7 +9438,8 @@
       "webSearchResults": {
         "website": "https://www.wicreations.com",
         "brand": "Wicreations",
-        "matchingProducts": []
+        "matchingProducts": [],
+        "images": []
       }
     },
     {
@@ -7953,7 +9495,8 @@
       "webSearchResults": {
         "website": "https://www.wicreations.com",
         "brand": "Wicreations",
-        "matchingProducts": []
+        "matchingProducts": [],
+        "images": []
       }
     },
     {
@@ -8009,7 +9552,8 @@
       "webSearchResults": {
         "website": "https://www.wicreations.com",
         "brand": "Wicreations",
-        "matchingProducts": []
+        "matchingProducts": [],
+        "images": []
       }
     },
     {
@@ -8065,7 +9609,8 @@
       "webSearchResults": {
         "website": "https://www.wicreations.com",
         "brand": "Wicreations",
-        "matchingProducts": []
+        "matchingProducts": [],
+        "images": []
       }
     },
     {
@@ -8121,7 +9666,8 @@
       "webSearchResults": {
         "website": "https://www.wicreations.com",
         "brand": "Wicreations",
-        "matchingProducts": []
+        "matchingProducts": [],
+        "images": []
       }
     },
     {
@@ -8177,7 +9723,8 @@
       "webSearchResults": {
         "website": "https://www.wicreations.com",
         "brand": "Wicreations",
-        "matchingProducts": []
+        "matchingProducts": [],
+        "images": []
       }
     },
     {
@@ -8282,8 +9829,42 @@
       "webSearchResults": {
         "website": "https://www.atlantarigging.com",
         "brand": "Atlanta Rigging Systems",
-        "matchingProducts": []
-      }
+        "matchingProducts": [],
+        "images": [
+          {
+            "url": "https://www.atlantarigging.com/wp-content/uploads/2019/06/Sales-CM-Hoist-576-300x228.jpg",
+            "alt": "CM Hoist",
+            "title": "Sales - CM Hoist-576"
+          },
+          {
+            "url": "data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E",
+            "alt": "ARS Truss",
+            "title": "Sales - Truss-800"
+          },
+          {
+            "url": "data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%202000%201324'%3E%3C/svg%3E",
+            "alt": "Install Map",
+            "title": "ARS Installs Map-2000"
+          }
+        ]
+      },
+      "images": [
+        {
+          "url": "https://www.atlantarigging.com/wp-content/uploads/2019/06/Sales-CM-Hoist-576-300x228.jpg",
+          "alt": "CM Hoist",
+          "title": "Sales - CM Hoist-576"
+        },
+        {
+          "url": "data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E",
+          "alt": "ARS Truss",
+          "title": "Sales - Truss-800"
+        },
+        {
+          "url": "data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%202000%201324'%3E%3C/svg%3E",
+          "alt": "Install Map",
+          "title": "ARS Installs Map-2000"
+        }
+      ]
     },
     {
       "manufacturerId": "021",
@@ -8338,8 +9919,42 @@
       "webSearchResults": {
         "website": "https://www.atlantarigging.com",
         "brand": "Atlanta Rigging Systems",
-        "matchingProducts": []
-      }
+        "matchingProducts": [],
+        "images": [
+          {
+            "url": "https://www.atlantarigging.com/wp-content/uploads/2019/06/Sales-CM-Hoist-576-300x228.jpg",
+            "alt": "CM Hoist",
+            "title": "Sales - CM Hoist-576"
+          },
+          {
+            "url": "data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E",
+            "alt": "ARS Truss",
+            "title": "Sales - Truss-800"
+          },
+          {
+            "url": "data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%202000%201324'%3E%3C/svg%3E",
+            "alt": "Install Map",
+            "title": "ARS Installs Map-2000"
+          }
+        ]
+      },
+      "images": [
+        {
+          "url": "https://www.atlantarigging.com/wp-content/uploads/2019/06/Sales-CM-Hoist-576-300x228.jpg",
+          "alt": "CM Hoist",
+          "title": "Sales - CM Hoist-576"
+        },
+        {
+          "url": "data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E",
+          "alt": "ARS Truss",
+          "title": "Sales - Truss-800"
+        },
+        {
+          "url": "data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%202000%201324'%3E%3C/svg%3E",
+          "alt": "Install Map",
+          "title": "ARS Installs Map-2000"
+        }
+      ]
     },
     {
       "manufacturerId": "021",
@@ -8394,8 +10009,42 @@
       "webSearchResults": {
         "website": "https://www.atlantarigging.com",
         "brand": "Atlanta Rigging Systems",
-        "matchingProducts": []
-      }
+        "matchingProducts": [],
+        "images": [
+          {
+            "url": "https://www.atlantarigging.com/wp-content/uploads/2019/06/Sales-CM-Hoist-576-300x228.jpg",
+            "alt": "CM Hoist",
+            "title": "Sales - CM Hoist-576"
+          },
+          {
+            "url": "data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E",
+            "alt": "ARS Truss",
+            "title": "Sales - Truss-800"
+          },
+          {
+            "url": "data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%202000%201324'%3E%3C/svg%3E",
+            "alt": "Install Map",
+            "title": "ARS Installs Map-2000"
+          }
+        ]
+      },
+      "images": [
+        {
+          "url": "https://www.atlantarigging.com/wp-content/uploads/2019/06/Sales-CM-Hoist-576-300x228.jpg",
+          "alt": "CM Hoist",
+          "title": "Sales - CM Hoist-576"
+        },
+        {
+          "url": "data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E",
+          "alt": "ARS Truss",
+          "title": "Sales - Truss-800"
+        },
+        {
+          "url": "data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%202000%201324'%3E%3C/svg%3E",
+          "alt": "Install Map",
+          "title": "ARS Installs Map-2000"
+        }
+      ]
     },
     {
       "manufacturerId": "021",
@@ -8450,8 +10099,42 @@
       "webSearchResults": {
         "website": "https://www.atlantarigging.com",
         "brand": "Atlanta Rigging Systems",
-        "matchingProducts": []
-      }
+        "matchingProducts": [],
+        "images": [
+          {
+            "url": "https://www.atlantarigging.com/wp-content/uploads/2019/06/Sales-CM-Hoist-576-300x228.jpg",
+            "alt": "CM Hoist",
+            "title": "Sales - CM Hoist-576"
+          },
+          {
+            "url": "data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E",
+            "alt": "ARS Truss",
+            "title": "Sales - Truss-800"
+          },
+          {
+            "url": "data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%202000%201324'%3E%3C/svg%3E",
+            "alt": "Install Map",
+            "title": "ARS Installs Map-2000"
+          }
+        ]
+      },
+      "images": [
+        {
+          "url": "https://www.atlantarigging.com/wp-content/uploads/2019/06/Sales-CM-Hoist-576-300x228.jpg",
+          "alt": "CM Hoist",
+          "title": "Sales - CM Hoist-576"
+        },
+        {
+          "url": "data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E",
+          "alt": "ARS Truss",
+          "title": "Sales - Truss-800"
+        },
+        {
+          "url": "data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%202000%201324'%3E%3C/svg%3E",
+          "alt": "Install Map",
+          "title": "ARS Installs Map-2000"
+        }
+      ]
     },
     {
       "manufacturerId": "021",
@@ -8506,8 +10189,42 @@
       "webSearchResults": {
         "website": "https://www.atlantarigging.com",
         "brand": "Atlanta Rigging Systems",
-        "matchingProducts": []
-      }
+        "matchingProducts": [],
+        "images": [
+          {
+            "url": "https://www.atlantarigging.com/wp-content/uploads/2019/06/Sales-CM-Hoist-576-300x228.jpg",
+            "alt": "CM Hoist",
+            "title": "Sales - CM Hoist-576"
+          },
+          {
+            "url": "data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E",
+            "alt": "ARS Truss",
+            "title": "Sales - Truss-800"
+          },
+          {
+            "url": "data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%202000%201324'%3E%3C/svg%3E",
+            "alt": "Install Map",
+            "title": "ARS Installs Map-2000"
+          }
+        ]
+      },
+      "images": [
+        {
+          "url": "https://www.atlantarigging.com/wp-content/uploads/2019/06/Sales-CM-Hoist-576-300x228.jpg",
+          "alt": "CM Hoist",
+          "title": "Sales - CM Hoist-576"
+        },
+        {
+          "url": "data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E",
+          "alt": "ARS Truss",
+          "title": "Sales - Truss-800"
+        },
+        {
+          "url": "data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%202000%201324'%3E%3C/svg%3E",
+          "alt": "Install Map",
+          "title": "ARS Installs Map-2000"
+        }
+      ]
     },
     {
       "manufacturerId": "021",
@@ -8562,8 +10279,42 @@
       "webSearchResults": {
         "website": "https://www.atlantarigging.com",
         "brand": "Atlanta Rigging Systems",
-        "matchingProducts": []
-      }
+        "matchingProducts": [],
+        "images": [
+          {
+            "url": "https://www.atlantarigging.com/wp-content/uploads/2019/06/Sales-CM-Hoist-576-300x228.jpg",
+            "alt": "CM Hoist",
+            "title": "Sales - CM Hoist-576"
+          },
+          {
+            "url": "data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E",
+            "alt": "ARS Truss",
+            "title": "Sales - Truss-800"
+          },
+          {
+            "url": "data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%202000%201324'%3E%3C/svg%3E",
+            "alt": "Install Map",
+            "title": "ARS Installs Map-2000"
+          }
+        ]
+      },
+      "images": [
+        {
+          "url": "https://www.atlantarigging.com/wp-content/uploads/2019/06/Sales-CM-Hoist-576-300x228.jpg",
+          "alt": "CM Hoist",
+          "title": "Sales - CM Hoist-576"
+        },
+        {
+          "url": "data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E",
+          "alt": "ARS Truss",
+          "title": "Sales - Truss-800"
+        },
+        {
+          "url": "data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%202000%201324'%3E%3C/svg%3E",
+          "alt": "Install Map",
+          "title": "ARS Installs Map-2000"
+        }
+      ]
     },
     {
       "manufacturerId": "021",
@@ -8618,8 +10369,42 @@
       "webSearchResults": {
         "website": "https://www.atlantarigging.com",
         "brand": "Atlanta Rigging Systems",
-        "matchingProducts": []
-      }
+        "matchingProducts": [],
+        "images": [
+          {
+            "url": "https://www.atlantarigging.com/wp-content/uploads/2019/06/Sales-CM-Hoist-576-300x228.jpg",
+            "alt": "CM Hoist",
+            "title": "Sales - CM Hoist-576"
+          },
+          {
+            "url": "data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E",
+            "alt": "ARS Truss",
+            "title": "Sales - Truss-800"
+          },
+          {
+            "url": "data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%202000%201324'%3E%3C/svg%3E",
+            "alt": "Install Map",
+            "title": "ARS Installs Map-2000"
+          }
+        ]
+      },
+      "images": [
+        {
+          "url": "https://www.atlantarigging.com/wp-content/uploads/2019/06/Sales-CM-Hoist-576-300x228.jpg",
+          "alt": "CM Hoist",
+          "title": "Sales - CM Hoist-576"
+        },
+        {
+          "url": "data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E",
+          "alt": "ARS Truss",
+          "title": "Sales - Truss-800"
+        },
+        {
+          "url": "data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%202000%201324'%3E%3C/svg%3E",
+          "alt": "Install Map",
+          "title": "ARS Installs Map-2000"
+        }
+      ]
     },
     {
       "manufacturerId": "021",
@@ -8674,8 +10459,42 @@
       "webSearchResults": {
         "website": "https://www.atlantarigging.com",
         "brand": "Atlanta Rigging Systems",
-        "matchingProducts": []
-      }
+        "matchingProducts": [],
+        "images": [
+          {
+            "url": "https://www.atlantarigging.com/wp-content/uploads/2019/06/Sales-CM-Hoist-576-300x228.jpg",
+            "alt": "CM Hoist",
+            "title": "Sales - CM Hoist-576"
+          },
+          {
+            "url": "data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E",
+            "alt": "ARS Truss",
+            "title": "Sales - Truss-800"
+          },
+          {
+            "url": "data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%202000%201324'%3E%3C/svg%3E",
+            "alt": "Install Map",
+            "title": "ARS Installs Map-2000"
+          }
+        ]
+      },
+      "images": [
+        {
+          "url": "https://www.atlantarigging.com/wp-content/uploads/2019/06/Sales-CM-Hoist-576-300x228.jpg",
+          "alt": "CM Hoist",
+          "title": "Sales - CM Hoist-576"
+        },
+        {
+          "url": "data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E",
+          "alt": "ARS Truss",
+          "title": "Sales - Truss-800"
+        },
+        {
+          "url": "data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%202000%201324'%3E%3C/svg%3E",
+          "alt": "Install Map",
+          "title": "ARS Installs Map-2000"
+        }
+      ]
     },
     {
       "manufacturerId": "021",
@@ -8730,8 +10549,42 @@
       "webSearchResults": {
         "website": "https://www.atlantarigging.com",
         "brand": "Atlanta Rigging Systems",
-        "matchingProducts": []
-      }
+        "matchingProducts": [],
+        "images": [
+          {
+            "url": "https://www.atlantarigging.com/wp-content/uploads/2019/06/Sales-CM-Hoist-576-300x228.jpg",
+            "alt": "CM Hoist",
+            "title": "Sales - CM Hoist-576"
+          },
+          {
+            "url": "data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E",
+            "alt": "ARS Truss",
+            "title": "Sales - Truss-800"
+          },
+          {
+            "url": "data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%202000%201324'%3E%3C/svg%3E",
+            "alt": "Install Map",
+            "title": "ARS Installs Map-2000"
+          }
+        ]
+      },
+      "images": [
+        {
+          "url": "https://www.atlantarigging.com/wp-content/uploads/2019/06/Sales-CM-Hoist-576-300x228.jpg",
+          "alt": "CM Hoist",
+          "title": "Sales - CM Hoist-576"
+        },
+        {
+          "url": "data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E",
+          "alt": "ARS Truss",
+          "title": "Sales - Truss-800"
+        },
+        {
+          "url": "data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%202000%201324'%3E%3C/svg%3E",
+          "alt": "Install Map",
+          "title": "ARS Installs Map-2000"
+        }
+      ]
     },
     {
       "manufacturerId": "021",
@@ -8786,8 +10639,42 @@
       "webSearchResults": {
         "website": "https://www.atlantarigging.com",
         "brand": "Atlanta Rigging Systems",
-        "matchingProducts": []
-      }
+        "matchingProducts": [],
+        "images": [
+          {
+            "url": "https://www.atlantarigging.com/wp-content/uploads/2019/06/Sales-CM-Hoist-576-300x228.jpg",
+            "alt": "CM Hoist",
+            "title": "Sales - CM Hoist-576"
+          },
+          {
+            "url": "data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E",
+            "alt": "ARS Truss",
+            "title": "Sales - Truss-800"
+          },
+          {
+            "url": "data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%202000%201324'%3E%3C/svg%3E",
+            "alt": "Install Map",
+            "title": "ARS Installs Map-2000"
+          }
+        ]
+      },
+      "images": [
+        {
+          "url": "https://www.atlantarigging.com/wp-content/uploads/2019/06/Sales-CM-Hoist-576-300x228.jpg",
+          "alt": "CM Hoist",
+          "title": "Sales - CM Hoist-576"
+        },
+        {
+          "url": "data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E",
+          "alt": "ARS Truss",
+          "title": "Sales - Truss-800"
+        },
+        {
+          "url": "data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%202000%201324'%3E%3C/svg%3E",
+          "alt": "Install Map",
+          "title": "ARS Installs Map-2000"
+        }
+      ]
     },
     {
       "manufacturerId": "021",
@@ -8842,8 +10729,42 @@
       "webSearchResults": {
         "website": "https://www.atlantarigging.com",
         "brand": "Atlanta Rigging Systems",
-        "matchingProducts": []
-      }
+        "matchingProducts": [],
+        "images": [
+          {
+            "url": "https://www.atlantarigging.com/wp-content/uploads/2019/06/Sales-CM-Hoist-576-300x228.jpg",
+            "alt": "CM Hoist",
+            "title": "Sales - CM Hoist-576"
+          },
+          {
+            "url": "data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E",
+            "alt": "ARS Truss",
+            "title": "Sales - Truss-800"
+          },
+          {
+            "url": "data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%202000%201324'%3E%3C/svg%3E",
+            "alt": "Install Map",
+            "title": "ARS Installs Map-2000"
+          }
+        ]
+      },
+      "images": [
+        {
+          "url": "https://www.atlantarigging.com/wp-content/uploads/2019/06/Sales-CM-Hoist-576-300x228.jpg",
+          "alt": "CM Hoist",
+          "title": "Sales - CM Hoist-576"
+        },
+        {
+          "url": "data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E",
+          "alt": "ARS Truss",
+          "title": "Sales - Truss-800"
+        },
+        {
+          "url": "data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%202000%201324'%3E%3C/svg%3E",
+          "alt": "Install Map",
+          "title": "ARS Installs Map-2000"
+        }
+      ]
     },
     {
       "manufacturerId": "021",
@@ -8898,8 +10819,42 @@
       "webSearchResults": {
         "website": "https://www.atlantarigging.com",
         "brand": "Atlanta Rigging Systems",
-        "matchingProducts": []
-      }
+        "matchingProducts": [],
+        "images": [
+          {
+            "url": "https://www.atlantarigging.com/wp-content/uploads/2019/06/Sales-CM-Hoist-576-300x228.jpg",
+            "alt": "CM Hoist",
+            "title": "Sales - CM Hoist-576"
+          },
+          {
+            "url": "data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E",
+            "alt": "ARS Truss",
+            "title": "Sales - Truss-800"
+          },
+          {
+            "url": "data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%202000%201324'%3E%3C/svg%3E",
+            "alt": "Install Map",
+            "title": "ARS Installs Map-2000"
+          }
+        ]
+      },
+      "images": [
+        {
+          "url": "https://www.atlantarigging.com/wp-content/uploads/2019/06/Sales-CM-Hoist-576-300x228.jpg",
+          "alt": "CM Hoist",
+          "title": "Sales - CM Hoist-576"
+        },
+        {
+          "url": "data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E",
+          "alt": "ARS Truss",
+          "title": "Sales - Truss-800"
+        },
+        {
+          "url": "data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%202000%201324'%3E%3C/svg%3E",
+          "alt": "Install Map",
+          "title": "ARS Installs Map-2000"
+        }
+      ]
     },
     {
       "manufacturerId": "021",
@@ -8954,8 +10909,42 @@
       "webSearchResults": {
         "website": "https://www.atlantarigging.com",
         "brand": "Atlanta Rigging Systems",
-        "matchingProducts": []
-      }
+        "matchingProducts": [],
+        "images": [
+          {
+            "url": "https://www.atlantarigging.com/wp-content/uploads/2019/06/Sales-CM-Hoist-576-300x228.jpg",
+            "alt": "CM Hoist",
+            "title": "Sales - CM Hoist-576"
+          },
+          {
+            "url": "data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E",
+            "alt": "ARS Truss",
+            "title": "Sales - Truss-800"
+          },
+          {
+            "url": "data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%202000%201324'%3E%3C/svg%3E",
+            "alt": "Install Map",
+            "title": "ARS Installs Map-2000"
+          }
+        ]
+      },
+      "images": [
+        {
+          "url": "https://www.atlantarigging.com/wp-content/uploads/2019/06/Sales-CM-Hoist-576-300x228.jpg",
+          "alt": "CM Hoist",
+          "title": "Sales - CM Hoist-576"
+        },
+        {
+          "url": "data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E",
+          "alt": "ARS Truss",
+          "title": "Sales - Truss-800"
+        },
+        {
+          "url": "data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%202000%201324'%3E%3C/svg%3E",
+          "alt": "Install Map",
+          "title": "ARS Installs Map-2000"
+        }
+      ]
     },
     {
       "manufacturerId": "021",
@@ -9010,8 +10999,42 @@
       "webSearchResults": {
         "website": "https://www.atlantarigging.com",
         "brand": "Atlanta Rigging Systems",
-        "matchingProducts": []
-      }
+        "matchingProducts": [],
+        "images": [
+          {
+            "url": "https://www.atlantarigging.com/wp-content/uploads/2019/06/Sales-CM-Hoist-576-300x228.jpg",
+            "alt": "CM Hoist",
+            "title": "Sales - CM Hoist-576"
+          },
+          {
+            "url": "data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E",
+            "alt": "ARS Truss",
+            "title": "Sales - Truss-800"
+          },
+          {
+            "url": "data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%202000%201324'%3E%3C/svg%3E",
+            "alt": "Install Map",
+            "title": "ARS Installs Map-2000"
+          }
+        ]
+      },
+      "images": [
+        {
+          "url": "https://www.atlantarigging.com/wp-content/uploads/2019/06/Sales-CM-Hoist-576-300x228.jpg",
+          "alt": "CM Hoist",
+          "title": "Sales - CM Hoist-576"
+        },
+        {
+          "url": "data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E",
+          "alt": "ARS Truss",
+          "title": "Sales - Truss-800"
+        },
+        {
+          "url": "data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%202000%201324'%3E%3C/svg%3E",
+          "alt": "Install Map",
+          "title": "ARS Installs Map-2000"
+        }
+      ]
     },
     {
       "manufacturerId": "021",
@@ -9066,8 +11089,42 @@
       "webSearchResults": {
         "website": "https://www.atlantarigging.com",
         "brand": "Atlanta Rigging Systems",
-        "matchingProducts": []
-      }
+        "matchingProducts": [],
+        "images": [
+          {
+            "url": "https://www.atlantarigging.com/wp-content/uploads/2019/06/Sales-CM-Hoist-576-300x228.jpg",
+            "alt": "CM Hoist",
+            "title": "Sales - CM Hoist-576"
+          },
+          {
+            "url": "data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E",
+            "alt": "ARS Truss",
+            "title": "Sales - Truss-800"
+          },
+          {
+            "url": "data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%202000%201324'%3E%3C/svg%3E",
+            "alt": "Install Map",
+            "title": "ARS Installs Map-2000"
+          }
+        ]
+      },
+      "images": [
+        {
+          "url": "https://www.atlantarigging.com/wp-content/uploads/2019/06/Sales-CM-Hoist-576-300x228.jpg",
+          "alt": "CM Hoist",
+          "title": "Sales - CM Hoist-576"
+        },
+        {
+          "url": "data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E",
+          "alt": "ARS Truss",
+          "title": "Sales - Truss-800"
+        },
+        {
+          "url": "data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%202000%201324'%3E%3C/svg%3E",
+          "alt": "Install Map",
+          "title": "ARS Installs Map-2000"
+        }
+      ]
     },
     {
       "manufacturerId": "021",
@@ -9122,8 +11179,42 @@
       "webSearchResults": {
         "website": "https://www.atlantarigging.com",
         "brand": "Atlanta Rigging Systems",
-        "matchingProducts": []
-      }
+        "matchingProducts": [],
+        "images": [
+          {
+            "url": "https://www.atlantarigging.com/wp-content/uploads/2019/06/Sales-CM-Hoist-576-300x228.jpg",
+            "alt": "CM Hoist",
+            "title": "Sales - CM Hoist-576"
+          },
+          {
+            "url": "data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E",
+            "alt": "ARS Truss",
+            "title": "Sales - Truss-800"
+          },
+          {
+            "url": "data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%202000%201324'%3E%3C/svg%3E",
+            "alt": "Install Map",
+            "title": "ARS Installs Map-2000"
+          }
+        ]
+      },
+      "images": [
+        {
+          "url": "https://www.atlantarigging.com/wp-content/uploads/2019/06/Sales-CM-Hoist-576-300x228.jpg",
+          "alt": "CM Hoist",
+          "title": "Sales - CM Hoist-576"
+        },
+        {
+          "url": "data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E",
+          "alt": "ARS Truss",
+          "title": "Sales - Truss-800"
+        },
+        {
+          "url": "data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%202000%201324'%3E%3C/svg%3E",
+          "alt": "Install Map",
+          "title": "ARS Installs Map-2000"
+        }
+      ]
     },
     {
       "manufacturerId": "023",

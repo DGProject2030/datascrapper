@@ -212,16 +212,37 @@
       </div>
     <% } else { %>
       <div class="table-responsive">
+        <%
+          // Helper to build sort URL
+          const buildSortUrl = (field) => {
+            const params = new URLSearchParams();
+            if (query) params.set('q', query);
+            if (filters.manufacturer) params.set('manufacturer', filters.manufacturer);
+            if (filters.capacity) params.set('capacity', filters.capacity);
+            if (filters.classification) params.set('classification', filters.classification);
+            if (filters.category) params.set('category', filters.category);
+            if (filters.speedType) params.set('speedType', filters.speedType);
+            params.set('limit', pagination.limit);
+            params.set('sortBy', field);
+            // Toggle order if clicking same column
+            params.set('sortOrder', sort.by === field && sort.order === 'asc' ? 'desc' : 'asc');
+            return '/search?' + params.toString();
+          };
+          const sortClass = (field) => {
+            if (sort.by !== field) return '';
+            return sort.order === 'asc' ? 'asc' : 'desc';
+          };
+        %>
         <table class="table table-striped table-hover" id="searchResultsTable">
           <thead class="table-dark">
             <tr>
               <th>Image</th>
-              <th class="sortable" data-sort="1" data-type="string">Manufacturer</th>
-              <th class="sortable" data-sort="2" data-type="string">Model</th>
-              <th class="sortable" data-sort="3" data-type="string">Series</th>
-              <th class="sortable" data-sort="4" data-type="number">Capacity</th>
-              <th class="sortable" data-sort="5" data-type="number">Speed</th>
-              <th class="sortable" data-sort="6" data-type="string">Classification</th>
+              <th class="sortable <%= sortClass('manufacturer') %>"><a href="<%= buildSortUrl('manufacturer') %>" class="text-white text-decoration-none d-block">Manufacturer</a></th>
+              <th class="sortable <%= sortClass('model') %>"><a href="<%= buildSortUrl('model') %>" class="text-white text-decoration-none d-block">Model</a></th>
+              <th class="sortable <%= sortClass('series') %>"><a href="<%= buildSortUrl('series') %>" class="text-white text-decoration-none d-block">Series</a></th>
+              <th class="sortable <%= sortClass('capacity') %>"><a href="<%= buildSortUrl('capacity') %>" class="text-white text-decoration-none d-block">Capacity</a></th>
+              <th class="sortable <%= sortClass('speed') %>"><a href="<%= buildSortUrl('speed') %>" class="text-white text-decoration-none d-block">Speed</a></th>
+              <th class="sortable <%= sortClass('classification') %>"><a href="<%= buildSortUrl('classification') %>" class="text-white text-decoration-none d-block">Classification</a></th>
               <th>Actions</th>
             </tr>
           </thead>
@@ -262,7 +283,7 @@
         <nav aria-label="Search results pagination" class="mt-4">
           <ul class="pagination justify-content-center">
             <%
-              // Build base URL with current filters (excluding page)
+              // Build base URL with current filters and sort (excluding page)
               const buildPageUrl = (pageNum) => {
                 const params = new URLSearchParams();
                 if (query) params.set('q', query);
@@ -271,6 +292,8 @@
                 if (filters.classification) params.set('classification', filters.classification);
                 if (filters.category) params.set('category', filters.category);
                 if (filters.speedType) params.set('speedType', filters.speedType);
+                if (sort.by) params.set('sortBy', sort.by);
+                if (sort.by) params.set('sortOrder', sort.order);
                 params.set('limit', pagination.limit);
                 params.set('page', pageNum);
                 return '/search?' + params.toString();
@@ -349,56 +372,6 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script>
-    // Table sorting functionality
-    document.addEventListener('DOMContentLoaded', function() {
-      const table = document.getElementById('searchResultsTable');
-      if (!table) return;
-
-      const headers = table.querySelectorAll('th.sortable');
-      const tbody = table.querySelector('tbody');
-
-      headers.forEach(header => {
-        header.addEventListener('click', function() {
-          const colIndex = parseInt(this.dataset.sort);
-          const type = this.dataset.type;
-          const isAsc = this.classList.contains('asc');
-
-          // Remove sort classes from all headers
-          headers.forEach(h => h.classList.remove('asc', 'desc'));
-
-          // Set new sort direction
-          this.classList.add(isAsc ? 'desc' : 'asc');
-
-          // Get rows and sort
-          const rows = Array.from(tbody.querySelectorAll('tr'));
-
-          rows.sort((a, b) => {
-            let aVal = a.cells[colIndex].textContent.trim();
-            let bVal = b.cells[colIndex].textContent.trim();
-
-            // Handle numeric values (extract numbers from strings like "500 kg" or "4 m/min")
-            if (type === 'number') {
-              const aNum = parseFloat(aVal.replace(/[^\d.-]/g, '')) || 0;
-              const bNum = parseFloat(bVal.replace(/[^\d.-]/g, '')) || 0;
-              return isAsc ? bNum - aNum : aNum - bNum;
-            }
-
-            // Handle '-' as empty
-            if (aVal === '-') aVal = '';
-            if (bVal === '-') bVal = '';
-
-            // String comparison
-            return isAsc
-              ? bVal.localeCompare(aVal)
-              : aVal.localeCompare(bVal);
-          });
-
-          // Re-append sorted rows
-          rows.forEach(row => tbody.appendChild(row));
-        });
-      });
-    });
-
     // Change page size function
     function changePageSize(newLimit) {
       const url = new URL(window.location.href);

@@ -659,6 +659,51 @@ app.get('/search', (req, res) => {
   const categories = Object.keys(report.categoryDistribution || {}).filter(c => c !== 'Unknown').sort();
   const speedTypes = Object.keys(report.speedTypeDistribution || {}).filter(s => s !== 'Unknown').sort();
 
+  // Sorting
+  const sortBy = req.query.sortBy || '';
+  const sortOrder = req.query.sortOrder || 'asc';
+
+  if (sortBy) {
+    results.sort((a, b) => {
+      let aVal, bVal;
+
+      // Map sort field to data property
+      const fieldMap = {
+        manufacturer: 'manufacturer',
+        model: 'model',
+        series: 'series',
+        capacity: 'loadCapacity',
+        speed: 'liftingSpeed',
+        classification: 'classification'
+      };
+
+      const field = fieldMap[sortBy] || sortBy;
+
+      if (sortBy === 'capacity' || sortBy === 'speed') {
+        // Extract numeric value from strings like "500 kg" or "4 m/min"
+        const aMatch = (a[field] || '').match(/(\d+(?:\.\d+)?)/);
+        const bMatch = (b[field] || '').match(/(\d+(?:\.\d+)?)/);
+        aVal = aMatch ? parseFloat(aMatch[1]) : 0;
+        bVal = bMatch ? parseFloat(bMatch[1]) : 0;
+      } else if (sortBy === 'classification') {
+        // Join array for comparison
+        aVal = Array.isArray(a[field]) ? a[field].join(' ') : (a[field] || '');
+        bVal = Array.isArray(b[field]) ? b[field].join(' ') : (b[field] || '');
+      } else {
+        aVal = a[field] || '';
+        bVal = b[field] || '';
+      }
+
+      // Compare
+      if (typeof aVal === 'number' && typeof bVal === 'number') {
+        return sortOrder === 'asc' ? aVal - bVal : bVal - aVal;
+      }
+      return sortOrder === 'asc'
+        ? String(aVal).localeCompare(String(bVal))
+        : String(bVal).localeCompare(String(aVal));
+    });
+  }
+
   // Pagination
   const page = parseInt(req.query.page) || 1;
   const limit = parseInt(req.query.limit) || 25;
@@ -686,6 +731,10 @@ app.get('/search', (req, res) => {
       totalResults,
       hasNext: page < totalPages,
       hasPrev: page > 1
+    },
+    sort: {
+      by: sortBy,
+      order: sortOrder
     },
     title: query ? `Search Results for "${query}"` : 'Browse Chainhoists'
   });
