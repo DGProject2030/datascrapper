@@ -744,7 +744,8 @@ app.get('/product/:id', (req, res) => {
   const data = loadData();
   const id = req.params.id;
 
-  const product = data.find(item => item.id === id);
+  const currentIndex = data.findIndex(item => item.id === id);
+  const product = currentIndex >= 0 ? data[currentIndex] : null;
 
   if (!product) {
     return res.status(404).render('error', {
@@ -752,6 +753,10 @@ app.get('/product/:id', (req, res) => {
       title: 'Error'
     });
   }
+
+  // Get previous and next products
+  const prevProduct = currentIndex > 0 ? data[currentIndex - 1] : null;
+  const nextProduct = currentIndex < data.length - 1 ? data[currentIndex + 1] : null;
 
   const similarProducts = data.filter(item =>
     item.id !== id &&
@@ -762,6 +767,10 @@ app.get('/product/:id', (req, res) => {
 
   res.render('product', {
     product,
+    prevProduct,
+    nextProduct,
+    currentIndex: currentIndex + 1,
+    totalProducts: data.length,
     similarProducts,
     title: `${product.manufacturer} - ${product.model}`
   });

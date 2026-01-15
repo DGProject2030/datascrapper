@@ -63,6 +63,36 @@
       color: #6c757d;
       font-size: 1.2rem;
     }
+    .product-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.75rem 0;
+      border-bottom: 1px solid #dee2e6;
+      margin-bottom: 1rem;
+    }
+    .product-nav .nav-btn {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-decoration: none;
+      color: #495057;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      transition: background-color 0.2s;
+    }
+    .product-nav .nav-btn:hover {
+      background-color: #e9ecef;
+      color: #212529;
+    }
+    .product-nav .nav-btn.disabled {
+      color: #adb5bd;
+      pointer-events: none;
+    }
+    .product-nav .nav-info {
+      color: #6c757d;
+      font-size: 0.9rem;
+    }
   </style>
 </head>
 <body>
@@ -96,12 +126,29 @@
     <div class="row mb-4">
   <div class="col-md-12">
     <nav aria-label="breadcrumb">
-      <ol class="breadcrumb">
+      <ol class="breadcrumb mb-2">
         <li class="breadcrumb-item"><a href="/">Home</a></li>
         <li class="breadcrumb-item"><a href="/search?manufacturer=<%= encodeURIComponent(product.manufacturer) %>"><%= product.manufacturer %></a></li>
         <li class="breadcrumb-item active" aria-current="page"><%= product.model %></li>
       </ol>
     </nav>
+    <div class="product-nav">
+      <% if (prevProduct) { %>
+        <a href="/product/<%= prevProduct.id %>" class="nav-btn" title="<%= prevProduct.manufacturer %> <%= prevProduct.model %>">
+          &larr; Prev
+        </a>
+      <% } else { %>
+        <span class="nav-btn disabled">&larr; Prev</span>
+      <% } %>
+      <span class="nav-info">Product <%= currentIndex %> of <%= totalProducts %></span>
+      <% if (nextProduct) { %>
+        <a href="/product/<%= nextProduct.id %>" class="nav-btn" title="<%= nextProduct.manufacturer %> <%= nextProduct.model %>">
+          Next &rarr;
+        </a>
+      <% } else { %>
+        <span class="nav-btn disabled">Next &rarr;</span>
+      <% } %>
+    </div>
   </div>
 </div>
 
