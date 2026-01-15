@@ -256,7 +256,7 @@
     </div>
     <% if (hasSearchContext) { %>
       <div class="mb-3">
-        <a href="/search?<%= searchContext %>" class="btn btn-sm btn-outline-secondary">&larr; Back to search results</a>
+        <a href="/search?<%= searchContext %>" class="btn btn-sm" style="background: var(--brand-primary); color: white;"><i class="bi bi-arrow-left"></i> Back to search results</a>
       </div>
     <% } %>
   </div>
@@ -304,7 +304,7 @@
               <% } %>
             <% } else { %>
               <div class="no-image-placeholder">
-                <span>No product image available</span>
+                <i class="bi bi-camera" style="font-size: 3rem; opacity: 0.5;"></i>
               </div>
             <% } %>
           </div>
@@ -314,7 +314,7 @@
         <% if (product.videos && product.videos.length > 0) { %>
         <div class="row mb-4">
           <div class="col-12">
-            <h4>Product Videos</h4>
+            <h4 class="section-title"><i class="bi bi-play-circle"></i> Product Videos</h4>
             <div class="row">
               <% product.videos.slice(0, 4).forEach(function(video, index) { %>
                 <div class="col-md-6 mb-3">
@@ -356,7 +356,7 @@
 
         <div class="row mt-4">
           <div class="col-md-6">
-            <h4>Technical Specifications</h4>
+            <h4 class="section-title"><i class="bi bi-gear"></i> Technical Specifications</h4>
             <table class="table table-striped">
               <tbody>
                 <% if (product.loadCapacity) { %>
@@ -422,7 +422,7 @@
         <div class="row mt-4">
           <% if (hasEntertainmentSpecs) { %>
           <div class="col-md-6">
-            <h4>Entertainment Industry Specifics</h4>
+            <h4 class="section-title"><i class="bi bi-stars"></i> Entertainment Industry Specifics</h4>
             <table class="table table-striped">
               <tbody>
                 <% if (product.quietOperation !== undefined) { %>
@@ -474,7 +474,7 @@
 
           <% if (hasSafetySpecs) { %>
           <div class="col-md-6">
-            <h4>Safety Features</h4>
+            <h4 class="section-title"><i class="bi bi-shield-check"></i> Safety Features</h4>
             <table class="table table-striped">
               <tbody>
                 <% if (product.upperLimitSwitch) { %>
@@ -524,7 +524,7 @@
         <div class="row mt-4">
           <% if (product.variableSpeedControl) { %>
           <div class="col-md-6">
-            <h4>Speed Control Parameters</h4>
+            <h4 class="section-title"><i class="bi bi-speedometer2"></i> Speed Control Parameters</h4>
             <table class="table table-striped">
               <tbody>
                 <% if (product.variableSpeedControl.minSpeed) { %>
@@ -570,7 +570,7 @@
 
           <% if (product.tuningParameters && Object.keys(product.tuningParameters).length > 0) { %>
           <div class="col-md-6">
-            <h4>Tuning Parameters</h4>
+            <h4 class="section-title"><i class="bi bi-sliders"></i> Tuning Parameters</h4>
             <table class="table table-striped">
               <tbody>
                 <% Object.entries(product.tuningParameters).forEach(function([key, value]) { %>
@@ -592,7 +592,7 @@
         <div class="row mt-4">
           <% if (product.underloadLimit || product.overloadLimit || product.encoderScaling || product.loadcellScaling) { %>
           <div class="col-md-6">
-            <h4>Load & Encoder Parameters</h4>
+            <h4 class="section-title"><i class="bi bi-graph-up"></i> Load & Encoder Parameters</h4>
             <table class="table table-striped">
               <tbody>
                 <% if (product.underloadLimit) { %>
@@ -625,7 +625,7 @@
           <% } %>
           <% if (product.category || product.speedType) { %>
           <div class="col-md-6">
-            <h4>Classification</h4>
+            <h4 class="section-title"><i class="bi bi-tags"></i> Classification</h4>
             <table class="table table-striped">
               <tbody>
                 <% if (product.category) { %>
@@ -675,23 +675,23 @@
 
         <% if (product.url) { %>
           <div class="mt-4">
-            <a href="<%= product.url %>" target="_blank" class="btn btn-outline-primary">
-              <i class="fas fa-external-link-alt"></i> View Original Source
+            <a href="<%= product.url %>" target="_blank" class="btn" style="background: var(--brand-secondary); color: white;">
+              <i class="bi bi-box-arrow-up-right"></i> View Original Source
             </a>
           </div>
         <% } %>
-        
+
         <% if (product.datasheet) { %>
           <div class="mt-2">
-            <a href="<%= product.datasheet %>" target="_blank" class="btn btn-outline-secondary">
-              <i class="fas fa-file-pdf"></i> Download Datasheet
+            <a href="<%= product.datasheet %>" target="_blank" class="btn btn-outline-primary">
+              <i class="bi bi-file-earmark-pdf"></i> Download Datasheet
             </a>
           </div>
         <% } %>
 
         <% if (product.pdfs && product.pdfs.length > 0) { %>
           <div class="mt-4">
-            <h5>Available Documents</h5>
+            <h5 class="section-title"><i class="bi bi-file-earmark-text"></i> Available Documents</h5>
             <div class="list-group">
               <% product.pdfs.forEach(function(pdf) { %>
                 <a href="<%= pdf.url %>" target="_blank" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
@@ -716,7 +716,7 @@
 
         <% if (product.downloadedPDFs && product.downloadedPDFs.length > 0) { %>
           <div class="mt-4">
-            <h5>Downloaded Documents</h5>
+            <h5 class="section-title"><i class="bi bi-download"></i> Downloaded Documents</h5>
             <div class="list-group">
               <% product.downloadedPDFs.forEach(function(pdf) { %>
                 <a href="/media/pdfs/<%= pdf.localPath.split(/[/\\]/).pop() %>" target="_blank" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
@@ -743,9 +743,9 @@
   </div>
   
   <div class="col-md-4">
-    <div class="card">
-      <div class="card-header bg-secondary text-white">
-        <h4 class="mb-0">Similar Products</h4>
+    <div class="card spec-card">
+      <div class="card-header">
+        <h4 class="mb-0"><i class="bi bi-collection"></i> Similar Products</h4>
       </div>
       <div class="card-body">
         <% if (similarProducts.length > 0) { %>
@@ -766,28 +766,29 @@
 </div>
   </div>
 
-  <footer class="bg-dark text-white py-4 mt-5">
+  <footer class="py-4 mt-5" style="background: linear-gradient(135deg, var(--brand-primary) 0%, #2d4a6f 100%);">
     <div class="container">
-      <div class="row">
+      <div class="row text-white">
         <div class="col-md-6">
-          <h5>Entertainment Industry Chainhoist Database</h5>
-          <p class="text-muted">A comprehensive collection of electric chainhoists used in the entertainment industry.</p>
+          <h5><i class="bi bi-link-45deg" style="color: var(--brand-secondary);"></i> ChainhoistDB</h5>
+          <p class="opacity-75">A comprehensive collection of electric chainhoists used in the entertainment industry.</p>
         </div>
         <div class="col-md-3">
           <h5>Quick Links</h5>
           <ul class="list-unstyled">
-            <li><a href="/" class="text-white">Home</a></li>
-            <li><a href="/stats" class="text-white">Statistics</a></li>
-            <li><a href="/search" class="text-white">Search</a></li>
+            <li><a href="/" class="text-white text-decoration-none opacity-75">Home</a></li>
+            <li><a href="/stats" class="text-white text-decoration-none opacity-75">Statistics</a></li>
+            <li><a href="/search" class="text-white text-decoration-none opacity-75">Search</a></li>
+            <li><a href="/downloads" class="text-white text-decoration-none opacity-75">Downloads</a></li>
           </ul>
         </div>
         <div class="col-md-3">
           <h5>Disclaimer</h5>
-          <p class="small text-muted">This database is for informational purposes only. Always consult manufacturer specifications for critical applications.</p>
+          <p class="small opacity-75">This database is for informational purposes only. Always consult manufacturer specifications for critical applications.</p>
         </div>
       </div>
-      <hr>
-      <p class="text-center text-muted mb-0">&copy; <%= new Date().getFullYear() %> Entertainment Industry Chainhoist Database</p>
+      <hr class="opacity-25">
+      <p class="text-center text-white opacity-75 mb-0">&copy; <%= new Date().getFullYear() %> ChainhoistDB</p>
     </div>
   </footer>
 
