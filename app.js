@@ -60,6 +60,10 @@ const cache = {
     byId: new Map(), // Map of id -> item for O(1) product lookups
     byManufacturer: new Map(), // Map of manufacturer -> [items] for similar products
     byClassification: new Map(), // Map of classification -> [items] for filtered lookups
+    // Data quality tier indexes (Phase 2 enhancement)
+    byDataQualityTier: new Map(), // Map of tier -> [items] for quality filtering
+    byCapacityBucket: new Map(), // Map of bucket -> [items] for O(1) capacity filtering
+    bySpeedBucket: new Map(), // Map of bucket -> [items] for O(1) speed filtering
     // Products filtered by data quality
     hasImages: [], // Products with at least 1 image
     hasCompleteSpecs: [], // Products with all critical fields
@@ -70,6 +74,7 @@ const cache = {
     categoryList: [], // Sorted unique categories
     speedTypeList: [], // Sorted unique speed types
     classificationList: [], // Sorted unique classifications
+    dataQualityTierList: [], // Sorted unique data quality tiers
   }
 };
 
@@ -99,6 +104,43 @@ function parseSpeed(item) {
   const value = match ? parseFloat(match[1]) : null;
   cache.indexes.parsedSpeeds.set(item.id, value);
   return value;
+}
+
+// Get capacity bucket name for a given kg value
+function getCapacityBucket(kg) {
+  if (kg === null || kg === undefined) {
+    return null;
+  }
+  if (kg <= 250) {
+    return '≤250 kg';
+  }
+  if (kg <= 500) {
+    return '251-500 kg';
+  }
+  if (kg <= 1000) {
+    return '501-1000 kg';
+  }
+  if (kg <= 2000) {
+    return '1001-2000 kg';
+  }
+  return '>2000 kg';
+}
+
+// Get speed bucket name for a given m/min value
+function getSpeedBucket(mmin) {
+  if (mmin === null || mmin === undefined) {
+    return null;
+  }
+  if (mmin < 2) {
+    return '<2 m/min';
+  }
+  if (mmin < 4) {
+    return '2-4 m/min';
+  }
+  if (mmin < 8) {
+    return '4-8 m/min';
+  }
+  return '≥8 m/min';
 }
 
 // Check if item matches capacity bucket filter (uses cached parsed values)
@@ -173,6 +215,7 @@ function buildIndexes(data) {
   const dutyCycleSet = new Set();
   const categorySet = new Set();
   const speedTypeSet = new Set();
+  const dataQualityTierSet = new Set();
   let minCapacity = Infinity;
   let maxCapacity = -Infinity;
   let hasLoadCapacity = 0;
@@ -186,6 +229,9 @@ function buildIndexes(data) {
   cache.indexes.byId.clear();
   cache.indexes.byManufacturer.clear();
   cache.indexes.byClassification.clear();
+  cache.indexes.byDataQualityTier.clear();
+  cache.indexes.byCapacityBucket.clear();
+  cache.indexes.bySpeedBucket.clear();
   cache.indexes.productCompleteness.clear();
   cache.indexes.hasImages = [];
   cache.indexes.hasCompleteSpecs = [];
@@ -274,6 +320,32 @@ function buildIndexes(data) {
     if (hasCompleteSpecs(item)) {
       cache.indexes.hasCompleteSpecs.push(item);
     }
+
+    // Build byDataQualityTier index (Phase 2)
+    const tier = item.dataQualityTier || 'minimal';
+    dataQualityTierSet.add(tier);
+    if (!cache.indexes.byDataQualityTier.has(tier)) {
+      cache.indexes.byDataQualityTier.set(tier, []);
+    }
+    cache.indexes.byDataQualityTier.get(tier).push(item);
+
+    // Build byCapacityBucket index (Phase 2) - O(1) capacity filtering
+    const capacityBucket = getCapacityBucket(cache.indexes.parsedCapacities.get(item.id));
+    if (capacityBucket) {
+      if (!cache.indexes.byCapacityBucket.has(capacityBucket)) {
+        cache.indexes.byCapacityBucket.set(capacityBucket, []);
+      }
+      cache.indexes.byCapacityBucket.get(capacityBucket).push(item);
+    }
+
+    // Build bySpeedBucket index (Phase 2) - O(1) speed filtering
+    const speedBucket = getSpeedBucket(cache.indexes.parsedSpeeds.get(item.id));
+    if (speedBucket) {
+      if (!cache.indexes.bySpeedBucket.has(speedBucket)) {
+        cache.indexes.bySpeedBucket.set(speedBucket, []);
+      }
+      cache.indexes.bySpeedBucket.get(speedBucket).push(item);
+    }
   });
 
   // Convert maps to sorted arrays
@@ -305,9 +377,15 @@ function buildIndexes(data) {
   cache.indexes.categoryList = Array.from(categorySet).sort();
   cache.indexes.speedTypeList = Array.from(speedTypeSet).sort();
   cache.indexes.classificationList = Array.from(classificationSet).sort();
+  // Sort quality tiers in logical order (best to worst)
+  const tierOrder = ['complete', 'partial', 'incomplete', 'minimal'];
+  cache.indexes.dataQualityTierList = Array.from(dataQualityTierSet)
+    .sort((a, b) => tierOrder.indexOf(a) - tierOrder.indexOf(b));
 
   console.log(`[Cache] Built indexes: ${manufacturerMap.size} manufacturers, ${classificationMap.size} classifications, ${cache.indexes.byId.size} products indexed`);
   console.log(`[Cache] Products with images: ${cache.indexes.hasImages.length}, with complete specs: ${cache.indexes.hasCompleteSpecs.length}`);
+  console.log(`[Cache] Quality tiers: ${Array.from(cache.indexes.byDataQualityTier.entries()).map(([t, items]) => `${t}(${items.length})`).join(', ')}`);
+  console.log(`[Cache] Capacity buckets: ${cache.indexes.byCapacityBucket.size}, Speed buckets: ${cache.indexes.bySpeedBucket.size}`);
 }
 
 // Load data helper with caching and validation
@@ -690,6 +768,149 @@ app.get('/api/quality', (req, res) => {
   }
 });
 
+// GET /api/products/by-quality/:tier - Get products by data quality tier (O(1) lookup)
+app.get('/api/products/by-quality/:tier', (req, res) => {
+  try {
+    loadData(); // Ensure data and indexes are loaded
+    const tier = req.params.tier.toLowerCase();
+    const validTiers = ['complete', 'partial', 'incomplete', 'minimal'];
+
+    if (!validTiers.includes(tier)) {
+      return res.status(400).json({
+        success: false,
+        error: `Invalid tier. Valid values: ${validTiers.join(', ')}`
+      });
+    }
+
+    // O(1) lookup using pre-built index
+    const products = cache.indexes.byDataQualityTier.get(tier) || [];
+
+    // Pagination
+    const page = parseInt(req.query.page) || 1;
+    const limit = parseInt(req.query.limit) || 50;
+    const startIndex = (page - 1) * limit;
+    const paginatedResults = products.slice(startIndex, startIndex + limit);
+
+    res.json({
+      success: true,
+      tier,
+      data: paginatedResults,
+      pagination: {
+        page,
+        limit,
+        total: products.length,
+        pages: Math.ceil(products.length / limit)
+      },
+      tierStats: {
+        complete: cache.indexes.byDataQualityTier.get('complete')?.length || 0,
+        partial: cache.indexes.byDataQualityTier.get('partial')?.length || 0,
+        incomplete: cache.indexes.byDataQualityTier.get('incomplete')?.length || 0,
+        minimal: cache.indexes.byDataQualityTier.get('minimal')?.length || 0
+      }
+    });
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      error: 'Failed to fetch products by quality tier',
+      message: error.message
+    });
+  }
+});
+
+// GET /api/products/by-capacity/:bucket - Get products by capacity bucket (O(1) lookup)
+app.get('/api/products/by-capacity/:bucket', (req, res) => {
+  try {
+    loadData(); // Ensure data and indexes are loaded
+
+    // Decode the bucket parameter (handles URL encoding)
+    const bucket = decodeURIComponent(req.params.bucket);
+    const validBuckets = ['≤250 kg', '251-500 kg', '501-1000 kg', '1001-2000 kg', '>2000 kg'];
+
+    if (!validBuckets.includes(bucket)) {
+      return res.status(400).json({
+        success: false,
+        error: `Invalid bucket. Valid values: ${validBuckets.join(', ')}`
+      });
+    }
+
+    // O(1) lookup using pre-built index
+    const products = cache.indexes.byCapacityBucket.get(bucket) || [];
+
+    // Pagination
+    const page = parseInt(req.query.page) || 1;
+    const limit = parseInt(req.query.limit) || 50;
+    const startIndex = (page - 1) * limit;
+    const paginatedResults = products.slice(startIndex, startIndex + limit);
+
+    res.json({
+      success: true,
+      bucket,
+      data: paginatedResults,
+      pagination: {
+        page,
+        limit,
+        total: products.length,
+        pages: Math.ceil(products.length / limit)
+      },
+      bucketStats: Object.fromEntries(
+        validBuckets.map(b => [b, cache.indexes.byCapacityBucket.get(b)?.length || 0])
+      )
+    });
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      error: 'Failed to fetch products by capacity',
+      message: error.message
+    });
+  }
+});
+
+// GET /api/indexes/stats - Get index statistics for debugging/monitoring
+app.get('/api/indexes/stats', (req, res) => {
+  try {
+    loadData(); // Ensure indexes are built
+
+    res.json({
+      success: true,
+      indexes: {
+        byId: cache.indexes.byId.size,
+        byManufacturer: cache.indexes.byManufacturer.size,
+        byClassification: cache.indexes.byClassification.size,
+        byDataQualityTier: Object.fromEntries(
+          Array.from(cache.indexes.byDataQualityTier.entries())
+            .map(([k, v]) => [k, v.length])
+        ),
+        byCapacityBucket: Object.fromEntries(
+          Array.from(cache.indexes.byCapacityBucket.entries())
+            .map(([k, v]) => [k, v.length])
+        ),
+        bySpeedBucket: Object.fromEntries(
+          Array.from(cache.indexes.bySpeedBucket.entries())
+            .map(([k, v]) => [k, v.length])
+        ),
+        hasImages: cache.indexes.hasImages.length,
+        hasCompleteSpecs: cache.indexes.hasCompleteSpecs.length,
+        parsedCapacities: cache.indexes.parsedCapacities.size,
+        parsedSpeeds: cache.indexes.parsedSpeeds.size
+      },
+      lists: {
+        manufacturers: cache.indexes.manufacturerList.length,
+        classifications: cache.indexes.classificationList.length,
+        categories: cache.indexes.categoryList.length,
+        dutyCycles: cache.indexes.dutyCycleList.length,
+        speedTypes: cache.indexes.speedTypeList.length,
+        dataQualityTiers: cache.indexes.dataQualityTierList.length
+      }
+    });
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      error: 'Failed to fetch index stats',
+      message: error.message
+    });
+  }
+});
+
 // POST /api/search - Advanced search endpoint
 app.post('/api/search', (req, res) => {
   try {
@@ -896,6 +1117,7 @@ app.get('/api/count', (req, res) => {
     const categoryFilter = req.query.category;
     const speedTypeFilter = req.query.speedType;
     const dutyCycleFilter = req.query.dutyCycle;
+    const dataQualityFilter = req.query.dataQuality;
 
     // Single-pass counting with all filters combined
     let count = 0;
@@ -944,6 +1166,29 @@ app.get('/api/count', (req, res) => {
       // Duty cycle filter
       if (dutyCycleFilter && item.dutyCycle !== dutyCycleFilter) {
         continue;
+      }
+
+      // Data quality filter (Phase 2)
+      if (dataQualityFilter) {
+        if (dataQualityFilter === 'complete') {
+          const requiredFields = ['loadCapacity', 'liftingSpeed', 'motorPower'];
+          const hasAllSpecs = requiredFields.every(field => {
+            const value = item[field];
+            return value && value !== '' && value !== '-';
+          });
+          if (!hasAllSpecs) {
+            continue;
+          }
+        } else if (dataQualityFilter === 'hasImages') {
+          if (!item.images || !Array.isArray(item.images) || item.images.length === 0) {
+            continue;
+          }
+        } else if (dataQualityFilter.startsWith('tier-')) {
+          const tier = dataQualityFilter.replace('tier-', '');
+          if (item.dataQualityTier !== tier) {
+            continue;
+          }
+        }
       }
 
       count++;
@@ -1110,10 +1355,55 @@ app.get('/search', (req, res) => {
   const report = loadReport();
   const query = req.query.q?.toLowerCase() || '';
 
-  let results = data;
+  // Phase 2 Optimization: Use pre-built indexes for O(1) initial filtering
+  // when a single indexed filter is applied (significant speedup for large datasets)
+  let results;
+  let usedIndex = false;
 
+  // Check if we can use an index for initial filtering
+  const hasQuery = !!query;
+  const hasManufacturer = !!req.query.manufacturer;
+  const hasCapacity = !!req.query.capacity;
+  const hasClassification = !!req.query.classification;
+  const hasCategory = !!req.query.category;
+  const hasSpeedType = !!req.query.speedType;
+  const hasDutyCycle = !!req.query.dutyCycle;
+  const hasDataQuality = !!req.query.dataQuality;
+  const tierMatch = req.query.dataQuality?.match(/^tier-(\w+)$/);
+
+  // Choose the most selective index to start with (O(1) lookup)
+  if (!hasQuery && hasManufacturer && !hasClassification && !hasCapacity && !tierMatch) {
+    // Use manufacturer index
+    results = [...(cache.indexes.byManufacturer.get(req.query.manufacturer) || [])];
+    usedIndex = 'manufacturer';
+  } else if (!hasQuery && hasClassification && !hasManufacturer && !hasCapacity && !tierMatch) {
+    // Use classification index
+    results = [...(cache.indexes.byClassification.get(req.query.classification.toLowerCase()) || [])];
+    usedIndex = 'classification';
+  } else if (!hasQuery && hasCapacity && !hasManufacturer && !hasClassification && !tierMatch) {
+    // Use capacity bucket index
+    results = [...(cache.indexes.byCapacityBucket.get(req.query.capacity) || [])];
+    usedIndex = 'capacity';
+  } else if (!hasQuery && tierMatch && !hasManufacturer && !hasClassification && !hasCapacity) {
+    // Use data quality tier index
+    results = [...(cache.indexes.byDataQualityTier.get(tierMatch[1]) || [])];
+    usedIndex = 'dataQualityTier';
+  } else if (!hasQuery && hasDataQuality === 'complete' && !hasManufacturer && !hasClassification && !hasCapacity) {
+    // Use hasCompleteSpecs index
+    results = [...cache.indexes.hasCompleteSpecs];
+    usedIndex = 'hasCompleteSpecs';
+  } else if (!hasQuery && hasDataQuality === 'hasImages' && !hasManufacturer && !hasClassification && !hasCapacity) {
+    // Use hasImages index
+    results = [...cache.indexes.hasImages];
+    usedIndex = 'hasImages';
+  } else {
+    // Fall back to full dataset
+    results = [...data];
+  }
+
+  // Apply remaining filters
   if (query) {
-    results = data.filter(item => {
+    results = results.filter(item => {
       return (
         (item.manufacturer?.toLowerCase().includes(query)) ||
         (item.model?.toLowerCase().includes(query)) ||
@@ -1124,16 +1414,16 @@ app.get('/search', (req, res) => {
     });
   }
 
-  if (req.query.manufacturer) {
+  if (req.query.manufacturer && usedIndex !== 'manufacturer') {
     results = results.filter(item => item.manufacturer === req.query.manufacturer);
   }
 
-  if (req.query.capacity) {
+  if (req.query.capacity && usedIndex !== 'capacity') {
     // Use cached parsed capacities via helper function
     results = results.filter(item => matchesCapacityBucket(item, req.query.capacity));
   }
 
-  if (req.query.classification) {
+  if (req.query.classification && usedIndex !== 'classification') {
     results = results.filter(item => {
       return item.classification &&
         Array.isArray(item.classification) &&
@@ -1153,19 +1443,30 @@ app.get('/search', (req, res) => {
     results = results.filter(item => item.dutyCycle === req.query.dutyCycle);
   }
 
-  // Data quality filter
-  if (req.query.dataQuality === 'complete') {
-    results = results.filter(item => {
-      const requiredFields = ['loadCapacity', 'liftingSpeed', 'motorPower'];
-      return requiredFields.every(field => {
-        const value = item[field];
-        return value && value !== '' && value !== '-';
+  // Data quality filter (Phase 2 enhanced) - skip if already handled by index
+  if (req.query.dataQuality && usedIndex !== 'dataQualityTier' &&
+      usedIndex !== 'hasCompleteSpecs' && usedIndex !== 'hasImages') {
+    const qualityFilter = req.query.dataQuality;
+
+    if (qualityFilter === 'complete') {
+      // Has all critical specs
+      results = results.filter(item => {
+        const requiredFields = ['loadCapacity', 'liftingSpeed', 'motorPower'];
+        return requiredFields.every(field => {
+          const value = item[field];
+          return value && value !== '' && value !== '-';
+        });
       });
-    });
-  } else if (req.query.dataQuality === 'hasImages') {
-    results = results.filter(item =>
-      item.images && Array.isArray(item.images) && item.images.length > 0
-    );
+    } else if (qualityFilter === 'hasImages') {
+      // Has at least one image
+      results = results.filter(item =>
+        item.images && Array.isArray(item.images) && item.images.length > 0
+      );
+    } else if (qualityFilter.startsWith('tier-')) {
+      // Filter by data quality tier (uses pre-computed field from data processor)
+      const tier = qualityFilter.replace('tier-', '');
+      results = results.filter(item => item.dataQualityTier === tier);
+    }
   }
 
   // Use cached aggregation lists instead of recomputing on every request

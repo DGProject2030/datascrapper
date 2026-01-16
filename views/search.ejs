@@ -646,14 +646,22 @@
                 <label for="dataQuality" class="form-label"><i class="bi bi-check2-circle"></i> Data Quality</label>
                 <select name="dataQuality" id="dataQuality" class="form-select">
                   <option value="">Any Quality</option>
-                  <option value="complete" <%= filters.dataQuality === 'complete' ? 'selected' : '' %>>Complete Specs Only</option>
-                  <option value="hasImages" <%= filters.dataQuality === 'hasImages' ? 'selected' : '' %>>Has Images</option>
+                  <optgroup label="By Completeness">
+                    <option value="tier-complete" <%= filters.dataQuality === 'tier-complete' ? 'selected' : '' %>>Complete (80%+)</option>
+                    <option value="tier-partial" <%= filters.dataQuality === 'tier-partial' ? 'selected' : '' %>>Partial (60-79%)</option>
+                    <option value="tier-incomplete" <%= filters.dataQuality === 'tier-incomplete' ? 'selected' : '' %>>Incomplete (30-59%)</option>
+                    <option value="tier-minimal" <%= filters.dataQuality === 'tier-minimal' ? 'selected' : '' %>>Minimal (&lt;30%)</option>
+                  </optgroup>
+                  <optgroup label="By Feature">
+                    <option value="complete" <%= filters.dataQuality === 'complete' ? 'selected' : '' %>>Has All Critical Specs</option>
+                    <option value="hasImages" <%= filters.dataQuality === 'hasImages' ? 'selected' : '' %>>Has Images</option>
+                  </optgroup>
                 </select>
               </div>
 
               <div class="col-md-3 d-flex align-items-end gap-2">
                 <button type="submit" id="applyBtn" class="btn flex-grow-1" style="background: var(--brand-secondary); color: white;"><i class="bi bi-funnel me-1"></i>Apply Filters</button>
-                <% const hasFilters = query || filters.manufacturer || filters.capacity || filters.classification || filters.category || filters.speedType || filters.dutyCycle; %>
+                <% const hasFilters = query || filters.manufacturer || filters.capacity || filters.classification || filters.category || filters.speedType || filters.dutyCycle || filters.dataQuality; %>
                 <a href="/search" class="btn btn-outline-secondary <%= !hasFilters ? 'disabled' : '' %>" title="Clear all filters">Clear</a>
               </div>
             </form>
@@ -673,6 +681,7 @@
         if (filters.category && excludeFilter !== 'category') params.set('category', filters.category);
         if (filters.speedType && excludeFilter !== 'speedType') params.set('speedType', filters.speedType);
         if (filters.dutyCycle && excludeFilter !== 'dutyCycle') params.set('dutyCycle', filters.dutyCycle);
+        if (filters.dataQuality && excludeFilter !== 'dataQuality') params.set('dataQuality', filters.dataQuality);
         if (sort.by) {
           params.set('sortBy', sort.by);
           params.set('sortOrder', sort.order);
@@ -689,6 +698,17 @@
       if (filters.category) activeFilters.push({ key: 'category', label: 'Category', value: filters.category });
       if (filters.speedType) activeFilters.push({ key: 'speedType', label: 'Speed Type', value: filters.speedType });
       if (filters.dutyCycle) activeFilters.push({ key: 'dutyCycle', label: 'Duty Cycle', value: filters.dutyCycle });
+      if (filters.dataQuality) {
+        const qualityLabels = {
+          'tier-complete': 'Complete (80%+)',
+          'tier-partial': 'Partial (60-79%)',
+          'tier-incomplete': 'Incomplete (30-59%)',
+          'tier-minimal': 'Minimal (<30%)',
+          'complete': 'Has All Critical Specs',
+          'hasImages': 'Has Images'
+        };
+        activeFilters.push({ key: 'dataQuality', label: 'Data Quality', value: qualityLabels[filters.dataQuality] || filters.dataQuality });
+      }
     %>
 
     <% if (activeFilters.length > 0) { %>
