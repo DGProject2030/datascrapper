@@ -14,6 +14,7 @@ const CONFIG = {
   reportFile: 'data_quality_report.json',
   personalityDir: 'chainhoist_data',
   personalityFile: 'personality_enriched.json',
+  cacheTTL: 5 * 60 * 1000, // 5 minutes cache TTL
 };
 
 // Set up templating engine
@@ -26,40 +27,207 @@ app.use('/media', express.static(path.join(__dirname, 'chainhoist_data', 'media'
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-// Load data helper
+// ============ CACHING LAYER ============
+const cache = {
+  data: null,
+  dataTime: 0,
+  report: null,
+  reportTime: 0,
+  personality: null,
+  personalityTime: 0,
+  // Pre-computed indexes (rebuilt when data cache refreshes)
+  indexes: {
+    manufacturerStats: null,
+    classificationStats: null,
+    capacityRange: null,
+    dataCompleteness: null,
+    parsedCapacities: new Map(), // Map of id -> parsed capacity in kg
+    parsedSpeeds: new Map(), // Map of id -> parsed speed in m/min
+  }
+};
+
+// Parse capacity string to numeric kg value (cached)
+function parseCapacity(item) {
+  if (!item.loadCapacity) {
+    return null;
+  }
+  if (cache.indexes.parsedCapacities.has(item.id)) {
+    return cache.indexes.parsedCapacities.get(item.id);
+  }
+  const match = item.loadCapacity.match(/(\d+(?:\.\d+)?)\s*kg/i);
+  const value = match ? parseFloat(match[1]) : null;
+  cache.indexes.parsedCapacities.set(item.id, value);
+  return value;
+}
+
+// Parse speed string to numeric m/min value (cached)
+function parseSpeed(item) {
+  if (!item.liftingSpeed) {
+    return null;
+  }
+  if (cache.indexes.parsedSpeeds.has(item.id)) {
+    return cache.indexes.parsedSpeeds.get(item.id);
+  }
+  const match = item.liftingSpeed.match(/(\d+(?:\.\d+)?)\s*m/i);
+  const value = match ? parseFloat(match[1]) : null;
+  cache.indexes.parsedSpeeds.set(item.id, value);
+  return value;
+}
+
+// Build indexes from data (O(n) single pass)
+function buildIndexes(data) {
+  const manufacturerMap = new Map();
+  const classificationMap = new Map();
+  let minCapacity = Infinity;
+  let maxCapacity = -Infinity;
+  let hasLoadCapacity = 0;
+  let hasLiftingSpeed = 0;
+  let hasMotorPower = 0;
+  let hasClassification = 0;
+
+  // Clear parsed value caches
+  cache.indexes.parsedCapacities.clear();
+  cache.indexes.parsedSpeeds.clear();
+
+  // Single pass through data
+  data.forEach(item => {
+    // Manufacturer stats
+    if (!manufacturerMap.has(item.manufacturer)) {
+      manufacturerMap.set(item.manufacturer, { count: 0, models: new Set() });
+    }
+    const mfrStats = manufacturerMap.get(item.manufacturer);
+    mfrStats.count++;
+    if (item.model) {
+      mfrStats.models.add(item.model);
+    }
+
+    // Classification stats
+    if (item.classification && Array.isArray(item.classification)) {
+      hasClassification++;
+      item.classification.forEach(cls => {
+        classificationMap.set(cls, (classificationMap.get(cls) || 0) + 1);
+      });
+    }
+
+    // Capacity range (and cache parsed value)
+    const capacity = parseCapacity(item);
+    if (capacity !== null) {
+      hasLoadCapacity++;
+      if (capacity < minCapacity) {
+        minCapacity = capacity;
+      }
+      if (capacity > maxCapacity) {
+        maxCapacity = capacity;
+      }
+    }
+
+    // Parse and cache speed
+    parseSpeed(item);
+
+    // Data completeness
+    if (item.liftingSpeed) {
+      hasLiftingSpeed++;
+    }
+    if (item.motorPower) {
+      hasMotorPower++;
+    }
+  });
+
+  // Convert maps to sorted arrays
+  cache.indexes.manufacturerStats = Array.from(manufacturerMap.entries())
+    .map(([name, stats]) => ({ name, count: stats.count, models: stats.models.size }))
+    .sort((a, b) => a.name.localeCompare(b.name));
+
+  cache.indexes.classificationStats = Array.from(classificationMap.entries())
+    .map(([name, count]) => ({ name, count }))
+    .sort((a, b) => b.count - a.count);
+
+  cache.indexes.capacityRange = {
+    min: minCapacity === Infinity ? 0 : minCapacity,
+    max: maxCapacity === -Infinity ? 0 : maxCapacity
+  };
+
+  cache.indexes.dataCompleteness = {
+    loadCapacity: data.length > 0 ? hasLoadCapacity / data.length : 0,
+    liftingSpeed: data.length > 0 ? hasLiftingSpeed / data.length : 0,
+    motorPower: data.length > 0 ? hasMotorPower / data.length : 0,
+    classification: data.length > 0 ? hasClassification / data.length : 0
+  };
+
+  console.log(`[Cache] Built indexes: ${manufacturerMap.size} manufacturers, ${classificationMap.size} classifications`);
+}
+
+// Load data helper with caching
 function loadData() {
+  const now = Date.now();
+  if (cache.data && (now - cache.dataTime) < CONFIG.cacheTTL) {
+    return cache.data;
+  }
+
   try {
     const dataPath = path.join(__dirname, CONFIG.dataDir, CONFIG.dataFile);
     const data = JSON.parse(fs.readFileSync(dataPath, 'utf8'));
+    cache.data = data;
+    cache.dataTime = now;
+
+    // Rebuild indexes when data is refreshed
+    buildIndexes(data);
+    console.log(`[Cache] Loaded ${data.length} records, cache valid for ${CONFIG.cacheTTL / 1000}s`);
+
     return data;
   } catch (error) {
     console.error('Error loading data:', error);
-    return [];
+    return cache.data || [];
   }
 }
 
-// Load report helper
+// Load report helper with caching
 function loadReport() {
+  const now = Date.now();
+  if (cache.report && (now - cache.reportTime) < CONFIG.cacheTTL) {
+    return cache.report;
+  }
+
   try {
     const reportPath = path.join(__dirname, CONFIG.dataDir, CONFIG.reportFile);
     const report = JSON.parse(fs.readFileSync(reportPath, 'utf8'));
+    cache.report = report;
+    cache.reportTime = now;
     return report;
   } catch (error) {
     console.error('Error loading report:', error);
-    return { totalRecords: 0 };
+    return cache.report || { totalRecords: 0 };
   }
 }
 
-// Load personality data helper
+// Load personality data helper with caching
 function loadPersonalityData() {
+  const now = Date.now();
+  if (cache.personality && (now - cache.personalityTime) < CONFIG.cacheTTL) {
+    return cache.personality;
+  }
+
   try {
     const dataPath = path.join(__dirname, CONFIG.personalityDir, CONFIG.personalityFile);
     const data = JSON.parse(fs.readFileSync(dataPath, 'utf8'));
+    cache.personality = data;
+    cache.personalityTime = now;
     return data;
   } catch (error) {
     console.error('Error loading personality data:', error);
-    return { products: [], totalProducts: 0, manufacturers: 0 };
+    return cache.personality || { products: [], totalProducts: 0, manufacturers: 0 };
   }
+}
+
+// Invalidate cache (call after data updates)
+function invalidateCache() {
+  cache.data = null;
+  cache.dataTime = 0;
+  cache.report = null;
+  cache.reportTime = 0;
+  cache.personality = null;
+  cache.personalityTime = 0;
+  console.log('[Cache] Invalidated all caches');
 }
 
 // ============ API Routes ============
@@ -151,22 +319,16 @@ app.get('/api/chainhoists', (req, res) => {
     if (req.query.minCapacity) {
       const minCap = parseFloat(req.query.minCapacity);
       results = results.filter(item => {
-        if (!item.loadCapacity) {
-          return false;
-        }
-        const match = item.loadCapacity.match(/(\d+(?:\.\d+)?)\s*kg/i);
-        return match && parseFloat(match[1]) >= minCap;
+        const capacity = parseCapacity(item);
+        return capacity !== null && capacity >= minCap;
       });
     }
 
     if (req.query.maxCapacity) {
       const maxCap = parseFloat(req.query.maxCapacity);
       results = results.filter(item => {
-        if (!item.loadCapacity) {
-          return false;
-        }
-        const match = item.loadCapacity.match(/(\d+(?:\.\d+)?)\s*kg/i);
-        return match && parseFloat(match[1]) <= maxCap;
+        const capacity = parseCapacity(item);
+        return capacity !== null && capacity <= maxCap;
       });
     }
 
@@ -223,24 +385,16 @@ app.get('/api/chainhoists/:id', (req, res) => {
   }
 });
 
-// GET /api/manufacturers - Get all manufacturers
+// GET /api/manufacturers - Get all manufacturers (uses pre-computed index)
 app.get('/api/manufacturers', (req, res) => {
   try {
-    const data = loadData();
-    const manufacturers = [...new Set(data.map(item => item.manufacturer))].sort();
+    // Ensure data is loaded and indexes are built
+    loadData();
 
-    const manufacturerStats = manufacturers.map(manufacturer => ({
-      name: manufacturer,
-      count: data.filter(item => item.manufacturer === manufacturer).length,
-      models: [...new Set(data
-        .filter(item => item.manufacturer === manufacturer)
-        .map(item => item.model)
-      )].length
-    }));
-
+    // Return pre-computed manufacturer stats (O(1) instead of O(n²))
     res.json({
       success: true,
-      data: manufacturerStats
+      data: cache.indexes.manufacturerStats || []
     });
   } catch (error) {
     res.status(500).json({
@@ -251,27 +405,16 @@ app.get('/api/manufacturers', (req, res) => {
   }
 });
 
-// GET /api/classifications - Get all classifications
+// GET /api/classifications - Get all classifications (uses pre-computed index)
 app.get('/api/classifications', (req, res) => {
   try {
-    const data = loadData();
-    const classifications = {};
+    // Ensure data is loaded and indexes are built
+    loadData();
 
-    data.forEach(item => {
-      if (item.classification && Array.isArray(item.classification)) {
-        item.classification.forEach(cls => {
-          classifications[cls] = (classifications[cls] || 0) + 1;
-        });
-      }
-    });
-
-    const classificationStats = Object.entries(classifications)
-      .map(([name, count]) => ({ name, count }))
-      .sort((a, b) => b.count - a.count);
-
+    // Return pre-computed classification stats (O(1) instead of O(n))
     res.json({
       success: true,
-      data: classificationStats
+      data: cache.indexes.classificationStats || []
     });
   } catch (error) {
     res.status(500).json({
@@ -282,38 +425,26 @@ app.get('/api/classifications', (req, res) => {
   }
 });
 
-// GET /api/stats - Get database statistics
+// GET /api/stats - Get database statistics (uses pre-computed indexes)
 app.get('/api/stats', (req, res) => {
   try {
     const data = loadData();
     const report = loadReport();
 
+    // Use pre-computed indexes instead of multiple scans (O(1) instead of O(n*5))
     const stats = {
       totalRecords: data.length,
-      manufacturers: [...new Set(data.map(item => item.manufacturer))].length,
-      classifications: Object.keys(report.classificationDistribution || {}).length,
-      capacityRange: {
-        min: Math.min(...data
-          .map(item => {
-            const match = item.loadCapacity?.match(/(\d+(?:\.\d+)?)\s*kg/i);
-            return match ? parseFloat(match[1]) : Infinity;
-          })
-          .filter(val => val !== Infinity)
-        ),
-        max: Math.max(...data
-          .map(item => {
-            const match = item.loadCapacity?.match(/(\d+(?:\.\d+)?)\s*kg/i);
-            return match ? parseFloat(match[1]) : -Infinity;
-          })
-          .filter(val => val !== -Infinity)
-        )
-      },
-      lastUpdated: Math.max(...data.map(item => new Date(item.lastUpdated).getTime())),
-      dataCompleteness: {
-        loadCapacity: data.filter(item => item.loadCapacity).length / data.length,
-        liftingSpeed: data.filter(item => item.liftingSpeed).length / data.length,
-        motorPower: data.filter(item => item.motorPower).length / data.length,
-        classification: data.filter(item => item.classification?.length > 0).length / data.length
+      manufacturers: cache.indexes.manufacturerStats?.length || 0,
+      classifications: cache.indexes.classificationStats?.length || 0,
+      capacityRange: cache.indexes.capacityRange || { min: 0, max: 0 },
+      lastUpdated: data.length > 0
+        ? Math.max(...data.map(item => new Date(item.lastUpdated).getTime()))
+        : Date.now(),
+      dataCompleteness: cache.indexes.dataCompleteness || {
+        loadCapacity: 0,
+        liftingSpeed: 0,
+        motorPower: 0,
+        classification: 0
       }
     };
 
@@ -352,14 +483,10 @@ app.post('/api/search', (req, res) => {
     if (searchCriteria.capacityRange) {
       const { min, max } = searchCriteria.capacityRange;
       results = results.filter(item => {
-        if (!item.loadCapacity) {
+        const capacity = parseCapacity(item);
+        if (capacity === null) {
           return false;
         }
-        const match = item.loadCapacity.match(/(\d+(?:\.\d+)?)\s*kg/i);
-        if (!match) {
-          return false;
-        }
-        const capacity = parseFloat(match[1]);
         return (min === undefined || capacity >= min) &&
                (max === undefined || capacity <= max);
       });
@@ -386,20 +513,24 @@ app.post('/api/search', (req, res) => {
       const sortOrder = searchCriteria.sortOrder || 'asc';
 
       results.sort((a, b) => {
-        let aVal = a[sortBy];
-        let bVal = b[sortBy];
+        let aVal, bVal;
 
-        if (sortBy === 'loadCapacity') {
-          const aMatch = aVal?.match(/(\d+(?:\.\d+)?)\s*kg/i);
-          const bMatch = bVal?.match(/(\d+(?:\.\d+)?)\s*kg/i);
-          aVal = aMatch ? parseFloat(aMatch[1]) : 0;
-          bVal = bMatch ? parseFloat(bMatch[1]) : 0;
+        // Use cached parsed values for numeric fields (avoids regex on every comparison)
+        if (sortBy === 'loadCapacity' || sortBy === 'capacity') {
+          aVal = parseCapacity(a) || 0;
+          bVal = parseCapacity(b) || 0;
+        } else if (sortBy === 'liftingSpeed' || sortBy === 'speed') {
+          aVal = parseSpeed(a) || 0;
+          bVal = parseSpeed(b) || 0;
+        } else {
+          aVal = a[sortBy] || '';
+          bVal = b[sortBy] || '';
         }
 
         if (sortOrder === 'desc') {
-          return bVal > aVal ? 1 : -1;
+          return bVal > aVal ? 1 : bVal < aVal ? -1 : 0;
         }
-        return aVal > bVal ? 1 : -1;
+        return aVal > bVal ? 1 : aVal < bVal ? -1 : 0;
       });
     }
 
