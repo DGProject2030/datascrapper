@@ -1,57 +1,57 @@
 {
-  "totalRecords": 432,
-  "processedRecords": 260,
+  "totalRecords": 457,
+  "processedRecords": 457,
   "skippedRecords": 0,
   "missingDataFields": {
     "loadCapacity": {
-      "count": 212,
-      "percentage": "81.5%"
+      "count": 404,
+      "percentage": "88.4%"
     },
     "liftingSpeed": {
-      "count": 212,
-      "percentage": "81.5%"
+      "count": 409,
+      "percentage": "89.5%"
     },
     "motorPower": {
-      "count": 256,
-      "percentage": "98.5%"
+      "count": 446,
+      "percentage": "97.6%"
     }
   },
   "manufacturerStats": {
     "Columbus McKinnon": 193,
     "Konecranes": 2,
-    "Demag": 2,
-    "Harrington Hoists": 2,
-    "ABUS Kransysteme": 2,
-    "GIS AG": 1,
+    "Demag": 13,
+    "Harrington Hoists": 3,
+    "ABUS Kransysteme": 21,
+    "GIS AG": 4,
     "Verlinde": 2,
     "Chainmaster": 2,
     "Movecat": 2,
-    "Kito": 2,
-    "Hitachi Industrial Equipment": 1,
+    "Kito": 6,
+    "Hitachi Industrial Equipment": 5,
     "Donati Sollevamenti": 5,
     "PLANETA-Hebetechnik": 10,
     "Gorbel": 7,
-    "Yale Hoists": 3,
+    "Yale Hoists": 13,
     "Ingersoll Rand": 2,
-    "Coffing Hoists": 2,
-    "Budgit Hoists": 2,
-    "R&M Materials Handling": 2,
-    "Street Crane": 2,
-    "SWF Krantechnik": 2,
+    "Coffing Hoists": 12,
+    "Budgit Hoists": 12,
+    "R&M Materials Handling": 10,
+    "Street Crane": 9,
+    "SWF Krantechnik": 7,
     "JDN Monocrane": 2,
-    "Elephant Lifting Products": 2,
-    "LiftingSafety": 1,
-    "Tiger Lifting": 2,
-    "Stahl CraneSystems": 1,
+    "Elephant Lifting Products": 12,
+    "LiftingSafety": 10,
+    "Tiger Lifting": 62,
+    "Stahl CraneSystems": 11,
     "Nitchi": 2,
-    "TXK": 2
+    "TXK": 8,
+    "J.D. Neuhaus": 10
   },
   "capacityDistribution": {
-    "≤250 kg": 304,
-    "251-500 kg": 37,
-    "501-1000 kg": 31,
-    "1001-2000 kg": 25,
-    ">2000 kg": 35
+    "501-1000 kg": 4,
+    "251-500 kg": 3,
+    ">2000 kg": 32,
+    "1001-2000 kg": 9
   },
   "classificationDistribution": {
     "d8": 23,
@@ -62,24 +62,5 @@
     "atex": 2,
     "ce": 2
   },
-  "processingErrors": [],
-  "categoryDistribution": {
-    "Unknown": 260,
-    "Electric Chain Hoist": 130,
-    "Winch": 21,
-    "Beam Trolley": 13,
-    "Flying System": 1,
-    "Revolve/Turntable": 7
-  },
-  "speedTypeDistribution": {
-    "Unknown": 327,
-    "Variable Speed": 85,
-    "Fixed Speed": 20
-  },
-  "sourceDistribution": {
-    "web": 260,
-    "personality": 172
-  },
-  "personalityProducts": 172,
-  "lastMerged": "2026-01-15T22:50:20.008Z"
+  "processingErrors": []
 }
