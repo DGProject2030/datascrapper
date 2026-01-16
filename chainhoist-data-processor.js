@@ -252,9 +252,135 @@ class ChainhoistDataProcessor {
     // Calculate missing data statistics
     this.calculateMissingDataStats();
 
+    // Run quality gates check
+    const gateResults = this.checkQualityGates();
+    this.report.qualityGates = gateResults;
+
     console.log(`Processed ${this.report.processedRecords} records successfully`);
     console.log(`Skipped ${this.report.skippedRecords} records due to errors or insufficient data`);
     console.log(`Mapped ${this.report.localImagesMapped} local images to products`);
+
+    // Report quality gate status
+    console.log('\n--- Quality Gates ---');
+    gateResults.gates.forEach(gate => {
+      const status = gate.passed ? '✓' : '✗';
+      console.log(`  ${status} ${gate.name}: ${gate.actual} (threshold: ${gate.threshold})`);
+    });
+    console.log(`\n${gateResults.summary}`);
+
+    // If quality gates fail, issue warning but continue (degraded operation)
+    if (!gateResults.passed) {
+      console.warn('\n⚠️  WARNING: Quality gates failed. Data quality is below acceptable thresholds.');
+      console.warn('   Review the data and consider enrichment before production use.\n');
+    }
+  }
+
+  // Check quality gates for processed data
+  checkQualityGates() {
+    const total = this.processedData.length;
+    const results = {
+      passed: true,
+      failedGates: [],
+      passedGates: [],
+      gates: [],
+      summary: '',
+    };
+
+    // Define quality thresholds
+    const thresholds = {
+      minRecords: 10,
+      maxMissingCapacity: 80,      // Max 80% missing
+      maxMissingSpeed: 85,         // Max 85% missing
+      maxMissingPower: 95,         // Max 95% missing
+      maxMissingClassification: 50, // Max 50% missing
+      minSourceTracking: 90,       // At least 90% must have source
+    };
+
+    // Helper to add gate result
+    const addGate = (name, threshold, actual, passed, message) => {
+      const gate = { name, threshold, actual, passed, message };
+      results.gates.push(gate);
+      if (passed) {
+        results.passedGates.push(gate);
+      } else {
+        results.failedGates.push(gate);
+        results.passed = false;
+      }
+    };
+
+    // Gate 1: Minimum records
+    addGate(
+      'Minimum Records',
+      `≥${thresholds.minRecords}`,
+      total,
+      total >= thresholds.minRecords,
+      `Database has ${total} records`
+    );
+
+    // Count missing fields
+    const missingCounts = {
+      loadCapacity: 0,
+      liftingSpeed: 0,
+      motorPower: 0,
+      classification: 0,
+      source: 0,
+    };
+
+    this.processedData.forEach(item => {
+      if (!this.hasValidValue(item.loadCapacity)) {
+        missingCounts.loadCapacity++;
+      }
+      if (!this.hasValidValue(item.liftingSpeed)) {
+        missingCounts.liftingSpeed++;
+      }
+      if (!this.hasValidValue(item.motorPower)) {
+        missingCounts.motorPower++;
+      }
+      if (!item.classification || item.classification.length === 0) {
+        missingCounts.classification++;
+      }
+      if (!item.source || item.source === 'unknown') {
+        missingCounts.source++;
+      }
+    });
+
+    // Gate 2-5: Missing critical fields
+    const fieldGates = [
+      { field: 'loadCapacity', name: 'Load Capacity', max: thresholds.maxMissingCapacity },
+      { field: 'liftingSpeed', name: 'Lifting Speed', max: thresholds.maxMissingSpeed },
+      { field: 'motorPower', name: 'Motor Power', max: thresholds.maxMissingPower },
+      { field: 'classification', name: 'Classification', max: thresholds.maxMissingClassification },
+    ];
+
+    fieldGates.forEach(({ field, name, max }) => {
+      const missingPercent = (missingCounts[field] / total) * 100;
+      addGate(
+        `Missing ${name}`,
+        `≤${max}%`,
+        `${missingPercent.toFixed(1)}%`,
+        missingPercent <= max,
+        `${missingCounts[field]} of ${total} records missing ${field}`
+      );
+    });
+
+    // Gate 6: Source tracking
+    const sourcePercent = ((total - missingCounts.source) / total) * 100;
+    addGate(
+      'Source Tracking',
+      `≥${thresholds.minSourceTracking}%`,
+      `${sourcePercent.toFixed(1)}%`,
+      sourcePercent >= thresholds.minSourceTracking,
+      `${total - missingCounts.source} of ${total} records have source tracking`
+    );
+
+    // Generate summary
+    if (results.passed) {
+      results.summary = `✓ PASSED: All ${results.gates.length} quality gates passed`;
+    } else {
+      results.summary = `✗ FAILED: ${results.failedGates.length} of ${results.gates.length} gates failed`;
+    }
+
+    return results;
   }
 
   // Process a single record
@@ -324,10 +450,54 @@ class ChainhoistDataProcessor {
     // Add additional metadata
     processed.processedDate = new Date();
 
+    // Ensure source tracking fields are populated
+    this.ensureSourceTracking(processed, record);
+
     // Map local images to product
     this.mapLocalImages(processed);
 
     return processed;
+  }
+
+  // Ensure all records have proper source tracking
+  ensureSourceTracking(processed, original) {
+    // Set source if not already present
+    if (!processed.source) {
+      if (original._manuallyCreated) {
+        processed.source = 'manual';
+      } else if (original.llmEnriched) {
+        processed.source = 'llm_enriched';
+      } else if (original.scrapedFrom || original.sourceUrl || original.url) {
+        processed.source = 'scraped';
+      } else {
+        processed.source = 'unknown';
+      }
+    }
+
+    // Ensure sourceUrl is set
+    if (!processed.sourceUrl) {
+      processed.sourceUrl = original.scrapedFrom || original.url || null;
+    }
+
+    // Set processedAt timestamp
+    processed.processedAt = new Date().toISOString();
+
+    // Calculate and set data quality tier
+    const completeness = processed.dataCompleteness || 0;
+    if (completeness >= 80) {
+      processed.dataQualityTier = 'complete';
+    } else if (completeness >= 60) {
+      processed.dataQualityTier = 'partial';
+    } else if (completeness >= 30) {
+      processed.dataQualityTier = 'incomplete';
+    } else {
+      processed.dataQualityTier = 'minimal';
+    }
+
+    // Track which fields have data
+    const criticalFields = ['loadCapacity', 'liftingSpeed', 'motorPower', 'classification'];
+    processed.populatedFields = criticalFields.filter(f => this.hasValidValue(processed[f]));
+    processed.missingFields = criticalFields.filter(f => !this.hasValidValue(processed[f]));
   }
 
   // Map local images to a product

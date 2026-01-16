@@ -26,7 +26,18 @@
     "speedMMin": 4,
     "dataCompleteness": 64,
     "hasCompleteSpecs": true,
-    "processedDate": "2026-01-16T15:11:11.101Z"
+    "processedDate": "2026-01-16T15:44:26.255Z",
+    "source": "scraped",
+    "sourceUrl": "https://www.columbusmckinnon.com",
+    "processedAt": "2026-01-16T15:44:26.255Z",
+    "dataQualityTier": "partial",
+    "populatedFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ],
+    "missingFields": []
   },
   {
     "manufacturer": "Columbus McKinnon",
@@ -55,7 +66,18 @@
     "speedMMin": 8,
     "dataCompleteness": 64,
     "hasCompleteSpecs": true,
-    "processedDate": "2026-01-16T15:11:11.102Z"
+    "processedDate": "2026-01-16T15:44:26.256Z",
+    "source": "scraped",
+    "sourceUrl": "https://www.columbusmckinnon.com",
+    "processedAt": "2026-01-16T15:44:26.256Z",
+    "dataQualityTier": "partial",
+    "populatedFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ],
+    "missingFields": []
   },
   {
     "manufacturer": "Columbus McKinnon",
@@ -190,7 +212,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.102Z"
+    "processedDate": "2026-01-16T15:44:26.256Z",
+    "source": "llm_enriched",
+    "sourceUrl": "https://www.columbusmckinnon.com/en-de/products/hoisting--lifting-equipment/manual-hoists/lever-hoists/",
+    "processedAt": "2026-01-16T15:44:26.256Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Columbus McKinnon",
@@ -239,7 +272,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.102Z"
+    "processedDate": "2026-01-16T15:44:26.256Z",
+    "source": "llm_enriched",
+    "sourceUrl": "https://www.columbusmckinnon.com/en-de/products/hoisting--lifting-equipment/electric-and-air-hoists/electric-wire-rope-hoists/",
+    "processedAt": "2026-01-16T15:44:26.256Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Columbus McKinnon",
@@ -288,7 +332,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.102Z"
+    "processedDate": "2026-01-16T15:44:26.256Z",
+    "source": "llm_enriched",
+    "sourceUrl": "https://www.columbusmckinnon.com/en-de/products/hoisting--lifting-equipment/manual-hoists/hand-chain-hoists/",
+    "processedAt": "2026-01-16T15:44:26.256Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Columbus McKinnon",
@@ -337,7 +392,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.102Z"
+    "processedDate": "2026-01-16T15:44:26.256Z",
+    "source": "llm_enriched",
+    "sourceUrl": "https://www.columbusmckinnon.com/en-de/products/hoisting--lifting-equipment/manual-hoists/explosion-proof-hand-chain-hoists/",
+    "processedAt": "2026-01-16T15:44:26.256Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Columbus McKinnon",
@@ -386,7 +452,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.102Z"
+    "processedDate": "2026-01-16T15:44:26.256Z",
+    "source": "llm_enriched",
+    "sourceUrl": "https://www.columbusmckinnon.com/en-de/products/hoisting--lifting-equipment/manual-hoists/explosion-proof-ratchet-lever-hoists/",
+    "processedAt": "2026-01-16T15:44:26.256Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Columbus McKinnon",
@@ -435,7 +512,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.102Z"
+    "processedDate": "2026-01-16T15:44:26.256Z",
+    "source": "llm_enriched",
+    "sourceUrl": "https://www.columbusmckinnon.com/en-de/products/hoisting--lifting-equipment/electric-and-air-hoists/explosion-proof-electric-chain-hoists/",
+    "processedAt": "2026-01-16T15:44:26.256Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "model": "CLX",
@@ -464,7 +552,19 @@
     "speedMMin": 8,
     "dataCompleteness": 50,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.102Z"
+    "processedDate": "2026-01-16T15:44:26.256Z",
+    "source": "scraped",
+    "sourceUrl": "known-data",
+    "processedAt": "2026-01-16T15:44:26.256Z",
+    "dataQualityTier": "incomplete",
+    "populatedFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "classification"
+    ],
+    "missingFields": [
+      "motorPower"
+    ]
   },
   {
     "model": "SLX",
@@ -493,7 +593,19 @@
     "speedMMin": 24,
     "dataCompleteness": 50,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.102Z"
+    "processedDate": "2026-01-16T15:44:26.256Z",
+    "source": "scraped",
+    "sourceUrl": "known-data",
+    "processedAt": "2026-01-16T15:44:26.256Z",
+    "dataQualityTier": "incomplete",
+    "populatedFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "classification"
+    ],
+    "missingFields": [
+      "motorPower"
+    ]
   },
   {
     "model": "DC-Pro",
@@ -522,7 +634,19 @@
     "speedMMin": 20,
     "dataCompleteness": 50,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.102Z",
+    "processedDate": "2026-01-16T15:44:26.256Z",
+    "source": "scraped",
+    "sourceUrl": "known-data",
+    "processedAt": "2026-01-16T15:44:26.256Z",
+    "dataQualityTier": "incomplete",
+    "populatedFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "classification"
+    ],
+    "missingFields": [
+      "motorPower"
+    ],
     "images": [
       {
         "url": "/media/images/demag_dc-pro_0.webp",
@@ -573,7 +697,19 @@
     "speedMMin": 12,
     "dataCompleteness": 50,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.102Z",
+    "processedDate": "2026-01-16T15:44:26.256Z",
+    "source": "scraped",
+    "sourceUrl": "known-data",
+    "processedAt": "2026-01-16T15:44:26.256Z",
+    "dataQualityTier": "incomplete",
+    "populatedFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "classification"
+    ],
+    "missingFields": [
+      "motorPower"
+    ],
     "images": [
       {
         "url": "/media/images/demag_dc-com_0.webp",
@@ -609,7 +745,19 @@
     "speedMMin": 16,
     "dataCompleteness": 50,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.102Z"
+    "processedDate": "2026-01-16T15:44:26.256Z",
+    "source": "scraped",
+    "sourceUrl": "known-data",
+    "processedAt": "2026-01-16T15:44:26.256Z",
+    "dataQualityTier": "incomplete",
+    "populatedFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "classification"
+    ],
+    "missingFields": [
+      "motorPower"
+    ]
   },
   {
     "model": "SNER",
@@ -638,7 +786,19 @@
     "speedMMin": 8,
     "dataCompleteness": 50,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.102Z"
+    "processedDate": "2026-01-16T15:44:26.256Z",
+    "source": "scraped",
+    "sourceUrl": "known-data",
+    "processedAt": "2026-01-16T15:44:26.256Z",
+    "dataQualityTier": "incomplete",
+    "populatedFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "classification"
+    ],
+    "missingFields": [
+      "motorPower"
+    ]
   },
   {
     "model": "GM4",
@@ -667,7 +827,19 @@
     "speedMMin": 12,
     "dataCompleteness": 50,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.102Z",
+    "processedDate": "2026-01-16T15:44:26.256Z",
+    "source": "scraped",
+    "sourceUrl": "known-data",
+    "processedAt": "2026-01-16T15:44:26.256Z",
+    "dataQualityTier": "incomplete",
+    "populatedFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "classification"
+    ],
+    "missingFields": [
+      "motorPower"
+    ],
     "images": [
       {
         "url": "/media/images/abus-kransysteme_abucompact-gm4_0.png",
@@ -733,7 +905,19 @@
     "speedMMin": 4,
     "dataCompleteness": 50,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.103Z",
+    "processedDate": "2026-01-16T15:44:26.256Z",
+    "source": "scraped",
+    "sourceUrl": "known-data",
+    "processedAt": "2026-01-16T15:44:26.256Z",
+    "dataQualityTier": "incomplete",
+    "populatedFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "classification"
+    ],
+    "missingFields": [
+      "motorPower"
+    ],
     "images": [
       {
         "url": "/media/images/abus-kransysteme_abucompact-gm6_0.png",
@@ -799,7 +983,19 @@
     "speedMMin": 16,
     "dataCompleteness": 50,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.103Z"
+    "processedDate": "2026-01-16T15:44:26.257Z",
+    "source": "scraped",
+    "sourceUrl": "known-data",
+    "processedAt": "2026-01-16T15:44:26.257Z",
+    "dataQualityTier": "incomplete",
+    "populatedFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "classification"
+    ],
+    "missingFields": [
+      "motorPower"
+    ]
   },
   {
     "model": "Stagemaker SR",
@@ -829,7 +1025,19 @@
     "speedMMin": 24,
     "dataCompleteness": 50,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.103Z"
+    "processedDate": "2026-01-16T15:44:26.257Z",
+    "source": "scraped",
+    "sourceUrl": "known-data",
+    "processedAt": "2026-01-16T15:44:26.257Z",
+    "dataQualityTier": "incomplete",
+    "populatedFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "classification"
+    ],
+    "missingFields": [
+      "motorPower"
+    ]
   },
   {
     "model": "Stagemaker SL",
@@ -858,7 +1066,19 @@
     "speedMMin": 32,
     "dataCompleteness": 50,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.103Z"
+    "processedDate": "2026-01-16T15:44:26.257Z",
+    "source": "scraped",
+    "sourceUrl": "known-data",
+    "processedAt": "2026-01-16T15:44:26.257Z",
+    "dataQualityTier": "incomplete",
+    "populatedFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "classification"
+    ],
+    "missingFields": [
+      "motorPower"
+    ]
   },
   {
     "model": "D8+",
@@ -888,7 +1108,19 @@
     "speedMMin": 24,
     "dataCompleteness": 50,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.103Z",
+    "processedDate": "2026-01-16T15:44:26.257Z",
+    "source": "scraped",
+    "sourceUrl": "known-data",
+    "processedAt": "2026-01-16T15:44:26.257Z",
+    "dataQualityTier": "incomplete",
+    "populatedFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "classification"
+    ],
+    "missingFields": [
+      "motorPower"
+    ],
     "images": [
       {
         "url": "/media/images/chainmaster_bgv-d8_0.png",
@@ -949,7 +1181,19 @@
     "speedMMin": 16,
     "dataCompleteness": 50,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.103Z",
+    "processedDate": "2026-01-16T15:44:26.257Z",
+    "source": "scraped",
+    "sourceUrl": "known-data",
+    "processedAt": "2026-01-16T15:44:26.257Z",
+    "dataQualityTier": "incomplete",
+    "populatedFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "classification"
+    ],
+    "missingFields": [
+      "motorPower"
+    ],
     "images": [
       {
         "url": "/media/images/chainmaster_bgv-d8_0.png",
@@ -1010,7 +1254,19 @@
     "speedMMin": 16,
     "dataCompleteness": 50,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.103Z"
+    "processedDate": "2026-01-16T15:44:26.257Z",
+    "source": "scraped",
+    "sourceUrl": "known-data",
+    "processedAt": "2026-01-16T15:44:26.257Z",
+    "dataQualityTier": "incomplete",
+    "populatedFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "classification"
+    ],
+    "missingFields": [
+      "motorPower"
+    ]
   },
   {
     "model": "Liftket Standard",
@@ -1039,7 +1295,19 @@
     "speedMMin": 16,
     "dataCompleteness": 50,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.103Z"
+    "processedDate": "2026-01-16T15:44:26.257Z",
+    "source": "scraped",
+    "sourceUrl": "known-data",
+    "processedAt": "2026-01-16T15:44:26.257Z",
+    "dataQualityTier": "incomplete",
+    "populatedFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "classification"
+    ],
+    "missingFields": [
+      "motorPower"
+    ]
   },
   {
     "model": "ER2",
@@ -1068,7 +1336,19 @@
     "speedMMin": 8,
     "dataCompleteness": 50,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.103Z",
+    "processedDate": "2026-01-16T15:44:26.257Z",
+    "source": "scraped",
+    "sourceUrl": "known-data",
+    "processedAt": "2026-01-16T15:44:26.257Z",
+    "dataQualityTier": "incomplete",
+    "populatedFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "classification"
+    ],
+    "missingFields": [
+      "motorPower"
+    ],
     "images": [
       {
         "url": "/media/images/kito_er2_0.jpg",
@@ -1109,7 +1389,19 @@
     "speedMMin": 5,
     "dataCompleteness": 50,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.103Z",
+    "processedDate": "2026-01-16T15:44:26.257Z",
+    "source": "scraped",
+    "sourceUrl": "known-data",
+    "processedAt": "2026-01-16T15:44:26.257Z",
+    "dataQualityTier": "incomplete",
+    "populatedFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "classification"
+    ],
+    "missingFields": [
+      "motorPower"
+    ],
     "images": [
       {
         "url": "/media/images/kito_eq_0.jpg",
@@ -1146,7 +1438,19 @@
     "speedMMin": 8,
     "dataCompleteness": 50,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.103Z"
+    "processedDate": "2026-01-16T15:44:26.257Z",
+    "source": "scraped",
+    "sourceUrl": "known-data",
+    "processedAt": "2026-01-16T15:44:26.257Z",
+    "dataQualityTier": "incomplete",
+    "populatedFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "classification"
+    ],
+    "missingFields": [
+      "motorPower"
+    ]
   },
   {
     "manufacturer": "PLANETA-Hebetechnik",
@@ -1293,7 +1597,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.103Z"
+    "processedDate": "2026-01-16T15:44:26.257Z",
+    "source": "llm_enriched",
+    "sourceUrl": "https://www.planeta-hebetechnik.eu/en/career/",
+    "processedAt": "2026-01-16T15:44:26.257Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "PLANETA-Hebetechnik",
@@ -1439,7 +1754,19 @@
     "speedMMin": null,
     "dataCompleteness": 50,
     "hasCompleteSpecs": true,
-    "processedDate": "2026-01-16T15:11:11.103Z"
+    "processedDate": "2026-01-16T15:44:26.257Z",
+    "source": "llm_enriched",
+    "sourceUrl": "https://www.planeta-hebetechnik.eu/en/lifting-technology/atex-hoists/",
+    "processedAt": "2026-01-16T15:44:26.257Z",
+    "dataQualityTier": "incomplete",
+    "populatedFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower"
+    ],
+    "missingFields": [
+      "classification"
+    ]
   },
   {
     "manufacturer": "PLANETA-Hebetechnik",
@@ -1585,7 +1912,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.103Z"
+    "processedDate": "2026-01-16T15:44:26.257Z",
+    "source": "llm_enriched",
+    "sourceUrl": "https://www.planeta-hebetechnik.eu/en/lifting-technology/compressed-air-hoists/",
+    "processedAt": "2026-01-16T15:44:26.257Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "PLANETA-Hebetechnik",
@@ -1729,7 +2067,19 @@
     "speedMMin": null,
     "dataCompleteness": 14,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.104Z"
+    "processedDate": "2026-01-16T15:44:26.258Z",
+    "source": "llm_enriched",
+    "sourceUrl": "https://www.planeta-hebetechnik.eu/en/lifting-technology/electric-chain-hoists-wire-rope-hoists/",
+    "processedAt": "2026-01-16T15:44:26.258Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [
+      "loadCapacity"
+    ],
+    "missingFields": [
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "model": "YJL",
@@ -1758,7 +2108,19 @@
     "speedMMin": 12,
     "dataCompleteness": 50,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.104Z"
+    "processedDate": "2026-01-16T15:44:26.258Z",
+    "source": "scraped",
+    "sourceUrl": "known-data",
+    "processedAt": "2026-01-16T15:44:26.258Z",
+    "dataQualityTier": "incomplete",
+    "populatedFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "classification"
+    ],
+    "missingFields": [
+      "motorPower"
+    ]
   },
   {
     "model": "YK",
@@ -1787,7 +2149,19 @@
     "speedMMin": 8,
     "dataCompleteness": 50,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.104Z"
+    "processedDate": "2026-01-16T15:44:26.258Z",
+    "source": "scraped",
+    "sourceUrl": "known-data",
+    "processedAt": "2026-01-16T15:44:26.258Z",
+    "dataQualityTier": "incomplete",
+    "populatedFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "classification"
+    ],
+    "missingFields": [
+      "motorPower"
+    ]
   },
   {
     "model": "KEL",
@@ -1816,7 +2190,19 @@
     "speedMMin": 16,
     "dataCompleteness": 50,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.104Z"
+    "processedDate": "2026-01-16T15:44:26.258Z",
+    "source": "scraped",
+    "sourceUrl": "known-data",
+    "processedAt": "2026-01-16T15:44:26.258Z",
+    "dataQualityTier": "incomplete",
+    "populatedFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "classification"
+    ],
+    "missingFields": [
+      "motorPower"
+    ]
   },
   {
     "model": "ML",
@@ -1845,7 +2231,19 @@
     "speedMMin": 12,
     "dataCompleteness": 50,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.104Z"
+    "processedDate": "2026-01-16T15:44:26.258Z",
+    "source": "scraped",
+    "sourceUrl": "known-data",
+    "processedAt": "2026-01-16T15:44:26.258Z",
+    "dataQualityTier": "incomplete",
+    "populatedFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "classification"
+    ],
+    "missingFields": [
+      "motorPower"
+    ]
   },
   {
     "model": "CLK",
@@ -1874,7 +2272,19 @@
     "speedMMin": 8,
     "dataCompleteness": 50,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.104Z"
+    "processedDate": "2026-01-16T15:44:26.258Z",
+    "source": "scraped",
+    "sourceUrl": "known-data",
+    "processedAt": "2026-01-16T15:44:26.258Z",
+    "dataQualityTier": "incomplete",
+    "populatedFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "classification"
+    ],
+    "missingFields": [
+      "motorPower"
+    ]
   },
   {
     "model": "JLC",
@@ -1903,7 +2313,19 @@
     "speedMMin": 16,
     "dataCompleteness": 50,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.104Z",
+    "processedDate": "2026-01-16T15:44:26.258Z",
+    "source": "scraped",
+    "sourceUrl": "known-data",
+    "processedAt": "2026-01-16T15:44:26.258Z",
+    "dataQualityTier": "incomplete",
+    "populatedFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "classification"
+    ],
+    "missingFields": [
+      "motorPower"
+    ],
     "images": [
       {
         "url": "/media/images/coffing_about-columbus-mckinnon_0.svg",
@@ -1949,7 +2371,19 @@
     "speedMMin": 12,
     "dataCompleteness": 50,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.104Z",
+    "processedDate": "2026-01-16T15:44:26.258Z",
+    "source": "scraped",
+    "sourceUrl": "known-data",
+    "processedAt": "2026-01-16T15:44:26.258Z",
+    "dataQualityTier": "incomplete",
+    "populatedFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "classification"
+    ],
+    "missingFields": [
+      "motorPower"
+    ],
     "images": [
       {
         "url": "/media/images/coffing_about-columbus-mckinnon_0.svg",
@@ -1995,7 +2429,19 @@
     "speedMMin": 16,
     "dataCompleteness": 50,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.104Z",
+    "processedDate": "2026-01-16T15:44:26.258Z",
+    "source": "scraped",
+    "sourceUrl": "known-data",
+    "processedAt": "2026-01-16T15:44:26.258Z",
+    "dataQualityTier": "incomplete",
+    "populatedFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "classification"
+    ],
+    "missingFields": [
+      "motorPower"
+    ],
     "images": [
       {
         "url": "/media/images/budgit_about-columbus-mckinnon_0.svg",
@@ -2041,7 +2487,19 @@
     "speedMMin": 12,
     "dataCompleteness": 50,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.104Z",
+    "processedDate": "2026-01-16T15:44:26.258Z",
+    "source": "scraped",
+    "sourceUrl": "known-data",
+    "processedAt": "2026-01-16T15:44:26.258Z",
+    "dataQualityTier": "incomplete",
+    "populatedFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "classification"
+    ],
+    "missingFields": [
+      "motorPower"
+    ],
     "images": [
       {
         "url": "/media/images/budgit_about-columbus-mckinnon_0.svg",
@@ -2087,7 +2545,19 @@
     "speedMMin": 20,
     "dataCompleteness": 50,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.104Z",
+    "processedDate": "2026-01-16T15:44:26.258Z",
+    "source": "scraped",
+    "sourceUrl": "known-data",
+    "processedAt": "2026-01-16T15:44:26.258Z",
+    "dataQualityTier": "incomplete",
+    "populatedFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "classification"
+    ],
+    "missingFields": [
+      "motorPower"
+    ],
     "images": [
       {
         "url": "/media/images/rm-materials_automotive-hoists-and-crane-components_0.svg",
@@ -2133,7 +2603,19 @@
     "speedMMin": 16,
     "dataCompleteness": 50,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.104Z",
+    "processedDate": "2026-01-16T15:44:26.258Z",
+    "source": "scraped",
+    "sourceUrl": "known-data",
+    "processedAt": "2026-01-16T15:44:26.258Z",
+    "dataQualityTier": "incomplete",
+    "populatedFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "classification"
+    ],
+    "missingFields": [
+      "motorPower"
+    ],
     "images": [
       {
         "url": "/media/images/rm-materials_automotive-hoists-and-crane-components_0.svg",
@@ -2179,7 +2661,19 @@
     "speedMMin": 12,
     "dataCompleteness": 50,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.104Z",
+    "processedDate": "2026-01-16T15:44:26.258Z",
+    "source": "scraped",
+    "sourceUrl": "known-data",
+    "processedAt": "2026-01-16T15:44:26.258Z",
+    "dataQualityTier": "incomplete",
+    "populatedFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "classification"
+    ],
+    "missingFields": [
+      "motorPower"
+    ],
     "images": [
       {
         "url": "/media/images/street-crane_double-girder-cranes_0.jpg",
@@ -2225,7 +2719,19 @@
     "speedMMin": 16,
     "dataCompleteness": 50,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.104Z",
+    "processedDate": "2026-01-16T15:44:26.258Z",
+    "source": "scraped",
+    "sourceUrl": "known-data",
+    "processedAt": "2026-01-16T15:44:26.258Z",
+    "dataQualityTier": "incomplete",
+    "populatedFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "classification"
+    ],
+    "missingFields": [
+      "motorPower"
+    ],
     "images": [
       {
         "url": "/media/images/street-crane_double-girder-cranes_0.jpg",
@@ -2271,7 +2777,19 @@
     "speedMMin": 20,
     "dataCompleteness": 50,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.104Z",
+    "processedDate": "2026-01-16T15:44:26.259Z",
+    "source": "scraped",
+    "sourceUrl": "known-data",
+    "processedAt": "2026-01-16T15:44:26.259Z",
+    "dataQualityTier": "incomplete",
+    "populatedFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "classification"
+    ],
+    "missingFields": [
+      "motorPower"
+    ],
     "images": [
       {
         "url": "/media/images/swf-krantechnik_chainster_0.jpg",
@@ -2317,7 +2835,19 @@
     "speedMMin": 12,
     "dataCompleteness": 50,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.104Z",
+    "processedDate": "2026-01-16T15:44:26.259Z",
+    "source": "scraped",
+    "sourceUrl": "known-data",
+    "processedAt": "2026-01-16T15:44:26.259Z",
+    "dataQualityTier": "incomplete",
+    "populatedFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "classification"
+    ],
+    "missingFields": [
+      "motorPower"
+    ],
     "images": [
       {
         "url": "/media/images/swf-krantechnik_chainster_0.jpg",
@@ -2363,7 +2893,19 @@
     "speedMMin": 12,
     "dataCompleteness": 50,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.104Z"
+    "processedDate": "2026-01-16T15:44:26.259Z",
+    "source": "scraped",
+    "sourceUrl": "known-data",
+    "processedAt": "2026-01-16T15:44:26.259Z",
+    "dataQualityTier": "incomplete",
+    "populatedFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "classification"
+    ],
+    "missingFields": [
+      "motorPower"
+    ]
   },
   {
     "model": "Mini",
@@ -2392,7 +2934,19 @@
     "speedMMin": 12,
     "dataCompleteness": 50,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.104Z"
+    "processedDate": "2026-01-16T15:44:26.259Z",
+    "source": "scraped",
+    "sourceUrl": "known-data",
+    "processedAt": "2026-01-16T15:44:26.259Z",
+    "dataQualityTier": "incomplete",
+    "populatedFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "classification"
+    ],
+    "missingFields": [
+      "motorPower"
+    ]
   },
   {
     "model": "FA",
@@ -2421,7 +2975,19 @@
     "speedMMin": 12,
     "dataCompleteness": 50,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.104Z",
+    "processedDate": "2026-01-16T15:44:26.259Z",
+    "source": "scraped",
+    "sourceUrl": "known-data",
+    "processedAt": "2026-01-16T15:44:26.259Z",
+    "dataQualityTier": "incomplete",
+    "populatedFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "classification"
+    ],
+    "missingFields": [
+      "motorPower"
+    ],
     "images": [
       {
         "url": "/media/images/elephant_s_0.png",
@@ -2467,7 +3033,19 @@
     "speedMMin": 8,
     "dataCompleteness": 50,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.104Z",
+    "processedDate": "2026-01-16T15:44:26.259Z",
+    "source": "scraped",
+    "sourceUrl": "known-data",
+    "processedAt": "2026-01-16T15:44:26.259Z",
+    "dataQualityTier": "incomplete",
+    "populatedFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "classification"
+    ],
+    "missingFields": [
+      "motorPower"
+    ],
     "images": [
       {
         "url": "/media/images/elephant_s_0.png",
@@ -2513,7 +3091,19 @@
     "speedMMin": 12,
     "dataCompleteness": 50,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.104Z",
+    "processedDate": "2026-01-16T15:44:26.259Z",
+    "source": "scraped",
+    "sourceUrl": "known-data",
+    "processedAt": "2026-01-16T15:44:26.259Z",
+    "dataQualityTier": "incomplete",
+    "populatedFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "classification"
+    ],
+    "missingFields": [
+      "motorPower"
+    ],
     "images": [
       {
         "url": "/media/images/liftingsafety_ls-electric_0.webp",
@@ -2559,7 +3149,19 @@
     "speedMMin": 12,
     "dataCompleteness": 50,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.105Z",
+    "processedDate": "2026-01-16T15:44:26.259Z",
+    "source": "scraped",
+    "sourceUrl": "known-data",
+    "processedAt": "2026-01-16T15:44:26.259Z",
+    "dataQualityTier": "incomplete",
+    "populatedFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "classification"
+    ],
+    "missingFields": [
+      "motorPower"
+    ],
     "images": [
       {
         "url": "/media/images/tiger-lifting_rov_0.jpg",
@@ -2620,7 +3222,19 @@
     "speedMMin": 8,
     "dataCompleteness": 50,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.105Z",
+    "processedDate": "2026-01-16T15:44:26.259Z",
+    "source": "scraped",
+    "sourceUrl": "known-data",
+    "processedAt": "2026-01-16T15:44:26.259Z",
+    "dataQualityTier": "incomplete",
+    "populatedFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "classification"
+    ],
+    "missingFields": [
+      "motorPower"
+    ],
     "images": [
       {
         "url": "/media/images/tiger-lifting_bch_0.jpg",
@@ -2700,7 +3314,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.105Z"
+    "processedDate": "2026-01-16T15:44:26.259Z",
+    "source": "scraped",
+    "sourceUrl": "https://www.stahlcranes.com/en-de/newsroom/",
+    "processedAt": "2026-01-16T15:44:26.259Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "model": "MH-5",
@@ -2729,7 +3354,19 @@
     "speedMMin": 12,
     "dataCompleteness": 50,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.105Z"
+    "processedDate": "2026-01-16T15:44:26.259Z",
+    "source": "scraped",
+    "sourceUrl": "known-data",
+    "processedAt": "2026-01-16T15:44:26.259Z",
+    "dataQualityTier": "incomplete",
+    "populatedFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "classification"
+    ],
+    "missingFields": [
+      "motorPower"
+    ]
   },
   {
     "model": "EC-4",
@@ -2758,7 +3395,19 @@
     "speedMMin": 8,
     "dataCompleteness": 50,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.105Z"
+    "processedDate": "2026-01-16T15:44:26.259Z",
+    "source": "scraped",
+    "sourceUrl": "known-data",
+    "processedAt": "2026-01-16T15:44:26.259Z",
+    "dataQualityTier": "incomplete",
+    "populatedFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "classification"
+    ],
+    "missingFields": [
+      "motorPower"
+    ]
   },
   {
     "model": "TXK-A",
@@ -2787,7 +3436,19 @@
     "speedMMin": 12,
     "dataCompleteness": 50,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.105Z",
+    "processedDate": "2026-01-16T15:44:26.259Z",
+    "source": "scraped",
+    "sourceUrl": "known-data",
+    "processedAt": "2026-01-16T15:44:26.259Z",
+    "dataQualityTier": "incomplete",
+    "populatedFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "classification"
+    ],
+    "missingFields": [
+      "motorPower"
+    ],
     "images": [
       {
         "url": "/media/images/txk_certificates-_0.png",
@@ -2833,7 +3494,19 @@
     "speedMMin": 8,
     "dataCompleteness": 50,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.105Z",
+    "processedDate": "2026-01-16T15:44:26.259Z",
+    "source": "scraped",
+    "sourceUrl": "known-data",
+    "processedAt": "2026-01-16T15:44:26.259Z",
+    "dataQualityTier": "incomplete",
+    "populatedFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "classification"
+    ],
+    "missingFields": [
+      "motorPower"
+    ],
     "images": [
       {
         "url": "/media/images/txk_txk-brand-electric-hoists_0.png",
@@ -2875,7 +3548,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.105Z"
+    "processedDate": "2026-01-16T15:44:26.259Z",
+    "source": "scraped",
+    "sourceUrl": "https://www.columbusmckinnon.com/en-us/products/hoists-and-rigging/electric-chain-hoists/",
+    "processedAt": "2026-01-16T15:44:26.259Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Columbus McKinnon",
@@ -2900,7 +3584,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.105Z"
+    "processedDate": "2026-01-16T15:44:26.259Z",
+    "source": "scraped",
+    "sourceUrl": "https://www.columbusmckinnon.com/en-us/products/hoists-and-rigging/electric-chain-hoists/",
+    "processedAt": "2026-01-16T15:44:26.259Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Columbus McKinnon",
@@ -2925,7 +3620,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.105Z"
+    "processedDate": "2026-01-16T15:44:26.259Z",
+    "source": "scraped",
+    "sourceUrl": "https://www.columbusmckinnon.com/en-us/products/hoists-and-rigging/electric-chain-hoists/",
+    "processedAt": "2026-01-16T15:44:26.259Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Columbus McKinnon",
@@ -2950,7 +3656,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.105Z"
+    "processedDate": "2026-01-16T15:44:26.259Z",
+    "source": "scraped",
+    "sourceUrl": "https://www.columbusmckinnon.com/en-us/products/hoists-and-rigging/electric-chain-hoists/",
+    "processedAt": "2026-01-16T15:44:26.259Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Columbus McKinnon",
@@ -2975,7 +3692,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.105Z"
+    "processedDate": "2026-01-16T15:44:26.259Z",
+    "source": "scraped",
+    "sourceUrl": "https://www.columbusmckinnon.com/en-us/products/hoists-and-rigging/electric-chain-hoists/",
+    "processedAt": "2026-01-16T15:44:26.259Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Columbus McKinnon",
@@ -3000,7 +3728,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.105Z"
+    "processedDate": "2026-01-16T15:44:26.259Z",
+    "source": "scraped",
+    "sourceUrl": "https://www.columbusmckinnon.com/en-us/products/hoists-and-rigging/electric-chain-hoists/",
+    "processedAt": "2026-01-16T15:44:26.259Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Columbus McKinnon",
@@ -3025,7 +3764,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.105Z"
+    "processedDate": "2026-01-16T15:44:26.259Z",
+    "source": "scraped",
+    "sourceUrl": "https://www.columbusmckinnon.com/en-us/products/hoists-and-rigging/electric-chain-hoists/",
+    "processedAt": "2026-01-16T15:44:26.259Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Columbus McKinnon",
@@ -3050,7 +3800,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.105Z"
+    "processedDate": "2026-01-16T15:44:26.259Z",
+    "source": "scraped",
+    "sourceUrl": "https://www.columbusmckinnon.com/en-us/products/hoists-and-rigging/electric-chain-hoists/",
+    "processedAt": "2026-01-16T15:44:26.259Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Columbus McKinnon",
@@ -3075,7 +3836,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.105Z"
+    "processedDate": "2026-01-16T15:44:26.259Z",
+    "source": "scraped",
+    "sourceUrl": "https://www.columbusmckinnon.com/en-us/products/hoists-and-rigging/electric-chain-hoists/",
+    "processedAt": "2026-01-16T15:44:26.259Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Columbus McKinnon",
@@ -3100,7 +3872,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.105Z"
+    "processedDate": "2026-01-16T15:44:26.259Z",
+    "source": "scraped",
+    "sourceUrl": "https://www.columbusmckinnon.com/en-us/products/hoists-and-rigging/electric-chain-hoists/",
+    "processedAt": "2026-01-16T15:44:26.259Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Columbus McKinnon",
@@ -3125,7 +3908,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.105Z"
+    "processedDate": "2026-01-16T15:44:26.259Z",
+    "source": "scraped",
+    "sourceUrl": "https://www.columbusmckinnon.com/en-us/products/hoists-and-rigging/electric-chain-hoists/",
+    "processedAt": "2026-01-16T15:44:26.259Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Columbus McKinnon",
@@ -3150,7 +3944,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.105Z"
+    "processedDate": "2026-01-16T15:44:26.259Z",
+    "source": "scraped",
+    "sourceUrl": "https://www.columbusmckinnon.com/en-us/products/hoists-and-rigging/electric-chain-hoists/",
+    "processedAt": "2026-01-16T15:44:26.259Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Columbus McKinnon",
@@ -3175,7 +3980,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.105Z"
+    "processedDate": "2026-01-16T15:44:26.259Z",
+    "source": "scraped",
+    "sourceUrl": "https://www.columbusmckinnon.com/en-us/products/hoists-and-rigging/electric-chain-hoists/",
+    "processedAt": "2026-01-16T15:44:26.259Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Columbus McKinnon",
@@ -3200,7 +4016,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.105Z"
+    "processedDate": "2026-01-16T15:44:26.259Z",
+    "source": "scraped",
+    "sourceUrl": "https://www.columbusmckinnon.com/en-us/products/hoists-and-rigging/electric-chain-hoists/",
+    "processedAt": "2026-01-16T15:44:26.259Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Columbus McKinnon",
@@ -3225,7 +4052,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.105Z"
+    "processedDate": "2026-01-16T15:44:26.259Z",
+    "source": "scraped",
+    "sourceUrl": "https://www.columbusmckinnon.com/en-us/products/hoists-and-rigging/electric-chain-hoists/",
+    "processedAt": "2026-01-16T15:44:26.259Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Columbus McKinnon",
@@ -3250,7 +4088,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.105Z"
+    "processedDate": "2026-01-16T15:44:26.259Z",
+    "source": "scraped",
+    "sourceUrl": "https://www.columbusmckinnon.com/en-us/products/hoists-and-rigging/electric-chain-hoists/",
+    "processedAt": "2026-01-16T15:44:26.259Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Columbus McKinnon",
@@ -3275,7 +4124,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.105Z"
+    "processedDate": "2026-01-16T15:44:26.259Z",
+    "source": "scraped",
+    "sourceUrl": "https://www.columbusmckinnon.com/en-us/products/hoists-and-rigging/electric-chain-hoists/",
+    "processedAt": "2026-01-16T15:44:26.259Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Columbus McKinnon",
@@ -3300,7 +4160,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.105Z"
+    "processedDate": "2026-01-16T15:44:26.259Z",
+    "source": "scraped",
+    "sourceUrl": "https://www.columbusmckinnon.com/en-us/products/hoists-and-rigging/electric-chain-hoists/",
+    "processedAt": "2026-01-16T15:44:26.259Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Columbus McKinnon",
@@ -3325,7 +4196,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.105Z"
+    "processedDate": "2026-01-16T15:44:26.259Z",
+    "source": "scraped",
+    "sourceUrl": "https://www.columbusmckinnon.com/en-us/products/hoists-and-rigging/electric-chain-hoists/",
+    "processedAt": "2026-01-16T15:44:26.259Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Columbus McKinnon",
@@ -3350,7 +4232,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.105Z"
+    "processedDate": "2026-01-16T15:44:26.259Z",
+    "source": "scraped",
+    "sourceUrl": "https://www.columbusmckinnon.com/en-us/products/hoists-and-rigging/electric-chain-hoists/",
+    "processedAt": "2026-01-16T15:44:26.259Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Columbus McKinnon",
@@ -3375,7 +4268,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.105Z"
+    "processedDate": "2026-01-16T15:44:26.259Z",
+    "source": "scraped",
+    "sourceUrl": "https://www.columbusmckinnon.com/en-us/products/hoists-and-rigging/electric-chain-hoists/",
+    "processedAt": "2026-01-16T15:44:26.259Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Columbus McKinnon",
@@ -3400,7 +4304,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.105Z"
+    "processedDate": "2026-01-16T15:44:26.259Z",
+    "source": "scraped",
+    "sourceUrl": "https://www.columbusmckinnon.com/en-us/products/hoists-and-rigging/electric-chain-hoists/",
+    "processedAt": "2026-01-16T15:44:26.259Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Columbus McKinnon",
@@ -3425,7 +4340,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.105Z"
+    "processedDate": "2026-01-16T15:44:26.259Z",
+    "source": "scraped",
+    "sourceUrl": "https://www.columbusmckinnon.com/en-us/products/hoists-and-rigging/electric-chain-hoists/",
+    "processedAt": "2026-01-16T15:44:26.259Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Columbus McKinnon",
@@ -3450,7 +4376,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.105Z"
+    "processedDate": "2026-01-16T15:44:26.259Z",
+    "source": "scraped",
+    "sourceUrl": "https://www.columbusmckinnon.com/en-us/products/hoists-and-rigging/electric-chain-hoists/",
+    "processedAt": "2026-01-16T15:44:26.259Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Columbus McKinnon",
@@ -3475,7 +4412,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.105Z"
+    "processedDate": "2026-01-16T15:44:26.259Z",
+    "source": "scraped",
+    "sourceUrl": "https://www.columbusmckinnon.com/en-us/products/hoists-and-rigging/electric-chain-hoists/",
+    "processedAt": "2026-01-16T15:44:26.259Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Columbus McKinnon",
@@ -3500,7 +4448,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.105Z"
+    "processedDate": "2026-01-16T15:44:26.259Z",
+    "source": "scraped",
+    "sourceUrl": "https://www.columbusmckinnon.com/en-us/products/hoists-and-rigging/electric-chain-hoists/",
+    "processedAt": "2026-01-16T15:44:26.259Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Columbus McKinnon",
@@ -3525,7 +4484,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.105Z"
+    "processedDate": "2026-01-16T15:44:26.259Z",
+    "source": "scraped",
+    "sourceUrl": "https://www.columbusmckinnon.com/en-us/products/hoists-and-rigging/electric-chain-hoists/",
+    "processedAt": "2026-01-16T15:44:26.259Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Columbus McKinnon",
@@ -3550,7 +4520,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.105Z"
+    "processedDate": "2026-01-16T15:44:26.259Z",
+    "source": "scraped",
+    "sourceUrl": "https://www.columbusmckinnon.com/en-us/products/hoists-and-rigging/electric-chain-hoists/",
+    "processedAt": "2026-01-16T15:44:26.259Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Columbus McKinnon",
@@ -3575,7 +4556,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.105Z"
+    "processedDate": "2026-01-16T15:44:26.259Z",
+    "source": "scraped",
+    "sourceUrl": "https://www.columbusmckinnon.com/en-us/products/hoists-and-rigging/electric-chain-hoists/",
+    "processedAt": "2026-01-16T15:44:26.259Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Columbus McKinnon",
@@ -3600,7 +4592,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.105Z"
+    "processedDate": "2026-01-16T15:44:26.259Z",
+    "source": "scraped",
+    "sourceUrl": "https://www.columbusmckinnon.com/en-us/products/hoists-and-rigging/electric-chain-hoists/",
+    "processedAt": "2026-01-16T15:44:26.259Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Columbus McKinnon",
@@ -3625,7 +4628,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.105Z"
+    "processedDate": "2026-01-16T15:44:26.259Z",
+    "source": "scraped",
+    "sourceUrl": "https://www.columbusmckinnon.com/en-us/products/hoists-and-rigging/electric-chain-hoists/",
+    "processedAt": "2026-01-16T15:44:26.259Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Columbus McKinnon",
@@ -3650,7 +4664,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.105Z"
+    "processedDate": "2026-01-16T15:44:26.259Z",
+    "source": "scraped",
+    "sourceUrl": "https://www.columbusmckinnon.com/en-us/products/hoists-and-rigging/electric-chain-hoists/",
+    "processedAt": "2026-01-16T15:44:26.259Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Columbus McKinnon",
@@ -3675,7 +4700,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.105Z"
+    "processedDate": "2026-01-16T15:44:26.259Z",
+    "source": "scraped",
+    "sourceUrl": "https://www.columbusmckinnon.com/en-us/products/hoists-and-rigging/electric-chain-hoists/",
+    "processedAt": "2026-01-16T15:44:26.259Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Columbus McKinnon",
@@ -3700,7 +4736,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.105Z"
+    "processedDate": "2026-01-16T15:44:26.259Z",
+    "source": "scraped",
+    "sourceUrl": "https://www.columbusmckinnon.com/en-us/products/hoists-and-rigging/electric-chain-hoists/",
+    "processedAt": "2026-01-16T15:44:26.259Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Columbus McKinnon",
@@ -3725,7 +4772,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.105Z"
+    "processedDate": "2026-01-16T15:44:26.259Z",
+    "source": "scraped",
+    "sourceUrl": "https://www.columbusmckinnon.com/en-us/products/hoists-and-rigging/electric-chain-hoists/",
+    "processedAt": "2026-01-16T15:44:26.259Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Columbus McKinnon",
@@ -3750,7 +4808,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.105Z"
+    "processedDate": "2026-01-16T15:44:26.259Z",
+    "source": "scraped",
+    "sourceUrl": "https://www.columbusmckinnon.com/en-us/products/hoists-and-rigging/electric-chain-hoists/",
+    "processedAt": "2026-01-16T15:44:26.259Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Columbus McKinnon",
@@ -3775,7 +4844,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.105Z"
+    "processedDate": "2026-01-16T15:44:26.259Z",
+    "source": "scraped",
+    "sourceUrl": "https://www.columbusmckinnon.com/en-us/products/hoists-and-rigging/electric-chain-hoists/",
+    "processedAt": "2026-01-16T15:44:26.259Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Columbus McKinnon",
@@ -3800,7 +4880,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.105Z"
+    "processedDate": "2026-01-16T15:44:26.259Z",
+    "source": "scraped",
+    "sourceUrl": "https://www.columbusmckinnon.com/en-us/products/hoists-and-rigging/electric-chain-hoists/",
+    "processedAt": "2026-01-16T15:44:26.259Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Columbus McKinnon",
@@ -3825,7 +4916,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.105Z"
+    "processedDate": "2026-01-16T15:44:26.259Z",
+    "source": "scraped",
+    "sourceUrl": "https://www.columbusmckinnon.com/en-us/products/hoists-and-rigging/electric-chain-hoists/",
+    "processedAt": "2026-01-16T15:44:26.259Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Columbus McKinnon",
@@ -3850,7 +4952,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.105Z"
+    "processedDate": "2026-01-16T15:44:26.259Z",
+    "source": "scraped",
+    "sourceUrl": "https://www.columbusmckinnon.com/en-us/products/hoists-and-rigging/electric-chain-hoists/",
+    "processedAt": "2026-01-16T15:44:26.259Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Columbus McKinnon",
@@ -3875,7 +4988,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.105Z"
+    "processedDate": "2026-01-16T15:44:26.259Z",
+    "source": "scraped",
+    "sourceUrl": "https://www.columbusmckinnon.com/en-us/products/hoists-and-rigging/electric-chain-hoists/",
+    "processedAt": "2026-01-16T15:44:26.259Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Columbus McKinnon",
@@ -3900,7 +5024,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.105Z"
+    "processedDate": "2026-01-16T15:44:26.259Z",
+    "source": "scraped",
+    "sourceUrl": "https://www.columbusmckinnon.com/en-us/products/hoists-and-rigging/electric-chain-hoists/",
+    "processedAt": "2026-01-16T15:44:26.259Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Columbus McKinnon",
@@ -3925,7 +5060,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.105Z"
+    "processedDate": "2026-01-16T15:44:26.259Z",
+    "source": "scraped",
+    "sourceUrl": "https://www.columbusmckinnon.com/en-us/products/hoists-and-rigging/electric-chain-hoists/",
+    "processedAt": "2026-01-16T15:44:26.259Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Columbus McKinnon",
@@ -3950,7 +5096,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.105Z"
+    "processedDate": "2026-01-16T15:44:26.259Z",
+    "source": "scraped",
+    "sourceUrl": "https://www.columbusmckinnon.com/en-us/products/hoists-and-rigging/electric-chain-hoists/",
+    "processedAt": "2026-01-16T15:44:26.259Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Columbus McKinnon",
@@ -3975,7 +5132,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.105Z"
+    "processedDate": "2026-01-16T15:44:26.260Z",
+    "source": "scraped",
+    "sourceUrl": "https://www.columbusmckinnon.com/en-us/products/hoists-and-rigging/electric-chain-hoists/",
+    "processedAt": "2026-01-16T15:44:26.260Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Columbus McKinnon",
@@ -4000,7 +5168,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.105Z"
+    "processedDate": "2026-01-16T15:44:26.260Z",
+    "source": "scraped",
+    "sourceUrl": "https://www.columbusmckinnon.com/en-us/products/hoists-and-rigging/electric-chain-hoists/",
+    "processedAt": "2026-01-16T15:44:26.260Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Columbus McKinnon",
@@ -4025,7 +5204,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.105Z"
+    "processedDate": "2026-01-16T15:44:26.260Z",
+    "source": "scraped",
+    "sourceUrl": "https://www.columbusmckinnon.com/en-us/products/hoists-and-rigging/electric-chain-hoists/",
+    "processedAt": "2026-01-16T15:44:26.260Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Columbus McKinnon",
@@ -4050,7 +5240,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.105Z"
+    "processedDate": "2026-01-16T15:44:26.260Z",
+    "source": "scraped",
+    "sourceUrl": "https://www.columbusmckinnon.com/en-us/products/hoists-and-rigging/electric-chain-hoists/",
+    "processedAt": "2026-01-16T15:44:26.260Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Columbus McKinnon",
@@ -4075,7 +5276,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.105Z"
+    "processedDate": "2026-01-16T15:44:26.260Z",
+    "source": "scraped",
+    "sourceUrl": "https://www.columbusmckinnon.com/en-us/products/hoists-and-rigging/electric-chain-hoists/",
+    "processedAt": "2026-01-16T15:44:26.260Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Columbus McKinnon",
@@ -4100,7 +5312,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.105Z"
+    "processedDate": "2026-01-16T15:44:26.260Z",
+    "source": "scraped",
+    "sourceUrl": "https://www.columbusmckinnon.com/en-us/products/hoists-and-rigging/electric-chain-hoists/",
+    "processedAt": "2026-01-16T15:44:26.260Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Columbus McKinnon",
@@ -4125,7 +5348,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.105Z"
+    "processedDate": "2026-01-16T15:44:26.260Z",
+    "source": "scraped",
+    "sourceUrl": "https://www.columbusmckinnon.com/en-us/products/hoists-and-rigging/electric-chain-hoists/",
+    "processedAt": "2026-01-16T15:44:26.260Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Columbus McKinnon",
@@ -4150,7 +5384,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.105Z"
+    "processedDate": "2026-01-16T15:44:26.260Z",
+    "source": "scraped",
+    "sourceUrl": "https://www.columbusmckinnon.com/en-us/products/hoists-and-rigging/electric-chain-hoists/",
+    "processedAt": "2026-01-16T15:44:26.260Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Columbus McKinnon",
@@ -4175,7 +5420,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.105Z"
+    "processedDate": "2026-01-16T15:44:26.260Z",
+    "source": "scraped",
+    "sourceUrl": "https://www.columbusmckinnon.com/en-us/products/hoists-and-rigging/electric-chain-hoists/",
+    "processedAt": "2026-01-16T15:44:26.260Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Columbus McKinnon",
@@ -4200,7 +5456,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.105Z"
+    "processedDate": "2026-01-16T15:44:26.260Z",
+    "source": "scraped",
+    "sourceUrl": "https://www.columbusmckinnon.com/en-us/products/hoists-and-rigging/electric-chain-hoists/",
+    "processedAt": "2026-01-16T15:44:26.260Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Columbus McKinnon",
@@ -4225,7 +5492,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.105Z"
+    "processedDate": "2026-01-16T15:44:26.260Z",
+    "source": "scraped",
+    "sourceUrl": "https://www.columbusmckinnon.com/en-us/products/hoists-and-rigging/electric-chain-hoists/",
+    "processedAt": "2026-01-16T15:44:26.260Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Columbus McKinnon",
@@ -4250,7 +5528,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.105Z"
+    "processedDate": "2026-01-16T15:44:26.260Z",
+    "source": "scraped",
+    "sourceUrl": "https://www.columbusmckinnon.com/en-us/products/hoists-and-rigging/electric-chain-hoists/",
+    "processedAt": "2026-01-16T15:44:26.260Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Columbus McKinnon",
@@ -4275,7 +5564,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.105Z"
+    "processedDate": "2026-01-16T15:44:26.260Z",
+    "source": "scraped",
+    "sourceUrl": "https://www.columbusmckinnon.com/en-us/products/hoists-and-rigging/electric-chain-hoists/",
+    "processedAt": "2026-01-16T15:44:26.260Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Columbus McKinnon",
@@ -4300,7 +5600,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.105Z"
+    "processedDate": "2026-01-16T15:44:26.260Z",
+    "source": "scraped",
+    "sourceUrl": "https://www.columbusmckinnon.com/en-us/products/hoists-and-rigging/electric-chain-hoists/",
+    "processedAt": "2026-01-16T15:44:26.260Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Columbus McKinnon",
@@ -4325,7 +5636,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.105Z"
+    "processedDate": "2026-01-16T15:44:26.260Z",
+    "source": "scraped",
+    "sourceUrl": "https://www.columbusmckinnon.com/en-us/products/hoists-and-rigging/electric-chain-hoists/",
+    "processedAt": "2026-01-16T15:44:26.260Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Columbus McKinnon",
@@ -4350,7 +5672,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.105Z"
+    "processedDate": "2026-01-16T15:44:26.260Z",
+    "source": "scraped",
+    "sourceUrl": "https://www.columbusmckinnon.com/en-us/products/hoists-and-rigging/electric-chain-hoists/",
+    "processedAt": "2026-01-16T15:44:26.260Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Columbus McKinnon",
@@ -4375,7 +5708,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.105Z"
+    "processedDate": "2026-01-16T15:44:26.260Z",
+    "source": "scraped",
+    "sourceUrl": "https://www.columbusmckinnon.com/en-us/products/hoists-and-rigging/electric-chain-hoists/",
+    "processedAt": "2026-01-16T15:44:26.260Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Columbus McKinnon",
@@ -4400,7 +5744,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.105Z"
+    "processedDate": "2026-01-16T15:44:26.260Z",
+    "source": "scraped",
+    "sourceUrl": "https://www.columbusmckinnon.com/en-us/products/hoists-and-rigging/electric-chain-hoists/",
+    "processedAt": "2026-01-16T15:44:26.260Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Columbus McKinnon",
@@ -4425,7 +5780,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.105Z"
+    "processedDate": "2026-01-16T15:44:26.260Z",
+    "source": "scraped",
+    "sourceUrl": "https://www.columbusmckinnon.com/en-us/products/hoists-and-rigging/electric-chain-hoists/",
+    "processedAt": "2026-01-16T15:44:26.260Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Columbus McKinnon",
@@ -4450,7 +5816,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.105Z"
+    "processedDate": "2026-01-16T15:44:26.260Z",
+    "source": "scraped",
+    "sourceUrl": "https://www.columbusmckinnon.com/en-us/products/hoists-and-rigging/electric-chain-hoists/",
+    "processedAt": "2026-01-16T15:44:26.260Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Columbus McKinnon",
@@ -4475,7 +5852,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.105Z"
+    "processedDate": "2026-01-16T15:44:26.260Z",
+    "source": "scraped",
+    "sourceUrl": "https://www.columbusmckinnon.com/en-us/products/hoists-and-rigging/electric-chain-hoists/",
+    "processedAt": "2026-01-16T15:44:26.260Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Columbus McKinnon",
@@ -4500,7 +5888,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.105Z"
+    "processedDate": "2026-01-16T15:44:26.260Z",
+    "source": "scraped",
+    "sourceUrl": "https://www.columbusmckinnon.com/en-us/products/hoists-and-rigging/electric-chain-hoists/",
+    "processedAt": "2026-01-16T15:44:26.260Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Columbus McKinnon",
@@ -4525,7 +5924,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.105Z"
+    "processedDate": "2026-01-16T15:44:26.260Z",
+    "source": "scraped",
+    "sourceUrl": "https://www.columbusmckinnon.com/en-us/products/hoists-and-rigging/electric-chain-hoists/",
+    "processedAt": "2026-01-16T15:44:26.260Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Columbus McKinnon",
@@ -4550,7 +5960,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.105Z"
+    "processedDate": "2026-01-16T15:44:26.260Z",
+    "source": "scraped",
+    "sourceUrl": "https://www.columbusmckinnon.com/en-us/products/hoists-and-rigging/electric-chain-hoists/",
+    "processedAt": "2026-01-16T15:44:26.260Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Columbus McKinnon",
@@ -4575,7 +5996,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.105Z"
+    "processedDate": "2026-01-16T15:44:26.260Z",
+    "source": "scraped",
+    "sourceUrl": "https://www.columbusmckinnon.com/en-us/products/hoists-and-rigging/electric-chain-hoists/",
+    "processedAt": "2026-01-16T15:44:26.260Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Columbus McKinnon",
@@ -4600,7 +6032,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.105Z"
+    "processedDate": "2026-01-16T15:44:26.260Z",
+    "source": "scraped",
+    "sourceUrl": "https://www.columbusmckinnon.com/en-us/products/hoists-and-rigging/electric-chain-hoists/",
+    "processedAt": "2026-01-16T15:44:26.260Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Columbus McKinnon",
@@ -4625,7 +6068,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.105Z"
+    "processedDate": "2026-01-16T15:44:26.260Z",
+    "source": "scraped",
+    "sourceUrl": "https://www.columbusmckinnon.com/en-us/products/hoists-and-rigging/electric-chain-hoists/",
+    "processedAt": "2026-01-16T15:44:26.260Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Columbus McKinnon",
@@ -4650,7 +6104,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.105Z"
+    "processedDate": "2026-01-16T15:44:26.260Z",
+    "source": "scraped",
+    "sourceUrl": "https://www.columbusmckinnon.com/en-us/products/hoists-and-rigging/electric-chain-hoists/",
+    "processedAt": "2026-01-16T15:44:26.260Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Columbus McKinnon",
@@ -4675,7 +6140,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.105Z"
+    "processedDate": "2026-01-16T15:44:26.260Z",
+    "source": "scraped",
+    "sourceUrl": "https://www.columbusmckinnon.com/en-us/products/hoists-and-rigging/electric-chain-hoists/",
+    "processedAt": "2026-01-16T15:44:26.260Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Columbus McKinnon",
@@ -4700,7 +6176,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.105Z"
+    "processedDate": "2026-01-16T15:44:26.260Z",
+    "source": "scraped",
+    "sourceUrl": "https://www.columbusmckinnon.com/en-us/products/hoists-and-rigging/electric-chain-hoists/",
+    "processedAt": "2026-01-16T15:44:26.260Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Columbus McKinnon",
@@ -4725,7 +6212,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.105Z"
+    "processedDate": "2026-01-16T15:44:26.260Z",
+    "source": "scraped",
+    "sourceUrl": "https://www.columbusmckinnon.com/en-us/products/hoists-and-rigging/electric-chain-hoists/",
+    "processedAt": "2026-01-16T15:44:26.260Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Columbus McKinnon",
@@ -4750,7 +6248,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.105Z"
+    "processedDate": "2026-01-16T15:44:26.260Z",
+    "source": "scraped",
+    "sourceUrl": "https://www.columbusmckinnon.com/en-us/products/hoists-and-rigging/electric-chain-hoists/",
+    "processedAt": "2026-01-16T15:44:26.260Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Columbus McKinnon",
@@ -4775,7 +6284,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.105Z"
+    "processedDate": "2026-01-16T15:44:26.260Z",
+    "source": "scraped",
+    "sourceUrl": "https://www.columbusmckinnon.com/en-us/products/hoists-and-rigging/electric-chain-hoists/",
+    "processedAt": "2026-01-16T15:44:26.260Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Columbus McKinnon",
@@ -4800,7 +6320,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.105Z"
+    "processedDate": "2026-01-16T15:44:26.260Z",
+    "source": "scraped",
+    "sourceUrl": "https://www.columbusmckinnon.com/en-us/products/hoists-and-rigging/electric-chain-hoists/",
+    "processedAt": "2026-01-16T15:44:26.260Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Columbus McKinnon",
@@ -4825,7 +6356,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.105Z"
+    "processedDate": "2026-01-16T15:44:26.260Z",
+    "source": "scraped",
+    "sourceUrl": "https://www.columbusmckinnon.com/en-us/products/hoists-and-rigging/electric-chain-hoists/",
+    "processedAt": "2026-01-16T15:44:26.260Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Columbus McKinnon",
@@ -4850,7 +6392,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.105Z"
+    "processedDate": "2026-01-16T15:44:26.260Z",
+    "source": "scraped",
+    "sourceUrl": "https://www.columbusmckinnon.com/en-us/products/hoists-and-rigging/electric-chain-hoists/",
+    "processedAt": "2026-01-16T15:44:26.260Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Columbus McKinnon",
@@ -4875,7 +6428,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.105Z"
+    "processedDate": "2026-01-16T15:44:26.260Z",
+    "source": "scraped",
+    "sourceUrl": "https://www.columbusmckinnon.com/en-us/products/hoists-and-rigging/electric-chain-hoists/",
+    "processedAt": "2026-01-16T15:44:26.260Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Columbus McKinnon",
@@ -4900,7 +6464,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.105Z"
+    "processedDate": "2026-01-16T15:44:26.260Z",
+    "source": "scraped",
+    "sourceUrl": "https://www.columbusmckinnon.com/en-us/products/hoists-and-rigging/electric-chain-hoists/",
+    "processedAt": "2026-01-16T15:44:26.260Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Columbus McKinnon",
@@ -4925,7 +6500,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.105Z"
+    "processedDate": "2026-01-16T15:44:26.260Z",
+    "source": "scraped",
+    "sourceUrl": "https://www.columbusmckinnon.com/en-us/products/hoists-and-rigging/electric-chain-hoists/",
+    "processedAt": "2026-01-16T15:44:26.260Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Columbus McKinnon",
@@ -4950,7 +6536,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.105Z"
+    "processedDate": "2026-01-16T15:44:26.260Z",
+    "source": "scraped",
+    "sourceUrl": "https://www.columbusmckinnon.com/en-us/products/hoists-and-rigging/electric-chain-hoists/",
+    "processedAt": "2026-01-16T15:44:26.260Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Columbus McKinnon",
@@ -4975,7 +6572,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.105Z"
+    "processedDate": "2026-01-16T15:44:26.260Z",
+    "source": "scraped",
+    "sourceUrl": "https://www.columbusmckinnon.com/en-us/products/hoists-and-rigging/electric-chain-hoists/",
+    "processedAt": "2026-01-16T15:44:26.260Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Columbus McKinnon",
@@ -5000,7 +6608,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.105Z"
+    "processedDate": "2026-01-16T15:44:26.260Z",
+    "source": "scraped",
+    "sourceUrl": "https://www.columbusmckinnon.com/en-us/products/hoists-and-rigging/electric-chain-hoists/",
+    "processedAt": "2026-01-16T15:44:26.260Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Columbus McKinnon",
@@ -5025,7 +6644,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.105Z"
+    "processedDate": "2026-01-16T15:44:26.260Z",
+    "source": "scraped",
+    "sourceUrl": "https://www.columbusmckinnon.com/en-us/products/hoists-and-rigging/electric-chain-hoists/",
+    "processedAt": "2026-01-16T15:44:26.260Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Columbus McKinnon",
@@ -5050,7 +6680,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.105Z"
+    "processedDate": "2026-01-16T15:44:26.260Z",
+    "source": "scraped",
+    "sourceUrl": "https://www.columbusmckinnon.com/en-us/products/hoists-and-rigging/electric-chain-hoists/",
+    "processedAt": "2026-01-16T15:44:26.260Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Columbus McKinnon",
@@ -5075,7 +6716,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.105Z"
+    "processedDate": "2026-01-16T15:44:26.260Z",
+    "source": "scraped",
+    "sourceUrl": "https://www.columbusmckinnon.com/en-us/products/hoists-and-rigging/electric-chain-hoists/",
+    "processedAt": "2026-01-16T15:44:26.260Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Columbus McKinnon",
@@ -5100,7 +6752,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.105Z"
+    "processedDate": "2026-01-16T15:44:26.260Z",
+    "source": "scraped",
+    "sourceUrl": "https://www.columbusmckinnon.com/en-us/products/hoists-and-rigging/electric-chain-hoists/",
+    "processedAt": "2026-01-16T15:44:26.260Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Columbus McKinnon",
@@ -5125,7 +6788,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.105Z"
+    "processedDate": "2026-01-16T15:44:26.260Z",
+    "source": "scraped",
+    "sourceUrl": "https://www.columbusmckinnon.com/en-us/products/hoists-and-rigging/electric-chain-hoists/",
+    "processedAt": "2026-01-16T15:44:26.260Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Columbus McKinnon",
@@ -5150,7 +6824,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.105Z"
+    "processedDate": "2026-01-16T15:44:26.260Z",
+    "source": "scraped",
+    "sourceUrl": "https://www.columbusmckinnon.com/en-us/products/hoists-and-rigging/electric-chain-hoists/",
+    "processedAt": "2026-01-16T15:44:26.260Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Columbus McKinnon",
@@ -5175,7 +6860,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.105Z"
+    "processedDate": "2026-01-16T15:44:26.260Z",
+    "source": "scraped",
+    "sourceUrl": "https://www.columbusmckinnon.com/en-us/products/hoists-and-rigging/electric-chain-hoists/",
+    "processedAt": "2026-01-16T15:44:26.260Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Columbus McKinnon",
@@ -5200,7 +6896,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.105Z"
+    "processedDate": "2026-01-16T15:44:26.260Z",
+    "source": "scraped",
+    "sourceUrl": "https://www.columbusmckinnon.com/en-us/products/hoists-and-rigging/electric-chain-hoists/",
+    "processedAt": "2026-01-16T15:44:26.260Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Columbus McKinnon",
@@ -5225,7 +6932,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.105Z"
+    "processedDate": "2026-01-16T15:44:26.260Z",
+    "source": "scraped",
+    "sourceUrl": "https://www.columbusmckinnon.com/en-us/products/hoists-and-rigging/electric-chain-hoists/",
+    "processedAt": "2026-01-16T15:44:26.260Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Columbus McKinnon",
@@ -5250,7 +6968,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.105Z"
+    "processedDate": "2026-01-16T15:44:26.260Z",
+    "source": "scraped",
+    "sourceUrl": "https://www.columbusmckinnon.com/en-us/products/hoists-and-rigging/electric-chain-hoists/",
+    "processedAt": "2026-01-16T15:44:26.260Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Columbus McKinnon",
@@ -5275,7 +7004,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.105Z"
+    "processedDate": "2026-01-16T15:44:26.260Z",
+    "source": "scraped",
+    "sourceUrl": "https://www.columbusmckinnon.com/en-us/products/hoists-and-rigging/electric-chain-hoists/",
+    "processedAt": "2026-01-16T15:44:26.260Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Columbus McKinnon",
@@ -5300,7 +7040,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.105Z"
+    "processedDate": "2026-01-16T15:44:26.260Z",
+    "source": "scraped",
+    "sourceUrl": "https://www.columbusmckinnon.com/en-us/products/hoists-and-rigging/electric-chain-hoists/",
+    "processedAt": "2026-01-16T15:44:26.260Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Columbus McKinnon",
@@ -5325,7 +7076,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.105Z"
+    "processedDate": "2026-01-16T15:44:26.260Z",
+    "source": "scraped",
+    "sourceUrl": "https://www.columbusmckinnon.com/en-us/products/hoists-and-rigging/electric-chain-hoists/",
+    "processedAt": "2026-01-16T15:44:26.260Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Columbus McKinnon",
@@ -5350,7 +7112,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.105Z"
+    "processedDate": "2026-01-16T15:44:26.260Z",
+    "source": "scraped",
+    "sourceUrl": "https://www.columbusmckinnon.com/en-us/products/hoists-and-rigging/electric-chain-hoists/",
+    "processedAt": "2026-01-16T15:44:26.260Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Columbus McKinnon",
@@ -5375,7 +7148,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.105Z"
+    "processedDate": "2026-01-16T15:44:26.260Z",
+    "source": "scraped",
+    "sourceUrl": "https://www.columbusmckinnon.com/en-us/products/hoists-and-rigging/electric-chain-hoists/",
+    "processedAt": "2026-01-16T15:44:26.260Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Columbus McKinnon",
@@ -5400,7 +7184,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.105Z"
+    "processedDate": "2026-01-16T15:44:26.260Z",
+    "source": "scraped",
+    "sourceUrl": "https://www.columbusmckinnon.com/en-us/products/hoists-and-rigging/electric-chain-hoists/",
+    "processedAt": "2026-01-16T15:44:26.260Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Columbus McKinnon",
@@ -5425,7 +7220,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.105Z"
+    "processedDate": "2026-01-16T15:44:26.260Z",
+    "source": "scraped",
+    "sourceUrl": "https://www.columbusmckinnon.com/en-us/products/hoists-and-rigging/electric-chain-hoists/",
+    "processedAt": "2026-01-16T15:44:26.260Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Columbus McKinnon",
@@ -5450,7 +7256,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.105Z"
+    "processedDate": "2026-01-16T15:44:26.260Z",
+    "source": "scraped",
+    "sourceUrl": "https://www.columbusmckinnon.com/en-us/products/hoists-and-rigging/electric-chain-hoists/",
+    "processedAt": "2026-01-16T15:44:26.260Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Columbus McKinnon",
@@ -5475,7 +7292,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.105Z"
+    "processedDate": "2026-01-16T15:44:26.260Z",
+    "source": "scraped",
+    "sourceUrl": "https://www.columbusmckinnon.com/en-us/products/hoists-and-rigging/electric-chain-hoists/",
+    "processedAt": "2026-01-16T15:44:26.260Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Columbus McKinnon",
@@ -5500,7 +7328,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.105Z"
+    "processedDate": "2026-01-16T15:44:26.260Z",
+    "source": "scraped",
+    "sourceUrl": "https://www.columbusmckinnon.com/en-us/products/hoists-and-rigging/electric-chain-hoists/",
+    "processedAt": "2026-01-16T15:44:26.260Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Columbus McKinnon",
@@ -5525,7 +7364,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.105Z"
+    "processedDate": "2026-01-16T15:44:26.260Z",
+    "source": "scraped",
+    "sourceUrl": "https://www.columbusmckinnon.com/en-us/products/hoists-and-rigging/electric-chain-hoists/",
+    "processedAt": "2026-01-16T15:44:26.260Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Columbus McKinnon",
@@ -5550,7 +7400,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.105Z"
+    "processedDate": "2026-01-16T15:44:26.260Z",
+    "source": "scraped",
+    "sourceUrl": "https://www.columbusmckinnon.com/en-us/products/hoists-and-rigging/electric-chain-hoists/",
+    "processedAt": "2026-01-16T15:44:26.260Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Columbus McKinnon",
@@ -5575,7 +7436,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.105Z"
+    "processedDate": "2026-01-16T15:44:26.260Z",
+    "source": "scraped",
+    "sourceUrl": "https://www.columbusmckinnon.com/en-us/products/hoists-and-rigging/electric-chain-hoists/",
+    "processedAt": "2026-01-16T15:44:26.260Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Columbus McKinnon",
@@ -5600,7 +7472,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.105Z"
+    "processedDate": "2026-01-16T15:44:26.260Z",
+    "source": "scraped",
+    "sourceUrl": "https://www.columbusmckinnon.com/en-us/products/hoists-and-rigging/electric-chain-hoists/",
+    "processedAt": "2026-01-16T15:44:26.260Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Columbus McKinnon",
@@ -5625,7 +7508,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.105Z"
+    "processedDate": "2026-01-16T15:44:26.260Z",
+    "source": "scraped",
+    "sourceUrl": "https://www.columbusmckinnon.com/en-us/products/hoists-and-rigging/electric-chain-hoists/",
+    "processedAt": "2026-01-16T15:44:26.260Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Columbus McKinnon",
@@ -5650,7 +7544,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.105Z"
+    "processedDate": "2026-01-16T15:44:26.260Z",
+    "source": "scraped",
+    "sourceUrl": "https://www.columbusmckinnon.com/en-us/products/hoists-and-rigging/electric-chain-hoists/",
+    "processedAt": "2026-01-16T15:44:26.260Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Columbus McKinnon",
@@ -5675,7 +7580,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.105Z"
+    "processedDate": "2026-01-16T15:44:26.260Z",
+    "source": "scraped",
+    "sourceUrl": "https://www.columbusmckinnon.com/en-us/products/hoists-and-rigging/electric-chain-hoists/",
+    "processedAt": "2026-01-16T15:44:26.260Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Columbus McKinnon",
@@ -5700,7 +7616,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.105Z"
+    "processedDate": "2026-01-16T15:44:26.260Z",
+    "source": "scraped",
+    "sourceUrl": "https://www.columbusmckinnon.com/en-us/products/hoists-and-rigging/electric-chain-hoists/",
+    "processedAt": "2026-01-16T15:44:26.260Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Columbus McKinnon",
@@ -5725,7 +7652,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.105Z"
+    "processedDate": "2026-01-16T15:44:26.260Z",
+    "source": "scraped",
+    "sourceUrl": "https://www.columbusmckinnon.com/en-us/products/hoists-and-rigging/electric-chain-hoists/",
+    "processedAt": "2026-01-16T15:44:26.260Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Columbus McKinnon",
@@ -5750,7 +7688,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.105Z"
+    "processedDate": "2026-01-16T15:44:26.260Z",
+    "source": "scraped",
+    "sourceUrl": "https://www.columbusmckinnon.com/en-us/products/hoists-and-rigging/electric-chain-hoists/",
+    "processedAt": "2026-01-16T15:44:26.260Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Columbus McKinnon",
@@ -5775,7 +7724,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.105Z"
+    "processedDate": "2026-01-16T15:44:26.260Z",
+    "source": "scraped",
+    "sourceUrl": "https://www.columbusmckinnon.com/en-us/products/hoists-and-rigging/electric-chain-hoists/",
+    "processedAt": "2026-01-16T15:44:26.260Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Columbus McKinnon",
@@ -5800,7 +7760,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.105Z"
+    "processedDate": "2026-01-16T15:44:26.260Z",
+    "source": "scraped",
+    "sourceUrl": "https://www.columbusmckinnon.com/en-us/products/hoists-and-rigging/electric-chain-hoists/",
+    "processedAt": "2026-01-16T15:44:26.260Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Columbus McKinnon",
@@ -5825,7 +7796,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.105Z"
+    "processedDate": "2026-01-16T15:44:26.260Z",
+    "source": "scraped",
+    "sourceUrl": "https://www.columbusmckinnon.com/en-us/products/hoists-and-rigging/electric-chain-hoists/",
+    "processedAt": "2026-01-16T15:44:26.260Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Donati Sollevamenti",
@@ -6009,7 +7991,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.105Z"
+    "processedDate": "2026-01-16T15:44:26.260Z",
+    "source": "llm_enriched",
+    "sourceUrl": "https://donaticranes.com/es/frontpage",
+    "processedAt": "2026-01-16T15:44:26.260Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Donati Sollevamenti",
@@ -6193,7 +8186,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.106Z"
+    "processedDate": "2026-01-16T15:44:26.260Z",
+    "source": "llm_enriched",
+    "sourceUrl": "https://donaticranes.com/it/frontpage",
+    "processedAt": "2026-01-16T15:44:26.260Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Demag",
@@ -6481,7 +8485,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.106Z"
+    "processedDate": "2026-01-16T15:44:26.260Z",
+    "source": "scraped",
+    "sourceUrl": "https://www.demagcranes.com/en-us/products/hoist-units/chain-hoists",
+    "processedAt": "2026-01-16T15:44:26.260Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Demag",
@@ -6646,7 +8661,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.106Z"
+    "processedDate": "2026-01-16T15:44:26.260Z",
+    "source": "scraped",
+    "sourceUrl": "https://www.demagcranes.com/en-us/products/hoist-units/chain-hoists",
+    "processedAt": "2026-01-16T15:44:26.260Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Demag",
@@ -6733,7 +8759,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.106Z"
+    "processedDate": "2026-01-16T15:44:26.260Z",
+    "source": "scraped",
+    "sourceUrl": "https://www.demagcranes.com/en-us/products/hoist-units/chain-hoists",
+    "processedAt": "2026-01-16T15:44:26.260Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Demag",
@@ -6826,7 +8863,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.106Z"
+    "processedDate": "2026-01-16T15:44:26.260Z",
+    "source": "scraped",
+    "sourceUrl": "https://www.demagcranes.com/en-us/products/hoist-units/chain-hoists",
+    "processedAt": "2026-01-16T15:44:26.260Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Demag",
@@ -6869,7 +8917,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.106Z",
+    "processedDate": "2026-01-16T15:44:26.260Z",
+    "source": "llm_enriched",
+    "sourceUrl": "https://www.demagcranes.com/en-us/products/hoist-units/chain-hoists/dc-pro-chain-hoist",
+    "processedAt": "2026-01-16T15:44:26.260Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ],
     "images": [
       {
         "url": "/media/images/demag_all-inclusive-fully-featured-with-no-need-for-extr_0.webp",
@@ -6971,7 +9030,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.106Z",
+    "processedDate": "2026-01-16T15:44:26.260Z",
+    "source": "llm_enriched",
+    "sourceUrl": "https://www.demagcranes.com/en-us/products/hoist-units/chain-hoists/dcs-pro-chain-hoist",
+    "processedAt": "2026-01-16T15:44:26.260Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ],
     "images": [
       {
         "url": "/media/images/demag_s_0.webp",
@@ -7060,7 +9130,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.106Z",
+    "processedDate": "2026-01-16T15:44:26.260Z",
+    "source": "llm_enriched",
+    "sourceUrl": "https://www.demagcranes.com/en-us/products/hoist-units/chain-hoists/dcm-pro-manulift",
+    "processedAt": "2026-01-16T15:44:26.260Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ],
     "images": [
       {
         "url": "/media/images/demag_perfect-handling-of-loads-weighing-up-to-250-kg_0.webp",
@@ -7138,7 +9219,19 @@
     "speedMMin": null,
     "dataCompleteness": 14,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.106Z",
+    "processedDate": "2026-01-16T15:44:26.260Z",
+    "source": "llm_enriched",
+    "sourceUrl": "https://www.demagcranes.com/en-us/products/hoist-units/chain-hoists/dc-com-chain-hoist",
+    "processedAt": "2026-01-16T15:44:26.260Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [
+      "loadCapacity"
+    ],
+    "missingFields": [
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ],
     "images": [
       {
         "url": "/media/images/demag_s_0.webp",
@@ -7233,7 +9326,19 @@
     "speedMMin": null,
     "dataCompleteness": 22,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.106Z"
+    "processedDate": "2026-01-16T15:44:26.261Z",
+    "source": "llm_enriched",
+    "sourceUrl": "https://www.harringtonhoists.com/product_categories/manual-trolley-hoists",
+    "processedAt": "2026-01-16T15:44:26.261Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [
+      "loadCapacity"
+    ],
+    "missingFields": [
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "ABUS Kransysteme",
@@ -7299,7 +9404,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.106Z"
+    "processedDate": "2026-01-16T15:44:26.261Z",
+    "source": "scraped",
+    "sourceUrl": "https://www.abuscranes.com/hoists/electric-chain-hoists",
+    "processedAt": "2026-01-16T15:44:26.261Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "ABUS Kransysteme",
@@ -7365,7 +9481,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.106Z"
+    "processedDate": "2026-01-16T15:44:26.261Z",
+    "source": "scraped",
+    "sourceUrl": "https://www.abuscranes.com/hoists/electric-chain-hoists",
+    "processedAt": "2026-01-16T15:44:26.261Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "ABUS Kransysteme",
@@ -7446,7 +9573,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.106Z"
+    "processedDate": "2026-01-16T15:44:26.261Z",
+    "source": "scraped",
+    "sourceUrl": "https://www.abuscranes.com/hoists/electric-chain-hoists",
+    "processedAt": "2026-01-16T15:44:26.261Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "ABUS Kransysteme",
@@ -7527,7 +9665,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.106Z"
+    "processedDate": "2026-01-16T15:44:26.261Z",
+    "source": "scraped",
+    "sourceUrl": "https://www.abuscranes.com/hoists/electric-chain-hoists",
+    "processedAt": "2026-01-16T15:44:26.261Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "ABUS Kransysteme",
@@ -7588,7 +9737,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.106Z"
+    "processedDate": "2026-01-16T15:44:26.261Z",
+    "source": "scraped",
+    "sourceUrl": "https://www.abuscranes.com/hoists/electric-chain-hoists",
+    "processedAt": "2026-01-16T15:44:26.261Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "ABUS Kransysteme",
@@ -7634,7 +9794,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.106Z"
+    "processedDate": "2026-01-16T15:44:26.261Z",
+    "source": "scraped",
+    "sourceUrl": "https://www.abuscranes.com/hoists/electric-chain-hoists",
+    "processedAt": "2026-01-16T15:44:26.261Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "ABUS Kransysteme",
@@ -7660,7 +9831,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.106Z",
+    "processedDate": "2026-01-16T15:44:26.261Z",
+    "source": "scraped",
+    "sourceUrl": "https://www.abuscranes.com/hoists/electric-chain-hoists",
+    "processedAt": "2026-01-16T15:44:26.261Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ],
     "images": [
       {
         "url": "/media/images/abus-kransysteme_s_0.png",
@@ -7803,7 +9985,19 @@
     "speedMMin": null,
     "dataCompleteness": 57,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.107Z",
+    "processedDate": "2026-01-16T15:44:26.261Z",
+    "source": "llm_enriched",
+    "sourceUrl": "https://www.abuscranes.com/hoists/electric-chain-hoists/abucompact-gmc",
+    "processedAt": "2026-01-16T15:44:26.261Z",
+    "dataQualityTier": "incomplete",
+    "populatedFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "classification"
+    ],
+    "missingFields": [
+      "motorPower"
+    ],
     "images": [
       {
         "url": "/media/images/abus-kransysteme_abucompact-gmc_0.png",
@@ -7936,7 +10130,19 @@
     "speedMMin": null,
     "dataCompleteness": 57,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.107Z",
+    "processedDate": "2026-01-16T15:44:26.261Z",
+    "source": "llm_enriched",
+    "sourceUrl": "https://www.abuscranes.com/hoists/electric-chain-hoists/abucompact-gmc/request",
+    "processedAt": "2026-01-16T15:44:26.261Z",
+    "dataQualityTier": "incomplete",
+    "populatedFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "classification"
+    ],
+    "missingFields": [
+      "motorPower"
+    ],
     "images": [
       {
         "url": "/media/images/abus-kransysteme_abucompact-gmc_0.png",
@@ -8069,7 +10275,19 @@
     "speedMMin": 3,
     "dataCompleteness": 57,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.107Z",
+    "processedDate": "2026-01-16T15:44:26.261Z",
+    "source": "llm_enriched",
+    "sourceUrl": "https://www.abuscranes.com/hoists/electric-chain-hoists/abucompact-gm2",
+    "processedAt": "2026-01-16T15:44:26.261Z",
+    "dataQualityTier": "incomplete",
+    "populatedFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "classification"
+    ],
+    "missingFields": [
+      "motorPower"
+    ],
     "images": [
       {
         "url": "/media/images/abus-kransysteme_abucompact-gm2_0.png",
@@ -8172,7 +10390,19 @@
     "speedMMin": 3,
     "dataCompleteness": 57,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.107Z",
+    "processedDate": "2026-01-16T15:44:26.261Z",
+    "source": "llm_enriched",
+    "sourceUrl": "https://www.abuscranes.com/hoists/electric-chain-hoists/abucompact-gm2/request",
+    "processedAt": "2026-01-16T15:44:26.261Z",
+    "dataQualityTier": "incomplete",
+    "populatedFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "classification"
+    ],
+    "missingFields": [
+      "motorPower"
+    ],
     "images": [
       {
         "url": "/media/images/abus-kransysteme_abucompact-gm2_0.png",
@@ -8305,7 +10535,19 @@
     "speedMMin": 3,
     "dataCompleteness": 57,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.107Z",
+    "processedDate": "2026-01-16T15:44:26.261Z",
+    "source": "llm_enriched",
+    "sourceUrl": "https://www.abuscranes.com/hoists/electric-chain-hoists/abucompact-gm4",
+    "processedAt": "2026-01-16T15:44:26.261Z",
+    "dataQualityTier": "incomplete",
+    "populatedFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "classification"
+    ],
+    "missingFields": [
+      "motorPower"
+    ],
     "images": [
       {
         "url": "/media/images/abus-kransysteme_abucompact-gm4_0.png",
@@ -8423,7 +10665,19 @@
     "speedMMin": 3,
     "dataCompleteness": 57,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.107Z",
+    "processedDate": "2026-01-16T15:44:26.261Z",
+    "source": "llm_enriched",
+    "sourceUrl": "https://www.abuscranes.com/hoists/electric-chain-hoists/abucompact-gm4/request",
+    "processedAt": "2026-01-16T15:44:26.261Z",
+    "dataQualityTier": "incomplete",
+    "populatedFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "classification"
+    ],
+    "missingFields": [
+      "motorPower"
+    ],
     "images": [
       {
         "url": "/media/images/abus-kransysteme_abucompact-gm4_0.png",
@@ -8571,7 +10825,19 @@
     "speedMMin": 3,
     "dataCompleteness": 57,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.107Z",
+    "processedDate": "2026-01-16T15:44:26.261Z",
+    "source": "llm_enriched",
+    "sourceUrl": "https://www.abuscranes.com/hoists/electric-chain-hoists/abucompact-gm6",
+    "processedAt": "2026-01-16T15:44:26.261Z",
+    "dataQualityTier": "incomplete",
+    "populatedFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "classification"
+    ],
+    "missingFields": [
+      "motorPower"
+    ],
     "images": [
       {
         "url": "/media/images/abus-kransysteme_abucompact-gm6_0.png",
@@ -8689,7 +10955,19 @@
     "speedMMin": 3,
     "dataCompleteness": 57,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.107Z",
+    "processedDate": "2026-01-16T15:44:26.262Z",
+    "source": "llm_enriched",
+    "sourceUrl": "https://www.abuscranes.com/hoists/electric-chain-hoists/abucompact-gm6/request",
+    "processedAt": "2026-01-16T15:44:26.262Z",
+    "dataQualityTier": "incomplete",
+    "populatedFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "classification"
+    ],
+    "missingFields": [
+      "motorPower"
+    ],
     "images": [
       {
         "url": "/media/images/abus-kransysteme_abucompact-gm6_0.png",
@@ -8837,7 +11115,19 @@
     "speedMMin": 3,
     "dataCompleteness": 57,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.107Z",
+    "processedDate": "2026-01-16T15:44:26.262Z",
+    "source": "llm_enriched",
+    "sourceUrl": "https://www.abuscranes.com/hoists/electric-chain-hoists/abucompact-gm8",
+    "processedAt": "2026-01-16T15:44:26.262Z",
+    "dataQualityTier": "incomplete",
+    "populatedFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "classification"
+    ],
+    "missingFields": [
+      "motorPower"
+    ],
     "images": [
       {
         "url": "/media/images/abus-kransysteme_abucompact-gm8_0.png",
@@ -9079,7 +11369,19 @@
     "speedMMin": null,
     "dataCompleteness": 14,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.107Z",
+    "processedDate": "2026-01-16T15:44:26.262Z",
+    "source": "llm_enriched",
+    "sourceUrl": "https://www.kito.net/en/products/ed-electric-chain-hoist/",
+    "processedAt": "2026-01-16T15:44:26.262Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [
+      "loadCapacity"
+    ],
+    "missingFields": [
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ],
     "images": [
       {
         "url": "/media/images/kito_the-fast_0.jpg",
@@ -9315,7 +11617,19 @@
     "speedMMin": null,
     "dataCompleteness": 14,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.107Z",
+    "processedDate": "2026-01-16T15:44:26.262Z",
+    "source": "llm_enriched",
+    "sourceUrl": "https://www.kito.net/en/products/eq-electric-chain-hoist/",
+    "processedAt": "2026-01-16T15:44:26.262Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [
+      "loadCapacity"
+    ],
+    "missingFields": [
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ],
     "images": [
       {
         "url": "/media/images/kito_the-effective_0.jpg",
@@ -10612,7 +12926,19 @@
     "speedMMin": null,
     "dataCompleteness": 14,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.107Z",
+    "processedDate": "2026-01-16T15:44:26.262Z",
+    "source": "llm_enriched",
+    "sourceUrl": "https://www.kito.net/en/products/er2-electric-chain-hoist/",
+    "processedAt": "2026-01-16T15:44:26.262Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [
+      "loadCapacity"
+    ],
+    "missingFields": [
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ],
     "images": [
       {
         "url": "/media/images/kito_the-powerful_0.jpg",
@@ -10663,7 +12989,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.107Z",
+    "processedDate": "2026-01-16T15:44:26.262Z",
+    "source": "llm_enriched",
+    "sourceUrl": "https://www.kito.net/en/case-studies/extremely-clean-solid-handling-with-kito-er2-m-electric-chain-hoist/",
+    "processedAt": "2026-01-16T15:44:26.262Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ],
     "images": [
       {
         "url": "/media/images/kito_er2_0.jpg",
@@ -10772,7 +13109,18 @@
     "speedMMin": 9.8,
     "dataCompleteness": 93,
     "hasCompleteSpecs": true,
-    "processedDate": "2026-01-16T15:11:11.107Z"
+    "processedDate": "2026-01-16T15:44:26.262Z",
+    "source": "llm_enriched",
+    "sourceUrl": "https://www.cmco.com/en-us/our-brands/coffing-hoists/",
+    "processedAt": "2026-01-16T15:44:26.262Z",
+    "dataQualityTier": "complete",
+    "populatedFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ],
+    "missingFields": []
   },
   {
     "manufacturer": "Yale Hoists",
@@ -10842,7 +13190,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.107Z"
+    "processedDate": "2026-01-16T15:44:26.262Z",
+    "source": "llm_enriched",
+    "sourceUrl": "https://www.cmco.com/en-us/our-brands/chester-hoist/",
+    "processedAt": "2026-01-16T15:44:26.262Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Yale Hoists",
@@ -10903,7 +13262,19 @@
     "speedMMin": null,
     "dataCompleteness": 14,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.107Z"
+    "processedDate": "2026-01-16T15:44:26.262Z",
+    "source": "llm_enriched",
+    "sourceUrl": "https://www.cmco.com/en-us/products/hoisting-lifting-equipment/manual-hoists/hand-chain-hoists/",
+    "processedAt": "2026-01-16T15:44:26.262Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [
+      "loadCapacity"
+    ],
+    "missingFields": [
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Yale Hoists",
@@ -10963,7 +13334,19 @@
     "speedMMin": null,
     "dataCompleteness": 14,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.107Z"
+    "processedDate": "2026-01-16T15:44:26.262Z",
+    "source": "llm_enriched",
+    "sourceUrl": "https://www.cmco.com/en-us/products/hoisting-lifting-equipment/manual-hoists/lever-hoists/",
+    "processedAt": "2026-01-16T15:44:26.262Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [
+      "loadCapacity"
+    ],
+    "missingFields": [
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Yale Hoists",
@@ -11056,7 +13439,19 @@
     "speedMMin": null,
     "dataCompleteness": 43,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.107Z"
+    "processedDate": "2026-01-16T15:44:26.262Z",
+    "source": "llm_enriched",
+    "sourceUrl": "https://www.cmco.com/en-us/products/hoisting-lifting-equipment/manual-hoists/explosion-proof-hand-chain-hoists/",
+    "processedAt": "2026-01-16T15:44:26.262Z",
+    "dataQualityTier": "incomplete",
+    "populatedFields": [
+      "loadCapacity",
+      "classification"
+    ],
+    "missingFields": [
+      "liftingSpeed",
+      "motorPower"
+    ]
   },
   {
     "manufacturer": "Yale Hoists",
@@ -11137,7 +13532,19 @@
     "speedMMin": null,
     "dataCompleteness": 43,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.107Z"
+    "processedDate": "2026-01-16T15:44:26.262Z",
+    "source": "llm_enriched",
+    "sourceUrl": "https://www.cmco.com/en-us/products/hoisting-lifting-equipment/electric-air-hoists/electric-wire-rope-hoists/",
+    "processedAt": "2026-01-16T15:44:26.262Z",
+    "dataQualityTier": "incomplete",
+    "populatedFields": [
+      "loadCapacity",
+      "classification"
+    ],
+    "missingFields": [
+      "liftingSpeed",
+      "motorPower"
+    ]
   },
   {
     "manufacturer": "Yale Hoists",
@@ -11180,7 +13587,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.107Z"
+    "processedDate": "2026-01-16T15:44:26.262Z",
+    "source": "llm_enriched",
+    "sourceUrl": "https://www.cmco.com/en-us/products/hoisting-lifting-equipment/electric-air-hoists/pneumatic-wire-rope-hoists/",
+    "processedAt": "2026-01-16T15:44:26.262Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Yale Hoists",
@@ -11275,7 +13693,18 @@
     "speedMMin": null,
     "dataCompleteness": 71,
     "hasCompleteSpecs": true,
-    "processedDate": "2026-01-16T15:11:11.107Z"
+    "processedDate": "2026-01-16T15:44:26.262Z",
+    "source": "llm_enriched",
+    "sourceUrl": "https://www.cmco.com/en-us/products/hoisting-lifting-equipment/electric-air-hoists/explosion-proof-electric-chain-hoists/",
+    "processedAt": "2026-01-16T15:44:26.262Z",
+    "dataQualityTier": "partial",
+    "populatedFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ],
+    "missingFields": []
   },
   {
     "manufacturer": "Coffing Hoists",
@@ -11405,7 +13834,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.107Z"
+    "processedDate": "2026-01-16T15:44:26.262Z",
+    "source": "llm_enriched",
+    "sourceUrl": "https://www.cmco.com/en-us/region-selection/",
+    "processedAt": "2026-01-16T15:44:26.262Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Coffing Hoists",
@@ -11549,7 +13989,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.108Z"
+    "processedDate": "2026-01-16T15:44:26.262Z",
+    "source": "llm_enriched",
+    "sourceUrl": "https://www.cmco.com/en-us/about-us/purpose-in-motion/",
+    "processedAt": "2026-01-16T15:44:26.262Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Coffing Hoists",
@@ -11746,7 +14197,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.108Z"
+    "processedDate": "2026-01-16T15:44:26.262Z",
+    "source": "llm_enriched",
+    "sourceUrl": "https://www.cmco.com/en-us/about-us/esg/",
+    "processedAt": "2026-01-16T15:44:26.262Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Coffing Hoists",
@@ -11876,7 +14338,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.108Z"
+    "processedDate": "2026-01-16T15:44:26.262Z",
+    "source": "llm_enriched",
+    "sourceUrl": "https://www.cmco.com/en-us/about-us/community/",
+    "processedAt": "2026-01-16T15:44:26.262Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Coffing Hoists",
@@ -12006,7 +14479,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.108Z"
+    "processedDate": "2026-01-16T15:44:26.262Z",
+    "source": "llm_enriched",
+    "sourceUrl": "https://www.cmco.com/en-us/about-us/internship-program/",
+    "processedAt": "2026-01-16T15:44:26.262Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Coffing Hoists",
@@ -12268,7 +14752,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.108Z"
+    "processedDate": "2026-01-16T15:44:26.262Z",
+    "source": "llm_enriched",
+    "sourceUrl": "https://www.cmco.com/en-us/about-us/iso-9001-certification/",
+    "processedAt": "2026-01-16T15:44:26.262Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Coffing Hoists",
@@ -12398,7 +14893,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.108Z"
+    "processedDate": "2026-01-16T15:44:26.262Z",
+    "source": "llm_enriched",
+    "sourceUrl": "https://www.cmco.com/en-us/resources/patents/",
+    "processedAt": "2026-01-16T15:44:26.262Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Coffing Hoists",
@@ -12561,7 +15067,19 @@
     "speedMMin": null,
     "dataCompleteness": 14,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.108Z"
+    "processedDate": "2026-01-16T15:44:26.262Z",
+    "source": "llm_enriched",
+    "sourceUrl": "https://www.cmco.com/en-us/about-us/professional-associations/",
+    "processedAt": "2026-01-16T15:44:26.262Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [
+      "motorPower"
+    ],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Coffing Hoists",
@@ -12736,7 +15254,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.108Z"
+    "processedDate": "2026-01-16T15:44:26.262Z",
+    "source": "llm_enriched",
+    "sourceUrl": "https://www.cmco.com/en-us/cmco-newsroom/",
+    "processedAt": "2026-01-16T15:44:26.262Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Budgit Hoists",
@@ -12866,7 +15395,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.108Z"
+    "processedDate": "2026-01-16T15:44:26.262Z",
+    "source": "llm_enriched",
+    "sourceUrl": "https://www.cmco.com/en-us/region-selection/",
+    "processedAt": "2026-01-16T15:44:26.262Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Budgit Hoists",
@@ -13010,7 +15550,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.108Z"
+    "processedDate": "2026-01-16T15:44:26.262Z",
+    "source": "llm_enriched",
+    "sourceUrl": "https://www.cmco.com/en-us/about-us/purpose-in-motion/",
+    "processedAt": "2026-01-16T15:44:26.262Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Budgit Hoists",
@@ -13207,7 +15758,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.108Z"
+    "processedDate": "2026-01-16T15:44:26.262Z",
+    "source": "llm_enriched",
+    "sourceUrl": "https://www.cmco.com/en-us/about-us/esg/",
+    "processedAt": "2026-01-16T15:44:26.262Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Budgit Hoists",
@@ -13337,7 +15899,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.108Z"
+    "processedDate": "2026-01-16T15:44:26.262Z",
+    "source": "llm_enriched",
+    "sourceUrl": "https://www.cmco.com/en-us/about-us/community/",
+    "processedAt": "2026-01-16T15:44:26.262Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Budgit Hoists",
@@ -13467,7 +16040,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.108Z"
+    "processedDate": "2026-01-16T15:44:26.263Z",
+    "source": "llm_enriched",
+    "sourceUrl": "https://www.cmco.com/en-us/about-us/internship-program/",
+    "processedAt": "2026-01-16T15:44:26.263Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Budgit Hoists",
@@ -13729,7 +16313,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.108Z"
+    "processedDate": "2026-01-16T15:44:26.263Z",
+    "source": "llm_enriched",
+    "sourceUrl": "https://www.cmco.com/en-us/about-us/iso-9001-certification/",
+    "processedAt": "2026-01-16T15:44:26.263Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Budgit Hoists",
@@ -13859,7 +16454,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.108Z"
+    "processedDate": "2026-01-16T15:44:26.263Z",
+    "source": "llm_enriched",
+    "sourceUrl": "https://www.cmco.com/en-us/resources/patents/",
+    "processedAt": "2026-01-16T15:44:26.263Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Budgit Hoists",
@@ -14022,7 +16628,19 @@
     "speedMMin": null,
     "dataCompleteness": 14,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.108Z"
+    "processedDate": "2026-01-16T15:44:26.263Z",
+    "source": "llm_enriched",
+    "sourceUrl": "https://www.cmco.com/en-us/about-us/professional-associations/",
+    "processedAt": "2026-01-16T15:44:26.263Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [
+      "motorPower"
+    ],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Budgit Hoists",
@@ -14197,7 +16815,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.108Z"
+    "processedDate": "2026-01-16T15:44:26.263Z",
+    "source": "llm_enriched",
+    "sourceUrl": "https://www.cmco.com/en-us/cmco-newsroom/",
+    "processedAt": "2026-01-16T15:44:26.263Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "R&M Materials Handling",
@@ -14349,7 +16978,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.108Z"
+    "processedDate": "2026-01-16T15:44:26.263Z",
+    "source": "llm_enriched",
+    "sourceUrl": "https://rmhoist.com/",
+    "processedAt": "2026-01-16T15:44:26.263Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "R&M Materials Handling",
@@ -14519,7 +17159,19 @@
     "speedMMin": null,
     "dataCompleteness": 50,
     "hasCompleteSpecs": true,
-    "processedDate": "2026-01-16T15:11:11.109Z"
+    "processedDate": "2026-01-16T15:44:26.263Z",
+    "source": "llm_enriched",
+    "sourceUrl": "https://rmhoist.com/industries/mining",
+    "processedAt": "2026-01-16T15:44:26.263Z",
+    "dataQualityTier": "incomplete",
+    "populatedFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower"
+    ],
+    "missingFields": [
+      "classification"
+    ]
   },
   {
     "manufacturer": "R&M Materials Handling",
@@ -14684,7 +17336,19 @@
     "speedMMin": null,
     "dataCompleteness": 14,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.109Z"
+    "processedDate": "2026-01-16T15:44:26.264Z",
+    "source": "llm_enriched",
+    "sourceUrl": "https://rmhoist.com/industries/power-plants",
+    "processedAt": "2026-01-16T15:44:26.264Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [
+      "loadCapacity"
+    ],
+    "missingFields": [
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "SWF Krantechnik",
@@ -14895,7 +17559,19 @@
     "speedMMin": null,
     "dataCompleteness": 14,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.109Z"
+    "processedDate": "2026-01-16T15:44:26.264Z",
+    "source": "llm_enriched",
+    "sourceUrl": "https://www.swfkrantechnik.com/en/products/chainster/",
+    "processedAt": "2026-01-16T15:44:26.264Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [
+      "loadCapacity"
+    ],
+    "missingFields": [
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "SWF Krantechnik",
@@ -15093,7 +17769,19 @@
     "speedMMin": null,
     "dataCompleteness": 14,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.109Z"
+    "processedDate": "2026-01-16T15:44:26.264Z",
+    "source": "llm_enriched",
+    "sourceUrl": "https://www.swfkrantechnik.com/de/products/chainster/",
+    "processedAt": "2026-01-16T15:44:26.264Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [
+      "loadCapacity"
+    ],
+    "missingFields": [
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "SWF Krantechnik",
@@ -15280,7 +17968,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.109Z"
+    "processedDate": "2026-01-16T15:44:26.264Z",
+    "source": "llm_enriched",
+    "sourceUrl": "https://www.swfkrantechnik.com/cn/products/chainster/",
+    "processedAt": "2026-01-16T15:44:26.264Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "SWF Krantechnik",
@@ -15405,7 +18104,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.109Z"
+    "processedDate": "2026-01-16T15:44:26.264Z",
+    "source": "llm_enriched",
+    "sourceUrl": "https://www.swfkrantechnik.com/hr/",
+    "processedAt": "2026-01-16T15:44:26.264Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "J.D. Neuhaus",
@@ -15552,7 +18262,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.109Z"
+    "processedDate": "2026-01-16T15:44:26.264Z",
+    "source": "llm_enriched",
+    "sourceUrl": "https://www.jdngroup.com/",
+    "processedAt": "2026-01-16T15:44:26.264Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "J.D. Neuhaus",
@@ -15708,7 +18429,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.109Z"
+    "processedDate": "2026-01-16T15:44:26.264Z",
+    "source": "llm_enriched",
+    "sourceUrl": "https://www.jdngroup.com/products/profi/",
+    "processedAt": "2026-01-16T15:44:26.264Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "J.D. Neuhaus",
@@ -15894,7 +18626,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.109Z"
+    "processedDate": "2026-01-16T15:44:26.264Z",
+    "source": "llm_enriched",
+    "sourceUrl": "https://www.jdngroup.com/de/produkte/profi/",
+    "processedAt": "2026-01-16T15:44:26.264Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "J.D. Neuhaus",
@@ -16069,7 +18812,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.109Z"
+    "processedDate": "2026-01-16T15:44:26.264Z",
+    "source": "llm_enriched",
+    "sourceUrl": "https://www.jdngroup.com/fr/produits/profi/",
+    "processedAt": "2026-01-16T15:44:26.264Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "J.D. Neuhaus",
@@ -16225,7 +18979,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.109Z"
+    "processedDate": "2026-01-16T15:44:26.264Z",
+    "source": "llm_enriched",
+    "sourceUrl": "https://www.jdngroup.com/products/mini/",
+    "processedAt": "2026-01-16T15:44:26.264Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "J.D. Neuhaus",
@@ -16381,7 +19146,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.109Z"
+    "processedDate": "2026-01-16T15:44:26.264Z",
+    "source": "llm_enriched",
+    "sourceUrl": "https://www.jdngroup.com/products/mini-food-grade/",
+    "processedAt": "2026-01-16T15:44:26.264Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "J.D. Neuhaus",
@@ -16537,7 +19313,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.109Z"
+    "processedDate": "2026-01-16T15:44:26.264Z",
+    "source": "llm_enriched",
+    "sourceUrl": "https://www.jdngroup.com/products/profi-hydraulic/",
+    "processedAt": "2026-01-16T15:44:26.264Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "J.D. Neuhaus",
@@ -16694,7 +19481,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.109Z"
+    "processedDate": "2026-01-16T15:44:26.264Z",
+    "source": "llm_enriched",
+    "sourceUrl": "https://www.jdngroup.com/products/lmf/",
+    "processedAt": "2026-01-16T15:44:26.264Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "J.D. Neuhaus",
@@ -16835,7 +19633,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.109Z"
+    "processedDate": "2026-01-16T15:44:26.264Z",
+    "source": "llm_enriched",
+    "sourceUrl": "https://www.jdngroup.com/products/bbh/",
+    "processedAt": "2026-01-16T15:44:26.264Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Elephant Lifting Products",
@@ -17010,7 +19819,19 @@
     "speedMMin": null,
     "dataCompleteness": 65,
     "hasCompleteSpecs": true,
-    "processedDate": "2026-01-16T15:11:11.109Z"
+    "processedDate": "2026-01-16T15:44:26.264Z",
+    "source": "llm_enriched",
+    "sourceUrl": "https://elephantlifting.com/es/product/polipastos-electricos-de-cadena/",
+    "processedAt": "2026-01-16T15:44:26.264Z",
+    "dataQualityTier": "partial",
+    "populatedFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower"
+    ],
+    "missingFields": [
+      "classification"
+    ]
   },
   {
     "manufacturer": "Elephant Lifting Products",
@@ -17173,7 +19994,19 @@
     "speedMMin": null,
     "dataCompleteness": 29,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.109Z"
+    "processedDate": "2026-01-16T15:44:26.264Z",
+    "source": "llm_enriched",
+    "sourceUrl": "https://elephantlifting.com",
+    "processedAt": "2026-01-16T15:44:26.264Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [
+      "loadCapacity"
+    ],
+    "missingFields": [
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Elephant Lifting Products",
@@ -17340,7 +20173,19 @@
     "speedMMin": null,
     "dataCompleteness": 29,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.109Z"
+    "processedDate": "2026-01-16T15:44:26.264Z",
+    "source": "llm_enriched",
+    "sourceUrl": "https://elephantlifting.com/products/",
+    "processedAt": "2026-01-16T15:44:26.264Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [
+      "loadCapacity"
+    ],
+    "missingFields": [
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Elephant Lifting Products",
@@ -17523,7 +20368,19 @@
     "speedMMin": null,
     "dataCompleteness": 29,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.109Z"
+    "processedDate": "2026-01-16T15:44:26.264Z",
+    "source": "llm_enriched",
+    "sourceUrl": "https://elephantlifting.com/product/lever-chain-hoists/",
+    "processedAt": "2026-01-16T15:44:26.264Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [
+      "loadCapacity"
+    ],
+    "missingFields": [
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Elephant Lifting Products",
@@ -17705,7 +20562,19 @@
     "speedMMin": null,
     "dataCompleteness": 29,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.109Z"
+    "processedDate": "2026-01-16T15:44:26.264Z",
+    "source": "llm_enriched",
+    "sourceUrl": "https://elephantlifting.com/product/hand-chain-hoists/",
+    "processedAt": "2026-01-16T15:44:26.264Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [
+      "loadCapacity"
+    ],
+    "missingFields": [
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "LiftingSafety",
@@ -17883,7 +20752,19 @@
     "speedMMin": null,
     "dataCompleteness": 50,
     "hasCompleteSpecs": true,
-    "processedDate": "2026-01-16T15:11:11.109Z"
+    "processedDate": "2026-01-16T15:44:26.264Z",
+    "source": "llm_enriched",
+    "sourceUrl": "https://www.liftingsafety.co.uk/",
+    "processedAt": "2026-01-16T15:44:26.264Z",
+    "dataQualityTier": "incomplete",
+    "populatedFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower"
+    ],
+    "missingFields": [
+      "classification"
+    ]
   },
   {
     "manufacturer": "LiftingSafety",
@@ -18028,7 +20909,19 @@
     "speedMMin": null,
     "dataCompleteness": 50,
     "hasCompleteSpecs": true,
-    "processedDate": "2026-01-16T15:11:11.109Z"
+    "processedDate": "2026-01-16T15:44:26.265Z",
+    "source": "llm_enriched",
+    "sourceUrl": "https://www.liftingsafety.co.uk/lifting-equipment-shop",
+    "processedAt": "2026-01-16T15:44:26.265Z",
+    "dataQualityTier": "incomplete",
+    "populatedFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower"
+    ],
+    "missingFields": [
+      "classification"
+    ]
   },
   {
     "manufacturer": "LiftingSafety",
@@ -18173,7 +21066,19 @@
     "speedMMin": null,
     "dataCompleteness": 50,
     "hasCompleteSpecs": true,
-    "processedDate": "2026-01-16T15:11:11.110Z"
+    "processedDate": "2026-01-16T15:44:26.265Z",
+    "source": "llm_enriched",
+    "sourceUrl": "https://www.liftingsafety.co.uk/liftingsafety-manufacturer-brands",
+    "processedAt": "2026-01-16T15:44:26.265Z",
+    "dataQualityTier": "incomplete",
+    "populatedFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower"
+    ],
+    "missingFields": [
+      "classification"
+    ]
   },
   {
     "manufacturer": "LiftingSafety",
@@ -18303,7 +21208,19 @@
     "speedMMin": null,
     "dataCompleteness": 50,
     "hasCompleteSpecs": true,
-    "processedDate": "2026-01-16T15:11:11.110Z"
+    "processedDate": "2026-01-16T15:44:26.265Z",
+    "source": "llm_enriched",
+    "sourceUrl": "https://www.liftingsafety.co.uk/promotional-and-sale-items",
+    "processedAt": "2026-01-16T15:44:26.265Z",
+    "dataQualityTier": "incomplete",
+    "populatedFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower"
+    ],
+    "missingFields": [
+      "classification"
+    ]
   },
   {
     "manufacturer": "LiftingSafety",
@@ -18433,7 +21350,19 @@
     "speedMMin": null,
     "dataCompleteness": 50,
     "hasCompleteSpecs": true,
-    "processedDate": "2026-01-16T15:11:11.110Z"
+    "processedDate": "2026-01-16T15:44:26.265Z",
+    "source": "llm_enriched",
+    "sourceUrl": "https://www.liftingsafety.co.uk/login",
+    "processedAt": "2026-01-16T15:44:26.265Z",
+    "dataQualityTier": "incomplete",
+    "populatedFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower"
+    ],
+    "missingFields": [
+      "classification"
+    ]
   },
   {
     "manufacturer": "LiftingSafety",
@@ -18564,7 +21493,19 @@
     "speedMMin": null,
     "dataCompleteness": 50,
     "hasCompleteSpecs": true,
-    "processedDate": "2026-01-16T15:11:11.110Z"
+    "processedDate": "2026-01-16T15:44:26.265Z",
+    "source": "llm_enriched",
+    "sourceUrl": "https://www.liftingsafety.co.uk/basket",
+    "processedAt": "2026-01-16T15:44:26.265Z",
+    "dataQualityTier": "incomplete",
+    "populatedFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower"
+    ],
+    "missingFields": [
+      "classification"
+    ]
   },
   {
     "manufacturer": "Tiger Lifting",
@@ -18610,7 +21551,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.110Z"
+    "processedDate": "2026-01-16T15:44:26.265Z",
+    "source": "scraped",
+    "sourceUrl": "https://tigerlifting.com/",
+    "processedAt": "2026-01-16T15:44:26.265Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Tiger Lifting",
@@ -18656,7 +21608,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.110Z"
+    "processedDate": "2026-01-16T15:44:26.265Z",
+    "source": "scraped",
+    "sourceUrl": "https://tigerlifting.com/",
+    "processedAt": "2026-01-16T15:44:26.265Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Tiger Lifting",
@@ -18702,7 +21665,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.110Z"
+    "processedDate": "2026-01-16T15:44:26.265Z",
+    "source": "scraped",
+    "sourceUrl": "https://tigerlifting.com/",
+    "processedAt": "2026-01-16T15:44:26.265Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Tiger Lifting",
@@ -18748,7 +21722,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.110Z"
+    "processedDate": "2026-01-16T15:44:26.265Z",
+    "source": "scraped",
+    "sourceUrl": "https://tigerlifting.com/",
+    "processedAt": "2026-01-16T15:44:26.265Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Tiger Lifting",
@@ -18794,7 +21779,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.110Z"
+    "processedDate": "2026-01-16T15:44:26.265Z",
+    "source": "scraped",
+    "sourceUrl": "https://tigerlifting.com/",
+    "processedAt": "2026-01-16T15:44:26.265Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Tiger Lifting",
@@ -18840,7 +21836,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.110Z"
+    "processedDate": "2026-01-16T15:44:26.266Z",
+    "source": "scraped",
+    "sourceUrl": "https://tigerlifting.com/",
+    "processedAt": "2026-01-16T15:44:26.266Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Tiger Lifting",
@@ -18886,7 +21893,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.111Z"
+    "processedDate": "2026-01-16T15:44:26.266Z",
+    "source": "scraped",
+    "sourceUrl": "https://tigerlifting.com/",
+    "processedAt": "2026-01-16T15:44:26.266Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Tiger Lifting",
@@ -18917,7 +21935,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.111Z"
+    "processedDate": "2026-01-16T15:44:26.266Z",
+    "source": "scraped",
+    "sourceUrl": "https://tigerlifting.com/",
+    "processedAt": "2026-01-16T15:44:26.266Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Tiger Lifting",
@@ -18963,7 +21992,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.111Z"
+    "processedDate": "2026-01-16T15:44:26.266Z",
+    "source": "scraped",
+    "sourceUrl": "https://tigerlifting.com/",
+    "processedAt": "2026-01-16T15:44:26.266Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Tiger Lifting",
@@ -19009,7 +22049,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.111Z"
+    "processedDate": "2026-01-16T15:44:26.267Z",
+    "source": "scraped",
+    "sourceUrl": "https://tigerlifting.com/",
+    "processedAt": "2026-01-16T15:44:26.267Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Tiger Lifting",
@@ -19055,7 +22106,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.111Z"
+    "processedDate": "2026-01-16T15:44:26.267Z",
+    "source": "scraped",
+    "sourceUrl": "https://tigerlifting.com/",
+    "processedAt": "2026-01-16T15:44:26.267Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Tiger Lifting",
@@ -19101,7 +22163,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.112Z"
+    "processedDate": "2026-01-16T15:44:26.267Z",
+    "source": "scraped",
+    "sourceUrl": "https://tigerlifting.com/",
+    "processedAt": "2026-01-16T15:44:26.267Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Tiger Lifting",
@@ -19162,7 +22235,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.112Z"
+    "processedDate": "2026-01-16T15:44:26.267Z",
+    "source": "scraped",
+    "sourceUrl": "https://tigerlifting.com/",
+    "processedAt": "2026-01-16T15:44:26.267Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Tiger Lifting",
@@ -19352,7 +22436,19 @@
     "speedMMin": 22.5,
     "dataCompleteness": 36,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.112Z"
+    "processedDate": "2026-01-16T15:44:26.267Z",
+    "source": "llm_enriched",
+    "sourceUrl": "https://tigerlifting.com/product-category/pneumatic-hoisting/",
+    "processedAt": "2026-01-16T15:44:26.267Z",
+    "dataQualityTier": "incomplete",
+    "populatedFields": [
+      "loadCapacity",
+      "liftingSpeed"
+    ],
+    "missingFields": [
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Tiger Lifting",
@@ -19535,7 +22631,19 @@
     "speedMMin": 22.5,
     "dataCompleteness": 36,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.112Z"
+    "processedDate": "2026-01-16T15:44:26.268Z",
+    "source": "llm_enriched",
+    "sourceUrl": "https://tigerlifting.com/product-category/manualhoisting/",
+    "processedAt": "2026-01-16T15:44:26.268Z",
+    "dataQualityTier": "incomplete",
+    "populatedFields": [
+      "loadCapacity",
+      "liftingSpeed"
+    ],
+    "missingFields": [
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Tiger Lifting",
@@ -19727,7 +22835,19 @@
     "speedMMin": 22.5,
     "dataCompleteness": 36,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.112Z"
+    "processedDate": "2026-01-16T15:44:26.268Z",
+    "source": "llm_enriched",
+    "sourceUrl": "https://tigerlifting.com/product-category/manualhoisting/lever-hoists/",
+    "processedAt": "2026-01-16T15:44:26.268Z",
+    "dataQualityTier": "incomplete",
+    "populatedFields": [
+      "loadCapacity",
+      "liftingSpeed"
+    ],
+    "missingFields": [
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Stahl CraneSystems",
@@ -19857,7 +22977,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.113Z"
+    "processedDate": "2026-01-16T15:44:26.269Z",
+    "source": "llm_enriched",
+    "sourceUrl": "https://www.cmco.com/en-us/region-selection/",
+    "processedAt": "2026-01-16T15:44:26.269Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Stahl CraneSystems",
@@ -20001,7 +23132,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.113Z"
+    "processedDate": "2026-01-16T15:44:26.269Z",
+    "source": "llm_enriched",
+    "sourceUrl": "https://www.cmco.com/en-us/about-us/purpose-in-motion/",
+    "processedAt": "2026-01-16T15:44:26.269Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Stahl CraneSystems",
@@ -20198,7 +23340,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.113Z"
+    "processedDate": "2026-01-16T15:44:26.269Z",
+    "source": "llm_enriched",
+    "sourceUrl": "https://www.cmco.com/en-us/about-us/esg/",
+    "processedAt": "2026-01-16T15:44:26.269Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Stahl CraneSystems",
@@ -20328,7 +23481,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.113Z"
+    "processedDate": "2026-01-16T15:44:26.269Z",
+    "source": "llm_enriched",
+    "sourceUrl": "https://www.cmco.com/en-us/about-us/community/",
+    "processedAt": "2026-01-16T15:44:26.269Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Stahl CraneSystems",
@@ -20458,7 +23622,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.113Z"
+    "processedDate": "2026-01-16T15:44:26.269Z",
+    "source": "llm_enriched",
+    "sourceUrl": "https://www.cmco.com/en-us/about-us/internship-program/",
+    "processedAt": "2026-01-16T15:44:26.269Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Stahl CraneSystems",
@@ -20720,7 +23895,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.113Z"
+    "processedDate": "2026-01-16T15:44:26.269Z",
+    "source": "llm_enriched",
+    "sourceUrl": "https://www.cmco.com/en-us/about-us/iso-9001-certification/",
+    "processedAt": "2026-01-16T15:44:26.269Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Stahl CraneSystems",
@@ -20850,7 +24036,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.113Z"
+    "processedDate": "2026-01-16T15:44:26.269Z",
+    "source": "llm_enriched",
+    "sourceUrl": "https://www.cmco.com/en-us/resources/patents/",
+    "processedAt": "2026-01-16T15:44:26.269Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Stahl CraneSystems",
@@ -21013,7 +24210,19 @@
     "speedMMin": null,
     "dataCompleteness": 14,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.113Z"
+    "processedDate": "2026-01-16T15:44:26.269Z",
+    "source": "llm_enriched",
+    "sourceUrl": "https://www.cmco.com/en-us/about-us/professional-associations/",
+    "processedAt": "2026-01-16T15:44:26.269Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [
+      "motorPower"
+    ],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "classification"
+    ]
   },
   {
     "manufacturer": "Stahl CraneSystems",
@@ -21188,7 +24397,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.113Z"
+    "processedDate": "2026-01-16T15:44:26.269Z",
+    "source": "llm_enriched",
+    "sourceUrl": "https://www.cmco.com/en-us/cmco-newsroom/",
+    "processedAt": "2026-01-16T15:44:26.269Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "TXK",
@@ -21275,7 +24495,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.113Z"
+    "processedDate": "2026-01-16T15:44:26.269Z",
+    "source": "llm_enriched",
+    "sourceUrl": "https://www.txk.net.cn/aboutus/txk-brand-electric-hoists.html",
+    "processedAt": "2026-01-16T15:44:26.269Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "TXK",
@@ -21365,7 +24596,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.113Z"
+    "processedDate": "2026-01-16T15:44:26.269Z",
+    "source": "llm_enriched",
+    "sourceUrl": "https://www.txk.net.cn/aboutus/sales-network.html",
+    "processedAt": "2026-01-16T15:44:26.269Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "TXK",
@@ -21454,7 +24696,18 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.113Z"
+    "processedDate": "2026-01-16T15:44:26.269Z",
+    "source": "llm_enriched",
+    "sourceUrl": "https://www.txk.net.cn/aboutus/certificates.html",
+    "processedAt": "2026-01-16T15:44:26.269Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   },
   {
     "manufacturer": "TXK",
@@ -21582,6 +24835,17 @@
     "speedMMin": null,
     "dataCompleteness": 0,
     "hasCompleteSpecs": false,
-    "processedDate": "2026-01-16T15:11:11.113Z"
+    "processedDate": "2026-01-16T15:44:26.269Z",
+    "source": "llm_enriched",
+    "sourceUrl": "https://www.txk.net.cn/products.html",
+    "processedAt": "2026-01-16T15:44:26.269Z",
+    "dataQualityTier": "minimal",
+    "populatedFields": [],
+    "missingFields": [
+      "loadCapacity",
+      "liftingSpeed",
+      "motorPower",
+      "classification"
+    ]
   }
 ]

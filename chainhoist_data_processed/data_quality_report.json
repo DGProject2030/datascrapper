@@ -87,5 +87,99 @@
   },
   "processingErrors": [],
   "localImagesFound": 636,
-  "localImagesMapped": 638
+  "localImagesMapped": 638,
+  "qualityGates": {
+    "passed": false,
+    "failedGates": [
+      {
+        "name": "Missing Classification",
+        "threshold": "≤50%",
+        "actual": "79.6%",
+        "passed": false,
+        "message": "230 of 289 records missing classification"
+      }
+    ],
+    "passedGates": [
+      {
+        "name": "Minimum Records",
+        "threshold": "≥10",
+        "actual": 289,
+        "passed": true,
+        "message": "Database has 289 records"
+      },
+      {
+        "name": "Missing Load Capacity",
+        "threshold": "≤80%",
+        "actual": "70.2%",
+        "passed": true,
+        "message": "203 of 289 records missing loadCapacity"
+      },
+      {
+        "name": "Missing Lifting Speed",
+        "threshold": "≤85%",
+        "actual": "76.1%",
+        "passed": true,
+        "message": "220 of 289 records missing liftingSpeed"
+      },
+      {
+        "name": "Missing Motor Power",
+        "threshold": "≤95%",
+        "actual": "94.5%",
+        "passed": true,
+        "message": "273 of 289 records missing motorPower"
+      },
+      {
+        "name": "Source Tracking",
+        "threshold": "≥90%",
+        "actual": "100.0%",
+        "passed": true,
+        "message": "289 of 289 records have source tracking"
+      }
+    ],
+    "gates": [
+      {
+        "name": "Minimum Records",
+        "threshold": "≥10",
+        "actual": 289,
+        "passed": true,
+        "message": "Database has 289 records"
+      },
+      {
+        "name": "Missing Load Capacity",
+        "threshold": "≤80%",
+        "actual": "70.2%",
+        "passed": true,
+        "message": "203 of 289 records missing loadCapacity"
+      },
+      {
+        "name": "Missing Lifting Speed",
+        "threshold": "≤85%",
+        "actual": "76.1%",
+        "passed": true,
+        "message": "220 of 289 records missing liftingSpeed"
+      },
+      {
+        "name": "Missing Motor Power",
+        "threshold": "≤95%",
+        "actual": "94.5%",
+        "passed": true,
+        "message": "273 of 289 records missing motorPower"
+      },
+      {
+        "name": "Missing Classification",
+        "threshold": "≤50%",
+        "actual": "79.6%",
+        "passed": false,
+        "message": "230 of 289 records missing classification"
+      },
+      {
+        "name": "Source Tracking",
+        "threshold": "≥90%",
+        "actual": "100.0%",
+        "passed": true,
+        "message": "289 of 289 records have source tracking"
+      }
+    ],
+    "summary": "✗ FAILED: 1 of 6 gates failed"
+  }
 }
