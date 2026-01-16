@@ -1,27 +1,36 @@
 {
-  "startTime": "2026-01-16T08:15:43.494Z",
-  "totalPDFs": 240,
-  "processed": 240,
+  "startTime": "2026-01-16T08:38:23.493Z",
+  "totalPDFs": 242,
+  "processed": 242,
   "successful": 143,
-  "failed": 97,
+  "failed": 99,
   "productsUpdated": 1974,
   "extractions": [
     {
       "filename": "abus_abucompact-gm2_document_0.pdf",
       "status": "success",
       "extractedData": {
-        "model": "ABUCompact GM2 to GM8 / GMC",
+        "model": "ABUCompact GM2 to GM8, ABUCompact GMC",
         "manufacturer": "ABUS",
         "series": "ABUCompact",
         "loadCapacity": "80 kg to 4000 kg (GM2-GM8), 125 kg to 250 kg (GMC)",
-        "liftingSpeed": "3 m/min to 20 m/min (main lift), infinitely variable (GMC)",
+        "liftingSpeed": "3 m/min to 20 m/min (GM2-GM8), 6 m/min and 12 m/min (GMC)",
+        "motorPower": "Not specified",
+        "dutyCycle": "FEM groups up to 4m",
         "voltageOptions": [
           "3-phase AC 380-415V 50Hz (GM2-GM8)",
           "Single-phase AC 230V 50Hz (GMC)"
         ],
-        "chainFall": "1 to 2 falls depending on model and capacity",
+        "weight": "Not specified",
+        "dimensions": "Not specified",
+        "chainFall": "1 or 2 falls",
         "classification": [
-          "FEM groups 1Bm to 4m"
+          "CE",
+          "EU directives compliance",
+          "DGUV Regulation 54",
+          "FEM 9.511",
+          "FEM 9.755",
+          "DIN 15020"
         ],
         "safetyFeatures": {
           "overloadProtection": true,
@@ -32,16 +41,20 @@
         },
         "certifications": [
           "CE",
-          "EU directives compliance",
-          "DGUV Regulation 54"
+          "EU directives compliance"
         ],
         "applications": [
-          "General lifting",
-          "Material handling",
+          "Industrial lifting",
           "Assembly operations",
-          "Precision positioning"
+          "Material handling",
+          "Glass and ceramics handling",
+          "Mobile applications"
         ],
-        "protectionClass": "IP 55 (GM2-GM8), IP 21 (GMC hoist), IP 65 (pendant control)",
+        "operatingTemperature": "Not specified",
+        "protectionClass": "IP 55 (GM2-GM8), IP 21 (GMC), IP 65 (pendant control)",
+        "noiseLevel": "Not specified",
+        "brakeType": "DC disk brake with asbestos-free brake linings",
+        "chainSpecification": "High-strength, galvanized profile steel chain",
         "confidence": 0.95,
         "extractionMethod": "text"
       },
@@ -162,18 +175,27 @@
       "filename": "abus_abucompact-gm4_document_0.pdf",
       "status": "success",
       "extractedData": {
-        "model": "ABUCompact GM2 to GM8 / GMC",
+        "model": "ABUCompact GM2 to GM8, ABUCompact GMC",
         "manufacturer": "ABUS",
         "series": "ABUCompact",
         "loadCapacity": "80 kg to 4000 kg (GM2-GM8), 125 kg to 250 kg (GMC)",
-        "liftingSpeed": "3 m/min to 20 m/min (main lift), infinitely variable (GMC)",
+        "liftingSpeed": "3 m/min to 20 m/min (GM2-GM8), 6 m/min and 12 m/min (GMC)",
+        "motorPower": "Not specified",
+        "dutyCycle": "FEM groups up to 4m",
         "voltageOptions": [
           "3-phase AC 380-415V 50Hz (GM2-GM8)",
           "Single-phase AC 230V 50Hz (GMC)"
         ],
-        "chainFall": "1 to 2 falls depending on model and capacity",
+        "weight": "Not specified",
+        "dimensions": "Not specified",
+        "chainFall": "1 or 2 falls",
         "classification": [
-          "FEM groups 1Bm to 4m"
+          "CE",
+          "EU directives compliance",
+          "DGUV Regulation 54",
+          "FEM 9.511",
+          "FEM 9.755",
+          "DIN 15020"
         ],
         "safetyFeatures": {
           "overloadProtection": true,
@@ -184,16 +206,20 @@
         },
         "certifications": [
           "CE",
-          "EU directives compliance",
-          "DGUV Regulation 54"
+          "EU directives compliance"
         ],
         "applications": [
-          "General lifting",
-          "Material handling",
+          "Industrial lifting",
           "Assembly operations",
-          "Precision positioning"
+          "Material handling",
+          "Glass and ceramics handling",
+          "Mobile applications"
         ],
-        "protectionClass": "IP 55 (GM2-GM8), IP 21 (GMC hoist), IP 65 (pendant control)",
+        "operatingTemperature": "Not specified",
+        "protectionClass": "IP 55 (GM2-GM8), IP 21 (GMC), IP 65 (pendant control)",
+        "noiseLevel": "Not specified",
+        "brakeType": "DC disk brake with asbestos-free brake linings",
+        "chainSpecification": "High-strength, galvanized profile steel chain",
         "confidence": 0.95,
         "extractionMethod": "text"
       },
@@ -314,18 +340,27 @@
       "filename": "abus_abucompact-gm6_document_0.pdf",
       "status": "success",
       "extractedData": {
-        "model": "ABUCompact GM2 to GM8 / GMC",
+        "model": "ABUCompact GM2 to GM8, ABUCompact GMC",
         "manufacturer": "ABUS",
         "series": "ABUCompact",
         "loadCapacity": "80 kg to 4000 kg (GM2-GM8), 125 kg to 250 kg (GMC)",
-        "liftingSpeed": "3 m/min to 20 m/min (main lift), infinitely variable (GMC)",
+        "liftingSpeed": "3 m/min to 20 m/min (GM2-GM8), 6 m/min and 12 m/min (GMC)",
+        "motorPower": "Not specified",
+        "dutyCycle": "FEM groups up to 4m",
         "voltageOptions": [
           "3-phase AC 380-415V 50Hz (GM2-GM8)",
           "Single-phase AC 230V 50Hz (GMC)"
         ],
-        "chainFall": "1 to 2 falls depending on model and capacity",
+        "weight": "Not specified",
+        "dimensions": "Not specified",
+        "chainFall": "1 or 2 falls",
         "classification": [
-          "FEM groups 1Bm to 4m"
+          "CE",
+          "EU directives compliance",
+          "DGUV Regulation 54",
+          "FEM 9.511",
+          "FEM 9.755",
+          "DIN 15020"
         ],
         "safetyFeatures": {
           "overloadProtection": true,
@@ -336,16 +371,20 @@
         },
         "certifications": [
           "CE",
-          "EU directives compliance",
-          "DGUV Regulation 54"
+          "EU directives compliance"
         ],
         "applications": [
-          "General lifting",
-          "Material handling",
+          "Industrial lifting",
           "Assembly operations",
-          "Precision positioning"
+          "Material handling",
+          "Glass and ceramics handling",
+          "Mobile applications"
         ],
-        "protectionClass": "IP 55 (GM2-GM8), IP 21 (GMC hoist), IP 65 (pendant control)",
+        "operatingTemperature": "Not specified",
+        "protectionClass": "IP 55 (GM2-GM8), IP 21 (GMC), IP 65 (pendant control)",
+        "noiseLevel": "Not specified",
+        "brakeType": "DC disk brake with asbestos-free brake linings",
+        "chainSpecification": "High-strength, galvanized profile steel chain",
         "confidence": 0.95,
         "extractionMethod": "text"
       },
@@ -466,18 +505,27 @@
       "filename": "abus_abucompact-gm8_document_0.pdf",
       "status": "success",
       "extractedData": {
-        "model": "ABUCompact GM2 to GM8 / GMC",
+        "model": "ABUCompact GM2 to GM8, ABUCompact GMC",
         "manufacturer": "ABUS",
         "series": "ABUCompact",
         "loadCapacity": "80 kg to 4000 kg (GM2-GM8), 125 kg to 250 kg (GMC)",
-        "liftingSpeed": "3 m/min to 20 m/min (main lift), infinitely variable (GMC)",
+        "liftingSpeed": "3 m/min to 20 m/min (GM2-GM8), 6 m/min and 12 m/min (GMC)",
+        "motorPower": "Not specified",
+        "dutyCycle": "FEM groups up to 4m",
         "voltageOptions": [
           "3-phase AC 380-415V 50Hz (GM2-GM8)",
           "Single-phase AC 230V 50Hz (GMC)"
         ],
-        "chainFall": "1 to 2 falls depending on model and capacity",
+        "weight": "Not specified",
+        "dimensions": "Not specified",
+        "chainFall": "1 or 2 falls",
         "classification": [
-          "FEM groups 1Bm to 4m"
+          "CE",
+          "EU directives compliance",
+          "DGUV Regulation 54",
+          "FEM 9.511",
+          "FEM 9.755",
+          "DIN 15020"
         ],
         "safetyFeatures": {
           "overloadProtection": true,
@@ -488,16 +536,20 @@
         },
         "certifications": [
           "CE",
-          "EU directives compliance",
-          "DGUV Regulation 54"
+          "EU directives compliance"
         ],
         "applications": [
-          "General lifting",
-          "Material handling",
+          "Industrial lifting",
           "Assembly operations",
-          "Precision positioning"
+          "Material handling",
+          "Glass and ceramics handling",
+          "Mobile applications"
         ],
-        "protectionClass": "IP 55 (GM2-GM8), IP 21 (GMC hoist), IP 65 (pendant control)",
+        "operatingTemperature": "Not specified",
+        "protectionClass": "IP 55 (GM2-GM8), IP 21 (GMC), IP 65 (pendant control)",
+        "noiseLevel": "Not specified",
+        "brakeType": "DC disk brake with asbestos-free brake linings",
+        "chainSpecification": "High-strength, galvanized profile steel chain",
         "confidence": 0.95,
         "extractionMethod": "text"
       },
@@ -622,17 +674,21 @@
         "manufacturer": "ABUS Kransysteme GmbH",
         "series": "ABUCompact",
         "loadCapacity": "125 kg / 250 kg",
-        "liftingSpeed": "stepless hoisting speed",
+        "liftingSpeed": "Stepless hoisting speed",
         "voltageOptions": [
           "230 V / 1-phase"
+        ],
+        "classification": [
+          "CE"
         ],
         "certifications": [
           "CE"
         ],
         "applications": [
-          "careful movement of various goods"
+          "careful movement of various goods",
+          "domestic/light industrial lifting"
         ],
-        "confidence": 0.8,
+        "confidence": 0.7,
         "extractionMethod": "text"
       },
       "matchedProducts": [
@@ -747,18 +803,27 @@
       "filename": "abus_abucompact-gmc_document_1.pdf",
       "status": "success",
       "extractedData": {
-        "model": "ABUCompact GM2 to GM8 / GMC",
+        "model": "ABUCompact GM2 to GM8, ABUCompact GMC",
         "manufacturer": "ABUS",
         "series": "ABUCompact",
         "loadCapacity": "80 kg to 4000 kg (GM2-GM8), 125 kg to 250 kg (GMC)",
-        "liftingSpeed": "3 m/min to 20 m/min (main lift), infinitely variable (GMC)",
+        "liftingSpeed": "3 m/min to 20 m/min (GM2-GM8), 6 m/min and 12 m/min (GMC)",
+        "motorPower": "Not specified",
+        "dutyCycle": "FEM groups up to 4m",
         "voltageOptions": [
           "3-phase AC 380-415V 50Hz (GM2-GM8)",
           "Single-phase AC 230V 50Hz (GMC)"
         ],
-        "chainFall": "1 to 2 falls depending on model and capacity",
+        "weight": "Not specified",
+        "dimensions": "Not specified",
+        "chainFall": "1 or 2 falls",
         "classification": [
-          "FEM groups 1Bm to 4m"
+          "CE",
+          "EU directives compliance",
+          "DGUV Regulation 54",
+          "FEM 9.511",
+          "FEM 9.755",
+          "DIN 15020"
         ],
         "safetyFeatures": {
           "overloadProtection": true,
@@ -769,16 +834,20 @@
         },
         "certifications": [
           "CE",
-          "EU directives compliance",
-          "DGUV Regulation 54"
+          "EU directives compliance"
         ],
         "applications": [
-          "General lifting",
-          "Material handling",
+          "Industrial lifting",
           "Assembly operations",
-          "Precision positioning"
+          "Material handling",
+          "Glass and ceramics handling",
+          "Mobile applications"
         ],
-        "protectionClass": "IP 55 (GM2-GM8), IP 21 (GMC hoist), IP 65 (pendant control)",
+        "operatingTemperature": "Not specified",
+        "protectionClass": "IP 55 (GM2-GM8), IP 21 (GMC), IP 65 (pendant control)",
+        "noiseLevel": "Not specified",
+        "brakeType": "DC disk brake with asbestos-free brake linings",
+        "chainSpecification": "High-strength, galvanized profile steel chain",
         "confidence": 0.95,
         "extractionMethod": "text"
       },
@@ -898,17 +967,13 @@
         "manufacturer": "ABUS Kransysteme GmbH",
         "series": "ABUCompact",
         "loadCapacity": "125 kg / 250 kg",
-        "liftingSpeed": "stepless hoisting speed",
+        "liftingSpeed": "Stepless hoisting speed",
         "voltageOptions": [
           "230 V / 1-phase"
         ],
-        "safetyFeatures": {
-          "overloadProtection": false,
-          "upperLimitSwitch": false,
-          "lowerLimitSwitch": false,
-          "emergencyStop": false,
-          "slipClutch": false
-        },
+        "classification": [
+          "CE"
+        ],
         "certifications": [
           "CE"
         ],
@@ -1027,18 +1092,27 @@
       "filename": "abus_s-abucompact-gm2-price-enquiry_document_0.pdf",
       "status": "success",
       "extractedData": {
-        "model": "ABUCompact GM2 to GM8 / GMC",
+        "model": "ABUCompact GM2 to GM8, ABUCompact GMC",
         "manufacturer": "ABUS",
         "series": "ABUCompact",
         "loadCapacity": "80 kg to 4000 kg (GM2-GM8), 125 kg to 250 kg (GMC)",
-        "liftingSpeed": "3 m/min to 20 m/min (main lift), infinitely variable (GMC)",
+        "liftingSpeed": "3 m/min to 20 m/min (GM2-GM8), 6 m/min and 12 m/min (GMC)",
+        "motorPower": "Not specified",
+        "dutyCycle": "FEM groups up to 4m",
         "voltageOptions": [
           "3-phase AC 380-415V 50Hz (GM2-GM8)",
           "Single-phase AC 230V 50Hz (GMC)"
         ],
-        "chainFall": "1 to 2 falls depending on model and capacity",
+        "weight": "Not specified",
+        "dimensions": "Not specified",
+        "chainFall": "1 or 2 falls",
         "classification": [
-          "FEM groups 1Bm to 4m"
+          "CE",
+          "EU directives compliance",
+          "DGUV Regulation 54",
+          "FEM 9.511",
+          "FEM 9.755",
+          "DIN 15020"
         ],
         "safetyFeatures": {
           "overloadProtection": true,
@@ -1049,16 +1123,20 @@
         },
         "certifications": [
           "CE",
-          "EU directives compliance",
-          "DGUV Regulation 54"
+          "EU directives compliance"
         ],
         "applications": [
-          "General lifting",
-          "Material handling",
+          "Industrial lifting",
           "Assembly operations",
-          "Precision positioning"
+          "Material handling",
+          "Glass and ceramics handling",
+          "Mobile applications"
         ],
-        "protectionClass": "IP 55 (GM2-GM8), IP 21 (GMC hoist), IP 65 (pendant control)",
+        "operatingTemperature": "Not specified",
+        "protectionClass": "IP 55 (GM2-GM8), IP 21 (GMC), IP 65 (pendant control)",
+        "noiseLevel": "Not specified",
+        "brakeType": "DC disk brake with asbestos-free brake linings",
+        "chainSpecification": "High-strength, galvanized profile steel chain",
         "confidence": 0.95,
         "extractionMethod": "text"
       },
@@ -1179,18 +1257,27 @@
       "filename": "abus_s-abucompact-gm4-price-enquiry_document_0.pdf",
       "status": "success",
       "extractedData": {
-        "model": "ABUCompact GM2 to GM8 / GMC",
+        "model": "ABUCompact GM2 to GM8, ABUCompact GMC",
         "manufacturer": "ABUS",
         "series": "ABUCompact",
         "loadCapacity": "80 kg to 4000 kg (GM2-GM8), 125 kg to 250 kg (GMC)",
-        "liftingSpeed": "3 m/min to 20 m/min (main lift), infinitely variable (GMC)",
+        "liftingSpeed": "3 m/min to 20 m/min (GM2-GM8), 6 m/min and 12 m/min (GMC)",
+        "motorPower": "Not specified",
+        "dutyCycle": "FEM groups up to 4m",
         "voltageOptions": [
           "3-phase AC 380-415V 50Hz (GM2-GM8)",
           "Single-phase AC 230V 50Hz (GMC)"
         ],
-        "chainFall": "1 to 2 falls depending on model and capacity",
+        "weight": "Not specified",
+        "dimensions": "Not specified",
+        "chainFall": "1 or 2 falls",
         "classification": [
-          "FEM groups 1Bm to 4m"
+          "CE",
+          "EU directives compliance",
+          "DGUV Regulation 54",
+          "FEM 9.511",
+          "FEM 9.755",
+          "DIN 15020"
         ],
         "safetyFeatures": {
           "overloadProtection": true,
@@ -1201,16 +1288,20 @@
         },
         "certifications": [
           "CE",
-          "EU directives compliance",
-          "DGUV Regulation 54"
+          "EU directives compliance"
         ],
         "applications": [
-          "General lifting",
-          "Material handling",
+          "Industrial lifting",
           "Assembly operations",
-          "Precision positioning"
+          "Material handling",
+          "Glass and ceramics handling",
+          "Mobile applications"
         ],
-        "protectionClass": "IP 55 (GM2-GM8), IP 21 (GMC hoist), IP 65 (pendant control)",
+        "operatingTemperature": "Not specified",
+        "protectionClass": "IP 55 (GM2-GM8), IP 21 (GMC), IP 65 (pendant control)",
+        "noiseLevel": "Not specified",
+        "brakeType": "DC disk brake with asbestos-free brake linings",
+        "chainSpecification": "High-strength, galvanized profile steel chain",
         "confidence": 0.95,
         "extractionMethod": "text"
       },
@@ -1331,18 +1422,27 @@
       "filename": "abus_s-abucompact-gm6-price-enquiry_document_0.pdf",
       "status": "success",
       "extractedData": {
-        "model": "ABUCompact GM2 to GM8 / GMC",
+        "model": "ABUCompact GM2 to GM8, ABUCompact GMC",
         "manufacturer": "ABUS",
         "series": "ABUCompact",
         "loadCapacity": "80 kg to 4000 kg (GM2-GM8), 125 kg to 250 kg (GMC)",
-        "liftingSpeed": "3 m/min to 20 m/min (main lift), infinitely variable (GMC)",
+        "liftingSpeed": "3 m/min to 20 m/min (GM2-GM8), 6 m/min and 12 m/min (GMC)",
+        "motorPower": "Not specified",
+        "dutyCycle": "FEM groups up to 4m",
         "voltageOptions": [
           "3-phase AC 380-415V 50Hz (GM2-GM8)",
           "Single-phase AC 230V 50Hz (GMC)"
         ],
-        "chainFall": "1 to 2 falls depending on model and capacity",
+        "weight": "Not specified",
+        "dimensions": "Not specified",
+        "chainFall": "1 or 2 falls",
         "classification": [
-          "FEM groups 1Bm to 4m"
+          "CE",
+          "EU directives compliance",
+          "DGUV Regulation 54",
+          "FEM 9.511",
+          "FEM 9.755",
+          "DIN 15020"
         ],
         "safetyFeatures": {
           "overloadProtection": true,
@@ -1353,16 +1453,20 @@
         },
         "certifications": [
           "CE",
-          "EU directives compliance",
-          "DGUV Regulation 54"
+          "EU directives compliance"
         ],
         "applications": [
-          "General lifting",
-          "Material handling",
+          "Industrial lifting",
           "Assembly operations",
-          "Precision positioning"
+          "Material handling",
+          "Glass and ceramics handling",
+          "Mobile applications"
         ],
-        "protectionClass": "IP 55 (GM2-GM8), IP 21 (GMC hoist), IP 65 (pendant control)",
+        "operatingTemperature": "Not specified",
+        "protectionClass": "IP 55 (GM2-GM8), IP 21 (GMC), IP 65 (pendant control)",
+        "noiseLevel": "Not specified",
+        "brakeType": "DC disk brake with asbestos-free brake linings",
+        "chainSpecification": "High-strength, galvanized profile steel chain",
         "confidence": 0.95,
         "extractionMethod": "text"
       },
@@ -1487,17 +1591,21 @@
         "manufacturer": "ABUS Kransysteme GmbH",
         "series": "ABUCompact",
         "loadCapacity": "125 kg / 250 kg",
-        "liftingSpeed": "stepless hoisting speed",
+        "liftingSpeed": "Stepless hoisting speed",
         "voltageOptions": [
           "230 V / 1-phase"
+        ],
+        "classification": [
+          "CE"
         ],
         "certifications": [
           "CE"
         ],
         "applications": [
-          "careful movement of various goods"
+          "careful movement of various goods",
+          "domestic/light industrial lifting"
         ],
-        "confidence": 0.8,
+        "confidence": 0.7,
         "extractionMethod": "text"
       },
       "matchedProducts": [
@@ -1612,18 +1720,27 @@
       "filename": "abus_s-abucompact-gmc-price-enquiry_document_1.pdf",
       "status": "success",
       "extractedData": {
-        "model": "ABUCompact GM2 to GM8 / GMC",
+        "model": "ABUCompact GM2 to GM8, ABUCompact GMC",
         "manufacturer": "ABUS",
         "series": "ABUCompact",
         "loadCapacity": "80 kg to 4000 kg (GM2-GM8), 125 kg to 250 kg (GMC)",
-        "liftingSpeed": "3 m/min to 20 m/min (main lift), infinitely variable (GMC)",
+        "liftingSpeed": "3 m/min to 20 m/min (GM2-GM8), 6 m/min and 12 m/min (GMC)",
+        "motorPower": "Not specified",
+        "dutyCycle": "FEM groups up to 4m",
         "voltageOptions": [
           "3-phase AC 380-415V 50Hz (GM2-GM8)",
           "Single-phase AC 230V 50Hz (GMC)"
         ],
-        "chainFall": "1 to 2 falls depending on model and capacity",
+        "weight": "Not specified",
+        "dimensions": "Not specified",
+        "chainFall": "1 or 2 falls",
         "classification": [
-          "FEM groups 1Bm to 4m"
+          "CE",
+          "EU directives compliance",
+          "DGUV Regulation 54",
+          "FEM 9.511",
+          "FEM 9.755",
+          "DIN 15020"
         ],
         "safetyFeatures": {
           "overloadProtection": true,
@@ -1634,16 +1751,20 @@
         },
         "certifications": [
           "CE",
-          "EU directives compliance",
-          "DGUV Regulation 54"
+          "EU directives compliance"
         ],
         "applications": [
-          "General lifting",
-          "Material handling",
+          "Industrial lifting",
           "Assembly operations",
-          "Precision positioning"
+          "Material handling",
+          "Glass and ceramics handling",
+          "Mobile applications"
         ],
-        "protectionClass": "IP 55 (GM2-GM8), IP 21 (GMC hoist), IP 65 (pendant control)",
+        "operatingTemperature": "Not specified",
+        "protectionClass": "IP 55 (GM2-GM8), IP 21 (GMC), IP 65 (pendant control)",
+        "noiseLevel": "Not specified",
+        "brakeType": "DC disk brake with asbestos-free brake linings",
+        "chainSpecification": "High-strength, galvanized profile steel chain",
         "confidence": 0.95,
         "extractionMethod": "text"
       },
@@ -1763,17 +1884,13 @@
         "manufacturer": "ABUS Kransysteme GmbH",
         "series": "ABUCompact",
         "loadCapacity": "125 kg / 250 kg",
-        "liftingSpeed": "stepless hoisting speed",
+        "liftingSpeed": "Stepless hoisting speed",
         "voltageOptions": [
           "230 V / 1-phase"
         ],
-        "safetyFeatures": {
-          "overloadProtection": false,
-          "upperLimitSwitch": false,
-          "lowerLimitSwitch": false,
-          "emergencyStop": false,
-          "slipClutch": false
-        },
+        "classification": [
+          "CE"
+        ],
         "certifications": [
           "CE"
         ],
@@ -1892,18 +2009,27 @@
       "filename": "abus_s_document_0.pdf",
       "status": "success",
       "extractedData": {
-        "model": "ABUCompact GM2 to GM8 / GMC",
+        "model": "ABUCompact GM2 to GM8, ABUCompact GMC",
         "manufacturer": "ABUS",
         "series": "ABUCompact",
         "loadCapacity": "80 kg to 4000 kg (GM2-GM8), 125 kg to 250 kg (GMC)",
-        "liftingSpeed": "3 m/min to 20 m/min (main lift), infinitely variable (GMC)",
+        "liftingSpeed": "3 m/min to 20 m/min (GM2-GM8), 6 m/min and 12 m/min (GMC)",
+        "motorPower": "Not specified",
+        "dutyCycle": "FEM groups up to 4m",
         "voltageOptions": [
           "3-phase AC 380-415V 50Hz (GM2-GM8)",
           "Single-phase AC 230V 50Hz (GMC)"
         ],
-        "chainFall": "1 to 2 falls depending on model and capacity",
+        "weight": "Not specified",
+        "dimensions": "Not specified",
+        "chainFall": "1 or 2 falls",
         "classification": [
-          "FEM groups 1Bm to 4m"
+          "CE",
+          "EU directives compliance",
+          "DGUV Regulation 54",
+          "FEM 9.511",
+          "FEM 9.755",
+          "DIN 15020"
         ],
         "safetyFeatures": {
           "overloadProtection": true,
@@ -1914,16 +2040,20 @@
         },
         "certifications": [
           "CE",
-          "EU directives compliance",
-          "DGUV Regulation 54"
+          "EU directives compliance"
         ],
         "applications": [
-          "General lifting",
-          "Material handling",
+          "Industrial lifting",
           "Assembly operations",
-          "Precision positioning"
+          "Material handling",
+          "Glass and ceramics handling",
+          "Mobile applications"
         ],
-        "protectionClass": "IP 55 (GM2-GM8), IP 21 (GMC hoist), IP 65 (pendant control)",
+        "operatingTemperature": "Not specified",
+        "protectionClass": "IP 55 (GM2-GM8), IP 21 (GMC), IP 65 (pendant control)",
+        "noiseLevel": "Not specified",
+        "brakeType": "DC disk brake with asbestos-free brake linings",
+        "chainSpecification": "High-strength, galvanized profile steel chain",
         "confidence": 0.95,
         "extractionMethod": "text"
       },
@@ -2052,7 +2182,7 @@
           "Power Generation & Utilities",
           "Transportation & Rail"
         ],
-        "confidence": 0.2,
+        "confidence": 0.1,
         "extractionMethod": "text"
       },
       "matchedProducts": [
@@ -2117,29 +2247,24 @@
       "filename": "budgit_columbus-mckinnon-newsroom_document_0.pdf",
       "status": "success",
       "extractedData": {
-        "manufacturer": "Columbus McKinnon Corporation",
+        "manufacturer": "Columbus McKinnon",
         "applications": [
-          "general industrial",
-          "construction",
-          "energy and utilities",
+          "manufacturing",
+          "power generation and distribution utilities",
           "steel and metals processing",
           "mining",
           "transportation",
           "entertainment",
-          "process industries",
+          "commercial construction",
           "oil and gas exploration and refining",
           "petrochemical",
           "marine",
           "shipbuilding",
-          "commercial construction",
-          "heavy duty trucking",
+          "trucking",
           "agriculture",
           "logging"
         ],
-        "certifications": [
-          "explosion-protected hoists"
-        ],
-        "confidence": 0.1,
+        "confidence": 0.3,
         "extractionMethod": "text"
       },
       "matchedProducts": [
@@ -2334,7 +2459,8 @@
       "filename": "budgit_corporate-sustainability_document_2.pdf",
       "status": "success",
       "extractedData": {
-        "confidence": 0,
+        "manufacturer": "Columbus McKinnon Corporation",
+        "confidence": 0.1,
         "extractionMethod": "text"
       },
       "matchedProducts": [
@@ -2401,23 +2527,9 @@
       "extractedData": {
         "manufacturer": "Columbus McKinnon Industrial Products GmbH",
         "certifications": [
-          "DIN EN ISO 9001:2015"
+          "ISO 9001:2015"
         ],
-        "applications": [
-          "crane systems",
-          "hoisting equipment",
-          "pallet trucks & stackers",
-          "hydraulic jacks & tools",
-          "load lifting attachments",
-          "weighing systems",
-          "round & flat webbing slings",
-          "ratchet lashing systems",
-          "actuator technology",
-          "lifting systems",
-          "lifting systems for Rail Vehicles",
-          "textile slings and lashings"
-        ],
-        "confidence": 0.2,
+        "confidence": 0.1,
         "extractionMethod": "text"
       },
       "matchedProducts": [
@@ -2584,7 +2696,7 @@
           "Power Generation & Utilities",
           "Transportation & Rail"
         ],
-        "confidence": 0.2,
+        "confidence": 0.1,
         "extractionMethod": "text"
       },
       "matchedProducts": [
@@ -2649,29 +2761,24 @@
       "filename": "coffing_columbus-mckinnon-newsroom_document_0.pdf",
       "status": "success",
       "extractedData": {
-        "manufacturer": "Columbus McKinnon Corporation",
+        "manufacturer": "Columbus McKinnon",
         "applications": [
-          "general industrial",
-          "construction",
-          "energy and utilities",
+          "manufacturing",
+          "power generation and distribution utilities",
           "steel and metals processing",
           "mining",
           "transportation",
           "entertainment",
-          "process industries",
+          "commercial construction",
           "oil and gas exploration and refining",
           "petrochemical",
           "marine",
           "shipbuilding",
-          "commercial construction",
-          "heavy duty trucking",
+          "trucking",
           "agriculture",
           "logging"
         ],
-        "certifications": [
-          "explosion-protected hoists"
-        ],
-        "confidence": 0.1,
+        "confidence": 0.3,
         "extractionMethod": "text"
       },
       "matchedProducts": [
@@ -2866,7 +2973,8 @@
       "filename": "coffing_corporate-sustainability_document_2.pdf",
       "status": "success",
       "extractedData": {
-        "confidence": 0,
+        "manufacturer": "Columbus McKinnon Corporation",
+        "confidence": 0.1,
         "extractionMethod": "text"
       },
       "matchedProducts": [
@@ -2933,23 +3041,9 @@
       "extractedData": {
         "manufacturer": "Columbus McKinnon Industrial Products GmbH",
         "certifications": [
-          "DIN EN ISO 9001:2015"
+          "ISO 9001:2015"
         ],
-        "applications": [
-          "crane systems",
-          "hoisting equipment",
-          "pallet trucks & stackers",
-          "hydraulic jacks & tools",
-          "load lifting attachments",
-          "weighing systems",
-          "round & flat webbing slings",
-          "ratchet lashing systems",
-          "actuator technology",
-          "lifting systems",
-          "lifting systems for Rail Vehicles",
-          "textile slings and lashings"
-        ],
-        "confidence": 0.2,
+        "confidence": 0.1,
         "extractionMethod": "text"
       },
       "matchedProducts": [
@@ -3129,7 +3223,6 @@
       "status": "success",
       "extractedData": {
         "manufacturer": "Demag Cranes & Components, Inc.",
-        "series": "DC Chain Hoist",
         "certifications": [
           "HMI"
         ],
@@ -3199,7 +3292,6 @@
       "status": "success",
       "extractedData": {
         "manufacturer": "Demag Cranes & Components, Inc.",
-        "series": "DC Chain Hoist",
         "certifications": [
           "HMI"
         ],
@@ -3269,7 +3361,6 @@
       "status": "success",
       "extractedData": {
         "manufacturer": "Demag Cranes & Components, Inc.",
-        "series": "DC Chain Hoist",
         "certifications": [
           "HMI"
         ],
@@ -3339,7 +3430,6 @@
       "status": "success",
       "extractedData": {
         "manufacturer": "Demag Cranes & Components, Inc.",
-        "series": "DC Chain Hoist",
         "certifications": [
           "HMI"
         ],
@@ -3409,7 +3499,6 @@
       "status": "success",
       "extractedData": {
         "manufacturer": "Demag Cranes & Components, Inc.",
-        "series": "DC Chain Hoist",
         "certifications": [
           "HMI"
         ],
@@ -3479,13 +3568,13 @@
       "status": "success",
       "extractedData": {
         "manufacturer": "DONATI SOLLEVAMENTI S.r.l.",
-        "certifications": [
+        "classification": [
           "ISO 3834-2:2021"
         ],
-        "applications": [
-          "Assembly by welding of hoists, jib cranes, and components for lifting"
+        "certifications": [
+          "DNV"
         ],
-        "confidence": 0.3,
+        "confidence": 0.2,
         "extractionMethod": "text"
       },
       "matchedProducts": [
@@ -3526,10 +3615,7 @@
       "status": "success",
       "extractedData": {
         "manufacturer": "Konecranes Global Oy",
-        "certifications": [
-          "ISO/IEC 27001:2022"
-        ],
-        "confidence": 0,
+        "confidence": 0.1,
         "extractionMethod": "text"
       },
       "matchedProducts": [
@@ -3564,24 +3650,39 @@
       "filename": "donati_donati-cranes_brochure_0.pdf",
       "status": "success",
       "extractedData": {
-        "model": "DMK Series Electric Chain Hoist",
-        "manufacturer": "Not specified in document",
+        "model": "DMK Series",
+        "manufacturer": "Not explicitly stated",
         "series": "DMK",
-        "loadCapacity": "100 to 4,000 kg",
-        "liftingSpeed": "4, 6.3, 8, or 16 m/min (1 fall); 3.2 or 4 m/min (2 fall); Two speeds: 4/1.2, 6.3/2.1, 8/2.5 m/min (1 fall); 2.5/0.8, 3.2/1 m/min (2 fall)",
-        "motorPower": "0.2 to 2.5 kW",
+        "loadCapacity": "100-4000 kg",
+        "liftingSpeed": "2.5-16 m/min (single speed), 0.8-8 m/min (dual speed)",
+        "motorPower": "0.2-2.5 kW",
         "dutyCycle": "FEM 1Bm (M3), 1Am (M4), 2m (M5)",
         "voltageOptions": [
           "400V 3-phase 50Hz",
-          "230V single-phase 50Hz (DMK 1-2-3, one speed, up to 800kg)"
+          "230V single-phase 50Hz (up to 800kg)"
         ],
-        "weight": "23 to 190 kg (depending on model and configuration)",
-        "dimensions": "Varies by size - DMK1: 275x253x385mm to DMK4: 670x395x583mm",
+        "weight": "23-190 kg (depending on capacity and configuration)",
+        "dimensions": "Various sizes DMK 1-4",
         "chainFall": "1 or 2 chain falls",
         "classification": [
-          "FEM 1Bm (M3)",
-          "FEM 1Am (M4)",
-          "FEM 2m (M5)"
+          "CE",
+          "FEM 1.001/98",
+          "FEM 9.511/86",
+          "FEM 9.671/88",
+          "FEM 9.683/95",
+          "FEM 9.755/93",
+          "FEM 9.941/95",
+          "EN ISO 1210:2010",
+          "EN ISO 13849-1:2008",
+          "EN 12077-2:2008",
+          "EN 60204-32:2009",
+          "EN 60529:1997",
+          "ISO 4301-1:1988",
+          "DIN 15401",
+          "CSA (upon request)",
+          "Machinery Directive 2006/42/EC",
+          "Low Voltage Directive 2014/35/UE",
+          "Electromagnetic Compatibility Directive 2014/30/UE"
         ],
         "safetyFeatures": {
           "overloadProtection": true,
@@ -3592,20 +3693,20 @@
         },
         "certifications": [
           "CE",
-          "CSA (upon request)"
+          "CSA"
         ],
         "applications": [
-          "lifting unguided loads",
-          "combined with trolleys for horizontal movement",
-          "jib cranes",
-          "bridge cranes",
-          "monorails",
-          "fixed position configurations"
+          "General lifting",
+          "Jib cranes",
+          "Bridge cranes",
+          "Monorail systems",
+          "Fixed position configurations"
         ],
         "operatingTemperature": "-10°C to +40°C",
-        "protectionClass": "Motor: IP55, Brake: IP23, Limit switch: IP65, Control box: IP55, Push button: IP65",
-        "noiseLevel": "Less than 85 dB(A) when fully loaded",
-        "warranty": "Not specified in document",
+        "protectionClass": "IP55 (motor), IP23 (brake), IP65 (limit switches)",
+        "noiseLevel": "< 85 dB(A)",
+        "brakeType": "Self-braking conical motor with asbestos-free brake lining",
+        "chainSpecification": "High-strength steel, 80 kg/mm² tensile strength, safety factor > 5, galvanized",
         "confidence": 0.95,
         "extractionMethod": "text"
       },
@@ -3642,13 +3743,13 @@
       "status": "success",
       "extractedData": {
         "manufacturer": "DONATI SOLLEVAMENTI S.r.l.",
-        "certifications": [
+        "classification": [
           "ISO 3834-2:2021"
         ],
-        "applications": [
-          "Assembly by welding of hoists, jib cranes, and components for lifting"
+        "certifications": [
+          "DNV"
         ],
-        "confidence": 0.3,
+        "confidence": 0.2,
         "extractionMethod": "text"
       },
       "matchedProducts": [
@@ -3683,12 +3784,15 @@
       "filename": "donati_donati-cranes_document_1.pdf",
       "status": "success",
       "extractedData": {
-        "model": "DMK Series",
+        "model": "DMK Series Electric Chain Hoist",
         "manufacturer": "DONATI SOLLEVAMENTI S.r.l.",
         "series": "DMK",
+        "loadCapacity": "Multiple capacities available (DMK1, DMK2, DMK3, DMK4 models)",
+        "liftingSpeed": "Multiple speeds: 7 m/min, 11 m/min, 14 m/min, 22 m/min",
         "voltageOptions": [
-          "48V"
+          "48V (low voltage control)"
         ],
+        "chainFall": "1 fall and 2 falls available (particularly for DMK4)",
         "safetyFeatures": {
           "overloadProtection": true,
           "upperLimitSwitch": true,
@@ -3698,9 +3802,11 @@
         },
         "applications": [
           "Industrial lifting",
-          "Material handling"
+          "Material handling",
+          "Manufacturing"
         ],
-        "confidence": 0.6,
+        "brakeType": "Motor brake with brake shoe",
+        "confidence": 0.7,
         "extractionMethod": "text"
       },
       "matchedProducts": [
@@ -3736,10 +3842,7 @@
       "status": "success",
       "extractedData": {
         "manufacturer": "Konecranes Global Oy",
-        "certifications": [
-          "ISO/IEC 27001:2022"
-        ],
-        "confidence": 0,
+        "confidence": 0.1,
         "extractionMethod": "text"
       },
       "matchedProducts": [
@@ -3776,39 +3879,47 @@
       "extractedData": {
         "model": "DMK 1/2/3/4",
         "manufacturer": "DONATI Sollevamenti S.r.l.",
-        "series": "DMK Series",
-        "loadCapacity": "125-2000 kg",
-        "liftingSpeed": "2-16 m/min",
+        "series": "DMK Electric Chain Hoist Series",
+        "loadCapacity": "125 kg to 2000 kg",
+        "liftingSpeed": "2-16 m/min (single speed), 2.5/8-8/2.5 m/min (dual speed)",
         "motorPower": "0.2-2.5 kW",
-        "dutyCycle": "40% (1 speed), 40/20% (2 speed)",
+        "dutyCycle": "FEM 2m/M5 (40% ED), FEM 1Am/M4 (25% ED)",
         "voltageOptions": [
           "230V single-phase",
           "400V three-phase"
         ],
-        "weight": "29-130 kg (depending on model and configuration)",
-        "chainFall": "1 or 2 chain falls (DMK4 available in 2-fall configuration)",
+        "weight": "29-608 kg (depending on model and configuration)",
+        "dimensions": "Height: 355-583mm, Width: 253-332mm, Length: 438-583mm",
+        "chainFall": "1 or 2 chain falls",
         "classification": [
           "FEM 9.511",
           "FEM 9.671",
           "FEM 9.755",
-          "2 m/M5",
-          "1 Am/M4"
+          "EN ISO 12100",
+          "CE 2006/42/CE",
+          "ISO 9001",
+          "UNI EN 29001"
         ],
         "safetyFeatures": {
           "overloadProtection": true,
           "upperLimitSwitch": true,
           "lowerLimitSwitch": true,
+          "emergencyStop": false,
           "slipClutch": true
         },
         "certifications": [
-          "CE",
-          "EN ISO 12100",
-          "Machine Directive 2006/42/CE",
-          "ISO 9001",
-          "UNI EN 29001"
+          "CE"
         ],
+        "applications": [
+          "Industrial lifting",
+          "Material handling",
+          "Manufacturing"
+        ],
+        "operatingTemperature": "-20°C to +40°C",
         "protectionClass": "IP55",
-        "noiseLevel": "78.5-84.9 dB(A)",
+        "noiseLevel": "78.5 to 84.9 dB(A)",
+        "brakeType": "Electromagnetic disc brake with manual release",
+        "chainSpecification": "Grade 80 alloy steel chain (5mm, 7mm, 10mm diameter)",
         "confidence": 0.9,
         "extractionMethod": "text"
       },
@@ -3845,13 +3956,13 @@
       "status": "success",
       "extractedData": {
         "manufacturer": "DONATI SOLLEVAMENTI S.r.l.",
-        "certifications": [
+        "classification": [
           "ISO 3834-2:2021"
         ],
-        "applications": [
-          "Assembly by welding of hoists, jib cranes, and components for lifting"
+        "certifications": [
+          "DNV"
         ],
-        "confidence": 0.3,
+        "confidence": 0.2,
         "extractionMethod": "text"
       },
       "matchedProducts": [
@@ -3892,10 +4003,7 @@
       "status": "success",
       "extractedData": {
         "manufacturer": "Konecranes Global Oy",
-        "certifications": [
-          "ISO/IEC 27001:2022"
-        ],
-        "confidence": 0,
+        "confidence": 0.1,
         "extractionMethod": "text"
       },
       "matchedProducts": [
@@ -3931,13 +4039,13 @@
       "status": "success",
       "extractedData": {
         "manufacturer": "DONATI SOLLEVAMENTI S.r.l.",
-        "certifications": [
+        "classification": [
           "ISO 3834-2:2021"
         ],
-        "applications": [
-          "Assembly by welding of hoists, jib cranes, and components for lifting"
+        "certifications": [
+          "DNV"
         ],
-        "confidence": 0.3,
+        "confidence": 0.2,
         "extractionMethod": "text"
       },
       "matchedProducts": [
@@ -3978,10 +4086,7 @@
       "status": "success",
       "extractedData": {
         "manufacturer": "Konecranes Global Oy",
-        "certifications": [
-          "ISO/IEC 27001:2022"
-        ],
-        "confidence": 0,
+        "confidence": 0.1,
         "extractionMethod": "text"
       },
       "matchedProducts": [
@@ -4017,50 +4122,49 @@
       "status": "success",
       "extractedData": {
         "manufacturer": "Elephant Lifting",
-        "series": "SA/FA/DA/DB Electric Chain Hoists",
-        "loadCapacity": "0.5t - 50t (1100 lbs - 110,000 lbs)",
+        "series": "Multiple series (Super 100, C-21, FA/FB, DA/DB, SA, Alpha, Beta, ATS Pneumatic, etc.)",
+        "loadCapacity": "0.5t to 50t (1100 lbs to 110,000 lbs)",
+        "motorPower": "Single phase and three phase options available",
         "voltageOptions": [
-          "Single Phase",
-          "Three Phase"
+          "Single phase",
+          "Three phase"
         ],
-        "chainFall": "1-16 falls (depending on capacity)",
+        "chainFall": "1 to 16 falls depending on capacity",
+        "classification": [
+          "ATEX",
+          "EN1127-1:2008",
+          "EN13463-1:2009",
+          "EN13463-5:2003",
+          "DIN 5684",
+          "II 2 GD c II B T105°C",
+          "94/9/EC"
+        ],
         "safetyFeatures": {
           "overloadProtection": true,
-          "upperLimitSwitch": true,
-          "lowerLimitSwitch": true,
+          "upperLimitSwitch": false,
+          "lowerLimitSwitch": false,
           "emergencyStop": false,
-          "slipClutch": true
+          "slipClutch": false
         },
         "certifications": [
           "ATEX",
-          "CE"
+          "CE",
+          "DIN"
         ],
         "applications": [
-          "Industrial lifting",
-          "Material handling",
-          "Construction",
-          "Manufacturing"
+          "Manual chain hoists",
+          "Electric chain hoists",
+          "Pneumatic chain hoists",
+          "Trolley hoists",
+          "Spark resistant applications",
+          "Corrosion resistant environments",
+          "Food grade applications"
         ],
-        "operatingTemperature": "-20°C to +150°C (-4°F to +302°F)",
-        "protectionClass": "IP54 standard, IP65/NEMA 4X available",
-        "specialFeatures": [
-          "Grade 105 galvanized load chain (DIN 5684 standard)",
-          "Double pawls supporting fail-safe brake mechanism",
-          "Load sheave with roller bearing",
-          "Heavy duty electrostatic powder coating",
-          "Long life friction discs",
-          "Spark resistant versions available",
-          "Corrosion resistant versions available",
-          "Low profile designs available"
-        ],
-        "seriesVariants": {
-          "SA": "Single Phase Electric Chain Hoist",
-          "FA/FB": "Three Phase Single Brake Electric Chain Hoist",
-          "DA/DB": "Three Phase Double Brake Heavy Duty Electric Chain Hoist",
-          "SDAM/SDBM": "Low Profile Electric Chain Hoists",
-          "Alpha/Beta": "Compact Electric Chain Hoists"
-        },
-        "confidence": 0.9,
+        "operatingTemperature": "-20°C to +150°C (-4°F to +302°F) for manual hoists, varies by series",
+        "protectionClass": "IP54 with IP65 NEMA 4X pendants for corrosion resistant electric hoists",
+        "brakeType": "Double pawls supporting fail-safe brake mechanism for manual hoists, single and double brake systems for electric hoists",
+        "chainSpecification": "Grade 105 galvanized load chain adhering to German DIN 5684 standard, stainless steel chains available for corrosion resistant models",
+        "confidence": 0.85,
         "extractionMethod": "text"
       },
       "matchedProducts": [
@@ -4120,7 +4224,29 @@
       "filename": "elephant_ats-pneumatic-winches_document_1.pdf",
       "status": "success",
       "extractedData": {
-        "confidence": 0,
+        "model": "i.roc 627 and i.roc 620",
+        "classification": [
+          "I.S.Class I Div 1 Group A-D T4",
+          "Zone 01",
+          "II 2 G EEx ia IIC T4",
+          "ATEX",
+          "CENELEC",
+          "NEC 500",
+          "NEC 505"
+        ],
+        "certifications": [
+          "EEx",
+          "ATEX",
+          "CENELEC"
+        ],
+        "operatingTemperature": "T4 (135°C max surface temperature)",
+        "applications": [
+          "Hazardous area applications",
+          "Class I Div 1 environments",
+          "Zone 0 and Zone 1 gas atmospheres",
+          "Intrinsically safe applications"
+        ],
+        "confidence": 0.3,
         "extractionMethod": "text"
       },
       "matchedProducts": [
@@ -4181,7 +4307,7 @@
       "status": "success",
       "extractedData": {
         "manufacturer": "Elephant Lifting Products, LLC",
-        "series": "ELEPHANT WT Tugger",
+        "series": "ELEPHANT WT Tugger series",
         "safetyFeatures": {
           "overloadProtection": true,
           "upperLimitSwitch": false,
@@ -4189,16 +4315,18 @@
           "emergencyStop": false,
           "slipClutch": true
         },
+        "classification": [
+          "ANSI/ASME B30.7"
+        ],
         "applications": [
           "pulling horizontal loads",
-          "lifting vertical loads"
+          "lifting vertical loads",
+          "explosion-hazardous areas",
+          "high dust and soot environments"
         ],
         "operatingTemperature": "-20°C to +70°C",
-        "warranty": "one year from the date of purchase",
-        "certifications": [
-          "ASME B30.7"
-        ],
-        "confidence": 0.3,
+        "brakeType": "spring loaded brake (air pressure release)",
+        "confidence": 0.8,
         "extractionMethod": "text"
       },
       "matchedProducts": [
@@ -4259,50 +4387,49 @@
       "status": "success",
       "extractedData": {
         "manufacturer": "Elephant Lifting",
-        "series": "SA/FA/DA/DB Electric Chain Hoists",
-        "loadCapacity": "0.5t - 50t (1100 lbs - 110,000 lbs)",
+        "series": "Multiple series (Super 100, C-21, FA/FB, DA/DB, SA, Alpha, Beta, ATS Pneumatic, etc.)",
+        "loadCapacity": "0.5t to 50t (1100 lbs to 110,000 lbs)",
+        "motorPower": "Single phase and three phase options available",
         "voltageOptions": [
-          "Single Phase",
-          "Three Phase"
+          "Single phase",
+          "Three phase"
         ],
-        "chainFall": "1-16 falls (depending on capacity)",
+        "chainFall": "1 to 16 falls depending on capacity",
+        "classification": [
+          "ATEX",
+          "EN1127-1:2008",
+          "EN13463-1:2009",
+          "EN13463-5:2003",
+          "DIN 5684",
+          "II 2 GD c II B T105°C",
+          "94/9/EC"
+        ],
         "safetyFeatures": {
           "overloadProtection": true,
-          "upperLimitSwitch": true,
-          "lowerLimitSwitch": true,
+          "upperLimitSwitch": false,
+          "lowerLimitSwitch": false,
           "emergencyStop": false,
-          "slipClutch": true
+          "slipClutch": false
         },
         "certifications": [
           "ATEX",
-          "CE"
+          "CE",
+          "DIN"
         ],
         "applications": [
-          "Industrial lifting",
-          "Material handling",
-          "Construction",
-          "Manufacturing"
+          "Manual chain hoists",
+          "Electric chain hoists",
+          "Pneumatic chain hoists",
+          "Trolley hoists",
+          "Spark resistant applications",
+          "Corrosion resistant environments",
+          "Food grade applications"
         ],
-        "operatingTemperature": "-20°C to +150°C (-4°F to +302°F)",
-        "protectionClass": "IP54 standard, IP65/NEMA 4X available",
-        "specialFeatures": [
-          "Grade 105 galvanized load chain (DIN 5684 standard)",
-          "Double pawls supporting fail-safe brake mechanism",
-          "Load sheave with roller bearing",
-          "Heavy duty electrostatic powder coating",
-          "Long life friction discs",
-          "Spark resistant versions available",
-          "Corrosion resistant versions available",
-          "Low profile designs available"
-        ],
-        "seriesVariants": {
-          "SA": "Single Phase Electric Chain Hoist",
-          "FA/FB": "Three Phase Single Brake Electric Chain Hoist",
-          "DA/DB": "Three Phase Double Brake Heavy Duty Electric Chain Hoist",
-          "SDAM/SDBM": "Low Profile Electric Chain Hoists",
-          "Alpha/Beta": "Compact Electric Chain Hoists"
-        },
-        "confidence": 0.9,
+        "operatingTemperature": "-20°C to +150°C (-4°F to +302°F) for manual hoists, varies by series",
+        "protectionClass": "IP54 with IP65 NEMA 4X pendants for corrosion resistant electric hoists",
+        "brakeType": "Double pawls supporting fail-safe brake mechanism for manual hoists, single and double brake systems for electric hoists",
+        "chainSpecification": "Grade 105 galvanized load chain adhering to German DIN 5684 standard, stainless steel chains available for corrosion resistant models",
+        "confidence": 0.85,
         "extractionMethod": "text"
       },
       "matchedProducts": [
@@ -4363,50 +4490,49 @@
       "status": "success",
       "extractedData": {
         "manufacturer": "Elephant Lifting",
-        "series": "SA/FA/DA/DB Electric Chain Hoists",
-        "loadCapacity": "0.5t - 50t (1100 lbs - 110,000 lbs)",
+        "series": "Multiple series (Super 100, C-21, FA/FB, DA/DB, SA, Alpha, Beta, ATS Pneumatic, etc.)",
+        "loadCapacity": "0.5t to 50t (1100 lbs to 110,000 lbs)",
+        "motorPower": "Single phase and three phase options available",
         "voltageOptions": [
-          "Single Phase",
-          "Three Phase"
+          "Single phase",
+          "Three phase"
         ],
-        "chainFall": "1-16 falls (depending on capacity)",
+        "chainFall": "1 to 16 falls depending on capacity",
+        "classification": [
+          "ATEX",
+          "EN1127-1:2008",
+          "EN13463-1:2009",
+          "EN13463-5:2003",
+          "DIN 5684",
+          "II 2 GD c II B T105°C",
+          "94/9/EC"
+        ],
         "safetyFeatures": {
           "overloadProtection": true,
-          "upperLimitSwitch": true,
-          "lowerLimitSwitch": true,
+          "upperLimitSwitch": false,
+          "lowerLimitSwitch": false,
           "emergencyStop": false,
-          "slipClutch": true
+          "slipClutch": false
         },
         "certifications": [
           "ATEX",
-          "CE"
+          "CE",
+          "DIN"
         ],
         "applications": [
-          "Industrial lifting",
-          "Material handling",
-          "Construction",
-          "Manufacturing"
+          "Manual chain hoists",
+          "Electric chain hoists",
+          "Pneumatic chain hoists",
+          "Trolley hoists",
+          "Spark resistant applications",
+          "Corrosion resistant environments",
+          "Food grade applications"
         ],
-        "operatingTemperature": "-20°C to +150°C (-4°F to +302°F)",
-        "protectionClass": "IP54 standard, IP65/NEMA 4X available",
-        "specialFeatures": [
-          "Grade 105 galvanized load chain (DIN 5684 standard)",
-          "Double pawls supporting fail-safe brake mechanism",
-          "Load sheave with roller bearing",
-          "Heavy duty electrostatic powder coating",
-          "Long life friction discs",
-          "Spark resistant versions available",
-          "Corrosion resistant versions available",
-          "Low profile designs available"
-        ],
-        "seriesVariants": {
-          "SA": "Single Phase Electric Chain Hoist",
-          "FA/FB": "Three Phase Single Brake Electric Chain Hoist",
-          "DA/DB": "Three Phase Double Brake Heavy Duty Electric Chain Hoist",
-          "SDAM/SDBM": "Low Profile Electric Chain Hoists",
-          "Alpha/Beta": "Compact Electric Chain Hoists"
-        },
-        "confidence": 0.9,
+        "operatingTemperature": "-20°C to +150°C (-4°F to +302°F) for manual hoists, varies by series",
+        "protectionClass": "IP54 with IP65 NEMA 4X pendants for corrosion resistant electric hoists",
+        "brakeType": "Double pawls supporting fail-safe brake mechanism for manual hoists, single and double brake systems for electric hoists",
+        "chainSpecification": "Grade 105 galvanized load chain adhering to German DIN 5684 standard, stainless steel chains available for corrosion resistant models",
+        "confidence": 0.85,
         "extractionMethod": "text"
       },
       "matchedProducts": [
@@ -4467,50 +4593,49 @@
       "status": "success",
       "extractedData": {
         "manufacturer": "Elephant Lifting",
-        "series": "SA/FA/DA/DB Electric Chain Hoists",
-        "loadCapacity": "0.5t - 50t (1100 lbs - 110,000 lbs)",
+        "series": "Multiple series (Super 100, C-21, FA/FB, DA/DB, SA, Alpha, Beta, ATS Pneumatic, etc.)",
+        "loadCapacity": "0.5t to 50t (1100 lbs to 110,000 lbs)",
+        "motorPower": "Single phase and three phase options available",
         "voltageOptions": [
-          "Single Phase",
-          "Three Phase"
+          "Single phase",
+          "Three phase"
         ],
-        "chainFall": "1-16 falls (depending on capacity)",
+        "chainFall": "1 to 16 falls depending on capacity",
+        "classification": [
+          "ATEX",
+          "EN1127-1:2008",
+          "EN13463-1:2009",
+          "EN13463-5:2003",
+          "DIN 5684",
+          "II 2 GD c II B T105°C",
+          "94/9/EC"
+        ],
         "safetyFeatures": {
           "overloadProtection": true,
-          "upperLimitSwitch": true,
-          "lowerLimitSwitch": true,
+          "upperLimitSwitch": false,
+          "lowerLimitSwitch": false,
           "emergencyStop": false,
-          "slipClutch": true
+          "slipClutch": false
         },
         "certifications": [
           "ATEX",
-          "CE"
+          "CE",
+          "DIN"
         ],
         "applications": [
-          "Industrial lifting",
-          "Material handling",
-          "Construction",
-          "Manufacturing"
+          "Manual chain hoists",
+          "Electric chain hoists",
+          "Pneumatic chain hoists",
+          "Trolley hoists",
+          "Spark resistant applications",
+          "Corrosion resistant environments",
+          "Food grade applications"
         ],
-        "operatingTemperature": "-20°C to +150°C (-4°F to +302°F)",
-        "protectionClass": "IP54 standard, IP65/NEMA 4X available",
-        "specialFeatures": [
-          "Grade 105 galvanized load chain (DIN 5684 standard)",
-          "Double pawls supporting fail-safe brake mechanism",
-          "Load sheave with roller bearing",
-          "Heavy duty electrostatic powder coating",
-          "Long life friction discs",
-          "Spark resistant versions available",
-          "Corrosion resistant versions available",
-          "Low profile designs available"
-        ],
-        "seriesVariants": {
-          "SA": "Single Phase Electric Chain Hoist",
-          "FA/FB": "Three Phase Single Brake Electric Chain Hoist",
-          "DA/DB": "Three Phase Double Brake Heavy Duty Electric Chain Hoist",
-          "SDAM/SDBM": "Low Profile Electric Chain Hoists",
-          "Alpha/Beta": "Compact Electric Chain Hoists"
-        },
-        "confidence": 0.9,
+        "operatingTemperature": "-20°C to +150°C (-4°F to +302°F) for manual hoists, varies by series",
+        "protectionClass": "IP54 with IP65 NEMA 4X pendants for corrosion resistant electric hoists",
+        "brakeType": "Double pawls supporting fail-safe brake mechanism for manual hoists, single and double brake systems for electric hoists",
+        "chainSpecification": "Grade 105 galvanized load chain adhering to German DIN 5684 standard, stainless steel chains available for corrosion resistant models",
+        "confidence": 0.85,
         "extractionMethod": "text"
       },
       "matchedProducts": [
@@ -4571,50 +4696,49 @@
       "status": "success",
       "extractedData": {
         "manufacturer": "Elephant Lifting",
-        "series": "SA/FA/DA/DB Electric Chain Hoists",
-        "loadCapacity": "0.5t - 50t (1100 lbs - 110,000 lbs)",
+        "series": "Multiple series (Super 100, C-21, FA/FB, DA/DB, SA, Alpha, Beta, ATS Pneumatic, etc.)",
+        "loadCapacity": "0.5t to 50t (1100 lbs to 110,000 lbs)",
+        "motorPower": "Single phase and three phase options available",
         "voltageOptions": [
-          "Single Phase",
-          "Three Phase"
+          "Single phase",
+          "Three phase"
         ],
-        "chainFall": "1-16 falls (depending on capacity)",
+        "chainFall": "1 to 16 falls depending on capacity",
+        "classification": [
+          "ATEX",
+          "EN1127-1:2008",
+          "EN13463-1:2009",
+          "EN13463-5:2003",
+          "DIN 5684",
+          "II 2 GD c II B T105°C",
+          "94/9/EC"
+        ],
         "safetyFeatures": {
           "overloadProtection": true,
-          "upperLimitSwitch": true,
-          "lowerLimitSwitch": true,
+          "upperLimitSwitch": false,
+          "lowerLimitSwitch": false,
           "emergencyStop": false,
-          "slipClutch": true
+          "slipClutch": false
         },
         "certifications": [
           "ATEX",
-          "CE"
+          "CE",
+          "DIN"
         ],
         "applications": [
-          "Industrial lifting",
-          "Material handling",
-          "Construction",
-          "Manufacturing"
+          "Manual chain hoists",
+          "Electric chain hoists",
+          "Pneumatic chain hoists",
+          "Trolley hoists",
+          "Spark resistant applications",
+          "Corrosion resistant environments",
+          "Food grade applications"
         ],
-        "operatingTemperature": "-20°C to +150°C (-4°F to +302°F)",
-        "protectionClass": "IP54 standard, IP65/NEMA 4X available",
-        "specialFeatures": [
-          "Grade 105 galvanized load chain (DIN 5684 standard)",
-          "Double pawls supporting fail-safe brake mechanism",
-          "Load sheave with roller bearing",
-          "Heavy duty electrostatic powder coating",
-          "Long life friction discs",
-          "Spark resistant versions available",
-          "Corrosion resistant versions available",
-          "Low profile designs available"
-        ],
-        "seriesVariants": {
-          "SA": "Single Phase Electric Chain Hoist",
-          "FA/FB": "Three Phase Single Brake Electric Chain Hoist",
-          "DA/DB": "Three Phase Double Brake Heavy Duty Electric Chain Hoist",
-          "SDAM/SDBM": "Low Profile Electric Chain Hoists",
-          "Alpha/Beta": "Compact Electric Chain Hoists"
-        },
-        "confidence": 0.9,
+        "operatingTemperature": "-20°C to +150°C (-4°F to +302°F) for manual hoists, varies by series",
+        "protectionClass": "IP54 with IP65 NEMA 4X pendants for corrosion resistant electric hoists",
+        "brakeType": "Double pawls supporting fail-safe brake mechanism for manual hoists, single and double brake systems for electric hoists",
+        "chainSpecification": "Grade 105 galvanized load chain adhering to German DIN 5684 standard, stainless steel chains available for corrosion resistant models",
+        "confidence": 0.85,
         "extractionMethod": "text"
       },
       "matchedProducts": [
@@ -4675,50 +4799,49 @@
       "status": "success",
       "extractedData": {
         "manufacturer": "Elephant Lifting",
-        "series": "SA/FA/DA/DB Electric Chain Hoists",
-        "loadCapacity": "0.5t - 50t (1100 lbs - 110,000 lbs)",
+        "series": "Multiple series (Super 100, C-21, FA/FB, DA/DB, SA, Alpha, Beta, ATS Pneumatic, etc.)",
+        "loadCapacity": "0.5t to 50t (1100 lbs to 110,000 lbs)",
+        "motorPower": "Single phase and three phase options available",
         "voltageOptions": [
-          "Single Phase",
-          "Three Phase"
+          "Single phase",
+          "Three phase"
         ],
-        "chainFall": "1-16 falls (depending on capacity)",
+        "chainFall": "1 to 16 falls depending on capacity",
+        "classification": [
+          "ATEX",
+          "EN1127-1:2008",
+          "EN13463-1:2009",
+          "EN13463-5:2003",
+          "DIN 5684",
+          "II 2 GD c II B T105°C",
+          "94/9/EC"
+        ],
         "safetyFeatures": {
           "overloadProtection": true,
-          "upperLimitSwitch": true,
-          "lowerLimitSwitch": true,
+          "upperLimitSwitch": false,
+          "lowerLimitSwitch": false,
           "emergencyStop": false,
-          "slipClutch": true
+          "slipClutch": false
         },
         "certifications": [
           "ATEX",
-          "CE"
+          "CE",
+          "DIN"
         ],
         "applications": [
-          "Industrial lifting",
-          "Material handling",
-          "Construction",
-          "Manufacturing"
+          "Manual chain hoists",
+          "Electric chain hoists",
+          "Pneumatic chain hoists",
+          "Trolley hoists",
+          "Spark resistant applications",
+          "Corrosion resistant environments",
+          "Food grade applications"
         ],
-        "operatingTemperature": "-20°C to +150°C (-4°F to +302°F)",
-        "protectionClass": "IP54 standard, IP65/NEMA 4X available",
-        "specialFeatures": [
-          "Grade 105 galvanized load chain (DIN 5684 standard)",
-          "Double pawls supporting fail-safe brake mechanism",
-          "Load sheave with roller bearing",
-          "Heavy duty electrostatic powder coating",
-          "Long life friction discs",
-          "Spark resistant versions available",
-          "Corrosion resistant versions available",
-          "Low profile designs available"
-        ],
-        "seriesVariants": {
-          "SA": "Single Phase Electric Chain Hoist",
-          "FA/FB": "Three Phase Single Brake Electric Chain Hoist",
-          "DA/DB": "Three Phase Double Brake Heavy Duty Electric Chain Hoist",
-          "SDAM/SDBM": "Low Profile Electric Chain Hoists",
-          "Alpha/Beta": "Compact Electric Chain Hoists"
-        },
-        "confidence": 0.9,
+        "operatingTemperature": "-20°C to +150°C (-4°F to +302°F) for manual hoists, varies by series",
+        "protectionClass": "IP54 with IP65 NEMA 4X pendants for corrosion resistant electric hoists",
+        "brakeType": "Double pawls supporting fail-safe brake mechanism for manual hoists, single and double brake systems for electric hoists",
+        "chainSpecification": "Grade 105 galvanized load chain adhering to German DIN 5684 standard, stainless steel chains available for corrosion resistant models",
+        "confidence": 0.85,
         "extractionMethod": "text"
       },
       "matchedProducts": [
@@ -4779,50 +4902,49 @@
       "status": "success",
       "extractedData": {
         "manufacturer": "Elephant Lifting",
-        "series": "SA/FA/DA/DB Electric Chain Hoists",
-        "loadCapacity": "0.5t - 50t (1100 lbs - 110,000 lbs)",
+        "series": "Multiple series (Super 100, C-21, FA/FB, DA/DB, SA, Alpha, Beta, ATS Pneumatic, etc.)",
+        "loadCapacity": "0.5t to 50t (1100 lbs to 110,000 lbs)",
+        "motorPower": "Single phase and three phase options available",
         "voltageOptions": [
-          "Single Phase",
-          "Three Phase"
+          "Single phase",
+          "Three phase"
         ],
-        "chainFall": "1-16 falls (depending on capacity)",
+        "chainFall": "1 to 16 falls depending on capacity",
+        "classification": [
+          "ATEX",
+          "EN1127-1:2008",
+          "EN13463-1:2009",
+          "EN13463-5:2003",
+          "DIN 5684",
+          "II 2 GD c II B T105°C",
+          "94/9/EC"
+        ],
         "safetyFeatures": {
           "overloadProtection": true,
-          "upperLimitSwitch": true,
-          "lowerLimitSwitch": true,
+          "upperLimitSwitch": false,
+          "lowerLimitSwitch": false,
           "emergencyStop": false,
-          "slipClutch": true
+          "slipClutch": false
         },
         "certifications": [
           "ATEX",
-          "CE"
+          "CE",
+          "DIN"
         ],
         "applications": [
-          "Industrial lifting",
-          "Material handling",
-          "Construction",
-          "Manufacturing"
+          "Manual chain hoists",
+          "Electric chain hoists",
+          "Pneumatic chain hoists",
+          "Trolley hoists",
+          "Spark resistant applications",
+          "Corrosion resistant environments",
+          "Food grade applications"
         ],
-        "operatingTemperature": "-20°C to +150°C (-4°F to +302°F)",
-        "protectionClass": "IP54 standard, IP65/NEMA 4X available",
-        "specialFeatures": [
-          "Grade 105 galvanized load chain (DIN 5684 standard)",
-          "Double pawls supporting fail-safe brake mechanism",
-          "Load sheave with roller bearing",
-          "Heavy duty electrostatic powder coating",
-          "Long life friction discs",
-          "Spark resistant versions available",
-          "Corrosion resistant versions available",
-          "Low profile designs available"
-        ],
-        "seriesVariants": {
-          "SA": "Single Phase Electric Chain Hoist",
-          "FA/FB": "Three Phase Single Brake Electric Chain Hoist",
-          "DA/DB": "Three Phase Double Brake Heavy Duty Electric Chain Hoist",
-          "SDAM/SDBM": "Low Profile Electric Chain Hoists",
-          "Alpha/Beta": "Compact Electric Chain Hoists"
-        },
-        "confidence": 0.9,
+        "operatingTemperature": "-20°C to +150°C (-4°F to +302°F) for manual hoists, varies by series",
+        "protectionClass": "IP54 with IP65 NEMA 4X pendants for corrosion resistant electric hoists",
+        "brakeType": "Double pawls supporting fail-safe brake mechanism for manual hoists, single and double brake systems for electric hoists",
+        "chainSpecification": "Grade 105 galvanized load chain adhering to German DIN 5684 standard, stainless steel chains available for corrosion resistant models",
+        "confidence": 0.85,
         "extractionMethod": "text"
       },
       "matchedProducts": [
@@ -4883,50 +5005,49 @@
       "status": "success",
       "extractedData": {
         "manufacturer": "Elephant Lifting",
-        "series": "SA/FA/DA/DB Electric Chain Hoists",
-        "loadCapacity": "0.5t - 50t (1100 lbs - 110,000 lbs)",
+        "series": "Multiple series (Super 100, C-21, FA/FB, DA/DB, SA, Alpha, Beta, ATS Pneumatic, etc.)",
+        "loadCapacity": "0.5t to 50t (1100 lbs to 110,000 lbs)",
+        "motorPower": "Single phase and three phase options available",
         "voltageOptions": [
-          "Single Phase",
-          "Three Phase"
+          "Single phase",
+          "Three phase"
         ],
-        "chainFall": "1-16 falls (depending on capacity)",
+        "chainFall": "1 to 16 falls depending on capacity",
+        "classification": [
+          "ATEX",
+          "EN1127-1:2008",
+          "EN13463-1:2009",
+          "EN13463-5:2003",
+          "DIN 5684",
+          "II 2 GD c II B T105°C",
+          "94/9/EC"
+        ],
         "safetyFeatures": {
           "overloadProtection": true,
-          "upperLimitSwitch": true,
-          "lowerLimitSwitch": true,
+          "upperLimitSwitch": false,
+          "lowerLimitSwitch": false,
           "emergencyStop": false,
-          "slipClutch": true
+          "slipClutch": false
         },
         "certifications": [
           "ATEX",
-          "CE"
+          "CE",
+          "DIN"
         ],
         "applications": [
-          "Industrial lifting",
-          "Material handling",
-          "Construction",
-          "Manufacturing"
+          "Manual chain hoists",
+          "Electric chain hoists",
+          "Pneumatic chain hoists",
+          "Trolley hoists",
+          "Spark resistant applications",
+          "Corrosion resistant environments",
+          "Food grade applications"
         ],
-        "operatingTemperature": "-20°C to +150°C (-4°F to +302°F)",
-        "protectionClass": "IP54 standard, IP65/NEMA 4X available",
-        "specialFeatures": [
-          "Grade 105 galvanized load chain (DIN 5684 standard)",
-          "Double pawls supporting fail-safe brake mechanism",
-          "Load sheave with roller bearing",
-          "Heavy duty electrostatic powder coating",
-          "Long life friction discs",
-          "Spark resistant versions available",
-          "Corrosion resistant versions available",
-          "Low profile designs available"
-        ],
-        "seriesVariants": {
-          "SA": "Single Phase Electric Chain Hoist",
-          "FA/FB": "Three Phase Single Brake Electric Chain Hoist",
-          "DA/DB": "Three Phase Double Brake Heavy Duty Electric Chain Hoist",
-          "SDAM/SDBM": "Low Profile Electric Chain Hoists",
-          "Alpha/Beta": "Compact Electric Chain Hoists"
-        },
-        "confidence": 0.9,
+        "operatingTemperature": "-20°C to +150°C (-4°F to +302°F) for manual hoists, varies by series",
+        "protectionClass": "IP54 with IP65 NEMA 4X pendants for corrosion resistant electric hoists",
+        "brakeType": "Double pawls supporting fail-safe brake mechanism for manual hoists, single and double brake systems for electric hoists",
+        "chainSpecification": "Grade 105 galvanized load chain adhering to German DIN 5684 standard, stainless steel chains available for corrosion resistant models",
+        "confidence": 0.85,
         "extractionMethod": "text"
       },
       "matchedProducts": [
@@ -4987,50 +5108,49 @@
       "status": "success",
       "extractedData": {
         "manufacturer": "Elephant Lifting",
-        "series": "SA/FA/DA/DB Electric Chain Hoists",
-        "loadCapacity": "0.5t - 50t (1100 lbs - 110,000 lbs)",
+        "series": "Multiple series (Super 100, C-21, FA/FB, DA/DB, SA, Alpha, Beta, ATS Pneumatic, etc.)",
+        "loadCapacity": "0.5t to 50t (1100 lbs to 110,000 lbs)",
+        "motorPower": "Single phase and three phase options available",
         "voltageOptions": [
-          "Single Phase",
-          "Three Phase"
+          "Single phase",
+          "Three phase"
         ],
-        "chainFall": "1-16 falls (depending on capacity)",
+        "chainFall": "1 to 16 falls depending on capacity",
+        "classification": [
+          "ATEX",
+          "EN1127-1:2008",
+          "EN13463-1:2009",
+          "EN13463-5:2003",
+          "DIN 5684",
+          "II 2 GD c II B T105°C",
+          "94/9/EC"
+        ],
         "safetyFeatures": {
           "overloadProtection": true,
-          "upperLimitSwitch": true,
-          "lowerLimitSwitch": true,
+          "upperLimitSwitch": false,
+          "lowerLimitSwitch": false,
           "emergencyStop": false,
-          "slipClutch": true
+          "slipClutch": false
         },
         "certifications": [
           "ATEX",
-          "CE"
+          "CE",
+          "DIN"
         ],
         "applications": [
-          "Industrial lifting",
-          "Material handling",
-          "Construction",
-          "Manufacturing"
+          "Manual chain hoists",
+          "Electric chain hoists",
+          "Pneumatic chain hoists",
+          "Trolley hoists",
+          "Spark resistant applications",
+          "Corrosion resistant environments",
+          "Food grade applications"
         ],
-        "operatingTemperature": "-20°C to +150°C (-4°F to +302°F)",
-        "protectionClass": "IP54 standard, IP65/NEMA 4X available",
-        "specialFeatures": [
-          "Grade 105 galvanized load chain (DIN 5684 standard)",
-          "Double pawls supporting fail-safe brake mechanism",
-          "Load sheave with roller bearing",
-          "Heavy duty electrostatic powder coating",
-          "Long life friction discs",
-          "Spark resistant versions available",
-          "Corrosion resistant versions available",
-          "Low profile designs available"
-        ],
-        "seriesVariants": {
-          "SA": "Single Phase Electric Chain Hoist",
-          "FA/FB": "Three Phase Single Brake Electric Chain Hoist",
-          "DA/DB": "Three Phase Double Brake Heavy Duty Electric Chain Hoist",
-          "SDAM/SDBM": "Low Profile Electric Chain Hoists",
-          "Alpha/Beta": "Compact Electric Chain Hoists"
-        },
-        "confidence": 0.9,
+        "operatingTemperature": "-20°C to +150°C (-4°F to +302°F) for manual hoists, varies by series",
+        "protectionClass": "IP54 with IP65 NEMA 4X pendants for corrosion resistant electric hoists",
+        "brakeType": "Double pawls supporting fail-safe brake mechanism for manual hoists, single and double brake systems for electric hoists",
+        "chainSpecification": "Grade 105 galvanized load chain adhering to German DIN 5684 standard, stainless steel chains available for corrosion resistant models",
+        "confidence": 0.85,
         "extractionMethod": "text"
       },
       "matchedProducts": [
@@ -5091,50 +5211,49 @@
       "status": "success",
       "extractedData": {
         "manufacturer": "Elephant Lifting",
-        "series": "SA/FA/DA/DB Electric Chain Hoists",
-        "loadCapacity": "0.5t - 50t (1100 lbs - 110,000 lbs)",
+        "series": "Multiple series (Super 100, C-21, FA/FB, DA/DB, SA, Alpha, Beta, ATS Pneumatic, etc.)",
+        "loadCapacity": "0.5t to 50t (1100 lbs to 110,000 lbs)",
+        "motorPower": "Single phase and three phase options available",
         "voltageOptions": [
-          "Single Phase",
-          "Three Phase"
+          "Single phase",
+          "Three phase"
         ],
-        "chainFall": "1-16 falls (depending on capacity)",
+        "chainFall": "1 to 16 falls depending on capacity",
+        "classification": [
+          "ATEX",
+          "EN1127-1:2008",
+          "EN13463-1:2009",
+          "EN13463-5:2003",
+          "DIN 5684",
+          "II 2 GD c II B T105°C",
+          "94/9/EC"
+        ],
         "safetyFeatures": {
           "overloadProtection": true,
-          "upperLimitSwitch": true,
-          "lowerLimitSwitch": true,
+          "upperLimitSwitch": false,
+          "lowerLimitSwitch": false,
           "emergencyStop": false,
-          "slipClutch": true
+          "slipClutch": false
         },
         "certifications": [
           "ATEX",
-          "CE"
+          "CE",
+          "DIN"
         ],
         "applications": [
-          "Industrial lifting",
-          "Material handling",
-          "Construction",
-          "Manufacturing"
+          "Manual chain hoists",
+          "Electric chain hoists",
+          "Pneumatic chain hoists",
+          "Trolley hoists",
+          "Spark resistant applications",
+          "Corrosion resistant environments",
+          "Food grade applications"
         ],
-        "operatingTemperature": "-20°C to +150°C (-4°F to +302°F)",
-        "protectionClass": "IP54 standard, IP65/NEMA 4X available",
-        "specialFeatures": [
-          "Grade 105 galvanized load chain (DIN 5684 standard)",
-          "Double pawls supporting fail-safe brake mechanism",
-          "Load sheave with roller bearing",
-          "Heavy duty electrostatic powder coating",
-          "Long life friction discs",
-          "Spark resistant versions available",
-          "Corrosion resistant versions available",
-          "Low profile designs available"
-        ],
-        "seriesVariants": {
-          "SA": "Single Phase Electric Chain Hoist",
-          "FA/FB": "Three Phase Single Brake Electric Chain Hoist",
-          "DA/DB": "Three Phase Double Brake Heavy Duty Electric Chain Hoist",
-          "SDAM/SDBM": "Low Profile Electric Chain Hoists",
-          "Alpha/Beta": "Compact Electric Chain Hoists"
-        },
-        "confidence": 0.9,
+        "operatingTemperature": "-20°C to +150°C (-4°F to +302°F) for manual hoists, varies by series",
+        "protectionClass": "IP54 with IP65 NEMA 4X pendants for corrosion resistant electric hoists",
+        "brakeType": "Double pawls supporting fail-safe brake mechanism for manual hoists, single and double brake systems for electric hoists",
+        "chainSpecification": "Grade 105 galvanized load chain adhering to German DIN 5684 standard, stainless steel chains available for corrosion resistant models",
+        "confidence": 0.85,
         "extractionMethod": "text"
       },
       "matchedProducts": [
@@ -5216,9 +5335,11 @@
       "extractedData": {
         "manufacturer": "Gorbel",
         "series": "Work Station Bridge Cranes and Monorails",
-        "loadCapacity": "50 lbs to 4,000 lbs",
-        "liftingSpeed": "up to 50 f.p.m.",
+        "loadCapacity": "up to 4,000 lbs (1,814 kg)",
         "dimensions": "Bridge lengths up to 34', Runway lengths up to 124', Support distances 20', 25', 30'",
+        "classification": [
+          "ANSI B30.11"
+        ],
         "safetyFeatures": {
           "overloadProtection": false,
           "upperLimitSwitch": false,
@@ -5226,19 +5347,14 @@
           "emergencyStop": false,
           "slipClutch": false
         },
-        "certifications": [
-          "ANSI B30.11"
-        ],
         "applications": [
           "Material handling",
-          "Manufacturing",
-          "Assembly",
-          "Maintenance",
           "Sheet metal fabrication",
-          "Paper roll handling"
+          "Manufacturing",
+          "Warehousing",
+          "Assembly operations"
         ],
-        "operatingTemperature": "+5°F to +200°F",
-        "warranty": "10 year (20,000 hour) warranty on manually operated crane systems",
+        "operatingTemperature": "+5°F to +200°F (-15°C to +93°C)",
         "confidence": 0.9,
         "extractionMethod": "text"
       },
@@ -5297,8 +5413,7 @@
         "applications": [
           "Transfer loads from bridge crane to monorail spurs or storage rails",
           "Move loads to separate rooms or work cells",
-          "Bridge to monorail spur applications",
-          "Bridge to bridge via monorail spur"
+          "Bridge to bridge via monorail spur connections"
         ],
         "confidence": 0.3,
         "extractionMethod": "text"
@@ -5347,7 +5462,7 @@
       "extractedData": {
         "manufacturer": "Gorbel",
         "series": "Tractor Drive",
-        "motorPower": "1/3 HP",
+        "motorPower": "1/3 HP (0.25 kW)",
         "voltageOptions": [
           "208-460 volt 3 phase",
           "575 volt"
@@ -5355,10 +5470,13 @@
         "applications": [
           "Heavy and/or awkward-shaped loads",
           "Operations requiring taller trolley saddle heights",
-          "Operations where the operator should be safely distanced from the load"
+          "Operations where the operator should be safely distanced from the load",
+          "Motorized movement on Gorbel steel enclosed track Work Station Cranes"
         ],
-        "warranty": "2 year",
-        "confidence": 0.85,
+        "certifications": [
+          "2 year warranty"
+        ],
+        "confidence": 0.7,
         "extractionMethod": "text"
       },
       "matchedProducts": [
@@ -5405,9 +5523,11 @@
       "extractedData": {
         "manufacturer": "Gorbel",
         "series": "Work Station Bridge Cranes and Monorails",
-        "loadCapacity": "50 lbs to 4,000 lbs",
-        "liftingSpeed": "up to 50 f.p.m.",
+        "loadCapacity": "up to 4,000 lbs (1,814 kg)",
         "dimensions": "Bridge lengths up to 34', Runway lengths up to 124', Support distances 20', 25', 30'",
+        "classification": [
+          "ANSI B30.11"
+        ],
         "safetyFeatures": {
           "overloadProtection": false,
           "upperLimitSwitch": false,
@@ -5415,19 +5535,14 @@
           "emergencyStop": false,
           "slipClutch": false
         },
-        "certifications": [
-          "ANSI B30.11"
-        ],
         "applications": [
           "Material handling",
-          "Manufacturing",
-          "Assembly",
-          "Maintenance",
           "Sheet metal fabrication",
-          "Paper roll handling"
+          "Manufacturing",
+          "Warehousing",
+          "Assembly operations"
         ],
-        "operatingTemperature": "+5°F to +200°F",
-        "warranty": "10 year (20,000 hour) warranty on manually operated crane systems",
+        "operatingTemperature": "+5°F to +200°F (-15°C to +93°C)",
         "confidence": 0.9,
         "extractionMethod": "text"
       },
@@ -5486,8 +5601,7 @@
         "applications": [
           "Transfer loads from bridge crane to monorail spurs or storage rails",
           "Move loads to separate rooms or work cells",
-          "Bridge to monorail spur applications",
-          "Bridge to bridge via monorail spur"
+          "Bridge to bridge via monorail spur connections"
         ],
         "confidence": 0.3,
         "extractionMethod": "text"
@@ -5536,7 +5650,7 @@
       "extractedData": {
         "manufacturer": "Gorbel",
         "series": "Tractor Drive",
-        "motorPower": "1/3 HP",
+        "motorPower": "1/3 HP (0.25 kW)",
         "voltageOptions": [
           "208-460 volt 3 phase",
           "575 volt"
@@ -5544,10 +5658,13 @@
         "applications": [
           "Heavy and/or awkward-shaped loads",
           "Operations requiring taller trolley saddle heights",
-          "Operations where the operator should be safely distanced from the load"
+          "Operations where the operator should be safely distanced from the load",
+          "Motorized movement on Gorbel steel enclosed track Work Station Cranes"
         ],
-        "warranty": "2 year",
-        "confidence": 0.85,
+        "certifications": [
+          "2 year warranty"
+        ],
+        "confidence": 0.7,
         "extractionMethod": "text"
       },
       "matchedProducts": [
@@ -5594,9 +5711,11 @@
       "extractedData": {
         "manufacturer": "Gorbel",
         "series": "Work Station Bridge Cranes and Monorails",
-        "loadCapacity": "50 lbs to 4,000 lbs",
-        "liftingSpeed": "up to 50 f.p.m.",
+        "loadCapacity": "up to 4,000 lbs (1,814 kg)",
         "dimensions": "Bridge lengths up to 34', Runway lengths up to 124', Support distances 20', 25', 30'",
+        "classification": [
+          "ANSI B30.11"
+        ],
         "safetyFeatures": {
           "overloadProtection": false,
           "upperLimitSwitch": false,
@@ -5604,19 +5723,14 @@
           "emergencyStop": false,
           "slipClutch": false
         },
-        "certifications": [
-          "ANSI B30.11"
-        ],
         "applications": [
           "Material handling",
-          "Manufacturing",
-          "Assembly",
-          "Maintenance",
           "Sheet metal fabrication",
-          "Paper roll handling"
+          "Manufacturing",
+          "Warehousing",
+          "Assembly operations"
         ],
-        "operatingTemperature": "+5°F to +200°F",
-        "warranty": "10 year (20,000 hour) warranty on manually operated crane systems",
+        "operatingTemperature": "+5°F to +200°F (-15°C to +93°C)",
         "confidence": 0.9,
         "extractionMethod": "text"
       },
@@ -5675,8 +5789,7 @@
         "applications": [
           "Transfer loads from bridge crane to monorail spurs or storage rails",
           "Move loads to separate rooms or work cells",
-          "Bridge to monorail spur applications",
-          "Bridge to bridge via monorail spur"
+          "Bridge to bridge via monorail spur connections"
         ],
         "confidence": 0.3,
         "extractionMethod": "text"
@@ -5724,7 +5837,13 @@
       "status": "success",
       "extractedData": {
         "manufacturer": "Gorbel",
-        "loadCapacity": "1000 lbs to 4000 lbs",
+        "loadCapacity": "up to 4,000 pounds (individual bridges up to 1,000 pounds)",
+        "applications": [
+          "automotive engine assembly",
+          "materials handling",
+          "production line support",
+          "tool positioning"
+        ],
         "safetyFeatures": {
           "overloadProtection": false,
           "upperLimitSwitch": false,
@@ -5732,13 +5851,7 @@
           "emergencyStop": false,
           "slipClutch": false
         },
-        "applications": [
-          "automotive engine assembly",
-          "material handling",
-          "production line support",
-          "tool positioning"
-        ],
-        "confidence": 0.4,
+        "confidence": 0.3,
         "extractionMethod": "text"
       },
       "matchedProducts": [
@@ -5785,7 +5898,7 @@
       "extractedData": {
         "manufacturer": "Gorbel",
         "series": "Tractor Drive",
-        "motorPower": "1/3 HP",
+        "motorPower": "1/3 HP (0.25 kW)",
         "voltageOptions": [
           "208-460 volt 3 phase",
           "575 volt"
@@ -5793,10 +5906,13 @@
         "applications": [
           "Heavy and/or awkward-shaped loads",
           "Operations requiring taller trolley saddle heights",
-          "Operations where the operator should be safely distanced from the load"
+          "Operations where the operator should be safely distanced from the load",
+          "Motorized movement on Gorbel steel enclosed track Work Station Cranes"
         ],
-        "warranty": "2 year",
-        "confidence": 0.85,
+        "certifications": [
+          "2 year warranty"
+        ],
+        "confidence": 0.7,
         "extractionMethod": "text"
       },
       "matchedProducts": [
@@ -5841,14 +5957,17 @@
       "filename": "harrington_products_document_0.pdf",
       "status": "success",
       "extractedData": {
-        "model": "LB",
+        "model": "LB (LB008, LB010, LB015, LB020, LB028, LB030, LB060, LB090)",
         "manufacturer": "Harrington Hoists, Inc.",
         "series": "LB Lever Hoists",
         "loadCapacity": "3/4, 1, 1-1/2, 2, 2-3/4, 3, 6 and 9 Ton",
         "weight": "13-93 lbs (varies by model)",
-        "chainFall": "1-3 chain falls (varies by capacity)",
+        "chainFall": "1-3 falls (varies by model)",
         "safetyFeatures": {
-          "overloadProtection": true,
+          "overloadProtection": false,
+          "upperLimitSwitch": false,
+          "lowerLimitSwitch": false,
+          "emergencyStop": false,
           "slipClutch": true
         },
         "applications": [
@@ -5858,7 +5977,9 @@
           "Manufacturing",
           "Shipbuilding"
         ],
-        "confidence": 0.95,
+        "brakeType": "Weston-style mechanical load brake",
+        "chainSpecification": "Nickel-plated corrosion-resistant load chain",
+        "confidence": 0.9,
         "extractionMethod": "text"
       },
       "matchedProducts": [
@@ -5876,23 +5997,28 @@
         "model": "CX Hand Chain Hoist",
         "manufacturer": "HARRINGTON HOISTS, INC.",
         "series": "CX",
-        "loadCapacity": "1/4 Ton, 1/2 Ton and 1 Ton Capacity",
-        "weight": "CX003: 7-10 lbs, CX005: 10-16 lbs, CX010: 17-26 lbs (depending on lift height)",
+        "loadCapacity": "1/4 Ton (CX003), 1/2 Ton (CX005), 1 Ton (CX010)",
+        "chainFall": "1 fall (CX003, CX005), 2 falls (CX010)",
+        "weight": "CX003: 7 lbs (10 ft lift), 10 lbs (20 ft lift); CX005: 10 lbs (10 ft lift), 16 lbs (20 ft lift); CX010: 17 lbs (10 ft lift), 26 lbs (20 ft lift)",
         "dimensions": "Headroom - CX003: 8.5 in, CX005: 10.2 in, CX010: 14.2 in",
-        "chainFall": "CX003/CX005: 1 fall, CX010: 2 falls",
+        "classification": [
+          "ANSI/ASME B30.16",
+          "ANSI/ASME B30.10"
+        ],
         "safetyFeatures": {
-          "overloadProtection": true,
+          "overloadProtection": false,
           "upperLimitSwitch": false,
           "lowerLimitSwitch": false,
           "emergencyStop": false,
           "slipClutch": false
         },
         "applications": [
-          "Manual lifting and lowering",
-          "Industrial material handling"
+          "Manual lifting and lowering of loads",
+          "Combined with trolley for horizontal movement"
         ],
-        "operatingTemperature": "-40° to +140°F (-40° to +60°C)",
-        "warranty": "2 years - Manual Hoists & Trolleys",
+        "operatingTemperature": "-40°F to +140°F (-40°C to +60°C)",
+        "brakeType": "Mechanical brake with friction discs, pawls, and ratchet system",
+        "chainSpecification": "CX003: 3.2mm dia x 9.0mm pitch; CX005/CX010: 4.3mm dia x 12.0mm pitch",
         "confidence": 0.95,
         "extractionMethod": "text"
       },
@@ -5908,7 +6034,35 @@
       "filename": "harrington_products_manual_1.pdf",
       "status": "success",
       "extractedData": {
-        "confidence": 0,
+        "model": "LB Lever Hoist, CB Hand Chain Hoist, CF Hand Chain Hoist, NTH Low Headroom Trolley Hoist, SHB Ultra-Low Headroom Trolley Hoist, LX Lever Puller, CX Mini Hand Chain Hoist",
+        "manufacturer": "Harrington",
+        "series": "Manual Hoist Products",
+        "loadCapacity": "1/4 ton to 100 ton (multiple models)",
+        "chainFall": "1 to 4 chain fall lines (varies by model)",
+        "weight": "3.5 lbs to 2641 lbs (varies by model and capacity)",
+        "dimensions": "Various dimensions provided for each model series",
+        "classification": [
+          "ASME B30.16",
+          "ASME B30.21"
+        ],
+        "safetyFeatures": {
+          "overloadProtection": true,
+          "slipClutch": true,
+          "loadLimiter": true,
+          "enclosedBrake": true,
+          "dualPawlSprings": true
+        },
+        "applications": [
+          "construction",
+          "mining",
+          "manufacturing",
+          "shipbuilding",
+          "maintenance and repair",
+          "material handling"
+        ],
+        "brakeType": "Weston-style load brake with moisture-resistant brake pads",
+        "chainSpecification": "Grade 100 heat-treated manganese alloy load chain, nickel-plated for corrosion resistance",
+        "confidence": 0.9,
         "extractionMethod": "text"
       },
       "matchedProducts": [
@@ -6024,41 +6178,42 @@
       "status": "success",
       "extractedData": {
         "manufacturer": "KITO",
-        "series": "Multiple series (LX, LB, LB-SL, CX, CB, CB Mining/Offshore, CB High Speed, SHB, TK)",
+        "series": "Manual Hoists Collection (LX, LB, LB-SL, CX, CB series)",
         "loadCapacity": "250 kg to 50,000 kg (varies by model)",
-        "chainFall": "1 to 16 falls (varies by model)",
+        "chainSpecification": "Nickel-plated load chain, Grade T, Version V (G100) per EN 818-7, breaking strength 1,000 N/mm²",
+        "weight": "varies by model (2.4 kg to 640 kg depending on capacity and series)",
+        "chainFall": "1 to 16 falls (depending on model)",
+        "classification": [
+          "DGUV-GS certified",
+          "EN 818-7",
+          "EN 13157",
+          "EN 13155",
+          "ISO 9001",
+          "ISO 14001"
+        ],
         "safetyFeatures": {
           "overloadProtection": true,
-          "chainFreewheel": true,
-          "safetyLock": true,
-          "loadPressureBrake": true
+          "slipClutch": true
         },
         "certifications": [
-          "CE",
           "DGUV-GS",
+          "CE",
           "ISO 9001",
-          "ISO 14001",
-          "EN 818-7"
+          "ISO 14001"
         ],
         "applications": [
           "Automotive",
           "Metallurgy",
           "Pharmaceutical",
           "Energy generation",
-          "Offshore",
-          "Mining",
           "Food/Beverage",
-          "Power line construction"
+          "Construction",
+          "Mining",
+          "Offshore"
         ],
-        "specialFeatures": [
-          "Electroless nickel-plated load chain (H23 process)",
-          "Grade T chain, Version V (G100) or DAT (G80)",
-          "Chain breaking strength 1000 N/mm² or 800 N/mm²",
-          "Reduced hydrogen embrittlement",
-          "Higher corrosion resistance"
-        ],
+        "brakeType": "Load pressure brake (Lastdruckbremse)",
         "operatingTemperature": "-40°C to +400°C (for chains)",
-        "confidence": 0.7,
+        "confidence": 0.8,
         "extractionMethod": "text"
       },
       "matchedProducts": [
@@ -6090,32 +6245,46 @@
       "extractedData": {
         "manufacturer": "KITO",
         "series": "Multiple series (ED, EDC, EQ, EQS, ER2, CDER2, SHER2M, TWER2M)",
+        "loadCapacity": "Up to 50,000 kg for manual hoists (electric hoist capacities referenced but not specified)",
+        "chainSpecification": "Electroless nickel-plated load chain grade T, series DAT (G80) for electric hoists, grade T series V (G100) for manual hoists, strength 800 N/mm² and 1,000 N/mm² respectively",
+        "classification": [
+          "DGUV-GS",
+          "CE",
+          "EN 818-7",
+          "ISO 9001",
+          "ISO 14001",
+          "EN 13155",
+          "EN 13157"
+        ],
         "safetyFeatures": {
           "overloadProtection": true,
-          "upperLimitSwitch": true,
-          "lowerLimitSwitch": true,
+          "upperLimitSwitch": false,
+          "lowerLimitSwitch": false,
           "emergencyStop": false,
           "slipClutch": false
         },
         "certifications": [
-          "CE",
           "DGUV-GS",
           "ISO 9001",
-          "ISO 14001"
+          "ISO 14001",
+          "DNV-GL",
+          "BV",
+          "Lloyds",
+          "ABS"
         ],
         "applications": [
-          "automotive",
-          "metallurgy",
-          "pharmaceuticals",
-          "power generation",
-          "food industry",
-          "wind power",
-          "overhead line construction",
-          "offshore",
-          "mining"
+          "Automotive",
+          "Metallurgy",
+          "Pharmaceuticals",
+          "Power generation",
+          "Food/Beverages/Pharma",
+          "Offshore",
+          "Mining",
+          "Wind power",
+          "Overhead line construction"
         ],
-        "operatingTemperature": "-40°C to +400°C",
-        "confidence": 0.6,
+        "brakeType": "High-performance mechanical brake",
+        "confidence": 0.7,
         "extractionMethod": "text"
       },
       "matchedProducts": [
@@ -6146,41 +6315,42 @@
       "status": "success",
       "extractedData": {
         "manufacturer": "KITO",
-        "series": "Multiple series (LX, LB, LB-SL, CX, CB, CB Mining/Offshore, CB High Speed, SHB, TK)",
+        "series": "Manual Hoists Collection (LX, LB, LB-SL, CX, CB series)",
         "loadCapacity": "250 kg to 50,000 kg (varies by model)",
-        "chainFall": "1 to 16 falls (varies by model)",
+        "chainSpecification": "Nickel-plated load chain, Grade T, Version V (G100) per EN 818-7, breaking strength 1,000 N/mm²",
+        "weight": "varies by model (2.4 kg to 640 kg depending on capacity and series)",
+        "chainFall": "1 to 16 falls (depending on model)",
+        "classification": [
+          "DGUV-GS certified",
+          "EN 818-7",
+          "EN 13157",
+          "EN 13155",
+          "ISO 9001",
+          "ISO 14001"
+        ],
         "safetyFeatures": {
           "overloadProtection": true,
-          "chainFreewheel": true,
-          "safetyLock": true,
-          "loadPressureBrake": true
+          "slipClutch": true
         },
         "certifications": [
-          "CE",
           "DGUV-GS",
+          "CE",
           "ISO 9001",
-          "ISO 14001",
-          "EN 818-7"
+          "ISO 14001"
         ],
         "applications": [
           "Automotive",
           "Metallurgy",
           "Pharmaceutical",
           "Energy generation",
-          "Offshore",
-          "Mining",
           "Food/Beverage",
-          "Power line construction"
+          "Construction",
+          "Mining",
+          "Offshore"
         ],
-        "specialFeatures": [
-          "Electroless nickel-plated load chain (H23 process)",
-          "Grade T chain, Version V (G100) or DAT (G80)",
-          "Chain breaking strength 1000 N/mm² or 800 N/mm²",
-          "Reduced hydrogen embrittlement",
-          "Higher corrosion resistance"
-        ],
+        "brakeType": "Load pressure brake (Lastdruckbremse)",
         "operatingTemperature": "-40°C to +400°C (for chains)",
-        "confidence": 0.7,
+        "confidence": 0.8,
         "extractionMethod": "text"
       },
       "matchedProducts": [
@@ -6212,32 +6382,46 @@
       "extractedData": {
         "manufacturer": "KITO",
         "series": "Multiple series (ED, EDC, EQ, EQS, ER2, CDER2, SHER2M, TWER2M)",
+        "loadCapacity": "Up to 50,000 kg for manual hoists (electric hoist capacities referenced but not specified)",
+        "chainSpecification": "Electroless nickel-plated load chain grade T, series DAT (G80) for electric hoists, grade T series V (G100) for manual hoists, strength 800 N/mm² and 1,000 N/mm² respectively",
+        "classification": [
+          "DGUV-GS",
+          "CE",
+          "EN 818-7",
+          "ISO 9001",
+          "ISO 14001",
+          "EN 13155",
+          "EN 13157"
+        ],
         "safetyFeatures": {
           "overloadProtection": true,
-          "upperLimitSwitch": true,
-          "lowerLimitSwitch": true,
+          "upperLimitSwitch": false,
+          "lowerLimitSwitch": false,
           "emergencyStop": false,
           "slipClutch": false
         },
         "certifications": [
-          "CE",
           "DGUV-GS",
           "ISO 9001",
-          "ISO 14001"
+          "ISO 14001",
+          "DNV-GL",
+          "BV",
+          "Lloyds",
+          "ABS"
         ],
         "applications": [
-          "automotive",
-          "metallurgy",
-          "pharmaceuticals",
-          "power generation",
-          "food industry",
-          "wind power",
-          "overhead line construction",
-          "offshore",
-          "mining"
+          "Automotive",
+          "Metallurgy",
+          "Pharmaceuticals",
+          "Power generation",
+          "Food/Beverages/Pharma",
+          "Offshore",
+          "Mining",
+          "Wind power",
+          "Overhead line construction"
         ],
-        "operatingTemperature": "-40°C to +400°C",
-        "confidence": 0.6,
+        "brakeType": "High-performance mechanical brake",
+        "confidence": 0.7,
         "extractionMethod": "text"
       },
       "matchedProducts": [
@@ -6268,63 +6452,43 @@
       "status": "success",
       "extractedData": {
         "manufacturer": "KITO",
-        "series": "Multiple series (LX, LB, CX, CB, ED, EQ, ER2)",
+        "series": "Manual Chain Hoists (LX, LB, LB-SL, CX, CB series)",
         "loadCapacity": "250 kg to 50,000 kg",
-        "chainGrade": "Grade T, Series V (G100) and DAT (G80)",
-        "chainResistance": "800 N/mm² to 1,000 N/mm²",
-        "standardLiftingHeight": "1.5m to 6m",
-        "chainDiameter": "3.2mm to 13mm",
+        "chainSpecification": "Grade T, series V (G100) nickel-plated lifting chain per EN 818-7, 1000 N/mm²",
         "weight": "1.7 kg to 640 kg (depending on model)",
+        "chainFall": "1 to 16 falls",
+        "classification": [
+          "DGUV-GS",
+          "CE",
+          "EN 818-7",
+          "EN 13157"
+        ],
         "safetyFeatures": {
           "overloadProtection": true,
-          "mechanicalBrake": true,
-          "safetyLatch": true,
-          "loadPressureBrake": true,
-          "freeWheelingMechanism": true
+          "upperLimitSwitch": false,
+          "lowerLimitSwitch": false,
+          "emergencyStop": false,
+          "slipClutch": true
         },
         "certifications": [
           "DGUV-GS",
-          "EN 818-7",
-          "EN 13157",
+          "CE",
           "ISO 9001",
           "ISO 14001"
         ],
         "applications": [
           "Industrial lifting",
+          "Construction",
+          "Mining",
+          "Offshore",
           "Automotive",
           "Metallurgy",
           "Pharmaceuticals",
-          "Energy production",
-          "Offshore",
-          "Mining",
-          "Wind power",
-          "Food industry"
+          "Energy production"
         ],
         "operatingTemperature": "-40°C to +400°C",
-        "specialFeatures": [
-          "Nickel-plated lifting chains",
-          "Enhanced corrosion resistance",
-          "Compact design",
-          "High-precision gears",
-          "Maintenance-free bearings",
-          "Safety-Lock module (SL models)"
-        ],
-        "productLines": {
-          "manual": [
-            "LX (250-500kg)",
-            "LB (800-9,000kg)",
-            "CX (250-1,000kg)",
-            "CB (500-50,000kg)"
-          ],
-          "electric": [
-            "ED",
-            "EQ/EQS",
-            "ER2",
-            "SHER2M",
-            "TWER2M"
-          ]
-        },
-        "confidence": 0.95,
+        "brakeType": "Mechanical load brake with load pressure spring",
+        "confidence": 0.9,
         "extractionMethod": "text"
       },
       "matchedProducts": [
@@ -6355,41 +6519,42 @@
       "status": "success",
       "extractedData": {
         "manufacturer": "KITO",
-        "series": "Multiple series (LX, LB, LB-SL, CX, CB, CB Mining/Offshore, CB High Speed, SHB, TK)",
+        "series": "Manual Hoists Collection (LX, LB, LB-SL, CX, CB series)",
         "loadCapacity": "250 kg to 50,000 kg (varies by model)",
-        "chainFall": "1 to 16 falls (varies by model)",
+        "chainSpecification": "Nickel-plated load chain, Grade T, Version V (G100) per EN 818-7, breaking strength 1,000 N/mm²",
+        "weight": "varies by model (2.4 kg to 640 kg depending on capacity and series)",
+        "chainFall": "1 to 16 falls (depending on model)",
+        "classification": [
+          "DGUV-GS certified",
+          "EN 818-7",
+          "EN 13157",
+          "EN 13155",
+          "ISO 9001",
+          "ISO 14001"
+        ],
         "safetyFeatures": {
           "overloadProtection": true,
-          "chainFreewheel": true,
-          "safetyLock": true,
-          "loadPressureBrake": true
+          "slipClutch": true
         },
         "certifications": [
-          "CE",
           "DGUV-GS",
+          "CE",
           "ISO 9001",
-          "ISO 14001",
-          "EN 818-7"
+          "ISO 14001"
         ],
         "applications": [
           "Automotive",
           "Metallurgy",
           "Pharmaceutical",
           "Energy generation",
-          "Offshore",
-          "Mining",
           "Food/Beverage",
-          "Power line construction"
+          "Construction",
+          "Mining",
+          "Offshore"
         ],
-        "specialFeatures": [
-          "Electroless nickel-plated load chain (H23 process)",
-          "Grade T chain, Version V (G100) or DAT (G80)",
-          "Chain breaking strength 1000 N/mm² or 800 N/mm²",
-          "Reduced hydrogen embrittlement",
-          "Higher corrosion resistance"
-        ],
+        "brakeType": "Load pressure brake (Lastdruckbremse)",
         "operatingTemperature": "-40°C to +400°C (for chains)",
-        "confidence": 0.7,
+        "confidence": 0.8,
         "extractionMethod": "text"
       },
       "matchedProducts": [
@@ -6421,32 +6586,46 @@
       "extractedData": {
         "manufacturer": "KITO",
         "series": "Multiple series (ED, EDC, EQ, EQS, ER2, CDER2, SHER2M, TWER2M)",
+        "loadCapacity": "Up to 50,000 kg for manual hoists (electric hoist capacities referenced but not specified)",
+        "chainSpecification": "Electroless nickel-plated load chain grade T, series DAT (G80) for electric hoists, grade T series V (G100) for manual hoists, strength 800 N/mm² and 1,000 N/mm² respectively",
+        "classification": [
+          "DGUV-GS",
+          "CE",
+          "EN 818-7",
+          "ISO 9001",
+          "ISO 14001",
+          "EN 13155",
+          "EN 13157"
+        ],
         "safetyFeatures": {
           "overloadProtection": true,
-          "upperLimitSwitch": true,
-          "lowerLimitSwitch": true,
+          "upperLimitSwitch": false,
+          "lowerLimitSwitch": false,
           "emergencyStop": false,
           "slipClutch": false
         },
         "certifications": [
-          "CE",
           "DGUV-GS",
           "ISO 9001",
-          "ISO 14001"
+          "ISO 14001",
+          "DNV-GL",
+          "BV",
+          "Lloyds",
+          "ABS"
         ],
         "applications": [
-          "automotive",
-          "metallurgy",
-          "pharmaceuticals",
-          "power generation",
-          "food industry",
-          "wind power",
-          "overhead line construction",
-          "offshore",
-          "mining"
+          "Automotive",
+          "Metallurgy",
+          "Pharmaceuticals",
+          "Power generation",
+          "Food/Beverages/Pharma",
+          "Offshore",
+          "Mining",
+          "Wind power",
+          "Overhead line construction"
         ],
-        "operatingTemperature": "-40°C to +400°C",
-        "confidence": 0.6,
+        "brakeType": "High-performance mechanical brake",
+        "confidence": 0.7,
         "extractionMethod": "text"
       },
       "matchedProducts": [
@@ -6477,63 +6656,43 @@
       "status": "success",
       "extractedData": {
         "manufacturer": "KITO",
-        "series": "Multiple series (LX, LB, CX, CB, ED, EQ, ER2)",
+        "series": "Manual Chain Hoists (LX, LB, LB-SL, CX, CB series)",
         "loadCapacity": "250 kg to 50,000 kg",
-        "chainGrade": "Grade T, Series V (G100) and DAT (G80)",
-        "chainResistance": "800 N/mm² to 1,000 N/mm²",
-        "standardLiftingHeight": "1.5m to 6m",
-        "chainDiameter": "3.2mm to 13mm",
+        "chainSpecification": "Grade T, series V (G100) nickel-plated lifting chain per EN 818-7, 1000 N/mm²",
         "weight": "1.7 kg to 640 kg (depending on model)",
+        "chainFall": "1 to 16 falls",
+        "classification": [
+          "DGUV-GS",
+          "CE",
+          "EN 818-7",
+          "EN 13157"
+        ],
         "safetyFeatures": {
           "overloadProtection": true,
-          "mechanicalBrake": true,
-          "safetyLatch": true,
-          "loadPressureBrake": true,
-          "freeWheelingMechanism": true
+          "upperLimitSwitch": false,
+          "lowerLimitSwitch": false,
+          "emergencyStop": false,
+          "slipClutch": true
         },
         "certifications": [
           "DGUV-GS",
-          "EN 818-7",
-          "EN 13157",
+          "CE",
           "ISO 9001",
           "ISO 14001"
         ],
         "applications": [
           "Industrial lifting",
+          "Construction",
+          "Mining",
+          "Offshore",
           "Automotive",
           "Metallurgy",
           "Pharmaceuticals",
-          "Energy production",
-          "Offshore",
-          "Mining",
-          "Wind power",
-          "Food industry"
+          "Energy production"
         ],
         "operatingTemperature": "-40°C to +400°C",
-        "specialFeatures": [
-          "Nickel-plated lifting chains",
-          "Enhanced corrosion resistance",
-          "Compact design",
-          "High-precision gears",
-          "Maintenance-free bearings",
-          "Safety-Lock module (SL models)"
-        ],
-        "productLines": {
-          "manual": [
-            "LX (250-500kg)",
-            "LB (800-9,000kg)",
-            "CX (250-1,000kg)",
-            "CB (500-50,000kg)"
-          ],
-          "electric": [
-            "ED",
-            "EQ/EQS",
-            "ER2",
-            "SHER2M",
-            "TWER2M"
-          ]
-        },
-        "confidence": 0.95,
+        "brakeType": "Mechanical load brake with load pressure spring",
+        "confidence": 0.9,
         "extractionMethod": "text"
       },
       "matchedProducts": [
@@ -6563,7 +6722,7 @@
       "filename": "planeta-hebetechnik_industrial-services_document_0.pdf",
       "status": "no_match",
       "extractedData": {
-        "confidence": 0,
+        "confidence": 0.1,
         "extractionMethod": "text"
       },
       "pdfInfo": {
@@ -6593,7 +6752,7 @@
       "filename": "planeta_industrial-services_document_0.pdf",
       "status": "success",
       "extractedData": {
-        "confidence": 0,
+        "confidence": 0.1,
         "extractionMethod": "text"
       },
       "matchedProducts": [
@@ -6693,7 +6852,8 @@
       "filename": "rm-materials_automotive-hoists-and-crane-components_document_0.pdf",
       "status": "no_match",
       "extractedData": {
-        "confidence": 0,
+        "manufacturer": "R&M Materials Handling, Inc.",
+        "confidence": 0.1,
         "extractionMethod": "text"
       },
       "pdfInfo": {
@@ -6709,8 +6869,7 @@
       "status": "no_match",
       "extractedData": {
         "manufacturer": "R&M Materials Handling, Inc.",
-        "warranty": "2 years from date of shipment (1 year for spare parts)",
-        "confidence": 0.2,
+        "confidence": 0.1,
         "extractionMethod": "text"
       },
       "pdfInfo": {
@@ -6741,19 +6900,24 @@
       "status": "no_match",
       "extractedData": {
         "manufacturer": "R&M",
-        "certifications": [
-          "ASME/CMAA",
-          "FEM/ISO",
-          "OSHA"
-        ],
         "applications": [
           "manufacturing",
           "food processing",
-          "automotive"
+          "automotive",
+          "general industrial lifting"
         ],
         "safetyFeatures": {
-          "overloadProtection": true
+          "overloadProtection": false,
+          "upperLimitSwitch": false,
+          "lowerLimitSwitch": false,
+          "emergencyStop": false,
+          "slipClutch": false
         },
+        "classification": [
+          "ASME/CMAA",
+          "FEM/ISO",
+          "OSHA compliant"
+        ],
         "confidence": 0.2,
         "extractionMethod": "text"
       },
@@ -6769,7 +6933,8 @@
       "filename": "rm-materials_general-manufacturing-hoist-crane-systems_document_1.pdf",
       "status": "no_match",
       "extractedData": {
-        "confidence": 0,
+        "manufacturer": "R&M Materials Handling, Inc.",
+        "confidence": 0.1,
         "extractionMethod": "text"
       },
       "pdfInfo": {
@@ -6785,8 +6950,7 @@
       "status": "no_match",
       "extractedData": {
         "manufacturer": "R&M Materials Handling, Inc.",
-        "warranty": "2 years from date of shipment (1 year for spare parts)",
-        "confidence": 0.2,
+        "confidence": 0.1,
         "extractionMethod": "text"
       },
       "pdfInfo": {
@@ -6801,7 +6965,8 @@
       "filename": "rm-materials_hoist-crane-solutions-by-industry_document_0.pdf",
       "status": "no_match",
       "extractedData": {
-        "confidence": 0,
+        "manufacturer": "R&M Materials Handling, Inc.",
+        "confidence": 0.1,
         "extractionMethod": "text"
       },
       "pdfInfo": {
@@ -6817,8 +6982,7 @@
       "status": "no_match",
       "extractedData": {
         "manufacturer": "R&M Materials Handling, Inc.",
-        "warranty": "2 years from date of shipment (1 year for spare parts)",
-        "confidence": 0.2,
+        "confidence": 0.1,
         "extractionMethod": "text"
       },
       "pdfInfo": {
@@ -6848,7 +7012,8 @@
       "filename": "rm-materials_maximize-throughput-minimize-risk-_document_0.pdf",
       "status": "no_match",
       "extractedData": {
-        "confidence": 0,
+        "manufacturer": "R&M Materials Handling, Inc.",
+        "confidence": 0.1,
         "extractionMethod": "text"
       },
       "pdfInfo": {
@@ -6864,8 +7029,7 @@
       "status": "no_match",
       "extractedData": {
         "manufacturer": "R&M Materials Handling, Inc.",
-        "warranty": "2 years from date of shipment (1 year for spare parts)",
-        "confidence": 0.2,
+        "confidence": 0.1,
         "extractionMethod": "text"
       },
       "pdfInfo": {
@@ -6895,7 +7059,8 @@
       "filename": "rm-materials_metal-production-and-fabrication-hoists-cranes_document_0.pdf",
       "status": "no_match",
       "extractedData": {
-        "confidence": 0,
+        "manufacturer": "R&M Materials Handling, Inc.",
+        "confidence": 0.1,
         "extractionMethod": "text"
       },
       "pdfInfo": {
@@ -6911,8 +7076,7 @@
       "status": "no_match",
       "extractedData": {
         "manufacturer": "R&M Materials Handling, Inc.",
-        "warranty": "2 years from date of shipment (1 year for spare parts)",
-        "confidence": 0.2,
+        "confidence": 0.1,
         "extractionMethod": "text"
       },
       "pdfInfo": {
@@ -6942,7 +7106,8 @@
       "filename": "rm-materials_mining_document_0.pdf",
       "status": "no_match",
       "extractedData": {
-        "confidence": 0,
+        "manufacturer": "R&M Materials Handling, Inc.",
+        "confidence": 0.1,
         "extractionMethod": "text"
       },
       "pdfInfo": {
@@ -6958,8 +7123,7 @@
       "status": "no_match",
       "extractedData": {
         "manufacturer": "R&M Materials Handling, Inc.",
-        "warranty": "2 years from date of shipment (1 year for spare parts)",
-        "confidence": 0.2,
+        "confidence": 0.1,
         "extractionMethod": "text"
       },
       "pdfInfo": {
@@ -6989,7 +7153,8 @@
       "filename": "rm-materials_oil-gas-crane-hoisting-solutions_document_0.pdf",
       "status": "no_match",
       "extractedData": {
-        "confidence": 0,
+        "manufacturer": "R&M Materials Handling, Inc.",
+        "confidence": 0.1,
         "extractionMethod": "text"
       },
       "pdfInfo": {
@@ -7005,8 +7170,7 @@
       "status": "no_match",
       "extractedData": {
         "manufacturer": "R&M Materials Handling, Inc.",
-        "warranty": "2 years from date of shipment (1 year for spare parts)",
-        "confidence": 0.2,
+        "confidence": 0.1,
         "extractionMethod": "text"
       },
       "pdfInfo": {
@@ -7036,7 +7200,8 @@
       "filename": "rm-materials_power-plants_document_0.pdf",
       "status": "no_match",
       "extractedData": {
-        "confidence": 0,
+        "manufacturer": "R&M Materials Handling, Inc.",
+        "confidence": 0.1,
         "extractionMethod": "text"
       },
       "pdfInfo": {
@@ -7052,8 +7217,7 @@
       "status": "no_match",
       "extractedData": {
         "manufacturer": "R&M Materials Handling, Inc.",
-        "warranty": "2 years from date of shipment (1 year for spare parts)",
-        "confidence": 0.2,
+        "confidence": 0.1,
         "extractionMethod": "text"
       },
       "pdfInfo": {
@@ -7101,7 +7265,7 @@
           "Power Generation & Utilities",
           "Transportation & Rail"
         ],
-        "confidence": 0.2,
+        "confidence": 0.1,
         "extractionMethod": "text"
       },
       "matchedProducts": [
@@ -7171,29 +7335,24 @@
       "filename": "stahl_columbus-mckinnon-newsroom_document_0.pdf",
       "status": "success",
       "extractedData": {
-        "manufacturer": "Columbus McKinnon Corporation",
+        "manufacturer": "Columbus McKinnon",
         "applications": [
-          "general industrial",
-          "construction",
-          "energy and utilities",
+          "manufacturing",
+          "power generation and distribution utilities",
           "steel and metals processing",
           "mining",
           "transportation",
           "entertainment",
-          "process industries",
+          "commercial construction",
           "oil and gas exploration and refining",
           "petrochemical",
           "marine",
           "shipbuilding",
-          "commercial construction",
-          "heavy duty trucking",
+          "trucking",
           "agriculture",
           "logging"
         ],
-        "certifications": [
-          "explosion-protected hoists"
-        ],
-        "confidence": 0.1,
+        "confidence": 0.3,
         "extractionMethod": "text"
       },
       "matchedProducts": [
@@ -7403,7 +7562,8 @@
       "filename": "stahl_corporate-sustainability_document_2.pdf",
       "status": "success",
       "extractedData": {
-        "confidence": 0,
+        "manufacturer": "Columbus McKinnon Corporation",
+        "confidence": 0.1,
         "extractionMethod": "text"
       },
       "matchedProducts": [
@@ -7475,23 +7635,9 @@
       "extractedData": {
         "manufacturer": "Columbus McKinnon Industrial Products GmbH",
         "certifications": [
-          "DIN EN ISO 9001:2015"
+          "ISO 9001:2015"
         ],
-        "applications": [
-          "crane systems",
-          "hoisting equipment",
-          "pallet trucks & stackers",
-          "hydraulic jacks & tools",
-          "load lifting attachments",
-          "weighing systems",
-          "round & flat webbing slings",
-          "ratchet lashing systems",
-          "actuator technology",
-          "lifting systems",
-          "lifting systems for Rail Vehicles",
-          "textile slings and lashings"
-        ],
-        "confidence": 0.2,
+        "confidence": 0.1,
         "extractionMethod": "text"
       },
       "matchedProducts": [
@@ -7672,6 +7818,16 @@
       "error": "PDF contains no extractable text"
     },
     {
+      "filename": "street-crane_single-girder-cranes_document_0.pdf",
+      "status": "error",
+      "error": "PDF contains no extractable text"
+    },
+    {
+      "filename": "street-crane_single-girder-underslung-cranes_document_0.pdf",
+      "status": "error",
+      "error": "PDF contains no extractable text"
+    },
+    {
       "filename": "street-crane_specialised-industrial-cranes_document_0.pdf",
       "status": "error",
       "error": "PDF contains no extractable text"
@@ -7689,15 +7845,20 @@
         "manufacturer": "SWF Krantechnik",
         "series": "CHAINster",
         "loadCapacity": "up to 10 t",
+        "classification": [
+          "EN2001"
+        ],
         "safetyFeatures": {
           "overloadProtection": true,
           "upperLimitSwitch": true,
           "lowerLimitSwitch": true
         },
-        "certifications": [
-          "EN2001"
+        "applications": [
+          "industrial lifting",
+          "load handling"
         ],
-        "confidence": 0.7,
+        "noiseLevel": "low noise emission",
+        "confidence": 0.6,
         "extractionMethod": "text"
       },
       "matchedProducts": [
@@ -7732,8 +7893,9 @@
       "filename": "swf_elektrokettenzug-chainster_document_0.pdf",
       "status": "success",
       "extractedData": {
-        "series": "CHAINster",
+        "model": "CHAINster",
         "manufacturer": "SWF Krantechnik",
+        "series": "CHAINster",
         "loadCapacity": "up to 10 t",
         "safetyFeatures": {
           "overloadProtection": true,
@@ -7741,8 +7903,8 @@
           "lowerLimitSwitch": true
         },
         "applications": [
-          "material handling",
-          "industrial lifting"
+          "Material handling",
+          "Industrial applications"
         ],
         "confidence": 0.7,
         "extractionMethod": "text"
@@ -7779,25 +7941,34 @@
       "filename": "tiger_about-us_document_0.pdf",
       "status": "success",
       "extractedData": {
+        "model": "Multiple models (TAHS, TAH21, TAH33, TAH52, TAH250, TAH-M, ULTA series)",
         "manufacturer": "Tiger Lifting",
-        "series": "Pneumatic Air Hoists (TAHS, TAH21, TAH33, TAH52, TAH250, TAH-M)",
+        "series": "Tiger Pneumatic Air Hoists",
         "loadCapacity": "250 kg to 60 tonnes",
-        "liftingSpeed": "0.6 to 22.5 m/min (full load at 6 bar)",
+        "liftingSpeed": "0.6 m/min to 32 m/min (varies by model and pressure)",
+        "dutyCycle": "High-speed duty cycles (stringent duty cycles supported)",
         "weight": "25 kg to 985 kg (varies by model and lift height)",
-        "chainFall": "1 to 5 falls (varies by capacity)",
+        "chainFall": "1 to 5 falls (varies by model)",
+        "classification": [
+          "ASME B30.16",
+          "EN14492-2",
+          "ATEX 2014/34/EU",
+          "Machinery Directive 2006/42/EC",
+          "NORSOK R-002",
+          "SANS 1638",
+          "EN818-7 Appendix B",
+          "ISO9001"
+        ],
         "safetyFeatures": {
           "overloadProtection": true,
           "emergencyStop": true,
           "slipClutch": false
         },
         "certifications": [
-          "ASME B30.16",
-          "EN14492-2",
+          "ATEX Ex II 3 GD c IIB T4 IIIB T135°C",
+          "ATEX Ex II 2 GD c IIC T4 IIIC T135°C (spark resistant)",
           "ISO9001",
-          "ATEX 2014/34/EU",
-          "Machinery Directive 2006/42/EC",
-          "DNV GL",
-          "NORSOK R-002"
+          "DNV GL third party verification"
         ],
         "applications": [
           "Mining",
@@ -7806,12 +7977,13 @@
           "Power stations",
           "Automotive plants",
           "Foundries",
-          "Heat treatment plants",
-          "General engineering"
+          "Heat treatment plants"
         ],
-        "operatingTemperature": "-20°C to +70°C ambient temperature",
-        "noiseLevel": "76 to 85 dB(A)",
-        "confidence": 0.9,
+        "operatingTemperature": "-20°C to +70°C",
+        "noiseLevel": "76-85 dB(A) (below 85dB(A) with integral silencer)",
+        "brakeType": "Non-asbestos self-adjusting disc brake (fail-safe, holds >125% WLL)",
+        "chainSpecification": "Grade 8 load chain (EN818-7 Appendix B compliant)",
+        "confidence": 0.95,
         "extractionMethod": "text"
       },
       "matchedProducts": [
@@ -8431,25 +8603,34 @@
       "filename": "tiger_air-hoists_document_0.pdf",
       "status": "success",
       "extractedData": {
+        "model": "Multiple models (TAHS, TAH21, TAH33, TAH52, TAH250, TAH-M, ULTA series)",
         "manufacturer": "Tiger Lifting",
-        "series": "Pneumatic Air Hoists (TAHS, TAH21, TAH33, TAH52, TAH250, TAH-M)",
+        "series": "Tiger Pneumatic Air Hoists",
         "loadCapacity": "250 kg to 60 tonnes",
-        "liftingSpeed": "0.6 to 22.5 m/min (full load at 6 bar)",
+        "liftingSpeed": "0.6 m/min to 32 m/min (varies by model and pressure)",
+        "dutyCycle": "High-speed duty cycles (stringent duty cycles supported)",
         "weight": "25 kg to 985 kg (varies by model and lift height)",
-        "chainFall": "1 to 5 falls (varies by capacity)",
+        "chainFall": "1 to 5 falls (varies by model)",
+        "classification": [
+          "ASME B30.16",
+          "EN14492-2",
+          "ATEX 2014/34/EU",
+          "Machinery Directive 2006/42/EC",
+          "NORSOK R-002",
+          "SANS 1638",
+          "EN818-7 Appendix B",
+          "ISO9001"
+        ],
         "safetyFeatures": {
           "overloadProtection": true,
           "emergencyStop": true,
           "slipClutch": false
         },
         "certifications": [
-          "ASME B30.16",
-          "EN14492-2",
+          "ATEX Ex II 3 GD c IIB T4 IIIB T135°C",
+          "ATEX Ex II 2 GD c IIC T4 IIIC T135°C (spark resistant)",
           "ISO9001",
-          "ATEX 2014/34/EU",
-          "Machinery Directive 2006/42/EC",
-          "DNV GL",
-          "NORSOK R-002"
+          "DNV GL third party verification"
         ],
         "applications": [
           "Mining",
@@ -8458,12 +8639,13 @@
           "Power stations",
           "Automotive plants",
           "Foundries",
-          "Heat treatment plants",
-          "General engineering"
+          "Heat treatment plants"
         ],
-        "operatingTemperature": "-20°C to +70°C ambient temperature",
-        "noiseLevel": "76 to 85 dB(A)",
-        "confidence": 0.9,
+        "operatingTemperature": "-20°C to +70°C",
+        "noiseLevel": "76-85 dB(A) (below 85dB(A) with integral silencer)",
+        "brakeType": "Non-asbestos self-adjusting disc brake (fail-safe, holds >125% WLL)",
+        "chainSpecification": "Grade 8 load chain (EN818-7 Appendix B compliant)",
+        "confidence": 0.95,
         "extractionMethod": "text"
       },
       "matchedProducts": [
@@ -9083,25 +9265,34 @@
       "filename": "tiger_air-trolleys_document_0.pdf",
       "status": "success",
       "extractedData": {
+        "model": "Multiple models (TAHS, TAH21, TAH33, TAH52, TAH250, TAH-M, ULTA series)",
         "manufacturer": "Tiger Lifting",
-        "series": "Pneumatic Air Hoists (TAHS, TAH21, TAH33, TAH52, TAH250, TAH-M)",
+        "series": "Tiger Pneumatic Air Hoists",
         "loadCapacity": "250 kg to 60 tonnes",
-        "liftingSpeed": "0.6 to 22.5 m/min (full load at 6 bar)",
+        "liftingSpeed": "0.6 m/min to 32 m/min (varies by model and pressure)",
+        "dutyCycle": "High-speed duty cycles (stringent duty cycles supported)",
         "weight": "25 kg to 985 kg (varies by model and lift height)",
-        "chainFall": "1 to 5 falls (varies by capacity)",
+        "chainFall": "1 to 5 falls (varies by model)",
+        "classification": [
+          "ASME B30.16",
+          "EN14492-2",
+          "ATEX 2014/34/EU",
+          "Machinery Directive 2006/42/EC",
+          "NORSOK R-002",
+          "SANS 1638",
+          "EN818-7 Appendix B",
+          "ISO9001"
+        ],
         "safetyFeatures": {
           "overloadProtection": true,
           "emergencyStop": true,
           "slipClutch": false
         },
         "certifications": [
-          "ASME B30.16",
-          "EN14492-2",
+          "ATEX Ex II 3 GD c IIB T4 IIIB T135°C",
+          "ATEX Ex II 2 GD c IIC T4 IIIC T135°C (spark resistant)",
           "ISO9001",
-          "ATEX 2014/34/EU",
-          "Machinery Directive 2006/42/EC",
-          "DNV GL",
-          "NORSOK R-002"
+          "DNV GL third party verification"
         ],
         "applications": [
           "Mining",
@@ -9110,12 +9301,13 @@
           "Power stations",
           "Automotive plants",
           "Foundries",
-          "Heat treatment plants",
-          "General engineering"
+          "Heat treatment plants"
         ],
-        "operatingTemperature": "-20°C to +70°C ambient temperature",
-        "noiseLevel": "76 to 85 dB(A)",
-        "confidence": 0.9,
+        "operatingTemperature": "-20°C to +70°C",
+        "noiseLevel": "76-85 dB(A) (below 85dB(A) with integral silencer)",
+        "brakeType": "Non-asbestos self-adjusting disc brake (fail-safe, holds >125% WLL)",
+        "chainSpecification": "Grade 8 load chain (EN818-7 Appendix B compliant)",
+        "confidence": 0.95,
         "extractionMethod": "text"
       },
       "matchedProducts": [
@@ -9735,25 +9927,34 @@
       "filename": "tiger_air-winches_document_0.pdf",
       "status": "success",
       "extractedData": {
+        "model": "Multiple models (TAHS, TAH21, TAH33, TAH52, TAH250, TAH-M, ULTA series)",
         "manufacturer": "Tiger Lifting",
-        "series": "Pneumatic Air Hoists (TAHS, TAH21, TAH33, TAH52, TAH250, TAH-M)",
+        "series": "Tiger Pneumatic Air Hoists",
         "loadCapacity": "250 kg to 60 tonnes",
-        "liftingSpeed": "0.6 to 22.5 m/min (full load at 6 bar)",
+        "liftingSpeed": "0.6 m/min to 32 m/min (varies by model and pressure)",
+        "dutyCycle": "High-speed duty cycles (stringent duty cycles supported)",
         "weight": "25 kg to 985 kg (varies by model and lift height)",
-        "chainFall": "1 to 5 falls (varies by capacity)",
+        "chainFall": "1 to 5 falls (varies by model)",
+        "classification": [
+          "ASME B30.16",
+          "EN14492-2",
+          "ATEX 2014/34/EU",
+          "Machinery Directive 2006/42/EC",
+          "NORSOK R-002",
+          "SANS 1638",
+          "EN818-7 Appendix B",
+          "ISO9001"
+        ],
         "safetyFeatures": {
           "overloadProtection": true,
           "emergencyStop": true,
           "slipClutch": false
         },
         "certifications": [
-          "ASME B30.16",
-          "EN14492-2",
+          "ATEX Ex II 3 GD c IIB T4 IIIB T135°C",
+          "ATEX Ex II 2 GD c IIC T4 IIIC T135°C (spark resistant)",
           "ISO9001",
-          "ATEX 2014/34/EU",
-          "Machinery Directive 2006/42/EC",
-          "DNV GL",
-          "NORSOK R-002"
+          "DNV GL third party verification"
         ],
         "applications": [
           "Mining",
@@ -9762,12 +9963,13 @@
           "Power stations",
           "Automotive plants",
           "Foundries",
-          "Heat treatment plants",
-          "General engineering"
+          "Heat treatment plants"
         ],
-        "operatingTemperature": "-20°C to +70°C ambient temperature",
-        "noiseLevel": "76 to 85 dB(A)",
-        "confidence": 0.9,
+        "operatingTemperature": "-20°C to +70°C",
+        "noiseLevel": "76-85 dB(A) (below 85dB(A) with integral silencer)",
+        "brakeType": "Non-asbestos self-adjusting disc brake (fail-safe, holds >125% WLL)",
+        "chainSpecification": "Grade 8 load chain (EN818-7 Appendix B compliant)",
+        "confidence": 0.95,
         "extractionMethod": "text"
       },
       "matchedProducts": [
@@ -10387,25 +10589,34 @@
       "filename": "tiger_chain-blocks_document_0.pdf",
       "status": "success",
       "extractedData": {
+        "model": "Multiple models (TAHS, TAH21, TAH33, TAH52, TAH250, TAH-M, ULTA series)",
         "manufacturer": "Tiger Lifting",
-        "series": "Pneumatic Air Hoists (TAHS, TAH21, TAH33, TAH52, TAH250, TAH-M)",
+        "series": "Tiger Pneumatic Air Hoists",
         "loadCapacity": "250 kg to 60 tonnes",
-        "liftingSpeed": "0.6 to 22.5 m/min (full load at 6 bar)",
+        "liftingSpeed": "0.6 m/min to 32 m/min (varies by model and pressure)",
+        "dutyCycle": "High-speed duty cycles (stringent duty cycles supported)",
         "weight": "25 kg to 985 kg (varies by model and lift height)",
-        "chainFall": "1 to 5 falls (varies by capacity)",
+        "chainFall": "1 to 5 falls (varies by model)",
+        "classification": [
+          "ASME B30.16",
+          "EN14492-2",
+          "ATEX 2014/34/EU",
+          "Machinery Directive 2006/42/EC",
+          "NORSOK R-002",
+          "SANS 1638",
+          "EN818-7 Appendix B",
+          "ISO9001"
+        ],
         "safetyFeatures": {
           "overloadProtection": true,
           "emergencyStop": true,
           "slipClutch": false
         },
         "certifications": [
-          "ASME B30.16",
-          "EN14492-2",
+          "ATEX Ex II 3 GD c IIB T4 IIIB T135°C",
+          "ATEX Ex II 2 GD c IIC T4 IIIC T135°C (spark resistant)",
           "ISO9001",
-          "ATEX 2014/34/EU",
-          "Machinery Directive 2006/42/EC",
-          "DNV GL",
-          "NORSOK R-002"
+          "DNV GL third party verification"
         ],
         "applications": [
           "Mining",
@@ -10414,12 +10625,13 @@
           "Power stations",
           "Automotive plants",
           "Foundries",
-          "Heat treatment plants",
-          "General engineering"
+          "Heat treatment plants"
         ],
-        "operatingTemperature": "-20°C to +70°C ambient temperature",
-        "noiseLevel": "76 to 85 dB(A)",
-        "confidence": 0.9,
+        "operatingTemperature": "-20°C to +70°C",
+        "noiseLevel": "76-85 dB(A) (below 85dB(A) with integral silencer)",
+        "brakeType": "Non-asbestos self-adjusting disc brake (fail-safe, holds >125% WLL)",
+        "chainSpecification": "Grade 8 load chain (EN818-7 Appendix B compliant)",
+        "confidence": 0.95,
         "extractionMethod": "text"
       },
       "matchedProducts": [
@@ -11039,25 +11251,34 @@
       "filename": "tiger_lever-hoists_document_0.pdf",
       "status": "success",
       "extractedData": {
+        "model": "Multiple models (TAHS, TAH21, TAH33, TAH52, TAH250, TAH-M, ULTA series)",
         "manufacturer": "Tiger Lifting",
-        "series": "Pneumatic Air Hoists (TAHS, TAH21, TAH33, TAH52, TAH250, TAH-M)",
+        "series": "Tiger Pneumatic Air Hoists",
         "loadCapacity": "250 kg to 60 tonnes",
-        "liftingSpeed": "0.6 to 22.5 m/min (full load at 6 bar)",
+        "liftingSpeed": "0.6 m/min to 32 m/min (varies by model and pressure)",
+        "dutyCycle": "High-speed duty cycles (stringent duty cycles supported)",
         "weight": "25 kg to 985 kg (varies by model and lift height)",
-        "chainFall": "1 to 5 falls (varies by capacity)",
+        "chainFall": "1 to 5 falls (varies by model)",
+        "classification": [
+          "ASME B30.16",
+          "EN14492-2",
+          "ATEX 2014/34/EU",
+          "Machinery Directive 2006/42/EC",
+          "NORSOK R-002",
+          "SANS 1638",
+          "EN818-7 Appendix B",
+          "ISO9001"
+        ],
         "safetyFeatures": {
           "overloadProtection": true,
           "emergencyStop": true,
           "slipClutch": false
         },
         "certifications": [
-          "ASME B30.16",
-          "EN14492-2",
+          "ATEX Ex II 3 GD c IIB T4 IIIB T135°C",
+          "ATEX Ex II 2 GD c IIC T4 IIIC T135°C (spark resistant)",
           "ISO9001",
-          "ATEX 2014/34/EU",
-          "Machinery Directive 2006/42/EC",
-          "DNV GL",
-          "NORSOK R-002"
+          "DNV GL third party verification"
         ],
         "applications": [
           "Mining",
@@ -11066,12 +11287,13 @@
           "Power stations",
           "Automotive plants",
           "Foundries",
-          "Heat treatment plants",
-          "General engineering"
+          "Heat treatment plants"
         ],
-        "operatingTemperature": "-20°C to +70°C ambient temperature",
-        "noiseLevel": "76 to 85 dB(A)",
-        "confidence": 0.9,
+        "operatingTemperature": "-20°C to +70°C",
+        "noiseLevel": "76-85 dB(A) (below 85dB(A) with integral silencer)",
+        "brakeType": "Non-asbestos self-adjusting disc brake (fail-safe, holds >125% WLL)",
+        "chainSpecification": "Grade 8 load chain (EN818-7 Appendix B compliant)",
+        "confidence": 0.95,
         "extractionMethod": "text"
       },
       "matchedProducts": [
@@ -11691,25 +11913,34 @@
       "filename": "tiger_manual-hoisting_document_0.pdf",
       "status": "success",
       "extractedData": {
+        "model": "Multiple models (TAHS, TAH21, TAH33, TAH52, TAH250, TAH-M, ULTA series)",
         "manufacturer": "Tiger Lifting",
-        "series": "Pneumatic Air Hoists (TAHS, TAH21, TAH33, TAH52, TAH250, TAH-M)",
+        "series": "Tiger Pneumatic Air Hoists",
         "loadCapacity": "250 kg to 60 tonnes",
-        "liftingSpeed": "0.6 to 22.5 m/min (full load at 6 bar)",
+        "liftingSpeed": "0.6 m/min to 32 m/min (varies by model and pressure)",
+        "dutyCycle": "High-speed duty cycles (stringent duty cycles supported)",
         "weight": "25 kg to 985 kg (varies by model and lift height)",
-        "chainFall": "1 to 5 falls (varies by capacity)",
+        "chainFall": "1 to 5 falls (varies by model)",
+        "classification": [
+          "ASME B30.16",
+          "EN14492-2",
+          "ATEX 2014/34/EU",
+          "Machinery Directive 2006/42/EC",
+          "NORSOK R-002",
+          "SANS 1638",
+          "EN818-7 Appendix B",
+          "ISO9001"
+        ],
         "safetyFeatures": {
           "overloadProtection": true,
           "emergencyStop": true,
           "slipClutch": false
         },
         "certifications": [
-          "ASME B30.16",
-          "EN14492-2",
+          "ATEX Ex II 3 GD c IIB T4 IIIB T135°C",
+          "ATEX Ex II 2 GD c IIC T4 IIIC T135°C (spark resistant)",
           "ISO9001",
-          "ATEX 2014/34/EU",
-          "Machinery Directive 2006/42/EC",
-          "DNV GL",
-          "NORSOK R-002"
+          "DNV GL third party verification"
         ],
         "applications": [
           "Mining",
@@ -11718,12 +11949,13 @@
           "Power stations",
           "Automotive plants",
           "Foundries",
-          "Heat treatment plants",
-          "General engineering"
+          "Heat treatment plants"
         ],
-        "operatingTemperature": "-20°C to +70°C ambient temperature",
-        "noiseLevel": "76 to 85 dB(A)",
-        "confidence": 0.9,
+        "operatingTemperature": "-20°C to +70°C",
+        "noiseLevel": "76-85 dB(A) (below 85dB(A) with integral silencer)",
+        "brakeType": "Non-asbestos self-adjusting disc brake (fail-safe, holds >125% WLL)",
+        "chainSpecification": "Grade 8 load chain (EN818-7 Appendix B compliant)",
+        "confidence": 0.95,
         "extractionMethod": "text"
       },
       "matchedProducts": [
@@ -12343,25 +12575,34 @@
       "filename": "tiger_pneumatic-hoisting_document_0.pdf",
       "status": "success",
       "extractedData": {
+        "model": "Multiple models (TAHS, TAH21, TAH33, TAH52, TAH250, TAH-M, ULTA series)",
         "manufacturer": "Tiger Lifting",
-        "series": "Pneumatic Air Hoists (TAHS, TAH21, TAH33, TAH52, TAH250, TAH-M)",
+        "series": "Tiger Pneumatic Air Hoists",
         "loadCapacity": "250 kg to 60 tonnes",
-        "liftingSpeed": "0.6 to 22.5 m/min (full load at 6 bar)",
+        "liftingSpeed": "0.6 m/min to 32 m/min (varies by model and pressure)",
+        "dutyCycle": "High-speed duty cycles (stringent duty cycles supported)",
         "weight": "25 kg to 985 kg (varies by model and lift height)",
-        "chainFall": "1 to 5 falls (varies by capacity)",
+        "chainFall": "1 to 5 falls (varies by model)",
+        "classification": [
+          "ASME B30.16",
+          "EN14492-2",
+          "ATEX 2014/34/EU",
+          "Machinery Directive 2006/42/EC",
+          "NORSOK R-002",
+          "SANS 1638",
+          "EN818-7 Appendix B",
+          "ISO9001"
+        ],
         "safetyFeatures": {
           "overloadProtection": true,
           "emergencyStop": true,
           "slipClutch": false
         },
         "certifications": [
-          "ASME B30.16",
-          "EN14492-2",
+          "ATEX Ex II 3 GD c IIB T4 IIIB T135°C",
+          "ATEX Ex II 2 GD c IIC T4 IIIC T135°C (spark resistant)",
           "ISO9001",
-          "ATEX 2014/34/EU",
-          "Machinery Directive 2006/42/EC",
-          "DNV GL",
-          "NORSOK R-002"
+          "DNV GL third party verification"
         ],
         "applications": [
           "Mining",
@@ -12370,12 +12611,13 @@
           "Power stations",
           "Automotive plants",
           "Foundries",
-          "Heat treatment plants",
-          "General engineering"
+          "Heat treatment plants"
         ],
-        "operatingTemperature": "-20°C to +70°C ambient temperature",
-        "noiseLevel": "76 to 85 dB(A)",
-        "confidence": 0.9,
+        "operatingTemperature": "-20°C to +70°C",
+        "noiseLevel": "76-85 dB(A) (below 85dB(A) with integral silencer)",
+        "brakeType": "Non-asbestos self-adjusting disc brake (fail-safe, holds >125% WLL)",
+        "chainSpecification": "Grade 8 load chain (EN818-7 Appendix B compliant)",
+        "confidence": 0.95,
         "extractionMethod": "text"
       },
       "matchedProducts": [
@@ -12995,20 +13237,21 @@
       "filename": "yale_air-s_document_0.pdf",
       "status": "success",
       "extractedData": {
-        "model": "Multiple Models Comparison",
-        "manufacturer": "Multiple (CM, Budgit, Yale, Chester)",
-        "series": "ShopAir, AirStar, Series 2200, YAL, AirStar 6, Series 6000, KALC, Lodestar Air XL, SLA",
-        "loadCapacity": "250 lb to 24 ton",
-        "liftingSpeed": "1.7 fpm to 65 fpm",
-        "chainFall": "1 to 8 falls",
+        "manufacturer": "Columbus McKinnon Corporation",
+        "series": "Multiple air chain hoist series comparison",
+        "loadCapacity": "250 lb to 24 ton (multiple models)",
+        "liftingSpeed": "1.7 to 65 fpm (varies by model and capacity)",
+        "chainFall": "1 to 8 falls (varies by model and capacity)",
         "safetyFeatures": {
           "overloadProtection": false,
           "upperLimitSwitch": false,
           "lowerLimitSwitch": false,
           "emergencyStop": false,
-          "slipClutch": true
+          "slipClutch": false
         },
-        "confidence": 0.7,
+        "brakeType": "Disc brake or Drum brake (varies by model)",
+        "chainSpecification": "Unplated/Optional Plated load chain",
+        "confidence": 0.75,
         "extractionMethod": "text"
       },
       "matchedProducts": [
@@ -13078,15 +13321,23 @@
           "UL",
           "CSA"
         ],
+        "classification": [
+          "NEMA 7",
+          "NEMA 4",
+          "Class 1 Division 1",
+          "Class 1 Division 2",
+          "Group C&D"
+        ],
         "safetyFeatures": {
           "upperLimitSwitch": true,
           "lowerLimitSwitch": true
         },
         "applications": [
           "oil and gas industries",
-          "offshore environments",
-          "hazardous locations"
+          "hazardous locations",
+          "offshore environments"
         ],
+        "chainSpecification": "stainless steel load chain",
         "protectionClass": "NEMA 4, NEMA 7",
         "confidence": 0.3,
         "extractionMethod": "text"
@@ -13148,30 +13399,44 @@
       "filename": "yale_custom-solutions-for-complex-problems_document_0.pdf",
       "status": "success",
       "extractedData": {
-        "model": "SLE Low-Headroom Electric Chain Hoists",
+        "model": "Chester Zephyr Hand Chain Hoists",
         "manufacturer": "Chester Hoist (Columbus McKinnon)",
-        "series": "Chester",
-        "loadCapacity": "Various capacities available",
-        "applications": [
-          "Low headroom applications",
-          "Military applications",
-          "Oil and gas industry",
-          "Hazardous areas",
-          "Corrosive environments",
-          "Clean rooms",
-          "Offshore oil platforms"
+        "series": "Zephyr",
+        "loadCapacity": "1/2 to 25 tons (multiple configurations available)",
+        "liftingSpeed": "Manual operation - speed depends on operator",
+        "motorPower": "N/A - Manual hand chain operation",
+        "dutyCycle": "Not specified - manual operation",
+        "voltageOptions": [],
+        "weight": "44-1160 lbs depending on capacity and configuration",
+        "dimensions": "Various - see specification tables for each model",
+        "chainFall": "1-12 strands depending on capacity",
+        "classification": [
+          "MIL-H-904 (U.S. Military Standard)"
         ],
         "safetyFeatures": {
-          "overloadProtection": false,
+          "overloadProtection": true,
           "upperLimitSwitch": false,
           "lowerLimitSwitch": false,
           "emergencyStop": false,
           "slipClutch": false
         },
         "certifications": [
-          "Military specifications (MIL-H-904)"
+          "MIL-H-904"
         ],
-        "confidence": 0.3,
+        "applications": [
+          "Material handling",
+          "Oil and gas industry",
+          "Military applications",
+          "Clean room environments",
+          "Corrosive environments",
+          "Low headroom applications"
+        ],
+        "operatingTemperature": "Extreme weather conditions capable",
+        "protectionClass": "Mechanically-sealed, grease-tight enclosure",
+        "noiseLevel": "Quiet-action load brake mentioned",
+        "brakeType": "Positive-action, Weston-type load brake with uniform composition lining",
+        "chainSpecification": "Durable steel load chain, precision formed, heat treated for high tensile strength. Optional stainless steel for spark-resistant applications",
+        "confidence": 0.95,
         "extractionMethod": "text"
       },
       "matchedProducts": [
@@ -13249,7 +13514,7 @@
           "Power Generation & Utilities",
           "Transportation & Rail"
         ],
-        "confidence": 0.2,
+        "confidence": 0.1,
         "extractionMethod": "text"
       },
       "matchedProducts": [
@@ -13309,9 +13574,10 @@
       "filename": "yale_electric-wire-rope-hoists_document_0.pdf",
       "status": "success",
       "extractedData": {
-        "series": "Multiple wire rope hoist series comparison",
         "manufacturer": "Columbus McKinnon Corporation",
-        "loadCapacity": "1/2 Ton thru 135 Ton (varies by model)",
+        "series": "Wire Rope Hoists Comparison (Multiple Series: YALE Y80, SHAW-BOX 800 SERIES, YALE YK, SHAW-BOX SK, STAHL SH, YALE CABLE KING, YALE LODEKING LT, STAHL AS)",
+        "loadCapacity": "1/2 Ton through 135 Ton (various ranges by model)",
+        "dutyCycle": "ANSI/ASME H4, H2 thru H4, M3 thru M6 (ISO), CMAA Class C or D",
         "voltageOptions": [
           "208V",
           "230V",
@@ -13321,25 +13587,24 @@
         ],
         "classification": [
           "ANSI/ASME H4",
-          "H2 thru H4",
-          "M3 thru M6 (ISO)",
+          "ISO M3-M6",
+          "ASME/HMI Class H4",
           "CMAA Class C",
           "CMAA Class D"
         ],
         "safetyFeatures": {
           "upperLimitSwitch": true,
           "lowerLimitSwitch": true,
-          "overloadProtection": true,
-          "slipClutch": true
+          "overloadProtection": true
         },
         "certifications": [
           "UL",
           "CSA",
           "UL508A"
         ],
-        "protectionClass": "NEMA 1/4/12, IP55 (varies by model)",
-        "warranty": "1-3 Years (varies by model)",
-        "confidence": 0.8,
+        "protectionClass": "NEMA 1, NEMA 4/12, IP55",
+        "brakeType": "AC Disc Type, DC Disc Type, Weston Mechanical, Electric/Regenerative Braking",
+        "confidence": 0.85,
         "extractionMethod": "text"
       },
       "matchedProducts": [
@@ -13404,14 +13669,19 @@
       "filename": "yale_hand-s_document_0.pdf",
       "status": "success",
       "extractedData": {
-        "manufacturer": "Columbus McKinnon Corporation",
-        "series": "Hand Chain Hoists Comparison",
-        "loadCapacity": "1/4 ton to 50 ton (multiple models)",
+        "manufacturer": "Columbus McKinnon Corporation (CM)",
+        "series": "Multiple series comparison: 622A, Hurricane Mini 360°, Hurricane 360°, Yale ATEX 360°, Cyclone, Chester Zephyr",
+        "loadCapacity": "1/4 ton to 50 ton (various models)",
+        "chainFall": "1 to 12 chain falls (depending on capacity and model)",
+        "classification": [
+          "ATEX"
+        ],
         "safetyFeatures": {
           "overloadProtection": true,
           "slipClutch": false
         },
-        "warranty": "1 Year to Lifetime (varies by model)",
+        "brakeType": "Weston Brake (standard across all models)",
+        "chainSpecification": "Self Colored, Zinc Plated, Gold Chromate, or Stainless Steel depending on model",
         "confidence": 0.7,
         "extractionMethod": "text"
       },
@@ -13477,14 +13747,23 @@
       "filename": "yale_lever-hoists_document_0.pdf",
       "status": "success",
       "extractedData": {
-        "manufacturer": "Columbus McKinnon Corporation",
-        "series": "Multiple lever hoist series comparison",
-        "loadCapacity": "1/4 ton to 15 ton capacity range",
+        "manufacturer": "Columbus McKinnon Corporation (CM)",
+        "series": "Multiple series: CM Series 602/603, CM Series 653A, CM Bandit, CM Tornado 360°, CM Series 640 Puller, Coffing G Series, Little Mule Strap Hoist",
+        "loadCapacity": "1/4 ton to 15 ton capacity range across different models",
+        "chainFall": "1 to 8 reeving configurations depending on capacity",
         "safetyFeatures": {
-          "overloadProtection": true
+          "overloadProtection": true,
+          "slipClutch": false,
+          "upperLimitSwitch": false,
+          "lowerLimitSwitch": false,
+          "emergencyStop": false
         },
-        "warranty": "Lifetime to 5 years depending on series",
-        "confidence": 0.6,
+        "brakeType": "Weston Brake (most models) or Ratchet & Pawl mechanism",
+        "chainSpecification": "Zinc Plated, Gold Chromate, or Self Colored chain depending on model",
+        "applications": [
+          "Manual lifting and pulling operations"
+        ],
+        "confidence": 0.7,
         "extractionMethod": "text"
       },
       "matchedProducts": [
@@ -13552,9 +13831,9 @@
         "model": "EC Series",
         "manufacturer": "Coffing Hoists",
         "series": "EC Electric Chain Hoist",
-        "loadCapacity": "1/4 - 5 Ton (250 - 10,000 lbs)",
-        "liftingSpeed": "1.7 - 32 fpm",
-        "motorPower": "1/4 - 3 HP",
+        "loadCapacity": "1/4 to 5 Tons (250 to 10,000 lbs)",
+        "liftingSpeed": "1.7 to 32 fpm (varies by model)",
+        "motorPower": "1/4 to 3 HP",
         "dutyCycle": "H4 duty class",
         "voltageOptions": [
           "115/230V single phase",
@@ -13564,9 +13843,9 @@
           "220/380V three phase",
           "575V three phase"
         ],
-        "weight": "100 - 606 lbs (varies by model)",
-        "dimensions": "Headroom: 16 7/8\" - 30 5/8\" (varies by model)",
-        "chainFall": "1-3 chains (single, double, triple)",
+        "weight": "100 to 393 lbs (varies by model)",
+        "dimensions": "Housing dimensions vary by frame size - Small frame: ~8\" x 11 5/8\" x 23 3/8\", Large frame: ~10 7/8\" x 14 13/16\" x 31 3/16\"",
+        "chainFall": "1 to 3 chains depending on model",
         "classification": [
           "ASME/ANSI B30.16",
           "CSA"
@@ -13580,15 +13859,19 @@
         },
         "certifications": [
           "CSA",
-          "ASME/ANSI B30.16"
+          "UL Listed (for EMC/EMW models)"
         ],
         "applications": [
-          "heavy duty industrial service"
+          "Heavy duty industrial service",
+          "Material handling",
+          "Manufacturing",
+          "Assembly operations"
         ],
-        "operatingTemperature": "not specified",
-        "protectionClass": "NEMA 3R (weather resistant)",
-        "noiseLevel": "not specified",
-        "warranty": "Lifetime warranty",
+        "operatingTemperature": "Not specified",
+        "protectionClass": "NEMA 3R (weather resistant) for push button station",
+        "noiseLevel": "Not specified",
+        "brakeType": "Multiple disc motor brake (direct acting) and mechanical load brake (Weston type)",
+        "chainSpecification": "Precision pitch alloy steel chain, treated for optimum strength and wear resistance, zinc plated on Extended Duty models",
         "confidence": 0.95,
         "extractionMethod": "text"
       },
@@ -13667,7 +13950,7 @@
           "Power Generation & Utilities",
           "Transportation & Rail"
         ],
-        "confidence": 0.2,
+        "confidence": 0.1,
         "extractionMethod": "text"
       },
       "matchedProducts": [
@@ -13737,22 +14020,24 @@
       "filename": "yale_st-ex_brochure_0.pdf",
       "status": "success",
       "extractedData": {
-        "model": "STex",
+        "model": "STex Zone 1/21",
         "manufacturer": "STAHL CraneSystems",
-        "series": "STex Zone 1/21 Explosion-protected Chain Hoists",
-        "loadCapacity": "250 - 5,000 kg",
-        "liftingSpeed": "2 hoisting speeds available",
+        "series": "STex",
+        "loadCapacity": "250 – 5,000 kg",
+        "liftingSpeed": "2 hoisting speeds",
+        "dutyCycle": "Not specified in excerpt",
         "voltageOptions": [
-          "Various motor supply voltages available"
+          "Multiple motor supply voltages available"
         ],
-        "chainFall": "Available in 1/1 and 2/1 reeving configurations",
+        "chainFall": "1/1 and 2/1 reeving available",
         "classification": [
-          "II 2G (ATEX)",
-          "Gb (IECEx)",
+          "ATEX II 2G",
+          "ATEX II 2D",
+          "IECEx Gb",
+          "IECEx Db",
           "Zone 1",
-          "II 2D (ATEX)",
-          "Db (IECEx)",
-          "Zone 21"
+          "Zone 21",
+          "EN/IEC explosion protection standards"
         ],
         "safetyFeatures": {
           "overloadProtection": true,
@@ -13762,18 +14047,21 @@
           "slipClutch": true
         },
         "certifications": [
-          "ATEX 2014/34/EU",
+          "ATEX",
           "IECEx",
-          "European Ex standard"
+          "CE"
         ],
         "applications": [
-          "Explosive atmospheres",
-          "Gas environments (Zone 1)",
-          "Dust environments (Zone 21)",
-          "Industrial hazardous areas"
+          "Explosion-protected environments",
+          "Zone 1 gas atmospheres",
+          "Zone 21 dust atmospheres",
+          "Zone 2 gas atmospheres",
+          "Zone 22 dust atmospheres"
         ],
-        "protectionClass": "Standard protection with IP 66 available as option",
-        "confidence": 0.9,
+        "protectionClass": "IP 66 available",
+        "brakeType": "Verschiebeanker-Bremsmotor (Sliding armature brake motor) with adjustable, asbestos-free brake",
+        "chainSpecification": "Standard and stainless steel chain options available",
+        "confidence": 0.85,
         "extractionMethod": "text"
       },
       "matchedProducts": [
@@ -13834,19 +14122,27 @@
       "status": "success",
       "extractedData": {
         "model": "ST Chain Hoist",
-        "manufacturer": "CMCO | STAHL CraneSystems",
+        "manufacturer": "STAHL CraneSystems",
         "series": "ST",
-        "loadCapacity": "125 kg to 6,300 kg",
-        "liftingSpeed": "4 m/min to 10 m/min (varies by model)",
-        "motorPower": "0.8 kW to 4.6 kW (varies by model and frequency)",
+        "loadCapacity": "125 kg to 6,300 kg (275 lbs to 13,890 lbs)",
+        "liftingSpeed": "4 m/min to 10 m/min (13 ft/min to 33 ft/min)",
+        "motorPower": "0.8 kW to 4.6 kW",
+        "dutyCycle": "High ISO classification according to FEM/ISO standards",
         "voltageOptions": [
-          "380-415 V",
-          "50/60 Hz",
-          "All voltages possible"
+          "380-415V 50Hz",
+          "All customary connecting and control voltages available"
         ],
-        "chainFall": "1 to 4 falls (varies by model)",
+        "chainFall": "1 to 4 falls",
         "classification": [
-          "High ISO classification according to FEM/ISO standards"
+          "FEM/ISO standards",
+          "ATEX",
+          "IECEx",
+          "NEC",
+          "CEC",
+          "INMETRO",
+          "TC RU",
+          "EN 15011",
+          "EN ISO 13849-1 PL d"
         ],
         "safetyFeatures": {
           "overloadProtection": true,
@@ -13861,20 +14157,19 @@
           "NEC",
           "CEC",
           "INMETRO",
-          "TC RU",
-          "EN ISO 13849-1 PL d",
-          "EN 15011"
+          "TC RU"
         ],
         "applications": [
-          "Crane systems",
-          "Materials handling",
-          "Long goods handling",
-          "Big bag handling",
+          "Standard cranes",
+          "Off-standard cranes",
+          "Systems manufacture",
           "Stationary lifting",
           "Mobile trolley applications"
         ],
-        "operatingTemperature": "-20°C to +40°C (standard), up to +80°C (option)",
-        "protectionClass": "IP55 (standard), IP66 (option)",
+        "operatingTemperature": "-20°C to +40°C standard, up to +80°C optional",
+        "protectionClass": "IP55 standard, IP66 optional",
+        "brakeType": "Low-maintenance, asbestos-free electromagnetic disc brake",
+        "chainSpecification": "Grade 8 to DIN 5684, surface-hardened, galvanised",
         "confidence": 0.9,
         "extractionMethod": "text"
       },
@@ -13941,19 +14236,19 @@
       "status": "success",
       "extractedData": {
         "manufacturer": "Columbus McKinnon Corporation",
-        "series": "Electric Chain Hoists Comparison",
-        "loadCapacity": "250 lb to 24 ton (various models)",
+        "series": "Multiple series comparison including CM SHOPSTAR, CM VALUSTAR, COFFING JLC, COFFING EC, CM LODESTAR (CLASSIC), CM LODESTAR NH, CM LODESTAR VS, CM LODESTAR XL, CM POWERSTAR, CHESTER SLE",
+        "loadCapacity": "250 lb to 24 ton (0.125 ton to 24 ton)",
         "liftingSpeed": "1.7 to 64 fpm (feet per minute)",
         "voltageOptions": [
           "115V Single Phase",
-          "230V Single Phase",
+          "115-230V Single Phase",
           "208V 3-Phase",
           "230V 3-Phase",
           "460V 3-Phase",
           "575V 3-Phase",
           "50 or 60 Hz"
         ],
-        "chainFall": "1 to 5 falls (depending on capacity and model)",
+        "chainFall": "1 to 5 falls (reeving)",
         "safetyFeatures": {
           "upperLimitSwitch": true,
           "lowerLimitSwitch": true,
@@ -13964,10 +14259,11 @@
           "CSA",
           "TUV",
           "CE",
-          "RoHS",
-          "CSA/US"
+          "CSA/US",
+          "RoHS"
         ],
-        "warranty": "Limited Lifetime (most models) or 1 Year",
+        "brakeType": "DC electromagnetic brake and AC caliper style brake (varies by model)",
+        "chainSpecification": "Standard unplated, optional plated, or standard zinc plated (varies by model)",
         "confidence": 0.85,
         "extractionMethod": "text"
       },
@@ -14033,33 +14329,37 @@
       "filename": "yale_yalelift-360-atex-hand_brochure_0.pdf",
       "status": "success",
       "extractedData": {
-        "model": "YALELIFT 360 ATEX",
+        "model": "Yalelift 360 ATEX",
         "manufacturer": "Yale",
-        "series": "YALELIFT 360",
-        "loadCapacity": "1/4 to 12 ton (250 kg to 12,000 kg)",
-        "weight": "28.6 lb to 432.1 lb (13 kg to 196 kg)",
-        "dimensions": "Various dimensions based on capacity - smallest: 13.19\" x 6.14\" x 6.89\" (335mm x 156mm x 175mm)",
-        "chainFall": "1 to 6 chain falls depending on capacity",
+        "series": "Yalelift 360 ATEX",
+        "loadCapacity": "1/4 to 12 tons (0.25 to 12 tons)",
+        "weight": "28.6 lb (13 kg) to 432.1 lb (196 kg) depending on capacity",
+        "chainFall": "1 to 8 falls depending on capacity",
         "classification": [
-          "ATEX II 2 GD C IIC T4"
+          "ATEX II 2 GD C IIC T4",
+          "EU 2014/34/EU",
+          "EU 99/92/EC",
+          "ASME B30.16",
+          "CE"
         ],
         "safetyFeatures": {
           "overloadProtection": true,
-          "slipClutch": true
+          "upperLimitSwitch": false,
+          "lowerLimitSwitch": false,
+          "emergencyStop": false,
+          "slipClutch": false
         },
         "certifications": [
           "ATEX",
-          "CE",
-          "ASME B30.16",
-          "EU 2014/34/EU",
-          "99/92/EC"
+          "CE"
         ],
         "applications": [
-          "explosive atmospheres",
+          "explosive environments",
           "harsh environments",
           "corrosive environments"
         ],
-        "protectionClass": "Explosion protection for zones 1 and 2 (gas) and 21 and 22 (dust)",
+        "brakeType": "Weston-style braking system",
+        "chainSpecification": "Stainless steel load chain and hand chain, various sizes from 6x18mm to standard specifications",
         "confidence": 0.9,
         "extractionMethod": "text"
       },
@@ -14121,30 +14421,40 @@
       "status": "success",
       "extractedData": {
         "model": "CPV/F",
-        "manufacturer": "Columbus McKinnon Industrial Products GmbH (Yale brand)",
-        "series": "CPV/F Electric Chain Hoist",
+        "manufacturer": "Columbus McKinnon (Yale brand)",
+        "series": "CPV/F",
         "loadCapacity": "250 - 2000 kg",
+        "classification": [
+          "CE",
+          "ATEX",
+          "EN ISO 80079-36",
+          "RL 2014/34/EU",
+          "DGUV regulation 54"
+        ],
         "certifications": [
           "CE",
-          "ATEX"
-        ],
-        "applications": [
-          "construction",
-          "mechanical engineering",
-          "transportation",
-          "energy & water management",
-          "oil & gas",
-          "paper industries",
-          "potentially explosive atmospheres"
+          "ATEX",
+          "TUV Rheinland",
+          "EN ISO 9001"
         ],
         "safetyFeatures": {
-          "overloadProtection": true
+          "overloadProtection": false,
+          "upperLimitSwitch": false,
+          "lowerLimitSwitch": false,
+          "emergencyStop": false,
+          "slipClutch": false
         },
-        "classification": [
-          "ATEX Category 2G",
-          "ATEX Category 2D"
+        "applications": [
+          "Construction",
+          "Mechanical engineering",
+          "Transportation",
+          "Energy & water management",
+          "Oil & gas",
+          "Paper industries",
+          "Potentially explosive atmospheres"
         ],
-        "protectionClass": "ATEX certified for explosive atmospheres",
+        "protectionClass": "II 2 G Ex h IIB T4 Gb / II 2 D Ex h IIIB T135°C Db (ATEX)",
+        "operatingTemperature": "Maximum surface temperature T4 (135°C) / T135°C for dust environments",
         "confidence": 0.3,
         "extractionMethod": "text"
       },
@@ -14206,13 +14516,13 @@
       "status": "success",
       "extractedData": {
         "model": "Yalelift 360™ ATEX",
-        "manufacturer": "Columbus McKinnon",
-        "series": "Yale Yalelift 360™ ATEX",
+        "manufacturer": "Columbus McKinnon Corporation (Yale brand)",
+        "series": "Yalelift 360™ ATEX",
         "loadCapacity": "¼, ½, 1, 1½, 2, 3, 4, 5, 6, 8, 10 & 12 tonne (250, 500, 1000, 1500, 2000, 3000, 4000, 5000, 6000, 8000, 10000 & 12000 kg)",
-        "chainFall": "1-6 falls (varies by capacity: 1 fall for ¼-2 ton, 2 falls for 3-4 ton, 3 falls for 5-6 ton, 6 falls for 8-12 ton)",
+        "chainFall": "Single fall (¼-2 ton), Double fall (3-4 ton), Three fall (5-6 ton), Six fall (8-12 ton)",
         "classification": [
-          "II 2 GD c IIC T4",
-          "ATEX"
+          "ATEX II 2 GD c IIC T4",
+          "ASME B30.16"
         ],
         "safetyFeatures": {
           "overloadProtection": true,
@@ -14223,14 +14533,15 @@
           "TÜV Rheinland"
         ],
         "applications": [
-          "general industrial use",
-          "explosive atmospheres",
-          "gas environments",
-          "dust environments"
+          "General industrial use for moving loads",
+          "Potentially explosive atmospheres"
         ],
         "operatingTemperature": "-4°F to 104°F (-20°C to 40°C)",
-        "protectionClass": "II 2 GD c IIC T4",
-        "warranty": "1 year",
+        "brakeType": "Dry type friction brake (non-pawl, non-ratchet)",
+        "chainSpecification": "Stainless steel hand chain and load chain, copper-plated hooks",
+        "protectionClass": "II 2 GD c IIC T4 (T4 - 135°C maximum surface temperature)",
+        "weight": "Varies by capacity - dimensions and weights provided in specification table",
+        "dimensions": "Varies by capacity - detailed dimension tables provided for hook-mounted and trolley-integrated models",
         "confidence": 0.95,
         "extractionMethod": "text"
       },
@@ -14288,6 +14599,6 @@
       ]
     }
   ],
-  "endTime": "2026-01-16T08:22:14.644Z",
-  "duration": 391150
+  "endTime": "2026-01-16T08:48:56.988Z",
+  "duration": 633495
 }
