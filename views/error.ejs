@@ -31,6 +31,57 @@
     color: var(--brand-primary);
     font-weight: 600;
   }
+
+  /* Mobile Responsive Styles */
+  @media (max-width: 767.98px) {
+    .error-card .card-header {
+      padding: 1rem;
+    }
+    .error-card .card-header h4 {
+      font-size: 1.1rem;
+    }
+    .error-card .card-body {
+      padding: 2rem 1rem;
+    }
+    .error-code {
+      font-size: 5rem;
+    }
+    .error-icon {
+      font-size: 3rem;
+    }
+    .error-message {
+      font-size: 1rem;
+    }
+    .error-card .btn {
+      padding: 0.5rem 1rem;
+      font-size: 0.9rem;
+    }
+  }
+
+  /* Small mobile (< 576px) */
+  @media (max-width: 575.98px) {
+    .error-card .card-header h4 {
+      font-size: 1rem;
+      flex-direction: column;
+      gap: 0.5rem !important;
+    }
+    .error-code {
+      font-size: 4rem;
+    }
+    .error-icon {
+      font-size: 2.5rem;
+    }
+    .error-message {
+      font-size: 0.95rem;
+    }
+    .text-muted.mb-4 {
+      font-size: 0.875rem;
+    }
+    .error-card .btn {
+      width: 100%;
+      padding: 0.6rem 1rem;
+    }
+  }
 </style>
 
 <div class="row justify-content-center">
