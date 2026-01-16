@@ -412,10 +412,10 @@
             <h4 class="mb-0"><i class="bi bi-funnel me-2" style="color: var(--brand-secondary);"></i>Filter Results</h4>
           </div>
           <div class="card-body">
-            <form action="/search" method="GET" class="row g-3">
+            <form action="/search" method="GET" class="row g-3" role="search" aria-label="Filter chainhoists">
               <div class="col-md-4">
                 <label for="q" class="form-label"><i class="bi bi-search"></i> Search Terms</label>
-                <input type="text" class="form-control" id="q" name="q" value="<%= query %>">
+                <input type="text" class="form-control" id="q" name="q" value="<%= query %>" aria-label="Search terms">
               </div>
 
               <div class="col-md-4">
@@ -513,11 +513,11 @@
           <span class="filter-chip">
             <span class="chip-label"><%= filter.label %>:</span>
             <%= filter.value %>
-            <a href="<%= buildFilterRemoveUrl(filter.key) %>" class="chip-remove" title="Remove filter">&times;</a>
+            <a href="<%= buildFilterRemoveUrl(filter.key) %>" class="chip-remove" title="Remove <%= filter.label %> filter" aria-label="Remove <%= filter.label %> filter">&times;</a>
           </span>
         <% }); %>
         <% if (activeFilters.length > 1) { %>
-          <a href="/search" class="btn btn-sm btn-outline-secondary ms-2">Clear all</a>
+          <a href="/search" class="btn btn-sm btn-outline-secondary ms-2" aria-label="Clear all filters">Clear all</a>
         <% } %>
       </div>
     <% } %>
@@ -534,7 +534,7 @@
       </div>
       <div class="d-flex align-items-center gap-2">
         <label for="limitSelect" class="text-muted mb-0">Per page:</label>
-        <select id="limitSelect" class="form-select form-select-sm page-size-select" onchange="changePageSize(this.value)">
+        <select id="limitSelect" class="form-select form-select-sm page-size-select" onchange="changePageSize(this.value)" aria-label="Results per page">
           <option value="10" <%= pagination.limit === 10 ? 'selected' : '' %>>10</option>
           <option value="25" <%= pagination.limit === 25 ? 'selected' : '' %>>25</option>
           <option value="50" <%= pagination.limit === 50 ? 'selected' : '' %>>50</option>
@@ -834,9 +834,27 @@
       row.addEventListener('keydown', (e) => {
         if (e.key === 'Enter' || e.key === ' ') {
           e.preventDefault();
+          showLoading();
           row.click();
         }
       });
+      // Show loading on row click
+      row.addEventListener('click', showLoading);
+    });
+
+    // Show loading on filter links (manufacturer, classification)
+    document.querySelectorAll('.filter-link, .classification-badge.clickable').forEach(link => {
+      link.addEventListener('click', (e) => {
+        // Don't show loading if it's just preventing propagation
+        if (!e.defaultPrevented) {
+          showLoading();
+        }
+      });
+    });
+
+    // Show loading on "Clear all" button
+    document.querySelectorAll('a[href="/search"]').forEach(link => {
+      link.addEventListener('click', showLoading);
     });
 
     // Filter preview count
@@ -854,11 +872,18 @@
 
       try {
         applyBtn.innerHTML = '<span class="spinner-border spinner-border-sm me-1"></span> Counting...';
+        applyBtn.disabled = true;
         const response = await fetch('/api/count?' + params.toString());
+        if (!response.ok) throw new Error('API error');
         const data = await response.json();
         applyBtn.innerHTML = `<i class="bi bi-funnel me-1"></i>Apply Filters (${data.count})`;
+        applyBtn.disabled = false;
+        applyBtn.classList.remove('btn-warning');
       } catch (error) {
-        applyBtn.innerHTML = '<i class="bi bi-funnel me-1"></i>Apply Filters';
+        applyBtn.innerHTML = '<i class="bi bi-exclamation-triangle me-1"></i>Apply Filters';
+        applyBtn.disabled = false;
+        applyBtn.classList.add('btn-warning');
+        applyBtn.title = 'Could not load result count. Click to search anyway.';
       }
     }
 
