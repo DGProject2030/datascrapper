@@ -5,6 +5,13 @@ const express = require('express');
 const fs = require('fs');
 const path = require('path');
 
+// Schema validation
+const {
+  validateProducts,
+  checkQualityGates,
+  generateValidationReport
+} = require('./schemas/product.schema');
+
 const app = express();
 
 // Configuration
@@ -35,6 +42,12 @@ const cache = {
   reportTime: 0,
   personality: null,
   personalityTime: 0,
+  // Validation results (computed on data load)
+  validation: {
+    results: null,
+    qualityGates: null,
+    lastChecked: null,
+  },
   // Pre-computed indexes (rebuilt when data cache refreshes)
   indexes: {
     manufacturerStats: null,
@@ -297,7 +310,7 @@ function buildIndexes(data) {
   console.log(`[Cache] Products with images: ${cache.indexes.hasImages.length}, with complete specs: ${cache.indexes.hasCompleteSpecs.length}`);
 }
 
-// Load data helper with caching
+// Load data helper with caching and validation
 function loadData() {
   const now = Date.now();
   if (cache.data && (now - cache.dataTime) < CONFIG.cacheTTL) {
@@ -310,9 +323,30 @@ function loadData() {
     cache.data = data;
     cache.dataTime = now;
 
+    // Validate data and check quality gates
+    const validationResults = validateProducts(data);
+    const gateResults = checkQualityGates(validationResults);
+
+    cache.validation.results = validationResults;
+    cache.validation.qualityGates = gateResults;
+    cache.validation.lastChecked = new Date().toISOString();
+
+    // Log validation report on first load
+    if (!cache.indexes.byId || cache.indexes.byId.size === 0) {
+      console.log('\n' + generateValidationReport(validationResults, gateResults) + '\n');
+    }
+
     // Rebuild indexes when data is refreshed
     buildIndexes(data);
     console.log(`[Cache] Loaded ${data.length} records, cache valid for ${CONFIG.cacheTTL / 1000}s`);
+
+    // Warn if quality gates failed (but don't block - allow degraded operation)
+    if (!gateResults.passed) {
+      console.warn(`[Quality] WARNING: ${gateResults.failedGates.length} quality gate(s) failed`);
+      gateResults.failedGates.forEach(g => {
+        console.warn(`  - ${g.name}: ${g.actual} (threshold: ${g.threshold})`);
+      });
+    }
 
     return data;
   } catch (error) {
@@ -604,6 +638,53 @@ app.get('/api/stats', (req, res) => {
     res.status(500).json({
       success: false,
       error: 'Failed to fetch statistics',
+      message: error.message
+    });
+  }
+});
+
+// GET /api/quality - Get data quality validation results
+app.get('/api/quality', (req, res) => {
+  try {
+    // Ensure data is loaded (triggers validation if not cached)
+    loadData();
+
+    const validation = cache.validation;
+
+    if (!validation.results) {
+      return res.status(503).json({
+        success: false,
+        error: 'Validation not yet completed',
+        message: 'Data is still being loaded'
+      });
+    }
+
+    res.json({
+      success: true,
+      data: {
+        summary: {
+          total: validation.results.total,
+          valid: validation.results.valid.length,
+          invalid: validation.results.invalid.length,
+          validPercent: ((validation.results.valid.length / validation.results.total) * 100).toFixed(1) + '%',
+        },
+        missingFields: {
+          counts: validation.results.missingFieldCounts,
+          percentages: validation.results.missingFieldPercentages,
+        },
+        qualityGates: {
+          passed: validation.qualityGates.passed,
+          summary: validation.qualityGates.summary,
+          gates: validation.qualityGates.gates,
+        },
+        errors: validation.results.errors.slice(0, 20), // First 20 errors
+        lastChecked: validation.lastChecked,
+      }
+    });
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      error: 'Failed to fetch quality data',
       message: error.message
     });
   }
