@@ -83,6 +83,122 @@
     background: #0f2644;
     color: white;
   }
+
+  /* Mobile Responsive Styles */
+  @media (max-width: 767.98px) {
+    /* Hero card - smaller text */
+    .hero-card .card-title {
+      font-size: 1.5rem;
+    }
+    .hero-card .lead {
+      font-size: 0.95rem;
+    }
+    .hero-card .card-body {
+      padding: 1rem;
+    }
+    .hero-card .d-flex {
+      gap: 0.75rem !important;
+    }
+    .hero-card i {
+      font-size: 2rem !important;
+    }
+
+    /* Filter card - horizontal scroll list */
+    .filter-card {
+      position: static !important;
+    }
+    .filter-card .card-body {
+      max-height: 200px !important;
+    }
+    .filter-card .card-header {
+      padding: 0.75rem 1rem;
+    }
+    .filter-card .card-header h5 {
+      font-size: 1rem;
+    }
+    .filter-card .list-group-item {
+      padding: 0.5rem 0.75rem;
+      font-size: 0.875rem;
+    }
+
+    /* Manufacturer cards */
+    .manufacturer-card .card-header {
+      padding: 0.75rem 1rem;
+    }
+    .manufacturer-card .card-header h5 {
+      font-size: 1rem;
+    }
+
+    /* Table adjustments */
+    .table {
+      font-size: 0.8rem;
+    }
+    .table td, .table th {
+      padding: 0.5rem 0.4rem;
+    }
+    .table th:first-child,
+    .table td:first-child {
+      padding-left: 0.75rem !important;
+    }
+
+    /* Buttons - stack vertically */
+    .btn-download, .btn-view {
+      display: block;
+      width: 100%;
+      margin-bottom: 0.25rem;
+      font-size: 0.75rem;
+      padding: 0.35rem 0.5rem;
+    }
+    .btn-download:last-child, .btn-view:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Hide size column on mobile */
+    .table th:nth-child(3),
+    .table td:nth-child(3) {
+      display: none;
+    }
+
+    /* Footer spacing */
+    footer .row > div {
+      margin-bottom: 1.5rem;
+    }
+    footer .row > div:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  /* Small mobile (< 576px) */
+  @media (max-width: 575.98px) {
+    .hero-card .card-title {
+      font-size: 1.25rem;
+    }
+    .hero-card .lead {
+      font-size: 0.85rem;
+    }
+    .hero-card i {
+      font-size: 1.75rem !important;
+    }
+
+    .filter-card .card-body {
+      max-height: 150px !important;
+    }
+
+    .table {
+      font-size: 0.75rem;
+    }
+
+    /* Hide type column on very small screens */
+    .table th:nth-child(2),
+    .table td:nth-child(2) {
+      display: none;
+    }
+
+    .btn-download, .btn-view {
+      font-size: 0.7rem;
+      padding: 0.3rem 0.4rem;
+    }
+  }
 </style>
 
 <div class="row mb-4">
