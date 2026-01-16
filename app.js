@@ -43,6 +43,14 @@ const cache = {
     dataCompleteness: null,
     parsedCapacities: new Map(), // Map of id -> parsed capacity in kg
     parsedSpeeds: new Map(), // Map of id -> parsed speed in m/min
+    // O(1) lookup indexes
+    byId: new Map(), // Map of id -> item for O(1) product lookups
+    byManufacturer: new Map(), // Map of manufacturer -> [items] for similar products
+    // Cached aggregation lists (avoid recomputing on every request)
+    manufacturerList: [], // Sorted unique manufacturer names
+    dutyCycleList: [], // Sorted unique duty cycles
+    categoryList: [], // Sorted unique categories
+    speedTypeList: [], // Sorted unique speed types
   }
 };
 
@@ -74,10 +82,35 @@ function parseSpeed(item) {
   return value;
 }
 
+// Check if item matches capacity bucket filter (uses cached parsed values)
+function matchesCapacityBucket(item, capacityFilter) {
+  const value = cache.indexes.parsedCapacities.get(item.id);
+  if (value === null || value === undefined) {
+    return false;
+  }
+  switch (capacityFilter) {
+  case '≤250 kg':
+    return value <= 250;
+  case '251-500 kg':
+    return value > 250 && value <= 500;
+  case '501-1000 kg':
+    return value > 500 && value <= 1000;
+  case '1001-2000 kg':
+    return value > 1000 && value <= 2000;
+  case '>2000 kg':
+    return value > 2000;
+  default:
+    return false;
+  }
+}
+
 // Build indexes from data (O(n) single pass)
 function buildIndexes(data) {
   const manufacturerMap = new Map();
   const classificationMap = new Map();
+  const dutyCycleSet = new Set();
+  const categorySet = new Set();
+  const speedTypeSet = new Set();
   let minCapacity = Infinity;
   let maxCapacity = -Infinity;
   let hasLoadCapacity = 0;
@@ -85,12 +118,23 @@ function buildIndexes(data) {
   let hasMotorPower = 0;
   let hasClassification = 0;
 
-  // Clear parsed value caches
+  // Clear all caches
   cache.indexes.parsedCapacities.clear();
   cache.indexes.parsedSpeeds.clear();
+  cache.indexes.byId.clear();
+  cache.indexes.byManufacturer.clear();
 
   // Single pass through data
   data.forEach(item => {
+    // O(1) ID lookup index
+    cache.indexes.byId.set(item.id, item);
+
+    // Manufacturer-grouped index for similar products
+    if (!cache.indexes.byManufacturer.has(item.manufacturer)) {
+      cache.indexes.byManufacturer.set(item.manufacturer, []);
+    }
+    cache.indexes.byManufacturer.get(item.manufacturer).push(item);
+
     // Manufacturer stats
     if (!manufacturerMap.has(item.manufacturer)) {
       manufacturerMap.set(item.manufacturer, { count: 0, models: new Set() });
@@ -107,6 +151,17 @@ function buildIndexes(data) {
       item.classification.forEach(cls => {
         classificationMap.set(cls, (classificationMap.get(cls) || 0) + 1);
       });
+    }
+
+    // Collect unique values for filter dropdowns
+    if (item.dutyCycle) {
+      dutyCycleSet.add(item.dutyCycle);
+    }
+    if (item.category && item.category !== 'Unknown') {
+      categorySet.add(item.category);
+    }
+    if (item.speedType && item.speedType !== 'Unknown') {
+      speedTypeSet.add(item.speedType);
     }
 
     // Capacity range (and cache parsed value)
@@ -154,7 +209,13 @@ function buildIndexes(data) {
     classification: data.length > 0 ? hasClassification / data.length : 0
   };
 
-  console.log(`[Cache] Built indexes: ${manufacturerMap.size} manufacturers, ${classificationMap.size} classifications`);
+  // Cache aggregation lists (avoid recomputing on every request)
+  cache.indexes.manufacturerList = Array.from(manufacturerMap.keys()).sort();
+  cache.indexes.dutyCycleList = Array.from(dutyCycleSet).sort();
+  cache.indexes.categoryList = Array.from(categorySet).sort();
+  cache.indexes.speedTypeList = Array.from(speedTypeSet).sort();
+
+  console.log(`[Cache] Built indexes: ${manufacturerMap.size} manufacturers, ${classificationMap.size} classifications, ${cache.indexes.byId.size} products indexed`);
 }
 
 // Load data helper with caching
@@ -292,45 +353,52 @@ app.get('/api', (req, res) => {
 app.get('/api/chainhoists', (req, res) => {
   try {
     const data = loadData();
-    let results = [...data];
 
-    if (req.query.manufacturer) {
-      results = results.filter(item =>
-        item.manufacturer.toLowerCase().includes(req.query.manufacturer.toLowerCase())
-      );
-    }
+    // Pre-process filter values once (outside the filter loop)
+    const manufacturerFilter = req.query.manufacturer?.toLowerCase();
+    const modelFilter = req.query.model?.toLowerCase();
+    const classificationFilter = req.query.classification?.toLowerCase();
+    const minCapacity = req.query.minCapacity ? parseFloat(req.query.minCapacity) : null;
+    const maxCapacity = req.query.maxCapacity ? parseFloat(req.query.maxCapacity) : null;
 
-    if (req.query.model) {
-      results = results.filter(item =>
-        item.model.toLowerCase().includes(req.query.model.toLowerCase())
-      );
-    }
+    // Single-pass filtering: combine all filters into one pass instead of multiple sequential passes
+    const results = data.filter(item => {
+      // Manufacturer filter
+      if (manufacturerFilter && !item.manufacturer.toLowerCase().includes(manufacturerFilter)) {
+        return false;
+      }
 
-    if (req.query.classification) {
-      results = results.filter(item =>
-        item.classification &&
-        Array.isArray(item.classification) &&
-        item.classification.some(cls =>
-          cls.toLowerCase().includes(req.query.classification.toLowerCase())
-        )
-      );
-    }
+      // Model filter
+      if (modelFilter && !item.model.toLowerCase().includes(modelFilter)) {
+        return false;
+      }
 
-    if (req.query.minCapacity) {
-      const minCap = parseFloat(req.query.minCapacity);
-      results = results.filter(item => {
-        const capacity = parseCapacity(item);
-        return capacity !== null && capacity >= minCap;
-      });
-    }
+      // Classification filter
+      if (classificationFilter) {
+        if (!item.classification || !Array.isArray(item.classification)) {
+          return false;
+        }
+        if (!item.classification.some(cls => cls.toLowerCase().includes(classificationFilter))) {
+          return false;
+        }
+      }
 
-    if (req.query.maxCapacity) {
-      const maxCap = parseFloat(req.query.maxCapacity);
-      results = results.filter(item => {
-        const capacity = parseCapacity(item);
-        return capacity !== null && capacity <= maxCap;
-      });
-    }
+      // Capacity range filters (use cached parsed values)
+      if (minCapacity !== null || maxCapacity !== null) {
+        const capacity = cache.indexes.parsedCapacities.get(item.id);
+        if (capacity === null || capacity === undefined) {
+          return false;
+        }
+        if (minCapacity !== null && capacity < minCapacity) {
+          return false;
+        }
+        if (maxCapacity !== null && capacity > maxCapacity) {
+          return false;
+        }
+      }
+
+      return true;
+    });
 
     const page = parseInt(req.query.page) || 1;
     const limit = parseInt(req.query.limit) || 50;
@@ -359,11 +427,11 @@ app.get('/api/chainhoists', (req, res) => {
   }
 });
 
-// GET /api/chainhoists/:id - Get specific chainhoist
+// GET /api/chainhoists/:id - Get specific chainhoist (uses O(1) ID index)
 app.get('/api/chainhoists/:id', (req, res) => {
   try {
-    const data = loadData();
-    const chainhoist = data.find(item => item.id === req.params.id);
+    loadData(); // Ensure data and indexes are loaded
+    const chainhoist = cache.indexes.byId.get(req.params.id);
 
     if (!chainhoist) {
       return res.status(404).json({
@@ -561,72 +629,69 @@ app.post('/api/search', (req, res) => {
 app.get('/api/count', (req, res) => {
   try {
     const data = loadData();
-    let results = [...data];
+
+    // Pre-process filter values once
     const query = req.query.q?.toLowerCase() || '';
+    const manufacturerFilter = req.query.manufacturer;
+    const capacityFilter = req.query.capacity;
+    const classificationFilter = req.query.classification;
+    const categoryFilter = req.query.category;
+    const speedTypeFilter = req.query.speedType;
+    const dutyCycleFilter = req.query.dutyCycle;
 
-    if (query) {
-      results = results.filter(item => {
-        return (
-          (item.manufacturer?.toLowerCase().includes(query)) ||
-          (item.model?.toLowerCase().includes(query)) ||
-          (item.series?.toLowerCase().includes(query)) ||
-          (item.loadCapacity?.toLowerCase().includes(query)) ||
-          (item.classification?.join(' ').toLowerCase().includes(query))
-        );
-      });
-    }
-
-    if (req.query.manufacturer) {
-      results = results.filter(item => item.manufacturer === req.query.manufacturer);
-    }
-
-    if (req.query.capacity) {
-      results = results.filter(item => {
-        if (!item.loadCapacity) {
-          return false;
-        }
-        const matches = item.loadCapacity.match(/(\d+(?:\.\d+)?)\s*kg/i);
+    // Single-pass counting with all filters combined
+    let count = 0;
+    for (const item of data) {
+      // Text search filter
+      if (query) {
+        const matches =
+          item.manufacturer?.toLowerCase().includes(query) ||
+          item.model?.toLowerCase().includes(query) ||
+          item.series?.toLowerCase().includes(query) ||
+          item.loadCapacity?.toLowerCase().includes(query) ||
+          item.classification?.join(' ').toLowerCase().includes(query);
         if (!matches) {
-          return false;
+          continue;
         }
-        const value = parseFloat(matches[1]);
-        const capacityFilter = req.query.capacity;
-        if (capacityFilter === '≤250 kg' && value <= 250) {
-          return true;
+      }
+
+      // Manufacturer filter (exact match)
+      if (manufacturerFilter && item.manufacturer !== manufacturerFilter) {
+        continue;
+      }
+
+      // Capacity bucket filter (uses cached values)
+      if (capacityFilter && !matchesCapacityBucket(item, capacityFilter)) {
+        continue;
+      }
+
+      // Classification filter
+      if (classificationFilter) {
+        if (!item.classification || !Array.isArray(item.classification) ||
+            !item.classification.includes(classificationFilter)) {
+          continue;
         }
-        if (capacityFilter === '251-500 kg' && value > 250 && value <= 500) {
-          return true;
-        }
-        if (capacityFilter === '501-1000 kg' && value > 500 && value <= 1000) {
-          return true;
-        }
-        if (capacityFilter === '1001-2000 kg' && value > 1000 && value <= 2000) {
-          return true;
-        }
-        if (capacityFilter === '>2000 kg' && value > 2000) {
-          return true;
-        }
-        return false;
-      });
+      }
+
+      // Category filter
+      if (categoryFilter && item.category !== categoryFilter) {
+        continue;
+      }
+
+      // Speed type filter
+      if (speedTypeFilter && item.speedType !== speedTypeFilter) {
+        continue;
+      }
+
+      // Duty cycle filter
+      if (dutyCycleFilter && item.dutyCycle !== dutyCycleFilter) {
+        continue;
+      }
+
+      count++;
     }
 
-    if (req.query.classification) {
-      results = results.filter(item => {
-        return item.classification &&
-          Array.isArray(item.classification) &&
-          item.classification.includes(req.query.classification);
-      });
-    }
-
-    if (req.query.category) {
-      results = results.filter(item => item.category === req.query.category);
-    }
-
-    if (req.query.speedType) {
-      results = results.filter(item => item.speedType === req.query.speedType);
-    }
-
-    res.json({ count: results.length });
+    res.json({ count });
   } catch (error) {
     res.status(500).json({ count: 0, error: error.message });
   }
@@ -760,7 +825,8 @@ app.get('/', (req, res) => {
   const data = loadData();
   const report = loadReport();
 
-  const manufacturers = [...new Set(data.map(item => item.manufacturer))].sort();
+  // Use cached aggregation lists instead of recomputing
+  const manufacturers = cache.indexes.manufacturerList;
   const capacities = Object.keys(report.capacityDistribution || {}).sort((a, b) => {
     const getNumber = (str) => {
       const match = str.match(/\d+/);
@@ -805,37 +871,8 @@ app.get('/search', (req, res) => {
   }
 
   if (req.query.capacity) {
-    results = results.filter(item => {
-      if (!item.loadCapacity) {
-        return false;
-      }
-
-      const matches = item.loadCapacity.match(/(\d+(?:\.\d+)?)\s*kg/i);
-      if (!matches) {
-        return false;
-      }
-
-      const value = parseFloat(matches[1]);
-      const capacityFilter = req.query.capacity;
-
-      if (capacityFilter === '≤250 kg' && value <= 250) {
-        return true;
-      }
-      if (capacityFilter === '251-500 kg' && value > 250 && value <= 500) {
-        return true;
-      }
-      if (capacityFilter === '501-1000 kg' && value > 500 && value <= 1000) {
-        return true;
-      }
-      if (capacityFilter === '1001-2000 kg' && value > 1000 && value <= 2000) {
-        return true;
-      }
-      if (capacityFilter === '>2000 kg' && value > 2000) {
-        return true;
-      }
-
-      return false;
-    });
+    // Use cached parsed capacities via helper function
+    results = results.filter(item => matchesCapacityBucket(item, req.query.capacity));
   }
 
   if (req.query.classification) {
@@ -854,7 +891,12 @@ app.get('/search', (req, res) => {
     results = results.filter(item => item.speedType === req.query.speedType);
   }
 
-  const manufacturers = [...new Set(data.map(item => item.manufacturer))].sort();
+  if (req.query.dutyCycle) {
+    results = results.filter(item => item.dutyCycle === req.query.dutyCycle);
+  }
+
+  // Use cached aggregation lists instead of recomputing on every request
+  const manufacturers = cache.indexes.manufacturerList;
   const capacities = Object.keys(report.capacityDistribution || {}).sort((a, b) => {
     const getNumber = (str) => {
       const match = str.match(/\d+/);
@@ -863,8 +905,9 @@ app.get('/search', (req, res) => {
     return getNumber(a) - getNumber(b);
   });
   const classifications = Object.keys(report.classificationDistribution || {}).sort();
-  const categories = Object.keys(report.categoryDistribution || {}).filter(c => c !== 'Unknown').sort();
-  const speedTypes = Object.keys(report.speedTypeDistribution || {}).filter(s => s !== 'Unknown').sort();
+  const categories = cache.indexes.categoryList;
+  const speedTypes = cache.indexes.speedTypeList;
+  const dutyCycles = cache.indexes.dutyCycleList;
 
   // Sorting
   const sortBy = req.query.sortBy || '';
@@ -874,31 +917,20 @@ app.get('/search', (req, res) => {
     results.sort((a, b) => {
       let aVal, bVal;
 
-      // Map sort field to data property
-      const fieldMap = {
-        manufacturer: 'manufacturer',
-        model: 'model',
-        series: 'series',
-        capacity: 'loadCapacity',
-        speed: 'liftingSpeed',
-        classification: 'classification'
-      };
-
-      const field = fieldMap[sortBy] || sortBy;
-
-      if (sortBy === 'capacity' || sortBy === 'speed') {
-        // Extract numeric value from strings like "500 kg" or "4 m/min"
-        const aMatch = (a[field] || '').match(/(\d+(?:\.\d+)?)/);
-        const bMatch = (b[field] || '').match(/(\d+(?:\.\d+)?)/);
-        aVal = aMatch ? parseFloat(aMatch[1]) : 0;
-        bVal = bMatch ? parseFloat(bMatch[1]) : 0;
+      // Use cached parsed values for numeric fields (avoids regex on every comparison)
+      if (sortBy === 'capacity') {
+        aVal = cache.indexes.parsedCapacities.get(a.id) || 0;
+        bVal = cache.indexes.parsedCapacities.get(b.id) || 0;
+      } else if (sortBy === 'speed') {
+        aVal = cache.indexes.parsedSpeeds.get(a.id) || 0;
+        bVal = cache.indexes.parsedSpeeds.get(b.id) || 0;
       } else if (sortBy === 'classification') {
         // Join array for comparison
-        aVal = Array.isArray(a[field]) ? a[field].join(' ') : (a[field] || '');
-        bVal = Array.isArray(b[field]) ? b[field].join(' ') : (b[field] || '');
+        aVal = Array.isArray(a.classification) ? a.classification.join(' ') : (a.classification || '');
+        bVal = Array.isArray(b.classification) ? b.classification.join(' ') : (b.classification || '');
       } else {
-        aVal = a[field] || '';
-        bVal = b[field] || '';
+        aVal = a[sortBy] || '';
+        bVal = b[sortBy] || '';
       }
 
       // Compare
@@ -929,6 +961,7 @@ app.get('/search', (req, res) => {
     classifications,
     categories,
     speedTypes,
+    dutyCycles,
     filters: req.query,
     resultsCount: totalResults,
     pagination: {
@@ -952,8 +985,8 @@ app.get('/product/:id', (req, res) => {
   const report = loadReport();
   const id = req.params.id;
 
-  // Find the product first
-  const product = data.find(item => item.id === id);
+  // Find the product using O(1) ID index
+  const product = cache.indexes.byId.get(id);
 
   if (!product) {
     return res.status(404).render('error', {
@@ -983,33 +1016,8 @@ app.get('/product/:id', (req, res) => {
   }
 
   if (req.query.capacity) {
-    filteredData = filteredData.filter(item => {
-      if (!item.loadCapacity) {
-        return false;
-      }
-      const matches = item.loadCapacity.match(/(\d+(?:\.\d+)?)\s*kg/i);
-      if (!matches) {
-        return false;
-      }
-      const value = parseFloat(matches[1]);
-      const capacityFilter = req.query.capacity;
-      if (capacityFilter === '≤250 kg' && value <= 250) {
-        return true;
-      }
-      if (capacityFilter === '251-500 kg' && value > 250 && value <= 500) {
-        return true;
-      }
-      if (capacityFilter === '501-1000 kg' && value > 500 && value <= 1000) {
-        return true;
-      }
-      if (capacityFilter === '1001-2000 kg' && value > 1000 && value <= 2000) {
-        return true;
-      }
-      if (capacityFilter === '>2000 kg' && value > 2000) {
-        return true;
-      }
-      return false;
-    });
+    // Use cached parsed capacities via helper function
+    filteredData = filteredData.filter(item => matchesCapacityBucket(item, req.query.capacity));
   }
 
   if (req.query.classification) {
@@ -1028,6 +1036,10 @@ app.get('/product/:id', (req, res) => {
     filteredData = filteredData.filter(item => item.speedType === req.query.speedType);
   }
 
+  if (req.query.dutyCycle) {
+    filteredData = filteredData.filter(item => item.dutyCycle === req.query.dutyCycle);
+  }
+
   // Apply sorting if specified
   const sortBy = req.query.sortBy || '';
   const sortOrder = req.query.sortOrder || 'asc';
@@ -1035,27 +1047,20 @@ app.get('/product/:id', (req, res) => {
   if (sortBy) {
     filteredData.sort((a, b) => {
       let aVal, bVal;
-      const fieldMap = {
-        manufacturer: 'manufacturer',
-        model: 'model',
-        series: 'series',
-        capacity: 'loadCapacity',
-        speed: 'liftingSpeed',
-        classification: 'classification'
-      };
-      const field = fieldMap[sortBy] || sortBy;
 
-      if (sortBy === 'capacity' || sortBy === 'speed') {
-        const aMatch = (a[field] || '').match(/(\d+(?:\.\d+)?)/);
-        const bMatch = (b[field] || '').match(/(\d+(?:\.\d+)?)/);
-        aVal = aMatch ? parseFloat(aMatch[1]) : 0;
-        bVal = bMatch ? parseFloat(bMatch[1]) : 0;
+      // Use cached parsed values for numeric fields (avoids regex on every comparison)
+      if (sortBy === 'capacity') {
+        aVal = cache.indexes.parsedCapacities.get(a.id) || 0;
+        bVal = cache.indexes.parsedCapacities.get(b.id) || 0;
+      } else if (sortBy === 'speed') {
+        aVal = cache.indexes.parsedSpeeds.get(a.id) || 0;
+        bVal = cache.indexes.parsedSpeeds.get(b.id) || 0;
       } else if (sortBy === 'classification') {
-        aVal = Array.isArray(a[field]) ? a[field].join(' ') : (a[field] || '');
-        bVal = Array.isArray(b[field]) ? b[field].join(' ') : (b[field] || '');
+        aVal = Array.isArray(a.classification) ? a.classification.join(' ') : (a.classification || '');
+        bVal = Array.isArray(b.classification) ? b.classification.join(' ') : (b.classification || '');
       } else {
-        aVal = a[field] || '';
-        bVal = b[field] || '';
+        aVal = a[sortBy] || '';
+        bVal = b[sortBy] || '';
       }
 
       if (typeof aVal === 'number' && typeof bVal === 'number') {
@@ -1094,6 +1099,9 @@ app.get('/product/:id', (req, res) => {
   if (req.query.speedType) {
     searchParams.set('speedType', req.query.speedType);
   }
+  if (req.query.dutyCycle) {
+    searchParams.set('dutyCycle', req.query.dutyCycle);
+  }
   if (req.query.sortBy) {
     searchParams.set('sortBy', req.query.sortBy);
   }
@@ -1102,12 +1110,11 @@ app.get('/product/:id', (req, res) => {
   }
   const queryString = searchParams.toString();
 
-  const similarProducts = data.filter(item =>
-    item.id !== id &&
-    (item.manufacturer === product.manufacturer ||
-     (item.classification && product.classification &&
-      item.classification.some(c => product.classification.includes(c))))
-  ).slice(0, 5);
+  // Use manufacturer index for O(1) lookup instead of full scan
+  const sameManufacturerProducts = cache.indexes.byManufacturer.get(product.manufacturer) || [];
+  const similarProducts = sameManufacturerProducts
+    .filter(item => item.id !== id)
+    .slice(0, 5);
 
   res.render('product', {
     product,
@@ -1123,10 +1130,11 @@ app.get('/product/:id', (req, res) => {
 });
 
 app.get('/compare', (req, res) => {
-  const data = loadData();
+  loadData(); // Ensure data and indexes are loaded
   const ids = req.query.ids ? req.query.ids.split(',') : [];
 
-  const products = ids.map(id => data.find(item => item.id === id)).filter(Boolean);
+  // Use O(1) ID index instead of O(n) find for each product
+  const products = ids.map(id => cache.indexes.byId.get(id)).filter(Boolean);
 
   res.render('compare', {
     products,
