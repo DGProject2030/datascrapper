@@ -1,71 +1,75 @@
 {
-  "totalRecords": 459,
-  "processedRecords": 459,
+  "totalRecords": 289,
+  "processedRecords": 289,
   "skippedRecords": 0,
   "missingDataFields": {
     "loadCapacity": {
-      "count": 343,
-      "percentage": "74.7%"
+      "count": 203,
+      "percentage": "70.2%"
     },
     "liftingSpeed": {
-      "count": 370,
-      "percentage": "80.6%"
+      "count": 220,
+      "percentage": "76.1%"
     },
     "motorPower": {
-      "count": 430,
-      "percentage": "93.7%"
+      "count": 273,
+      "percentage": "94.5%"
+    },
+    "capacityKg": {
+      "count": 213,
+      "percentage": "73.7%"
+    },
+    "speedMMin": {
+      "count": 232,
+      "percentage": "80.3%"
     }
   },
   "manufacturerStats": {
-    "Columbus McKinnon": 193,
+    "Columbus McKinnon": 127,
     "Konecranes": 2,
-    "Demag": 13,
+    "Demag": 10,
     "Harrington Hoists": 3,
-    "ABUS Kransysteme": 21,
-    "GIS AG": 4,
+    "ABUS Kransysteme": 18,
+    "GIS AG": 1,
     "Verlinde": 2,
     "Chainmaster": 2,
     "Movecat": 2,
     "Kito": 6,
-    "Hitachi Industrial Equipment": 5,
-    "Donati Sollevamenti": 5,
-    "PLANETA-Hebetechnik": 10,
-    "Gorbel": 7,
-    "Yale Hoists": 13,
+    "Hitachi Industrial Equipment": 1,
+    "PLANETA-Hebetechnik": 4,
+    "Yale Hoists": 11,
     "Ingersoll Rand": 2,
-    "Coffing Hoists": 12,
-    "Budgit Hoists": 12,
-    "R&M Materials Handling": 10,
-    "Street Crane": 11,
-    "SWF Krantechnik": 7,
+    "Coffing Hoists": 11,
+    "Budgit Hoists": 11,
+    "R&M Materials Handling": 5,
+    "Street Crane": 2,
+    "SWF Krantechnik": 6,
     "JDN Monocrane": 2,
-    "Elephant Lifting Products": 12,
-    "LiftingSafety": 10,
-    "Tiger Lifting": 62,
-    "Stahl CraneSystems": 11,
+    "Elephant Lifting Products": 7,
+    "LiftingSafety": 7,
+    "Tiger Lifting": 18,
+    "Stahl CraneSystems": 10,
     "Nitchi": 2,
-    "TXK": 8,
-    "J.D. Neuhaus": 10
+    "TXK": 6,
+    "Donati Sollevamenti": 2,
+    "J.D. Neuhaus": 9
   },
   "capacityDistribution": {
-    "501-1000 kg": 4,
-    "251-500 kg": 4,
-    ">2000 kg": 38,
+    "501-1000 kg": 3,
+    "251-500 kg": 2,
+    ">2000 kg": 37,
     "1001-2000 kg": 10,
-    "≤250 kg": 29
+    "≤250 kg": 17
   },
   "classificationDistribution": {
-    "d8": 23,
+    "d8": 21,
     "d8+": 9,
     "ansi": 10,
     "bgv-c1": 2,
     "jis": 3,
-    "fem 1bm (m3)": 1,
-    "fem 1am (m4)": 1,
-    "fem 2m (m5)": 1,
     "atex": 2,
     "ce": 2,
-    "fem groups 1bm to 4m": 10,
+    "fem groups 1bm to 4m": 9,
     "asme/ansi b30.16": 1,
     "csa": 1,
     "atex ii 2 gd c iic t4": 1,
@@ -81,5 +85,7 @@
     "db (iecex)": 1,
     "zone 21": 1
   },
-  "processingErrors": []
+  "processingErrors": [],
+  "localImagesFound": 636,
+  "localImagesMapped": 638
 }

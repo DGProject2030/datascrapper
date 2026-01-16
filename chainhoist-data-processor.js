@@ -17,6 +17,34 @@ const CONFIG = {
   csvOutputFile: 'chainhoist_database_processed.csv',
   reportFile: 'data_quality_report.json',
   missingDataThreshold: 0.4, // Threshold for reporting missing data
+  localImagesDir: 'chainhoist_data/media/images',
+  localImagesUrlPrefix: '/media/images/',
+};
+
+// Mapping from local image filename slugs to database manufacturer names
+const MANUFACTURER_SLUG_MAP = {
+  'abus-kransysteme': 'ABUS Kransysteme',
+  'budgit': 'Budgit Hoists',
+  'chainmaster': 'Chainmaster',
+  'coffing': 'Coffing Hoists',
+  'demag': 'Demag',
+  'donati': 'Donati Sollevamenti',
+  'elephant': 'Elephant Lifting Products',
+  'gorbel': 'Gorbel',
+  'hitachi': 'Hitachi',
+  'jdn': 'J.D. Neuhaus',
+  'kito': 'Kito',
+  'liftingsafety': 'LiftingSafety',
+  'planeta': 'PLANETA-Hebetechnik',
+  'rm-materials': 'R&M Materials Handling',
+  'stahl': 'Stahl CraneSystems',
+  'street-crane': 'Street Crane',
+  'swf': 'SWF Krantechnik',
+  'swf-krantechnik': 'SWF Krantechnik',
+  'tiger': 'Tiger Lifting',
+  'tiger-lifting': 'Tiger Lifting',
+  'txk': 'TXK',
+  'yale': 'Yale Hoists',
 };
 
 // Define unit conversion factors
@@ -56,6 +84,7 @@ class ChainhoistDataProcessor {
   constructor() {
     this.data = [];
     this.processedData = [];
+    this.localImagesByManufacturer = {}; // Map of manufacturer -> [{ filename, url, pageSlug }]
     this.report = {
       totalRecords: 0,
       processedRecords: 0,
@@ -65,6 +94,8 @@ class ChainhoistDataProcessor {
       capacityDistribution: {},
       classificationDistribution: {},
       processingErrors: [],
+      localImagesFound: 0,
+      localImagesMapped: 0,
     };
   }
 
@@ -90,9 +121,79 @@ class ChainhoistDataProcessor {
       this.report.totalRecords = this.data.length;
 
       console.log(`Loaded ${this.data.length} records for processing`);
+
+      // Scan local images
+      await this.scanLocalImages();
     } catch (err) {
       console.error('Failed to initialize data processor:', err);
       throw err;
+    }
+  }
+
+  // Scan local images directory and create mapping
+  async scanLocalImages() {
+    try {
+      const { readdirSync } = require('fs');
+      const imagesDir = path.join(__dirname, CONFIG.localImagesDir);
+
+      let files;
+      try {
+        files = readdirSync(imagesDir);
+      } catch (err) {
+        console.log('No local images directory found, skipping local image mapping');
+        return;
+      }
+
+      // Filter for image files
+      const imageExtensions = ['.png', '.jpg', '.jpeg', '.webp', '.svg', '.gif'];
+      const imageFiles = files.filter(f =>
+        imageExtensions.some(ext => f.toLowerCase().endsWith(ext))
+      );
+
+      this.report.localImagesFound = imageFiles.length;
+      console.log(`Found ${imageFiles.length} local image files`);
+
+      // Parse filenames and group by manufacturer
+      // Filename format: manufacturer-slug_page-slug_index.ext
+      for (const filename of imageFiles) {
+        const match = filename.match(/^([^_]+)_([^_]+)_(\d+)\.(\w+)$/);
+        if (!match) {
+          continue;
+        }
+
+        const [, manufacturerSlug, pageSlug, index, ext] = match;
+        const manufacturer = MANUFACTURER_SLUG_MAP[manufacturerSlug];
+
+        if (!manufacturer) {
+          continue;
+        }
+
+        if (!this.localImagesByManufacturer[manufacturer]) {
+          this.localImagesByManufacturer[manufacturer] = [];
+        }
+
+        this.localImagesByManufacturer[manufacturer].push({
+          filename,
+          url: CONFIG.localImagesUrlPrefix + filename,
+          pageSlug,
+          index: parseInt(index, 10),
+        });
+      }
+
+      // Sort images by page slug and index
+      for (const manufacturer of Object.keys(this.localImagesByManufacturer)) {
+        this.localImagesByManufacturer[manufacturer].sort((a, b) => {
+          if (a.pageSlug !== b.pageSlug) {
+            return a.pageSlug.localeCompare(b.pageSlug);
+          }
+          return a.index - b.index;
+        });
+      }
+
+      const mappedManufacturers = Object.keys(this.localImagesByManufacturer).length;
+      console.log(`Mapped local images to ${mappedManufacturers} manufacturers`);
+    } catch (err) {
+      console.error('Error scanning local images:', err);
     }
   }
 
@@ -153,6 +254,7 @@ class ChainhoistDataProcessor {
 
     console.log(`Processed ${this.report.processedRecords} records successfully`);
     console.log(`Skipped ${this.report.skippedRecords} records due to errors or insufficient data`);
+    console.log(`Mapped ${this.report.localImagesMapped} local images to products`);
   }
 
   // Process a single record
@@ -222,7 +324,105 @@ class ChainhoistDataProcessor {
     // Add additional metadata
     processed.processedDate = new Date();
 
+    // Map local images to product
+    this.mapLocalImages(processed);
+
     return processed;
+  }
+
+  // Map local images to a product
+  mapLocalImages(record) {
+    const manufacturer = record.manufacturer;
+    const manufacturerImages = this.localImagesByManufacturer[manufacturer];
+
+    if (!manufacturerImages || manufacturerImages.length === 0) {
+      return;
+    }
+
+    // Create slug from model name for matching
+    const modelSlug = this.createSlug(record.model);
+    const idSlug = record.id ? record.id.replace(/^[^-]+-/, '') : '';
+
+    // Find matching images based on page slug similarity
+    const matchingImages = manufacturerImages.filter(img => {
+      const pageSlug = img.pageSlug.toLowerCase();
+      const modelLower = modelSlug.toLowerCase();
+      const idLower = idSlug.toLowerCase();
+
+      // Check if page slug matches model slug or contains key parts
+      if (pageSlug === modelLower) {
+        return true;
+      }
+      if (pageSlug.includes(modelLower) || modelLower.includes(pageSlug)) {
+        return true;
+      }
+      if (idLower && (pageSlug.includes(idLower) || idLower.includes(pageSlug))) {
+        return true;
+      }
+
+      // Check for partial matches (e.g., "dc-pro" matches "DC Pro")
+      const pageParts = pageSlug.split('-').filter(p => p.length > 2);
+      const modelParts = modelLower.split('-').filter(p => p.length > 2);
+      const commonParts = pageParts.filter(p => modelParts.some(m => m.includes(p) || p.includes(m)));
+      return commonParts.length >= 2;
+    });
+
+    if (matchingImages.length > 0) {
+      // Initialize images array if needed
+      if (!record.images || !Array.isArray(record.images)) {
+        record.images = [];
+      }
+
+      // Add local images (avoid duplicates)
+      const existingUrls = new Set(record.images.map(img => img.url));
+      for (const img of matchingImages) {
+        if (!existingUrls.has(img.url)) {
+          record.images.push({
+            url: img.url,
+            alt: `${record.manufacturer} ${record.model}`,
+            localPath: img.filename,
+          });
+          this.report.localImagesMapped++;
+        }
+      }
+    } else {
+      // Fallback: assign some manufacturer images if no specific match
+      // but only if product has no images at all
+      if (!record.images || record.images.length === 0) {
+        // Get unique page slugs for this manufacturer
+        const uniquePageImages = [];
+        const seenSlugs = new Set();
+        for (const img of manufacturerImages) {
+          if (!seenSlugs.has(img.pageSlug) && img.index === 0) {
+            seenSlugs.add(img.pageSlug);
+            uniquePageImages.push(img);
+            if (uniquePageImages.length >= 3) {
+              break;
+            }
+          }
+        }
+
+        if (uniquePageImages.length > 0) {
+          record.images = uniquePageImages.map(img => ({
+            url: img.url,
+            alt: `${record.manufacturer} ${record.model}`,
+            localPath: img.filename,
+          }));
+          this.report.localImagesMapped += uniquePageImages.length;
+        }
+      }
+    }
+  }
+
+  // Create URL-friendly slug from text
+  createSlug(text) {
+    if (!text) {
+      return '';
+    }
+    return text
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, '-')
+      .replace(/^-+|-+$/g, '');
   }
 
   // Extract numeric capacity in kg
