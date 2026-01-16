@@ -177,21 +177,7 @@
 </div>
 
 <% if (products.length > 100) { %>
-  <div class="alert alert-info d-flex align-items-center justify-content-between flex-wrap gap-2">
-    <div>
-      <i class="bi bi-info-circle me-2"></i>
-      <strong>Showing first 100 of <%= products.length %> results.</strong>
-      Use the filters above to narrow down your search.
-    </div>
-    <div class="d-flex gap-2">
-      <a href="/search?category=<%= filters.category || '' %>&manufacturer=<%= filters.manufacturer || '' %>" class="btn btn-sm btn-primary">
-        <i class="bi bi-search me-1"></i>Advanced Search
-      </a>
-      <a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;" class="btn btn-sm btn-outline-secondary">
-        <i class="bi bi-funnel me-1"></i>Back to Filters
-      </a>
-    </div>
-  </div>
+  <p class="text-muted">Showing first 100 of <%= products.length %> results. Use filters to narrow down.</p>
 <% } %>
 
 <%- include('footer') %>

@@ -30,7 +30,24 @@
     "personality:enrich": "node personality-web-scraper.js enrich",
     "merge": "node merge-databases.js",
     "build:full": "npm run personality:parse && npm run personality:enrich && npm run merge",
-    "prepare": "husky"
+    "prepare": "husky",
+    "backup": "node scripts/backup-database.js",
+    "backup:list": "node scripts/backup-database.js --list",
+    "pdf:analyze": "node scripts/batch-pdf-analysis.js",
+    "pdf:analyze:dry": "node scripts/batch-pdf-analysis.js --dry-run",
+    "data:merge": "node scripts/merge-manual-data.js",
+    "data:merge:dry": "node scripts/merge-manual-data.js --dry-run",
+    "quality:check": "node scripts/data-quality-gates.js",
+    "quality:alpha": "node scripts/data-quality-gates.js --gate alpha",
+    "quality:beta": "node scripts/data-quality-gates.js --gate beta",
+    "quality:release": "node scripts/data-quality-gates.js --gate release --verbose",
+    "test:e2e": "npx playwright test",
+    "test:e2e:ui": "npx playwright test --ui",
+    "test:e2e:mobile": "npx playwright test --project='Mobile Chrome' --project='Mobile Safari'",
+    "test:e2e:headed": "npx playwright test --headed",
+    "benchmark": "node scripts/performance-benchmarks.js",
+    "benchmark:verbose": "node scripts/performance-benchmarks.js --verbose",
+    "benchmark:ci": "node scripts/performance-benchmarks.js --ci --iterations=5"
   },
   "keywords": [
     "chainhoist",
@@ -79,6 +96,7 @@
     "xml2js": "^0.6.2"
   },
   "devDependencies": {
+    "@playwright/test": "^1.57.0",
     "eslint": "^8.56.0",
     "husky": "^9.1.7",
     "jest": "^29.7.0",

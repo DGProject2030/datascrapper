@@ -1,178 +1,67 @@
 <%- include('header') %>
 
-<style>
-  .hero-card {
-    background: linear-gradient(135deg, #1a365d 0%, #2d4a6f 100%);
-    color: white;
-    border: none;
-  }
-  .hero-card .card-title {
-    font-size: 2rem;
-    font-weight: 700;
-  }
-  .hero-card .lead {
-    font-size: 1.1rem;
-    opacity: 0.9;
-  }
-  .stat-card {
-    border: none;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-    transition: transform 0.2s, box-shadow 0.2s;
-  }
-  .stat-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(0,0,0,0.12);
-  }
-  .stat-card .stat-icon {
-    font-size: 2rem;
-    color: #e67e22;
-    margin-bottom: 0.5rem;
-  }
-  .stat-card .card-title {
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: #1a365d;
-  }
-
-  /* Mobile Responsive Styles */
-  @media (max-width: 767.98px) {
-    .hero-card .card-title {
-      font-size: 1.5rem;
-    }
-    .hero-card .lead {
-      font-size: 1rem;
-    }
-    .hero-card .card-body {
-      padding: 1rem;
-    }
-    .hero-card .d-flex {
-      gap: 0.75rem !important;
-    }
-    .hero-card i {
-      font-size: 2rem !important;
-    }
-    .stat-card .stat-icon {
-      font-size: 1.5rem;
-    }
-    .stat-card .card-title {
-      font-size: 1rem;
-    }
-    .stat-card .card-text {
-      font-size: 0.875rem;
-    }
-    .stat-card .list-group-item {
-      padding: 0.625rem 0.75rem;
-      font-size: 0.875rem;
-    }
-    .filter-header h4 {
-      font-size: 1.1rem;
-    }
-    .form-label {
-      font-size: 0.875rem;
-    }
-    h2 {
-      font-size: 1.5rem;
-    }
-    footer .row > div {
-      margin-bottom: 1.5rem;
-    }
-    footer .row > div:last-child {
-      margin-bottom: 0;
-    }
-  }
-
-  @media (max-width: 575.98px) {
-    .hero-card .card-title {
-      font-size: 1.25rem;
-    }
-    .hero-card .lead {
-      font-size: 0.9rem;
-    }
-    .hero-card i {
-      font-size: 1.75rem !important;
-    }
-    .stat-card .stat-icon {
-      font-size: 1.25rem;
-    }
-    .form-label i {
-      display: block;
-      margin-bottom: 0.25rem;
-    }
-    .btn-lg {
-      font-size: 1rem;
-      padding: 0.75rem 1rem;
-    }
-  }
-</style>
-
 <div class="row mb-4">
   <div class="col-md-12">
-    <div class="card hero-card">
-      <div class="card-body py-4">
-        <div class="d-flex align-items-center gap-3 mb-2">
-          <i class="bi bi-link-45deg" style="font-size: 2.5rem; color: #e67e22;"></i>
-          <h1 class="card-title mb-0">ChainhoistDB</h1>
+    <div class="card border-primary">
+      <div class="card-body">
+        <h1 class="card-title">Entertainment Industry Electric Chainhoist Database</h1>
+        <p class="card-text">This database contains information on <%= data.length %> electric chainhoists used in the entertainment industry.</p>
+
+        <div class="row mt-4">
+          <div class="col-md-4">
+            <div class="card bg-light h-100">
+              <div class="card-body">
+                <h5 class="card-title">Manufacturers</h5>
+                <p class="card-text">Featuring <%= manufacturers.length %> manufacturers</p>
+                <ul class="list-group">
+                  <% manufacturers.slice(0, 5).forEach(function(manufacturer) { %>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                      <%= manufacturer %>
+                      <span class="badge bg-primary rounded-pill"><%= data.filter(item => item.manufacturer === manufacturer).length %></span>
+                    </li>
+                  <% }); %>
+                  <% if (manufacturers.length > 5) { %>
+                    <li class="list-group-item text-center text-muted">+ <%= manufacturers.length - 5 %> more</li>
+                  <% } %>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="card bg-light h-100">
+              <div class="card-body">
+                <h5 class="card-title">Load Capacities</h5>
+                <p class="card-text">Chainhoists by load capacity</p>
+                <ul class="list-group">
+                  <% capacities.forEach(function(capacity) { %>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                      <%= capacity %>
+                      <span class="badge bg-success rounded-pill"><%= report.capacityDistribution[capacity] %></span>
+                    </li>
+                  <% }); %>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="card bg-light h-100">
+              <div class="card-body">
+                <h5 class="card-title">Classifications</h5>
+                <p class="card-text">Chainhoists by industry classification</p>
+                <ul class="list-group">
+                  <% classifications.forEach(function(classification) { %>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                      <%= classification.toUpperCase() %>
+                      <span class="badge bg-info rounded-pill"><%= report.classificationDistribution[classification] %></span>
+                    </li>
+                  <% }); %>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
-        <p class="lead mb-0">Comprehensive database of <strong><%= data.length %></strong> electric chainhoists for the entertainment industry</p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="row mb-4 g-4">
-  <div class="col-md-4">
-    <div class="card stat-card h-100">
-      <div class="card-body">
-        <i class="bi bi-building stat-icon"></i>
-        <h5 class="card-title">Manufacturers</h5>
-        <p class="card-text text-muted">Featuring <%= manufacturers.length %> manufacturers</p>
-        <ul class="list-group list-group-flush">
-          <% manufacturers.slice(0, 5).forEach(function(manufacturer) { %>
-            <a href="/search?manufacturer=<%= encodeURIComponent(manufacturer) %>" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
-              <%= manufacturer %>
-              <span class="badge bg-primary rounded-pill"><%= data.filter(item => item.manufacturer === manufacturer).length %></span>
-            </a>
-          <% }); %>
-          <% if (manufacturers.length > 5) { %>
-            <a href="/search" class="list-group-item list-group-item-action text-center text-primary fw-medium"><i class="bi bi-search me-1"></i>Browse all <%= manufacturers.length %> brands</a>
-          <% } %>
-        </ul>
-      </div>
-    </div>
-  </div>
-
-  <div class="col-md-4">
-    <div class="card stat-card h-100">
-      <div class="card-body">
-        <i class="bi bi-speedometer2 stat-icon"></i>
-        <h5 class="card-title">Load Capacities</h5>
-        <p class="card-text text-muted">Chainhoists by load capacity</p>
-        <ul class="list-group list-group-flush">
-          <% capacities.forEach(function(capacity) { %>
-            <a href="/search?capacity=<%= encodeURIComponent(capacity) %>" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
-              <%= capacity %>
-              <span class="badge bg-success rounded-pill"><%= report.capacityDistribution[capacity] %></span>
-            </a>
-          <% }); %>
-        </ul>
-      </div>
-    </div>
-  </div>
-
-  <div class="col-md-4">
-    <div class="card stat-card h-100">
-      <div class="card-body">
-        <i class="bi bi-award stat-icon"></i>
-        <h5 class="card-title">Classifications</h5>
-        <p class="card-text text-muted">Chainhoists by industry classification</p>
-        <ul class="list-group list-group-flush">
-          <% classifications.forEach(function(classification) { %>
-            <a href="/search?classification=<%= encodeURIComponent(classification) %>" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
-              <%= classification.toUpperCase() %>
-              <span class="badge bg-info rounded-pill"><%= report.classificationDistribution[classification] %></span>
-            </a>
-          <% }); %>
-        </ul>
       </div>
     </div>
   </div>
@@ -180,14 +69,14 @@
 
 <div class="row mb-4">
   <div class="col-md-12">
-    <div class="card stat-card">
-      <div class="card-header" style="background: linear-gradient(135deg, #1a365d 0%, #2d4a6f 100%); color: white;">
-        <h4 class="mb-0"><i class="bi bi-funnel me-2"></i>Quick Filter</h4>
+    <div class="card">
+      <div class="card-header bg-primary text-white">
+        <h4 class="mb-0">Filter Chainhoists</h4>
       </div>
       <div class="card-body">
         <form action="/search" method="GET" class="row g-3">
           <div class="col-md-3">
-            <label for="manufacturer" class="form-label"><i class="bi bi-building" style="color: #e67e22;"></i> Manufacturer</label>
+            <label for="manufacturer" class="form-label">Manufacturer</label>
             <select name="manufacturer" id="manufacturer" class="form-select">
               <option value="">Any Manufacturer</option>
               <% manufacturers.forEach(function(manufacturer) { %>
@@ -197,7 +86,7 @@
           </div>
 
           <div class="col-md-3">
-            <label for="capacity" class="form-label"><i class="bi bi-speedometer2" style="color: #e67e22;"></i> Load Capacity</label>
+            <label for="capacity" class="form-label">Load Capacity</label>
             <select name="capacity" id="capacity" class="form-select">
               <option value="">Any Capacity</option>
               <% capacities.forEach(function(capacity) { %>
@@ -207,7 +96,7 @@
           </div>
 
           <div class="col-md-3">
-            <label for="classification" class="form-label"><i class="bi bi-award" style="color: #e67e22;"></i> Classification</label>
+            <label for="classification" class="form-label">Classification</label>
             <select name="classification" id="classification" class="form-select">
               <option value="">Any Classification</option>
               <% classifications.forEach(function(classification) { %>
@@ -217,9 +106,7 @@
           </div>
 
           <div class="col-md-3 d-flex align-items-end">
-            <button type="submit" class="btn w-100" style="background: #e67e22; color: white;">
-              <i class="bi bi-search me-1"></i> Search
-            </button>
+            <button type="submit" class="btn btn-primary w-100">Filter Results</button>
           </div>
         </form>
       </div>
@@ -227,7 +114,7 @@
   </div>
 </div>
 
-<h2 class="mb-4"><i class="bi bi-star me-2" style="color: #e67e22;"></i>Featured Chainhoists</h2>
+<h2 class="mb-4">Featured Chainhoists</h2>
 
 <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
   <% data.slice(0, 6).forEach(function(item) { %>
@@ -268,9 +155,7 @@
 </div>
 
 <div class="d-grid gap-2 col-md-6 mx-auto mt-4">
-  <a href="/search" class="btn btn-lg" style="background: linear-gradient(135deg, #1a365d 0%, #2d4a6f 100%); color: white;">
-    <i class="bi bi-grid-3x3-gap me-2"></i>View All Chainhoists
-  </a>
+  <a href="/search" class="btn btn-primary">View All Chainhoists</a>
 </div>
 
 <%- include('footer') %>

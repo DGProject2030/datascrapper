@@ -289,6 +289,180 @@
         height: 150px;
       }
     }
+
+    /* Lightbox styles */
+    .lightbox-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      z-index: 9999;
+      display: none;
+      justify-content: center;
+      align-items: center;
+    }
+    .lightbox-overlay.show {
+      display: flex;
+    }
+    .lightbox-content {
+      max-width: 90vw;
+      max-height: 90vh;
+      position: relative;
+    }
+    .lightbox-image {
+      max-width: 100%;
+      max-height: 85vh;
+      object-fit: contain;
+    }
+    .lightbox-close {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      color: white;
+      font-size: 1.5rem;
+      cursor: pointer;
+      z-index: 10001;
+      background: rgba(0, 0, 0, 0.5);
+      border-radius: 50%;
+      width: 44px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background-color 0.2s;
+    }
+    .lightbox-close:hover,
+    .lightbox-close:focus {
+      background: rgba(0, 0, 0, 0.8);
+      outline: 2px solid white;
+    }
+    .lightbox-nav {
+      position: fixed;
+      top: 50%;
+      transform: translateY(-50%);
+      color: white;
+      font-size: 1.5rem;
+      cursor: pointer;
+      background: rgba(0, 0, 0, 0.5);
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background-color 0.2s;
+      z-index: 10001;
+    }
+    .lightbox-nav:hover,
+    .lightbox-nav:focus {
+      background: rgba(0, 0, 0, 0.8);
+      outline: 2px solid white;
+    }
+    .lightbox-prev {
+      left: 1rem;
+    }
+    .lightbox-next {
+      right: 1rem;
+    }
+    @media (max-width: 575.98px) {
+      .lightbox-nav {
+        width: 44px;
+        height: 44px;
+      }
+      .lightbox-close {
+        top: 0.5rem;
+        right: 0.5rem;
+      }
+    }
+
+    /* Lazy loading image fade-in */
+    img[loading="lazy"] {
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    img[loading="lazy"].loaded,
+    img[loading="lazy"]:not([src=""]) {
+      opacity: 1;
+    }
+
+    /* Mobile bottom navigation */
+    .bottom-nav-mobile {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: white;
+      border-top: 1px solid #dee2e6;
+      padding: 0.5rem;
+      z-index: 1030;
+      box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .bottom-nav-mobile .nav-items {
+      display: flex;
+      justify-content: space-around;
+    }
+
+    .bottom-nav-mobile .nav-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0.5rem;
+      color: #6c757d;
+      text-decoration: none;
+      font-size: 0.7rem;
+      transition: color 0.2s;
+      min-width: 60px;
+    }
+
+    .bottom-nav-mobile .nav-item.active {
+      color: var(--brand-primary);
+    }
+
+    .bottom-nav-mobile .nav-item i {
+      font-size: 1.25rem;
+      margin-bottom: 0.2rem;
+    }
+
+    /* Swipe indicator */
+    .swipe-indicator {
+      display: none;
+      position: fixed;
+      top: 50%;
+      transform: translateY(-50%);
+      padding: 1rem;
+      background: rgba(0, 0, 0, 0.6);
+      color: white;
+      border-radius: 50%;
+      z-index: 1000;
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+
+    .swipe-indicator.left { left: 0.5rem; }
+    .swipe-indicator.right { right: 0.5rem; }
+
+    .swipe-indicator.visible {
+      opacity: 1;
+    }
+
+    @media (max-width: 767.98px) {
+      .bottom-nav-mobile {
+        display: block;
+      }
+
+      /* Add padding at bottom for fixed nav */
+      body {
+        padding-bottom: 70px;
+      }
+
+      .swipe-indicator {
+        display: block;
+      }
+    }
   </style>
 </head>
 <body>
@@ -383,6 +557,45 @@
           <p class="text-muted">Series: <%= product.series %></p>
         <% } %>
 
+        <%
+          // Calculate data completeness
+          const criticalFields = ['loadCapacity', 'liftingSpeed', 'motorPower', 'classification', 'dutyCycle'];
+          const missingFields = criticalFields.filter(f => {
+            const val = product[f];
+            return !val || val === '' || val === '-' || (Array.isArray(val) && val.length === 0);
+          });
+          const completeness = product.dataCompleteness || Math.round((1 - missingFields.length / criticalFields.length) * 100);
+          const completenessClass = completeness >= 80 ? 'bg-success' : completeness >= 50 ? 'bg-warning' : 'bg-danger';
+        %>
+        <div class="mb-3">
+          <div class="d-flex align-items-center gap-2 mb-1">
+            <small class="text-muted">Data completeness:</small>
+            <div class="progress flex-grow-1" style="height: 8px; max-width: 200px;" title="<%= completeness %>% of critical specifications available">
+              <div class="progress-bar <%= completenessClass %>" role="progressbar" style="width: <%= completeness %>%;" aria-valuenow="<%= completeness %>" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+            <small class="<%= completeness >= 80 ? 'text-success' : completeness >= 50 ? 'text-warning' : 'text-danger' %>"><%= completeness %>%</small>
+          </div>
+          <% if (missingFields.length > 0) { %>
+            <small class="text-muted">
+              <i class="bi bi-info-circle"></i> Missing: <%= missingFields.map(f => {
+                const labels = {
+                  loadCapacity: 'Load Capacity',
+                  liftingSpeed: 'Lifting Speed',
+                  motorPower: 'Motor Power',
+                  classification: 'Classification',
+                  dutyCycle: 'Duty Cycle'
+                };
+                return labels[f] || f;
+              }).join(', ') %>
+              <% if (product.url) { %>
+                <a href="<%= product.url %>" target="_blank" class="ms-2 text-decoration-none">
+                  <i class="bi bi-box-arrow-up-right"></i> Check manufacturer site
+                </a>
+              <% } %>
+            </small>
+          <% } %>
+        </div>
+
         <% if (product.classification && Array.isArray(product.classification)) { %>
           <div class="mb-3">
             <% product.classification.forEach(function(cls) { %>
@@ -396,10 +609,20 @@
           <div class="col-12">
             <% if (product.images && product.images.length > 0) { %>
               <div class="text-center mb-3">
-                <img id="mainImage" src="<%= product.images[0].url %>"
+                <img id="mainImage"
+                     src="<%= product.images[0].url %>"
                      alt="<%= product.images[0].alt || product.manufacturer + ' ' + product.model %>"
                      class="product-main-image"
+                     loading="lazy"
+                     style="cursor: zoom-in;"
+                     onclick="openLightbox(0)"
+                     onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openLightbox(0);}"
+                     tabindex="0"
+                     role="button"
+                     aria-label="Click to view full size image"
+                     data-image-index="0"
                      onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'no-image-placeholder\'><i class=\'bi bi-exclamation-triangle\' style=\'font-size: 2rem; opacity: 0.5;\'></i><p class=\'text-muted mt-2 mb-0 small\'>Image failed to load</p></div>';">
+                <small class="text-muted d-block mt-1"><i class="bi bi-zoom-in"></i> Click image to enlarge</small>
               </div>
               <% if (product.images.length > 1) { %>
               <div class="product-image-gallery justify-content-center">
@@ -407,10 +630,12 @@
                   <img src="<%= img.url %>"
                        alt="<%= img.alt || 'Product image ' + (index + 1) %>"
                        class="product-thumbnail <%= index === 0 ? 'active' : '' %>"
+                       loading="lazy"
                        tabindex="0"
                        role="button"
-                       onclick="changeMainImage(this, '<%= img.url.replace(/'/g, "\\'") %>')"
-                       onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();changeMainImage(this, '<%= img.url.replace(/'/g, "\\'") %>');}"
+                       data-image-index="<%= index %>"
+                       onclick="changeMainImage(this, '<%= img.url.replace(/'/g, "\\'") %>', <%= index %>)"
+                       onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();changeMainImage(this, '<%= img.url.replace(/'/g, "\\'") %>', <%= index %>);}"
                        onerror="this.style.display='none'">
                 <% }); %>
               </div>
@@ -423,6 +648,31 @@
             <% } %>
           </div>
         </div>
+
+        <!-- Lightbox Overlay -->
+        <% if (product.images && product.images.length > 0) { %>
+        <div class="lightbox-overlay" id="lightboxOverlay" role="dialog" aria-modal="true" aria-label="Image lightbox">
+          <div class="lightbox-close" onclick="closeLightbox()" tabindex="0" role="button" aria-label="Close lightbox" onkeydown="if(event.key==='Enter'||event.key===' '){closeLightbox();}">
+            <i class="bi bi-x-lg"></i>
+          </div>
+          <% if (product.images.length > 1) { %>
+          <div class="lightbox-nav lightbox-prev" onclick="navigateLightbox(-1)" tabindex="0" role="button" aria-label="Previous image" onkeydown="if(event.key==='Enter'||event.key===' '){navigateLightbox(-1);}">
+            <i class="bi bi-chevron-left"></i>
+          </div>
+          <% } %>
+          <div class="lightbox-content">
+            <img id="lightboxImage" class="lightbox-image" src="" alt="Full size product image" loading="lazy">
+            <div class="text-center mt-2 text-white">
+              <span id="lightboxCounter"></span>
+            </div>
+          </div>
+          <% if (product.images.length > 1) { %>
+          <div class="lightbox-nav lightbox-next" onclick="navigateLightbox(1)" tabindex="0" role="button" aria-label="Next image" onkeydown="if(event.key==='Enter'||event.key===' '){navigateLightbox(1);}">
+            <i class="bi bi-chevron-right"></i>
+          </div>
+          <% } %>
+        </div>
+        <% } %>
 
         <!-- Product Videos Section -->
         <% if (product.videos && product.videos.length > 0) { %>
@@ -905,12 +1155,61 @@
     </div>
   </footer>
 
+  <!-- Mobile Bottom Navigation -->
+  <nav class="bottom-nav-mobile" aria-label="Mobile navigation">
+    <div class="nav-items">
+      <a href="/" class="nav-item">
+        <i class="bi bi-house-door"></i>
+        <span>Home</span>
+      </a>
+      <a href="/search" class="nav-item">
+        <i class="bi bi-search"></i>
+        <span>Search</span>
+      </a>
+      <a href="/stats" class="nav-item">
+        <i class="bi bi-bar-chart-line"></i>
+        <span>Stats</span>
+      </a>
+      <a href="/downloads" class="nav-item">
+        <i class="bi bi-download"></i>
+        <span>Downloads</span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- Swipe indicators for product navigation -->
+  <% if (prevProduct) { %>
+  <div class="swipe-indicator left" id="swipeLeft">
+    <i class="bi bi-chevron-left"></i>
+  </div>
+  <% } %>
+  <% if (nextProduct) { %>
+  <div class="swipe-indicator right" id="swipeRight">
+    <i class="bi bi-chevron-right"></i>
+  </div>
+  <% } %>
+
+  <%- include('components/toast') %>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script>
-    function changeMainImage(thumbnail, imageUrl) {
+    // Image data for lightbox
+    const productImages = [
+      <% if (product.images && product.images.length > 0) { %>
+        <% product.images.forEach(function(img, index) { %>
+          { url: '<%= img.url.replace(/'/g, "\\'") %>', alt: '<%= (img.alt || 'Product image ' + (index + 1)).replace(/'/g, "\\'") %>' }<%= index < product.images.length - 1 ? ',' : '' %>
+        <% }); %>
+      <% } %>
+    ];
+    let currentImageIndex = 0;
+
+    function changeMainImage(thumbnail, imageUrl, index) {
       // Update main image
-      document.getElementById('mainImage').src = imageUrl;
+      const mainImage = document.getElementById('mainImage');
+      mainImage.src = imageUrl;
+      mainImage.dataset.imageIndex = index;
+      currentImageIndex = index;
 
       // Update active thumbnail
       document.querySelectorAll('.product-thumbnail').forEach(function(thumb) {
@@ -918,6 +1217,79 @@
       });
       thumbnail.classList.add('active');
     }
+
+    // Lightbox functionality
+    function openLightbox(index) {
+      if (productImages.length === 0) return;
+
+      currentImageIndex = index || parseInt(document.getElementById('mainImage').dataset.imageIndex) || 0;
+      const overlay = document.getElementById('lightboxOverlay');
+      const lightboxImg = document.getElementById('lightboxImage');
+      const counter = document.getElementById('lightboxCounter');
+
+      if (!overlay || !lightboxImg) return;
+
+      lightboxImg.src = productImages[currentImageIndex].url;
+      lightboxImg.alt = productImages[currentImageIndex].alt;
+      if (counter) {
+        counter.textContent = `${currentImageIndex + 1} / ${productImages.length}`;
+      }
+
+      overlay.classList.add('show');
+      document.body.style.overflow = 'hidden';
+
+      // Focus trap
+      overlay.focus();
+    }
+
+    function closeLightbox() {
+      const overlay = document.getElementById('lightboxOverlay');
+      if (overlay) {
+        overlay.classList.remove('show');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function navigateLightbox(direction) {
+      if (productImages.length <= 1) return;
+
+      currentImageIndex = (currentImageIndex + direction + productImages.length) % productImages.length;
+      const lightboxImg = document.getElementById('lightboxImage');
+      const counter = document.getElementById('lightboxCounter');
+
+      if (lightboxImg) {
+        lightboxImg.src = productImages[currentImageIndex].url;
+        lightboxImg.alt = productImages[currentImageIndex].alt;
+      }
+      if (counter) {
+        counter.textContent = `${currentImageIndex + 1} / ${productImages.length}`;
+      }
+    }
+
+    // Keyboard navigation for lightbox
+    document.addEventListener('keydown', function(e) {
+      const overlay = document.getElementById('lightboxOverlay');
+      if (!overlay || !overlay.classList.contains('show')) return;
+
+      switch(e.key) {
+        case 'Escape':
+          closeLightbox();
+          break;
+        case 'ArrowLeft':
+          navigateLightbox(-1);
+          break;
+        case 'ArrowRight':
+          navigateLightbox(1);
+          break;
+      }
+    });
+
+    // Close lightbox when clicking overlay background
+    document.getElementById('lightboxOverlay')?.addEventListener('click', function(e) {
+      if (e.target === this) {
+        closeLightbox();
+      }
+    });
 
     // Loading overlay
     const loadingOverlay = document.getElementById('loadingOverlay');
@@ -938,6 +1310,102 @@
 
     // Show loading on "Back to search results" click
     document.querySelector('a[href^="/search?"]')?.addEventListener('click', showLoading);
+
+    // Lazy loading image handler - add loaded class when image loads
+    document.querySelectorAll('img[loading="lazy"]').forEach(img => {
+      if (img.complete) {
+        img.classList.add('loaded');
+      } else {
+        img.addEventListener('load', function() {
+          this.classList.add('loaded');
+        });
+      }
+    });
+
+    // Swipe gesture navigation for mobile
+    (function() {
+      const prevUrl = '<%= prevProduct ? "/product/" + prevProduct.id + (searchContext ? "?" + searchContext : "") : "" %>';
+      const nextUrl = '<%= nextProduct ? "/product/" + nextProduct.id + (searchContext ? "?" + searchContext : "") : "" %>';
+
+      if (!prevUrl && !nextUrl) return;
+
+      let touchStartX = 0;
+      let touchEndX = 0;
+      let touchStartY = 0;
+      let touchEndY = 0;
+      const minSwipeDistance = 100;
+      const maxVerticalDistance = 75;
+
+      const swipeLeft = document.getElementById('swipeLeft');
+      const swipeRight = document.getElementById('swipeRight');
+
+      function handleSwipe() {
+        const deltaX = touchEndX - touchStartX;
+        const deltaY = Math.abs(touchEndY - touchStartY);
+
+        // Ignore if vertical swipe is too large (user is scrolling)
+        if (deltaY > maxVerticalDistance) return;
+
+        if (deltaX > minSwipeDistance && prevUrl) {
+          // Swipe right - go to previous
+          showLoading();
+          window.location.href = prevUrl;
+        } else if (deltaX < -minSwipeDistance && nextUrl) {
+          // Swipe left - go to next
+          showLoading();
+          window.location.href = nextUrl;
+        }
+      }
+
+      function showSwipeIndicator(direction, progress) {
+        const indicator = direction === 'left' ? swipeRight : swipeLeft;
+        if (!indicator) return;
+
+        if (progress > 0.3) {
+          indicator.classList.add('visible');
+        } else {
+          indicator.classList.remove('visible');
+        }
+      }
+
+      document.addEventListener('touchstart', function(e) {
+        // Don't trigger on lightbox or other interactive elements
+        if (e.target.closest('.lightbox-overlay, .product-thumbnail, .product-image-gallery, button, a, input, select')) {
+          return;
+        }
+        touchStartX = e.changedTouches[0].screenX;
+        touchStartY = e.changedTouches[0].screenY;
+      }, { passive: true });
+
+      document.addEventListener('touchmove', function(e) {
+        if (e.target.closest('.lightbox-overlay, .product-thumbnail, .product-image-gallery, button, a, input, select')) {
+          return;
+        }
+        const currentX = e.changedTouches[0].screenX;
+        const deltaX = currentX - touchStartX;
+        const progress = Math.abs(deltaX) / minSwipeDistance;
+
+        if (deltaX > 0 && prevUrl) {
+          showSwipeIndicator('right', progress);
+        } else if (deltaX < 0 && nextUrl) {
+          showSwipeIndicator('left', progress);
+        }
+      }, { passive: true });
+
+      document.addEventListener('touchend', function(e) {
+        if (e.target.closest('.lightbox-overlay, .product-thumbnail, .product-image-gallery, button, a, input, select')) {
+          return;
+        }
+        touchEndX = e.changedTouches[0].screenX;
+        touchEndY = e.changedTouches[0].screenY;
+
+        // Hide indicators
+        if (swipeLeft) swipeLeft.classList.remove('visible');
+        if (swipeRight) swipeRight.classList.remove('visible');
+
+        handleSwipe();
+      }, { passive: true });
+    })();
   </script>
 </body>
 </html>

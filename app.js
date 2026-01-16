@@ -46,11 +46,17 @@ const cache = {
     // O(1) lookup indexes
     byId: new Map(), // Map of id -> item for O(1) product lookups
     byManufacturer: new Map(), // Map of manufacturer -> [items] for similar products
+    byClassification: new Map(), // Map of classification -> [items] for filtered lookups
+    // Products filtered by data quality
+    hasImages: [], // Products with at least 1 image
+    hasCompleteSpecs: [], // Products with all critical fields
+    productCompleteness: new Map(), // Map of id -> completeness score (0-100)
     // Cached aggregation lists (avoid recomputing on every request)
     manufacturerList: [], // Sorted unique manufacturer names
     dutyCycleList: [], // Sorted unique duty cycles
     categoryList: [], // Sorted unique categories
     speedTypeList: [], // Sorted unique speed types
+    classificationList: [], // Sorted unique classifications
   }
 };
 
@@ -104,10 +110,53 @@ function matchesCapacityBucket(item, capacityFilter) {
   }
 }
 
+// Calculate product data completeness score (0-100)
+function calculateProductCompleteness(item) {
+  const criticalFields = ['loadCapacity', 'liftingSpeed', 'motorPower', 'classification', 'dutyCycle'];
+  const secondaryFields = ['voltageOptions', 'weight', 'protectionClass', 'series'];
+
+  let criticalScore = 0;
+  let secondaryScore = 0;
+
+  // Check critical fields (weighted 70%)
+  for (const field of criticalFields) {
+    const value = item[field];
+    if (value && value !== '' && value !== '-' &&
+        !(Array.isArray(value) && value.length === 0)) {
+      criticalScore++;
+    }
+  }
+
+  // Check secondary fields (weighted 30%)
+  for (const field of secondaryFields) {
+    const value = item[field];
+    if (value && value !== '' && value !== '-' &&
+        !(Array.isArray(value) && value.length === 0)) {
+      secondaryScore++;
+    }
+  }
+
+  // Calculate weighted score
+  const criticalPct = criticalScore / criticalFields.length;
+  const secondaryPct = secondaryScore / secondaryFields.length;
+
+  return Math.round((criticalPct * 70) + (secondaryPct * 30));
+}
+
+// Check if product has all critical specs
+function hasCompleteSpecs(item) {
+  const requiredFields = ['loadCapacity', 'liftingSpeed', 'motorPower'];
+  return requiredFields.every(field => {
+    const value = item[field];
+    return value && value !== '' && value !== '-';
+  });
+}
+
 // Build indexes from data (O(n) single pass)
 function buildIndexes(data) {
   const manufacturerMap = new Map();
   const classificationMap = new Map();
+  const classificationSet = new Set();
   const dutyCycleSet = new Set();
   const categorySet = new Set();
   const speedTypeSet = new Set();
@@ -116,13 +165,17 @@ function buildIndexes(data) {
   let hasLoadCapacity = 0;
   let hasLiftingSpeed = 0;
   let hasMotorPower = 0;
-  let hasClassification = 0;
+  let hasClassificationCount = 0;
 
   // Clear all caches
   cache.indexes.parsedCapacities.clear();
   cache.indexes.parsedSpeeds.clear();
   cache.indexes.byId.clear();
   cache.indexes.byManufacturer.clear();
+  cache.indexes.byClassification.clear();
+  cache.indexes.productCompleteness.clear();
+  cache.indexes.hasImages = [];
+  cache.indexes.hasCompleteSpecs = [];
 
   // Single pass through data
   data.forEach(item => {
@@ -145,11 +198,19 @@ function buildIndexes(data) {
       mfrStats.models.add(item.model);
     }
 
-    // Classification stats
+    // Classification stats and index
     if (item.classification && Array.isArray(item.classification)) {
-      hasClassification++;
+      hasClassificationCount++;
       item.classification.forEach(cls => {
+        const clsLower = cls.toLowerCase();
         classificationMap.set(cls, (classificationMap.get(cls) || 0) + 1);
+        classificationSet.add(cls);
+
+        // Build byClassification index
+        if (!cache.indexes.byClassification.has(clsLower)) {
+          cache.indexes.byClassification.set(clsLower, []);
+        }
+        cache.indexes.byClassification.get(clsLower).push(item);
       });
     }
 
@@ -186,6 +247,20 @@ function buildIndexes(data) {
     if (item.motorPower) {
       hasMotorPower++;
     }
+
+    // Calculate and cache product completeness
+    const completeness = calculateProductCompleteness(item);
+    cache.indexes.productCompleteness.set(item.id, completeness);
+
+    // Track products with images
+    if (item.images && Array.isArray(item.images) && item.images.length > 0) {
+      cache.indexes.hasImages.push(item);
+    }
+
+    // Track products with complete specs
+    if (hasCompleteSpecs(item)) {
+      cache.indexes.hasCompleteSpecs.push(item);
+    }
   });
 
   // Convert maps to sorted arrays
@@ -206,7 +281,9 @@ function buildIndexes(data) {
     loadCapacity: data.length > 0 ? hasLoadCapacity / data.length : 0,
     liftingSpeed: data.length > 0 ? hasLiftingSpeed / data.length : 0,
     motorPower: data.length > 0 ? hasMotorPower / data.length : 0,
-    classification: data.length > 0 ? hasClassification / data.length : 0
+    classification: data.length > 0 ? hasClassificationCount / data.length : 0,
+    hasImages: data.length > 0 ? cache.indexes.hasImages.length / data.length : 0,
+    hasCompleteSpecs: data.length > 0 ? cache.indexes.hasCompleteSpecs.length / data.length : 0
   };
 
   // Cache aggregation lists (avoid recomputing on every request)
@@ -214,8 +291,10 @@ function buildIndexes(data) {
   cache.indexes.dutyCycleList = Array.from(dutyCycleSet).sort();
   cache.indexes.categoryList = Array.from(categorySet).sort();
   cache.indexes.speedTypeList = Array.from(speedTypeSet).sort();
+  cache.indexes.classificationList = Array.from(classificationSet).sort();
 
   console.log(`[Cache] Built indexes: ${manufacturerMap.size} manufacturers, ${classificationMap.size} classifications, ${cache.indexes.byId.size} products indexed`);
+  console.log(`[Cache] Products with images: ${cache.indexes.hasImages.length}, with complete specs: ${cache.indexes.hasCompleteSpecs.length}`);
 }
 
 // Load data helper with caching
@@ -625,6 +704,104 @@ app.post('/api/search', (req, res) => {
   }
 });
 
+// GET /api/suggestions - Search autocomplete suggestions
+app.get('/api/suggestions', (req, res) => {
+  try {
+    const query = (req.query.q || '').toLowerCase().trim();
+    const limit = Math.min(parseInt(req.query.limit) || 10, 20);
+
+    if (!query || query.length < 2) {
+      return res.json({ suggestions: [] });
+    }
+
+    loadData(); // Ensure data and indexes are loaded
+
+    const suggestions = [];
+    const seen = new Set();
+
+    // Add matching manufacturers
+    for (const mfr of cache.indexes.manufacturerList) {
+      if (mfr.toLowerCase().includes(query)) {
+        const key = `mfr:${mfr}`;
+        if (!seen.has(key)) {
+          seen.add(key);
+          suggestions.push({
+            type: 'manufacturer',
+            value: mfr,
+            label: mfr,
+            count: cache.indexes.byManufacturer.get(mfr)?.length || 0
+          });
+        }
+      }
+    }
+
+    // Add matching classifications
+    for (const cls of cache.indexes.classificationList) {
+      if (cls.toLowerCase().includes(query)) {
+        const key = `cls:${cls}`;
+        if (!seen.has(key)) {
+          seen.add(key);
+          suggestions.push({
+            type: 'classification',
+            value: cls,
+            label: cls.toUpperCase(),
+            count: cache.indexes.byClassification.get(cls.toLowerCase())?.length || 0
+          });
+        }
+      }
+    }
+
+    // Add matching models (limit to prevent too many results)
+    let modelCount = 0;
+    for (const [id, item] of cache.indexes.byId) {
+      if (modelCount >= 5) {
+        break;
+      }
+
+      const modelMatch = item.model?.toLowerCase().includes(query);
+      const seriesMatch = item.series?.toLowerCase().includes(query);
+
+      if (modelMatch || seriesMatch) {
+        const key = `model:${item.manufacturer}:${item.model}`;
+        if (!seen.has(key)) {
+          seen.add(key);
+          suggestions.push({
+            type: 'product',
+            value: item.id,
+            label: `${item.manufacturer} ${item.model}`,
+            manufacturer: item.manufacturer,
+            model: item.model
+          });
+          modelCount++;
+        }
+      }
+    }
+
+    // Sort: manufacturers first, then classifications, then products
+    const typeOrder = { manufacturer: 0, classification: 1, product: 2 };
+    suggestions.sort((a, b) => {
+      if (typeOrder[a.type] !== typeOrder[b.type]) {
+        return typeOrder[a.type] - typeOrder[b.type];
+      }
+      // Within same type, sort by count (descending) or alphabetically
+      if (a.count !== undefined && b.count !== undefined) {
+        return b.count - a.count;
+      }
+      return a.label.localeCompare(b.label);
+    });
+
+    res.json({
+      query,
+      suggestions: suggestions.slice(0, limit)
+    });
+  } catch (error) {
+    res.status(500).json({
+      suggestions: [],
+      error: error.message
+    });
+  }
+});
+
 // GET /api/count - Get count of results for given filters (for live preview)
 app.get('/api/count', (req, res) => {
   try {
@@ -893,6 +1070,21 @@ app.get('/search', (req, res) => {
 
   if (req.query.dutyCycle) {
     results = results.filter(item => item.dutyCycle === req.query.dutyCycle);
+  }
+
+  // Data quality filter
+  if (req.query.dataQuality === 'complete') {
+    results = results.filter(item => {
+      const requiredFields = ['loadCapacity', 'liftingSpeed', 'motorPower'];
+      return requiredFields.every(field => {
+        const value = item[field];
+        return value && value !== '' && value !== '-';
+      });
+    });
+  } else if (req.query.dataQuality === 'hasImages') {
+    results = results.filter(item =>
+      item.images && Array.isArray(item.images) && item.images.length > 0
+    );
   }
 
   // Use cached aggregation lists instead of recomputing on every request

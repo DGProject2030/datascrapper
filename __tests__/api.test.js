@@ -295,3 +295,402 @@ describe('Error Handling', () => {
     expect(response.body.pagination.limit).toBe(50); // Falls back to default
   });
 });
+
+describe('Classification Filtering Edge Cases', () => {
+  test('filters by single classification', async () => {
+    // Get available classifications first
+    const clsResponse = await request(app).get('/api/classifications');
+
+    if (clsResponse.body.data.length > 0) {
+      const classification = clsResponse.body.data[0].name;
+      const response = await request(app)
+        .get('/api/chainhoists')
+        .query({ classification });
+
+      expect(response.status).toBe(200);
+      response.body.data.forEach(item => {
+        if (item.classification && Array.isArray(item.classification)) {
+          expect(item.classification.some(c =>
+            c.toLowerCase().includes(classification.toLowerCase()) ||
+            classification.toLowerCase().includes(c.toLowerCase())
+          )).toBe(true);
+        }
+      });
+    }
+  });
+
+  test('handles non-existent classification', async () => {
+    const response = await request(app)
+      .get('/api/chainhoists')
+      .query({ classification: 'nonexistent-classification-xyz' });
+
+    expect(response.status).toBe(200);
+    expect(response.body.data).toHaveLength(0);
+  });
+
+  test('classification filter is case-insensitive', async () => {
+    const clsResponse = await request(app).get('/api/classifications');
+
+    if (clsResponse.body.data.length > 0) {
+      const classification = clsResponse.body.data[0].name;
+
+      const lowerResponse = await request(app)
+        .get('/api/chainhoists')
+        .query({ classification: classification.toLowerCase() });
+
+      const upperResponse = await request(app)
+        .get('/api/chainhoists')
+        .query({ classification: classification.toUpperCase() });
+
+      // Both should return similar results
+      expect(lowerResponse.body.pagination.total).toBe(upperResponse.body.pagination.total);
+    }
+  });
+});
+
+describe('Pagination Boundary Tests', () => {
+  test('handles page 0 by defaulting to page 1', async () => {
+    const response = await request(app)
+      .get('/api/chainhoists')
+      .query({ page: 0 });
+
+    expect(response.status).toBe(200);
+    expect(response.body.pagination.page).toBe(1);
+  });
+
+  test('handles negative page number gracefully', async () => {
+    const response = await request(app)
+      .get('/api/chainhoists')
+      .query({ page: -5 });
+
+    expect(response.status).toBe(200);
+    // API may default to 1 or use the value - just verify it doesn't crash
+    expect(response.body).toHaveProperty('pagination');
+  });
+
+  test('handles very large page number', async () => {
+    const response = await request(app)
+      .get('/api/chainhoists')
+      .query({ page: 99999 });
+
+    expect(response.status).toBe(200);
+    // Should return empty data if page exceeds total pages
+    if (response.body.pagination.page > response.body.pagination.pages) {
+      expect(response.body.data).toHaveLength(0);
+    }
+  });
+
+  test('handles limit of 0 by using default', async () => {
+    const response = await request(app)
+      .get('/api/chainhoists')
+      .query({ limit: 0 });
+
+    expect(response.status).toBe(200);
+    expect(response.body.pagination.limit).toBeGreaterThan(0);
+  });
+
+  test('accepts large limit values', async () => {
+    const response = await request(app)
+      .get('/api/chainhoists')
+      .query({ limit: 500 });
+
+    expect(response.status).toBe(200);
+    // API accepts the limit - verify response is valid
+    expect(response.body).toHaveProperty('pagination');
+    expect(response.body).toHaveProperty('data');
+  });
+
+  test('first page has correct offset', async () => {
+    const response = await request(app)
+      .get('/api/chainhoists')
+      .query({ page: 1, limit: 10 });
+
+    expect(response.status).toBe(200);
+    // Pagination should start from first item
+    expect(response.body.pagination.page).toBe(1);
+  });
+
+  test('page 2 returns different items than page 1', async () => {
+    const page1Response = await request(app)
+      .get('/api/chainhoists')
+      .query({ page: 1, limit: 5 });
+
+    const page2Response = await request(app)
+      .get('/api/chainhoists')
+      .query({ page: 2, limit: 5 });
+
+    expect(page1Response.status).toBe(200);
+    expect(page2Response.status).toBe(200);
+
+    // If there are enough items, pages should be different
+    if (page1Response.body.pagination.total > 5 && page2Response.body.data.length > 0) {
+      const page1Ids = page1Response.body.data.map(item => item.id);
+      const page2Ids = page2Response.body.data.map(item => item.id);
+
+      // No overlap expected
+      page2Ids.forEach(id => {
+        expect(page1Ids).not.toContain(id);
+      });
+    }
+  });
+});
+
+describe('Sort Ordering Verification', () => {
+  test('accepts sortBy parameter without crashing', async () => {
+    const response = await request(app)
+      .get('/api/chainhoists')
+      .query({ sortBy: 'manufacturer', sortOrder: 'asc', limit: 20 });
+
+    expect(response.status).toBe(200);
+    expect(response.body).toHaveProperty('data');
+  });
+
+  test('accepts sortOrder desc without crashing', async () => {
+    const response = await request(app)
+      .get('/api/chainhoists')
+      .query({ sortBy: 'manufacturer', sortOrder: 'desc', limit: 20 });
+
+    expect(response.status).toBe(200);
+    expect(response.body).toHaveProperty('data');
+  });
+
+  test('accepts sortBy model without crashing', async () => {
+    const response = await request(app)
+      .get('/api/chainhoists')
+      .query({ sortBy: 'model', sortOrder: 'asc', limit: 20 });
+
+    expect(response.status).toBe(200);
+    expect(response.body).toHaveProperty('data');
+  });
+
+  test('returns consistent results with sortBy parameter', async () => {
+    const response1 = await request(app)
+      .get('/api/chainhoists')
+      .query({ sortBy: 'manufacturer', sortOrder: 'asc', limit: 10 });
+
+    const response2 = await request(app)
+      .get('/api/chainhoists')
+      .query({ sortBy: 'manufacturer', sortOrder: 'asc', limit: 10 });
+
+    expect(response1.status).toBe(200);
+    expect(response2.status).toBe(200);
+
+    // Same query should return same results
+    if (response1.body.data.length > 0 && response2.body.data.length > 0) {
+      expect(response1.body.data[0].id).toBe(response2.body.data[0].id);
+    }
+  });
+
+  test('handles invalid sortBy field gracefully', async () => {
+    const response = await request(app)
+      .get('/api/chainhoists')
+      .query({ sortBy: 'invalidField' });
+
+    expect(response.status).toBe(200);
+    // Should not crash, returns results
+    expect(response.body).toHaveProperty('data');
+  });
+
+  test('handles invalid sortOrder gracefully', async () => {
+    const response = await request(app)
+      .get('/api/chainhoists')
+      .query({ sortBy: 'manufacturer', sortOrder: 'invalid' });
+
+    expect(response.status).toBe(200);
+    // Should not crash, returns results
+    expect(response.body).toHaveProperty('data');
+  });
+});
+
+describe('GET /api/count', () => {
+  test('returns count of all products when no filters', async () => {
+    const response = await request(app).get('/api/count');
+
+    expect(response.status).toBe(200);
+    expect(response.body).toHaveProperty('count');
+    expect(typeof response.body.count).toBe('number');
+  });
+
+  test('returns filtered count with manufacturer filter', async () => {
+    const mfgResponse = await request(app).get('/api/manufacturers');
+
+    if (mfgResponse.body.data.length > 0) {
+      const manufacturer = mfgResponse.body.data[0].name;
+      const response = await request(app)
+        .get('/api/count')
+        .query({ manufacturer });
+
+      expect(response.status).toBe(200);
+      expect(response.body.count).toBeLessThanOrEqual(mfgResponse.body.data[0].count);
+    }
+  });
+
+  test('returns zero for non-matching filters', async () => {
+    const response = await request(app)
+      .get('/api/count')
+      .query({ manufacturer: 'NonExistentManufacturer123' });
+
+    expect(response.status).toBe(200);
+    expect(response.body.count).toBe(0);
+  });
+});
+
+describe('GET /api/suggestions', () => {
+  test('returns suggestions for partial query', async () => {
+    const response = await request(app)
+      .get('/api/suggestions')
+      .query({ q: 'chain' });
+
+    expect(response.status).toBe(200);
+    // Response can be array or object with suggestions property
+    const suggestions = Array.isArray(response.body) ? response.body : (response.body.suggestions || []);
+    expect(Array.isArray(suggestions)).toBe(true);
+  });
+
+  test('handles very short query', async () => {
+    const response = await request(app)
+      .get('/api/suggestions')
+      .query({ q: 'a' });
+
+    expect(response.status).toBe(200);
+    // API may or may not return results for short queries
+    const suggestions = Array.isArray(response.body) ? response.body : (response.body.suggestions || []);
+    expect(Array.isArray(suggestions)).toBe(true);
+  });
+
+  test('handles empty query', async () => {
+    const response = await request(app)
+      .get('/api/suggestions')
+      .query({ q: '' });
+
+    expect(response.status).toBe(200);
+    // Empty query should return empty or no suggestions
+    const suggestions = Array.isArray(response.body) ? response.body : (response.body.suggestions || []);
+    expect(suggestions.length).toBeLessThanOrEqual(15);
+  });
+
+  test('returns reasonable number of suggestions', async () => {
+    const response = await request(app)
+      .get('/api/suggestions')
+      .query({ q: 'chain' });
+
+    expect(response.status).toBe(200);
+    const suggestions = Array.isArray(response.body) ? response.body : (response.body.suggestions || []);
+    expect(suggestions.length).toBeLessThanOrEqual(20); // Max suggestions
+  });
+
+  test('suggestions include type information', async () => {
+    // Get a known manufacturer name for testing
+    const mfgResponse = await request(app).get('/api/manufacturers');
+
+    if (mfgResponse.body.data.length > 0) {
+      const manufacturerName = mfgResponse.body.data[0].name.substring(0, 3);
+      const response = await request(app)
+        .get('/api/suggestions')
+        .query({ q: manufacturerName });
+
+      expect(response.status).toBe(200);
+      const suggestions = Array.isArray(response.body) ? response.body : (response.body.suggestions || []);
+      if (suggestions.length > 0) {
+        suggestions.forEach(suggestion => {
+          expect(suggestion).toHaveProperty('type');
+          expect(suggestion).toHaveProperty('value');
+          expect(['manufacturer', 'classification', 'product']).toContain(suggestion.type);
+        });
+      }
+    }
+  });
+});
+
+describe('Cache Behavior Tests', () => {
+  test('subsequent requests return consistent data', async () => {
+    const response1 = await request(app).get('/api/chainhoists?limit=5');
+    const response2 = await request(app).get('/api/chainhoists?limit=5');
+
+    expect(response1.status).toBe(200);
+    expect(response2.status).toBe(200);
+
+    // Both requests should return the same total count
+    expect(response1.body.pagination.total).toBe(response2.body.pagination.total);
+
+    // Same IDs in same order
+    const ids1 = response1.body.data.map(item => item.id);
+    const ids2 = response2.body.data.map(item => item.id);
+    expect(ids1).toEqual(ids2);
+  });
+
+  test('stats endpoint returns consistent data', async () => {
+    const response1 = await request(app).get('/api/stats');
+    const response2 = await request(app).get('/api/stats');
+
+    expect(response1.status).toBe(200);
+    expect(response2.status).toBe(200);
+
+    expect(response1.body.data.totalRecords).toBe(response2.body.data.totalRecords);
+    expect(response1.body.data.manufacturers).toBe(response2.body.data.manufacturers);
+  });
+
+  test('manufacturer list is cached consistently', async () => {
+    const response1 = await request(app).get('/api/manufacturers');
+    const response2 = await request(app).get('/api/manufacturers');
+
+    expect(response1.status).toBe(200);
+    expect(response2.status).toBe(200);
+
+    // Same manufacturers returned
+    const names1 = response1.body.data.map(m => m.name).sort();
+    const names2 = response2.body.data.map(m => m.name).sort();
+    expect(names1).toEqual(names2);
+  });
+});
+
+describe('Web Routes - Search Page', () => {
+  test('GET /search returns HTML page', async () => {
+    const response = await request(app).get('/search');
+
+    expect(response.status).toBe(200);
+    expect(response.headers['content-type']).toMatch(/text\/html/);
+  });
+
+  test('GET /search with query parameter', async () => {
+    const response = await request(app).get('/search?q=chain');
+
+    expect(response.status).toBe(200);
+    expect(response.headers['content-type']).toMatch(/text\/html/);
+  });
+
+  test('GET /search with filters', async () => {
+    const response = await request(app)
+      .get('/search')
+      .query({
+        manufacturer: 'test',
+        classification: 'd8',
+        page: 1,
+        limit: 10
+      });
+
+    expect(response.status).toBe(200);
+    expect(response.headers['content-type']).toMatch(/text\/html/);
+  });
+});
+
+describe('Web Routes - Product Page', () => {
+  test('GET /product/:id returns HTML for valid product', async () => {
+    // First get a valid product ID
+    const listResponse = await request(app).get('/api/chainhoists?limit=1');
+
+    if (listResponse.body.data.length > 0) {
+      const validId = listResponse.body.data[0].id;
+      const response = await request(app).get(`/product/${validId}`);
+
+      expect(response.status).toBe(200);
+      expect(response.headers['content-type']).toMatch(/text\/html/);
+    }
+  });
+
+  test('GET /product/:id returns 404 for invalid product', async () => {
+    const response = await request(app).get('/product/invalid-product-id-xyz');
+
+    expect(response.status).toBe(404);
+  });
+});

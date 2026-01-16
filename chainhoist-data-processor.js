@@ -213,10 +213,123 @@ class ChainhoistDataProcessor {
     // Standardize common fields based on manufacturer patterns
     this.applyManufacturerSpecificProcessing(processed);
 
+    // Add computed fields
+    processed.capacityKg = this.extractCapacityKg(processed.loadCapacity);
+    processed.speedMMin = this.extractSpeedMMin(processed.liftingSpeed);
+    processed.dataCompleteness = this.calculateDataCompleteness(processed);
+    processed.hasCompleteSpecs = this.checkCompleteSpecs(processed);
+
     // Add additional metadata
     processed.processedDate = new Date();
 
     return processed;
+  }
+
+  // Extract numeric capacity in kg
+  extractCapacityKg(capacity) {
+    if (!capacity) {
+      return null;
+    }
+
+    const str = String(capacity).toLowerCase();
+
+    // Try to match kg value
+    const kgMatch = str.match(/(\d+(?:\.\d+)?)\s*kg/i);
+    if (kgMatch) {
+      return parseFloat(kgMatch[1]);
+    }
+
+    // Try to match lbs and convert
+    const lbsMatch = str.match(/(\d+(?:\.\d+)?)\s*(?:lbs?|pounds?)/i);
+    if (lbsMatch) {
+      return Math.round(parseFloat(lbsMatch[1]) * UNIT_CONVERSIONS.capacity.lbsToKg);
+    }
+
+    // Try to match tons
+    const tonMatch = str.match(/(\d+(?:\.\d+)?)\s*(?:tons?|tonnes?|t\b)/i);
+    if (tonMatch) {
+      return parseFloat(tonMatch[1]) * UNIT_CONVERSIONS.capacity.tonToKg;
+    }
+
+    return null;
+  }
+
+  // Extract numeric speed in m/min
+  extractSpeedMMin(speed) {
+    if (!speed) {
+      return null;
+    }
+
+    const str = String(speed).toLowerCase();
+
+    // Try to match m/min value (may be a range like "0.5-8")
+    const mMinMatch = str.match(/(\d+(?:\.\d+)?)\s*m\/min/i);
+    if (mMinMatch) {
+      return parseFloat(mMinMatch[1]);
+    }
+
+    // Try to match ft/min and convert
+    const ftMinMatch = str.match(/(\d+(?:\.\d+)?)\s*(?:ft\/min|fpm)/i);
+    if (ftMinMatch) {
+      return Math.round(parseFloat(ftMinMatch[1]) * UNIT_CONVERSIONS.speed.ftPerMinToMPerMin * 10) / 10;
+    }
+
+    // Try to match m/s and convert
+    const msMatch = str.match(/(\d+(?:\.\d+)?)\s*m\/s/i);
+    if (msMatch) {
+      return parseFloat(msMatch[1]) * 60;
+    }
+
+    return null;
+  }
+
+  // Calculate data completeness score (0-100)
+  calculateDataCompleteness(record) {
+    const criticalFields = ['loadCapacity', 'liftingSpeed', 'motorPower', 'classification', 'dutyCycle'];
+    const secondaryFields = ['voltageOptions', 'weight', 'protectionClass', 'series'];
+
+    let criticalScore = 0;
+    let secondaryScore = 0;
+
+    // Check critical fields (weighted 70%)
+    for (const field of criticalFields) {
+      if (this.hasValidValue(record[field])) {
+        criticalScore++;
+      }
+    }
+
+    // Check secondary fields (weighted 30%)
+    for (const field of secondaryFields) {
+      if (this.hasValidValue(record[field])) {
+        secondaryScore++;
+      }
+    }
+
+    // Calculate weighted score
+    const criticalPct = criticalScore / criticalFields.length;
+    const secondaryPct = secondaryScore / secondaryFields.length;
+
+    return Math.round((criticalPct * 70) + (secondaryPct * 30));
+  }
+
+  // Check if a field has a valid (non-empty) value
+  hasValidValue(value) {
+    if (value === undefined || value === null) {
+      return false;
+    }
+    if (typeof value === 'string' && (!value || value.trim() === '' || value === '-')) {
+      return false;
+    }
+    if (Array.isArray(value) && value.length === 0) {
+      return false;
+    }
+    return true;
+  }
+
+  // Check if product has all critical specs
+  checkCompleteSpecs(record) {
+    const requiredFields = ['loadCapacity', 'liftingSpeed', 'motorPower'];
+    return requiredFields.every(field => this.hasValidValue(record[field]));
   }
 
   // Clean manufacturer name
@@ -247,11 +360,11 @@ class ChainhoistDataProcessor {
       return '';
     }
 
-    // Remove common prefixes/suffixes
-    name = name.replace(/electric chain hoist/i, '')
-      .replace(/chain hoist/i, '')
-      .replace(/hoist/i, '')
-      .replace(/series/i, '')
+    // Remove common prefixes/suffixes (handle plural forms to avoid leaving trailing 's')
+    name = name.replace(/electric chain hoists?/gi, '')
+      .replace(/chain hoists?/gi, '')
+      .replace(/hoists?/gi, '')
+      .replace(/series/gi, '')
       .trim();
 
     return name;
@@ -636,8 +749,13 @@ async function main() {
   console.log('Processing completed successfully');
 }
 
-// Execute the main function
-main().catch(error => {
-  console.error('An error occurred:', error);
-  process.exit(1);
-});
+// Export for testing
+module.exports = ChainhoistDataProcessor;
+
+// Execute the main function only when run directly
+if (require.main === module) {
+  main().catch(error => {
+    console.error('An error occurred:', error);
+    process.exit(1);
+  });
+}

@@ -505,42 +505,79 @@ Return a JSON object with these fields (only include fields where data is found)
 Document text:
 ${pdfText}
 
-IMPORTANT: Pay special attention to extracting:
-1. DUTY CYCLE - Look for: FEM groups (1Am, 1Bm, 2m, 3m, 4m, 5m), ISO classes (M1-M8),
-   ASME/HMI classes (H1-H4), ED% ratings (25%, 40%, 60%), or cycle times
-2. CLASSIFICATION - Look for: D8, D8+, D8 Plus, BGV-C1, BGV-D8, DGUV, CE marking,
-   ATEX ratings, FEM standards, ISO standards, ANSI/ASME standards
+IMPORTANT EXTRACTION GUIDELINES:
 
-Return a JSON object with these fields (only include fields with actual data):
+1. LOAD CAPACITY - Look for these terms:
+   - "SWL" (Safe Working Load), "WLL" (Working Load Limit), "Max Load", "Rated Load"
+   - "Capacity", "Load capacity", "Lifting capacity", "Nominal load"
+   - Values in kg, lbs, tons, tonnes, t (metric tons)
+   - Multiple capacities for different configurations (1-fall, 2-fall, etc.)
+
+2. LIFTING SPEED - Look for these terms:
+   - "Lifting speed", "Hoisting speed", "Lifting rate", "Speed"
+   - "m/min", "ft/min", "m/s", "fpm"
+   - Variable speed ranges (e.g., "0-4 m/min", "2-8 m/min")
+
+3. MOTOR POWER - Look for these terms:
+   - "Motor power", "Motor rating", "Motor output", "Power"
+   - "kW", "HP", "W"
+   - Separate values for lifting motor and travel motor
+
+4. DUTY CYCLE - Look for these terms:
+   - FEM groups: 1Am, 1Bm, 2m, 3m, 4m, 5m (entertainment typically 2m or 3m)
+   - ISO classes: M1, M2, M3, M4, M5, M6, M7, M8
+   - ASME/HMI classes: H1, H2, H3, H4
+   - ED% ratings: 20%, 25%, 40%, 60%, 100%
+   - Cycle time specifications
+
+5. CLASSIFICATION - Look for these terms:
+   - Entertainment standards: D8, D8+, D8 Plus, BGV-C1, BGV-D8, DGUV V17, IGVW SQP1
+   - Safety certifications: CE, TUV, UL, CSA
+   - ATEX ratings for hazardous environments
+   - FEM, ISO, ANSI/ASME standards
+
+6. SAFETY FEATURES - Look for:
+   - Overload protection, slip clutch, load limiter
+   - Upper/lower limit switches, end stops
+   - Emergency stop, E-stop
+   - Secondary brake, holding brake
+   - Chain guide, chain container
+
+Return a JSON object with these fields (only include fields with actual data found):
 {
-  "model": "model name",
+  "model": "model name/number",
   "manufacturer": "manufacturer name",
-  "series": "product series",
-  "loadCapacity": "capacity with unit (e.g., '1000 kg (2200 lbs)')",
-  "liftingSpeed": "speed with unit (e.g., '4 m/min')",
-  "motorPower": "power with unit (e.g., '1.5 kW')",
-  "dutyCycle": "duty cycle - include FEM group, ISO class, or ED% (e.g., 'FEM 2m (M5)', '40% ED', 'H4')",
-  "voltageOptions": ["available voltages"],
-  "weight": "weight with unit",
-  "dimensions": "dimensions",
-  "chainFall": "number of chain falls",
-  "classification": ["ALL applicable standards/certifications: D8, D8+, BGV-C1, CE, ATEX, FEM, ISO, ANSI, etc."],
+  "series": "product series/family",
+  "loadCapacity": "capacity with unit (e.g., '1000 kg (2200 lbs)' or 'SWL: 500 kg')",
+  "liftingSpeed": "speed with unit (e.g., '4 m/min' or '0.5-4 m/min variable')",
+  "motorPower": "power with unit (e.g., '1.5 kW' or '2 HP')",
+  "dutyCycle": "duty cycle specification (e.g., 'FEM 2m (M5)', '40% ED', 'H4')",
+  "voltageOptions": ["available voltages e.g., '400V 3ph', '230V 1ph'"],
+  "weight": "hoist weight with unit",
+  "dimensions": "LxWxH dimensions",
+  "chainFall": "number of chain falls (1, 2, etc.)",
+  "liftHeight": "standard or max lift height",
+  "classification": ["ALL applicable: D8, D8+, BGV-C1, CE, ATEX, etc."],
   "safetyFeatures": {
     "overloadProtection": true/false,
     "upperLimitSwitch": true/false,
     "lowerLimitSwitch": true/false,
     "emergencyStop": true/false,
-    "slipClutch": true/false
+    "slipClutch": true/false,
+    "secondaryBrake": true/false
   },
   "certifications": ["CE", "UL", "CSA", "TUV", etc.],
-  "applications": ["typical applications"],
+  "applications": ["entertainment", "theater", "rigging", etc.],
   "operatingTemperature": "temperature range",
-  "protectionClass": "IP rating",
+  "protectionClass": "IP rating (e.g., 'IP55')",
   "noiseLevel": "noise level in dB",
-  "brakeType": "type of brake (e.g., 'DC electromagnetic disc brake')",
-  "chainSpecification": "chain type/grade (e.g., 'Grade 80 alloy steel')",
-  "confidence": 0.0 to 1.0
-}`;
+  "brakeType": "brake type (e.g., 'DC electromagnetic disc brake')",
+  "chainSpecification": "chain grade/type (e.g., 'Grade 80 alloy steel')",
+  "controlType": "control type (pendant, remote, DMX, etc.)",
+  "confidence": 0.0 to 1.0 (your confidence in the extracted data accuracy)
+}
+
+IMPORTANT: Return ONLY valid JSON. Do not include any text before or after the JSON object.`;
 
     try {
       const response = await this.generateContent(prompt);
@@ -685,29 +722,126 @@ Return a JSON object with extracted/enhanced specifications:
   }
 
   /**
-   * Parse JSON from LLM response
+   * Parse JSON from LLM response with improved reliability
    */
   parseJSONResponse(response) {
-    let jsonStr = response;
-    const codeBlockMatch = response.match(/```(?:json)?\s*([\s\S]*?)```/);
-    if (codeBlockMatch) {
-      jsonStr = codeBlockMatch[1];
-    }
-
-    try {
-      return JSON.parse(jsonStr.trim());
-    } catch (error) {
-      logger.warn(`Failed to parse LLM response as JSON: ${error.message}`);
-      const jsonMatch = response.match(/\{[\s\S]*\}/);
-      if (jsonMatch) {
-        try {
-          return JSON.parse(jsonMatch[0]);
-        } catch {
-          return { rawResponse: response, confidence: 0 };
-        }
-      }
+    if (!response || typeof response !== 'string') {
+      logger.warn('Empty or invalid response');
       return { rawResponse: response, confidence: 0 };
     }
+
+    // Try multiple extraction strategies
+    const strategies = [
+      // Strategy 1: Direct parse
+      () => JSON.parse(response.trim()),
+
+      // Strategy 2: Extract from code block
+      () => {
+        const codeBlockMatch = response.match(/```(?:json)?\s*([\s\S]*?)```/);
+        if (codeBlockMatch) {
+          return JSON.parse(codeBlockMatch[1].trim());
+        }
+        throw new Error('No code block found');
+      },
+
+      // Strategy 3: Find JSON object boundaries
+      () => {
+        const jsonMatch = response.match(/\{[\s\S]*\}/);
+        if (jsonMatch) {
+          return JSON.parse(jsonMatch[0]);
+        }
+        throw new Error('No JSON object found');
+      },
+
+      // Strategy 4: Clean common issues and retry
+      () => {
+        let cleaned = response
+          // Remove any text before the first {
+          .replace(/^[^{]*/, '')
+          // Remove any text after the last }
+          .replace(/[^}]*$/, '')
+          // Fix common JSON issues
+          .replace(/,\s*}/g, '}') // Remove trailing commas
+          .replace(/,\s*]/g, ']') // Remove trailing commas in arrays
+          .replace(/'/g, '"') // Replace single quotes with double quotes
+          .replace(/(\w+):/g, '"$1":') // Quote unquoted keys
+          .replace(/:\s*'([^']*)'/g, ': "$1"') // Replace single-quoted values
+          .replace(/true\/false/g, 'true') // Fix true/false placeholder
+          .replace(/0\.0 to 1\.0/g, '0.5'); // Fix confidence placeholder
+
+        return JSON.parse(cleaned);
+      },
+
+      // Strategy 5: Extract key-value pairs manually for critical fields
+      () => {
+        const result = { confidence: 0.3, extractionMethod: 'fallback' };
+
+        // Extract loadCapacity
+        const capacityMatch = response.match(/"loadCapacity"\s*:\s*"([^"]+)"/i) ||
+          response.match(/load\s*capacity[:\s]+([0-9,.]+\s*(?:kg|lbs?|tons?|t))/i) ||
+          response.match(/SWL[:\s]+([0-9,.]+\s*(?:kg|lbs?|tons?|t))/i) ||
+          response.match(/WLL[:\s]+([0-9,.]+\s*(?:kg|lbs?|tons?|t))/i);
+        if (capacityMatch) {
+          result.loadCapacity = capacityMatch[1];
+        }
+
+        // Extract liftingSpeed
+        const speedMatch = response.match(/"liftingSpeed"\s*:\s*"([^"]+)"/i) ||
+          response.match(/lifting\s*speed[:\s]+([0-9,.]+\s*(?:m\/min|ft\/min|m\/s|fpm))/i);
+        if (speedMatch) {
+          result.liftingSpeed = speedMatch[1];
+        }
+
+        // Extract motorPower
+        const powerMatch = response.match(/"motorPower"\s*:\s*"([^"]+)"/i) ||
+          response.match(/motor\s*power[:\s]+([0-9,.]+\s*(?:kW|HP|W))/i);
+        if (powerMatch) {
+          result.motorPower = powerMatch[1];
+        }
+
+        // Extract dutyCycle
+        const dutyMatch = response.match(/"dutyCycle"\s*:\s*"([^"]+)"/i) ||
+          response.match(/duty\s*cycle[:\s]+([^\n,]+)/i) ||
+          response.match(/FEM\s*([0-9]+[a-z]*m?)/i);
+        if (dutyMatch) {
+          result.dutyCycle = dutyMatch[1];
+        }
+
+        // Extract model
+        const modelMatch = response.match(/"model"\s*:\s*"([^"]+)"/i);
+        if (modelMatch) {
+          result.model = modelMatch[1];
+        }
+
+        // Extract manufacturer
+        const mfrMatch = response.match(/"manufacturer"\s*:\s*"([^"]+)"/i);
+        if (mfrMatch) {
+          result.manufacturer = mfrMatch[1];
+        }
+
+        // If we found at least some data, return it
+        if (Object.keys(result).length > 2) {
+          return result;
+        }
+        throw new Error('Could not extract key fields');
+      }
+    ];
+
+    for (let i = 0; i < strategies.length; i++) {
+      try {
+        const parsed = strategies[i]();
+        if (parsed && typeof parsed === 'object') {
+          logger.debug(`JSON parsed successfully using strategy ${i + 1}`);
+          return parsed;
+        }
+      } catch (error) {
+        logger.debug(`Strategy ${i + 1} failed: ${error.message}`);
+      }
+    }
+
+    // All strategies failed
+    logger.warn('All JSON parsing strategies failed');
+    return { rawResponse: response.substring(0, 500), confidence: 0, parseError: true };
   }
 
   /**
