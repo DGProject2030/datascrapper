@@ -1,14 +1,51 @@
 <%- include('header') %>
 
-<h1 class="mb-4"><%= title %></h1>
+<style>
+  .coming-soon-card {
+    border: none;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    border-radius: 16px;
+    overflow: hidden;
+  }
+  .coming-soon-card .card-header {
+    background: linear-gradient(135deg, var(--brand-primary) 0%, #2d4a6f 100%);
+    color: white;
+    padding: 1.5rem;
+  }
+  .coming-soon-icon {
+    font-size: 4rem;
+    color: var(--brand-secondary);
+    margin-bottom: 1rem;
+  }
+</style>
 
-<% if (products.length === 0) { %>
-  <div class="alert alert-info">
-    <h4 class="alert-heading">No products to compare</h4>
-    <p>Select products from the search results to compare them.</p>
-    <a href="/search" class="btn btn-primary">Go to Search</a>
+<div class="row justify-content-center">
+  <div class="col-md-8 col-lg-6">
+    <div class="card coming-soon-card">
+      <div class="card-header text-center">
+        <h4 class="mb-0 d-flex align-items-center justify-content-center gap-2">
+          <i class="bi bi-columns-gap" style="color: var(--brand-secondary);"></i>
+          Product Comparison
+        </h4>
+      </div>
+      <div class="card-body text-center py-5">
+        <i class="bi bi-tools coming-soon-icon"></i>
+        <h5 style="color: var(--brand-primary);">Feature Coming Soon</h5>
+        <p class="text-muted mb-4">We're working on a product comparison tool that will let you compare specifications side-by-side.</p>
+        <div class="d-flex flex-column flex-sm-row gap-2 justify-content-center">
+          <a href="/search" class="btn" style="background: var(--brand-primary); color: white;">
+            <i class="bi bi-search me-1"></i> Browse Products
+          </a>
+          <a href="/" class="btn btn-outline-secondary">
+            <i class="bi bi-house-door me-1"></i> Return to Home
+          </a>
+        </div>
+      </div>
+    </div>
   </div>
-<% } else { %>
+</div>
+
+<% if (products && products.length > 0) { %>
   <div class="table-responsive">
     <table class="table table-bordered table-striped">
       <thead class="table-dark">

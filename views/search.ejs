@@ -602,10 +602,10 @@
           </thead>
           <tbody>
             <% data.forEach(function(item) { %>
-              <tr class="clickable-row" onclick="window.location='<%= buildProductUrl(item.id) %>'" role="link" tabindex="0">
+              <tr class="clickable-row" onclick="window.location='<%= buildProductUrl(item.id) %>'" role="link" tabindex="0" aria-label="View details for <%= item.manufacturer %> <%= item.model %>">
                 <td>
                   <% if (item.images && item.images.length > 0) { %>
-                    <img src="<%= item.images[0].url %>" alt="<%= item.manufacturer %> <%= item.model %>" class="product-thumb" onerror="this.onerror=null; this.outerHTML='<div class=\'no-thumb\'></div>';">
+                    <img src="<%= item.images[0].url %>" alt="<%= item.manufacturer %> <%= item.model %>" class="product-thumb" onerror="this.onerror=null; this.outerHTML='<div class=\'no-thumb\' title=\'Image failed to load\'></div>';">
                   <% } else { %>
                     <div class="no-thumb"></div>
                   <% } %>
@@ -643,7 +643,7 @@
                 <div class="card-subtitle-mobile"><%= item.model %><%= item.series ? ' - ' + item.series : '' %></div>
               </div>
               <% if (item.images && item.images.length > 0) { %>
-                <img src="<%= item.images[0].url %>" alt="<%= item.manufacturer %>" class="card-thumb" onerror="this.onerror=null; this.outerHTML='<div class=\'no-thumb-mobile\'></div>';">
+                <img src="<%= item.images[0].url %>" alt="<%= item.manufacturer %>" class="card-thumb" onerror="this.onerror=null; this.outerHTML='<div class=\'no-thumb-mobile\' title=\'Image failed to load\'></div>';">
               <% } else { %>
                 <div class="no-thumb-mobile"></div>
               <% } %>

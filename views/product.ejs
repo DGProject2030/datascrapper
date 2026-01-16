@@ -229,10 +229,12 @@
         min-width: 120px;
       }
 
-      /* Image gallery - smaller thumbnails */
+      /* Image gallery - keep touch-friendly size (min 44px per WCAG) */
       .product-thumbnail {
-        width: 60px;
-        height: 60px;
+        width: 56px;
+        height: 56px;
+        min-width: 44px;
+        min-height: 44px;
       }
 
       /* Buttons - stack and full width */
@@ -397,7 +399,7 @@
                 <img id="mainImage" src="<%= product.images[0].url %>"
                      alt="<%= product.images[0].alt || product.manufacturer + ' ' + product.model %>"
                      class="product-main-image"
-                     onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'no-image-placeholder\'>Image unavailable</div>';">
+                     onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'no-image-placeholder\'><i class=\'bi bi-exclamation-triangle\' style=\'font-size: 2rem; opacity: 0.5;\'></i><p class=\'text-muted mt-2 mb-0 small\'>Image failed to load</p></div>';">
               </div>
               <% if (product.images.length > 1) { %>
               <div class="product-image-gallery justify-content-center">
@@ -405,14 +407,18 @@
                   <img src="<%= img.url %>"
                        alt="<%= img.alt || 'Product image ' + (index + 1) %>"
                        class="product-thumbnail <%= index === 0 ? 'active' : '' %>"
+                       tabindex="0"
+                       role="button"
                        onclick="changeMainImage(this, '<%= img.url.replace(/'/g, "\\'") %>')"
+                       onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();changeMainImage(this, '<%= img.url.replace(/'/g, "\\'") %>');}"
                        onerror="this.style.display='none'">
                 <% }); %>
               </div>
               <% } %>
             <% } else { %>
               <div class="no-image-placeholder">
-                <i class="bi bi-camera" style="font-size: 3rem; opacity: 0.5;"></i>
+                <i class="bi bi-image" style="font-size: 3rem; opacity: 0.5;"></i>
+                <p class="text-muted mt-2 mb-0 small">No product image available</p>
               </div>
             <% } %>
           </div>
