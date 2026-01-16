@@ -500,10 +500,16 @@ Return a JSON object with these fields (only include fields where data is found)
       pdfText = pdfText.substring(0, maxChars) + '\n...[truncated]';
     }
 
-    const prompt = `Analyze this electric chainhoist product datasheet/manual and extract all specifications.
+    const prompt = `Analyze this electric chainhoist/hoist product datasheet/manual and extract all specifications.
 
 Document text:
 ${pdfText}
+
+IMPORTANT: Pay special attention to extracting:
+1. DUTY CYCLE - Look for: FEM groups (1Am, 1Bm, 2m, 3m, 4m, 5m), ISO classes (M1-M8),
+   ASME/HMI classes (H1-H4), ED% ratings (25%, 40%, 60%), or cycle times
+2. CLASSIFICATION - Look for: D8, D8+, D8 Plus, BGV-C1, BGV-D8, DGUV, CE marking,
+   ATEX ratings, FEM standards, ISO standards, ANSI/ASME standards
 
 Return a JSON object with these fields (only include fields with actual data):
 {
@@ -513,12 +519,12 @@ Return a JSON object with these fields (only include fields with actual data):
   "loadCapacity": "capacity with unit (e.g., '1000 kg (2200 lbs)')",
   "liftingSpeed": "speed with unit (e.g., '4 m/min')",
   "motorPower": "power with unit (e.g., '1.5 kW')",
-  "dutyCycle": "duty cycle (e.g., '40%', 'M4')",
+  "dutyCycle": "duty cycle - include FEM group, ISO class, or ED% (e.g., 'FEM 2m (M5)', '40% ED', 'H4')",
   "voltageOptions": ["available voltages"],
   "weight": "weight with unit",
   "dimensions": "dimensions",
   "chainFall": "number of chain falls",
-  "classification": ["certifications like 'd8', 'd8+', 'bgv-c1'"],
+  "classification": ["ALL applicable standards/certifications: D8, D8+, BGV-C1, CE, ATEX, FEM, ISO, ANSI, etc."],
   "safetyFeatures": {
     "overloadProtection": true/false,
     "upperLimitSwitch": true/false,
@@ -526,12 +532,13 @@ Return a JSON object with these fields (only include fields with actual data):
     "emergencyStop": true/false,
     "slipClutch": true/false
   },
-  "certifications": ["CE", "UL", "CSA", etc.],
+  "certifications": ["CE", "UL", "CSA", "TUV", etc.],
   "applications": ["typical applications"],
   "operatingTemperature": "temperature range",
   "protectionClass": "IP rating",
   "noiseLevel": "noise level in dB",
-  "warranty": "warranty period",
+  "brakeType": "type of brake (e.g., 'DC electromagnetic disc brake')",
+  "chainSpecification": "chain type/grade (e.g., 'Grade 80 alloy steel')",
   "confidence": 0.0 to 1.0
 }`;
 
