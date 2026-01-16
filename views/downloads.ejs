@@ -223,14 +223,14 @@
       </div>
       <div class="card-body p-0" style="max-height: 500px; overflow-y: auto;">
         <div class="list-group list-group-flush">
-          <a href="#all" class="list-group-item list-group-item-action active d-flex justify-content-between align-items-center" onclick="filterManufacturer('all', this)">
+          <a href="/downloads" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center filter-link" data-manufacturer="all">
             <span><i class="bi bi-grid-3x3-gap me-2"></i>All Manufacturers</span>
             <span class="badge rounded-pill" style="background: var(--brand-secondary);"><%= totalPdfs %></span>
           </a>
           <% manufacturers.forEach(function(mfr) { %>
-            <a href="#<%= mfr.replace(/\s+/g, '-').toLowerCase() %>"
-               class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
-               onclick="filterManufacturer('<%= mfr.replace(/'/g, "\\'") %>', this)">
+            <a href="/downloads?manufacturer=<%= encodeURIComponent(mfr) %>"
+               class="list-group-item list-group-item-action d-flex justify-content-between align-items-center filter-link"
+               data-manufacturer="<%= mfr %>">
               <span><%= mfr %></span>
               <span class="badge rounded-pill bg-secondary"><%= pdfsByManufacturer[mfr].length %></span>
             </a>
@@ -314,12 +314,15 @@
 </div>
 
 <script>
-  function filterManufacturer(manufacturer, element) {
+  // Filter function
+  function filterManufacturer(manufacturer) {
     // Update active state
-    document.querySelectorAll('.list-group-item').forEach(item => {
+    document.querySelectorAll('.filter-link').forEach(item => {
       item.classList.remove('active');
+      if (item.dataset.manufacturer === manufacturer) {
+        item.classList.add('active');
+      }
     });
-    element.classList.add('active');
 
     // Show/hide sections
     document.querySelectorAll('.manufacturer-section').forEach(section => {
@@ -329,12 +332,40 @@
         section.style.display = 'none';
       }
     });
-
-    // Scroll to top of content if filtering specific manufacturer
-    if (manufacturer !== 'all') {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
   }
+
+  // Handle filter link clicks (prevent reload, update URL)
+  document.querySelectorAll('.filter-link').forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      const manufacturer = this.dataset.manufacturer;
+
+      // Update URL without reload
+      const url = manufacturer === 'all' ? '/downloads' : '/downloads?manufacturer=' + encodeURIComponent(manufacturer);
+      history.pushState({ manufacturer }, '', url);
+
+      // Apply filter
+      filterManufacturer(manufacturer);
+
+      // Scroll to top if filtering specific manufacturer
+      if (manufacturer !== 'all') {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    });
+  });
+
+  // Handle browser back/forward
+  window.addEventListener('popstate', function(e) {
+    const manufacturer = e.state?.manufacturer || new URLSearchParams(window.location.search).get('manufacturer') || 'all';
+    filterManufacturer(manufacturer);
+  });
+
+  // Apply initial filter from URL on page load
+  document.addEventListener('DOMContentLoaded', function() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const manufacturer = urlParams.get('manufacturer') || 'all';
+    filterManufacturer(manufacturer);
+  });
 </script>
 
 <%- include('footer') %>
