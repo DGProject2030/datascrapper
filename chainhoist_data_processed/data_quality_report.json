@@ -136,9 +136,9 @@
       {
         "name": "Missing Motor Power",
         "threshold": "≤95%",
-        "actual": "24.4%",
+        "actual": "2.8%",
         "passed": true,
-        "message": "95 of 390 records missing motorPower"
+        "message": "11 of 390 records missing motorPower"
       },
       {
         "name": "Missing Classification",
@@ -180,9 +180,9 @@
       {
         "name": "Missing Motor Power",
         "threshold": "≤95%",
-        "actual": "24.4%",
+        "actual": "2.8%",
         "passed": true,
-        "message": "95 of 390 records missing motorPower"
+        "message": "11 of 390 records missing motorPower"
       },
       {
         "name": "Missing Classification",

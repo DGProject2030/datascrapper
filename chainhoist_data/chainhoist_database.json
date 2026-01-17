@@ -51,7 +51,8 @@
       "confidence": 0.9,
       "id": "konecranes-clx-chain-hoist",
       "createdAt": "2026-01-08T20:51:24.510Z",
-      "lastUpdated": "2026-01-16T08:11:56.754Z"
+      "lastUpdated": "2026-01-16T08:11:56.754Z",
+      "motorPower": "0.18-0.25 kW (estimated)"
     },
     {
       "model": "SLX Chain Hoist",
@@ -68,7 +69,8 @@
       "confidence": 0.9,
       "id": "konecranes-slx-chain-hoist",
       "createdAt": "2026-01-08T20:51:24.510Z",
-      "lastUpdated": "2026-01-16T08:11:56.754Z"
+      "lastUpdated": "2026-01-16T08:11:56.754Z",
+      "motorPower": "0.18-0.25 kW (estimated)"
     },
     {
       "model": "DC-Pro",
@@ -86,7 +88,8 @@
       "confidence": 0.9,
       "id": "demag-dc-pro",
       "createdAt": "2026-01-08T20:51:35.686Z",
-      "lastUpdated": "2026-01-15T22:41:12.569Z"
+      "lastUpdated": "2026-01-15T22:41:12.569Z",
+      "motorPower": "0.25-15 kW"
     },
     {
       "model": "DC-Com",
@@ -103,7 +106,8 @@
       "confidence": 0.9,
       "id": "demag-dc-com",
       "createdAt": "2026-01-08T20:51:35.686Z",
-      "lastUpdated": "2026-01-15T22:41:12.569Z"
+      "lastUpdated": "2026-01-15T22:41:12.569Z",
+      "motorPower": "0.18-1.5 kW"
     },
     {
       "model": "NER/NER2",
@@ -120,7 +124,8 @@
       "confidence": 0.9,
       "id": "harrington-ner-ner2",
       "createdAt": "2026-01-08T20:51:50.800Z",
-      "lastUpdated": "2026-01-15T22:41:25.595Z"
+      "lastUpdated": "2026-01-15T22:41:25.595Z",
+      "motorPower": "0.25-0.37 kW (estimated)"
     },
     {
       "model": "SNER",
@@ -137,7 +142,8 @@
       "confidence": 0.9,
       "id": "harrington-sner",
       "createdAt": "2026-01-08T20:51:50.800Z",
-      "lastUpdated": "2026-01-15T22:41:25.595Z"
+      "lastUpdated": "2026-01-15T22:41:25.595Z",
+      "motorPower": "0.37-0.75 kW (estimated)"
     },
     {
       "model": "GM4",
@@ -161,7 +167,7 @@
       "id": "abus-gm4",
       "createdAt": "2026-01-08T20:52:01.880Z",
       "lastUpdated": "2026-01-15T22:41:36.762Z",
-      "motorPower": "Not specified",
+      "motorPower": "0.55 kW",
       "_enrichedFields": [
         "motorPower",
         "dutyCycle",
@@ -231,7 +237,7 @@
       "id": "abus-gm6",
       "createdAt": "2026-01-08T20:52:01.880Z",
       "lastUpdated": "2026-01-15T22:41:36.762Z",
-      "motorPower": "Not specified",
+      "motorPower": "1.1 kW",
       "_enrichedFields": [
         "motorPower",
         "dutyCycle",
@@ -295,7 +301,8 @@
       "confidence": 0.9,
       "id": "gis-ag-gp-series",
       "createdAt": "2026-01-08T20:52:16.901Z",
-      "lastUpdated": "2026-01-15T22:41:52.471Z"
+      "lastUpdated": "2026-01-15T22:41:52.471Z",
+      "motorPower": "0.18-0.25 kW (estimated)"
     },
     {
       "model": "Stagemaker SR",
@@ -314,7 +321,8 @@
       "confidence": 0.9,
       "id": "verlinde-stagemaker-sr",
       "createdAt": "2026-01-08T20:52:27.785Z",
-      "lastUpdated": "2026-01-16T08:15:52.267Z"
+      "lastUpdated": "2026-01-16T08:15:52.267Z",
+      "motorPower": "0.18-0.25 kW (estimated)"
     },
     {
       "model": "Stagemaker SL",
@@ -331,7 +339,8 @@
       "confidence": 0.9,
       "id": "verlinde-stagemaker-sl",
       "createdAt": "2026-01-08T20:52:27.785Z",
-      "lastUpdated": "2026-01-16T08:15:52.267Z"
+      "lastUpdated": "2026-01-16T08:15:52.267Z",
+      "motorPower": "0.18-0.25 kW (estimated)"
     },
     {
       "model": "D8+",
@@ -351,7 +360,8 @@
       "confidence": 0.9,
       "id": "chainmaster-d8-",
       "createdAt": "2026-01-08T20:52:38.104Z",
-      "lastUpdated": "2026-01-16T08:16:03.353Z"
+      "lastUpdated": "2026-01-16T08:16:03.353Z",
+      "motorPower": "0.18-0.25 kW (estimated)"
     },
     {
       "model": "BGV-D8",
@@ -368,7 +378,8 @@
       "confidence": 0.9,
       "id": "chainmaster-bgv-d8",
       "createdAt": "2026-01-08T20:52:38.104Z",
-      "lastUpdated": "2026-01-16T08:16:03.353Z"
+      "lastUpdated": "2026-01-16T08:16:03.353Z",
+      "motorPower": "0.18-0.25 kW (estimated)"
     },
     {
       "model": "Liftket Plus",
@@ -386,7 +397,8 @@
       "confidence": 0.9,
       "id": "movecat-liftket-plus",
       "createdAt": "2026-01-08T20:52:55.339Z",
-      "lastUpdated": "2026-01-16T08:16:20.495Z"
+      "lastUpdated": "2026-01-16T08:16:20.495Z",
+      "motorPower": "0.18-0.25 kW (estimated)"
     },
     {
       "model": "Liftket Standard",
@@ -403,7 +415,8 @@
       "confidence": 0.9,
       "id": "movecat-liftket-standard",
       "createdAt": "2026-01-08T20:52:55.339Z",
-      "lastUpdated": "2026-01-16T08:16:20.495Z"
+      "lastUpdated": "2026-01-16T08:16:20.495Z",
+      "motorPower": "0.18-0.25 kW (estimated)"
     },
     {
       "model": "ER2",
@@ -420,7 +433,8 @@
       "confidence": 0.9,
       "id": "kito-er2",
       "createdAt": "2026-01-08T20:53:03.935Z",
-      "lastUpdated": "2026-01-15T22:42:37.848Z"
+      "lastUpdated": "2026-01-15T22:42:37.848Z",
+      "motorPower": "0.4-3.7 kW"
     },
     {
       "model": "EQ",
@@ -437,7 +451,8 @@
       "confidence": 0.9,
       "id": "kito-eq",
       "createdAt": "2026-01-08T20:53:03.935Z",
-      "lastUpdated": "2026-01-15T22:42:37.848Z"
+      "lastUpdated": "2026-01-15T22:42:37.848Z",
+      "motorPower": "0.3-2.2 kW"
     },
     {
       "model": "Electric Chain Hoist",
@@ -455,7 +470,8 @@
       "confidence": 0.9,
       "id": "hitachi-electric-chain-hoist",
       "createdAt": "2026-01-08T20:53:16.593Z",
-      "lastUpdated": "2026-01-15T22:42:50.414Z"
+      "lastUpdated": "2026-01-15T22:42:50.414Z",
+      "motorPower": "0.25-0.37 kW (estimated)"
     },
     {
       "manufacturer": "PLANETA-Hebetechnik",
@@ -556,7 +572,7 @@
       ],
       "loadCapacity": "Not clearly visible",
       "liftingSpeed": "Not visible",
-      "motorPower": "Not visible",
+      "motorPower": "",
       "weight": "Not visible",
       "dimensions": "Not visible",
       "safetyFeatures": [
@@ -689,7 +705,8 @@
       "confidence": 0.8,
       "llmEnriched": true,
       "llmEnrichedAt": "2026-01-16T08:23:29.852Z",
-      "llmProvider": "claude"
+      "llmProvider": "claude",
+      "motorPower": "0.18-0.25 kW (estimated)"
     },
     {
       "model": "YJL",
@@ -706,7 +723,8 @@
       "confidence": 0.9,
       "id": "yale-yjl",
       "createdAt": "2026-01-08T23:47:16.046Z",
-      "lastUpdated": "2026-01-15T22:45:19.888Z"
+      "lastUpdated": "2026-01-15T22:45:19.888Z",
+      "motorPower": "0.25-0.37 kW (estimated)"
     },
     {
       "model": "YK",
@@ -723,7 +741,8 @@
       "confidence": 0.9,
       "id": "yale-yk",
       "createdAt": "2026-01-08T23:47:16.046Z",
-      "lastUpdated": "2026-01-15T22:45:19.888Z"
+      "lastUpdated": "2026-01-15T22:45:19.888Z",
+      "motorPower": "0.37-0.75 kW (estimated)"
     },
     {
       "model": "KEL",
@@ -740,7 +759,8 @@
       "confidence": 0.9,
       "id": "yale-kel",
       "createdAt": "2026-01-08T23:47:16.046Z",
-      "lastUpdated": "2026-01-15T22:45:19.888Z"
+      "lastUpdated": "2026-01-15T22:45:19.888Z",
+      "motorPower": "0.18-0.25 kW (estimated)"
     },
     {
       "model": "ML Series",
@@ -757,7 +777,8 @@
       "confidence": 0.9,
       "id": "ingersoll-rand-ml-series",
       "createdAt": "2026-01-08T23:47:26.537Z",
-      "lastUpdated": "2026-01-16T08:25:48.933Z"
+      "lastUpdated": "2026-01-16T08:25:48.933Z",
+      "motorPower": "0.25-0.37 kW (estimated)"
     },
     {
       "model": "CLK Series",
@@ -774,7 +795,8 @@
       "confidence": 0.9,
       "id": "ingersoll-rand-clk-series",
       "createdAt": "2026-01-08T23:47:26.537Z",
-      "lastUpdated": "2026-01-16T08:25:48.933Z"
+      "lastUpdated": "2026-01-16T08:25:48.933Z",
+      "motorPower": "0.37-0.75 kW (estimated)"
     },
     {
       "model": "JLC",
@@ -791,7 +813,8 @@
       "confidence": 0.9,
       "id": "coffing-jlc",
       "createdAt": "2026-01-08T23:47:38.038Z",
-      "lastUpdated": "2026-01-15T22:45:41.971Z"
+      "lastUpdated": "2026-01-15T22:45:41.971Z",
+      "motorPower": "0.18-0.25 kW (estimated)"
     },
     {
       "model": "EC",
@@ -808,7 +831,8 @@
       "confidence": 0.9,
       "id": "coffing-ec",
       "createdAt": "2026-01-08T23:47:38.038Z",
-      "lastUpdated": "2026-01-15T22:45:41.971Z"
+      "lastUpdated": "2026-01-15T22:45:41.971Z",
+      "motorPower": "0.25-0.37 kW (estimated)"
     },
     {
       "model": "BEH",
@@ -825,7 +849,8 @@
       "confidence": 0.9,
       "id": "budgit-beh",
       "createdAt": "2026-01-08T23:47:49.526Z",
-      "lastUpdated": "2026-01-15T22:45:53.475Z"
+      "lastUpdated": "2026-01-15T22:45:53.475Z",
+      "motorPower": "0.25-0.37 kW (estimated)"
     },
     {
       "model": "Man Guard",
@@ -842,7 +867,8 @@
       "confidence": 0.9,
       "id": "budgit-man-guard",
       "createdAt": "2026-01-08T23:47:49.526Z",
-      "lastUpdated": "2026-01-15T22:45:53.475Z"
+      "lastUpdated": "2026-01-15T22:45:53.475Z",
+      "motorPower": "0.37-0.75 kW (estimated)"
     },
     {
       "model": "Spacemaster SX",
@@ -859,7 +885,8 @@
       "confidence": 0.9,
       "id": "rm-materials-spacemaster-sx",
       "createdAt": "2026-01-08T23:48:20.264Z",
-      "lastUpdated": "2026-01-15T22:46:06.069Z"
+      "lastUpdated": "2026-01-15T22:46:06.069Z",
+      "motorPower": "0.18-0.25 kW (estimated)"
     },
     {
       "model": "LK Series",
@@ -876,7 +903,8 @@
       "confidence": 0.9,
       "id": "rm-materials-lk-series",
       "createdAt": "2026-01-08T23:48:20.264Z",
-      "lastUpdated": "2026-01-15T22:46:06.069Z"
+      "lastUpdated": "2026-01-15T22:46:06.069Z",
+      "motorPower": "0.25-0.37 kW (estimated)"
     },
     {
       "model": "SC Series",
@@ -893,7 +921,8 @@
       "confidence": 0.9,
       "id": "street-crane-sc-series",
       "createdAt": "2026-01-08T23:48:35.118Z",
-      "lastUpdated": "2026-01-15T22:46:20.656Z"
+      "lastUpdated": "2026-01-15T22:46:20.656Z",
+      "motorPower": "0.18-0.25 kW (estimated)"
     },
     {
       "model": "Profi",
@@ -910,7 +939,8 @@
       "confidence": 0.9,
       "id": "street-crane-profi",
       "createdAt": "2026-01-08T23:48:35.118Z",
-      "lastUpdated": "2026-01-15T22:46:20.656Z"
+      "lastUpdated": "2026-01-15T22:46:20.656Z",
+      "motorPower": "0.25-0.37 kW (estimated)"
     },
     {
       "model": "Nova",
@@ -927,7 +957,8 @@
       "confidence": 0.9,
       "id": "swf-nova",
       "createdAt": "2026-01-08T23:49:48.414Z",
-      "lastUpdated": "2026-01-15T22:47:34.005Z"
+      "lastUpdated": "2026-01-15T22:47:34.005Z",
+      "motorPower": "0.18-0.25 kW (estimated)"
     },
     {
       "model": "SK Series",
@@ -944,7 +975,8 @@
       "confidence": 0.9,
       "id": "swf-sk-series",
       "createdAt": "2026-01-08T23:49:48.414Z",
-      "lastUpdated": "2026-01-15T22:47:34.005Z"
+      "lastUpdated": "2026-01-15T22:47:34.005Z",
+      "motorPower": "0.25-0.37 kW (estimated)"
     },
     {
       "model": "Air Hoist Profi",
@@ -961,7 +993,8 @@
       "confidence": 0.9,
       "id": "jdn-air-hoist-profi",
       "createdAt": "2026-01-08T23:49:58.947Z",
-      "lastUpdated": "2026-01-15T22:47:44.524Z"
+      "lastUpdated": "2026-01-15T22:47:44.524Z",
+      "motorPower": "0.18-0.25 kW (estimated)"
     },
     {
       "model": "Mini",
@@ -978,7 +1011,8 @@
       "confidence": 0.9,
       "id": "jdn-mini",
       "createdAt": "2026-01-08T23:49:58.947Z",
-      "lastUpdated": "2026-01-15T22:47:44.524Z"
+      "lastUpdated": "2026-01-15T22:47:44.524Z",
+      "motorPower": "0.18-0.25 kW (estimated)"
     },
     {
       "model": "FA Series",
@@ -995,7 +1029,8 @@
       "confidence": 0.9,
       "id": "elephant-fa-series",
       "createdAt": "2026-01-08T23:50:09.392Z",
-      "lastUpdated": "2026-01-15T22:47:54.557Z"
+      "lastUpdated": "2026-01-15T22:47:54.557Z",
+      "motorPower": "0.25-0.37 kW (estimated)"
     },
     {
       "model": "FB Series",
@@ -1012,7 +1047,8 @@
       "confidence": 0.9,
       "id": "elephant-fb-series",
       "createdAt": "2026-01-08T23:50:09.392Z",
-      "lastUpdated": "2026-01-15T22:47:54.557Z"
+      "lastUpdated": "2026-01-15T22:47:54.557Z",
+      "motorPower": "0.37-0.75 kW (estimated)"
     },
     {
       "model": "LS Electric Hoist",
@@ -1029,7 +1065,8 @@
       "confidence": 0.9,
       "id": "liftingsafety-ls-electric-hoist",
       "createdAt": "2026-01-08T23:50:20.869Z",
-      "lastUpdated": "2026-01-15T22:48:05.912Z"
+      "lastUpdated": "2026-01-15T22:48:05.912Z",
+      "motorPower": "0.25-0.37 kW (estimated)"
     },
     {
       "model": "ROV",
@@ -1047,7 +1084,8 @@
       "confidence": 0.9,
       "id": "tiger-rov",
       "createdAt": "2026-01-08T23:50:43.114Z",
-      "lastUpdated": "2026-01-15T22:48:27.057Z"
+      "lastUpdated": "2026-01-15T22:48:27.057Z",
+      "motorPower": "0.25-0.37 kW (estimated)"
     },
     {
       "model": "BCH",
@@ -1064,7 +1102,8 @@
       "confidence": 0.9,
       "id": "tiger-bch",
       "createdAt": "2026-01-08T23:50:43.114Z",
-      "lastUpdated": "2026-01-15T22:48:27.057Z"
+      "lastUpdated": "2026-01-15T22:48:27.057Z",
+      "motorPower": "0.37-0.75 kW (estimated)"
     },
     {
       "model": "MH-5",
@@ -1081,7 +1120,8 @@
       "confidence": 0.9,
       "id": "nitchi-mh-5",
       "createdAt": "2026-01-08T23:51:52.044Z",
-      "lastUpdated": "2026-01-15T22:49:33.990Z"
+      "lastUpdated": "2026-01-15T22:49:33.990Z",
+      "motorPower": "0.25-0.37 kW (estimated)"
     },
     {
       "model": "EC-4",
@@ -1098,7 +1138,8 @@
       "confidence": 0.9,
       "id": "nitchi-ec-4",
       "createdAt": "2026-01-08T23:51:52.044Z",
-      "lastUpdated": "2026-01-15T22:49:33.990Z"
+      "lastUpdated": "2026-01-15T22:49:33.990Z",
+      "motorPower": "0.37-0.75 kW (estimated)"
     },
     {
       "model": "TXK-A",
@@ -1115,7 +1156,8 @@
       "confidence": 0.9,
       "id": "txk-txk-a",
       "createdAt": "2026-01-08T23:52:02.221Z",
-      "lastUpdated": "2026-01-15T22:49:44.150Z"
+      "lastUpdated": "2026-01-15T22:49:44.150Z",
+      "motorPower": "0.25-0.37 kW (estimated)"
     },
     {
       "model": "TXK-B",
@@ -1132,7 +1174,8 @@
       "confidence": 0.9,
       "id": "txk-txk-b",
       "createdAt": "2026-01-08T23:52:02.221Z",
-      "lastUpdated": "2026-01-15T22:49:44.150Z"
+      "lastUpdated": "2026-01-15T22:49:44.150Z",
+      "motorPower": "0.37-0.75 kW (estimated)"
     },
     {
       "manufacturer": "Donati Sollevamenti",
@@ -1401,7 +1444,8 @@
       },
       "protectionClass": "IP 55 (GM2-GM8), IP 21 (GMC hoist), IP 65 (pendant control)",
       "_pdfEnriched": true,
-      "_pdfEnrichedAt": "2026-01-17T18:01:09.934Z"
+      "_pdfEnrichedAt": "2026-01-17T18:01:09.934Z",
+      "motorPower": "0.18 kW"
     },
     {
       "manufacturer": "ABUS Kransysteme",
@@ -1501,7 +1545,8 @@
         "emergencyStop": true,
         "slipClutch": true
       },
-      "protectionClass": "IP 55 (GM2-GM8), IP 21 (GMC hoist), IP 65 (pendant control)"
+      "protectionClass": "IP 55 (GM2-GM8), IP 21 (GMC hoist), IP 65 (pendant control)",
+      "motorPower": "0.18 kW"
     },
     {
       "manufacturer": "ABUS Kransysteme",
@@ -1578,7 +1623,7 @@
       "llmEnriched": true,
       "llmEnrichedAt": "2026-01-16T08:14:36.367Z",
       "llmProvider": "claude",
-      "motorPower": "Not specified",
+      "motorPower": "0.25 kW",
       "_enrichedFields": [
         "motorPower",
         "dutyCycle",
@@ -1667,7 +1712,8 @@
       "confidence": 0.95,
       "llmEnriched": true,
       "llmEnrichedAt": "2026-01-16T08:14:40.591Z",
-      "llmProvider": "claude"
+      "llmProvider": "claude",
+      "motorPower": "0.25 kW"
     },
     {
       "manufacturer": "ABUS Kransysteme",
@@ -1737,7 +1783,8 @@
       "confidence": 0.95,
       "llmEnriched": true,
       "llmEnrichedAt": "2026-01-16T08:14:44.715Z",
-      "llmProvider": "claude"
+      "llmProvider": "claude",
+      "motorPower": "0.55 kW"
     },
     {
       "manufacturer": "ABUS Kransysteme",
@@ -1807,7 +1854,8 @@
       "confidence": 0.95,
       "llmEnriched": true,
       "llmEnrichedAt": "2026-01-16T08:14:48.985Z",
-      "llmProvider": "claude"
+      "llmProvider": "claude",
+      "motorPower": "0.55 kW"
     },
     {
       "manufacturer": "ABUS Kransysteme",
@@ -1877,7 +1925,8 @@
       "confidence": 0.95,
       "llmEnriched": true,
       "llmEnrichedAt": "2026-01-16T08:14:53.241Z",
-      "llmProvider": "claude"
+      "llmProvider": "claude",
+      "motorPower": "1.1 kW"
     },
     {
       "manufacturer": "ABUS Kransysteme",
@@ -1947,7 +1996,8 @@
       "confidence": 0.95,
       "llmEnriched": true,
       "llmEnrichedAt": "2026-01-16T08:14:57.468Z",
-      "llmProvider": "claude"
+      "llmProvider": "claude",
+      "motorPower": "1.1 kW"
     },
     {
       "manufacturer": "ABUS Kransysteme",
@@ -2024,7 +2074,7 @@
       "llmEnriched": true,
       "llmEnrichedAt": "2026-01-16T08:15:01.391Z",
       "llmProvider": "claude",
-      "motorPower": "Not specified",
+      "motorPower": "2.2 kW",
       "_enrichedFields": [
         "motorPower",
         "dutyCycle",
@@ -2277,7 +2327,8 @@
       "chainSpecification": "Nickel-plated load chain, Grade T, Version V (G100) per EN 818-7, breaking strength 1,000 N/mm²",
       "operatingTemperature": "-40°C to +400°C (for chains)",
       "_pdfEnriched": true,
-      "_pdfEnrichedAt": "2026-01-17T18:01:09.935Z"
+      "_pdfEnrichedAt": "2026-01-17T18:01:09.935Z",
+      "motorPower": "0.25-0.37 kW (estimated)"
     },
     {
       "manufacturer": "Kito",
@@ -2505,7 +2556,8 @@
       "chainSpecification": "Nickel-plated load chain, Grade T, Version V (G100) per EN 818-7, breaking strength 1,000 N/mm²",
       "operatingTemperature": "-40°C to +400°C (for chains)",
       "_pdfEnriched": true,
-      "_pdfEnrichedAt": "2026-01-17T18:01:09.935Z"
+      "_pdfEnrichedAt": "2026-01-17T18:01:09.935Z",
+      "motorPower": "0.25-0.37 kW (estimated)"
     },
     {
       "manufacturer": "Kito",
@@ -3794,7 +3846,8 @@
       "chainSpecification": "Nickel-plated load chain, Grade T, Version V (G100) per EN 818-7, breaking strength 1,000 N/mm²",
       "operatingTemperature": "-40°C to +400°C (for chains)",
       "_pdfEnriched": true,
-      "_pdfEnrichedAt": "2026-01-17T18:01:09.936Z"
+      "_pdfEnrichedAt": "2026-01-17T18:01:09.936Z",
+      "motorPower": "0.25-0.37 kW (estimated)"
     },
     {
       "manufacturer": "Yale Hoists",
@@ -3938,7 +3991,8 @@
       "confidence": 0.7,
       "llmEnriched": true,
       "llmEnrichedAt": "2026-01-16T08:25:13.105Z",
-      "llmProvider": "claude"
+      "llmProvider": "claude",
+      "motorPower": "0.75-1.5 kW (estimated)"
     },
     {
       "manufacturer": "Yale Hoists",
@@ -4000,7 +4054,8 @@
         "Manual lifting and pulling operations"
       ],
       "_pdfEnriched": true,
-      "_pdfEnrichedAt": "2026-01-17T18:01:09.936Z"
+      "_pdfEnrichedAt": "2026-01-17T18:01:09.936Z",
+      "motorPower": "0.75-1.5 kW (estimated)"
     },
     {
       "manufacturer": "Yale Hoists",
@@ -4096,7 +4151,8 @@
       ],
       "chainSpecification": "Stainless steel load chain and hand chain, various sizes from 6x18mm to standard specifications",
       "_pdfEnriched": true,
-      "_pdfEnrichedAt": "2026-01-17T18:01:09.936Z"
+      "_pdfEnrichedAt": "2026-01-17T18:01:09.936Z",
+      "motorPower": "0.75-1.5 kW (estimated)"
     },
     {
       "manufacturer": "Yale Hoists",
@@ -4175,7 +4231,8 @@
       ],
       "brakeType": "AC Disc Type, DC Disc Type, Weston Mechanical, Electric/Regenerative Braking",
       "_pdfEnriched": true,
-      "_pdfEnrichedAt": "2026-01-17T18:01:09.936Z"
+      "_pdfEnrichedAt": "2026-01-17T18:01:09.936Z",
+      "motorPower": "0.75-1.5 kW (estimated)"
     },
     {
       "manufacturer": "Yale Hoists",
@@ -4399,7 +4456,7 @@
       "lastUpdated": "2026-01-16T08:30:03.640Z",
       "loadCapacity": "not visible",
       "liftingSpeed": "not visible",
-      "motorPower": "not visible",
+      "motorPower": "",
       "weight": "not visible",
       "dimensions": "not visible",
       "safetyFeatures": [
@@ -4558,7 +4615,8 @@
       "llmEnrichedAt": "2026-01-16T08:30:01.627Z",
       "llmProvider": "claude",
       "_pdfEnriched": true,
-      "_pdfEnrichedAt": "2026-01-17T18:01:09.939Z"
+      "_pdfEnrichedAt": "2026-01-17T18:01:09.939Z",
+      "motorPower": "15+ kW (estimated)"
     },
     {
       "manufacturer": "SWF Krantechnik",
@@ -4686,7 +4744,8 @@
         "load handling"
       ],
       "_pdfEnriched": true,
-      "_pdfEnrichedAt": "2026-01-17T18:01:09.939Z"
+      "_pdfEnrichedAt": "2026-01-17T18:01:09.939Z",
+      "motorPower": "0.18-0.25 kW (estimated)"
     },
     {
       "manufacturer": "SWF Krantechnik",
@@ -4800,7 +4859,8 @@
       "confidence": 0.7,
       "llmEnriched": true,
       "llmEnrichedAt": "2026-01-16T08:31:42.248Z",
-      "llmProvider": "claude"
+      "llmProvider": "claude",
+      "motorPower": "0.18-0.25 kW (estimated)"
     },
     {
       "manufacturer": "Elephant Lifting Products",
@@ -4905,7 +4965,7 @@
       "llmProvider": "claude",
       "loadCapacity": "Not visible",
       "liftingSpeed": "Not visible",
-      "motorPower": "Not visible",
+      "motorPower": "",
       "weight": "Not visible",
       "dimensions": "Not visible",
       "safetyFeatures": [
@@ -5059,7 +5119,8 @@
         "Material handling",
         "Construction",
         "Manufacturing"
-      ]
+      ],
+      "motorPower": "0.18-0.25 kW (estimated)"
     },
     {
       "manufacturer": "Elephant Lifting Products",
@@ -5464,7 +5525,8 @@
         "Material handling",
         "Construction",
         "Manufacturing"
-      ]
+      ],
+      "motorPower": "0.18-0.25 kW (estimated)"
     },
     {
       "manufacturer": "LiftingSafety",
@@ -5553,7 +5615,7 @@
       "lastUpdated": "2026-01-16T08:35:59.328Z",
       "loadCapacity": "Not visible in image",
       "liftingSpeed": "Not visible in image",
-      "motorPower": "Not visible in image",
+      "motorPower": "",
       "weight": "Not visible in image",
       "dimensions": "Not visible in image",
       "safetyFeatures": [
@@ -5656,7 +5718,7 @@
       "lastUpdated": "2026-01-16T08:35:59.329Z",
       "loadCapacity": "Not visible in image",
       "liftingSpeed": "Not visible in image",
-      "motorPower": "Not visible in image",
+      "motorPower": "",
       "weight": "Not visible in image",
       "dimensions": "Not visible in image",
       "safetyFeatures": [
@@ -5759,7 +5821,7 @@
       "lastUpdated": "2026-01-16T08:35:59.329Z",
       "loadCapacity": "Not visible in image",
       "liftingSpeed": "Not visible in image",
-      "motorPower": "Not visible in image",
+      "motorPower": "",
       "weight": "Not visible in image",
       "dimensions": "Not visible in image",
       "safetyFeatures": [
@@ -5862,7 +5924,7 @@
       "lastUpdated": "2026-01-16T08:35:59.329Z",
       "loadCapacity": "Not visible in image",
       "liftingSpeed": "Not visible in image",
-      "motorPower": "Not visible in image",
+      "motorPower": "",
       "weight": "Not visible in image",
       "dimensions": "Not visible in image",
       "safetyFeatures": [
@@ -5965,7 +6027,7 @@
       "lastUpdated": "2026-01-16T08:35:59.329Z",
       "loadCapacity": "Not visible in image",
       "liftingSpeed": "Not visible in image",
-      "motorPower": "Not visible in image",
+      "motorPower": "",
       "weight": "Not visible in image",
       "dimensions": "Not visible in image",
       "safetyFeatures": [
@@ -6069,7 +6131,7 @@
       "lastUpdated": "2026-01-16T08:35:59.329Z",
       "loadCapacity": "Not visible in image",
       "liftingSpeed": "Not visible in image",
-      "motorPower": "Not visible in image",
+      "motorPower": "",
       "weight": "Not visible in image",
       "dimensions": "Not visible in image",
       "safetyFeatures": [
@@ -6257,7 +6319,8 @@
       "chainSpecification": "Grade 8 load chain (EN818-7 Appendix B compliant)",
       "operatingTemperature": "-20°C to +70°C",
       "_pdfEnriched": true,
-      "_pdfEnrichedAt": "2026-01-17T18:01:09.941Z"
+      "_pdfEnrichedAt": "2026-01-17T18:01:09.941Z",
+      "motorPower": "15+ kW (estimated)"
     },
     {
       "manufacturer": "Tiger Lifting",
@@ -6421,7 +6484,8 @@
       "chainSpecification": "Grade 8 load chain (EN818-7 Appendix B compliant)",
       "operatingTemperature": "-20°C to +70°C",
       "_pdfEnriched": true,
-      "_pdfEnrichedAt": "2026-01-17T18:01:09.941Z"
+      "_pdfEnrichedAt": "2026-01-17T18:01:09.941Z",
+      "motorPower": "15+ kW (estimated)"
     },
     {
       "manufacturer": "Tiger Lifting",
@@ -6594,7 +6658,8 @@
       "chainSpecification": "Grade 8 load chain (EN818-7 Appendix B compliant)",
       "operatingTemperature": "-20°C to +70°C",
       "_pdfEnriched": true,
-      "_pdfEnrichedAt": "2026-01-17T18:01:09.941Z"
+      "_pdfEnrichedAt": "2026-01-17T18:01:09.941Z",
+      "motorPower": "15+ kW (estimated)"
     },
     {
       "id": "columbus-mckinnon-lodestar-classic-250",
@@ -9601,7 +9666,8 @@
       "scrapedAt": "2026-01-17T18:12:31.351Z",
       "confidence": 0.9,
       "createdAt": "2026-01-17T18:12:31.351Z",
-      "lastUpdated": "2026-01-17T18:12:31.351Z"
+      "lastUpdated": "2026-01-17T18:12:31.351Z",
+      "motorPower": "0.18-0.25 kW (estimated)"
     },
     {
       "id": "gorbel-gs-series",
@@ -9617,7 +9683,8 @@
       "scrapedAt": "2026-01-17T18:12:31.351Z",
       "confidence": 0.9,
       "createdAt": "2026-01-17T18:12:31.351Z",
-      "lastUpdated": "2026-01-17T18:12:31.351Z"
+      "lastUpdated": "2026-01-17T18:12:31.351Z",
+      "motorPower": "0.25-0.37 kW (estimated)"
     },
     {
       "id": "planeta-ph-chain-hoist",
@@ -9633,7 +9700,8 @@
       "scrapedAt": "2026-01-17T18:12:31.351Z",
       "confidence": 0.9,
       "createdAt": "2026-01-17T18:12:31.351Z",
-      "lastUpdated": "2026-01-17T18:12:31.351Z"
+      "lastUpdated": "2026-01-17T18:12:31.351Z",
+      "motorPower": "0.18-0.25 kW (estimated)"
     },
     {
       "id": "yale-cpe-125",
@@ -10017,7 +10085,8 @@
       "scrapedAt": "2026-01-17T18:12:31.352Z",
       "confidence": 0.9,
       "createdAt": "2026-01-17T18:12:31.352Z",
-      "lastUpdated": "2026-01-17T18:12:31.352Z"
+      "lastUpdated": "2026-01-17T18:12:31.352Z",
+      "motorPower": "0.18-0.25 kW (estimated)"
     },
     {
       "id": "yale-cpa-250",
@@ -10035,7 +10104,8 @@
       "scrapedAt": "2026-01-17T18:12:31.352Z",
       "confidence": 0.9,
       "createdAt": "2026-01-17T18:12:31.352Z",
-      "lastUpdated": "2026-01-17T18:12:31.352Z"
+      "lastUpdated": "2026-01-17T18:12:31.352Z",
+      "motorPower": "0.25-0.37 kW (estimated)"
     },
     {
       "id": "yale-cpa-500",
@@ -10053,7 +10123,8 @@
       "scrapedAt": "2026-01-17T18:12:31.352Z",
       "confidence": 0.9,
       "createdAt": "2026-01-17T18:12:31.352Z",
-      "lastUpdated": "2026-01-17T18:12:31.352Z"
+      "lastUpdated": "2026-01-17T18:12:31.352Z",
+      "motorPower": "0.37-0.75 kW (estimated)"
     },
     {
       "id": "yale-cpa-1000",
@@ -10071,7 +10142,8 @@
       "scrapedAt": "2026-01-17T18:12:31.352Z",
       "confidence": 0.9,
       "createdAt": "2026-01-17T18:12:31.352Z",
-      "lastUpdated": "2026-01-17T18:12:31.352Z"
+      "lastUpdated": "2026-01-17T18:12:31.352Z",
+      "motorPower": "0.75-1.5 kW (estimated)"
     },
     {
       "id": "ingersoll-rand-ml-250",
@@ -10346,7 +10418,8 @@
       "scrapedAt": "2026-01-17T18:12:31.352Z",
       "confidence": 0.9,
       "createdAt": "2026-01-17T18:12:31.352Z",
-      "lastUpdated": "2026-01-17T18:12:31.352Z"
+      "lastUpdated": "2026-01-17T18:12:31.352Z",
+      "motorPower": "0.25-0.37 kW (estimated)"
     },
     {
       "id": "ingersoll-rand-lc-500",
@@ -10367,7 +10440,8 @@
       "scrapedAt": "2026-01-17T18:12:31.352Z",
       "confidence": 0.9,
       "createdAt": "2026-01-17T18:12:31.352Z",
-      "lastUpdated": "2026-01-17T18:12:31.352Z"
+      "lastUpdated": "2026-01-17T18:12:31.352Z",
+      "motorPower": "0.37-0.75 kW (estimated)"
     },
     {
       "id": "ingersoll-rand-lc-1000",
@@ -10388,7 +10462,8 @@
       "scrapedAt": "2026-01-17T18:12:31.352Z",
       "confidence": 0.9,
       "createdAt": "2026-01-17T18:12:31.352Z",
-      "lastUpdated": "2026-01-17T18:12:31.352Z"
+      "lastUpdated": "2026-01-17T18:12:31.352Z",
+      "motorPower": "0.75-1.5 kW (estimated)"
     },
     {
       "id": "ingersoll-rand-lc-2000",
@@ -10409,7 +10484,8 @@
       "scrapedAt": "2026-01-17T18:12:31.352Z",
       "confidence": 0.9,
       "createdAt": "2026-01-17T18:12:31.352Z",
-      "lastUpdated": "2026-01-17T18:12:31.352Z"
+      "lastUpdated": "2026-01-17T18:12:31.352Z",
+      "motorPower": "1.5-3.0 kW (estimated)"
     },
     {
       "id": "coffing-jlc-250",
@@ -12239,7 +12315,8 @@
       "scrapedAt": "2026-01-17T18:12:31.352Z",
       "confidence": 0.9,
       "createdAt": "2026-01-17T18:12:31.352Z",
-      "lastUpdated": "2026-01-17T18:12:31.352Z"
+      "lastUpdated": "2026-01-17T18:12:31.352Z",
+      "motorPower": "Pneumatic"
     },
     {
       "id": "jdn-profi-2-ti",
@@ -12261,7 +12338,8 @@
       "scrapedAt": "2026-01-17T18:12:31.352Z",
       "confidence": 0.9,
       "createdAt": "2026-01-17T18:12:31.352Z",
-      "lastUpdated": "2026-01-17T18:12:31.352Z"
+      "lastUpdated": "2026-01-17T18:12:31.352Z",
+      "motorPower": "Pneumatic"
     },
     {
       "id": "jdn-profi-3-ti",
@@ -12283,7 +12361,8 @@
       "scrapedAt": "2026-01-17T18:12:31.352Z",
       "confidence": 0.9,
       "createdAt": "2026-01-17T18:12:31.352Z",
-      "lastUpdated": "2026-01-17T18:12:31.352Z"
+      "lastUpdated": "2026-01-17T18:12:31.352Z",
+      "motorPower": "Pneumatic"
     },
     {
       "id": "jdn-profi-5-ti",
@@ -12305,7 +12384,8 @@
       "scrapedAt": "2026-01-17T18:12:31.352Z",
       "confidence": 0.9,
       "createdAt": "2026-01-17T18:12:31.352Z",
-      "lastUpdated": "2026-01-17T18:12:31.352Z"
+      "lastUpdated": "2026-01-17T18:12:31.352Z",
+      "motorPower": "Pneumatic"
     },
     {
       "id": "jdn-profi-10-ti",
@@ -12327,7 +12407,8 @@
       "scrapedAt": "2026-01-17T18:12:31.352Z",
       "confidence": 0.9,
       "createdAt": "2026-01-17T18:12:31.352Z",
-      "lastUpdated": "2026-01-17T18:12:31.352Z"
+      "lastUpdated": "2026-01-17T18:12:31.352Z",
+      "motorPower": "Pneumatic"
     },
     {
       "id": "jdn-profi-20-ti",
@@ -12349,7 +12430,8 @@
       "scrapedAt": "2026-01-17T18:12:31.352Z",
       "confidence": 0.9,
       "createdAt": "2026-01-17T18:12:31.352Z",
-      "lastUpdated": "2026-01-17T18:12:31.352Z"
+      "lastUpdated": "2026-01-17T18:12:31.352Z",
+      "motorPower": "Pneumatic"
     },
     {
       "id": "jdn-profi-50-ti",
@@ -12371,7 +12453,8 @@
       "scrapedAt": "2026-01-17T18:12:31.352Z",
       "confidence": 0.9,
       "createdAt": "2026-01-17T18:12:31.352Z",
-      "lastUpdated": "2026-01-17T18:12:31.352Z"
+      "lastUpdated": "2026-01-17T18:12:31.352Z",
+      "motorPower": "Pneumatic"
     },
     {
       "id": "jdn-mini-125",
@@ -12392,7 +12475,8 @@
       "scrapedAt": "2026-01-17T18:12:31.352Z",
       "confidence": 0.9,
       "createdAt": "2026-01-17T18:12:31.352Z",
-      "lastUpdated": "2026-01-17T18:12:31.352Z"
+      "lastUpdated": "2026-01-17T18:12:31.352Z",
+      "motorPower": "Pneumatic"
     },
     {
       "id": "jdn-mini-250",
@@ -12413,7 +12497,8 @@
       "scrapedAt": "2026-01-17T18:12:31.352Z",
       "confidence": 0.9,
       "createdAt": "2026-01-17T18:12:31.352Z",
-      "lastUpdated": "2026-01-17T18:12:31.352Z"
+      "lastUpdated": "2026-01-17T18:12:31.352Z",
+      "motorPower": "Pneumatic"
     },
     {
       "id": "jdn-mini-500",
@@ -12434,7 +12519,8 @@
       "scrapedAt": "2026-01-17T18:12:31.352Z",
       "confidence": 0.9,
       "createdAt": "2026-01-17T18:12:31.352Z",
-      "lastUpdated": "2026-01-17T18:12:31.352Z"
+      "lastUpdated": "2026-01-17T18:12:31.352Z",
+      "motorPower": "Pneumatic"
     },
     {
       "id": "jdn-mini-980",
@@ -12455,7 +12541,8 @@
       "scrapedAt": "2026-01-17T18:12:31.352Z",
       "confidence": 0.9,
       "createdAt": "2026-01-17T18:12:31.352Z",
-      "lastUpdated": "2026-01-17T18:12:31.352Z"
+      "lastUpdated": "2026-01-17T18:12:31.352Z",
+      "motorPower": "Pneumatic"
     },
     {
       "id": "jdn-bbh-1000",
@@ -12476,7 +12563,8 @@
       "scrapedAt": "2026-01-17T18:12:31.352Z",
       "confidence": 0.9,
       "createdAt": "2026-01-17T18:12:31.352Z",
-      "lastUpdated": "2026-01-17T18:12:31.352Z"
+      "lastUpdated": "2026-01-17T18:12:31.352Z",
+      "motorPower": "0.75-1.5 kW (estimated)"
     },
     {
       "id": "jdn-bbh-2000",
@@ -12497,7 +12585,8 @@
       "scrapedAt": "2026-01-17T18:12:31.352Z",
       "confidence": 0.9,
       "createdAt": "2026-01-17T18:12:31.352Z",
-      "lastUpdated": "2026-01-17T18:12:31.352Z"
+      "lastUpdated": "2026-01-17T18:12:31.352Z",
+      "motorPower": "1.5-3.0 kW (estimated)"
     },
     {
       "id": "jdn-bbh-3000",
@@ -12518,7 +12607,8 @@
       "scrapedAt": "2026-01-17T18:12:31.352Z",
       "confidence": 0.9,
       "createdAt": "2026-01-17T18:12:31.352Z",
-      "lastUpdated": "2026-01-17T18:12:31.352Z"
+      "lastUpdated": "2026-01-17T18:12:31.352Z",
+      "motorPower": "3.0-7.5 kW (estimated)"
     },
     {
       "id": "jdn-lmf-250",
@@ -12540,7 +12630,8 @@
       "scrapedAt": "2026-01-17T18:12:31.352Z",
       "confidence": 0.9,
       "createdAt": "2026-01-17T18:12:31.352Z",
-      "lastUpdated": "2026-01-17T18:12:31.352Z"
+      "lastUpdated": "2026-01-17T18:12:31.352Z",
+      "motorPower": "0.25-0.37 kW (estimated)"
     },
     {
       "id": "jdn-lmf-500",
@@ -12562,7 +12653,8 @@
       "scrapedAt": "2026-01-17T18:12:31.352Z",
       "confidence": 0.9,
       "createdAt": "2026-01-17T18:12:31.352Z",
-      "lastUpdated": "2026-01-17T18:12:31.352Z"
+      "lastUpdated": "2026-01-17T18:12:31.352Z",
+      "motorPower": "0.37-0.75 kW (estimated)"
     },
     {
       "id": "jdn-lmf-1000",
@@ -12584,7 +12676,8 @@
       "scrapedAt": "2026-01-17T18:12:31.352Z",
       "confidence": 0.9,
       "createdAt": "2026-01-17T18:12:31.352Z",
-      "lastUpdated": "2026-01-17T18:12:31.352Z"
+      "lastUpdated": "2026-01-17T18:12:31.352Z",
+      "motorPower": "0.75-1.5 kW (estimated)"
     },
     {
       "id": "elephant-fa-250",
@@ -14161,6 +14254,6 @@
     "manufacturers": 30
   },
   "scrapedAt": "2026-01-17T19:02:25.985Z",
-  "cleanedAt": "2026-01-17T19:23:40.039Z",
-  "version": "3.2"
+  "enrichedAt": "2026-01-17T19:35:02.869Z",
+  "version": "3.3"
 }
