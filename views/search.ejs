@@ -317,6 +317,39 @@
         display: none;
       }
     }
+    /* Data quality indicators */
+    .quality-indicator {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 0.75rem;
+    }
+    .quality-bar {
+      width: 40px;
+      height: 6px;
+      background: #e9ecef;
+      border-radius: 3px;
+      overflow: hidden;
+    }
+    .quality-bar-fill {
+      height: 100%;
+      border-radius: 3px;
+      transition: width 0.3s ease;
+    }
+    .quality-complete .quality-bar-fill { background: #28a745; }
+    .quality-partial .quality-bar-fill { background: #17a2b8; }
+    .quality-incomplete .quality-bar-fill { background: #ffc107; }
+    .quality-minimal .quality-bar-fill { background: #dc3545; }
+    .quality-badge {
+      font-size: 0.65rem;
+      padding: 2px 6px;
+      border-radius: 10px;
+    }
+    .quality-badge.complete { background: #d4edda; color: #155724; }
+    .quality-badge.partial { background: #d1ecf1; color: #0c5460; }
+    .quality-badge.incomplete { background: #fff3cd; color: #856404; }
+    .quality-badge.minimal { background: #f8d7da; color: #721c24; }
+
     /* Clickable table rows */
     tr.clickable-row {
       cursor: pointer;
@@ -737,14 +770,26 @@
           <span class="text-muted">0 chainhoists found</span>
         <% } %>
       </div>
-      <div class="d-flex align-items-center gap-2">
-        <label for="limitSelect" class="text-muted mb-0">Per page:</label>
-        <select id="limitSelect" class="form-select form-select-sm page-size-select" onchange="changePageSize(this.value)" aria-label="Results per page">
-          <option value="10" <%= pagination.limit === 10 ? 'selected' : '' %>>10</option>
-          <option value="25" <%= pagination.limit === 25 ? 'selected' : '' %>>25</option>
-          <option value="50" <%= pagination.limit === 50 ? 'selected' : '' %>>50</option>
-          <option value="100" <%= pagination.limit === 100 ? 'selected' : '' %>>100</option>
-        </select>
+      <div class="d-flex align-items-center gap-3 flex-wrap">
+        <!-- Complete Specs Toggle -->
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" role="switch" id="completeSpecsToggle"
+                 <%= filters.dataQuality === 'complete' ? 'checked' : '' %>
+                 onchange="toggleCompleteSpecs(this.checked)"
+                 style="cursor: pointer;">
+          <label class="form-check-label text-muted" for="completeSpecsToggle" style="cursor: pointer; font-size: 0.875rem;">
+            <i class="bi bi-check2-all me-1" style="color: var(--brand-accent);"></i>Complete specs only
+          </label>
+        </div>
+        <div class="d-flex align-items-center gap-2">
+          <label for="limitSelect" class="text-muted mb-0">Per page:</label>
+          <select id="limitSelect" class="form-select form-select-sm page-size-select" onchange="changePageSize(this.value)" aria-label="Results per page">
+            <option value="10" <%= pagination.limit === 10 ? 'selected' : '' %>>10</option>
+            <option value="25" <%= pagination.limit === 25 ? 'selected' : '' %>>25</option>
+            <option value="50" <%= pagination.limit === 50 ? 'selected' : '' %>>50</option>
+            <option value="100" <%= pagination.limit === 100 ? 'selected' : '' %>>100</option>
+          </select>
+        </div>
       </div>
     </div>
 
@@ -827,6 +872,7 @@
               <th class="sortable <%= sortClass('capacity') %>" aria-sort="<%= ariaSort('capacity') %>"><a href="<%= buildSortUrl('capacity') %>" class="text-white text-decoration-none d-block">Capacity</a></th>
               <th class="sortable <%= sortClass('speed') %>" aria-sort="<%= ariaSort('speed') %>"><a href="<%= buildSortUrl('speed') %>" class="text-white text-decoration-none d-block">Speed</a></th>
               <th class="sortable <%= sortClass('classification') %>" aria-sort="<%= ariaSort('classification') %>"><a href="<%= buildSortUrl('classification') %>" class="text-white text-decoration-none d-block">Classification</a></th>
+              <th>Quality</th>
               <th>Actions</th>
             </tr>
           </thead>
@@ -855,6 +901,16 @@
                   <% } %>
                 </td>
                 <td>
+                  <% const tier = item.dataQualityTier || 'minimal'; %>
+                  <% const completeness = item.dataCompleteness || 0; %>
+                  <div class="quality-indicator quality-<%= tier %>" title="Data completeness: <%= completeness %>%">
+                    <div class="quality-bar">
+                      <div class="quality-bar-fill" style="width: <%= completeness %>%"></div>
+                    </div>
+                    <span class="quality-badge <%= tier %>"><%= completeness %>%</span>
+                  </div>
+                </td>
+                <td>
                   <a href="<%= buildProductUrl(item.id) %>" class="btn btn-sm btn-outline-primary">Details</a>
                 </td>
               </tr>
@@ -871,6 +927,14 @@
               <div>
                 <h3 class="card-title-mobile"><a href="/search?manufacturer=<%= encodeURIComponent(item.manufacturer) %>" class="filter-link"><%= item.manufacturer %></a></h3>
                 <div class="card-subtitle-mobile"><%= item.model %><%= item.series ? ' - ' + item.series : '' %></div>
+                <% const mTier = item.dataQualityTier || 'minimal'; %>
+                <% const mCompleteness = item.dataCompleteness || 0; %>
+                <div class="quality-indicator quality-<%= mTier %> mt-1" title="Data completeness: <%= mCompleteness %>%">
+                  <div class="quality-bar">
+                    <div class="quality-bar-fill" style="width: <%= mCompleteness %>%"></div>
+                  </div>
+                  <span class="quality-badge <%= mTier %>"><%= mCompleteness %>%</span>
+                </div>
               </div>
               <% if (item.images && item.images.length > 0) { %>
                 <img src="<%= item.images[0].url %>" alt="<%= item.manufacturer %>" class="card-thumb" loading="lazy" onerror="this.onerror=null; this.outerHTML='<div class=\'no-thumb-mobile\' title=\'Image failed to load\'></div>';">
@@ -1039,6 +1103,19 @@
       window.location.href = url.toString();
     }
 
+    // Toggle complete specs only filter
+    function toggleCompleteSpecs(checked) {
+      showLoading();
+      const url = new URL(window.location.href);
+      if (checked) {
+        url.searchParams.set('dataQuality', 'complete');
+      } else {
+        url.searchParams.delete('dataQuality');
+      }
+      url.searchParams.set('page', '1');
+      window.location.href = url.toString();
+    }
+
     // Show loading on filter form submit
     document.querySelector('form[action="/search"]')?.addEventListener('submit', showLoading);
 
@@ -1164,6 +1241,196 @@
         });
       }
     });
+
+    // ============ Search Autocomplete ============
+    const searchInput = document.getElementById('q');
+    let autocompleteContainer = null;
+    let selectedIndex = -1;
+    let suggestions = [];
+    let autocompleteTimeout = null;
+
+    function createAutocompleteContainer() {
+      if (autocompleteContainer) return;
+
+      autocompleteContainer = document.createElement('div');
+      autocompleteContainer.className = 'autocomplete-container';
+      autocompleteContainer.id = 'autocompleteResults';
+      autocompleteContainer.setAttribute('role', 'listbox');
+      autocompleteContainer.style.cssText = `
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: white;
+        border: 1px solid #dee2e6;
+        border-top: none;
+        border-radius: 0 0 8px 8px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        z-index: 1050;
+        max-height: 300px;
+        overflow-y: auto;
+        display: none;
+      `;
+
+      // Position relative to input wrapper
+      const inputWrapper = searchInput.parentElement;
+      inputWrapper.style.position = 'relative';
+      inputWrapper.appendChild(autocompleteContainer);
+    }
+
+    function showAutocomplete(items) {
+      if (!autocompleteContainer) createAutocompleteContainer();
+
+      suggestions = items;
+      selectedIndex = -1;
+
+      if (items.length === 0) {
+        autocompleteContainer.style.display = 'none';
+        return;
+      }
+
+      autocompleteContainer.innerHTML = items.map((item, index) => {
+        let icon, badgeClass, link;
+
+        if (item.type === 'manufacturer') {
+          icon = '<i class="bi bi-building me-2 text-primary"></i>';
+          badgeClass = 'bg-primary';
+          link = `/search?manufacturer=${encodeURIComponent(item.value)}`;
+        } else if (item.type === 'classification') {
+          icon = '<i class="bi bi-award me-2 text-info"></i>';
+          badgeClass = 'bg-info';
+          link = `/search?classification=${encodeURIComponent(item.value)}`;
+        } else {
+          icon = '<i class="bi bi-box me-2 text-secondary"></i>';
+          badgeClass = 'bg-secondary';
+          link = `/product/${item.value}`;
+        }
+
+        const countBadge = item.count !== undefined
+          ? `<span class="badge ${badgeClass} rounded-pill ms-auto">${item.count}</span>`
+          : '';
+
+        return `
+          <div class="autocomplete-item"
+               role="option"
+               data-index="${index}"
+               data-link="${link}"
+               data-type="${item.type}"
+               data-value="${item.type === 'product' ? item.value : item.label}"
+               style="padding: 10px 15px; cursor: pointer; display: flex; align-items: center; border-bottom: 1px solid #f0f0f0;">
+            ${icon}
+            <span style="flex: 1;">${item.label}</span>
+            ${countBadge}
+          </div>
+        `;
+      }).join('');
+
+      autocompleteContainer.style.display = 'block';
+
+      // Add hover and click handlers
+      autocompleteContainer.querySelectorAll('.autocomplete-item').forEach(item => {
+        item.addEventListener('mouseenter', () => {
+          selectedIndex = parseInt(item.dataset.index);
+          updateSelection();
+        });
+
+        item.addEventListener('click', (e) => {
+          e.preventDefault();
+          selectItem(item);
+        });
+      });
+    }
+
+    function updateSelection() {
+      autocompleteContainer?.querySelectorAll('.autocomplete-item').forEach((item, idx) => {
+        if (idx === selectedIndex) {
+          item.style.background = '#e9ecef';
+          item.setAttribute('aria-selected', 'true');
+        } else {
+          item.style.background = 'white';
+          item.setAttribute('aria-selected', 'false');
+        }
+      });
+    }
+
+    function selectItem(item) {
+      showLoading();
+      const link = item.dataset.link;
+      window.location.href = link;
+    }
+
+    function hideAutocomplete() {
+      if (autocompleteContainer) {
+        autocompleteContainer.style.display = 'none';
+      }
+      selectedIndex = -1;
+    }
+
+    async function fetchSuggestions(query) {
+      if (!query || query.length < 2) {
+        hideAutocomplete();
+        return;
+      }
+
+      try {
+        const response = await fetch(`/api/suggestions?q=${encodeURIComponent(query)}&limit=10`);
+        if (!response.ok) throw new Error('API error');
+        const data = await response.json();
+        showAutocomplete(data.suggestions || []);
+      } catch (error) {
+        console.error('Autocomplete error:', error);
+        hideAutocomplete();
+      }
+    }
+
+    if (searchInput) {
+      searchInput.setAttribute('autocomplete', 'off');
+      searchInput.setAttribute('aria-autocomplete', 'list');
+      searchInput.setAttribute('aria-controls', 'autocompleteResults');
+
+      // Input handler with debounce
+      searchInput.addEventListener('input', (e) => {
+        clearTimeout(autocompleteTimeout);
+        autocompleteTimeout = setTimeout(() => {
+          fetchSuggestions(e.target.value.trim());
+        }, 200);
+      });
+
+      // Keyboard navigation
+      searchInput.addEventListener('keydown', (e) => {
+        if (!autocompleteContainer || autocompleteContainer.style.display === 'none') return;
+
+        if (e.key === 'ArrowDown') {
+          e.preventDefault();
+          selectedIndex = Math.min(selectedIndex + 1, suggestions.length - 1);
+          updateSelection();
+        } else if (e.key === 'ArrowUp') {
+          e.preventDefault();
+          selectedIndex = Math.max(selectedIndex - 1, -1);
+          updateSelection();
+        } else if (e.key === 'Enter' && selectedIndex >= 0) {
+          e.preventDefault();
+          const selectedItem = autocompleteContainer.querySelector(`[data-index="${selectedIndex}"]`);
+          if (selectedItem) selectItem(selectedItem);
+        } else if (e.key === 'Escape') {
+          hideAutocomplete();
+        }
+      });
+
+      // Close on click outside
+      document.addEventListener('click', (e) => {
+        if (!searchInput.contains(e.target) && !autocompleteContainer?.contains(e.target)) {
+          hideAutocomplete();
+        }
+      });
+
+      // Focus handler
+      searchInput.addEventListener('focus', () => {
+        if (searchInput.value.trim().length >= 2) {
+          fetchSuggestions(searchInput.value.trim());
+        }
+      });
+    }
 
     // Mobile filter panel toggle
     const filterToggle = document.getElementById('filterToggle');

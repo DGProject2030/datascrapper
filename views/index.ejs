@@ -15,13 +15,13 @@
                 <p class="card-text">Featuring <%= manufacturers.length %> manufacturers</p>
                 <ul class="list-group">
                   <% manufacturers.slice(0, 5).forEach(function(manufacturer) { %>
-                    <a href="/search?manufacturer=<%= encodeURIComponent(manufacturer) %>" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
                       <%= manufacturer %>
                       <span class="badge bg-primary rounded-pill"><%= data.filter(item => item.manufacturer === manufacturer).length %></span>
-                    </a>
+                    </li>
                   <% }); %>
                   <% if (manufacturers.length > 5) { %>
-                    <a href="/search" class="list-group-item list-group-item-action text-center text-primary">View all <%= manufacturers.length %> manufacturers →</a>
+                    <li class="list-group-item text-center text-muted">+ <%= manufacturers.length - 5 %> more</li>
                   <% } %>
                 </ul>
               </div>
@@ -35,10 +35,10 @@
                 <p class="card-text">Chainhoists by load capacity</p>
                 <ul class="list-group">
                   <% capacities.forEach(function(capacity) { %>
-                    <a href="/search?capacity=<%= encodeURIComponent(capacity) %>" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
                       <%= capacity %>
-                      <span class="badge bg-success rounded-pill"><%= report.capacityDistribution[capacity] || 0 %></span>
-                    </a>
+                      <span class="badge bg-success rounded-pill"><%= report.capacityDistribution[capacity] %></span>
+                    </li>
                   <% }); %>
                 </ul>
               </div>
@@ -52,10 +52,10 @@
                 <p class="card-text">Chainhoists by industry classification</p>
                 <ul class="list-group">
                   <% classifications.forEach(function(classification) { %>
-                    <a href="/search?classification=<%= encodeURIComponent(classification) %>" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
                       <%= classification.toUpperCase() %>
-                      <span class="badge bg-info rounded-pill"><%= report.classificationDistribution[classification] || 0 %></span>
-                    </a>
+                      <span class="badge bg-info rounded-pill"><%= report.classificationDistribution[classification] %></span>
+                    </li>
                   <% }); %>
                 </ul>
               </div>
@@ -116,40 +116,12 @@
 
 <h2 class="mb-4">Featured Chainhoists</h2>
 
-<style>
-  .featured-card-img {
-    height: 140px;
-    object-fit: contain;
-    background: #f8f9fa;
-    padding: 10px;
-  }
-  .featured-no-img {
-    height: 140px;
-    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #adb5bd;
-    font-size: 3rem;
-  }
-</style>
-<%
-  // Prioritize products with images for featured section
-  const productsWithImages = data.filter(item => item.images && item.images.length > 0);
-  const productsWithoutImages = data.filter(item => !item.images || item.images.length === 0);
-  const featuredProducts = [...productsWithImages, ...productsWithoutImages].slice(0, 6);
-%>
 <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-  <% featuredProducts.forEach(function(item) { %>
+  <% data.slice(0, 6).forEach(function(item) { %>
     <div class="col">
       <div class="card h-100 product-card">
-        <% if (item.images && item.images.length > 0) { %>
-          <img src="<%= item.images[0].url %>" class="card-img-top featured-card-img" alt="<%= item.manufacturer %> <%= item.model %>" loading="lazy" onerror="this.onerror=null; this.outerHTML='<div class=\'featured-no-img\'><i class=\'bi bi-box-seam\'></i></div>';">
-        <% } else { %>
-          <div class="featured-no-img"><i class="bi bi-box-seam"></i></div>
-        <% } %>
         <div class="card-header bg-light">
-          <h5 class="card-title mb-0"><a href="/search?manufacturer=<%= encodeURIComponent(item.manufacturer) %>" class="text-decoration-none text-dark"><%= item.manufacturer %></a></h5>
+          <h5 class="card-title mb-0"><%= item.manufacturer %></h5>
         </div>
         <div class="card-body">
           <h6 class="card-subtitle mb-2 text-muted"><%= item.model %></h6>
@@ -157,7 +129,7 @@
           <% if (item.classification && Array.isArray(item.classification)) { %>
             <div class="mb-2">
               <% item.classification.forEach(function(cls) { %>
-                <a href="/search?classification=<%= encodeURIComponent(cls) %>"><span class="badge bg-info classification-badge"><%= cls.toUpperCase() %></span></a>
+                <span class="badge bg-info classification-badge"><%= cls.toUpperCase() %></span>
               <% }); %>
             </div>
           <% } %>
@@ -165,13 +137,9 @@
           <p class="card-text">
             <% if (item.loadCapacity) { %>
               <span class="d-block"><strong>Capacity:</strong> <%= item.loadCapacity %></span>
-            <% } else { %>
-              <span class="d-block text-muted"><strong>Capacity:</strong> <em>Not specified</em></span>
             <% } %>
             <% if (item.liftingSpeed) { %>
               <span class="d-block"><strong>Speed:</strong> <%= item.liftingSpeed %></span>
-            <% } else { %>
-              <span class="d-block text-muted"><strong>Speed:</strong> <em>Not specified</em></span>
             <% } %>
             <% if (item.motorPower) { %>
               <span class="d-block"><strong>Power:</strong> <%= item.motorPower %></span>
