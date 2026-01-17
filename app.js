@@ -1347,7 +1347,8 @@ app.get('/', (req, res) => {
     capacities,
     classifications,
     filters: req.query,
-    title: 'Electric Chainhoist Database'
+    title: 'Electric Chainhoist Database',
+    activePage: 'home'
   });
 });
 
@@ -1766,7 +1767,8 @@ app.get('/stats', (req, res) => {
     capacityStats,
     powerStats,
     speedStats,
-    title: 'Database Statistics'
+    title: 'Database Statistics',
+    activePage: 'stats'
   });
 });
 
@@ -1816,7 +1818,8 @@ app.get('/downloads', (req, res) => {
     pdfsByManufacturer,
     totalPdfs: pdfFiles.length,
     productsWithPdfs,
-    manufacturers: Object.keys(pdfsByManufacturer).sort()
+    manufacturers: Object.keys(pdfsByManufacturer).sort(),
+    activePage: 'downloads'
   });
 });
 
