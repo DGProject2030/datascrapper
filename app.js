@@ -472,6 +472,7 @@ function loadPersonalityData() {
 }
 
 // Invalidate cache (call after data updates)
+// eslint-disable-next-line no-unused-vars
 function invalidateCache() {
   cache.data = null;
   cache.dataTime = 0;
@@ -1055,7 +1056,7 @@ app.get('/api/suggestions', (req, res) => {
 
     // Add matching models (limit to prevent too many results)
     let modelCount = 0;
-    for (const [id, item] of cache.indexes.byId) {
+    for (const [, item] of cache.indexes.byId) {
       if (modelCount >= 5) {
         break;
       }
@@ -1365,9 +1366,10 @@ app.get('/search', (req, res) => {
   const hasManufacturer = !!req.query.manufacturer;
   const hasCapacity = !!req.query.capacity;
   const hasClassification = !!req.query.classification;
-  const hasCategory = !!req.query.category;
-  const hasSpeedType = !!req.query.speedType;
-  const hasDutyCycle = !!req.query.dutyCycle;
+  // These filter flags reserved for future index optimization
+  // const hasCategory = !!req.query.category;
+  // const hasSpeedType = !!req.query.speedType;
+  // const hasDutyCycle = !!req.query.dutyCycle;
   const hasDataQuality = !!req.query.dataQuality;
   const tierMatch = req.query.dataQuality?.match(/^tier-(\w+)$/);
 
@@ -1556,7 +1558,6 @@ app.get('/search', (req, res) => {
 
 app.get('/product/:id', (req, res) => {
   const data = loadData();
-  const report = loadReport();
   const id = req.params.id;
 
   // Find the product using O(1) ID index

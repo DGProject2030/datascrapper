@@ -3,10 +3,7 @@
 
 const fs = require('fs/promises');
 const path = require('path');
-const _ = require('lodash');
-const csv = require('csv-parser');
 const createCsvWriter = require('csv-writer').createObjectCsvWriter;
-const { createReadStream } = require('fs');
 
 // Configuration
 const CONFIG = {
@@ -161,7 +158,7 @@ class ChainhoistDataProcessor {
           continue;
         }
 
-        const [, manufacturerSlug, pageSlug, index, ext] = match;
+        const [, manufacturerSlug, pageSlug, index] = match;
         const manufacturer = MANUFACTURER_SLUG_MAP[manufacturerSlug];
 
         if (!manufacturer) {
