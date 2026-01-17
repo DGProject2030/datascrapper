@@ -54,6 +54,17 @@
       padding: 0.875rem 0.75rem;
       vertical-align: middle;
     }
+    /* Clickable elements */
+    .clickable-card, .clickable-row {
+      cursor: pointer;
+    }
+    .clickable-card:focus, .clickable-row:focus {
+      outline: 2px solid var(--brand-secondary);
+      outline-offset: 2px;
+    }
+    .clickable-row:hover td {
+      background-color: #e9ecef !important;
+    }
   </style>
 </head>
 <body>

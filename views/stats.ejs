@@ -54,6 +54,13 @@
     color: var(--brand-secondary);
     margin-right: 0.5rem;
   }
+  .clickable-row:hover td {
+    background-color: #e9ecef !important;
+  }
+  .clickable-row:focus {
+    outline: 2px solid var(--brand-secondary);
+    outline-offset: -2px;
+  }
 
   /* Mobile Responsive Styles */
   @media (max-width: 767.98px) {
@@ -256,8 +263,8 @@
             </thead>
           <tbody>
             <% Object.entries(report.manufacturerStats || {}).forEach(function([manufacturer, count]) { %>
-              <tr>
-                <td><a href="/search?manufacturer=<%= encodeURIComponent(manufacturer) %>" class="text-decoration-none" style="color: var(--brand-primary);"><%= manufacturer %></a></td>
+              <tr class="clickable-row" onclick="window.location='/search?manufacturer=<%= encodeURIComponent(manufacturer) %>'" style="cursor: pointer;" role="link" tabindex="0" aria-label="View products from <%= manufacturer %>">
+                <td style="color: var(--brand-primary); font-weight: 500;"><%= manufacturer %></td>
                 <td><span class="badge" style="background: var(--brand-secondary);"><%= count %></span></td>
               </tr>
             <% }); %>
@@ -359,6 +366,16 @@
         y: { beginAtZero: true }
       }
     }
+  });
+
+  // Keyboard support for clickable rows
+  document.querySelectorAll('.clickable-row').forEach(row => {
+    row.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        row.click();
+      }
+    });
   });
 </script>
 
