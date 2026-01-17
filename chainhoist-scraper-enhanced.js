@@ -1340,8 +1340,24 @@ class EnhancedScraper {
         { model: 'Valuestar 1000', series: 'Valuestar', loadCapacity: '1000 kg', liftingSpeed: '3.3 m/min', motorPower: '1.1 kW', weight: '32 kg', classification: ['d8'], dutyCycle: '30%', voltageOptions: ['400V 3Ph'], protectionClass: 'IP54' },
       ],
       'konecranes': [
-        { model: 'CLX Chain Hoist', series: 'CLX', loadCapacity: '125-5000 kg', liftingSpeed: '4-8 m/min', classification: ['d8'] },
-        { model: 'SLX Chain Hoist', series: 'SLX', loadCapacity: '63-2000 kg', liftingSpeed: '8-24 m/min', classification: ['d8+'] },
+        // CLX Series - Industrial Chain Hoists
+        { model: 'CLX 01-125', series: 'CLX', loadCapacity: '125 kg', liftingSpeed: '8 m/min', motorPower: '0.18 kW', weight: '12 kg', noiseLevel: '60 dB(A)', classification: ['d8', 'ce'], dutyCycle: '40%', voltageOptions: ['400V 3Ph', '230V 1Ph'], protectionClass: 'IP54' },
+        { model: 'CLX 02-250', series: 'CLX', loadCapacity: '250 kg', liftingSpeed: '8 m/min', motorPower: '0.37 kW', weight: '16 kg', noiseLevel: '62 dB(A)', classification: ['d8', 'ce'], dutyCycle: '40%', voltageOptions: ['400V 3Ph', '230V 1Ph'], protectionClass: 'IP54' },
+        { model: 'CLX 05-500', series: 'CLX', loadCapacity: '500 kg', liftingSpeed: '4 m/min', motorPower: '0.37 kW', weight: '22 kg', noiseLevel: '64 dB(A)', classification: ['d8', 'ce'], dutyCycle: '40%', voltageOptions: ['400V 3Ph'], protectionClass: 'IP54' },
+        { model: 'CLX 10-1000', series: 'CLX', loadCapacity: '1000 kg', liftingSpeed: '4 m/min', motorPower: '0.55 kW', weight: '32 kg', noiseLevel: '66 dB(A)', classification: ['d8', 'ce'], dutyCycle: '40%', voltageOptions: ['400V 3Ph'], protectionClass: 'IP54' },
+        { model: 'CLX 20-2000', series: 'CLX', loadCapacity: '2000 kg', liftingSpeed: '4 m/min', motorPower: '1.1 kW', weight: '48 kg', noiseLevel: '68 dB(A)', classification: ['d8', 'ce'], dutyCycle: '40%', voltageOptions: ['400V 3Ph'], protectionClass: 'IP54' },
+        { model: 'CLX 32-3200', series: 'CLX', loadCapacity: '3200 kg', liftingSpeed: '2.5 m/min', motorPower: '1.1 kW', weight: '62 kg', noiseLevel: '69 dB(A)', classification: ['d8', 'ce'], dutyCycle: '40%', voltageOptions: ['400V 3Ph'], protectionClass: 'IP54' },
+        { model: 'CLX 50-5000', series: 'CLX', loadCapacity: '5000 kg', liftingSpeed: '2 m/min', motorPower: '1.5 kW', weight: '82 kg', noiseLevel: '70 dB(A)', classification: ['d8', 'ce'], dutyCycle: '40%', voltageOptions: ['400V 3Ph'], protectionClass: 'IP54' },
+        // SLX Series - Variable Speed Entertainment
+        { model: 'SLX 063', series: 'SLX', loadCapacity: '63 kg', liftingSpeed: '24 m/min', motorPower: '0.25 kW', weight: '10 kg', noiseLevel: '52 dB(A)', classification: ['d8+', 'bgv-c1'], dutyCycle: '60%', voltageOptions: ['400V 3Ph'], protectionClass: 'IP55', liftingOverPeople: true, quietOperation: true },
+        { model: 'SLX 125', series: 'SLX', loadCapacity: '125 kg', liftingSpeed: '16 m/min', motorPower: '0.37 kW', weight: '14 kg', noiseLevel: '54 dB(A)', classification: ['d8+', 'bgv-c1'], dutyCycle: '60%', voltageOptions: ['400V 3Ph'], protectionClass: 'IP55', liftingOverPeople: true, quietOperation: true },
+        { model: 'SLX 250', series: 'SLX', loadCapacity: '250 kg', liftingSpeed: '16 m/min', motorPower: '0.55 kW', weight: '18 kg', noiseLevel: '56 dB(A)', classification: ['d8+', 'bgv-c1'], dutyCycle: '60%', voltageOptions: ['400V 3Ph'], protectionClass: 'IP55', liftingOverPeople: true, quietOperation: true },
+        { model: 'SLX 500', series: 'SLX', loadCapacity: '500 kg', liftingSpeed: '8 m/min', motorPower: '0.75 kW', weight: '26 kg', noiseLevel: '58 dB(A)', classification: ['d8+', 'bgv-c1'], dutyCycle: '60%', voltageOptions: ['400V 3Ph'], protectionClass: 'IP55', liftingOverPeople: true, quietOperation: true },
+        { model: 'SLX 1000', series: 'SLX', loadCapacity: '1000 kg', liftingSpeed: '8 m/min', motorPower: '1.1 kW', weight: '38 kg', noiseLevel: '60 dB(A)', classification: ['d8+', 'bgv-c1'], dutyCycle: '60%', voltageOptions: ['400V 3Ph'], protectionClass: 'IP55', liftingOverPeople: true, quietOperation: true },
+        { model: 'SLX 2000', series: 'SLX', loadCapacity: '2000 kg', liftingSpeed: '4 m/min', motorPower: '1.5 kW', weight: '52 kg', noiseLevel: '62 dB(A)', classification: ['d8+', 'bgv-c1'], dutyCycle: '60%', voltageOptions: ['400V 3Ph'], protectionClass: 'IP55', liftingOverPeople: true, quietOperation: true },
+        // XN Series - Heavy Duty Industrial
+        { model: 'XN 5000', series: 'XN', loadCapacity: '5000 kg', liftingSpeed: '2.5 m/min', motorPower: '2.2 kW', weight: '95 kg', noiseLevel: '68 dB(A)', classification: ['d8+', 'ce'], dutyCycle: '50%', voltageOptions: ['400V 3Ph'], protectionClass: 'IP55' },
+        { model: 'XN 10000', series: 'XN', loadCapacity: '10000 kg', liftingSpeed: '1.5 m/min', motorPower: '3.0 kW', weight: '165 kg', noiseLevel: '70 dB(A)', classification: ['d8+', 'ce'], dutyCycle: '50%', voltageOptions: ['400V 3Ph'], protectionClass: 'IP55' },
       ],
       'demag': [
         // DC-Pro Series - Premium Variable Speed
@@ -1380,12 +1396,45 @@ class EnhancedScraper {
         { model: 'RiggingLift 1000', series: 'RiggingLift', loadCapacity: '1000 kg', liftingSpeed: '0-6 m/min', motorPower: '1.5 kW', weight: '48 kg', noiseLevel: '52 dB(A)', classification: ['d8+', 'bgv-c1'], dutyCycle: '60%', voltageOptions: ['400V 3Ph'], protectionClass: 'IP55', liftingOverPeople: true, quietOperation: true },
       ],
       'verlinde': [
-        { model: 'Stagemaker SR', series: 'Stagemaker', loadCapacity: '125-2000 kg', liftingSpeed: '4-24 m/min', classification: ['d8+', 'bgv-c1'], liftingOverPeople: true },
-        { model: 'Stagemaker SL', series: 'Stagemaker', loadCapacity: '63-500 kg', liftingSpeed: '8-32 m/min', classification: ['d8+'] },
+        // Stagemaker SR Series - Entertainment Industry Standard
+        { model: 'Stagemaker SR1 125', series: 'Stagemaker SR', loadCapacity: '125 kg', liftingSpeed: '24 m/min', motorPower: '0.55 kW', weight: '18 kg', noiseLevel: '55 dB(A)', classification: ['d8+', 'bgv-c1'], dutyCycle: '60%', voltageOptions: ['400V 3Ph'], protectionClass: 'IP55', liftingOverPeople: true, quietOperation: true },
+        { model: 'Stagemaker SR1 250', series: 'Stagemaker SR', loadCapacity: '250 kg', liftingSpeed: '16 m/min', motorPower: '0.75 kW', weight: '22 kg', noiseLevel: '56 dB(A)', classification: ['d8+', 'bgv-c1'], dutyCycle: '60%', voltageOptions: ['400V 3Ph'], protectionClass: 'IP55', liftingOverPeople: true, quietOperation: true },
+        { model: 'Stagemaker SR2 250', series: 'Stagemaker SR', loadCapacity: '250 kg', liftingSpeed: '24 m/min', motorPower: '1.1 kW', weight: '28 kg', noiseLevel: '57 dB(A)', classification: ['d8+', 'bgv-c1'], dutyCycle: '60%', voltageOptions: ['400V 3Ph'], protectionClass: 'IP55', liftingOverPeople: true, quietOperation: true },
+        { model: 'Stagemaker SR2 500', series: 'Stagemaker SR', loadCapacity: '500 kg', liftingSpeed: '12 m/min', motorPower: '1.1 kW', weight: '32 kg', noiseLevel: '58 dB(A)', classification: ['d8+', 'bgv-c1'], dutyCycle: '60%', voltageOptions: ['400V 3Ph'], protectionClass: 'IP55', liftingOverPeople: true, quietOperation: true },
+        { model: 'Stagemaker SR5 500', series: 'Stagemaker SR', loadCapacity: '500 kg', liftingSpeed: '18 m/min', motorPower: '1.5 kW', weight: '38 kg', noiseLevel: '59 dB(A)', classification: ['d8+', 'bgv-c1'], dutyCycle: '60%', voltageOptions: ['400V 3Ph'], protectionClass: 'IP55', liftingOverPeople: true, quietOperation: true },
+        { model: 'Stagemaker SR5 1000', series: 'Stagemaker SR', loadCapacity: '1000 kg', liftingSpeed: '9 m/min', motorPower: '1.5 kW', weight: '45 kg', noiseLevel: '60 dB(A)', classification: ['d8+', 'bgv-c1'], dutyCycle: '60%', voltageOptions: ['400V 3Ph'], protectionClass: 'IP55', liftingOverPeople: true, quietOperation: true },
+        { model: 'Stagemaker SR10 1000', series: 'Stagemaker SR', loadCapacity: '1000 kg', liftingSpeed: '16 m/min', motorPower: '2.2 kW', weight: '55 kg', noiseLevel: '62 dB(A)', classification: ['d8+', 'bgv-c1'], dutyCycle: '60%', voltageOptions: ['400V 3Ph'], protectionClass: 'IP55', liftingOverPeople: true },
+        { model: 'Stagemaker SR10 2000', series: 'Stagemaker SR', loadCapacity: '2000 kg', liftingSpeed: '8 m/min', motorPower: '2.2 kW', weight: '62 kg', noiseLevel: '63 dB(A)', classification: ['d8+', 'bgv-c1'], dutyCycle: '60%', voltageOptions: ['400V 3Ph'], protectionClass: 'IP55', liftingOverPeople: true },
+        // Stagemaker SL Series - Compact Entertainment
+        { model: 'Stagemaker SL 63', series: 'Stagemaker SL', loadCapacity: '63 kg', liftingSpeed: '32 m/min', motorPower: '0.37 kW', weight: '10 kg', noiseLevel: '52 dB(A)', classification: ['d8+'], dutyCycle: '50%', voltageOptions: ['400V 3Ph', '230V 1Ph'], protectionClass: 'IP55', quietOperation: true },
+        { model: 'Stagemaker SL 125', series: 'Stagemaker SL', loadCapacity: '125 kg', liftingSpeed: '16 m/min', motorPower: '0.37 kW', weight: '12 kg', noiseLevel: '54 dB(A)', classification: ['d8+'], dutyCycle: '50%', voltageOptions: ['400V 3Ph', '230V 1Ph'], protectionClass: 'IP55', quietOperation: true },
+        { model: 'Stagemaker SL 250', series: 'Stagemaker SL', loadCapacity: '250 kg', liftingSpeed: '16 m/min', motorPower: '0.55 kW', weight: '16 kg', noiseLevel: '56 dB(A)', classification: ['d8+'], dutyCycle: '50%', voltageOptions: ['400V 3Ph'], protectionClass: 'IP55', quietOperation: true },
+        { model: 'Stagemaker SL 500', series: 'Stagemaker SL', loadCapacity: '500 kg', liftingSpeed: '8 m/min', motorPower: '0.75 kW', weight: '22 kg', noiseLevel: '58 dB(A)', classification: ['d8+'], dutyCycle: '50%', voltageOptions: ['400V 3Ph'], protectionClass: 'IP55', quietOperation: true },
+        // Eurochain VL Series - Industrial
+        { model: 'Eurochain VL 125', series: 'Eurochain VL', loadCapacity: '125 kg', liftingSpeed: '20 m/min', motorPower: '0.25 kW', weight: '14 kg', classification: ['d8', 'ce'], dutyCycle: '40%', voltageOptions: ['400V 3Ph', '230V 1Ph'], protectionClass: 'IP54' },
+        { model: 'Eurochain VL 250', series: 'Eurochain VL', loadCapacity: '250 kg', liftingSpeed: '10 m/min', motorPower: '0.37 kW', weight: '18 kg', classification: ['d8', 'ce'], dutyCycle: '40%', voltageOptions: ['400V 3Ph', '230V 1Ph'], protectionClass: 'IP54' },
+        { model: 'Eurochain VL 500', series: 'Eurochain VL', loadCapacity: '500 kg', liftingSpeed: '8 m/min', motorPower: '0.55 kW', weight: '28 kg', classification: ['d8', 'ce'], dutyCycle: '40%', voltageOptions: ['400V 3Ph'], protectionClass: 'IP54' },
+        { model: 'Eurochain VL 1000', series: 'Eurochain VL', loadCapacity: '1000 kg', liftingSpeed: '4 m/min', motorPower: '0.75 kW', weight: '38 kg', classification: ['d8', 'ce'], dutyCycle: '40%', voltageOptions: ['400V 3Ph'], protectionClass: 'IP54' },
+        { model: 'Eurochain VL 2000', series: 'Eurochain VL', loadCapacity: '2000 kg', liftingSpeed: '2 m/min', motorPower: '1.1 kW', weight: '52 kg', classification: ['d8', 'ce'], dutyCycle: '40%', voltageOptions: ['400V 3Ph'], protectionClass: 'IP54' },
       ],
       'movecat': [
-        { model: 'Liftket Plus', series: 'Liftket', loadCapacity: '125-2000 kg', liftingSpeed: '2-16 m/min', classification: ['d8+'], dynamicLifting: true },
-        { model: 'Liftket Standard', series: 'Liftket', loadCapacity: '125-1000 kg', liftingSpeed: '4-16 m/min', classification: ['d8'] },
+        // D8+ Series - Entertainment Industry
+        { model: 'D8+ 125', series: 'D8+', loadCapacity: '125 kg', liftingSpeed: '24 m/min', motorPower: '0.55 kW', weight: '16 kg', noiseLevel: '52 dB(A)', classification: ['d8+', 'bgv-c1'], dutyCycle: '60%', voltageOptions: ['400V 3Ph'], protectionClass: 'IP55', liftingOverPeople: true, quietOperation: true },
+        { model: 'D8+ 250', series: 'D8+', loadCapacity: '250 kg', liftingSpeed: '16 m/min', motorPower: '0.75 kW', weight: '20 kg', noiseLevel: '54 dB(A)', classification: ['d8+', 'bgv-c1'], dutyCycle: '60%', voltageOptions: ['400V 3Ph'], protectionClass: 'IP55', liftingOverPeople: true, quietOperation: true },
+        { model: 'D8+ 500', series: 'D8+', loadCapacity: '500 kg', liftingSpeed: '8 m/min', motorPower: '1.1 kW', weight: '28 kg', noiseLevel: '56 dB(A)', classification: ['d8+', 'bgv-c1'], dutyCycle: '60%', voltageOptions: ['400V 3Ph'], protectionClass: 'IP55', liftingOverPeople: true, quietOperation: true },
+        { model: 'D8+ 1000', series: 'D8+', loadCapacity: '1000 kg', liftingSpeed: '4 m/min', motorPower: '1.5 kW', weight: '42 kg', noiseLevel: '58 dB(A)', classification: ['d8+', 'bgv-c1'], dutyCycle: '60%', voltageOptions: ['400V 3Ph'], protectionClass: 'IP55', liftingOverPeople: true, quietOperation: true },
+        { model: 'D8+ 2000', series: 'D8+', loadCapacity: '2000 kg', liftingSpeed: '2 m/min', motorPower: '2.2 kW', weight: '62 kg', noiseLevel: '60 dB(A)', classification: ['d8+', 'bgv-c1'], dutyCycle: '60%', voltageOptions: ['400V 3Ph'], protectionClass: 'IP55', liftingOverPeople: true },
+        // Liftket Plus Series - Dynamic Lifting
+        { model: 'Liftket Plus 125', series: 'Liftket Plus', loadCapacity: '125 kg', liftingSpeed: '16 m/min', motorPower: '0.55 kW', weight: '14 kg', noiseLevel: '54 dB(A)', classification: ['d8+'], dutyCycle: '60%', voltageOptions: ['400V 3Ph'], protectionClass: 'IP55', dynamicLifting: true },
+        { model: 'Liftket Plus 250', series: 'Liftket Plus', loadCapacity: '250 kg', liftingSpeed: '8 m/min', motorPower: '0.55 kW', weight: '18 kg', noiseLevel: '56 dB(A)', classification: ['d8+'], dutyCycle: '60%', voltageOptions: ['400V 3Ph'], protectionClass: 'IP55', dynamicLifting: true },
+        { model: 'Liftket Plus 500', series: 'Liftket Plus', loadCapacity: '500 kg', liftingSpeed: '8 m/min', motorPower: '0.75 kW', weight: '26 kg', noiseLevel: '58 dB(A)', classification: ['d8+'], dutyCycle: '60%', voltageOptions: ['400V 3Ph'], protectionClass: 'IP55', dynamicLifting: true },
+        { model: 'Liftket Plus 1000', series: 'Liftket Plus', loadCapacity: '1000 kg', liftingSpeed: '4 m/min', motorPower: '1.1 kW', weight: '38 kg', noiseLevel: '60 dB(A)', classification: ['d8+'], dutyCycle: '60%', voltageOptions: ['400V 3Ph'], protectionClass: 'IP55', dynamicLifting: true },
+        { model: 'Liftket Plus 2000', series: 'Liftket Plus', loadCapacity: '2000 kg', liftingSpeed: '2 m/min', motorPower: '1.5 kW', weight: '52 kg', noiseLevel: '62 dB(A)', classification: ['d8+'], dutyCycle: '60%', voltageOptions: ['400V 3Ph'], protectionClass: 'IP55', dynamicLifting: true },
+        // Liftket Standard Series - Industrial
+        { model: 'Liftket Standard 125', series: 'Liftket Standard', loadCapacity: '125 kg', liftingSpeed: '16 m/min', motorPower: '0.37 kW', weight: '12 kg', classification: ['d8'], dutyCycle: '40%', voltageOptions: ['400V 3Ph', '230V 1Ph'], protectionClass: 'IP54' },
+        { model: 'Liftket Standard 250', series: 'Liftket Standard', loadCapacity: '250 kg', liftingSpeed: '8 m/min', motorPower: '0.37 kW', weight: '15 kg', classification: ['d8'], dutyCycle: '40%', voltageOptions: ['400V 3Ph', '230V 1Ph'], protectionClass: 'IP54' },
+        { model: 'Liftket Standard 500', series: 'Liftket Standard', loadCapacity: '500 kg', liftingSpeed: '4 m/min', motorPower: '0.55 kW', weight: '22 kg', classification: ['d8'], dutyCycle: '40%', voltageOptions: ['400V 3Ph'], protectionClass: 'IP54' },
+        { model: 'Liftket Standard 1000', series: 'Liftket Standard', loadCapacity: '1000 kg', liftingSpeed: '4 m/min', motorPower: '0.75 kW', weight: '32 kg', classification: ['d8'], dutyCycle: '40%', voltageOptions: ['400V 3Ph'], protectionClass: 'IP54' },
       ],
       'kito': [
         // ER2 Series - Compact Electric Chain Hoists
@@ -1472,39 +1521,178 @@ class EnhancedScraper {
         { model: 'CPA 1000', series: 'CPA', loadCapacity: '1000 kg', liftingSpeed: '2.3 m/min', weight: '32 kg', classification: ['atex'], protectionClass: 'IP54' },
       ],
       'ingersoll-rand': [
-        { model: 'ML Series', series: 'ML', loadCapacity: '250-3000 kg', liftingSpeed: '4-12 m/min', classification: ['ansi'] },
-        { model: 'CLK Series', series: 'CLK', loadCapacity: '500-5000 kg', liftingSpeed: '2-8 m/min', classification: ['ansi'] },
+        // ML Series - Mini Lever Chain Hoists
+        { model: 'ML 250', series: 'ML', loadCapacity: '250 kg', liftingSpeed: '12 m/min', motorPower: '0.25 kW', weight: '12 kg', noiseLevel: '62 dB(A)', classification: ['ansi', 'asme b30.16'], dutyCycle: '35%', voltageOptions: ['115V 1Ph', '230V 1Ph'], protectionClass: 'IP54' },
+        { model: 'ML 500', series: 'ML', loadCapacity: '500 kg', liftingSpeed: '6 m/min', motorPower: '0.37 kW', weight: '16 kg', noiseLevel: '64 dB(A)', classification: ['ansi', 'asme b30.16'], dutyCycle: '35%', voltageOptions: ['115V 1Ph', '230V 1Ph'], protectionClass: 'IP54' },
+        { model: 'ML 1000', series: 'ML', loadCapacity: '1000 kg', liftingSpeed: '6 m/min', motorPower: '0.55 kW', weight: '25 kg', noiseLevel: '66 dB(A)', classification: ['ansi', 'asme b30.16'], dutyCycle: '35%', voltageOptions: ['230V 1Ph', '460V 3Ph'], protectionClass: 'IP54' },
+        { model: 'ML 2000', series: 'ML', loadCapacity: '2000 kg', liftingSpeed: '3 m/min', motorPower: '0.75 kW', weight: '38 kg', noiseLevel: '68 dB(A)', classification: ['ansi', 'asme b30.16'], dutyCycle: '35%', voltageOptions: ['460V 3Ph'], protectionClass: 'IP54' },
+        { model: 'ML 3000', series: 'ML', loadCapacity: '3000 kg', liftingSpeed: '2 m/min', motorPower: '1.1 kW', weight: '52 kg', noiseLevel: '69 dB(A)', classification: ['ansi', 'asme b30.16'], dutyCycle: '35%', voltageOptions: ['460V 3Ph'], protectionClass: 'IP54' },
+        // CLK Series - Heavy Duty Chain Hoists
+        { model: 'CLK 500', series: 'CLK', loadCapacity: '500 kg', liftingSpeed: '8 m/min', motorPower: '0.55 kW', weight: '22 kg', noiseLevel: '64 dB(A)', classification: ['ansi', 'asme b30.16'], dutyCycle: '40%', voltageOptions: ['230V 1Ph', '460V 3Ph'], protectionClass: 'IP54' },
+        { model: 'CLK 1000', series: 'CLK', loadCapacity: '1000 kg', liftingSpeed: '4 m/min', motorPower: '0.75 kW', weight: '32 kg', noiseLevel: '66 dB(A)', classification: ['ansi', 'asme b30.16'], dutyCycle: '40%', voltageOptions: ['460V 3Ph'], protectionClass: 'IP54' },
+        { model: 'CLK 2000', series: 'CLK', loadCapacity: '2000 kg', liftingSpeed: '4 m/min', motorPower: '1.1 kW', weight: '48 kg', noiseLevel: '68 dB(A)', classification: ['ansi', 'asme b30.16'], dutyCycle: '40%', voltageOptions: ['460V 3Ph'], protectionClass: 'IP54' },
+        { model: 'CLK 3000', series: 'CLK', loadCapacity: '3000 kg', liftingSpeed: '2.5 m/min', motorPower: '1.5 kW', weight: '62 kg', noiseLevel: '69 dB(A)', classification: ['ansi', 'asme b30.16'], dutyCycle: '40%', voltageOptions: ['460V 3Ph'], protectionClass: 'IP54' },
+        { model: 'CLK 5000', series: 'CLK', loadCapacity: '5000 kg', liftingSpeed: '1.5 m/min', motorPower: '2.2 kW', weight: '85 kg', noiseLevel: '71 dB(A)', classification: ['ansi', 'asme b30.16'], dutyCycle: '40%', voltageOptions: ['460V 3Ph'], protectionClass: 'IP54' },
+        // Liftchain LC Series - Air Hoists
+        { model: 'LC 250', series: 'Liftchain LC', loadCapacity: '250 kg', liftingSpeed: '10 m/min', weight: '8 kg', classification: ['atex', 'ansi'], protectionClass: 'IP54', airConsumption: '18 m³/h', operatingPressure: '4-7 bar' },
+        { model: 'LC 500', series: 'Liftchain LC', loadCapacity: '500 kg', liftingSpeed: '5 m/min', weight: '12 kg', classification: ['atex', 'ansi'], protectionClass: 'IP54', airConsumption: '25 m³/h', operatingPressure: '4-7 bar' },
+        { model: 'LC 1000', series: 'Liftchain LC', loadCapacity: '1000 kg', liftingSpeed: '2.5 m/min', weight: '22 kg', classification: ['atex', 'ansi'], protectionClass: 'IP54', airConsumption: '35 m³/h', operatingPressure: '4-7 bar' },
+        { model: 'LC 2000', series: 'Liftchain LC', loadCapacity: '2000 kg', liftingSpeed: '1.25 m/min', weight: '38 kg', classification: ['atex', 'ansi'], protectionClass: 'IP54', airConsumption: '50 m³/h', operatingPressure: '4-7 bar' },
       ],
       'coffing': [
-        { model: 'JLC', series: 'JLC', loadCapacity: '125-3000 kg', liftingSpeed: '8-16 m/min', classification: ['ansi'] },
-        { model: 'EC', series: 'EC', loadCapacity: '250-5000 kg', liftingSpeed: '4-12 m/min', classification: ['ansi'] },
+        // JLC Series - Light Capacity Chain Hoists
+        { model: 'JLC 250', series: 'JLC', loadCapacity: '250 kg', liftingSpeed: '16 m/min', motorPower: '0.25 kW', weight: '12 kg', noiseLevel: '62 dB(A)', classification: ['ansi', 'asme b30.16'], dutyCycle: '35%', voltageOptions: ['115V 1Ph', '230V 1Ph'], protectionClass: 'IP54' },
+        { model: 'JLC 500', series: 'JLC', loadCapacity: '500 kg', liftingSpeed: '8 m/min', motorPower: '0.37 kW', weight: '16 kg', noiseLevel: '64 dB(A)', classification: ['ansi', 'asme b30.16'], dutyCycle: '35%', voltageOptions: ['115V 1Ph', '230V 1Ph'], protectionClass: 'IP54' },
+        { model: 'JLC 1000', series: 'JLC', loadCapacity: '1000 kg', liftingSpeed: '8 m/min', motorPower: '0.55 kW', weight: '28 kg', noiseLevel: '66 dB(A)', classification: ['ansi', 'asme b30.16'], dutyCycle: '35%', voltageOptions: ['230V 1Ph', '460V 3Ph'], protectionClass: 'IP54' },
+        { model: 'JLC 2000', series: 'JLC', loadCapacity: '2000 kg', liftingSpeed: '4 m/min', motorPower: '0.75 kW', weight: '42 kg', noiseLevel: '68 dB(A)', classification: ['ansi', 'asme b30.16'], dutyCycle: '35%', voltageOptions: ['460V 3Ph'], protectionClass: 'IP54' },
+        { model: 'JLC 3000', series: 'JLC', loadCapacity: '3000 kg', liftingSpeed: '2.7 m/min', motorPower: '1.1 kW', weight: '58 kg', noiseLevel: '69 dB(A)', classification: ['ansi', 'asme b30.16'], dutyCycle: '35%', voltageOptions: ['460V 3Ph'], protectionClass: 'IP54' },
+        // EC Series - Electric Chain Hoists
+        { model: 'EC 250', series: 'EC', loadCapacity: '250 kg', liftingSpeed: '12 m/min', motorPower: '0.37 kW', weight: '18 kg', noiseLevel: '60 dB(A)', classification: ['ansi', 'asme b30.16'], dutyCycle: '40%', voltageOptions: ['230V 1Ph', '460V 3Ph'], protectionClass: 'IP54' },
+        { model: 'EC 500', series: 'EC', loadCapacity: '500 kg', liftingSpeed: '6 m/min', motorPower: '0.37 kW', weight: '22 kg', noiseLevel: '62 dB(A)', classification: ['ansi', 'asme b30.16'], dutyCycle: '40%', voltageOptions: ['230V 1Ph', '460V 3Ph'], protectionClass: 'IP54' },
+        { model: 'EC 1000', series: 'EC', loadCapacity: '1000 kg', liftingSpeed: '6 m/min', motorPower: '0.75 kW', weight: '35 kg', noiseLevel: '64 dB(A)', classification: ['ansi', 'asme b30.16'], dutyCycle: '40%', voltageOptions: ['460V 3Ph'], protectionClass: 'IP54' },
+        { model: 'EC 2000', series: 'EC', loadCapacity: '2000 kg', liftingSpeed: '3 m/min', motorPower: '0.75 kW', weight: '48 kg', noiseLevel: '66 dB(A)', classification: ['ansi', 'asme b30.16'], dutyCycle: '40%', voltageOptions: ['460V 3Ph'], protectionClass: 'IP54' },
+        { model: 'EC 3000', series: 'EC', loadCapacity: '3000 kg', liftingSpeed: '2 m/min', motorPower: '1.1 kW', weight: '62 kg', noiseLevel: '68 dB(A)', classification: ['ansi', 'asme b30.16'], dutyCycle: '40%', voltageOptions: ['460V 3Ph'], protectionClass: 'IP54' },
+        { model: 'EC 5000', series: 'EC', loadCapacity: '5000 kg', liftingSpeed: '1.2 m/min', motorPower: '1.5 kW', weight: '85 kg', noiseLevel: '70 dB(A)', classification: ['ansi', 'asme b30.16'], dutyCycle: '40%', voltageOptions: ['460V 3Ph'], protectionClass: 'IP54' },
+        // LCH Series - Low Headroom
+        { model: 'LCH 500', series: 'LCH', loadCapacity: '500 kg', liftingSpeed: '6 m/min', motorPower: '0.37 kW', weight: '25 kg', classification: ['ansi', 'asme b30.16'], dutyCycle: '35%', voltageOptions: ['460V 3Ph'], protectionClass: 'IP54' },
+        { model: 'LCH 1000', series: 'LCH', loadCapacity: '1000 kg', liftingSpeed: '3 m/min', motorPower: '0.55 kW', weight: '38 kg', classification: ['ansi', 'asme b30.16'], dutyCycle: '35%', voltageOptions: ['460V 3Ph'], protectionClass: 'IP54' },
+        { model: 'LCH 2000', series: 'LCH', loadCapacity: '2000 kg', liftingSpeed: '1.5 m/min', motorPower: '0.75 kW', weight: '52 kg', classification: ['ansi', 'asme b30.16'], dutyCycle: '35%', voltageOptions: ['460V 3Ph'], protectionClass: 'IP54' },
       ],
       'budgit': [
-        { model: 'BEH', series: 'BEH', loadCapacity: '250-5000 kg', liftingSpeed: '4-16 m/min', classification: ['ansi'] },
-        { model: 'Man Guard', series: 'Man Guard', loadCapacity: '500-3000 kg', liftingSpeed: '8-12 m/min', classification: ['ansi'] },
+        // BEH Series - Electric Chain Hoists
+        { model: 'BEH 250', series: 'BEH', loadCapacity: '250 kg', liftingSpeed: '16 m/min', motorPower: '0.37 kW', weight: '14 kg', noiseLevel: '62 dB(A)', classification: ['ansi', 'asme b30.16'], dutyCycle: '35%', voltageOptions: ['115V 1Ph', '230V 1Ph', '460V 3Ph'], protectionClass: 'IP54' },
+        { model: 'BEH 500', series: 'BEH', loadCapacity: '500 kg', liftingSpeed: '8 m/min', motorPower: '0.37 kW', weight: '18 kg', noiseLevel: '64 dB(A)', classification: ['ansi', 'asme b30.16'], dutyCycle: '35%', voltageOptions: ['115V 1Ph', '230V 1Ph', '460V 3Ph'], protectionClass: 'IP54' },
+        { model: 'BEH 1000', series: 'BEH', loadCapacity: '1000 kg', liftingSpeed: '8 m/min', motorPower: '0.75 kW', weight: '32 kg', noiseLevel: '66 dB(A)', classification: ['ansi', 'asme b30.16'], dutyCycle: '35%', voltageOptions: ['230V 1Ph', '460V 3Ph'], protectionClass: 'IP54' },
+        { model: 'BEH 2000', series: 'BEH', loadCapacity: '2000 kg', liftingSpeed: '4 m/min', motorPower: '0.75 kW', weight: '45 kg', noiseLevel: '68 dB(A)', classification: ['ansi', 'asme b30.16'], dutyCycle: '35%', voltageOptions: ['460V 3Ph'], protectionClass: 'IP54' },
+        { model: 'BEH 3000', series: 'BEH', loadCapacity: '3000 kg', liftingSpeed: '2.7 m/min', motorPower: '1.1 kW', weight: '58 kg', noiseLevel: '69 dB(A)', classification: ['ansi', 'asme b30.16'], dutyCycle: '35%', voltageOptions: ['460V 3Ph'], protectionClass: 'IP54' },
+        { model: 'BEH 5000', series: 'BEH', loadCapacity: '5000 kg', liftingSpeed: '1.6 m/min', motorPower: '1.5 kW', weight: '82 kg', noiseLevel: '71 dB(A)', classification: ['ansi', 'asme b30.16'], dutyCycle: '35%', voltageOptions: ['460V 3Ph'], protectionClass: 'IP54' },
+        // BEHC Series - Compact Electric Hoists
+        { model: 'BEHC 250', series: 'BEHC', loadCapacity: '250 kg', liftingSpeed: '12 m/min', motorPower: '0.25 kW', weight: '11 kg', classification: ['ansi', 'asme b30.16'], dutyCycle: '30%', voltageOptions: ['115V 1Ph', '230V 1Ph'], protectionClass: 'IP54' },
+        { model: 'BEHC 500', series: 'BEHC', loadCapacity: '500 kg', liftingSpeed: '6 m/min', motorPower: '0.37 kW', weight: '15 kg', classification: ['ansi', 'asme b30.16'], dutyCycle: '30%', voltageOptions: ['115V 1Ph', '230V 1Ph'], protectionClass: 'IP54' },
+        { model: 'BEHC 1000', series: 'BEHC', loadCapacity: '1000 kg', liftingSpeed: '3 m/min', motorPower: '0.55 kW', weight: '25 kg', classification: ['ansi', 'asme b30.16'], dutyCycle: '30%', voltageOptions: ['230V 1Ph', '460V 3Ph'], protectionClass: 'IP54' },
+        // Man Guard Series - Safety Hoists
+        { model: 'Man Guard 500', series: 'Man Guard', loadCapacity: '500 kg', liftingSpeed: '12 m/min', motorPower: '0.75 kW', weight: '28 kg', noiseLevel: '58 dB(A)', classification: ['ansi', 'asme b30.16', 'osha'], dutyCycle: '50%', voltageOptions: ['460V 3Ph'], protectionClass: 'IP55', liftingOverPeople: true },
+        { model: 'Man Guard 1000', series: 'Man Guard', loadCapacity: '1000 kg', liftingSpeed: '6 m/min', motorPower: '0.75 kW', weight: '38 kg', noiseLevel: '60 dB(A)', classification: ['ansi', 'asme b30.16', 'osha'], dutyCycle: '50%', voltageOptions: ['460V 3Ph'], protectionClass: 'IP55', liftingOverPeople: true },
+        { model: 'Man Guard 2000', series: 'Man Guard', loadCapacity: '2000 kg', liftingSpeed: '3 m/min', motorPower: '1.1 kW', weight: '52 kg', noiseLevel: '62 dB(A)', classification: ['ansi', 'asme b30.16', 'osha'], dutyCycle: '50%', voltageOptions: ['460V 3Ph'], protectionClass: 'IP55', liftingOverPeople: true },
+        { model: 'Man Guard 3000', series: 'Man Guard', loadCapacity: '3000 kg', liftingSpeed: '2 m/min', motorPower: '1.5 kW', weight: '68 kg', noiseLevel: '64 dB(A)', classification: ['ansi', 'asme b30.16', 'osha'], dutyCycle: '50%', voltageOptions: ['460V 3Ph'], protectionClass: 'IP55', liftingOverPeople: true },
       ],
       'rm-materials': [
-        { model: 'Spacemaster SX', series: 'SX', loadCapacity: '125-5000 kg', liftingSpeed: '4-20 m/min', classification: ['d8'] },
-        { model: 'LK Series', series: 'LK', loadCapacity: '250-2000 kg', liftingSpeed: '8-16 m/min', classification: ['d8'] },
+        // Spacemaster SX Series - Premium Electric Chain Hoists
+        { model: 'Spacemaster SX 125', series: 'SX', loadCapacity: '125 kg', liftingSpeed: '20 m/min', motorPower: '0.37 kW', weight: '16 kg', noiseLevel: '58 dB(A)', classification: ['d8+', 'fem 2m'], dutyCycle: '60%', voltageOptions: ['400V 3Ph', '230V 1Ph'], protectionClass: 'IP55' },
+        { model: 'Spacemaster SX 250', series: 'SX', loadCapacity: '250 kg', liftingSpeed: '10 m/min', motorPower: '0.37 kW', weight: '18 kg', noiseLevel: '58 dB(A)', classification: ['d8+', 'fem 2m'], dutyCycle: '60%', voltageOptions: ['400V 3Ph', '230V 1Ph'], protectionClass: 'IP55' },
+        { model: 'Spacemaster SX 500', series: 'SX', loadCapacity: '500 kg', liftingSpeed: '10 m/min', motorPower: '0.75 kW', weight: '28 kg', noiseLevel: '60 dB(A)', classification: ['d8+', 'fem 2m'], dutyCycle: '60%', voltageOptions: ['400V 3Ph'], protectionClass: 'IP55' },
+        { model: 'Spacemaster SX 1000', series: 'SX', loadCapacity: '1000 kg', liftingSpeed: '5 m/min', motorPower: '0.75 kW', weight: '38 kg', noiseLevel: '62 dB(A)', classification: ['d8+', 'fem 2m'], dutyCycle: '60%', voltageOptions: ['400V 3Ph'], protectionClass: 'IP55' },
+        { model: 'Spacemaster SX 2000', series: 'SX', loadCapacity: '2000 kg', liftingSpeed: '5 m/min', motorPower: '1.5 kW', weight: '52 kg', noiseLevel: '64 dB(A)', classification: ['d8+', 'fem 2m'], dutyCycle: '60%', voltageOptions: ['400V 3Ph'], protectionClass: 'IP55' },
+        { model: 'Spacemaster SX 3200', series: 'SX', loadCapacity: '3200 kg', liftingSpeed: '3.2 m/min', motorPower: '1.5 kW', weight: '68 kg', noiseLevel: '65 dB(A)', classification: ['d8+', 'fem 2m'], dutyCycle: '60%', voltageOptions: ['400V 3Ph'], protectionClass: 'IP55' },
+        { model: 'Spacemaster SX 5000', series: 'SX', loadCapacity: '5000 kg', liftingSpeed: '2 m/min', motorPower: '2.2 kW', weight: '85 kg', noiseLevel: '67 dB(A)', classification: ['d8+', 'fem 2m'], dutyCycle: '60%', voltageOptions: ['400V 3Ph'], protectionClass: 'IP55' },
+        // LK Series - Compact Chain Hoists
+        { model: 'LK 250', series: 'LK', loadCapacity: '250 kg', liftingSpeed: '16 m/min', motorPower: '0.55 kW', weight: '15 kg', noiseLevel: '60 dB(A)', classification: ['d8'], dutyCycle: '40%', voltageOptions: ['400V 3Ph', '230V 1Ph'], protectionClass: 'IP54' },
+        { model: 'LK 500', series: 'LK', loadCapacity: '500 kg', liftingSpeed: '8 m/min', motorPower: '0.55 kW', weight: '18 kg', noiseLevel: '62 dB(A)', classification: ['d8'], dutyCycle: '40%', voltageOptions: ['400V 3Ph', '230V 1Ph'], protectionClass: 'IP54' },
+        { model: 'LK 1000', series: 'LK', loadCapacity: '1000 kg', liftingSpeed: '4 m/min', motorPower: '0.55 kW', weight: '28 kg', noiseLevel: '64 dB(A)', classification: ['d8'], dutyCycle: '40%', voltageOptions: ['400V 3Ph'], protectionClass: 'IP54' },
+        { model: 'LK 2000', series: 'LK', loadCapacity: '2000 kg', liftingSpeed: '2 m/min', motorPower: '0.75 kW', weight: '42 kg', noiseLevel: '66 dB(A)', classification: ['d8'], dutyCycle: '40%', voltageOptions: ['400V 3Ph'], protectionClass: 'IP54' },
+        // SX Entertainment Series - For Stage and Events
+        { model: 'SX-E 250', series: 'SX-E', loadCapacity: '250 kg', liftingSpeed: '0-16 m/min', motorPower: '0.75 kW', weight: '24 kg', noiseLevel: '52 dB(A)', classification: ['d8+', 'bgv-c1'], dutyCycle: '60%', voltageOptions: ['400V 3Ph'], protectionClass: 'IP55', liftingOverPeople: true, quietOperation: true },
+        { model: 'SX-E 500', series: 'SX-E', loadCapacity: '500 kg', liftingSpeed: '0-8 m/min', motorPower: '1.1 kW', weight: '32 kg', noiseLevel: '54 dB(A)', classification: ['d8+', 'bgv-c1'], dutyCycle: '60%', voltageOptions: ['400V 3Ph'], protectionClass: 'IP55', liftingOverPeople: true, quietOperation: true },
+        { model: 'SX-E 1000', series: 'SX-E', loadCapacity: '1000 kg', liftingSpeed: '0-4 m/min', motorPower: '1.5 kW', weight: '45 kg', noiseLevel: '56 dB(A)', classification: ['d8+', 'bgv-c1'], dutyCycle: '60%', voltageOptions: ['400V 3Ph'], protectionClass: 'IP55', liftingOverPeople: true, quietOperation: true },
       ],
       'street-crane': [
-        { model: 'SC Series', series: 'SC', loadCapacity: '125-5000 kg', liftingSpeed: '4-12 m/min', classification: ['d8'] },
-        { model: 'Profi', series: 'Profi', loadCapacity: '250-2000 kg', liftingSpeed: '6-16 m/min', classification: ['d8+'] },
+        // SC Series - Standard Chain Hoists
+        { model: 'SC 125', series: 'SC', loadCapacity: '125 kg', liftingSpeed: '12 m/min', motorPower: '0.25 kW', weight: '14 kg', noiseLevel: '60 dB(A)', classification: ['d8', 'ce'], dutyCycle: '40%', voltageOptions: ['400V 3Ph', '230V 1Ph'], protectionClass: 'IP54' },
+        { model: 'SC 250', series: 'SC', loadCapacity: '250 kg', liftingSpeed: '6 m/min', motorPower: '0.25 kW', weight: '16 kg', noiseLevel: '62 dB(A)', classification: ['d8', 'ce'], dutyCycle: '40%', voltageOptions: ['400V 3Ph', '230V 1Ph'], protectionClass: 'IP54' },
+        { model: 'SC 500', series: 'SC', loadCapacity: '500 kg', liftingSpeed: '6 m/min', motorPower: '0.55 kW', weight: '24 kg', noiseLevel: '64 dB(A)', classification: ['d8', 'ce'], dutyCycle: '40%', voltageOptions: ['400V 3Ph'], protectionClass: 'IP54' },
+        { model: 'SC 1000', series: 'SC', loadCapacity: '1000 kg', liftingSpeed: '3 m/min', motorPower: '0.55 kW', weight: '32 kg', noiseLevel: '65 dB(A)', classification: ['d8', 'ce'], dutyCycle: '40%', voltageOptions: ['400V 3Ph'], protectionClass: 'IP54' },
+        { model: 'SC 2000', series: 'SC', loadCapacity: '2000 kg', liftingSpeed: '3 m/min', motorPower: '1.1 kW', weight: '48 kg', noiseLevel: '67 dB(A)', classification: ['d8', 'ce'], dutyCycle: '40%', voltageOptions: ['400V 3Ph'], protectionClass: 'IP54' },
+        { model: 'SC 3200', series: 'SC', loadCapacity: '3200 kg', liftingSpeed: '2 m/min', motorPower: '1.1 kW', weight: '58 kg', noiseLevel: '68 dB(A)', classification: ['d8', 'ce'], dutyCycle: '40%', voltageOptions: ['400V 3Ph'], protectionClass: 'IP54' },
+        { model: 'SC 5000', series: 'SC', loadCapacity: '5000 kg', liftingSpeed: '1.5 m/min', motorPower: '1.5 kW', weight: '78 kg', noiseLevel: '69 dB(A)', classification: ['d8', 'ce'], dutyCycle: '40%', voltageOptions: ['400V 3Ph'], protectionClass: 'IP54' },
+        // Profi Series - Variable Speed Entertainment
+        { model: 'Profi 250 VF', series: 'Profi', loadCapacity: '250 kg', liftingSpeed: '0-16 m/min', motorPower: '0.75 kW', weight: '22 kg', noiseLevel: '55 dB(A)', classification: ['d8+', 'bgv-c1', 'ce'], dutyCycle: '60%', voltageOptions: ['400V 3Ph'], protectionClass: 'IP55', liftingOverPeople: true, quietOperation: true },
+        { model: 'Profi 500 VF', series: 'Profi', loadCapacity: '500 kg', liftingSpeed: '0-8 m/min', motorPower: '1.1 kW', weight: '30 kg', noiseLevel: '57 dB(A)', classification: ['d8+', 'bgv-c1', 'ce'], dutyCycle: '60%', voltageOptions: ['400V 3Ph'], protectionClass: 'IP55', liftingOverPeople: true, quietOperation: true },
+        { model: 'Profi 1000 VF', series: 'Profi', loadCapacity: '1000 kg', liftingSpeed: '0-4 m/min', motorPower: '1.5 kW', weight: '42 kg', noiseLevel: '59 dB(A)', classification: ['d8+', 'bgv-c1', 'ce'], dutyCycle: '60%', voltageOptions: ['400V 3Ph'], protectionClass: 'IP55', liftingOverPeople: true, quietOperation: true },
+        { model: 'Profi 2000 VF', series: 'Profi', loadCapacity: '2000 kg', liftingSpeed: '0-2 m/min', motorPower: '2.2 kW', weight: '56 kg', noiseLevel: '61 dB(A)', classification: ['d8+', 'bgv-c1', 'ce'], dutyCycle: '60%', voltageOptions: ['400V 3Ph'], protectionClass: 'IP55', liftingOverPeople: true, quietOperation: true },
+        // SC-HD Series - Heavy Duty
+        { model: 'SC-HD 5000', series: 'SC-HD', loadCapacity: '5000 kg', liftingSpeed: '3 m/min', motorPower: '2.2 kW', weight: '95 kg', noiseLevel: '68 dB(A)', classification: ['d8+', 'ce'], dutyCycle: '50%', voltageOptions: ['400V 3Ph'], protectionClass: 'IP55' },
+        { model: 'SC-HD 10000', series: 'SC-HD', loadCapacity: '10000 kg', liftingSpeed: '1.5 m/min', motorPower: '3.0 kW', weight: '155 kg', noiseLevel: '70 dB(A)', classification: ['d8+', 'ce'], dutyCycle: '50%', voltageOptions: ['400V 3Ph'], protectionClass: 'IP55' },
       ],
       'swf': [
-        { model: 'Nova', series: 'Nova', loadCapacity: '125-5000 kg', liftingSpeed: '4-20 m/min', classification: ['d8'] },
-        { model: 'SK Series', series: 'SK', loadCapacity: '250-2500 kg', liftingSpeed: '4-12 m/min', classification: ['d8'] },
+        // Chainster Series - Variable Speed Electric Chain Hoists
+        { model: 'Chainster 125', series: 'Chainster', loadCapacity: '125 kg', liftingSpeed: '20 m/min', motorPower: '0.25 kW', weight: '14 kg', noiseLevel: '58 dB(A)', classification: ['d8+', 'ce'], dutyCycle: '60%', voltageOptions: ['400V 3Ph'], protectionClass: 'IP55' },
+        { model: 'Chainster 250', series: 'Chainster', loadCapacity: '250 kg', liftingSpeed: '10 m/min', motorPower: '0.37 kW', weight: '18 kg', noiseLevel: '60 dB(A)', classification: ['d8+', 'ce'], dutyCycle: '60%', voltageOptions: ['400V 3Ph'], protectionClass: 'IP55' },
+        { model: 'Chainster 500', series: 'Chainster', loadCapacity: '500 kg', liftingSpeed: '10 m/min', motorPower: '0.75 kW', weight: '28 kg', noiseLevel: '62 dB(A)', classification: ['d8+', 'ce'], dutyCycle: '60%', voltageOptions: ['400V 3Ph'], protectionClass: 'IP55' },
+        { model: 'Chainster 1000', series: 'Chainster', loadCapacity: '1000 kg', liftingSpeed: '5 m/min', motorPower: '0.75 kW', weight: '38 kg', noiseLevel: '64 dB(A)', classification: ['d8+', 'ce'], dutyCycle: '60%', voltageOptions: ['400V 3Ph'], protectionClass: 'IP55' },
+        { model: 'Chainster 2000', series: 'Chainster', loadCapacity: '2000 kg', liftingSpeed: '5 m/min', motorPower: '1.5 kW', weight: '52 kg', noiseLevel: '66 dB(A)', classification: ['d8+', 'ce'], dutyCycle: '60%', voltageOptions: ['400V 3Ph'], protectionClass: 'IP55' },
+        { model: 'Chainster 3200', series: 'Chainster', loadCapacity: '3200 kg', liftingSpeed: '3.2 m/min', motorPower: '1.5 kW', weight: '68 kg', noiseLevel: '67 dB(A)', classification: ['d8+', 'ce'], dutyCycle: '60%', voltageOptions: ['400V 3Ph'], protectionClass: 'IP55' },
+        { model: 'Chainster 5000', series: 'Chainster', loadCapacity: '5000 kg', liftingSpeed: '2 m/min', motorPower: '2.2 kW', weight: '85 kg', noiseLevel: '68 dB(A)', classification: ['d8+', 'ce'], dutyCycle: '60%', voltageOptions: ['400V 3Ph'], protectionClass: 'IP55' },
+        // Nova Series - Industrial Standard
+        { model: 'Nova 125', series: 'Nova', loadCapacity: '125 kg', liftingSpeed: '20 m/min', motorPower: '0.18 kW', weight: '12 kg', classification: ['d8', 'ce'], dutyCycle: '40%', voltageOptions: ['400V 3Ph', '230V 1Ph'], protectionClass: 'IP54' },
+        { model: 'Nova 250', series: 'Nova', loadCapacity: '250 kg', liftingSpeed: '10 m/min', motorPower: '0.18 kW', weight: '14 kg', classification: ['d8', 'ce'], dutyCycle: '40%', voltageOptions: ['400V 3Ph', '230V 1Ph'], protectionClass: 'IP54' },
+        { model: 'Nova 500', series: 'Nova', loadCapacity: '500 kg', liftingSpeed: '8 m/min', motorPower: '0.55 kW', weight: '25 kg', classification: ['d8', 'ce'], dutyCycle: '40%', voltageOptions: ['400V 3Ph'], protectionClass: 'IP54' },
+        { model: 'Nova 1000', series: 'Nova', loadCapacity: '1000 kg', liftingSpeed: '4 m/min', motorPower: '0.55 kW', weight: '32 kg', classification: ['d8', 'ce'], dutyCycle: '40%', voltageOptions: ['400V 3Ph'], protectionClass: 'IP54' },
+        { model: 'Nova 2000', series: 'Nova', loadCapacity: '2000 kg', liftingSpeed: '4 m/min', motorPower: '1.1 kW', weight: '48 kg', classification: ['d8', 'ce'], dutyCycle: '40%', voltageOptions: ['400V 3Ph'], protectionClass: 'IP54' },
+        { model: 'Nova 5000', series: 'Nova', loadCapacity: '5000 kg', liftingSpeed: '1.6 m/min', motorPower: '1.5 kW', weight: '82 kg', classification: ['d8', 'ce'], dutyCycle: '40%', voltageOptions: ['400V 3Ph'], protectionClass: 'IP54' },
+        // SK Series - Compact Design
+        { model: 'SK 250', series: 'SK', loadCapacity: '250 kg', liftingSpeed: '12 m/min', motorPower: '0.37 kW', weight: '16 kg', noiseLevel: '62 dB(A)', classification: ['d8', 'ce'], dutyCycle: '35%', voltageOptions: ['400V 3Ph', '230V 1Ph'], protectionClass: 'IP54' },
+        { model: 'SK 500', series: 'SK', loadCapacity: '500 kg', liftingSpeed: '6 m/min', motorPower: '0.37 kW', weight: '20 kg', noiseLevel: '64 dB(A)', classification: ['d8', 'ce'], dutyCycle: '35%', voltageOptions: ['400V 3Ph', '230V 1Ph'], protectionClass: 'IP54' },
+        { model: 'SK 1000', series: 'SK', loadCapacity: '1000 kg', liftingSpeed: '6 m/min', motorPower: '0.75 kW', weight: '32 kg', noiseLevel: '66 dB(A)', classification: ['d8', 'ce'], dutyCycle: '35%', voltageOptions: ['400V 3Ph'], protectionClass: 'IP54' },
+        { model: 'SK 2500', series: 'SK', loadCapacity: '2500 kg', liftingSpeed: '2.4 m/min', motorPower: '0.75 kW', weight: '52 kg', noiseLevel: '68 dB(A)', classification: ['d8', 'ce'], dutyCycle: '35%', voltageOptions: ['400V 3Ph'], protectionClass: 'IP54' },
       ],
       'jdn': [
-        { model: 'Air Hoist Profi', series: 'Profi', loadCapacity: '125-50000 kg', liftingSpeed: '1-12 m/min', classification: ['atex'] },
-        { model: 'Mini', series: 'Mini', loadCapacity: '125-980 kg', liftingSpeed: '6-12 m/min', classification: ['atex'] },
+        // Profi Series - Heavy Duty Pneumatic Hoists
+        { model: 'Profi 1 TI', series: 'Profi', loadCapacity: '1000 kg', liftingSpeed: '8 m/min', weight: '25 kg', classification: ['atex', 'ce', 'dnv'], protectionClass: 'IP54', airConsumption: '42 m³/h', operatingPressure: '4-7 bar' },
+        { model: 'Profi 2 TI', series: 'Profi', loadCapacity: '2000 kg', liftingSpeed: '4 m/min', weight: '32 kg', classification: ['atex', 'ce', 'dnv'], protectionClass: 'IP54', airConsumption: '48 m³/h', operatingPressure: '4-7 bar' },
+        { model: 'Profi 3 TI', series: 'Profi', loadCapacity: '3000 kg', liftingSpeed: '2.7 m/min', weight: '42 kg', classification: ['atex', 'ce', 'dnv'], protectionClass: 'IP54', airConsumption: '55 m³/h', operatingPressure: '4-7 bar' },
+        { model: 'Profi 5 TI', series: 'Profi', loadCapacity: '5000 kg', liftingSpeed: '2.4 m/min', weight: '58 kg', classification: ['atex', 'ce', 'dnv'], protectionClass: 'IP54', airConsumption: '70 m³/h', operatingPressure: '4-7 bar' },
+        { model: 'Profi 10 TI', series: 'Profi', loadCapacity: '10000 kg', liftingSpeed: '1.6 m/min', weight: '95 kg', classification: ['atex', 'ce', 'dnv'], protectionClass: 'IP54', airConsumption: '110 m³/h', operatingPressure: '4-7 bar' },
+        { model: 'Profi 20 TI', series: 'Profi', loadCapacity: '20000 kg', liftingSpeed: '0.8 m/min', weight: '180 kg', classification: ['atex', 'ce', 'dnv'], protectionClass: 'IP54', airConsumption: '180 m³/h', operatingPressure: '4-7 bar' },
+        { model: 'Profi 50 TI', series: 'Profi', loadCapacity: '50000 kg', liftingSpeed: '0.5 m/min', weight: '420 kg', classification: ['atex', 'ce', 'dnv'], protectionClass: 'IP54', airConsumption: '320 m³/h', operatingPressure: '4-7 bar' },
+        // Mini Series - Compact Pneumatic Hoists
+        { model: 'Mini 125', series: 'Mini', loadCapacity: '125 kg', liftingSpeed: '12 m/min', weight: '5 kg', classification: ['atex', 'ce'], protectionClass: 'IP54', airConsumption: '15 m³/h', operatingPressure: '4-7 bar' },
+        { model: 'Mini 250', series: 'Mini', loadCapacity: '250 kg', liftingSpeed: '6 m/min', weight: '6 kg', classification: ['atex', 'ce'], protectionClass: 'IP54', airConsumption: '18 m³/h', operatingPressure: '4-7 bar' },
+        { model: 'Mini 500', series: 'Mini', loadCapacity: '500 kg', liftingSpeed: '6 m/min', weight: '9 kg', classification: ['atex', 'ce'], protectionClass: 'IP54', airConsumption: '24 m³/h', operatingPressure: '4-7 bar' },
+        { model: 'Mini 980', series: 'Mini', loadCapacity: '980 kg', liftingSpeed: '3 m/min', weight: '12 kg', classification: ['atex', 'ce'], protectionClass: 'IP54', airConsumption: '30 m³/h', operatingPressure: '4-7 bar' },
+        // BBH Series - Low Headroom
+        { model: 'BBH 1000', series: 'BBH', loadCapacity: '1000 kg', liftingSpeed: '6 m/min', weight: '22 kg', classification: ['atex', 'ce'], protectionClass: 'IP54', airConsumption: '38 m³/h', operatingPressure: '4-7 bar' },
+        { model: 'BBH 2000', series: 'BBH', loadCapacity: '2000 kg', liftingSpeed: '3 m/min', weight: '28 kg', classification: ['atex', 'ce'], protectionClass: 'IP54', airConsumption: '45 m³/h', operatingPressure: '4-7 bar' },
+        { model: 'BBH 3000', series: 'BBH', loadCapacity: '3000 kg', liftingSpeed: '2 m/min', weight: '38 kg', classification: ['atex', 'ce'], protectionClass: 'IP54', airConsumption: '52 m³/h', operatingPressure: '4-7 bar' },
+        // LMF Series - Food Grade
+        { model: 'LMF 250', series: 'LMF', loadCapacity: '250 kg', liftingSpeed: '8 m/min', weight: '8 kg', classification: ['atex', 'ce', 'food-grade'], protectionClass: 'IP55', airConsumption: '20 m³/h', operatingPressure: '4-7 bar' },
+        { model: 'LMF 500', series: 'LMF', loadCapacity: '500 kg', liftingSpeed: '4 m/min', weight: '10 kg', classification: ['atex', 'ce', 'food-grade'], protectionClass: 'IP55', airConsumption: '26 m³/h', operatingPressure: '4-7 bar' },
+        { model: 'LMF 1000', series: 'LMF', loadCapacity: '1000 kg', liftingSpeed: '2 m/min', weight: '15 kg', classification: ['atex', 'ce', 'food-grade'], protectionClass: 'IP55', airConsumption: '32 m³/h', operatingPressure: '4-7 bar' },
       ],
       'elephant': [
-        { model: 'FA Series', series: 'FA', loadCapacity: '250-5000 kg', liftingSpeed: '4-12 m/min', classification: ['d8'] },
-        { model: 'FB Series', series: 'FB', loadCapacity: '500-10000 kg', liftingSpeed: '2-8 m/min', classification: ['d8'] },
+        // FA Series - Standard Electric Chain Hoists
+        { model: 'FA 250', series: 'FA', loadCapacity: '250 kg', liftingSpeed: '12 m/min', motorPower: '0.25 kW', weight: '15 kg', noiseLevel: '62 dB(A)', classification: ['d8', 'jis'], dutyCycle: '25%', voltageOptions: ['200V 3Ph', '400V 3Ph'], protectionClass: 'IP54' },
+        { model: 'FA 500', series: 'FA', loadCapacity: '500 kg', liftingSpeed: '6 m/min', motorPower: '0.37 kW', weight: '18 kg', noiseLevel: '64 dB(A)', classification: ['d8', 'jis'], dutyCycle: '25%', voltageOptions: ['200V 3Ph', '400V 3Ph'], protectionClass: 'IP54' },
+        { model: 'FA 1000', series: 'FA', loadCapacity: '1000 kg', liftingSpeed: '6 m/min', motorPower: '0.75 kW', weight: '28 kg', noiseLevel: '66 dB(A)', classification: ['d8', 'jis'], dutyCycle: '25%', voltageOptions: ['200V 3Ph', '400V 3Ph'], protectionClass: 'IP54' },
+        { model: 'FA 2000', series: 'FA', loadCapacity: '2000 kg', liftingSpeed: '3 m/min', motorPower: '0.75 kW', weight: '42 kg', noiseLevel: '68 dB(A)', classification: ['d8', 'jis'], dutyCycle: '25%', voltageOptions: ['200V 3Ph', '400V 3Ph'], protectionClass: 'IP54' },
+        { model: 'FA 3000', series: 'FA', loadCapacity: '3000 kg', liftingSpeed: '2 m/min', motorPower: '1.1 kW', weight: '58 kg', noiseLevel: '69 dB(A)', classification: ['d8', 'jis'], dutyCycle: '25%', voltageOptions: ['200V 3Ph', '400V 3Ph'], protectionClass: 'IP54' },
+        { model: 'FA 5000', series: 'FA', loadCapacity: '5000 kg', liftingSpeed: '1.2 m/min', motorPower: '1.5 kW', weight: '82 kg', noiseLevel: '70 dB(A)', classification: ['d8', 'jis'], dutyCycle: '25%', voltageOptions: ['400V 3Ph'], protectionClass: 'IP54' },
+        // FB Series - Heavy Duty
+        { model: 'FB 500', series: 'FB', loadCapacity: '500 kg', liftingSpeed: '8 m/min', motorPower: '0.55 kW', weight: '25 kg', noiseLevel: '64 dB(A)', classification: ['d8', 'jis'], dutyCycle: '40%', voltageOptions: ['200V 3Ph', '400V 3Ph'], protectionClass: 'IP54' },
+        { model: 'FB 1000', series: 'FB', loadCapacity: '1000 kg', liftingSpeed: '4 m/min', motorPower: '0.55 kW', weight: '35 kg', noiseLevel: '66 dB(A)', classification: ['d8', 'jis'], dutyCycle: '40%', voltageOptions: ['200V 3Ph', '400V 3Ph'], protectionClass: 'IP54' },
+        { model: 'FB 2000', series: 'FB', loadCapacity: '2000 kg', liftingSpeed: '4 m/min', motorPower: '1.1 kW', weight: '52 kg', noiseLevel: '68 dB(A)', classification: ['d8', 'jis'], dutyCycle: '40%', voltageOptions: ['200V 3Ph', '400V 3Ph'], protectionClass: 'IP54' },
+        { model: 'FB 3000', series: 'FB', loadCapacity: '3000 kg', liftingSpeed: '2.7 m/min', motorPower: '1.1 kW', weight: '68 kg', noiseLevel: '69 dB(A)', classification: ['d8', 'jis'], dutyCycle: '40%', voltageOptions: ['400V 3Ph'], protectionClass: 'IP54' },
+        { model: 'FB 5000', series: 'FB', loadCapacity: '5000 kg', liftingSpeed: '2 m/min', motorPower: '1.5 kW', weight: '95 kg', noiseLevel: '70 dB(A)', classification: ['d8', 'jis'], dutyCycle: '40%', voltageOptions: ['400V 3Ph'], protectionClass: 'IP54' },
+        { model: 'FB 10000', series: 'FB', loadCapacity: '10000 kg', liftingSpeed: '1 m/min', motorPower: '2.2 kW', weight: '165 kg', noiseLevel: '72 dB(A)', classification: ['d8', 'jis'], dutyCycle: '40%', voltageOptions: ['400V 3Ph'], protectionClass: 'IP54' },
+        // FC Series - Dual Speed
+        { model: 'FC 500', series: 'FC', loadCapacity: '500 kg', liftingSpeed: '2/8 m/min', motorPower: '0.55/0.18 kW', weight: '28 kg', classification: ['d8+', 'jis'], dutyCycle: '40%', voltageOptions: ['200V 3Ph', '400V 3Ph'], protectionClass: 'IP54' },
+        { model: 'FC 1000', series: 'FC', loadCapacity: '1000 kg', liftingSpeed: '1/4 m/min', motorPower: '0.55/0.18 kW', weight: '38 kg', classification: ['d8+', 'jis'], dutyCycle: '40%', voltageOptions: ['200V 3Ph', '400V 3Ph'], protectionClass: 'IP54' },
+        { model: 'FC 2000', series: 'FC', loadCapacity: '2000 kg', liftingSpeed: '1/4 m/min', motorPower: '1.1/0.37 kW', weight: '55 kg', classification: ['d8+', 'jis'], dutyCycle: '40%', voltageOptions: ['400V 3Ph'], protectionClass: 'IP54' },
       ],
       'liftingsafety': [
-        { model: 'LS Electric Hoist', series: 'LS', loadCapacity: '250-5000 kg', liftingSpeed: '4-12 m/min', classification: ['d8'] },
+        // LS Electric Series - Standard Electric Hoists
+        { model: 'LS Electric 250', series: 'LS Electric', loadCapacity: '250 kg', liftingSpeed: '12 m/min', motorPower: '0.37 kW', weight: '16 kg', noiseLevel: '62 dB(A)', classification: ['d8', 'ce'], dutyCycle: '40%', voltageOptions: ['400V 3Ph', '230V 1Ph'], protectionClass: 'IP54' },
+        { model: 'LS Electric 500', series: 'LS Electric', loadCapacity: '500 kg', liftingSpeed: '6 m/min', motorPower: '0.55 kW', weight: '22 kg', noiseLevel: '64 dB(A)', classification: ['d8', 'ce'], dutyCycle: '40%', voltageOptions: ['400V 3Ph', '230V 1Ph'], protectionClass: 'IP54' },
+        { model: 'LS Electric 1000', series: 'LS Electric', loadCapacity: '1000 kg', liftingSpeed: '6 m/min', motorPower: '0.75 kW', weight: '32 kg', noiseLevel: '66 dB(A)', classification: ['d8', 'ce'], dutyCycle: '40%', voltageOptions: ['400V 3Ph'], protectionClass: 'IP54' },
+        { model: 'LS Electric 2000', series: 'LS Electric', loadCapacity: '2000 kg', liftingSpeed: '3 m/min', motorPower: '1.1 kW', weight: '48 kg', noiseLevel: '68 dB(A)', classification: ['d8', 'ce'], dutyCycle: '40%', voltageOptions: ['400V 3Ph'], protectionClass: 'IP54' },
+        { model: 'LS Electric 3000', series: 'LS Electric', loadCapacity: '3000 kg', liftingSpeed: '2 m/min', motorPower: '1.5 kW', weight: '62 kg', noiseLevel: '69 dB(A)', classification: ['d8', 'ce'], dutyCycle: '40%', voltageOptions: ['400V 3Ph'], protectionClass: 'IP54' },
+        { model: 'LS Electric 5000', series: 'LS Electric', loadCapacity: '5000 kg', liftingSpeed: '1.2 m/min', motorPower: '2.2 kW', weight: '85 kg', noiseLevel: '70 dB(A)', classification: ['d8', 'ce'], dutyCycle: '40%', voltageOptions: ['400V 3Ph'], protectionClass: 'IP54' },
+        // LS Compact Series - Lightweight Design
+        { model: 'LS Compact 125', series: 'LS Compact', loadCapacity: '125 kg', liftingSpeed: '16 m/min', motorPower: '0.18 kW', weight: '10 kg', classification: ['d8', 'ce'], dutyCycle: '30%', voltageOptions: ['230V 1Ph'], protectionClass: 'IP54' },
+        { model: 'LS Compact 250', series: 'LS Compact', loadCapacity: '250 kg', liftingSpeed: '8 m/min', motorPower: '0.25 kW', weight: '12 kg', classification: ['d8', 'ce'], dutyCycle: '30%', voltageOptions: ['230V 1Ph'], protectionClass: 'IP54' },
+        { model: 'LS Compact 500', series: 'LS Compact', loadCapacity: '500 kg', liftingSpeed: '4 m/min', motorPower: '0.37 kW', weight: '16 kg', classification: ['d8', 'ce'], dutyCycle: '30%', voltageOptions: ['230V 1Ph', '400V 3Ph'], protectionClass: 'IP54' },
+        // LS HD Series - Heavy Duty
+        { model: 'LS HD 5000', series: 'LS HD', loadCapacity: '5000 kg', liftingSpeed: '2 m/min', motorPower: '2.2 kW', weight: '92 kg', noiseLevel: '68 dB(A)', classification: ['d8+', 'ce'], dutyCycle: '50%', voltageOptions: ['400V 3Ph'], protectionClass: 'IP55' },
+        { model: 'LS HD 10000', series: 'LS HD', loadCapacity: '10000 kg', liftingSpeed: '1 m/min', motorPower: '3.0 kW', weight: '155 kg', noiseLevel: '70 dB(A)', classification: ['d8+', 'ce'], dutyCycle: '50%', voltageOptions: ['400V 3Ph'], protectionClass: 'IP55' },
       ],
       'tiger': [
         // ROV Series - Entertainment Industry (Remote Operated Vertical)
