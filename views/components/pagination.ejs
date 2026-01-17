@@ -1,0 +1,82 @@
+<%# Pagination Component
+    Usage: <%- include('components/pagination', { pagination: paginationObj, buildUrl: buildPageUrlFn }) %>
+    pagination: { page, totalPages, hasPrev, hasNext, limit }
+    buildUrl: function(pageNum) => '/search?page=' + pageNum
+%>
+<% if (pagination.totalPages > 1) { %>
+  <nav aria-label="Page navigation" class="mt-4">
+    <ul class="pagination justify-content-center flex-wrap">
+      <%
+        // Calculate page range to show
+        const maxPagesToShow = 5;
+        let startPage = Math.max(1, pagination.page - Math.floor(maxPagesToShow / 2));
+        let endPage = Math.min(pagination.totalPages, startPage + maxPagesToShow - 1);
+        if (endPage - startPage < maxPagesToShow - 1) {
+          startPage = Math.max(1, endPage - maxPagesToShow + 1);
+        }
+      %>
+
+      <!-- First & Previous -->
+      <li class="page-item <%= !pagination.hasPrev ? 'disabled' : '' %>">
+        <a class="page-link" href="<%= pagination.hasPrev ? buildUrl(1) : '#' %>" aria-label="First page" <%= !pagination.hasPrev ? 'tabindex="-1"' : '' %>>
+          <i class="bi bi-chevron-double-left d-none d-sm-inline"></i>
+          <span class="d-inline d-sm-none">First</span>
+        </a>
+      </li>
+      <li class="page-item <%= !pagination.hasPrev ? 'disabled' : '' %>">
+        <a class="page-link" href="<%= pagination.hasPrev ? buildUrl(pagination.page - 1) : '#' %>" aria-label="Previous page" <%= !pagination.hasPrev ? 'tabindex="-1"' : '' %>>
+          <i class="bi bi-chevron-left d-none d-sm-inline"></i>
+          <span class="d-inline d-sm-none">Prev</span>
+        </a>
+      </li>
+
+      <!-- Page numbers with ellipsis -->
+      <% if (startPage > 1) { %>
+        <li class="page-item">
+          <a class="page-link" href="<%= buildUrl(1) %>">1</a>
+        </li>
+        <% if (startPage > 2) { %>
+          <li class="page-item disabled">
+            <span class="page-link">...</span>
+          </li>
+        <% } %>
+      <% } %>
+
+      <% for (let i = startPage; i <= endPage; i++) { %>
+        <li class="page-item <%= i === pagination.page ? 'active' : '' %>" <%= i === pagination.page ? 'aria-current="page"' : '' %>>
+          <a class="page-link" href="<%= buildUrl(i) %>"><%= i %></a>
+        </li>
+      <% } %>
+
+      <% if (endPage < pagination.totalPages) { %>
+        <% if (endPage < pagination.totalPages - 1) { %>
+          <li class="page-item disabled">
+            <span class="page-link">...</span>
+          </li>
+        <% } %>
+        <li class="page-item">
+          <a class="page-link" href="<%= buildUrl(pagination.totalPages) %>"><%= pagination.totalPages %></a>
+        </li>
+      <% } %>
+
+      <!-- Next & Last -->
+      <li class="page-item <%= !pagination.hasNext ? 'disabled' : '' %>">
+        <a class="page-link" href="<%= pagination.hasNext ? buildUrl(pagination.page + 1) : '#' %>" aria-label="Next page" <%= !pagination.hasNext ? 'tabindex="-1"' : '' %>>
+          <i class="bi bi-chevron-right d-none d-sm-inline"></i>
+          <span class="d-inline d-sm-none">Next</span>
+        </a>
+      </li>
+      <li class="page-item <%= !pagination.hasNext ? 'disabled' : '' %>">
+        <a class="page-link" href="<%= pagination.hasNext ? buildUrl(pagination.totalPages) : '#' %>" aria-label="Last page" <%= !pagination.hasNext ? 'tabindex="-1"' : '' %>>
+          <i class="bi bi-chevron-double-right d-none d-sm-inline"></i>
+          <span class="d-inline d-sm-none">Last</span>
+        </a>
+      </li>
+    </ul>
+
+    <!-- Page info for mobile -->
+    <p class="text-center text-muted small mt-2 d-md-none">
+      Page <%= pagination.page %> of <%= pagination.totalPages %>
+    </p>
+  </nav>
+<% } %>

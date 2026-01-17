@@ -1,0 +1,39 @@
+<%# Classification Badge Component
+    Usage: <%- include('components/classification-badge', { classification: 'd8+', linked: true }) %>
+%>
+<%
+  const cls = (typeof classification === 'string' ? classification : '').toLowerCase();
+  const displayText = cls.toUpperCase();
+
+  // Determine badge color based on classification
+  let badgeClass = 'bg-info';
+  if (cls.includes('d8+') || cls.includes('d8plus')) {
+    badgeClass = 'bg-success';
+  } else if (cls.includes('d8')) {
+    badgeClass = 'bg-primary';
+  } else if (cls.includes('bgv')) {
+    badgeClass = 'bg-warning text-dark';
+  } else if (cls.includes('ce')) {
+    badgeClass = 'bg-secondary';
+  } else if (cls.includes('atex')) {
+    badgeClass = 'bg-danger';
+  }
+
+  // Tooltip text for classification
+  const tooltips = {
+    'd8': 'BGV-D8: German entertainment industry standard',
+    'd8+': 'D8+: Enhanced entertainment standard with additional safety',
+    'bgv-c1': 'BGV-C1: German safety regulation for lifting operations',
+    'bgv-d8': 'BGV-D8: German entertainment industry standard',
+    'ce': 'CE: European conformity marking',
+    'atex': 'ATEX: Explosive atmosphere certification'
+  };
+  const tooltip = tooltips[cls] || `${displayText} certification`;
+%>
+<% if (typeof linked !== 'undefined' && linked) { %>
+  <a href="/search?classification=<%= encodeURIComponent(classification) %>" class="text-decoration-none" onclick="event.stopPropagation()">
+    <span class="badge <%= badgeClass %> classification-badge" title="<%= tooltip %>" data-bs-toggle="tooltip"><%= displayText %></span>
+  </a>
+<% } else { %>
+  <span class="badge <%= badgeClass %> classification-badge" title="<%= tooltip %>" data-bs-toggle="tooltip"><%= displayText %></span>
+<% } %>

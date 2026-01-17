@@ -1,0 +1,111 @@
+<%# Skeleton Card Component
+    Usage: <%- include('components/skeleton-card', { type: 'table-row' }) %>
+    type: 'table-row' | 'card' | 'product-detail'
+%>
+<% const skeletonType = typeof type !== 'undefined' ? type : 'card'; %>
+
+<% if (skeletonType === 'table-row') { %>
+  <tr class="skeleton-row">
+    <td>
+      <div class="skeleton skeleton-image" style="width: 50px; height: 50px;"></div>
+    </td>
+    <td>
+      <div class="skeleton skeleton-text" style="width: 80%;"></div>
+    </td>
+    <td>
+      <div class="skeleton skeleton-text" style="width: 70%;"></div>
+    </td>
+    <td>
+      <div class="skeleton skeleton-text" style="width: 60%;"></div>
+    </td>
+    <td>
+      <div class="skeleton skeleton-text" style="width: 50%;"></div>
+    </td>
+    <td>
+      <div class="skeleton skeleton-text" style="width: 55%;"></div>
+    </td>
+    <td>
+      <div class="skeleton skeleton-badge"></div>
+    </td>
+    <td>
+      <div class="skeleton skeleton-text" style="width: 60px;"></div>
+    </td>
+  </tr>
+<% } else if (skeletonType === 'card') { %>
+  <div class="product-card-mobile skeleton-card">
+    <div class="card-header-mobile">
+      <div style="flex-grow: 1;">
+        <div class="skeleton skeleton-title" style="width: 60%;"></div>
+        <div class="skeleton skeleton-text" style="width: 80%;"></div>
+      </div>
+      <div class="skeleton skeleton-image" style="width: 60px; height: 60px; border-radius: 6px;"></div>
+    </div>
+    <div class="card-specs">
+      <div class="spec-item">
+        <div class="skeleton skeleton-text" style="width: 50%; height: 0.6em;"></div>
+        <div class="skeleton skeleton-text" style="width: 70%;"></div>
+      </div>
+      <div class="spec-item">
+        <div class="skeleton skeleton-text" style="width: 50%; height: 0.6em;"></div>
+        <div class="skeleton skeleton-text" style="width: 70%;"></div>
+      </div>
+      <div class="spec-item">
+        <div class="skeleton skeleton-text" style="width: 50%; height: 0.6em;"></div>
+        <div class="skeleton skeleton-badge"></div>
+      </div>
+      <div class="spec-item">
+        <div class="skeleton skeleton-text" style="width: 80px; height: 30px; border-radius: 4px;"></div>
+      </div>
+    </div>
+  </div>
+<% } else if (skeletonType === 'product-detail') { %>
+  <div class="row">
+    <div class="col-md-8">
+      <div class="card spec-card">
+        <div class="card-header">
+          <div class="skeleton skeleton-title" style="width: 60%; height: 1.5em; background: rgba(255,255,255,0.3);"></div>
+        </div>
+        <div class="card-body">
+          <div class="skeleton skeleton-text" style="width: 40%; margin-bottom: 1rem;"></div>
+
+          <!-- Image skeleton -->
+          <div class="text-center mb-4">
+            <div class="skeleton skeleton-image" style="width: 100%; max-width: 400px; height: 250px; margin: 0 auto; border-radius: 8px;"></div>
+          </div>
+
+          <!-- Specs skeleton -->
+          <div class="row mt-4">
+            <div class="col-md-6">
+              <div class="skeleton skeleton-title" style="width: 50%; margin-bottom: 1rem;"></div>
+              <table class="table">
+                <tbody>
+                  <% for (let i = 0; i < 5; i++) { %>
+                  <tr>
+                    <td><div class="skeleton skeleton-text" style="width: 80%;"></div></td>
+                    <td><div class="skeleton skeleton-text" style="width: 60%;"></div></td>
+                  </tr>
+                  <% } %>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card spec-card">
+        <div class="card-header">
+          <div class="skeleton skeleton-title" style="width: 50%; height: 1.2em; background: rgba(255,255,255,0.3);"></div>
+        </div>
+        <div class="card-body">
+          <% for (let i = 0; i < 3; i++) { %>
+          <div class="mb-3 pb-3 border-bottom">
+            <div class="skeleton skeleton-text" style="width: 70%;"></div>
+            <div class="skeleton skeleton-text" style="width: 40%; height: 0.8em;"></div>
+          </div>
+          <% } %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% } %>

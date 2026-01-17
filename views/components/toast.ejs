@@ -1,0 +1,228 @@
+<%# Toast Notification Component
+    This component provides JavaScript functions for showing toast notifications.
+    Include once in your page, then call showToast(message, type) from anywhere.
+
+    Types: 'success', 'error', 'info', 'warning'
+%>
+
+<!-- Toast Container -->
+<div id="toastContainer" class="toast-container" aria-live="polite" aria-atomic="true"></div>
+
+<style>
+  .toast-container {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    z-index: 10000;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    max-width: calc(100vw - 2rem);
+  }
+
+  .toast-notification {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 0.875rem 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    animation: toast-slide-in 0.3s ease;
+    min-width: 280px;
+    max-width: 400px;
+    background: white;
+  }
+
+  .toast-notification.hiding {
+    animation: toast-slide-out 0.3s ease forwards;
+  }
+
+  .toast-notification .toast-icon {
+    font-size: 1.25rem;
+    flex-shrink: 0;
+  }
+
+  .toast-notification .toast-content {
+    flex-grow: 1;
+  }
+
+  .toast-notification .toast-message {
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+
+  .toast-notification .toast-close {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    opacity: 0.5;
+    transition: opacity 0.2s;
+    font-size: 1rem;
+    line-height: 1;
+  }
+
+  .toast-notification .toast-close:hover {
+    opacity: 1;
+  }
+
+  .toast-notification .toast-retry {
+    margin-top: 0.5rem;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.8rem;
+    background: rgba(0, 0, 0, 0.1);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+
+  .toast-notification .toast-retry:hover {
+    background: rgba(0, 0, 0, 0.2);
+  }
+
+  /* Toast types */
+  .toast-success {
+    background: #d4edda;
+    border-left: 4px solid #28a745;
+  }
+  .toast-success .toast-icon { color: #28a745; }
+
+  .toast-error {
+    background: #f8d7da;
+    border-left: 4px solid #dc3545;
+  }
+  .toast-error .toast-icon { color: #dc3545; }
+
+  .toast-warning {
+    background: #fff3cd;
+    border-left: 4px solid #ffc107;
+  }
+  .toast-warning .toast-icon { color: #856404; }
+
+  .toast-info {
+    background: #d1ecf1;
+    border-left: 4px solid #17a2b8;
+  }
+  .toast-info .toast-icon { color: #17a2b8; }
+
+  @keyframes toast-slide-in {
+    from {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes toast-slide-out {
+    from {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    to {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+  }
+
+  /* Mobile adjustments */
+  @media (max-width: 575.98px) {
+    .toast-container {
+      bottom: 1rem;
+      right: 1rem;
+      left: 1rem;
+    }
+    .toast-notification {
+      min-width: auto;
+      max-width: none;
+    }
+  }
+</style>
+
+<script>
+  // Toast notification system
+  const toastContainer = document.getElementById('toastContainer');
+
+  const toastIcons = {
+    success: '<i class="bi bi-check-circle-fill"></i>',
+    error: '<i class="bi bi-exclamation-triangle-fill"></i>',
+    warning: '<i class="bi bi-exclamation-circle-fill"></i>',
+    info: '<i class="bi bi-info-circle-fill"></i>'
+  };
+
+  /**
+   * Show a toast notification
+   * @param {string} message - The message to display
+   * @param {string} type - Type of toast: 'success', 'error', 'warning', 'info'
+   * @param {Object} options - Optional settings
+   * @param {number} options.duration - Auto-dismiss duration in ms (0 for no auto-dismiss)
+   * @param {Function} options.onRetry - Callback function for retry button (shows retry button if provided)
+   */
+  function showToast(message, type = 'info', options = {}) {
+    const { duration = 5000, onRetry = null } = options;
+
+    const toast = document.createElement('div');
+    toast.className = `toast-notification toast-${type}`;
+    toast.setAttribute('role', 'alert');
+
+    let retryButton = '';
+    if (onRetry) {
+      retryButton = '<button class="toast-retry" data-action="retry"><i class="bi bi-arrow-clockwise me-1"></i>Retry</button>';
+    }
+
+    toast.innerHTML = `
+      <span class="toast-icon">${toastIcons[type] || toastIcons.info}</span>
+      <div class="toast-content">
+        <p class="toast-message">${message}</p>
+        ${retryButton}
+      </div>
+      <button class="toast-close" data-action="close" aria-label="Close notification">&times;</button>
+    `;
+
+    // Event handlers
+    toast.querySelector('[data-action="close"]').addEventListener('click', () => dismissToast(toast));
+
+    if (onRetry) {
+      toast.querySelector('[data-action="retry"]').addEventListener('click', () => {
+        dismissToast(toast);
+        onRetry();
+      });
+    }
+
+    toastContainer.appendChild(toast);
+
+    // Auto-dismiss
+    if (duration > 0) {
+      setTimeout(() => dismissToast(toast), duration);
+    }
+
+    return toast;
+  }
+
+  /**
+   * Dismiss a toast notification
+   * @param {HTMLElement} toast - The toast element to dismiss
+   */
+  function dismissToast(toast) {
+    if (!toast || toast.classList.contains('hiding')) return;
+
+    toast.classList.add('hiding');
+    setTimeout(() => {
+      if (toast.parentNode) {
+        toast.parentNode.removeChild(toast);
+      }
+    }, 300);
+  }
+
+  /**
+   * Clear all toast notifications
+   */
+  function clearAllToasts() {
+    const toasts = toastContainer.querySelectorAll('.toast-notification');
+    toasts.forEach(toast => dismissToast(toast));
+  }
+</script>

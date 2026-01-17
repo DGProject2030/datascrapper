@@ -1,0 +1,65 @@
+<%# Product Card Component
+    Usage: <%- include('components/product-card', { product: item, searchContext: queryString }) %>
+%>
+<div class="product-card card h-100">
+  <% if (product.images && product.images.length > 0) { %>
+    <img src="<%= product.images[0].url %>"
+         class="card-img-top"
+         alt="<%= product.manufacturer %> <%= product.model %>"
+         style="height: 180px; object-fit: contain; padding: 1rem; background: #f8f9fa;"
+         loading="lazy"
+         onerror="this.onerror=null; this.src='/images/placeholder.png'; this.style.opacity='0.5';">
+  <% } else { %>
+    <div class="card-img-top d-flex align-items-center justify-content-center" style="height: 180px; background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);">
+      <i class="bi bi-image text-muted" style="font-size: 3rem; opacity: 0.3;"></i>
+    </div>
+  <% } %>
+  <div class="card-body d-flex flex-column">
+    <h5 class="card-title mb-1"><%= product.manufacturer %></h5>
+    <h6 class="card-subtitle text-muted mb-2"><%= product.model %></h6>
+
+    <% if (product.classification && Array.isArray(product.classification) && product.classification.length > 0) { %>
+      <div class="mb-2">
+        <% product.classification.slice(0, 3).forEach(function(cls) { %>
+          <span class="badge bg-info classification-badge"><%= cls.toUpperCase() %></span>
+        <% }); %>
+      </div>
+    <% } %>
+
+    <div class="mt-auto">
+      <table class="table table-sm table-borderless mb-2" style="font-size: 0.85rem;">
+        <tbody>
+          <tr>
+            <td class="text-muted py-1" style="width: 40%;">Capacity</td>
+            <td class="py-1"><%= product.loadCapacity || '<span class="text-muted">Not specified</span>' %></td>
+          </tr>
+          <tr>
+            <td class="text-muted py-1">Speed</td>
+            <td class="py-1"><%= product.liftingSpeed || '<span class="text-muted">Not specified</span>' %></td>
+          </tr>
+          <% if (product.motorPower) { %>
+          <tr>
+            <td class="text-muted py-1">Power</td>
+            <td class="py-1"><%= product.motorPower %></td>
+          </tr>
+          <% } %>
+        </tbody>
+      </table>
+
+      <%
+        // Calculate completeness for badge
+        const criticalFields = ['loadCapacity', 'liftingSpeed', 'motorPower'];
+        const hasAllCritical = criticalFields.every(f => product[f] && product[f] !== '' && product[f] !== '-');
+        const completeness = product.dataCompleteness || 0;
+      %>
+      <div class="d-flex justify-content-between align-items-center">
+        <% if (hasAllCritical) { %>
+          <span class="badge bg-success" title="Complete specs"><i class="bi bi-check-circle"></i> Complete</span>
+        <% } else { %>
+          <span class="badge bg-secondary" title="<%= completeness %>% complete"><%= completeness %>% data</span>
+        <% } %>
+        <a href="/product/<%= product.id %><%= typeof searchContext !== 'undefined' && searchContext ? '?' + searchContext : '' %>" class="btn btn-sm btn-primary">View Details</a>
+      </div>
+    </div>
+  </div>
+</div>

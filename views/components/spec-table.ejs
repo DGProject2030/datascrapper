@@ -1,0 +1,38 @@
+<%# Specification Table Component
+    Usage: <%- include('components/spec-table', { specs: specArray, title: 'Technical Specifications', icon: 'bi-gear' }) %>
+    specs format: [{ label: 'Load Capacity', value: '500 kg', show: true }]
+%>
+<div class="spec-table-wrapper">
+  <% if (typeof title !== 'undefined' && title) { %>
+    <h4 class="section-title">
+      <% if (typeof icon !== 'undefined' && icon) { %>
+        <i class="bi <%= icon %>"></i>
+      <% } %>
+      <%= title %>
+    </h4>
+  <% } %>
+  <table class="table table-striped">
+    <tbody>
+      <% specs.forEach(function(spec) { %>
+        <% if (typeof spec.show === 'undefined' || spec.show) { %>
+          <tr>
+            <td class="spec-label"><%= spec.label %></td>
+            <td>
+              <% if (spec.value && spec.value !== '' && spec.value !== '-') { %>
+                <% if (Array.isArray(spec.value)) { %>
+                  <%= spec.value.join(', ') %>
+                <% } else if (typeof spec.value === 'boolean') { %>
+                  <%= spec.value ? 'Yes' : 'No' %>
+                <% } else { %>
+                  <%= spec.value %>
+                <% } %>
+              <% } else { %>
+                <span class="text-muted">Not specified</span>
+              <% } %>
+            </td>
+          </tr>
+        <% } %>
+      <% }); %>
+    </tbody>
+  </table>
+</div>
