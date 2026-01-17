@@ -35,15 +35,95 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script>
-    // Keyboard support for all clickable elements
-    document.querySelectorAll('.clickable-card, .clickable-row, .list-group-item-action[onclick]').forEach(el => {
-      el.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          el.click();
+    // Make homepage list items clickable
+    (function() {
+      // Find all list groups on the homepage
+      const listGroups = document.querySelectorAll('.card.bg-light .list-group');
+
+      listGroups.forEach((list, groupIndex) => {
+        const items = list.querySelectorAll('.list-group-item');
+        items.forEach((item, itemIndex) => {
+          // Skip if already has onclick
+          if (item.onclick) return;
+
+          const text = item.textContent.trim();
+          const badge = item.querySelector('.badge');
+
+          // Determine the filter type based on badge color
+          let filterParam = '';
+          if (badge) {
+            if (badge.classList.contains('bg-primary')) {
+              // Manufacturer list
+              const manufacturer = text.replace(/\d+$/, '').trim();
+              if (manufacturer && !manufacturer.includes('more')) {
+                filterParam = '/search?manufacturer=' + encodeURIComponent(manufacturer);
+              } else {
+                filterParam = '/search';
+              }
+            } else if (badge.classList.contains('bg-success')) {
+              // Capacity list
+              const capacity = text.replace(/\d+$/, '').trim();
+              filterParam = '/search?capacity=' + encodeURIComponent(capacity);
+            } else if (badge.classList.contains('bg-info')) {
+              // Classification list
+              const classification = text.replace(/\d+$/, '').trim().toLowerCase();
+              filterParam = '/search?classification=' + encodeURIComponent(classification);
+            }
+          } else if (text.includes('more')) {
+            filterParam = '/search';
+          }
+
+          if (filterParam) {
+            item.style.cursor = 'pointer';
+            item.setAttribute('role', 'link');
+            item.setAttribute('tabindex', '0');
+            item.classList.add('list-group-item-action');
+            item.addEventListener('click', () => window.location = filterParam);
+            item.addEventListener('keydown', (e) => {
+              if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                window.location = filterParam;
+              }
+            });
+          }
+        });
+      });
+
+      // Make product cards clickable
+      document.querySelectorAll('.product-card').forEach(card => {
+        if (card.onclick) return;
+
+        const link = card.querySelector('a[href^="/product/"]');
+        if (link) {
+          const href = link.getAttribute('href');
+          card.style.cursor = 'pointer';
+          card.classList.add('clickable-card');
+          card.setAttribute('role', 'link');
+          card.setAttribute('tabindex', '0');
+          card.addEventListener('click', (e) => {
+            if (e.target.tagName !== 'A') {
+              window.location = href;
+            }
+          });
+          card.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              window.location = href;
+            }
+          });
         }
       });
-    });
+
+      // Keyboard support for existing clickable elements
+      document.querySelectorAll('.clickable-card, .clickable-row, .list-group-item-action[onclick]').forEach(el => {
+        el.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            el.click();
+          }
+        });
+      });
+    })();
   </script>
 </body>
 </html>
