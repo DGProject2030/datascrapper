@@ -35,8 +35,8 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script>
-    // Keyboard support for all clickable cards and rows
-    document.querySelectorAll('.clickable-card, .clickable-row').forEach(el => {
+    // Keyboard support for all clickable elements
+    document.querySelectorAll('.clickable-card, .clickable-row, .list-group-item-action[onclick]').forEach(el => {
       el.addEventListener('keydown', (e) => {
         if (e.key === 'Enter' || e.key === ' ') {
           e.preventDefault();

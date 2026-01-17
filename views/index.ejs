@@ -15,13 +15,15 @@
                 <p class="card-text">Featuring <%= manufacturers.length %> manufacturers</p>
                 <ul class="list-group">
                   <% manufacturers.slice(0, 5).forEach(function(manufacturer) { %>
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <li class="list-group-item d-flex justify-content-between align-items-center list-group-item-action" onclick="window.location='/search?manufacturer=<%= encodeURIComponent(manufacturer) %>'" style="cursor: pointer;" role="link" tabindex="0">
                       <%= manufacturer %>
                       <span class="badge bg-primary rounded-pill"><%= data.filter(item => item.manufacturer === manufacturer).length %></span>
                     </li>
                   <% }); %>
                   <% if (manufacturers.length > 5) { %>
-                    <li class="list-group-item text-center text-muted">+ <%= manufacturers.length - 5 %> more</li>
+                    <li class="list-group-item list-group-item-action text-center" onclick="window.location='/search'" style="cursor: pointer;" role="link" tabindex="0">
+                      <span class="text-muted">+ <%= manufacturers.length - 5 %> more</span>
+                    </li>
                   <% } %>
                 </ul>
               </div>
@@ -35,7 +37,7 @@
                 <p class="card-text">Chainhoists by load capacity</p>
                 <ul class="list-group">
                   <% capacities.forEach(function(capacity) { %>
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <li class="list-group-item d-flex justify-content-between align-items-center list-group-item-action" onclick="window.location='/search?capacity=<%= encodeURIComponent(capacity) %>'" style="cursor: pointer;" role="link" tabindex="0">
                       <%= capacity %>
                       <span class="badge bg-success rounded-pill"><%= report.capacityDistribution[capacity] %></span>
                     </li>
@@ -52,7 +54,7 @@
                 <p class="card-text">Chainhoists by industry classification</p>
                 <ul class="list-group">
                   <% classifications.forEach(function(classification) { %>
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <li class="list-group-item d-flex justify-content-between align-items-center list-group-item-action" onclick="window.location='/search?classification=<%= encodeURIComponent(classification) %>'" style="cursor: pointer;" role="link" tabindex="0">
                       <%= classification.toUpperCase() %>
                       <span class="badge bg-info rounded-pill"><%= report.classificationDistribution[classification] %></span>
                     </li>
