@@ -1,8 +1,4 @@
-# Firebase App Hosting configuration
-# https://firebase.google.com/docs/app-hosting
-
 runConfig:
-  # Runtime settings
   cpu: 1
   memoryMiB: 512
   minInstances: 0
@@ -12,6 +8,10 @@ runConfig:
 env:
   - variable: NODE_ENV
     value: production
-  # Skip npm run build (scraper) during deployment
+    availability:
+      - BUILD
+      - RUNTIME
   - variable: GOOGLE_NODE_RUN_SCRIPTS
-    value: ""
+    value: " "
+    availability:
+      - BUILD
