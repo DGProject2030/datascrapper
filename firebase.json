@@ -5,18 +5,6 @@
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
-    ],
-    "redirects": [
-      {
-        "source": "/",
-        "destination": "https://datascrapper--chainhoist-db.europe-west4.hosted.app/",
-        "type": 301
-      },
-      {
-        "source": "/:path*",
-        "destination": "https://datascrapper--chainhoist-db.europe-west4.hosted.app/:path*",
-        "type": 301
-      }
     ]
   }
 }
