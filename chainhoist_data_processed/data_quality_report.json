@@ -1,76 +1,204 @@
 {
-  "totalRecords": 339,
-  "processedRecords": 331,
+  "totalRecords": 390,
+  "processedRecords": 390,
   "skippedRecords": 0,
-  "missingDataFields": {
-    "loadCapacity": {
-      "count": 279,
-      "percentage": "82.3%"
-    },
-    "liftingSpeed": {
-      "count": 279,
-      "percentage": "82.3%"
-    },
-    "motorPower": {
-      "count": 333,
-      "percentage": "98.2%"
-    }
-  },
+  "missingDataFields": {},
   "manufacturerStats": {
-    "Columbus McKinnon": 187,
-    "Konecranes": 2,
-    "Demag": 3,
-    "Harrington Hoists": 3,
-    "ABUS Kransysteme": 3,
+    "Columbus McKinnon": 18,
+    "Konecranes": 17,
+    "Demag": 15,
+    "Harrington Hoists": 2,
+    "ABUS Kransysteme": 26,
     "GIS AG": 1,
-    "Verlinde": 2,
-    "Chainmaster": 2,
-    "Movecat": 4,
-    "Kito": 2,
-    "Hitachi Industrial Equipment": 7,
-    "Donati Sollevamenti": 5,
-    "PLANETA-Hebetechnik": 10,
-    "Gorbel": 7,
-    "Yale Hoists": 3,
-    "Ingersoll Rand": 2,
-    "Coffing Hoists": 2,
-    "Budgit Hoists": 2,
-    "R&M Materials Handling": 8,
-    "Street Crane": 11,
-    "SWF Krantechnik": 2,
+    "Verlinde": 19,
+    "Chainmaster": 15,
+    "Movecat": 16,
+    "Kito": 20,
+    "Hitachi Industrial Equipment": 1,
+    "PLANETA-Hebetechnik": 3,
+    "Yale Hoists": 28,
+    "Ingersoll Rand": 16,
+    "Coffing Hoists": 16,
+    "Budgit Hoists": 15,
+    "R&M Materials Handling": 18,
+    "Street Crane": 15,
+    "SWF Krantechnik": 21,
     "JDN Monocrane": 2,
-    "Elephant Lifting Products": 2,
-    "LiftingSafety": 1,
-    "Tiger Lifting": 2,
-    "Stahl CraneSystems": 1,
+    "Elephant Lifting Products": 22,
+    "LiftingSafety": 18,
+    "Tiger Lifting": 23,
     "Nitchi": 2,
     "TXK": 2,
-    "LIFTKET": 3,
-    "Carl Stahl": 1,
-    "Hoist UK": 10,
-    "Prolyft": 2,
-    "JR Clancy": 2,
-    "CHENG DAY": 33
+    "Donati Sollevamenti": 2,
+    "Gorbel": 1,
+    "J.D. Neuhaus": 17,
+    "Stahl CraneSystems": 19
   },
   "capacityDistribution": {
-    "501-1000 kg": 8,
-    "251-500 kg": 4,
-    ">2000 kg": 34,
-    "1001-2000 kg": 14
+    "501-1000 kg": 64,
+    "251-500 kg": 61,
+    ">2000 kg": 96,
+    "1001-2000 kg": 57,
+    "≤250 kg": 95
   },
   "classificationDistribution": {
-    "d8": 27,
-    "d8+": 16,
-    "ansi": 12,
-    "bgv-c1": 5,
-    "jis": 3,
-    "atex": 2,
-    "ce": 2
+    "d8": 149,
+    "d8+": 119,
+    "ansi": 56,
+    "ce": 80,
+    "eu directives compliance": 4,
+    "dguv regulation 54": 4,
+    "fem 9.511": 4,
+    "fem 9.755": 4,
+    "din 15020": 4,
+    "bgv-c1": 60,
+    "jis": 18,
+    "atex": 37,
+    "iso 3834-2:2021": 1,
+    "fem groups 1bm to 4m": 9,
+    "dguv-gs certified": 3,
+    "en 818-7": 3,
+    "en 13157": 3,
+    "en 13155": 3,
+    "iso 9001": 3,
+    "iso 14001": 3,
+    "asme/ansi b30.16": 1,
+    "csa": 1,
+    "atex ii 2 gd c iic t4": 1,
+    "eu 2014/34/eu": 1,
+    "eu 99/92/ec": 1,
+    "asme b30.16": 41,
+    "ansi/asme h4": 1,
+    "h2 thru h4": 1,
+    "m3 thru m6 (iso)": 1,
+    "cmaa class c": 1,
+    "cmaa class d": 1,
+    "iso m3-m6": 1,
+    "asme/hmi class h4": 1,
+    "ii 2g (atex)": 1,
+    "gb (iecex)": 1,
+    "zone 1": 1,
+    "ii 2d (atex)": 1,
+    "db (iecex)": 1,
+    "zone 21": 1,
+    "atex ii 2g": 1,
+    "atex ii 2d": 1,
+    "iecex gb": 1,
+    "iecex db": 1,
+    "en/iec explosion protection standards": 1,
+    "en2001": 1,
+    "en1127-1:2008": 1,
+    "en13463-1:2009": 1,
+    "en13463-5:2003": 1,
+    "din 5684": 1,
+    "ii 2 gd c ii b t105°c": 1,
+    "94/9/ec": 1,
+    "en14492-2": 3,
+    "atex 2014/34/eu": 3,
+    "machinery directive 2006/42/ec": 3,
+    "norsok r-002": 3,
+    "sans 1638": 3,
+    "en818-7 appendix b": 3,
+    "iso9001": 3,
+    "food-grade": 6,
+    "osha": 4,
+    "fem 2m": 7,
+    "dnv": 7
   },
   "processingErrors": [],
-  "deduplication": {
-    "beforeCount": 339,
-    "afterCount": 331,
-    "duplicatesRemoved": 8
+  "localImagesFound": 636,
+  "localImagesMapped": 974,
+  "qualityGates": {
+    "passed": true,
+    "failedGates": [],
+    "passedGates": [
+      {
+        "name": "Minimum Records",
+        "threshold": "≥10",
+        "actual": 390,
+        "passed": true,
+        "message": "Database has 390 records"
+      },
+      {
+        "name": "Missing Load Capacity",
+        "threshold": "≤80%",
+        "actual": "0.3%",
+        "passed": true,
+        "message": "1 of 390 records missing loadCapacity"
+      },
+      {
+        "name": "Missing Lifting Speed",
+        "threshold": "≤85%",
+        "actual": "4.1%",
+        "passed": true,
+        "message": "16 of 390 records missing liftingSpeed"
+      },
+      {
+        "name": "Missing Motor Power",
+        "threshold": "≤95%",
+        "actual": "2.8%",
+        "passed": true,
+        "message": "11 of 390 records missing motorPower"
+      },
+      {
+        "name": "Missing Classification",
+        "threshold": "≤50%",
+        "actual": "4.4%",
+        "passed": true,
+        "message": "17 of 390 records missing classification"
+      },
+      {
+        "name": "Source Tracking",
+        "threshold": "≥90%",
+        "actual": "100.0%",
+        "passed": true,
+        "message": "390 of 390 records have source tracking"
+      }
+    ],
+    "gates": [
+      {
+        "name": "Minimum Records",
+        "threshold": "≥10",
+        "actual": 390,
+        "passed": true,
+        "message": "Database has 390 records"
+      },
+      {
+        "name": "Missing Load Capacity",
+        "threshold": "≤80%",
+        "actual": "0.3%",
+        "passed": true,
+        "message": "1 of 390 records missing loadCapacity"
+      },
+      {
+        "name": "Missing Lifting Speed",
+        "threshold": "≤85%",
+        "actual": "4.1%",
+        "passed": true,
+        "message": "16 of 390 records missing liftingSpeed"
+      },
+      {
+        "name": "Missing Motor Power",
+        "threshold": "≤95%",
+        "actual": "2.8%",
+        "passed": true,
+        "message": "11 of 390 records missing motorPower"
+      },
+      {
+        "name": "Missing Classification",
+        "threshold": "≤50%",
+        "actual": "4.4%",
+        "passed": true,
+        "message": "17 of 390 records missing classification"
+      },
+      {
+        "name": "Source Tracking",
+        "threshold": "≥90%",
+        "actual": "100.0%",
+        "passed": true,
+        "message": "390 of 390 records have source tracking"
+      }
+    ],
+    "summary": "✓ PASSED: All 6 quality gates passed"
   }
 }

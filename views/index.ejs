@@ -15,15 +15,13 @@
                 <p class="card-text">Featuring <%= manufacturers.length %> manufacturers</p>
                 <ul class="list-group">
                   <% manufacturers.slice(0, 5).forEach(function(manufacturer) { %>
-                    <li class="list-group-item d-flex justify-content-between align-items-center list-group-item-action" onclick="window.location='/search?manufacturer=<%= encodeURIComponent(manufacturer) %>'" style="cursor: pointer;" role="link" tabindex="0">
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
                       <%= manufacturer %>
                       <span class="badge bg-primary rounded-pill"><%= data.filter(item => item.manufacturer === manufacturer).length %></span>
                     </li>
                   <% }); %>
                   <% if (manufacturers.length > 5) { %>
-                    <li class="list-group-item list-group-item-action text-center" onclick="window.location='/search'" style="cursor: pointer;" role="link" tabindex="0">
-                      <span class="text-muted">+ <%= manufacturers.length - 5 %> more</span>
-                    </li>
+                    <li class="list-group-item text-center text-muted">+ <%= manufacturers.length - 5 %> more</li>
                   <% } %>
                 </ul>
               </div>
@@ -37,7 +35,7 @@
                 <p class="card-text">Chainhoists by load capacity</p>
                 <ul class="list-group">
                   <% capacities.forEach(function(capacity) { %>
-                    <li class="list-group-item d-flex justify-content-between align-items-center list-group-item-action" onclick="window.location='/search?capacity=<%= encodeURIComponent(capacity) %>'" style="cursor: pointer;" role="link" tabindex="0">
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
                       <%= capacity %>
                       <span class="badge bg-success rounded-pill"><%= report.capacityDistribution[capacity] %></span>
                     </li>
@@ -53,12 +51,20 @@
                 <h5 class="card-title">Classifications</h5>
                 <p class="card-text">Chainhoists by industry classification</p>
                 <ul class="list-group">
-                  <% classifications.forEach(function(classification) { %>
-                    <li class="list-group-item d-flex justify-content-between align-items-center list-group-item-action" onclick="window.location='/search?classification=<%= encodeURIComponent(classification) %>'" style="cursor: pointer;" role="link" tabindex="0">
-                      <%= classification.toUpperCase() %>
-                      <span class="badge bg-info rounded-pill"><%= report.classificationDistribution[classification] %></span>
+                  <%
+                    const sortedClassifications = classifications
+                      .map(c => ({ name: c, count: report.classificationDistribution[c] || 0 }))
+                      .sort((a, b) => b.count - a.count);
+                  %>
+                  <% sortedClassifications.slice(0, 6).forEach(function(cls) { %>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                      <%= cls.name.toUpperCase() %>
+                      <span class="badge bg-info rounded-pill"><%= cls.count %></span>
                     </li>
                   <% }); %>
+                  <% if (sortedClassifications.length > 6) { %>
+                    <li class="list-group-item text-center text-muted">+ <%= sortedClassifications.length - 6 %> more</li>
+                  <% } %>
                 </ul>
               </div>
             </div>
@@ -121,7 +127,7 @@
 <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
   <% data.slice(0, 6).forEach(function(item) { %>
     <div class="col">
-      <div class="card h-100 product-card clickable-card" onclick="window.location='/product/<%= item.id %>'" role="link" tabindex="0" aria-label="View details for <%= item.manufacturer %> <%= item.model %>">
+      <div class="card h-100 product-card">
         <div class="card-header bg-light">
           <h5 class="card-title mb-0"><%= item.manufacturer %></h5>
         </div>
@@ -149,7 +155,7 @@
           </p>
         </div>
         <div class="card-footer bg-white">
-          <span class="btn btn-sm btn-outline-primary">View Details</span>
+          <a href="/product/<%= item.id %>" class="btn btn-sm btn-outline-primary">View Details</a>
         </div>
       </div>
     </div>

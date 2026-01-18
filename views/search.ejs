@@ -5,17 +5,35 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title><%= title %> | Entertainment Industry Chainhoist Database</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
   <style>
+    :root {
+      --brand-primary: #1a365d;
+      --brand-secondary: #e67e22;
+      --brand-accent: #27ae60;
+    }
     .product-card {
       height: 100%;
-      transition: transform 0.2s;
+      transition: transform 0.2s, box-shadow 0.2s;
+      border: 1px solid #e2e8f0;
     }
     .product-card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+      border-color: var(--brand-secondary);
+    }
+    .navbar {
+      background: linear-gradient(135deg, var(--brand-primary) 0%, #2d4a6f 100%) !important;
     }
     .navbar-brand {
       font-weight: bold;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .navbar-brand .brand-icon {
+      font-size: 1.5rem;
+      color: var(--brand-secondary);
     }
     .spec-label {
       font-weight: bold;
@@ -25,12 +43,536 @@
       font-size: 0.8rem;
       margin-right: 0.3rem;
     }
+    .form-label {
+      font-weight: 500;
+      color: #4a5568;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .form-label i {
+      color: var(--brand-secondary);
+    }
+    .sortable {
+      cursor: pointer;
+      user-select: none;
+      position: relative;
+      padding-right: 20px !important;
+    }
+    .sortable:hover {
+      background-color: #343a40;
+    }
+    .sortable::after {
+      content: '⇅';
+      position: absolute;
+      right: 8px;
+      opacity: 0.5;
+      font-size: 0.8rem;
+    }
+    .sortable.asc::after {
+      content: '↑';
+      opacity: 1;
+    }
+    .sortable.desc::after {
+      content: '↓';
+      opacity: 1;
+    }
+    .pagination-info {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .page-size-select {
+      width: auto;
+      display: inline-block;
+    }
+    .filter-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.35rem 0.75rem;
+      background: #e9ecef;
+      border-radius: 20px;
+      font-size: 0.875rem;
+      color: #495057;
+    }
+    .filter-chip .chip-label {
+      font-weight: 500;
+      color: #6c757d;
+    }
+    .filter-chip .chip-remove {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 18px;
+      height: 18px;
+      background: #adb5bd;
+      border-radius: 50%;
+      color: white;
+      text-decoration: none;
+      font-size: 0.75rem;
+      line-height: 1;
+    }
+    .filter-chip .chip-remove:hover {
+      background: #6c757d;
+    }
+    .product-thumb {
+      width: 50px;
+      height: 50px;
+      object-fit: cover;
+      border-radius: 4px;
+      background: #f8f9fa;
+    }
+    .no-thumb {
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #adb5bd;
+      font-size: 0.65rem;
+      border: 1px dashed #dee2e6;
+    }
+    .no-thumb::before {
+      content: "📷";
+      font-size: 1.2rem;
+      opacity: 0.4;
+    }
+    /* Mobile card view */
+    .mobile-cards {
+      display: none;
+    }
+    .product-card-mobile {
+      border: 1px solid #dee2e6;
+      border-radius: 8px;
+      padding: 1rem;
+      background: #fff;
+    }
+    .product-card-mobile .card-header-mobile {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 0.75rem;
+    }
+    .product-card-mobile .card-title-mobile {
+      font-weight: 600;
+      font-size: 1rem;
+      margin: 0;
+    }
+    .product-card-mobile .card-subtitle-mobile {
+      color: #6c757d;
+      font-size: 0.875rem;
+    }
+    .product-card-mobile .card-specs {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.5rem;
+      font-size: 0.875rem;
+    }
+    .product-card-mobile .spec-item {
+      display: flex;
+      flex-direction: column;
+    }
+    .product-card-mobile .spec-label {
+      color: #6c757d;
+      font-size: 0.75rem;
+    }
+    .product-card-mobile .card-thumb {
+      width: 60px;
+      height: 60px;
+      object-fit: cover;
+      border-radius: 6px;
+      background: #f8f9fa;
+    }
+    .product-card-mobile .no-thumb-mobile {
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #adb5bd;
+      font-size: 0.65rem;
+      border: 1px dashed #dee2e6;
+    }
+    .product-card-mobile .no-thumb-mobile::before {
+      content: "📷";
+      font-size: 1.4rem;
+      opacity: 0.4;
+    }
+    @media (max-width: 767.98px) {
+      .desktop-table {
+        display: none;
+      }
+      .mobile-cards {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+      /* Filter card */
+      .card-header h4 {
+        font-size: 1.1rem;
+      }
+      .form-label {
+        font-size: 0.85rem;
+      }
+      /* Filter chips */
+      .filter-chip {
+        font-size: 0.8rem;
+        padding: 0.25rem 0.6rem;
+      }
+      /* Pagination info */
+      .pagination-info {
+        font-size: 0.875rem;
+      }
+      /* Mobile cards - compact */
+      .product-card-mobile {
+        padding: 0.875rem;
+      }
+      .product-card-mobile .card-title-mobile {
+        font-size: 0.95rem;
+      }
+      .product-card-mobile .card-subtitle-mobile {
+        font-size: 0.8rem;
+      }
+      .product-card-mobile .card-specs {
+        font-size: 0.8rem;
+      }
+      /* Pagination */
+      .pagination .page-link {
+        padding: 0.4rem 0.65rem;
+        font-size: 0.875rem;
+      }
+    }
+
+    /* Small mobile (< 576px) */
+    @media (max-width: 575.98px) {
+      /* Filter card header */
+      .card-header h4 {
+        font-size: 1rem;
+      }
+      .card-header h4 i {
+        display: none;
+      }
+      /* Form - stack everything */
+      .form-label {
+        font-size: 0.8rem;
+        margin-bottom: 0.25rem;
+      }
+      .form-label i {
+        display: none;
+      }
+      .form-select {
+        font-size: 0.875rem;
+        padding: 0.4rem 0.6rem;
+      }
+      /* Buttons */
+      #applyBtn {
+        font-size: 0.875rem;
+      }
+      /* Filter chips - smaller */
+      .filter-chip {
+        font-size: 0.75rem;
+        padding: 0.2rem 0.5rem;
+      }
+      .filter-chip .chip-label {
+        display: none;
+      }
+      /* Results count */
+      .pagination-info > div:first-child {
+        font-size: 0.8rem;
+      }
+      /* Mobile cards - more compact */
+      .product-card-mobile {
+        padding: 0.75rem;
+      }
+      .product-card-mobile .card-title-mobile {
+        font-size: 0.9rem;
+      }
+      .product-card-mobile .card-thumb,
+      .product-card-mobile .no-thumb-mobile {
+        width: 50px;
+        height: 50px;
+      }
+      .product-card-mobile .card-specs {
+        font-size: 0.75rem;
+        gap: 0.35rem;
+      }
+      .product-card-mobile .btn {
+        font-size: 0.8rem;
+        padding: 0.35rem 0.6rem;
+      }
+      /* Pagination - compact */
+      .pagination .page-link {
+        padding: 0.3rem 0.5rem;
+        font-size: 0.8rem;
+      }
+      .pagination .page-item:first-child .page-link,
+      .pagination .page-item:last-child .page-link {
+        display: none;
+      }
+    }
+    /* Data quality indicators */
+    .quality-indicator {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 0.75rem;
+    }
+    .quality-bar {
+      width: 40px;
+      height: 6px;
+      background: #e9ecef;
+      border-radius: 3px;
+      overflow: hidden;
+    }
+    .quality-bar-fill {
+      height: 100%;
+      border-radius: 3px;
+      transition: width 0.3s ease;
+    }
+    .quality-complete .quality-bar-fill { background: #28a745; }
+    .quality-partial .quality-bar-fill { background: #17a2b8; }
+    .quality-incomplete .quality-bar-fill { background: #ffc107; }
+    .quality-minimal .quality-bar-fill { background: #dc3545; }
+    .quality-badge {
+      font-size: 0.65rem;
+      padding: 2px 6px;
+      border-radius: 10px;
+    }
+    .quality-badge.complete { background: #d4edda; color: #155724; }
+    .quality-badge.partial { background: #d1ecf1; color: #0c5460; }
+    .quality-badge.incomplete { background: #fff3cd; color: #856404; }
+    .quality-badge.minimal { background: #f8d7da; color: #721c24; }
+
+    /* Clickable table rows */
+    tr.clickable-row {
+      cursor: pointer;
+    }
+    tr.clickable-row:hover td {
+      background-color: #e9ecef;
+    }
+    /* Filterable links in table */
+    .filter-link {
+      color: inherit;
+      text-decoration: none;
+      border-bottom: 1px dashed #6c757d;
+    }
+    .filter-link:hover {
+      color: #0d6efd;
+      border-bottom-color: #0d6efd;
+    }
+    .classification-badge.clickable {
+      cursor: pointer;
+      transition: transform 0.1s;
+    }
+    .classification-badge.clickable:hover {
+      transform: scale(1.1);
+    }
+    /* Loading overlay */
+    .loading-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.8);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .loading-overlay.show {
+      display: flex;
+    }
+    .loading-spinner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+    .loading-spinner .spinner-border {
+      width: 3rem;
+      height: 3rem;
+    }
+
+    /* Lazy loading image fade-in */
+    img[loading="lazy"] {
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    img[loading="lazy"].loaded,
+    img[loading="lazy"]:not([src=""]) {
+      opacity: 1;
+    }
+
+    /* Skeleton loading animation */
+    .skeleton {
+      background: linear-gradient(90deg, #e9ecef 25%, #f1f3f5 50%, #e9ecef 75%);
+      background-size: 200% 100%;
+      animation: skeleton-loading 1.5s infinite;
+      border-radius: 4px;
+    }
+
+    @keyframes skeleton-loading {
+      0% { background-position: 200% 0; }
+      100% { background-position: -200% 0; }
+    }
+
+    .skeleton-text {
+      height: 1em;
+      margin-bottom: 0.5rem;
+    }
+
+    .skeleton-title {
+      height: 1.5em;
+      margin-bottom: 0.75rem;
+    }
+
+    .skeleton-image {
+      height: 50px;
+      width: 50px;
+    }
+
+    .skeleton-badge {
+      display: inline-block;
+      height: 1.5em;
+      width: 60px;
+    }
+
+    .skeleton-row td {
+      padding: 0.75rem !important;
+    }
+
+    .skeleton-card {
+      opacity: 0.7;
+    }
+
+    /* Skeleton loading container - shows while content loads */
+    .skeleton-loading {
+      display: none;
+    }
+
+    .is-loading .skeleton-loading {
+      display: block;
+    }
+
+    .is-loading .real-content {
+      display: none;
+    }
+
+    /* Mobile bottom navigation */
+    .bottom-nav-mobile {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: white;
+      border-top: 1px solid #dee2e6;
+      padding: 0.5rem;
+      z-index: 1030;
+      box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .bottom-nav-mobile .nav-items {
+      display: flex;
+      justify-content: space-around;
+    }
+
+    .bottom-nav-mobile .nav-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0.5rem;
+      color: #6c757d;
+      text-decoration: none;
+      font-size: 0.7rem;
+      transition: color 0.2s;
+      min-width: 60px;
+    }
+
+    .bottom-nav-mobile .nav-item.active {
+      color: var(--brand-primary);
+    }
+
+    .bottom-nav-mobile .nav-item i {
+      font-size: 1.25rem;
+      margin-bottom: 0.2rem;
+    }
+
+    /* Collapsible filter panel */
+    .filter-toggle-mobile {
+      display: none;
+      width: 100%;
+      padding: 0.75rem;
+      background: linear-gradient(135deg, var(--brand-primary) 0%, #2d4a6f 100%);
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-weight: 500;
+    }
+
+    .filter-toggle-mobile i.toggle-icon {
+      transition: transform 0.3s;
+    }
+
+    .filter-toggle-mobile.collapsed i.toggle-icon {
+      transform: rotate(-180deg);
+    }
+
+    .filter-panel-content {
+      transition: max-height 0.3s ease, opacity 0.3s ease;
+      overflow: hidden;
+    }
+
+    @media (max-width: 767.98px) {
+      .bottom-nav-mobile {
+        display: block;
+      }
+
+      /* Add padding at bottom for fixed nav */
+      body {
+        padding-bottom: 70px;
+      }
+
+      .filter-toggle-mobile {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .filter-panel-content.collapsed {
+        max-height: 0 !important;
+        opacity: 0;
+        padding: 0 !important;
+      }
+
+      .filter-panel-content.expanded {
+        max-height: 800px;
+        opacity: 1;
+      }
+    }
   </style>
 </head>
 <body>
+  <!-- Loading Overlay -->
+  <div class="loading-overlay" id="loadingOverlay">
+    <div class="loading-spinner">
+      <div class="spinner-border text-primary" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+      <span class="text-muted">Loading results...</span>
+    </div>
+  </div>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
     <div class="container">
-      <a class="navbar-brand" href="/">Entertainment Chainhoist DB</a>
+      <a class="navbar-brand" href="/"><i class="bi bi-link-45deg brand-icon"></i> ChainhoistDB</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -45,36 +587,36 @@
           <li class="nav-item">
             <a class="nav-link" href="/stats">Statistics</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/downloads">Downloads</a>
+          </li>
         </ul>
-        <form class="d-flex" action="/search" method="GET">
-          <input class="form-control me-2" type="search" name="q" placeholder="Search chainhoists..." aria-label="Search">
-          <button class="btn btn-outline-light" type="submit">Search</button>
-        </form>
       </div>
     </div>
   </nav>
 
   <div class="container mb-5">
-    <h1 class="mb-4"><%= title %></h1>
-
     <div class="row mb-4">
       <div class="col-md-12">
-        <div class="card">
-          <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
-            <h4 class="mb-0">Filter & Sort</h4>
-            <% if (filters.q || filters.manufacturer || filters.capacity || filters.classification || filters.sortBy) { %>
-              <a href="/search" class="btn btn-sm btn-light">Clear All</a>
-            <% } %>
+        <div class="card" style="border: none; box-shadow: 0 2px 12px rgba(0,0,0,0.08); border-radius: 12px; overflow: hidden;">
+          <!-- Desktop header -->
+          <div class="card-header d-none d-md-block" style="background: linear-gradient(135deg, var(--brand-primary) 0%, #2d4a6f 100%); color: white;">
+            <h4 class="mb-0"><i class="bi bi-funnel me-2" style="color: var(--brand-secondary);"></i>Filter Results</h4>
           </div>
-          <div class="card-body">
-            <form action="/search" method="GET" class="row g-3">
-              <div class="col-md-3">
-                <label for="q" class="form-label">Search Terms</label>
-                <input type="text" class="form-control" id="q" name="q" value="<%= query %>">
+          <!-- Mobile collapsible toggle -->
+          <button class="filter-toggle-mobile collapsed" type="button" id="filterToggle" aria-expanded="false" aria-controls="filterPanel">
+            <span><i class="bi bi-funnel me-2" style="color: var(--brand-secondary);"></i>Filter Results</span>
+            <i class="bi bi-chevron-up toggle-icon"></i>
+          </button>
+          <div class="card-body filter-panel-content collapsed" id="filterPanel">
+            <form action="/search" method="GET" class="row g-3" role="search" aria-label="Filter chainhoists">
+              <div class="col-md-4">
+                <label for="q" class="form-label"><i class="bi bi-search"></i> Search Terms</label>
+                <input type="text" class="form-control" id="q" name="q" value="<%= query %>" aria-label="Search terms">
               </div>
-              
-              <div class="col-md-3">
-                <label for="manufacturer" class="form-label">Manufacturer</label>
+
+              <div class="col-md-4">
+                <label for="manufacturer" class="form-label"><i class="bi bi-building"></i> Manufacturer</label>
                 <select name="manufacturer" id="manufacturer" class="form-select">
                   <option value="">Any Manufacturer</option>
                   <% manufacturers.forEach(function(manufacturer) { %>
@@ -82,9 +624,9 @@
                   <% }); %>
                 </select>
               </div>
-              
-              <div class="col-md-2">
-                <label for="capacity" class="form-label">Load Capacity</label>
+
+              <div class="col-md-4">
+                <label for="capacity" class="form-label"><i class="bi bi-speedometer2"></i> Load Capacity</label>
                 <select name="capacity" id="capacity" class="form-select">
                   <option value="">Any Capacity</option>
                   <% capacities.forEach(function(capacity) { %>
@@ -92,9 +634,9 @@
                   <% }); %>
                 </select>
               </div>
-              
-              <div class="col-md-2">
-                <label for="classification" class="form-label">Classification</label>
+
+              <div class="col-md-3">
+                <label for="classification" class="form-label"><i class="bi bi-award"></i> Classification</label>
                 <select name="classification" id="classification" class="form-select">
                   <option value="">Any Classification</option>
                   <% classifications.forEach(function(classification) { %>
@@ -102,30 +644,58 @@
                   <% }); %>
                 </select>
               </div>
-              
+
+              <div class="col-md-3">
+                <label for="category" class="form-label"><i class="bi bi-tag"></i> Category</label>
+                <select name="category" id="category" class="form-select">
+                  <option value="">Any Category</option>
+                  <% categories.forEach(function(category) { %>
+                    <option value="<%= category %>" <%= filters.category === category ? 'selected' : '' %>><%= category %></option>
+                  <% }); %>
+                </select>
               </div>
-              <div class="row g-3 mt-2">
-                <div class="col-md-3">
-                  <label for="sortBy" class="form-label">Sort By</label>
-                  <select name="sortBy" id="sortBy" class="form-select">
-                    <option value="">Default</option>
-                    <option value="manufacturer" <%= filters.sortBy === 'manufacturer' ? 'selected' : '' %>>Manufacturer</option>
-                    <option value="model" <%= filters.sortBy === 'model' ? 'selected' : '' %>>Model</option>
-                    <option value="loadCapacity" <%= filters.sortBy === 'loadCapacity' ? 'selected' : '' %>>Load Capacity</option>
-                    <option value="liftingSpeed" <%= filters.sortBy === 'liftingSpeed' ? 'selected' : '' %>>Lifting Speed</option>
-                  </select>
-                </div>
-                <div class="col-md-2">
-                  <label for="sortOrder" class="form-label">Order</label>
-                  <select name="sortOrder" id="sortOrder" class="form-select">
-                    <option value="asc" <%= filters.sortOrder === 'asc' || !filters.sortOrder ? 'selected' : '' %>>Ascending</option>
-                    <option value="desc" <%= filters.sortOrder === 'desc' ? 'selected' : '' %>>Descending</option>
-                  </select>
-                </div>
-                <div class="col-md-7 d-flex align-items-end gap-2">
-                  <button type="submit" class="btn btn-primary">Apply Filters</button>
-                  <a href="/search" class="btn btn-outline-secondary">Clear All</a>
-                </div>
+
+              <div class="col-md-3">
+                <label for="speedType" class="form-label"><i class="bi bi-lightning"></i> Speed Type</label>
+                <select name="speedType" id="speedType" class="form-select">
+                  <option value="">Any Speed Type</option>
+                  <% speedTypes.forEach(function(speedType) { %>
+                    <option value="<%= speedType %>" <%= filters.speedType === speedType ? 'selected' : '' %>><%= speedType %></option>
+                  <% }); %>
+                </select>
+              </div>
+
+              <div class="col-md-3">
+                <label for="dutyCycle" class="form-label"><i class="bi bi-clock-history"></i> Duty Cycle</label>
+                <select name="dutyCycle" id="dutyCycle" class="form-select">
+                  <option value="">Any Duty Cycle</option>
+                  <% dutyCycles.forEach(function(dutyCycle) { %>
+                    <option value="<%= dutyCycle %>" <%= filters.dutyCycle === dutyCycle ? 'selected' : '' %>><%= dutyCycle %></option>
+                  <% }); %>
+                </select>
+              </div>
+
+              <div class="col-md-3">
+                <label for="dataQuality" class="form-label"><i class="bi bi-check2-circle"></i> Data Quality</label>
+                <select name="dataQuality" id="dataQuality" class="form-select">
+                  <option value="">Any Quality</option>
+                  <optgroup label="By Completeness">
+                    <option value="tier-complete" <%= filters.dataQuality === 'tier-complete' ? 'selected' : '' %>>Complete (80%+)</option>
+                    <option value="tier-partial" <%= filters.dataQuality === 'tier-partial' ? 'selected' : '' %>>Partial (60-79%)</option>
+                    <option value="tier-incomplete" <%= filters.dataQuality === 'tier-incomplete' ? 'selected' : '' %>>Incomplete (30-59%)</option>
+                    <option value="tier-minimal" <%= filters.dataQuality === 'tier-minimal' ? 'selected' : '' %>>Minimal (&lt;30%)</option>
+                  </optgroup>
+                  <optgroup label="By Feature">
+                    <option value="complete" <%= filters.dataQuality === 'complete' ? 'selected' : '' %>>Has All Critical Specs</option>
+                    <option value="hasImages" <%= filters.dataQuality === 'hasImages' ? 'selected' : '' %>>Has Images</option>
+                  </optgroup>
+                </select>
+              </div>
+
+              <div class="col-md-3 d-flex align-items-end gap-2">
+                <button type="submit" id="applyBtn" class="btn flex-grow-1" style="background: var(--brand-secondary); color: white;"><i class="bi bi-funnel me-1"></i>Apply Filters</button>
+                <% const hasFilters = query || filters.manufacturer || filters.capacity || filters.classification || filters.category || filters.speedType || filters.dutyCycle || filters.dataQuality; %>
+                <a href="/search" class="btn btn-outline-secondary <%= !hasFilters ? 'disabled' : '' %>" title="Clear all filters">Clear</a>
               </div>
             </form>
           </div>
@@ -133,86 +703,767 @@
       </div>
     </div>
 
-    <div class="d-flex justify-content-between align-items-center mb-3">
-      <p class="text-muted mb-0"><%= resultsCount %> chainhoists found</p>
-      <% if (filters.sortBy) { %>
-        <span class="badge bg-secondary">Sorted by: <%= filters.sortBy %> (<%= filters.sortOrder === 'desc' ? 'Descending' : 'Ascending' %>)</span>
-      <% } %>
+    <%
+      // Build URL without specific filter
+      const buildFilterRemoveUrl = (excludeFilter) => {
+        const params = new URLSearchParams();
+        if (query && excludeFilter !== 'q') params.set('q', query);
+        if (filters.manufacturer && excludeFilter !== 'manufacturer') params.set('manufacturer', filters.manufacturer);
+        if (filters.capacity && excludeFilter !== 'capacity') params.set('capacity', filters.capacity);
+        if (filters.classification && excludeFilter !== 'classification') params.set('classification', filters.classification);
+        if (filters.category && excludeFilter !== 'category') params.set('category', filters.category);
+        if (filters.speedType && excludeFilter !== 'speedType') params.set('speedType', filters.speedType);
+        if (filters.dutyCycle && excludeFilter !== 'dutyCycle') params.set('dutyCycle', filters.dutyCycle);
+        if (filters.dataQuality && excludeFilter !== 'dataQuality') params.set('dataQuality', filters.dataQuality);
+        if (sort.by) {
+          params.set('sortBy', sort.by);
+          params.set('sortOrder', sort.order);
+        }
+        params.set('limit', pagination.limit);
+        return '/search?' + params.toString();
+      };
+
+      const activeFilters = [];
+      if (query) activeFilters.push({ key: 'q', label: 'Search', value: query });
+      if (filters.manufacturer) activeFilters.push({ key: 'manufacturer', label: 'Manufacturer', value: filters.manufacturer });
+      if (filters.capacity) activeFilters.push({ key: 'capacity', label: 'Capacity', value: filters.capacity });
+      if (filters.classification) activeFilters.push({ key: 'classification', label: 'Classification', value: filters.classification.toUpperCase() });
+      if (filters.category) activeFilters.push({ key: 'category', label: 'Category', value: filters.category });
+      if (filters.speedType) activeFilters.push({ key: 'speedType', label: 'Speed Type', value: filters.speedType });
+      if (filters.dutyCycle) activeFilters.push({ key: 'dutyCycle', label: 'Duty Cycle', value: filters.dutyCycle });
+      if (filters.dataQuality) {
+        const qualityLabels = {
+          'tier-complete': 'Complete (80%+)',
+          'tier-partial': 'Partial (60-79%)',
+          'tier-incomplete': 'Incomplete (30-59%)',
+          'tier-minimal': 'Minimal (<30%)',
+          'complete': 'Has All Critical Specs',
+          'hasImages': 'Has Images'
+        };
+        activeFilters.push({ key: 'dataQuality', label: 'Data Quality', value: qualityLabels[filters.dataQuality] || filters.dataQuality });
+      }
+    %>
+
+    <% if (activeFilters.length > 0) { %>
+      <div class="mb-3 d-flex flex-wrap gap-2 align-items-center">
+        <span class="text-muted me-1">Active filters:</span>
+        <% activeFilters.forEach(filter => { %>
+          <span class="filter-chip">
+            <span class="chip-label"><%= filter.label %>:</span>
+            <%= filter.value %>
+            <a href="<%= buildFilterRemoveUrl(filter.key) %>" class="chip-remove" title="Remove <%= filter.label %> filter" aria-label="Remove <%= filter.label %> filter">&times;</a>
+          </span>
+        <% }); %>
+        <% if (activeFilters.length > 1) { %>
+          <a href="/search" class="btn btn-sm btn-outline-secondary ms-2" aria-label="Clear all filters">Clear all</a>
+        <% } %>
+      </div>
+    <% } %>
+
+    <div class="pagination-info mb-3">
+      <div>
+        <% if (resultsCount > 0) { %>
+          <span class="text-muted">
+            Showing <%= (pagination.page - 1) * pagination.limit + 1 %>-<%= Math.min(pagination.page * pagination.limit, resultsCount) %> of <strong><%= resultsCount %></strong> chainhoists
+          </span>
+        <% } else { %>
+          <span class="text-muted">0 chainhoists found</span>
+        <% } %>
+      </div>
+      <div class="d-flex align-items-center gap-3 flex-wrap">
+        <!-- Complete Specs Toggle -->
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" role="switch" id="completeSpecsToggle"
+                 <%= filters.dataQuality === 'complete' ? 'checked' : '' %>
+                 onchange="toggleCompleteSpecs(this.checked)"
+                 style="cursor: pointer;">
+          <label class="form-check-label text-muted" for="completeSpecsToggle" style="cursor: pointer; font-size: 0.875rem;">
+            <i class="bi bi-check2-all me-1" style="color: var(--brand-accent);"></i>Complete specs only
+          </label>
+        </div>
+        <div class="d-flex align-items-center gap-2">
+          <label for="limitSelect" class="text-muted mb-0">Per page:</label>
+          <select id="limitSelect" class="form-select form-select-sm page-size-select" onchange="changePageSize(this.value)" aria-label="Results per page">
+            <option value="10" <%= pagination.limit === 10 ? 'selected' : '' %>>10</option>
+            <option value="25" <%= pagination.limit === 25 ? 'selected' : '' %>>25</option>
+            <option value="50" <%= pagination.limit === 50 ? 'selected' : '' %>>50</option>
+            <option value="100" <%= pagination.limit === 100 ? 'selected' : '' %>>100</option>
+          </select>
+        </div>
+      </div>
     </div>
 
     <% if (data.length === 0) { %>
-      <div class="alert alert-info">
-        <h4 class="alert-heading">No results found!</h4>
-        <p>Try adjusting your search criteria or filters to find more chainhoists.</p>
+      <div class="card" style="border: none; box-shadow: 0 2px 12px rgba(0,0,0,0.08); border-radius: 12px;">
+        <div class="card-body text-center py-5">
+          <i class="bi bi-search" style="font-size: 4rem; color: #dee2e6;"></i>
+          <h4 class="mt-3" style="color: var(--brand-primary);">No Results Found</h4>
+          <p class="text-muted mb-4">We couldn't find any chainhoists matching your criteria.</p>
+          <div class="d-flex flex-column flex-sm-row gap-2 justify-content-center">
+            <% if (query || filters.manufacturer || filters.capacity || filters.classification || filters.category || filters.speedType || filters.dutyCycle) { %>
+              <a href="/search" class="btn" style="background: var(--brand-primary); color: white;">
+                <i class="bi bi-x-circle me-1"></i> Clear All Filters
+              </a>
+            <% } %>
+            <a href="/" class="btn btn-outline-secondary">
+              <i class="bi bi-house-door me-1"></i> Back to Home
+            </a>
+          </div>
+          <% if (query || filters.manufacturer || filters.capacity || filters.classification || filters.category || filters.speedType || filters.dutyCycle) { %>
+            <p class="text-muted small mt-4 mb-0">
+              <i class="bi bi-lightbulb me-1"></i>
+              <strong>Tip:</strong> Try removing some filters or using broader search terms.
+            </p>
+          <% } %>
+        </div>
       </div>
     <% } else { %>
-      <div class="table-responsive">
-        <table class="table table-striped table-hover">
+      <!-- Desktop Table View -->
+      <div class="table-responsive desktop-table">
+        <%
+          // Helper to build product URL with search context
+          const buildProductUrl = (productId) => {
+            const params = new URLSearchParams();
+            if (query) params.set('q', query);
+            if (filters.manufacturer) params.set('manufacturer', filters.manufacturer);
+            if (filters.capacity) params.set('capacity', filters.capacity);
+            if (filters.classification) params.set('classification', filters.classification);
+            if (filters.category) params.set('category', filters.category);
+            if (filters.speedType) params.set('speedType', filters.speedType);
+            if (filters.dutyCycle) params.set('dutyCycle', filters.dutyCycle);
+            if (sort.by) params.set('sortBy', sort.by);
+            if (sort.by) params.set('sortOrder', sort.order);
+            const qs = params.toString();
+            return '/product/' + productId + (qs ? '?' + qs : '');
+          };
+
+          // Helper to build sort URL
+          const buildSortUrl = (field) => {
+            const params = new URLSearchParams();
+            if (query) params.set('q', query);
+            if (filters.manufacturer) params.set('manufacturer', filters.manufacturer);
+            if (filters.capacity) params.set('capacity', filters.capacity);
+            if (filters.classification) params.set('classification', filters.classification);
+            if (filters.category) params.set('category', filters.category);
+            if (filters.speedType) params.set('speedType', filters.speedType);
+            if (filters.dutyCycle) params.set('dutyCycle', filters.dutyCycle);
+            params.set('limit', pagination.limit);
+            params.set('sortBy', field);
+            // Toggle order if clicking same column
+            params.set('sortOrder', sort.by === field && sort.order === 'asc' ? 'desc' : 'asc');
+            return '/search?' + params.toString();
+          };
+          const sortClass = (field) => {
+            if (sort.by !== field) return '';
+            return sort.order === 'asc' ? 'asc' : 'desc';
+          };
+          const ariaSort = (field) => {
+            if (sort.by !== field) return 'none';
+            return sort.order === 'asc' ? 'ascending' : 'descending';
+          };
+        %>
+        <table class="table table-striped table-hover" id="searchResultsTable">
           <thead class="table-dark">
             <tr>
-              <th>Manufacturer</th>
-              <th>Model</th>
-              <th>Series</th>
-              <th>Capacity</th>
-              <th>Speed</th>
-              <th>Classification</th>
+              <th>Image</th>
+              <th class="sortable <%= sortClass('manufacturer') %>" aria-sort="<%= ariaSort('manufacturer') %>"><a href="<%= buildSortUrl('manufacturer') %>" class="text-white text-decoration-none d-block">Manufacturer</a></th>
+              <th class="sortable <%= sortClass('model') %>" aria-sort="<%= ariaSort('model') %>"><a href="<%= buildSortUrl('model') %>" class="text-white text-decoration-none d-block">Model</a></th>
+              <th class="sortable <%= sortClass('series') %>" aria-sort="<%= ariaSort('series') %>"><a href="<%= buildSortUrl('series') %>" class="text-white text-decoration-none d-block">Series</a></th>
+              <th class="sortable <%= sortClass('capacity') %>" aria-sort="<%= ariaSort('capacity') %>"><a href="<%= buildSortUrl('capacity') %>" class="text-white text-decoration-none d-block">Capacity</a></th>
+              <th class="sortable <%= sortClass('speed') %>" aria-sort="<%= ariaSort('speed') %>"><a href="<%= buildSortUrl('speed') %>" class="text-white text-decoration-none d-block">Speed</a></th>
+              <th class="sortable <%= sortClass('classification') %>" aria-sort="<%= ariaSort('classification') %>"><a href="<%= buildSortUrl('classification') %>" class="text-white text-decoration-none d-block">Classification</a></th>
+              <th>Quality</th>
               <th>Actions</th>
             </tr>
           </thead>
           <tbody>
             <% data.forEach(function(item) { %>
-              <tr>
-                <td><%= item.manufacturer %></td>
+              <tr class="clickable-row" onclick="window.location='<%= buildProductUrl(item.id) %>'" role="link" tabindex="0" aria-label="View details for <%= item.manufacturer %> <%= item.model %>">
+                <td>
+                  <% if (item.images && item.images.length > 0) { %>
+                    <img src="<%= item.images[0].url %>" alt="<%= item.manufacturer %> <%= item.model %>" class="product-thumb" loading="lazy" onerror="this.onerror=null; this.outerHTML='<div class=\'no-thumb\' title=\'Image failed to load\'></div>';">
+                  <% } else { %>
+                    <div class="no-thumb"></div>
+                  <% } %>
+                </td>
+                <td><a href="/search?manufacturer=<%= encodeURIComponent(item.manufacturer) %>" class="filter-link" onclick="event.stopPropagation()"><%= item.manufacturer %></a></td>
                 <td><%= item.model %></td>
-                <td><%= item.series || '-' %></td>
-                <td><%= item.loadCapacity || '-' %></td>
-                <td><%= item.liftingSpeed || '-' %></td>
+                <td><%= item.series || '<span class="text-muted small">Not specified</span>' %></td>
+                <td><%= item.loadCapacity || '<span class="text-muted small">Not specified</span>' %></td>
+                <td><%= item.liftingSpeed || '<span class="text-muted small">Not specified</span>' %></td>
                 <td>
                   <% if (item.classification && Array.isArray(item.classification)) { %>
                     <% item.classification.forEach(function(cls) { %>
-                      <span class="badge bg-info classification-badge"><%= cls.toUpperCase() %></span>
+                      <a href="/search?classification=<%= encodeURIComponent(cls) %>" onclick="event.stopPropagation()"><span class="badge bg-info classification-badge clickable"><%= cls.toUpperCase() %></span></a>
                     <% }); %>
                   <% } else { %>
                     -
                   <% } %>
                 </td>
                 <td>
-                  <a href="/product/<%= item.id %>" class="btn btn-sm btn-outline-primary">Details</a>
+                  <% const tier = item.dataQualityTier || 'minimal'; %>
+                  <% const completeness = item.dataCompleteness || 0; %>
+                  <div class="quality-indicator quality-<%= tier %>" title="Data completeness: <%= completeness %>%">
+                    <div class="quality-bar">
+                      <div class="quality-bar-fill" style="width: <%= completeness %>%"></div>
+                    </div>
+                    <span class="quality-badge <%= tier %>"><%= completeness %>%</span>
+                  </div>
+                </td>
+                <td>
+                  <a href="<%= buildProductUrl(item.id) %>" class="btn btn-sm btn-outline-primary">Details</a>
                 </td>
               </tr>
             <% }); %>
           </tbody>
         </table>
       </div>
+
+      <!-- Mobile Card View -->
+      <div class="mobile-cards">
+        <% data.forEach(function(item) { %>
+          <div class="product-card-mobile">
+            <div class="card-header-mobile">
+              <div>
+                <h3 class="card-title-mobile"><a href="/search?manufacturer=<%= encodeURIComponent(item.manufacturer) %>" class="filter-link"><%= item.manufacturer %></a></h3>
+                <div class="card-subtitle-mobile"><%= item.model %><%= item.series ? ' - ' + item.series : '' %></div>
+                <% const mTier = item.dataQualityTier || 'minimal'; %>
+                <% const mCompleteness = item.dataCompleteness || 0; %>
+                <div class="quality-indicator quality-<%= mTier %> mt-1" title="Data completeness: <%= mCompleteness %>%">
+                  <div class="quality-bar">
+                    <div class="quality-bar-fill" style="width: <%= mCompleteness %>%"></div>
+                  </div>
+                  <span class="quality-badge <%= mTier %>"><%= mCompleteness %>%</span>
+                </div>
+              </div>
+              <% if (item.images && item.images.length > 0) { %>
+                <img src="<%= item.images[0].url %>" alt="<%= item.manufacturer %>" class="card-thumb" loading="lazy" onerror="this.onerror=null; this.outerHTML='<div class=\'no-thumb-mobile\' title=\'Image failed to load\'></div>';">
+              <% } else { %>
+                <div class="no-thumb-mobile"></div>
+              <% } %>
+            </div>
+            <div class="card-specs">
+              <div class="spec-item">
+                <span class="spec-label">Capacity</span>
+                <span><%= item.loadCapacity || '-' %></span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Speed</span>
+                <span><%= item.liftingSpeed || '-' %></span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Classification</span>
+                <span>
+                  <% if (item.classification && Array.isArray(item.classification)) { %>
+                    <% item.classification.forEach(function(cls) { %>
+                      <a href="/search?classification=<%= encodeURIComponent(cls) %>"><span class="badge bg-info classification-badge clickable"><%= cls.toUpperCase() %></span></a>
+                    <% }); %>
+                  <% } else { %>
+                    -
+                  <% } %>
+                </span>
+              </div>
+              <div class="spec-item">
+                <a href="<%= buildProductUrl(item.id) %>" class="btn btn-sm btn-primary">View Details</a>
+              </div>
+            </div>
+          </div>
+        <% }); %>
+      </div>
+
+      <% if (pagination.totalPages > 1) { %>
+        <nav aria-label="Search results pagination" class="mt-4">
+          <ul class="pagination justify-content-center">
+            <%
+              // Build base URL with current filters and sort (excluding page)
+              const buildPageUrl = (pageNum) => {
+                const params = new URLSearchParams();
+                if (query) params.set('q', query);
+                if (filters.manufacturer) params.set('manufacturer', filters.manufacturer);
+                if (filters.capacity) params.set('capacity', filters.capacity);
+                if (filters.classification) params.set('classification', filters.classification);
+                if (filters.category) params.set('category', filters.category);
+                if (filters.speedType) params.set('speedType', filters.speedType);
+                if (filters.dutyCycle) params.set('dutyCycle', filters.dutyCycle);
+                if (sort.by) params.set('sortBy', sort.by);
+                if (sort.by) params.set('sortOrder', sort.order);
+                params.set('limit', pagination.limit);
+                params.set('page', pageNum);
+                return '/search?' + params.toString();
+              };
+
+              // Calculate page range to show
+              const maxPagesToShow = 5;
+              let startPage = Math.max(1, pagination.page - Math.floor(maxPagesToShow / 2));
+              let endPage = Math.min(pagination.totalPages, startPage + maxPagesToShow - 1);
+              if (endPage - startPage < maxPagesToShow - 1) {
+                startPage = Math.max(1, endPage - maxPagesToShow + 1);
+              }
+            %>
+
+            <!-- First & Previous -->
+            <li class="page-item <%= !pagination.hasPrev ? 'disabled' : '' %>">
+              <a class="page-link" href="<%= pagination.hasPrev ? buildPageUrl(1) : '#' %>" aria-label="First page">First</a>
+            </li>
+            <li class="page-item <%= !pagination.hasPrev ? 'disabled' : '' %>">
+              <a class="page-link" href="<%= pagination.hasPrev ? buildPageUrl(pagination.page - 1) : '#' %>" aria-label="Previous page">Prev</a>
+            </li>
+
+            <!-- Page numbers -->
+            <% for (let i = startPage; i <= endPage; i++) { %>
+              <li class="page-item <%= i === pagination.page ? 'active' : '' %>">
+                <a class="page-link" href="<%= buildPageUrl(i) %>"><%= i %></a>
+              </li>
+            <% } %>
+
+            <!-- Next & Last -->
+            <li class="page-item <%= !pagination.hasNext ? 'disabled' : '' %>">
+              <a class="page-link" href="<%= pagination.hasNext ? buildPageUrl(pagination.page + 1) : '#' %>" aria-label="Next page">Next</a>
+            </li>
+            <li class="page-item <%= !pagination.hasNext ? 'disabled' : '' %>">
+              <a class="page-link" href="<%= pagination.hasNext ? buildPageUrl(pagination.totalPages) : '#' %>" aria-label="Last page">Last</a>
+            </li>
+          </ul>
+        </nav>
+      <% } %>
     <% } %>
   </div>
 
-  <footer class="bg-dark text-white py-4 mt-5">
+  <footer class="py-4 mt-5" style="background: linear-gradient(135deg, var(--brand-primary) 0%, #2d4a6f 100%);">
     <div class="container">
-      <div class="row">
-        <div class="col-md-6">
-          <h5>Entertainment Industry Chainhoist Database</h5>
-          <p class="text-muted">A comprehensive collection of electric chainhoists used in the entertainment industry.</p>
+      <div class="row text-white">
+        <div class="col-md-5">
+          <h5 class="d-flex align-items-center gap-2 mb-3">
+            <i class="bi bi-link-45deg" style="color: var(--brand-secondary); font-size: 1.5rem;"></i>
+            ChainhoistDB
+          </h5>
+          <p class="opacity-75 mb-0">A comprehensive collection of electric chainhoists used in the entertainment industry.</p>
         </div>
         <div class="col-md-3">
-          <h5>Quick Links</h5>
-          <ul class="list-unstyled">
-            <li><a href="/" class="text-white">Home</a></li>
-            <li><a href="/stats" class="text-white">Statistics</a></li>
-            <li><a href="/search" class="text-white">Search</a></li>
+          <h6 class="text-uppercase mb-3" style="letter-spacing: 0.05em;">Quick Links</h6>
+          <ul class="list-unstyled mb-0">
+            <li class="mb-2"><a href="/" class="text-white text-decoration-none opacity-75 d-flex align-items-center gap-2"><i class="bi bi-house-door"></i> Home</a></li>
+            <li class="mb-2"><a href="/search" class="text-white text-decoration-none opacity-75 d-flex align-items-center gap-2"><i class="bi bi-search"></i> Search</a></li>
+            <li class="mb-2"><a href="/stats" class="text-white text-decoration-none opacity-75 d-flex align-items-center gap-2"><i class="bi bi-bar-chart-line"></i> Statistics</a></li>
+            <li><a href="/downloads" class="text-white text-decoration-none opacity-75 d-flex align-items-center gap-2"><i class="bi bi-download"></i> Downloads</a></li>
           </ul>
         </div>
-        <div class="col-md-3">
-          <h5>Disclaimer</h5>
-          <p class="small text-muted">This database is for informational purposes only. Always consult manufacturer specifications for critical applications.</p>
+        <div class="col-md-4">
+          <h6 class="text-uppercase mb-3" style="letter-spacing: 0.05em;">Disclaimer</h6>
+          <p class="small opacity-75 mb-0">This database is for informational purposes only. Always consult manufacturer specifications for critical applications.</p>
         </div>
       </div>
-      <hr>
-      <p class="text-center text-muted mb-0">&copy; <%= new Date().getFullYear() %> Entertainment Industry Chainhoist Database</p>
+      <hr class="opacity-25 my-4">
+      <div class="d-flex flex-column flex-md-row justify-content-between align-items-center text-white opacity-75">
+        <p class="small mb-2 mb-md-0">&copy; <%= new Date().getFullYear() %> ChainhoistDB. All rights reserved.</p>
+        <p class="small mb-0">Built for the entertainment industry</p>
+      </div>
     </div>
   </footer>
 
+  <!-- Mobile Bottom Navigation -->
+  <nav class="bottom-nav-mobile" aria-label="Mobile navigation">
+    <div class="nav-items">
+      <a href="/" class="nav-item">
+        <i class="bi bi-house-door"></i>
+        <span>Home</span>
+      </a>
+      <a href="/search" class="nav-item active">
+        <i class="bi bi-search"></i>
+        <span>Search</span>
+      </a>
+      <a href="/stats" class="nav-item">
+        <i class="bi bi-bar-chart-line"></i>
+        <span>Stats</span>
+      </a>
+      <a href="/downloads" class="nav-item">
+        <i class="bi bi-download"></i>
+        <span>Downloads</span>
+      </a>
+    </div>
+  </nav>
+
+  <%- include('components/toast') %>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    const loadingOverlay = document.getElementById('loadingOverlay');
+
+    function showLoading() {
+      loadingOverlay.classList.add('show');
+    }
+
+    // Change page size function
+    function changePageSize(newLimit) {
+      showLoading();
+      const url = new URL(window.location.href);
+      url.searchParams.set('limit', newLimit);
+      url.searchParams.set('page', '1');
+      window.location.href = url.toString();
+    }
+
+    // Toggle complete specs only filter
+    function toggleCompleteSpecs(checked) {
+      showLoading();
+      const url = new URL(window.location.href);
+      if (checked) {
+        url.searchParams.set('dataQuality', 'complete');
+      } else {
+        url.searchParams.delete('dataQuality');
+      }
+      url.searchParams.set('page', '1');
+      window.location.href = url.toString();
+    }
+
+    // Show loading on filter form submit
+    document.querySelector('form[action="/search"]')?.addEventListener('submit', showLoading);
+
+    // Show loading on sort header clicks
+    document.querySelectorAll('.sortable a').forEach(link => {
+      link.addEventListener('click', showLoading);
+    });
+
+    // Show loading on pagination clicks
+    document.querySelectorAll('.pagination a.page-link').forEach(link => {
+      link.addEventListener('click', (e) => {
+        if (!link.closest('.disabled')) {
+          showLoading();
+        }
+      });
+    });
+
+    // Show loading on filter chip remove clicks
+    document.querySelectorAll('.chip-remove').forEach(link => {
+      link.addEventListener('click', showLoading);
+    });
+
+    // Keyboard support for clickable rows
+    document.querySelectorAll('.clickable-row').forEach(row => {
+      row.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          showLoading();
+          row.click();
+        }
+      });
+      // Show loading on row click
+      row.addEventListener('click', showLoading);
+    });
+
+    // Show loading on filter links (manufacturer, classification)
+    document.querySelectorAll('.filter-link, .classification-badge.clickable').forEach(link => {
+      link.addEventListener('click', (e) => {
+        // Don't show loading if it's just preventing propagation
+        if (!e.defaultPrevented) {
+          showLoading();
+        }
+      });
+    });
+
+    // Show loading on "Clear all" button
+    document.querySelectorAll('a[href="/search"]').forEach(link => {
+      link.addEventListener('click', showLoading);
+    });
+
+    // Filter preview count
+    const applyBtn = document.getElementById('applyBtn');
+    const filterForm = document.querySelector('form[action="/search"]');
+    let countTimeout = null;
+
+    let filterCountRetries = 0;
+    const maxRetries = 3;
+
+    async function updateFilterCount() {
+      const formData = new FormData(filterForm);
+      const params = new URLSearchParams();
+
+      for (const [key, value] of formData.entries()) {
+        if (value) params.set(key, value);
+      }
+
+      try {
+        applyBtn.innerHTML = '<span class="spinner-border spinner-border-sm me-1"></span> Counting...';
+        applyBtn.disabled = true;
+        const response = await fetch('/api/count?' + params.toString());
+        if (!response.ok) throw new Error('API error');
+        const data = await response.json();
+        applyBtn.innerHTML = `<i class="bi bi-funnel me-1"></i>Apply Filters (${data.count})`;
+        applyBtn.disabled = false;
+        applyBtn.classList.remove('btn-warning');
+        filterCountRetries = 0; // Reset retries on success
+      } catch (error) {
+        applyBtn.innerHTML = '<i class="bi bi-exclamation-triangle me-1"></i>Apply Filters';
+        applyBtn.disabled = false;
+        applyBtn.classList.add('btn-warning');
+        applyBtn.title = 'Could not load result count. Click to search anyway.';
+
+        // Only show toast on first failure
+        if (filterCountRetries === 0) {
+          showToast('Could not load result count. You can still search.', 'warning', {
+            duration: 4000,
+            onRetry: () => {
+              filterCountRetries++;
+              if (filterCountRetries < maxRetries) {
+                updateFilterCount();
+              } else {
+                showToast('Maximum retries reached. Please try again later.', 'error', { duration: 3000 });
+              }
+            }
+          });
+        }
+        filterCountRetries++;
+      }
+    }
+
+    // Debounced filter change handler
+    function onFilterChange() {
+      clearTimeout(countTimeout);
+      countTimeout = setTimeout(updateFilterCount, 300);
+    }
+
+    // Listen to all filter inputs
+    filterForm?.querySelectorAll('select, input').forEach(input => {
+      input.addEventListener('change', onFilterChange);
+      input.addEventListener('input', onFilterChange);
+    });
+
+    // Initial count on page load
+    updateFilterCount();
+
+    // Lazy loading image handler - add loaded class when image loads
+    document.querySelectorAll('img[loading="lazy"]').forEach(img => {
+      if (img.complete) {
+        img.classList.add('loaded');
+      } else {
+        img.addEventListener('load', function() {
+          this.classList.add('loaded');
+        });
+      }
+    });
+
+    // ============ Search Autocomplete ============
+    const searchInput = document.getElementById('q');
+    let autocompleteContainer = null;
+    let selectedIndex = -1;
+    let suggestions = [];
+    let autocompleteTimeout = null;
+
+    function createAutocompleteContainer() {
+      if (autocompleteContainer) return;
+
+      autocompleteContainer = document.createElement('div');
+      autocompleteContainer.className = 'autocomplete-container';
+      autocompleteContainer.id = 'autocompleteResults';
+      autocompleteContainer.setAttribute('role', 'listbox');
+      autocompleteContainer.style.cssText = `
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: white;
+        border: 1px solid #dee2e6;
+        border-top: none;
+        border-radius: 0 0 8px 8px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        z-index: 1050;
+        max-height: 300px;
+        overflow-y: auto;
+        display: none;
+      `;
+
+      // Position relative to input wrapper
+      const inputWrapper = searchInput.parentElement;
+      inputWrapper.style.position = 'relative';
+      inputWrapper.appendChild(autocompleteContainer);
+    }
+
+    function showAutocomplete(items) {
+      if (!autocompleteContainer) createAutocompleteContainer();
+
+      suggestions = items;
+      selectedIndex = -1;
+
+      if (items.length === 0) {
+        autocompleteContainer.style.display = 'none';
+        return;
+      }
+
+      autocompleteContainer.innerHTML = items.map((item, index) => {
+        let icon, badgeClass, link;
+
+        if (item.type === 'manufacturer') {
+          icon = '<i class="bi bi-building me-2 text-primary"></i>';
+          badgeClass = 'bg-primary';
+          link = `/search?manufacturer=${encodeURIComponent(item.value)}`;
+        } else if (item.type === 'classification') {
+          icon = '<i class="bi bi-award me-2 text-info"></i>';
+          badgeClass = 'bg-info';
+          link = `/search?classification=${encodeURIComponent(item.value)}`;
+        } else {
+          icon = '<i class="bi bi-box me-2 text-secondary"></i>';
+          badgeClass = 'bg-secondary';
+          link = `/product/${item.value}`;
+        }
+
+        const countBadge = item.count !== undefined
+          ? `<span class="badge ${badgeClass} rounded-pill ms-auto">${item.count}</span>`
+          : '';
+
+        return `
+          <div class="autocomplete-item"
+               role="option"
+               data-index="${index}"
+               data-link="${link}"
+               data-type="${item.type}"
+               data-value="${item.type === 'product' ? item.value : item.label}"
+               style="padding: 10px 15px; cursor: pointer; display: flex; align-items: center; border-bottom: 1px solid #f0f0f0;">
+            ${icon}
+            <span style="flex: 1;">${item.label}</span>
+            ${countBadge}
+          </div>
+        `;
+      }).join('');
+
+      autocompleteContainer.style.display = 'block';
+
+      // Add hover and click handlers
+      autocompleteContainer.querySelectorAll('.autocomplete-item').forEach(item => {
+        item.addEventListener('mouseenter', () => {
+          selectedIndex = parseInt(item.dataset.index);
+          updateSelection();
+        });
+
+        item.addEventListener('click', (e) => {
+          e.preventDefault();
+          selectItem(item);
+        });
+      });
+    }
+
+    function updateSelection() {
+      autocompleteContainer?.querySelectorAll('.autocomplete-item').forEach((item, idx) => {
+        if (idx === selectedIndex) {
+          item.style.background = '#e9ecef';
+          item.setAttribute('aria-selected', 'true');
+        } else {
+          item.style.background = 'white';
+          item.setAttribute('aria-selected', 'false');
+        }
+      });
+    }
+
+    function selectItem(item) {
+      showLoading();
+      const link = item.dataset.link;
+      window.location.href = link;
+    }
+
+    function hideAutocomplete() {
+      if (autocompleteContainer) {
+        autocompleteContainer.style.display = 'none';
+      }
+      selectedIndex = -1;
+    }
+
+    async function fetchSuggestions(query) {
+      if (!query || query.length < 2) {
+        hideAutocomplete();
+        return;
+      }
+
+      try {
+        const response = await fetch(`/api/suggestions?q=${encodeURIComponent(query)}&limit=10`);
+        if (!response.ok) throw new Error('API error');
+        const data = await response.json();
+        showAutocomplete(data.suggestions || []);
+      } catch (error) {
+        console.error('Autocomplete error:', error);
+        hideAutocomplete();
+      }
+    }
+
+    if (searchInput) {
+      searchInput.setAttribute('autocomplete', 'off');
+      searchInput.setAttribute('aria-autocomplete', 'list');
+      searchInput.setAttribute('aria-controls', 'autocompleteResults');
+
+      // Input handler with debounce
+      searchInput.addEventListener('input', (e) => {
+        clearTimeout(autocompleteTimeout);
+        autocompleteTimeout = setTimeout(() => {
+          fetchSuggestions(e.target.value.trim());
+        }, 200);
+      });
+
+      // Keyboard navigation
+      searchInput.addEventListener('keydown', (e) => {
+        if (!autocompleteContainer || autocompleteContainer.style.display === 'none') return;
+
+        if (e.key === 'ArrowDown') {
+          e.preventDefault();
+          selectedIndex = Math.min(selectedIndex + 1, suggestions.length - 1);
+          updateSelection();
+        } else if (e.key === 'ArrowUp') {
+          e.preventDefault();
+          selectedIndex = Math.max(selectedIndex - 1, -1);
+          updateSelection();
+        } else if (e.key === 'Enter' && selectedIndex >= 0) {
+          e.preventDefault();
+          const selectedItem = autocompleteContainer.querySelector(`[data-index="${selectedIndex}"]`);
+          if (selectedItem) selectItem(selectedItem);
+        } else if (e.key === 'Escape') {
+          hideAutocomplete();
+        }
+      });
+
+      // Close on click outside
+      document.addEventListener('click', (e) => {
+        if (!searchInput.contains(e.target) && !autocompleteContainer?.contains(e.target)) {
+          hideAutocomplete();
+        }
+      });
+
+      // Focus handler
+      searchInput.addEventListener('focus', () => {
+        if (searchInput.value.trim().length >= 2) {
+          fetchSuggestions(searchInput.value.trim());
+        }
+      });
+    }
+
+    // Mobile filter panel toggle
+    const filterToggle = document.getElementById('filterToggle');
+    const filterPanel = document.getElementById('filterPanel');
+
+    if (filterToggle && filterPanel) {
+      filterToggle.addEventListener('click', function() {
+        const isCollapsed = filterPanel.classList.contains('collapsed');
+
+        if (isCollapsed) {
+          filterPanel.classList.remove('collapsed');
+          filterPanel.classList.add('expanded');
+          filterToggle.classList.remove('collapsed');
+          filterToggle.setAttribute('aria-expanded', 'true');
+        } else {
+          filterPanel.classList.add('collapsed');
+          filterPanel.classList.remove('expanded');
+          filterToggle.classList.add('collapsed');
+          filterToggle.setAttribute('aria-expanded', 'false');
+        }
+      });
+
+      // Expand filter panel if there are active filters
+      <% if (query || filters.manufacturer || filters.capacity || filters.classification || filters.category || filters.speedType || filters.dutyCycle || filters.dataQuality) { %>
+        // Expand on page load if filters are active
+        if (window.innerWidth <= 767.98) {
+          filterPanel.classList.remove('collapsed');
+          filterPanel.classList.add('expanded');
+          filterToggle.classList.remove('collapsed');
+          filterToggle.setAttribute('aria-expanded', 'true');
+        }
+      <% } %>
+    }
+  </script>
 </body>
 </html>
