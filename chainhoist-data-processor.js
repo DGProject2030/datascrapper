@@ -976,6 +976,129 @@ class ChainhoistDataProcessor {
     }
   }
 
+  // Deduplicate records based on manufacturer + model combination
+  deduplicateRecords() {
+    console.log('Starting deduplication...');
+    const beforeCount = this.processedData.length;
+
+    // Create a map to group records by manufacturer + normalized model
+    const recordMap = new Map();
+
+    for (const record of this.processedData) {
+      // Create a normalized key
+      const key = this.createDedupeKey(record);
+
+      if (recordMap.has(key)) {
+        // Merge with existing record
+        const existing = recordMap.get(key);
+        recordMap.set(key, this.mergeRecords(existing, record));
+      } else {
+        recordMap.set(key, record);
+      }
+    }
+
+    // Convert map back to array
+    this.processedData = Array.from(recordMap.values());
+
+    const afterCount = this.processedData.length;
+    const duplicatesRemoved = beforeCount - afterCount;
+
+    console.log(`Deduplication complete: ${beforeCount} -> ${afterCount} records (${duplicatesRemoved} duplicates merged)`);
+
+    // Update report
+    this.report.deduplication = {
+      beforeCount,
+      afterCount,
+      duplicatesRemoved,
+    };
+
+    // Recalculate manufacturer stats
+    this.report.manufacturerStats = {};
+    for (const record of this.processedData) {
+      const mfr = record.manufacturer;
+      if (!this.report.manufacturerStats[mfr]) {
+        this.report.manufacturerStats[mfr] = 1;
+      } else {
+        this.report.manufacturerStats[mfr]++;
+      }
+    }
+
+    this.report.processedRecords = afterCount;
+  }
+
+  // Create a deduplication key from a record
+  createDedupeKey(record) {
+    const manufacturer = (record.manufacturer || '').toLowerCase().trim();
+
+    // Normalize model name - remove common variations
+    let model = (record.model || '').toLowerCase().trim();
+
+    // Remove series prefix if it matches manufacturer name
+    const mfrWords = manufacturer.split(/s+/);
+    for (const word of mfrWords) {
+      if (model.startsWith(word)) {
+        model = model.substring(word.length).trim();
+      }
+    }
+
+    // Remove common suffixes/variations
+    model = model
+      .replace(/s*-s*/g, '-')           // Normalize dashes
+      .replace(/s+/g, ' ')               // Normalize spaces
+      .replace(/electric chain hoist/gi, '')  // Remove generic terms
+      .replace(/chain hoist/gi, '')
+      .replace(/hoist/gi, '')
+      .replace(/series/gi, '')
+      .replace(/model/gi, '')
+      .trim();
+
+    return `${manufacturer}:${model}`;
+  }
+
+  // Merge two duplicate records, keeping the most complete data
+  mergeRecords(existing, newRecord) {
+    const merged = { ...existing };
+
+    // For each field in the new record, keep the more complete/informative value
+    for (const [key, value] of Object.entries(newRecord)) {
+      if (value === null || value === undefined || value === '') {
+        continue;
+      }
+
+      const existingValue = merged[key];
+
+      // Skip metadata fields - prefer existing
+      if (['id', 'url', 'lastUpdated', 'createdAt', 'scrapedAt'].includes(key)) {
+        continue;
+      }
+
+      // For arrays, merge and dedupe
+      if (Array.isArray(value)) {
+        if (Array.isArray(existingValue)) {
+          merged[key] = [...new Set([...existingValue, ...value])];
+        } else {
+          merged[key] = value;
+        }
+        continue;
+      }
+
+      // For strings, keep the longer/more informative one
+      if (typeof value === 'string') {
+        if (!existingValue || value.length > existingValue.length) {
+          merged[key] = value;
+        }
+        continue;
+      }
+
+      // For other types, prefer new value if existing is empty
+      if (existingValue === null || existingValue === undefined) {
+        merged[key] = value;
+      }
+    }
+
+    return merged;
+  }
+
   // Save processed data
   async save() {
     try {
@@ -1109,6 +1232,9 @@ async function main() {
 
   // Process data
   await processor.processAll();
+
+  // Deduplicate records
+  processor.deduplicateRecords();
 
   // Save processed data
   await processor.save();

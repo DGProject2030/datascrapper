@@ -1,6 +1,6 @@
 {
   "name": "entertainment-chainhoist-database",
-  "version": "2.3.0",
+  "version": "2.1.0",
   "description": "Enhanced comprehensive database of electric chainhoists for the entertainment industry with REST API, advanced validation, and export capabilities",
   "main": "server.js",
   "scripts": {
@@ -26,28 +26,13 @@
     "scheduler:start": "node scheduler.js start",
     "scheduler:run": "node scheduler.js run-now",
     "scheduler:status": "node scheduler.js status",
-    "personality:parse": "node personality-parser.js parse",
-    "personality:enrich": "node personality-web-scraper.js enrich",
-    "merge": "node merge-databases.js",
-    "build:full": "npm run personality:parse && npm run personality:enrich && npm run merge",
     "prepare": "husky",
-    "backup": "node scripts/backup-database.js",
-    "backup:list": "node scripts/backup-database.js --list",
-    "pdf:analyze": "node scripts/batch-pdf-analysis.js",
-    "pdf:analyze:dry": "node scripts/batch-pdf-analysis.js --dry-run",
-    "data:merge": "node scripts/merge-manual-data.js",
-    "data:merge:dry": "node scripts/merge-manual-data.js --dry-run",
-    "quality:check": "node scripts/data-quality-gates.js",
-    "quality:alpha": "node scripts/data-quality-gates.js --gate alpha",
-    "quality:beta": "node scripts/data-quality-gates.js --gate beta",
-    "quality:release": "node scripts/data-quality-gates.js --gate release --verbose",
-    "test:e2e": "npx playwright test",
-    "test:e2e:ui": "npx playwright test --ui",
-    "test:e2e:mobile": "npx playwright test --project='Mobile Chrome' --project='Mobile Safari'",
-    "test:e2e:headed": "npx playwright test --headed",
-    "benchmark": "node scripts/performance-benchmarks.js",
-    "benchmark:verbose": "node scripts/performance-benchmarks.js --verbose",
-    "benchmark:ci": "node scripts/performance-benchmarks.js --ci --iterations=5"
+    "scrape:playwright": "node chainhoist-scraper-enhanced.js --with-playwright",
+    "scrape:ai": "node chainhoist-scraper-enhanced.js --with-llm --with-playwright",
+    "scrape:liftket": "node chainhoist-scraper-enhanced.js --with-playwright --manufacturer=liftket",
+    "deduplicate": "node chainhoist-data-processor.js",
+    "build:playwright": "npm run scrape:playwright && npm run process",
+    "build:ai": "npm run scrape:ai && npm run process"
   },
   "keywords": [
     "chainhoist",
@@ -69,7 +54,6 @@
     "url": "."
   },
   "dependencies": {
-    "@anthropic-ai/sdk": "^0.71.2",
     "@google/generative-ai": "^0.21.0",
     "axios": "^1.6.2",
     "cheerio": "^1.0.0-rc.12",
@@ -88,15 +72,13 @@
     "lodash": "^4.17.21",
     "morgan": "^1.10.0",
     "node-cron": "^3.0.3",
-    "openai": "^6.16.0",
     "pdf-parse": "^1.1.1",
     "pdfkit": "^0.14.0",
+    "playwright": "^1.57.0",
     "winston": "^3.11.0",
-    "xlsx": "^0.18.5",
-    "xml2js": "^0.6.2"
+    "xlsx": "^0.18.5"
   },
   "devDependencies": {
-    "@playwright/test": "^1.57.0",
     "eslint": "^8.56.0",
     "husky": "^9.1.7",
     "jest": "^29.7.0",

@@ -207,11 +207,6 @@
                                                                                                                 
                                                                         
                                     <a class="dropdown-item" href="/references/abus-crane-solutions" target="_self">ABUS crane solutions</a>
-                                                                    
-                                                                                                                                                
-                                    
-                                                                        
-                                    <a class="dropdown-item" href="/references/singleproject" target="_self"></a>
                                                             </div>
                                             </li>
                 
@@ -242,7 +237,8 @@
                         </a>
 
                                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                                                                                
+                                                                                                    <a class="dropdown-item" href="/contact" target="_self">Overview Contact</a>
+                                
                                                                     
                                                                                                                                                 
                                                                                                                 
@@ -687,21 +683,6 @@
                                             </div>
                                         </a>
 
-                                    
-                                        
-                                                                                                                                                                
-                                        
-                                                                                
-                                        
-                                                                                
-                                        <a href="/references/singleproject" target="_self" class="col-md-6">
-                                            <div class="tile">
-                                                <div class="topic"></div>
-                                                <div class="image"></div>
-                                                <div class="description"></div>
-                                            </div>
-                                        </a>
-
                                                                     </div>
                             </div>
                                             </li>
@@ -769,11 +750,9 @@
                                             </li>
                                     
                                                             
-                                                                                                                            
-                                                
                     
                     <li class="navigation-desktop-main__li">
-                        <a class="navigation-desktop-main__nav-link" href="/contact/contact-person" target="">
+                        <a class="navigation-desktop-main__nav-link" href="/contact" target="_self">
                             Contact
                         </a>
                         <div class="navigation-desktop-main__active">

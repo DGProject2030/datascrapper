@@ -1,0 +1,423 @@
+<!doctype html>
+
+<!--[if lt IE 7]><html lang="en-US" class="no-js lt-ie9 lt-ie8 lt-ie7"><![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html lang="en-US" class="no-js lt-ie9 lt-ie8"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html lang="en-US" class="no-js lt-ie9"><![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en-US" class="no-js"><!--<![endif]-->
+
+	<head>
+		<meta charset="utf-8">
+
+				<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+		<title>Hoist UK - Newsletters</title>
+
+				<meta name="HandheldFriendly" content="True">
+		<meta name="MobileOptimized" content="320">
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+				<link rel="apple-touch-icon" href="https://www.hoistuk.com/wp-content/themes/hoist/library/images/apple-touch-icon.png">
+		<link rel="icon" href="https://www.hoistuk.com/wp-content/themes/hoist/favicon.png">
+		<!--[if IE]>
+			<link rel="shortcut icon" href="https://www.hoistuk.com/wp-content/themes/hoist/favicon.ico">
+		<![endif]-->
+				<meta name="msapplication-TileColor" content="#f01d4f">
+		<meta name="msapplication-TileImage" content="https://www.hoistuk.com/wp-content/themes/hoist/library/images/win8-tile-icon.png">
+    <meta name="theme-color" content="#121212">
+
+		<link rel="pingback" href="https://www.hoistuk.com/xmlrpc.php">
+
+				<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+
+	<!-- This site is optimized with the Yoast SEO plugin v20.3 - https://yoast.com/wordpress/plugins/seo/ -->
+	<meta name="description" content="Our newsletters feature information about products and services Hoist UK offer alongside case studies of work we have completed." />
+	<link rel="canonical" href="https://www.hoistuk.com/newsletters/" />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="Hoist UK - Newsletters" />
+	<meta property="og:description" content="Our newsletters feature information about products and services Hoist UK offer alongside case studies of work we have completed." />
+	<meta property="og:url" content="https://www.hoistuk.com/newsletters/" />
+	<meta property="og:site_name" content="Hoist UK" />
+	<meta property="article:modified_time" content="2019-03-12T11:30:47+00:00" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://www.hoistuk.com/newsletters/","url":"https://www.hoistuk.com/newsletters/","name":"Hoist UK - Newsletters","isPartOf":{"@id":"https://www.hoistuk.com/#website"},"datePublished":"2018-03-02T15:29:14+00:00","dateModified":"2019-03-12T11:30:47+00:00","description":"Our newsletters feature information about products and services Hoist UK offer alongside case studies of work we have completed.","breadcrumb":{"@id":"https://www.hoistuk.com/newsletters/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://www.hoistuk.com/newsletters/"]}]},{"@type":"BreadcrumbList","@id":"https://www.hoistuk.com/newsletters/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.hoistuk.com/"},{"@type":"ListItem","position":2,"name":"Newsletters"}]},{"@type":"WebSite","@id":"https://www.hoistuk.com/#website","url":"https://www.hoistuk.com/","name":"Hoist UK","description":"","potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://www.hoistuk.com/?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"en-US"}]}</script>
+	<!-- / Yoast SEO plugin. -->
+
+
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel="alternate" type="application/rss+xml" title="Hoist UK &raquo; Feed" href="https://www.hoistuk.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Hoist UK &raquo; Comments Feed" href="https://www.hoistuk.com/comments/feed/" />
+<script type="text/javascript" src="data:text/javascript;base64,d2luZG93Ll93cGVtb2ppU2V0dGluZ3M9eyJiYXNlVXJsIjoiaHR0cHM6XC9cL3Mudy5vcmdcL2ltYWdlc1wvY29yZVwvZW1vamlcLzE0LjAuMFwvNzJ4NzJcLyIsImV4dCI6Ii5wbmciLCJzdmdVcmwiOiJodHRwczpcL1wvcy53Lm9yZ1wvaW1hZ2VzXC9jb3JlXC9lbW9qaVwvMTQuMC4wXC9zdmdcLyIsInN2Z0V4dCI6Ii5zdmciLCJzb3VyY2UiOnsiY29uY2F0ZW1vamkiOiJodHRwczpcL1wvd3d3LmhvaXN0dWsuY29tXC93cC1pbmNsdWRlc1wvanNcL3dwLWVtb2ppLXJlbGVhc2UubWluLmpzIn19OwovKiEgVGhpcyBmaWxlIGlzIGF1dG8tZ2VuZXJhdGVkICovCiFmdW5jdGlvbihlLGEsdCl7dmFyIG4scixvLGk9YS5jcmVhdGVFbGVtZW50KCJjYW52YXMiKSxwPWkuZ2V0Q29udGV4dCYmaS5nZXRDb250ZXh0KCIyZCIpO2Z1bmN0aW9uIHMoZSx0KXt2YXIgYT1TdHJpbmcuZnJvbUNoYXJDb2RlLGU9KHAuY2xlYXJSZWN0KDAsMCxpLndpZHRoLGkuaGVpZ2h0KSxwLmZpbGxUZXh0KGEuYXBwbHkodGhpcyxlKSwwLDApLGkudG9EYXRhVVJMKCkpO3JldHVybiBwLmNsZWFyUmVjdCgwLDAsaS53aWR0aCxpLmhlaWdodCkscC5maWxsVGV4dChhLmFwcGx5KHRoaXMsdCksMCwwKSxlPT09aS50b0RhdGFVUkwoKX1mdW5jdGlvbiBjKGUpe3ZhciB0PWEuY3JlYXRlRWxlbWVudCgic2NyaXB0Iik7dC5zcmM9ZSx0LmRlZmVyPXQudHlwZT0idGV4dC9qYXZhc2NyaXB0IixhLmdldEVsZW1lbnRzQnlUYWdOYW1lKCJoZWFkIilbMF0uYXBwZW5kQ2hpbGQodCl9Zm9yKG89QXJyYXkoImZsYWciLCJlbW9qaSIpLHQuc3VwcG9ydHM9e2V2ZXJ5dGhpbmc6ITAsZXZlcnl0aGluZ0V4Y2VwdEZsYWc6ITB9LHI9MDtyPG8ubGVuZ3RoO3IrKyl0LnN1cHBvcnRzW29bcl1dPWZ1bmN0aW9uKGUpe2lmKHAmJnAuZmlsbFRleHQpc3dpdGNoKHAudGV4dEJhc2VsaW5lPSJ0b3AiLHAuZm9udD0iNjAwIDMycHggQXJpYWwiLGUpe2Nhc2UiZmxhZyI6cmV0dXJuIHMoWzEyNzk4Nyw2NTAzOSw4MjA1LDk4OTUsNjUwMzldLFsxMjc5ODcsNjUwMzksODIwMyw5ODk1LDY1MDM5XSk/ITE6IXMoWzU1MzU2LDU2ODI2LDU1MzU2LDU2ODE5XSxbNTUzNTYsNTY4MjYsODIwMyw1NTM1Niw1NjgxOV0pJiYhcyhbNTUzNTYsNTczMzIsNTYxMjgsNTY0MjMsNTYxMjgsNTY0MTgsNTYxMjgsNTY0MjEsNTYxMjgsNTY0MzAsNTYxMjgsNTY0MjMsNTYxMjgsNTY0NDddLFs1NTM1Niw1NzMzMiw4MjAzLDU2MTI4LDU2NDIzLDgyMDMsNTYxMjgsNTY0MTgsODIwMyw1NjEyOCw1NjQyMSw4MjAzLDU2MTI4LDU2NDMwLDgyMDMsNTYxMjgsNTY0MjMsODIwMyw1NjEyOCw1NjQ0N10pO2Nhc2UiZW1vamkiOnJldHVybiFzKFsxMjk3NzcsMTI3OTk1LDgyMDUsMTI5Nzc4LDEyNzk5OV0sWzEyOTc3NywxMjc5OTUsODIwMywxMjk3NzgsMTI3OTk5XSl9cmV0dXJuITF9KG9bcl0pLHQuc3VwcG9ydHMuZXZlcnl0aGluZz10LnN1cHBvcnRzLmV2ZXJ5dGhpbmcmJnQuc3VwcG9ydHNbb1tyXV0sImZsYWciIT09b1tyXSYmKHQuc3VwcG9ydHMuZXZlcnl0aGluZ0V4Y2VwdEZsYWc9dC5zdXBwb3J0cy5ldmVyeXRoaW5nRXhjZXB0RmxhZyYmdC5zdXBwb3J0c1tvW3JdXSk7dC5zdXBwb3J0cy5ldmVyeXRoaW5nRXhjZXB0RmxhZz10LnN1cHBvcnRzLmV2ZXJ5dGhpbmdFeGNlcHRGbGFnJiYhdC5zdXBwb3J0cy5mbGFnLHQuRE9NUmVhZHk9ITEsdC5yZWFkeUNhbGxiYWNrPWZ1bmN0aW9uKCl7dC5ET01SZWFkeT0hMH0sdC5zdXBwb3J0cy5ldmVyeXRoaW5nfHwobj1mdW5jdGlvbigpe3QucmVhZHlDYWxsYmFjaygpfSxhLmFkZEV2ZW50TGlzdGVuZXI/KGEuYWRkRXZlbnRMaXN0ZW5lcigiRE9NQ29udGVudExvYWRlZCIsbiwhMSksZS5hZGRFdmVudExpc3RlbmVyKCJsb2FkIixuLCExKSk6KGUuYXR0YWNoRXZlbnQoIm9ubG9hZCIsbiksYS5hdHRhY2hFdmVudCgib25yZWFkeXN0YXRlY2hhbmdlIixmdW5jdGlvbigpeyJjb21wbGV0ZSI9PT1hLnJlYWR5U3RhdGUmJnQucmVhZHlDYWxsYmFjaygpfSkpLChlPXQuc291cmNlfHx7fSkuY29uY2F0ZW1vamk/YyhlLmNvbmNhdGVtb2ppKTplLndwZW1vamkmJmUudHdlbW9qaSYmKGMoZS50d2Vtb2ppKSxjKGUud3BlbW9qaSkpKX0od2luZG93LGRvY3VtZW50LHdpbmRvdy5fd3BlbW9qaVNldHRpbmdzKQ==" defer></script>
+<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 0.07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	
+<link rel='stylesheet' id='wp-block-library-css' href='https://www.hoistuk.com/wp-includes/css/dist/block-library/style.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='classic-theme-styles-css' href='https://www.hoistuk.com/wp-includes/css/classic-themes.min.css' type='text/css' media='all' />
+<style id='global-styles-inline-css' type='text/css'>
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;}:where(.is-layout-flex){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}
+.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}
+</style>
+<link rel='stylesheet' id='dashicons-css' href='https://www.hoistuk.com/wp-includes/css/dashicons.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='roboto-css' href='//fonts.googleapis.com/css?family=Roboto%3A400%2C400i%2C500%2C500i%2C700%2C700i' type='text/css' media='all' />
+<link rel='stylesheet' id='robotoCondensed-css' href='//fonts.googleapis.com/css?family=Roboto+Condensed%3A400%2C400i%2C700%2C700i' type='text/css' media='all' />
+<link rel='stylesheet' id='bones-stylesheet-css' href='https://www.hoistuk.com/wp-content/themes/hoist/library/css/style.css' type='text/css' media='all' />
+<!--[if lt IE 9]>
+<link rel='stylesheet' id='bones-ie-only-css' href='https://www.hoistuk.com/wp-content/themes/hoist/library/css/ie.css' type='text/css' media='all' />
+<![endif]-->
+<script type='text/javascript' src='https://www.hoistuk.com/wp-content/plugins/kento-3d-model-viewer/scripts/jsc3d.js' id='ava-test-js-js' defer data-deferred="1"></script>
+<script type='text/javascript' src='https://www.hoistuk.com/wp-content/themes/hoist/library/js/jquery.min.js' id='jquery-library-js'></script>
+<script type='text/javascript' src='https://www.hoistuk.com/wp-content/themes/hoist/library/js/libs/modernizr.custom.min.js' id='bones-modernizr-js' defer data-deferred="1"></script>
+<script type='text/javascript' src='https://www.hoistuk.com/wp-content/themes/hoist/library/js/jquery.swipebox.min.js' id='swipebox-js' defer data-deferred="1"></script>
+<link rel="https://api.w.org/" href="https://www.hoistuk.com/wp-json/" /><link rel="alternate" type="application/json" href="https://www.hoistuk.com/wp-json/wp/v2/pages/6229" /><link rel='shortlink' href='https://www.hoistuk.com/?p=6229' />
+<link rel="alternate" type="application/json+oembed" href="https://www.hoistuk.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.hoistuk.com%2Fnewsletters%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://www.hoistuk.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.hoistuk.com%2Fnewsletters%2F&#038;format=xml" />
+<script type="text/javascript" src="data:text/javascript;base64,KGZ1bmN0aW9uKHVybCl7aWYoLyg/OkNocm9tZVwvMjZcLjBcLjE0MTBcLjYzIFNhZmFyaVwvNTM3XC4zMXxXb3JkZmVuY2VUZXN0TW9uQm90KS8udGVzdChuYXZpZ2F0b3IudXNlckFnZW50KSl7cmV0dXJufQp2YXIgYWRkRXZlbnQ9ZnVuY3Rpb24oZXZ0LGhhbmRsZXIpe2lmKHdpbmRvdy5hZGRFdmVudExpc3RlbmVyKXtkb2N1bWVudC5hZGRFdmVudExpc3RlbmVyKGV2dCxoYW5kbGVyLCExKX1lbHNlIGlmKHdpbmRvdy5hdHRhY2hFdmVudCl7ZG9jdW1lbnQuYXR0YWNoRXZlbnQoJ29uJytldnQsaGFuZGxlcil9fTt2YXIgcmVtb3ZlRXZlbnQ9ZnVuY3Rpb24oZXZ0LGhhbmRsZXIpe2lmKHdpbmRvdy5yZW1vdmVFdmVudExpc3RlbmVyKXtkb2N1bWVudC5yZW1vdmVFdmVudExpc3RlbmVyKGV2dCxoYW5kbGVyLCExKX1lbHNlIGlmKHdpbmRvdy5kZXRhY2hFdmVudCl7ZG9jdW1lbnQuZGV0YWNoRXZlbnQoJ29uJytldnQsaGFuZGxlcil9fTt2YXIgZXZ0cz0nY29udGV4dG1lbnUgZGJsY2xpY2sgZHJhZyBkcmFnZW5kIGRyYWdlbnRlciBkcmFnbGVhdmUgZHJhZ292ZXIgZHJhZ3N0YXJ0IGRyb3Aga2V5ZG93biBrZXlwcmVzcyBrZXl1cCBtb3VzZWRvd24gbW91c2Vtb3ZlIG1vdXNlb3V0IG1vdXNlb3ZlciBtb3VzZXVwIG1vdXNld2hlZWwgc2Nyb2xsJy5zcGxpdCgnICcpO3ZhciBsb2dIdW1hbj1mdW5jdGlvbigpe2lmKHdpbmRvdy53ZkxvZ0h1bWFuUmFuKXtyZXR1cm59CndpbmRvdy53ZkxvZ0h1bWFuUmFuPSEwO3ZhciB3ZnNjcj1kb2N1bWVudC5jcmVhdGVFbGVtZW50KCdzY3JpcHQnKTt3ZnNjci50eXBlPSd0ZXh0L2phdmFzY3JpcHQnO3dmc2NyLmFzeW5jPSEwO3dmc2NyLnNyYz11cmwrJyZyPScrTWF0aC5yYW5kb20oKTsoZG9jdW1lbnQuZ2V0RWxlbWVudHNCeVRhZ05hbWUoJ2hlYWQnKVswXXx8ZG9jdW1lbnQuZ2V0RWxlbWVudHNCeVRhZ05hbWUoJ2JvZHknKVswXSkuYXBwZW5kQ2hpbGQod2ZzY3IpO2Zvcih2YXIgaT0wO2k8ZXZ0cy5sZW5ndGg7aSsrKXtyZW1vdmVFdmVudChldnRzW2ldLGxvZ0h1bWFuKX19O2Zvcih2YXIgaT0wO2k8ZXZ0cy5sZW5ndGg7aSsrKXthZGRFdmVudChldnRzW2ldLGxvZ0h1bWFuKX19KSgnLy93d3cuaG9pc3R1ay5jb20vP3dvcmRmZW5jZV9saD0xJmhpZD00M0I3NkI5NUYxN0ZGNjI5NkRBRUZDQzVFMjk0QzRGMycp" defer></script><style type="text/css">.broken_link, a.broken_link {
+	text-decoration: line-through;
+}</style><style type="text/css">/** Mega Menu CSS: disabled **/</style>
+		
+				<!-- Global site tag (gtag.js) - Google Analytics -->
+<script src="https://www.googletagmanager.com/gtag/js?id=UA-16657087-1" defer data-deferred="1"></script>
+<script src="data:text/javascript;base64,d2luZG93LmRhdGFMYXllcj13aW5kb3cuZGF0YUxheWVyfHxbXTtmdW5jdGlvbiBndGFnKCl7ZGF0YUxheWVyLnB1c2goYXJndW1lbnRzKX0KZ3RhZygnanMnLG5ldyBEYXRlKCkpO2d0YWcoJ2NvbmZpZycsJ1VBLTE2NjU3MDg3LTEnKQ==" defer></script>
+
+				<noscript><div class="noscript">Your browser does not support JavaScript!</div></noscript>
+<meta name="google-site-verification" content="vHyx78y09RHObeNU_U2z9gGCNVW0mqo8VK7jvj3HmOA" /> 
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5JLHXRZ');</script>
+<!-- End Google Tag Manager -->
+		
+<script src='https://online4.superoffice.com/Cust8773/CS/javascript/chat.js' data-topicId='2' data-title='Chat with us' data-theme='modern' data-color='#0080FF' data-badgeColor='#1C713A' data-badgeTextColor='' data-custMsgColor='' data-custMsgTextColor='' data-agentMsgColor='#1c713a' data-agentMsgTextColor='#ffffff' data-buttonColor='' data-buttonTextColor='' data-font='"Verdana", "Gill Sans", Arial, sans-serif' data-fontSize='' data-size='normal' data-delay='1' defer></script>
+	</head>
+
+	<body class="page-template-default page page-id-6229 mega-menu-main-nav" itemscope itemtype="https://schema.org/WebPage">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5JLHXRZ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->		
+<div id="mobile-wrapper">
+			<div id="container">
+
+				<div class="header" role="banner" itemscope itemtype="https://schema.org/WPHeader">
+
+					<div id="top-bar">
+						<div class="wrap cf">
+							<div class="group cf">
+								<a href="/client-area/" class="client-area" rel="nofollow">Client Area</a>
+								<form role="search" method="get" id="searchform" class="searchform" action="https://www.hoistuk.com/">
+    <label for="s" class="screen-reader-text">Search for:</label>
+    <input type="search" id="s" name="s" value="" />
+    <button type="submit" id="searchsubmit" ><i class="fa fa-search"></i><span class="go">Go</span></button>
+</form>							</div>
+							<a href="tel:+44 151 334 7682" class="header-telephone">
+								<i class="fa fa-phone"></i>
+								<span>+44 151 334 7682</span>
+							</a>
+						</div>
+					</div><!-- top-bar -->
+
+					<div class="navigation-bar">
+						<div class="wrap cf">
+							<a id="logo" class="cf" href="https://www.hoistuk.com" rel="nofollow" title="Lifting Equipment">
+								<img src="https://www.hoistuk.com/wp-content/themes/hoist/library/images/logo.png" alt="Hoist Uk">
+							</a>
+							<nav id="my-menu" role="navigation" itemscope itemtype="https://schema.org/SiteNavigationElement">
+								<div id="mega-menu-wrap-main-nav" class="mega-menu-wrap"><div class="mega-menu-toggle"><div class="mega-toggle-blocks-left"></div><div class="mega-toggle-blocks-center"></div><div class="mega-toggle-blocks-right"><div class='mega-toggle-block mega-menu-toggle-block mega-toggle-block-1' id='mega-toggle-block-1' tabindex='0'><span class='mega-toggle-label' role='button' aria-expanded='false'><span class='mega-toggle-label-closed'>MENU</span><span class='mega-toggle-label-open'>MENU</span></span></div></div></div><ul id="mega-menu-main-nav" class="mega-menu max-mega-menu mega-menu-horizontal mega-no-js" data-event="hover_intent" data-effect="fade" data-effect-speed="200" data-effect-mobile="disabled" data-effect-speed-mobile="0" data-mobile-force-width="false" data-second-click="close" data-document-click="collapse" data-vertical-behaviour="standard" data-breakpoint="600" data-unbind="true" data-mobile-state="collapse_all" data-hover-intent-timeout="300" data-hover-intent-interval="100"><li class="close"><a id="close-button" href="#my-page"><span>Menu</span><i class="fa fa-close"></i></a></li><li class='mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-product_category mega-menu-item-has-children mega-menu-megamenu mega-align-bottom-left mega-menu-megamenu mega-menu-item-645' id='mega-menu-item-645'><a class="mega-menu-link" href="https://www.hoistuk.com/products/industrial/" aria-haspopup="true" aria-expanded="false" tabindex="0">Industrial<span class="mega-indicator" tabindex="0" role="button" aria-label="Industrial submenu"></span></a>
+<ul class="mega-sub-menu">
+<li class='mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-product_category mega-menu-columns-1-of-3 mega-has-description mega-menu-item-12391' id='mega-menu-item-12391'><a class="mega-menu-link" href="https://www.hoistuk.com/products/buy-british/"><span class="mega-description-group"><span class="mega-menu-title">"Buy British" Range</span><span class="mega-menu-description">In order for the UK economy to prosper, companies need to start trying to “Buy British” wherever possible. Hoist UK offer products that are designed and manufactured in-house by our dedicated team of engineers to give you as the customer a true choice in helping the British economy recover from the COVID-19 pandemic and to prepare for BREXIT.</span></span></a></li><li class='mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-product_category mega-menu-item-has-children mega-menu-columns-1-of-3 mega-menu-item-4086' id='mega-menu-item-4086'><a class="mega-menu-link" href="https://www.hoistuk.com/products/powered-hoists-and-winches/">Powered Hoists &amp; Winches<span class="mega-indicator" tabindex="0" role="button" aria-label="Powered Hoists &amp; Winches submenu"></span></a>
+	<ul class="mega-sub-menu">
+<li class='mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-product_category mega-menu-item-4058' id='mega-menu-item-4058'><a class="mega-menu-link" href="https://www.hoistuk.com/products/electric-chain-hoists/">Electric Chain Hoists (3 Phase)</a></li><li class='mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-product_category mega-menu-item-4070' id='mega-menu-item-4070'><a class="mega-menu-link" href="https://www.hoistuk.com/products/electric-wire-rope-hoists/">Electric Wire Rope Hoists</a></li><li class='mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-product_category mega-menu-item-4069' id='mega-menu-item-4069'><a class="mega-menu-link" href="https://www.hoistuk.com/products/electric-winches/">Electric Winches</a></li><li class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-products mega-menu-item-7360' id='mega-menu-item-7360'><a class="mega-menu-link" href="https://www.hoistuk.com/products/electric-belt-hoists/bh-electric-belt-hoists/">Eurolift BH Electric Belt Hoists (BH1 / BH2 / BH5)</a></li><li class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-products mega-menu-item-16701' id='mega-menu-item-16701'><a class="mega-menu-link" href="https://www.hoistuk.com/products/powered-hoists-and-winches/eurobloc-vf-electric-fibre-rope-hoist/">EUROBLOC VF Electric Fibre Rope Hoist</a></li>	</ul>
+</li><li class='mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-product_category mega-menu-item-has-children mega-menu-columns-1-of-3 mega-menu-item-5619' id='mega-menu-item-5619'><a class="mega-menu-link" href="https://www.hoistuk.com/products/cleanroom-hygienic-pharmaceutical/">Clean Room/Hygienic<span class="mega-indicator" tabindex="0" role="button" aria-label="Clean Room/Hygienic submenu"></span></a>
+	<ul class="mega-sub-menu">
+<li class='mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-product_category mega-menu-item-5620' id='mega-menu-item-5620'><a class="mega-menu-link" href="https://www.hoistuk.com/products/electric-chain-hoists-for-clean-room/">Electric Chain Hoists, Clean Room</a></li><li class='mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-product_category mega-menu-item-5625' id='mega-menu-item-5625'><a class="mega-menu-link" href="https://www.hoistuk.com/products/manual-chain-hoists-and-trolleys-for-clean-rooms/">Manual Chain Hoists and Trolleys, Clean Room</a></li><li class='mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-product_category mega-menu-item-5623' id='mega-menu-item-5623'><a class="mega-menu-link" href="https://www.hoistuk.com/products/jib-cranes-for-clean-rooms/">Jib Cranes, Clean Room</a></li><li class='mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-product_category mega-menu-item-5622' id='mega-menu-item-5622'><a class="mega-menu-link" href="https://www.hoistuk.com/products/gantry-cranes-for-clean-rooms/">Gantry Cranes, Clean Room</a></li><li class='mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-product_category mega-menu-item-5624' id='mega-menu-item-5624'><a class="mega-menu-link" href="https://www.hoistuk.com/products/lightweight-crane-system-for-clean-room/">Lightweight Crane System, Clean Room</a></li>	</ul>
+</li><li class='mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-product_category mega-menu-item-has-children mega-menu-columns-1-of-3 mega-menu-clear mega-menu-item-4072' id='mega-menu-item-4072'><a class="mega-menu-link" href="https://www.hoistuk.com/products/jib-cranes/">Jib Cranes<span class="mega-indicator" tabindex="0" role="button" aria-label="Jib Cranes submenu"></span></a>
+	<ul class="mega-sub-menu">
+<li class='mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-product_category mega-menu-item-4091' id='mega-menu-item-4091'><a class="mega-menu-link" href="https://www.hoistuk.com/products/wall-mounted-jib-cranes/">Wall Mounted Jib Cranes</a></li><li class='mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-product_category mega-menu-item-4092' id='mega-menu-item-4092'><a class="mega-menu-link" href="https://www.hoistuk.com/products/column-mounted-jib-crane/">Column Mounted Jib Cranes</a></li><li class='mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-product_category mega-menu-item-4312' id='mega-menu-item-4312'><a class="mega-menu-link" href="https://www.hoistuk.com/products/ceiling-mounted-articulated-jib-crane/">Ceiling Mounted Articulated Jib Crane</a></li><li class='mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-product_category mega-menu-item-11314' id='mega-menu-item-11314'><a class="mega-menu-link" href="https://www.hoistuk.com/products/portable-davit-cranes/">Portable Davit Cranes</a></li>	</ul>
+</li><li class='mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-product_category mega-menu-item-has-children mega-menu-columns-1-of-3 mega-menu-item-4087' id='mega-menu-item-4087'><a class="mega-menu-link" href="https://www.hoistuk.com/products/manual-hoists-and-winches/">Manual Hoists &amp; Winches<span class="mega-indicator" tabindex="0" role="button" aria-label="Manual Hoists &amp; Winches submenu"></span></a>
+	<ul class="mega-sub-menu">
+<li class='mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-product_category mega-menu-item-4077' id='mega-menu-item-4077'><a class="mega-menu-link" href="https://www.hoistuk.com/products/manual-hoists-and-trolleys/">Manual Hoists and Trolleys</a></li><li class='mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-product_category mega-menu-item-4078' id='mega-menu-item-4078'><a class="mega-menu-link" href="https://www.hoistuk.com/products/manual-winches/">Manual Winches</a></li>	</ul>
+</li><li class='mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-product_category mega-menu-item-has-children mega-menu-columns-1-of-3 mega-menu-item-4328' id='mega-menu-item-4328'><a class="mega-menu-link" href="https://www.hoistuk.com/products/gantries/">Gantries<span class="mega-indicator" tabindex="0" role="button" aria-label="Gantries submenu"></span></a>
+	<ul class="mega-sub-menu">
+<li class='mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-product_category mega-menu-item-4329' id='mega-menu-item-4329'><a class="mega-menu-link" href="https://www.hoistuk.com/products/motorised-gantries/">Motorised Gantries</a></li><li class='mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-product_category mega-menu-item-4330' id='mega-menu-item-4330'><a class="mega-menu-link" href="https://www.hoistuk.com/products/portable-and-mobile-gantries/">Portable / Mobile Gantries</a></li>	</ul>
+</li><li class='mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-product_category mega-menu-item-has-children mega-menu-columns-1-of-3 mega-menu-clear mega-menu-item-4317' id='mega-menu-item-4317'><a class="mega-menu-link" href="https://www.hoistuk.com/products/lifting-beams-and-spreader-beams/">Lifting Beams/Spreader Beams & Frames<span class="mega-indicator" tabindex="0" role="button" aria-label="Lifting Beams/Spreader Beams &amp; Frames submenu"></span></a>
+	<ul class="mega-sub-menu">
+<li class='mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-product_category mega-menu-item-4323' id='mega-menu-item-4323'><a class="mega-menu-link" href="https://www.hoistuk.com/products/steel-lifting-beams/">Steel Lifting Beams / Frames</a></li><li class='mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-product_category mega-menu-item-4324' id='mega-menu-item-4324'><a class="mega-menu-link" href="https://www.hoistuk.com/products/aluminium-lifting-beams/">Aluminium Lifting Beams &amp; Frames</a></li>	</ul>
+</li><li class='mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-product_category mega-menu-item-has-children mega-menu-columns-1-of-3 mega-menu-item-4314' id='mega-menu-item-4314'><a class="mega-menu-link" href="https://www.hoistuk.com/products/overhead-cranes/">Overhead Cranes<span class="mega-indicator" tabindex="0" role="button" aria-label="Overhead Cranes submenu"></span></a>
+	<ul class="mega-sub-menu">
+<li class='mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-product_category mega-menu-item-6758' id='mega-menu-item-6758'><a class="mega-menu-link" href="https://www.hoistuk.com/products/electric-overhead-cranes-and-crane-kits/">Electric Overhead Cranes and Crane Kits</a></li><li class='mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-product_category mega-menu-item-4315' id='mega-menu-item-4315'><a class="mega-menu-link" href="https://www.hoistuk.com/products/light-crane-systems-overhead-cranes/">Light Crane Systems</a></li><li class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-products mega-menu-item-8534' id='mega-menu-item-8534'><a class="mega-menu-link" href="https://www.hoistuk.com/products/overhead-cranes/runout-cranes/">Runout Cranes</a></li>	</ul>
+</li><li class='mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-product_category mega-menu-item-has-children mega-menu-columns-1-of-3 mega-menu-item-4071' id='mega-menu-item-4071'><a class="mega-menu-link" href="https://www.hoistuk.com/products/explosion-proof-atex/">Explosion Proof (ATEX)<span class="mega-indicator" tabindex="0" role="button" aria-label="Explosion Proof (ATEX) submenu"></span></a>
+	<ul class="mega-sub-menu">
+<li class='mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-product_category mega-menu-item-4331' id='mega-menu-item-4331'><a class="mega-menu-link" href="https://www.hoistuk.com/products/explosion-proof-electric-hoists/">Explosion Proof Electric Hoists</a></li><li class='mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-product_category mega-menu-item-4332' id='mega-menu-item-4332'><a class="mega-menu-link" href="https://www.hoistuk.com/products/explosion-proof-manual-hoists-and-winches/">Explosion Proof Manual Hoists &amp; Winches</a></li><li class='mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-product_category mega-menu-item-4334' id='mega-menu-item-4334'><a class="mega-menu-link" href="https://www.hoistuk.com/products/explosion-proof-trolleys/">Explosion Proof Trolleys</a></li><li class='mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-product_category mega-menu-item-4333' id='mega-menu-item-4333'><a class="mega-menu-link" href="https://www.hoistuk.com/products/explosion-proof-pneumatic-lifting-equipment/">Explosion Proof Pneumatic Lifting Equipment</a></li>	</ul>
+</li><li class='mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-product_category mega-menu-item-has-children mega-menu-columns-1-of-3 mega-menu-clear mega-menu-item-4325' id='mega-menu-item-4325'><a class="mega-menu-link" href="https://www.hoistuk.com/products/pneumatic-lifting/">Pneumatic Lifting<span class="mega-indicator" tabindex="0" role="button" aria-label="Pneumatic Lifting submenu"></span></a>
+	<ul class="mega-sub-menu">
+<li class='mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-product_category mega-menu-item-has-children mega-menu-item-4326' id='mega-menu-item-4326'><a class="mega-menu-link" href="https://www.hoistuk.com/products/pneumatic-arm-manipulators-and-accessories/" aria-haspopup="true" aria-expanded="false">Pneumatic Arm Manipulators<span class="mega-indicator" tabindex="0" role="button" aria-label="Pneumatic Arm Manipulators submenu"></span></a>
+		<ul class="mega-sub-menu">
+<li class='mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-product_category mega-menu-item-4327' id='mega-menu-item-4327'><a class="mega-menu-link" href="https://www.hoistuk.com/products/pneumatic-rope-balancers-industrial-tool/">Pneumatic Rope Balancers</a></li>		</ul>
+</li>	</ul>
+</li><li class='mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-product_category mega-menu-item-has-children mega-menu-columns-1-of-3 mega-menu-item-4075' id='mega-menu-item-4075'><a class="mega-menu-link" href="https://www.hoistuk.com/products/load-monitoring/">Load Monitoring<span class="mega-indicator" tabindex="0" role="button" aria-label="Load Monitoring submenu"></span></a>
+	<ul class="mega-sub-menu">
+<li class='mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-product_category mega-menu-item-4336' id='mega-menu-item-4336'><a class="mega-menu-link" href="https://www.hoistuk.com/products/electronic-load-cells/">Electronic Load Cells</a></li>	</ul>
+</li><li class='mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-product_category mega-menu-columns-1-of-3 mega-menu-item-4081' id='mega-menu-item-4081'><a class="mega-menu-link" href="https://www.hoistuk.com/products/radio-control/">Radio Control</a></li></ul>
+</li><li class='mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-product_category mega-menu-item-has-children mega-menu-megamenu mega-align-bottom-left mega-menu-megamenu mega-menu-item-2373' id='mega-menu-item-2373'><a class="mega-menu-link" href="https://www.hoistuk.com/products/entertainment/" aria-haspopup="true" aria-expanded="false" tabindex="0">Entertainment<span class="mega-indicator" tabindex="0" role="button" aria-label="Entertainment submenu"></span></a>
+<ul class="mega-sub-menu">
+<li class='mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-product_category mega-menu-item-has-children mega-menu-columns-1-of-3 mega-menu-item-2299' id='mega-menu-item-2299'><a class="mega-menu-link" href="https://www.hoistuk.com/products/rigging-hoists/">Rigging Hoists<span class="mega-indicator" tabindex="0" role="button" aria-label="Rigging Hoists submenu"></span></a>
+	<ul class="mega-sub-menu">
+<li class='mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-product_category mega-menu-item-4338' id='mega-menu-item-4338'><a class="mega-menu-link" href="https://www.hoistuk.com/products/low-voltage/">Low Voltage</a></li><li class='mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-product_category mega-menu-item-4337' id='mega-menu-item-4337'><a class="mega-menu-link" href="https://www.hoistuk.com/products/direct-control/">Direct Control</a></li>	</ul>
+</li><li class='mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-product_category mega-menu-item-has-children mega-menu-columns-1-of-3 mega-menu-item-4370' id='mega-menu-item-4370'><a class="mega-menu-link" href="https://www.hoistuk.com/products/rigging-hoist-controllers/">Rigging Hoist Controllers<span class="mega-indicator" tabindex="0" role="button" aria-label="Rigging Hoist Controllers submenu"></span></a>
+	<ul class="mega-sub-menu">
+<li class='mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-product_category mega-menu-item-4369' id='mega-menu-item-4369'><a class="mega-menu-link" href="https://www.hoistuk.com/products/low-voltage-rigging-hoist-controllers/">Low Voltage Rigging Hoist Controllers</a></li><li class='mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-product_category mega-menu-item-4368' id='mega-menu-item-4368'><a class="mega-menu-link" href="https://www.hoistuk.com/products/direct-control-rigging-hoist-controllers/">Direct Control Rigging Hoist Controllers</a></li><li class='mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-product_category mega-menu-item-4365' id='mega-menu-item-4365'><a class="mega-menu-link" href="https://www.hoistuk.com/products/wall-mounted-fixed-installation-rigging-hoist-controllers/">Wall Mounted / Fixed Installation</a></li>	</ul>
+</li><li class='mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-product_category mega-menu-item-has-children mega-menu-columns-1-of-3 mega-menu-item-9419' id='mega-menu-item-9419'><a class="mega-menu-link" href="https://www.hoistuk.com/products/rigging-accessories/">Rigging Accessories<span class="mega-indicator" tabindex="0" role="button" aria-label="Rigging Accessories submenu"></span></a>
+	<ul class="mega-sub-menu">
+<li class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-products mega-menu-item-9420' id='mega-menu-item-9420'><a class="mega-menu-link" href="https://www.hoistuk.com/products/entertainment/roundslings/">Round Slings</a></li><li class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-products mega-menu-item-9421' id='mega-menu-item-9421'><a class="mega-menu-link" href="https://www.hoistuk.com/products/entertainment/shackles/">Shackles</a></li><li class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-products mega-menu-item-9422' id='mega-menu-item-9422'><a class="mega-menu-link" href="https://www.hoistuk.com/products/entertainment/load-and-fall-arrestors/">Load and Fall Arrestors</a></li><li class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-products mega-menu-item-9423' id='mega-menu-item-9423'><a class="mega-menu-link" href="https://www.hoistuk.com/products/entertainment/fixed-point-brackets-hoists-and-rigging/">Fixed Point Brackets (Hoists and Rigging)</a></li><li class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-products mega-menu-item-9424' id='mega-menu-item-9424'><a class="mega-menu-link" href="https://www.hoistuk.com/products/entertainment/steel-wire-rope-and-wire-ropeassemblies/">Steel Wire Rope and Wire Rope Assemblies</a></li><li class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-products mega-menu-item-9425' id='mega-menu-item-9425'><a class="mega-menu-link" href="https://www.hoistuk.com/products/entertainment/socket-and-wedge-rope-termination/">Socket and Wedge Rope Termination</a></li><li class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-products mega-menu-item-9426' id='mega-menu-item-9426'><a class="mega-menu-link" href="https://www.hoistuk.com/products/entertainment/beam-clamps/">Beam Clamps</a></li>	</ul>
+</li><li class='mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-product_category mega-menu-item-has-children mega-menu-columns-1-of-3 mega-menu-clear mega-menu-item-2372' id='mega-menu-item-2372'><a class="mega-menu-link" href="https://www.hoistuk.com/products/aerial-performer-winches-and-accessories/">Aerial Performer Winches<span class="mega-indicator" tabindex="0" role="button" aria-label="Aerial Performer Winches submenu"></span></a>
+	<ul class="mega-sub-menu">
+<li class='mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-product_category mega-menu-item-4373' id='mega-menu-item-4373'><a class="mega-menu-link" href="https://www.hoistuk.com/products/aerial-performer-hoop-steel-and-aluminium/">Aerial Performer Hoop</a></li><li class='mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-product_category mega-menu-item-4371' id='mega-menu-item-4371'><a class="mega-menu-link" href="https://www.hoistuk.com/products/zero-fleet-performer-winch-2d-or-3d-flight/">Zero Fleet Performer Winch (2D or 3D)</a></li><li class='mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-product_category mega-menu-item-4372' id='mega-menu-item-4372'><a class="mega-menu-link" href="https://www.hoistuk.com/products/zero-fleet-performer-winch-pendulum-configuration/">Zero Fleet Performer Winch (Pendulum Configuration)</a></li>	</ul>
+</li><li class='mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-product_category mega-menu-item-has-children mega-menu-columns-1-of-3 mega-menu-item-18516' id='mega-menu-item-18516'><a class="mega-menu-link" href="https://www.hoistuk.com/products/manual-winches/">Manual Winches<span class="mega-indicator" tabindex="0" role="button" aria-label="Manual Winches submenu"></span></a>
+	<ul class="mega-sub-menu">
+<li class='mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-product_category mega-menu-item-4394' id='mega-menu-item-4394'><a class="mega-menu-link" href="https://www.hoistuk.com/products/manual-worm-gear-winches-entertainment/">Worm Gear Winches</a></li>	</ul>
+</li><li class='mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-product_category mega-menu-item-has-children mega-menu-columns-1-of-3 mega-menu-item-2434' id='mega-menu-item-2434'><a class="mega-menu-link" href="https://www.hoistuk.com/products/chandelier-and-lighting-hoists-and-winches/">Chandelier and Lighting Hoists/Winches<span class="mega-indicator" tabindex="0" role="button" aria-label="Chandelier and Lighting Hoists/Winches submenu"></span></a>
+	<ul class="mega-sub-menu">
+<li class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-products mega-menu-item-9082' id='mega-menu-item-9082'><a class="mega-menu-link" href="https://www.hoistuk.com/products/chandelier-and-lighting-hoists-and-winches/lightrig-chandelier-and-lighting-hoist-winch/">LightRig Chandelier and Lighting Hoist/Winch</a></li>	</ul>
+</li><li class='mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-product_category mega-menu-item-has-children mega-menu-columns-1-of-3 mega-menu-clear mega-menu-item-4452' id='mega-menu-item-4452'><a class="mega-menu-link" href="https://www.hoistuk.com/products/electric-pilewind-winches/">Electric Pilewind Winches<span class="mega-indicator" tabindex="0" role="button" aria-label="Electric Pilewind Winches submenu"></span></a>
+	<ul class="mega-sub-menu">
+<li class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-products mega-menu-item-4453' id='mega-menu-item-4453'><a class="mega-menu-link" href="https://www.hoistuk.com/products/electric-pilewind-winches/electric-pilewind-winch/">Electric Pilewind Winch</a></li><li class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-products mega-menu-item-4454' id='mega-menu-item-4454'><a class="mega-menu-link" href="https://www.hoistuk.com/products/electric-pilewind-winches/mini-electric-pilewind-winch/">Mini Electric Pilewind Winch</a></li>	</ul>
+</li><li class='mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-product_category mega-menu-item-has-children mega-menu-columns-1-of-3 mega-menu-item-2459' id='mega-menu-item-2459'><a class="mega-menu-link" href="https://www.hoistuk.com/products/pulleys-and-sheaves/">Pulleys and Sheaves<span class="mega-indicator" tabindex="0" role="button" aria-label="Pulleys and Sheaves submenu"></span></a>
+	<ul class="mega-sub-menu">
+<li class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-products mega-menu-item-4408' id='mega-menu-item-4408'><a class="mega-menu-link" href="https://www.hoistuk.com/products/entertainment/pulley-1-to-6-way/">Pulley (1 to 6 Way)</a></li><li class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-products mega-menu-item-4409' id='mega-menu-item-4409'><a class="mega-menu-link" href="https://www.hoistuk.com/products/entertainment/sheave-1-to-6-way/">Sheave (1 to 6 Ways)</a></li>	</ul>
+</li><li class='mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-product_category mega-menu-item-has-children mega-menu-columns-1-of-3 mega-menu-item-4455' id='mega-menu-item-4455'><a class="mega-menu-link" href="https://www.hoistuk.com/products/cables-and-accessories/">Cables and Accessories<span class="mega-indicator" tabindex="0" role="button" aria-label="Cables and Accessories submenu"></span></a>
+	<ul class="mega-sub-menu">
+<li class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-products mega-menu-item-4417' id='mega-menu-item-4417'><a class="mega-menu-link" href="https://www.hoistuk.com/products/cables-and-accessories/main-cables-multiple-outlets-adaptors/">Main Cables / Multiple Outlets / Adaptors</a></li><li class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-products mega-menu-item-4418' id='mega-menu-item-4418'><a class="mega-menu-link" href="https://www.hoistuk.com/products/cables-and-accessories/motor-cables-direct-or-low-voltage-control/">Motor Cables (Direct / Low Voltage Control)</a></li><li class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-products mega-menu-item-4419' id='mega-menu-item-4419'><a class="mega-menu-link" href="https://www.hoistuk.com/products/cables-and-accessories/bread-out-and-break-in-spiders-harting/">Break-out / Break-in (Spiders) – Harting</a></li><li class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-products mega-menu-item-4420' id='mega-menu-item-4420'><a class="mega-menu-link" href="https://www.hoistuk.com/products/cables-and-accessories/break-out-and-break-in-spiders-socapex-2/">Break-out / Break-in (Spiders) – Socapex</a></li>	</ul>
+</li><li class='mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-product_category mega-menu-item-has-children mega-menu-columns-1-of-3 mega-menu-clear mega-menu-item-2585' id='mega-menu-item-2585'><a class="mega-menu-link" href="https://www.hoistuk.com/products/lightweight-tracking-systems/">Lightweight Tracking Systems<span class="mega-indicator" tabindex="0" role="button" aria-label="Lightweight Tracking Systems submenu"></span></a>
+	<ul class="mega-sub-menu">
+<li class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-products mega-menu-item-4427' id='mega-menu-item-4427'><a class="mega-menu-link" href="https://www.hoistuk.com/products/entertainment/lightweight-tracking-aluminium/">Lightweight Tracking (Aluminium)</a></li><li class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-products mega-menu-item-4428' id='mega-menu-item-4428'><a class="mega-menu-link" href="https://www.hoistuk.com/products/entertainment/lightweight-tracking-steel/">Lightweight Tracking (Steel)</a></li>	</ul>
+</li><li class='mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-product_category mega-menu-item-has-children mega-menu-columns-1-of-3 mega-menu-item-2449' id='mega-menu-item-2449'><a class="mega-menu-link" href="https://www.hoistuk.com/products/internally-wired-bars/">Internally Wired Bars<span class="mega-indicator" tabindex="0" role="button" aria-label="Internally Wired Bars submenu"></span></a>
+	<ul class="mega-sub-menu">
+<li class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-products mega-menu-item-4407' id='mega-menu-item-4407'><a class="mega-menu-link" href="https://www.hoistuk.com/products/entertainment/iwl-internally-wired-ladder-lx-ladder/">IWL Internally Wired Ladder (LX Ladder)</a></li>	</ul>
+</li><li class='mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-product_category mega-menu-item-has-children mega-menu-columns-1-of-3 mega-menu-item-2442' id='mega-menu-item-2442'><a class="mega-menu-link" href="https://www.hoistuk.com/products/banner-and-display-lifting-systems/">Banner and Display Lifting Systems<span class="mega-indicator" tabindex="0" role="button" aria-label="Banner and Display Lifting Systems submenu"></span></a>
+	<ul class="mega-sub-menu">
+<li class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-products mega-menu-item-4406' id='mega-menu-item-4406'><a class="mega-menu-link" href="https://www.hoistuk.com/products/banner-and-display-lifting-systems/banner-display-hoist/">Banner/Display Hoist</a></li>	</ul>
+</li><li class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-products mega-menu-columns-1-of-3 mega-menu-clear mega-menu-item-4426' id='mega-menu-item-4426'><a class="mega-menu-link" href="https://www.hoistuk.com/products/entertainment/ilb-integrated-lighting-bar-winch/">Integrated Lighting Bar Winch (ILBW)</a></li><li class='mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-product_category mega-menu-columns-1-of-3 mega-menu-item-2564' id='mega-menu-item-2564'><a class="mega-menu-link" href="https://www.hoistuk.com/products/the-chainrunner-range/">ChainRunner</a></li><li class='mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-product_category mega-menu-columns-1-of-3 mega-menu-item-2577' id='mega-menu-item-2577'><a class="mega-menu-link" href="https://www.hoistuk.com/products/load-cell-systems/">Load Cell Systems</a></li></ul>
+</li><li class='mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-has-children mega-align-bottom-left mega-menu-flyout mega-menu-item-623' id='mega-menu-item-623'><a class="mega-menu-link" href="/services/" aria-haspopup="true" aria-expanded="false" tabindex="0">Services<span class="mega-indicator" tabindex="0" role="button" aria-label="Services submenu"></span></a>
+<ul class="mega-sub-menu">
+<li class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-4434' id='mega-menu-item-4434'><a class="mega-menu-link" href="https://www.hoistuk.com/services/design/">Design</a></li><li class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-4432' id='mega-menu-item-4432'><a class="mega-menu-link" href="https://www.hoistuk.com/services/manufacture/">Manufacture</a></li><li class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-4433' id='mega-menu-item-4433'><a class="mega-menu-link" href="https://www.hoistuk.com/services/supply/">Supply</a></li><li class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-4430' id='mega-menu-item-4430'><a class="mega-menu-link" href="https://www.hoistuk.com/services/installation/">Installation</a></li><li class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-4429' id='mega-menu-item-4429'><a class="mega-menu-link" href="https://www.hoistuk.com/services/testing/">Examination, Testing &#038; Commissioning</a></li><li class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-8324' id='mega-menu-item-8324'><a class="mega-menu-link" href="https://www.hoistuk.com/services/servicing-and-preventative-maintenance/">Servicing and Preventative Maintenance</a></li><li class='mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-17624' id='mega-menu-item-17624'><a class="mega-menu-link" href="https://www.hoistuk.com/products/training/">Training</a></li></ul>
+</li><li class='mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-category mega-align-bottom-left mega-menu-flyout mega-menu-item-753' id='mega-menu-item-753'><a class="mega-menu-link" rel="nofollow" href="https://www.hoistuk.com/category/case-studies/" tabindex="0">Case Studies</a></li><li class='mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-category mega-align-bottom-left mega-menu-flyout mega-menu-item-16894' id='mega-menu-item-16894'><a class="mega-menu-link" href="https://www.hoistuk.com/category/news/" tabindex="0">News</a></li><li class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-align-bottom-left mega-menu-flyout mega-menu-item-10781' id='mega-menu-item-10781'><a class="mega-menu-link" rel="nofollow" href="https://www.hoistuk.com/about-us/" tabindex="0">About Us</a></li><li class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-align-bottom-left mega-menu-flyout mega-menu-item-3372' id='mega-menu-item-3372'><a class="mega-menu-link" rel="nofollow" href="https://www.hoistuk.com/contact-us/" tabindex="0">Contact Us</a></li><li class="login"><a href="/client-area/"><i class="fa fa-user"></i>Client Area</a></li></ul></div>							</nav>
+														<div class="accreditation cf">
+															
+																		<a href="/about-us/" target="_blank" rel="nofollow">
+										<img src="https://www.hoistuk.com/wp-content/uploads/leea.jpg" alt="Hoist UK are LEEA Members">
+									</a>
+															
+																		<a href="/about-us/" target="_blank" rel="nofollow">
+										<img src="https://www.hoistuk.com/wp-content/uploads/PLASA-Member-1-150x200.jpg" alt="PLASA Member">
+									</a>
+															
+																		<a href="/about-us/" target="_blank" rel="nofollow">
+										<img src="https://www.hoistuk.com/wp-content/uploads/ABTT-Silver-200x200.jpg" alt="ABTT Silver Member">
+									</a>
+															
+																		<a href="/about-us/" target="_blank" rel="nofollow">
+										<img src="https://www.hoistuk.com/wp-content/uploads/ISO9001_ISO14001_ISO45001_CYMK_INTEGRATED-133x200.jpg" alt="">
+									</a>
+															</div>
+														<div class="search-button"><i class="fa fa-search"></i></div>
+							<a href="#my-menu" class="menu-button" title="open nav"><i class="fa fa-bars"></i></a>
+						</div>		
+					</div>
+				</div>
+									<div class="breadcrumbs" typeof="BreadcrumbList" vocab="https://schema.org/">
+						<div class="wrap cf"><!-- Breadcrumb NavXT 7.2.0 -->
+<span property="itemListElement" typeof="ListItem"><a property="item" typeof="WebPage" title="Go to Hoist UK." href="https://www.hoistuk.com" class="home"><span property="name">Hoist UK</span></a><meta property="position" content="1"></span><span class="divider">/</span><span property="itemListElement" typeof="ListItem"><span property="name">Newsletters</span><meta property="position" content="2"></span></div>
+					</div>
+				
+
+
+  	   			<section class="padding banner green-bk white-text" >
+			<div class="wrap">
+				<div class="center">
+									<h1 class="h1">Newsletters</h1>
+								</div>
+				<div class="full center">
+																				</div>
+			</div><!--/wrap -->
+    </section>
+
+    
+  			    <section class="padding two-col default default-image default-image grey-bk default-text" >
+    	<div class="wrap full left">
+															</div><!--/wrap -->
+    	<div class="wrap">
+         <div class="row">
+						<div class="col span6 ">
+        				      		        <div>
+		        														<div href="" class="no">
+							<img class="image" src="https://www.hoistuk.com/wp-content/uploads/2-Introduction-Page-1-600x555.jpg" alt="Hoist UK Newsletter Issue 2 - Introduction Page" />
+							</div>
+							
+		        							</div>	
+							      		  		</div><!-- /col -->
+					<div class="col span6 text-mobile">
+        		        			<div>
+															<h2 class="h1">Newsletter: Issue 2</h2>
+																																				<p>In the second issue of Hoist UK's newsletter we discuss ATEX rated lifting equipment, the two European directive for controlling explosive atmospheres and what the different ATEX rated zones are for classifying lifting equipment. There is a useful guide to lifting beams, spreaders and frames that looks at the different types available, their design, stability and inspection requirements, as well as a comparative guide for wire rope hoists VS. chain hoists.</p>
+<p>We feature 2 new case studies in Issue 2 that showcase a bespoke counterbalance lifting beam with adjustable lifting points that we designed and manufactured for a leading aero engineering customer and a manual top running crane bridge for a hydro scheme maintenance plant.</p>
+<p><a href="https://www.hoistuk.com/wp-content/uploads/Hoist-UK-Newsletter-Issue-2-2.pdf"><b>Download Issue 2 Now</b></a></p>
+																											</div>
+							      		      		  		</div><!-- /col -->
+		  	</div><!-- /row -->
+		  </div><!-- /wrap cf -->
+		</section>
+
+		
+  	   			<section class="padding call-to-action green-bk white-text" >
+			<div class="wrap">
+				<div class="center">
+									<h2 class="h1"><a href="/sign-up-to-our-newsletter/ "><b>SIGN UP TO RECEIVE OUR LATEST NEWSLETTERS</b></a></h2>
+								</div>
+				<div class="full center">
+																				</div>
+			</div><!--/wrap -->
+    </section>
+
+    
+  			    <section class="padding two-col default default-image default-image white-bk default-text" >
+    	<div class="wrap full left">
+															</div><!--/wrap -->
+    	<div class="wrap">
+         <div class="row">
+						<div class="col span6 text-mobile">
+        		        			<div>
+															<h2 class="h1">Newsletter: Issue 1</h2>
+																																				<p>In the first issue of Hoist UK's newsletter we have a 2 page feature explaining rigging hoist standards that includes a handy table of reference outlining the different hoist specifications required to satisfy the different BS and BGV standards for rigging hoists. There is also an editorial that focuses on the safe working period of a hoist and how you can estimate the remaining safe working period for your hoist using our free safe working period calculator. </p>
+<p>The issue also features 3 case studies showcasing some of our recent projects, which include the supply and installation of a 3.2 tonne run out crane for a food industry customer, supply and installation of an underbraced, column mounted jib crane for a marine engineering customer, and the design, manufacture and installation of two motorised performer platforms and a full motor control system package for an international entertainment customer.</p>
+<p><a href="https://www.hoistuk.com/wp-content/uploads/Hoist-UK-Newsletter-Issue-1.pdf"><b>Download Issue 1 Now</b></a></p>
+																											</div>
+							      		      		  		</div><!-- /col -->
+					<div class="col span6 ">
+        				      		        <div>
+		        														<div href="" class="no">
+							<img class="image" src="https://www.hoistuk.com/wp-content/uploads/Newsletter-Lead-In-Image-600x450.jpg" alt="Hoist UK Newsletter Issue 1" />
+							</div>
+							
+		        							</div>	
+							      		  		</div><!-- /col -->
+		  	</div><!-- /row -->
+		  </div><!-- /wrap cf -->
+		</section>
+
+		
+<!-- 		<section class="newsletter grey-bk">
+					<div class="wrap">
+													<div class="h3"></div>
+													<div class="h3">Sign up now to receive the latest news and promotional offers from Hoist UK.</div>
+																											<div class="form"></div>
+															<div class="form"></div>
+												</div>
+				</section> -->
+
+				<footer class="footer" role="contentinfo" itemscope itemtype="https://schema.org/WPFooter">
+					<div class="wrap">
+						<div class="row padding">
+							<div class="col span3">
+								<nav role="navigation">
+									<h4>Site Map</h4>									
+									<div class="footer-links cf"><ul id="menu-site-map" class="nav footer-nav cf"><li id="menu-item-6614" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6614"><a href="https://www.hoistuk.com/about-us/">About Us</a></li>
+<li id="menu-item-6615" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6615"><a href="https://www.hoistuk.com/careers/">Careers</a></li>
+<li id="menu-item-3281" class="menu-item menu-item-type-taxonomy menu-item-object-product_category menu-item-3281"><a href="https://www.hoistuk.com/products/industrial/">Industrial Lifting Equipment</a></li>
+<li id="menu-item-3282" class="menu-item menu-item-type-taxonomy menu-item-object-product_category menu-item-3282"><a href="https://www.hoistuk.com/products/entertainment/">Entertainment</a></li>
+<li id="menu-item-3283" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3283"><a href="https://www.hoistuk.com/category/case-studies/">Case Studies</a></li>
+<li id="menu-item-3284" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3284"><a href="https://www.hoistuk.com/category/news/">News</a></li>
+</ul></div>								</nav>
+							</div><!-- col -->
+							<div class="col span3">
+								<nav role="navigation">
+									<h4>Quick Links</h4>
+									<div class="footer-information cf"><ul id="menu-quick-links" class="nav footer-nav cf"><li id="menu-item-3872" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3872"><a href="https://www.hoistuk.com/verlinde/">Verlinde</a></li>
+<li id="menu-item-3871" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3871"><a href="https://www.hoistuk.com/gebuwin/">Gebuwin</a></li>
+<li id="menu-item-18418" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-18418"><a href="https://www.hoistuk.com/thern/">Thern</a></li>
+<li id="menu-item-18424" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-18424"><a href="https://www.hoistuk.com/erikkila/">ERIKKILA</a></li>
+<li id="menu-item-3555" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3555"><a href="https://www.hoistuk.com/social-responsibility/">Social Responsibility</a></li>
+<li id="menu-item-6790" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6790"><a href="https://www.hoistuk.com/gdpr-statement/">GDPR Statement</a></li>
+<li id="menu-item-6641" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6641"><a href="https://www.hoistuk.com/privacy-policy/">Privacy Policy</a></li>
+<li id="menu-item-6646" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6646"><a href="https://www.hoistuk.com/terms-and-conditions/">Terms and Conditions</a></li>
+<li id="menu-item-10185" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10185"><a href="https://www.hoistuk.com/loler-inspection/">LOLER Inspection</a></li>
+</ul></div>								</nav>
+							</div><!-- col -->
+							<div class="col span6">
+								<h4>Contact Us</h4>
+								<div class="footer-contact">
+									<div class="row">
+										<div class="col span6">
+											<div class="title">Address</div>
+											<div class="address">
+												21 Tarran Way North <br />
+Tarran Industrial Estate<br />
+Moreton<br />
+Wirral<br />
+United Kingdom<br />
+CH46 4UA											</div>
+										</div>
+										<div class="col span6">
+											<div class="title">Telephone</div>
+											<a href="tel:+44 151 334 7682" class="footer-telephone">+44 151 334 7682</a>
+											<div class="title">
+												<i class="fa fa-envelope"></i>&nbsp;&nbsp;<a href="mailto:sales@hoistuk.com" class="footer-email">Email us</a>
+											</div>
+										</div>
+									</div><!--/row -->
+									<div class="footer-social cf">
+										<div class="title">Join us on</div>
+										<div class="group">
+																						<a class="social-icon" href="https://www.facebook.com/hoistuk/" target="_blank" rel="nofollow"><i class="fa fa-facebook"></i></a>
+																																	<a class="social-icon" href="https://twitter.com/hoistuk" target="_blank" rel="nofollow"><i class="fa fa-twitter"></i></a>
+																																	<a class="social-icon" href="https://www.youtube.com/user/hoistukltd" target="_blank" rel="nofollow"><i class="fa fa-youtube"></i></a>
+																																	<a class="social-icon" href="https://www.instagram.com/hoist_uk/" target="_blank" rel="nofollow"><i class="fa fa-instagram"></i></a>
+																																	<a class="social-icon" href="https://www.linkedin.com/company/hoist-uk/" target="_blank" rel="nofollow"><i class="fa fa-linkedin"></i></a>
+																					</div>
+									</div>
+								</div><!-- /footer-contact -->
+							</div><!-- /col -->
+						</div><!-- /row -->
+					</div><!-- /wrap -->
+
+					<div class="source-org copyright">&copy; 2026 Hoist UK. Website by <a target="_blank" href="https://www.pixus.uk">Pixus UK</a></div>
+
+				</footer>
+
+			</div>
+		</div><!-- id="mobile-wrapper" -->
+				<script type='text/javascript' src='https://www.hoistuk.com/wp-includes/js/hoverIntent.min.js' id='hoverIntent-js' defer data-deferred="1"></script>
+<script type='text/javascript' id='megamenu-js-extra' src="data:text/javascript;base64,dmFyIG1lZ2FtZW51PXsidGltZW91dCI6IjMwMCIsImludGVydmFsIjoiMTAwIn0=" defer></script>
+<script type='text/javascript' src='https://www.hoistuk.com/wp-content/plugins/megamenu/js/maxmegamenu.js' id='megamenu-js' defer data-deferred="1"></script>
+<script type='text/javascript' src='https://www.hoistuk.com/wp-content/themes/hoist/library/js/mixitup.min.js' id='mixitup-js' defer data-deferred="1"></script>
+<script type='text/javascript' src='https://www.hoistuk.com/wp-content/themes/hoist/library/js/backtotop.js' id='backtotop-js' defer data-deferred="1"></script>
+<script type='text/javascript' src='https://www.hoistuk.com/wp-content/themes/hoist/library/js/jquery.mmenu.all.min.js' id='mobile-menu-js' defer data-deferred="1"></script>
+<script type='text/javascript' src='https://www.hoistuk.com/wp-content/themes/hoist/library/js/owl.carousel.js' id='owl-carousel-js' defer data-deferred="1"></script>
+<script type='text/javascript' src='https://www.hoistuk.com/wp-content/themes/hoist/library/js/slick.min.js' id='slick-slider-js' defer data-deferred="1"></script>
+<script type='text/javascript' src='https://www.hoistuk.com/wp-content/themes/hoist/library/js/alfaNavbar.js' id='alfanavbar-js' defer data-deferred="1"></script>
+<script type='text/javascript' src='https://www.hoistuk.com/wp-content/themes/hoist/library/js/scripts.js' id='bones-js-js' defer data-deferred="1"></script>
+
+		<a href="#0" class="cd-top"><i class="fa fa-angle-up"></i></a>
+
+	</body>
+
+</html> <!-- end of site. what a ride! -->
+
+
+<!-- Page cached by LiteSpeed Cache 7.7 on 2026-01-04 19:50:40 -->

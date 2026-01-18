@@ -17,7 +17,11 @@
     "downloadPDFs": true,
     "maxPDFsPerProduct": 3,
     "pdfDirectory": "chainhoist_data/media/pdfs",
-    "enableLLM": true
+    "enableLLM": true,
+    "usePlaywright": true,
+    "playwrightTimeout": 45000,
+    "enableSelectorDiscovery": true,
+    "deduplicateOnSave": true
   },
   "llm": {
     "provider": "gemini",
@@ -55,7 +59,8 @@
     "processedFile": "chainhoist_database_processed.json",
     "csvOutputFile": "chainhoist_database_processed.csv",
     "reportFile": "data_quality_report.json",
-    "missingDataThreshold": 0.4
+    "missingDataThreshold": 0.4,
+    "deduplicateRecords": true
   },
   "viewer": {
     "port": 3000,
@@ -71,27 +76,74 @@
   "database": {
     "version": "2.0",
     "schema": {
-      "requiredFields": ["manufacturer", "model"],
+      "requiredFields": [
+        "manufacturer",
+        "model"
+      ],
       "optionalFields": [
-        "series", "yearIntroduced", "productionStatus",
-        "loadCapacity", "liftingSpeed", "secondarySpeed",
-        "chainFall", "motorPower", "dutyCycle", "voltageOptions",
-        "weight", "dimensions", "chainContainer", "bodyMaterial",
-        "chainMaterial", "noiseLevel", "hookType",
-        "classification", "quietOperation", "bodyColor",
-        "positionFeedback", "dynamicLifting", "liftingOverPeople",
-        "commonApplications", "upperLimitSwitch", "lowerLimitSwitch",
-        "overloadProtection", "emergencyStop", "additionalSafety",
-        "certifications", "price", "warranty", "extendedWarranty",
-        "leadTime", "rentalRate", "supportInfo",
-        "url", "datasheet", "images"
+        "series",
+        "yearIntroduced",
+        "productionStatus",
+        "loadCapacity",
+        "liftingSpeed",
+        "secondarySpeed",
+        "chainFall",
+        "motorPower",
+        "dutyCycle",
+        "voltageOptions",
+        "weight",
+        "dimensions",
+        "chainContainer",
+        "bodyMaterial",
+        "chainMaterial",
+        "noiseLevel",
+        "hookType",
+        "classification",
+        "quietOperation",
+        "bodyColor",
+        "positionFeedback",
+        "dynamicLifting",
+        "liftingOverPeople",
+        "commonApplications",
+        "upperLimitSwitch",
+        "lowerLimitSwitch",
+        "overloadProtection",
+        "emergencyStop",
+        "additionalSafety",
+        "certifications",
+        "price",
+        "warranty",
+        "extendedWarranty",
+        "leadTime",
+        "rentalRate",
+        "supportInfo",
+        "url",
+        "datasheet",
+        "images"
       ]
     }
   },
   "export": {
-    "formats": ["json", "csv", "xlsx", "pdf"],
+    "formats": [
+      "json",
+      "csv",
+      "xlsx",
+      "pdf"
+    ],
     "defaultFormat": "json",
     "includeMetadata": true,
     "dateFormat": "ISO"
+  },
+  "playwright": {
+    "headless": true,
+    "timeout": 45000,
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+    "viewport": {
+      "width": 1920,
+      "height": 1080
+    },
+    "screenshotsDir": "chainhoist_data/screenshots",
+    "waitForNetworkIdle": true,
+    "scrollToBottom": true
   }
 }
