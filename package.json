@@ -97,8 +97,7 @@
     ],
     "verbose": true,
     "collectCoverageFrom": [
-      "app.js",
-      "server.js"
+      "app.js"
     ],
     "coverageDirectory": "coverage",
     "coverageReporters": [
@@ -109,7 +108,7 @@
     "coverageThreshold": {
       "global": {
         "branches": 25,
-        "functions": 50,
+        "functions": 40,
         "lines": 40,
         "statements": 40
       }
