@@ -12,3 +12,6 @@ runConfig:
 env:
   - variable: NODE_ENV
     value: production
+  # Skip npm run build (scraper) during deployment
+  - variable: GOOGLE_NODE_RUN_SCRIPTS
+    value: ""
