@@ -327,7 +327,7 @@ if (require.main === module) {
     }
   }
 
-  async function runCommand() {
+  (async () => {
     try {
       switch (command) {
       case 'json':
@@ -359,9 +359,7 @@ if (require.main === module) {
       console.error('Export failed:', error.message);
       process.exit(1);
     }
-  }
-
-  runCommand();
+  })();
 }
 
 module.exports = ExportTools;

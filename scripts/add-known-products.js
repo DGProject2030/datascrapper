@@ -23,7 +23,7 @@ try {
 }
 
 // Create a set of existing product IDs to avoid duplicates
-const existingIds = new Set(database.map(p => p.id));
+const existingIds = new Set(database.map(p => p.id)); // eslint-disable-line no-unused-vars
 
 // Manufacturer mapping
 const manufacturerNames = {

@@ -108,7 +108,7 @@ function sleep(ms) {
 /**
  * Extract product images from a page
  */
-function extractImages($, baseUrl, productName) {
+function extractImages($, baseUrl, _productName) {
   const images = [];
   const seen = new Set();
 
@@ -230,7 +230,7 @@ async function searchManufacturerSite(product, mfrInfo) {
 /**
  * Extract additional product specifications from a page
  */
-function extractSpecsFromPage($, url) {
+function extractSpecsFromPage($, url) { // eslint-disable-line no-unused-vars
   const specs = {};
 
   // Common spec patterns

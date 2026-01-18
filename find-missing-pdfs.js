@@ -1,5 +1,4 @@
 const db = require('./chainhoist_data_processed/chainhoist_database_processed.json');
-const fs = require('fs');
 
 // Find products missing load capacity
 const missing = db.filter(p => !p.loadCapacity);

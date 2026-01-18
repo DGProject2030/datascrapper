@@ -18,7 +18,7 @@ database.forEach(p => {
 
 // Find URLs that appear many times (category pages)
 const duplicateUrls = Object.entries(urlCounts)
-  .filter(([url, count]) => count > 3)
+  .filter(([_url, count]) => count > 3)
   .sort((a, b) => b[1] - a[1]);
 
 console.log('\n=== URLs appearing more than 3 times (category pages) ===');
@@ -26,20 +26,20 @@ duplicateUrls.forEach(([url, count]) => {
   console.log(`  ${count}x: ${url.substring(0, 70)}...`);
 });
 
-// Identify category page patterns
-const categoryPatterns = [
-  /category/i,
-  /view.all/i,
-  /products\/?$/i,
-  /hoists\/?$/i,
-  /lifting\/?$/i,
-  /equipment\/?$/i
-];
+// Identify category page patterns (used for reference)
+// const categoryPatterns = [
+//   /category/i,
+//   /view.all/i,
+//   /products\/?$/i,
+//   /hoists\/?$/i,
+//   /lifting\/?$/i,
+//   /equipment\/?$/i
+// ];
 
 // Find products that look like category pages
 const categoryProducts = database.filter(p => {
   const model = (p.model || '').toLowerCase();
-  const url = (p.url || '').toLowerCase();
+  const _url = (p.url || '').toLowerCase(); // eslint-disable-line no-unused-vars
 
   // Check if model name suggests category page
   if (model.includes('category') ||
@@ -76,7 +76,7 @@ database.forEach(p => {
 });
 
 const duplicateModels = Object.entries(modelGroups)
-  .filter(([key, products]) => products.length > 1)
+  .filter(([_key, products]) => products.length > 1)
   .sort((a, b) => b[1].length - a[1].length);
 
 console.log('\n=== Duplicate model names (same manufacturer) ===');

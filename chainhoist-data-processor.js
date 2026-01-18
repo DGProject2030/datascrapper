@@ -777,7 +777,7 @@ class ChainhoistDataProcessor {
     speed = String(speed);
 
     // Extract numeric value and unit
-    const matches = speed.match(/(\d+(?:\.\d+)?)\s*([a-z\/]+)/i);
+    const matches = speed.match(/(\d+(?:\.\d+)?)\s*([a-z/]+)/i);
     if (!matches) {
       return speed;
     }
@@ -831,7 +831,7 @@ class ChainhoistDataProcessor {
 
     // If string, convert to array
     if (typeof classification === 'string') {
-      classification = classification.split(/[,;\/]/);
+      classification = classification.split(/[,;/]/);
     } else if (!Array.isArray(classification)) {
       return [];
     }

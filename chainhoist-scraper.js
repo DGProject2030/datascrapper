@@ -1,13 +1,9 @@
 // Advanced Electric Chainhoist Data Scraper
 // This script includes manufacturer-specific scrapers, rate limiting, and error handling
 
-const axios = require('axios');
-const cheerio = require('cheerio');
 const fs = require('fs/promises');
 const path = require('path');
-const { PuppeteerCrawler } = require('crawlee');
 const { Parser } = require('json2csv');
-const _ = require('lodash');
 
 // Enhanced logging system
 class Logger {

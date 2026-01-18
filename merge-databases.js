@@ -28,7 +28,7 @@ function loadJson(filePath) {
 /**
  * Generate unique ID for a product
  */
-function generateId(product) {
+function generateId(product) { // eslint-disable-line no-unused-vars
   const manufacturer = (product.manufacturer || 'unknown').toLowerCase().replace(/[^a-z0-9]/g, '-');
   const name = (product.name || product.model || 'unknown').toLowerCase().replace(/[^a-z0-9]/g, '-');
   return `${manufacturer}--${name}`.replace(/-+/g, '-');

@@ -392,7 +392,7 @@ async function processBatchPDFs() {
 
     const enrichedDatabase = database.map(product => {
       // Find extractions that match this product
-      for (const [filename, extraction] of Object.entries(results.extractions)) {
+      for (const extraction of Object.values(results.extractions)) {
         if (extraction.error) {
           continue;
         }
