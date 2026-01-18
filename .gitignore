@@ -43,3 +43,4 @@ scheduler_history.json
 
 # Claude Code local settings
 .claude/
+.firebase/
