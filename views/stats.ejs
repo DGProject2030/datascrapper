@@ -200,6 +200,100 @@
   </div>
 </div>
 
+<!-- Data Quality Metrics Section -->
+<div class="row mb-4 g-4">
+  <div class="col-md-6">
+    <div class="card chart-card h-100">
+      <div class="card-header">
+        <h5 class="mb-0"><i class="bi bi-clipboard-check"></i> Data Completeness</h5>
+      </div>
+      <div class="card-body">
+        <%
+          const totalRecords = report.totalRecords || 390;
+          const qualityGates = report.qualityGates?.gates || [];
+
+          // Calculate completeness from quality gates
+          const getCompleteness = (gateName) => {
+            const gate = qualityGates.find(g => g.name === gateName);
+            if (gate && gate.actual) {
+              const pct = parseFloat(gate.actual);
+              return isNaN(pct) ? 100 : 100 - pct;
+            }
+            return 100;
+          };
+
+          const metrics = [
+            { name: 'Load Capacity', value: getCompleteness('Missing Load Capacity'), color: '#27ae60' },
+            { name: 'Lifting Speed', value: getCompleteness('Missing Lifting Speed'), color: '#3498db' },
+            { name: 'Motor Power', value: getCompleteness('Missing Motor Power'), color: '#9b59b6' },
+            { name: 'Classification', value: getCompleteness('Missing Classification'), color: '#e67e22' },
+            { name: 'Source Tracking', value: 100, color: '#1abc9c' }
+          ];
+        %>
+        <% metrics.forEach(function(metric) { %>
+          <div class="mb-3">
+            <div class="d-flex justify-content-between mb-1">
+              <span class="fw-medium"><%= metric.name %></span>
+              <span class="badge" style="background: <%= metric.color %>"><%= metric.value.toFixed(1) %>%</span>
+            </div>
+            <div class="progress" style="height: 8px;">
+              <div class="progress-bar" role="progressbar" style="width: <%= metric.value %>%; background: <%= metric.color %>;" aria-valuenow="<%= metric.value %>" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+        <% }); %>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="card chart-card h-100">
+      <div class="card-header">
+        <h5 class="mb-0"><i class="bi bi-shield-check"></i> Quality Gates</h5>
+      </div>
+      <div class="card-body">
+        <% if (report.qualityGates && report.qualityGates.passed) { %>
+          <div class="alert alert-success mb-3">
+            <i class="bi bi-check-circle-fill me-2"></i>
+            <strong><%= report.qualityGates.summary || 'All quality gates passed' %></strong>
+          </div>
+        <% } else { %>
+          <div class="alert alert-warning mb-3">
+            <i class="bi bi-exclamation-triangle-fill me-2"></i>
+            <strong>Some quality gates need attention</strong>
+          </div>
+        <% } %>
+        <div class="table-responsive">
+          <table class="table table-sm mb-0">
+            <thead>
+              <tr>
+                <th>Gate</th>
+                <th>Threshold</th>
+                <th>Actual</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% (report.qualityGates?.gates || []).forEach(function(gate) { %>
+                <tr>
+                  <td><%= gate.name %></td>
+                  <td><code><%= gate.threshold %></code></td>
+                  <td><strong><%= gate.actual %></strong></td>
+                  <td>
+                    <% if (gate.passed) { %>
+                      <span class="badge bg-success"><i class="bi bi-check"></i> Pass</span>
+                    <% } else { %>
+                      <span class="badge bg-danger"><i class="bi bi-x"></i> Fail</span>
+                    <% } %>
+                  </td>
+                </tr>
+              <% }); %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="row mb-4 g-4">
   <div class="col-md-6">
     <div class="card chart-card h-100">
