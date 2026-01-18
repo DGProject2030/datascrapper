@@ -143,7 +143,7 @@ class ChainhoistDatabase {
         this.data = parsed;
       } else if (parsed.data && Array.isArray(parsed.data)) {
         this.data = parsed.data;
-        this.stats = parsed.stats || this.stats;
+        this.stats = { ...this.stats, ...parsed.stats, errors: parsed.stats?.errors || [] };
       } else {
         throw new Error('Invalid database format');
       }

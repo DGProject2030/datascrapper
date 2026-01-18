@@ -4,14 +4,3 @@ runConfig:
   minInstances: 0
   maxInstances: 2
   concurrency: 80
-
-env:
-  - variable: NODE_ENV
-    value: production
-    availability:
-      - BUILD
-      - RUNTIME
-  - variable: GOOGLE_NODE_RUN_SCRIPTS
-    value: " "
-    availability:
-      - BUILD
