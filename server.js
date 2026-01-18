@@ -160,12 +160,20 @@ const indexTemplate = `<%- include('header') %>
                 <h5 class="card-title">Classifications</h5>
                 <p class="card-text">Chainhoists by industry classification</p>
                 <ul class="list-group">
-                  <% classifications.forEach(function(classification) { %>
+                  <%
+                    const sortedClassifications = classifications
+                      .map(c => ({ name: c, count: report.classificationDistribution[c] || 0 }))
+                      .sort((a, b) => b.count - a.count);
+                  %>
+                  <% sortedClassifications.slice(0, 6).forEach(function(cls) { %>
                     <li class="list-group-item d-flex justify-content-between align-items-center">
-                      <%= classification.toUpperCase() %>
-                      <span class="badge bg-info rounded-pill"><%= report.classificationDistribution[classification] %></span>
+                      <%= cls.name.toUpperCase() %>
+                      <span class="badge bg-info rounded-pill"><%= cls.count %></span>
                     </li>
                   <% }); %>
+                  <% if (sortedClassifications.length > 6) { %>
+                    <li class="list-group-item text-center text-muted">+ <%= sortedClassifications.length - 6 %> more</li>
+                  <% } %>
                 </ul>
               </div>
             </div>
