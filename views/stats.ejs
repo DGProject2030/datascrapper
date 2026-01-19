@@ -209,39 +209,33 @@
   <div class="col-md-6">
     <div class="card chart-card h-100">
       <div class="card-header">
-        <h5 class="mb-0"><i class="bi bi-clipboard-check"></i> Data Completeness</h5>
+        <h5 class="mb-0"><i class="bi bi-clipboard-check"></i> Field Completeness (Standard Fields)</h5>
       </div>
       <div class="card-body">
         <%
-          const totalRecords = report.totalRecords || 390;
-          const qualityGates = report.qualityGates?.gates || [];
-
-          // Calculate completeness from quality gates
-          const getCompleteness = (gateName) => {
-            const gate = qualityGates.find(g => g.name === gateName);
-            if (gate && gate.actual) {
-              const pct = parseFloat(gate.actual);
-              return isNaN(pct) ? 100 : 100 - pct;
-            }
-            return 100;
-          };
-
-          const metrics = [
-            { name: 'Load Capacity', value: getCompleteness('Missing Load Capacity'), color: '#27ae60' },
-            { name: 'Lifting Speed', value: getCompleteness('Missing Lifting Speed'), color: '#3498db' },
-            { name: 'Motor Power', value: getCompleteness('Missing Motor Power'), color: '#9b59b6' },
-            { name: 'Classification', value: getCompleteness('Missing Classification'), color: '#e67e22' },
-            { name: 'Source Tracking', value: 100, color: '#1abc9c' }
+          const standardFields = [
+            { name: 'Load Capacity', key: 'loadCapacity', icon: 'bi-arrow-down-up', color: '#27ae60' },
+            { name: 'Lifting Speed', key: 'liftingSpeed', icon: 'bi-speedometer2', color: '#3498db' },
+            { name: 'Motor Power', key: 'motorPower', icon: 'bi-lightning-charge', color: '#9b59b6' },
+            { name: 'Weight', key: 'weight', icon: 'bi-box', color: '#e67e22' },
+            { name: 'Dimensions', key: 'dimensions', icon: 'bi-rulers', color: '#1abc9c' },
+            { name: 'Classification', key: 'classification', icon: 'bi-tags', color: '#e74c3c' },
+            { name: 'Images', key: 'images', icon: 'bi-image', color: '#f39c12' },
+            { name: 'Product Manual/PDF', key: 'pdfs', icon: 'bi-file-earmark-pdf', color: '#2ecc71' },
+            { name: 'Product Page Link', key: 'url', icon: 'bi-link-45deg', color: '#3498db' }
           ];
         %>
-        <% metrics.forEach(function(metric) { %>
+        <% standardFields.forEach(function(field) {
+          const data = fieldCompleteness[field.key] || { count: 0, pct: '0.0' };
+          const pct = parseFloat(data.pct);
+        %>
           <div class="mb-3">
             <div class="d-flex justify-content-between mb-1">
-              <span class="fw-medium"><%= metric.name %></span>
-              <span class="badge" style="background: <%= metric.color %>"><%= metric.value.toFixed(1) %>%</span>
+              <span class="fw-medium"><i class="<%= field.icon %> me-1"></i><%= field.name %></span>
+              <span class="badge" style="background: <%= field.color %>"><%= data.count %>/<%= totalRecords %> (<%= data.pct %>%)</span>
             </div>
             <div class="progress" style="height: 8px;">
-              <div class="progress-bar" role="progressbar" style="width: <%= metric.value %>%; background: <%= metric.color %>;" aria-valuenow="<%= metric.value %>" aria-valuemin="0" aria-valuemax="100"></div>
+              <div class="progress-bar" role="progressbar" style="width: <%= pct %>%; background: <%= field.color %>;" aria-valuenow="<%= pct %>" aria-valuemin="0" aria-valuemax="100"></div>
             </div>
           </div>
         <% }); %>

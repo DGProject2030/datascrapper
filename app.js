@@ -1726,7 +1726,51 @@ app.get('/stats', (req, res) => {
   const powerStats = {};
   const speedStats = {};
 
+  // Field completeness counters
+  const fieldCounts = {
+    loadCapacity: 0,
+    liftingSpeed: 0,
+    motorPower: 0,
+    weight: 0,
+    dimensions: 0,
+    classification: 0,
+    images: 0,
+    pdfs: 0,
+    url: 0
+  };
+
   data.forEach(item => {
+    // Track field completeness
+    if (item.loadCapacity && item.loadCapacity !== '-' && item.loadCapacity !== 'Not specified') {
+      fieldCounts.loadCapacity++;
+    }
+    if (item.liftingSpeed && item.liftingSpeed !== '-' && item.liftingSpeed !== 'Not specified') {
+      fieldCounts.liftingSpeed++;
+    }
+    if (item.motorPower && item.motorPower !== '-' && item.motorPower !== 'Not specified') {
+      fieldCounts.motorPower++;
+    }
+    if (item.weight && item.weight !== '-' && item.weight !== 'Not specified' && item.weight !== 'Not visible') {
+      fieldCounts.weight++;
+    }
+    if (item.dimensions && item.dimensions !== '-' && item.dimensions !== 'Not specified' && item.dimensions !== 'Not visible') {
+      fieldCounts.dimensions++;
+    }
+    if (item.classification && Array.isArray(item.classification) && item.classification.length > 0) {
+      fieldCounts.classification++;
+    }
+    if (item.images && Array.isArray(item.images) && item.images.length > 0) {
+      fieldCounts.images++;
+    }
+    if ((item.pdfs && Array.isArray(item.pdfs) && item.pdfs.length > 0) ||
+        (item.downloadedPDFs && Array.isArray(item.downloadedPDFs) && item.downloadedPDFs.length > 0)) {
+      fieldCounts.pdfs++;
+    }
+    if (item.url && item.url !== '-') {
+      fieldCounts.url++;
+    }
+
+    // Capacity distribution
     if (item.loadCapacity) {
       const matches = item.loadCapacity.match(/(\d+(?:\.\d+)?)\s*kg/i);
       if (matches) {
@@ -1762,11 +1806,27 @@ app.get('/stats', (req, res) => {
     }
   });
 
+  // Calculate percentages
+  const total = data.length || 1;
+  const fieldCompleteness = {
+    loadCapacity: { count: fieldCounts.loadCapacity, pct: ((fieldCounts.loadCapacity / total) * 100).toFixed(1) },
+    liftingSpeed: { count: fieldCounts.liftingSpeed, pct: ((fieldCounts.liftingSpeed / total) * 100).toFixed(1) },
+    motorPower: { count: fieldCounts.motorPower, pct: ((fieldCounts.motorPower / total) * 100).toFixed(1) },
+    weight: { count: fieldCounts.weight, pct: ((fieldCounts.weight / total) * 100).toFixed(1) },
+    dimensions: { count: fieldCounts.dimensions, pct: ((fieldCounts.dimensions / total) * 100).toFixed(1) },
+    classification: { count: fieldCounts.classification, pct: ((fieldCounts.classification / total) * 100).toFixed(1) },
+    images: { count: fieldCounts.images, pct: ((fieldCounts.images / total) * 100).toFixed(1) },
+    pdfs: { count: fieldCounts.pdfs, pct: ((fieldCounts.pdfs / total) * 100).toFixed(1) },
+    url: { count: fieldCounts.url, pct: ((fieldCounts.url / total) * 100).toFixed(1) }
+  };
+
   res.render('stats', {
     report,
     capacityStats,
     powerStats,
     speedStats,
+    fieldCompleteness,
+    totalRecords: total,
     title: 'Database Statistics',
     activePage: 'stats'
   });
