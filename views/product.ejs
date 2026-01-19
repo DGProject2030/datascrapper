@@ -558,35 +558,53 @@
         <% } %>
 
         <%
-          // Calculate data completeness
-          const criticalFields = ['loadCapacity', 'liftingSpeed', 'motorPower', 'classification', 'dutyCycle'];
-          const missingFields = criticalFields.filter(f => {
-            const val = product[f];
-            return !val || val === '' || val === '-' || (Array.isArray(val) && val.length === 0);
-          });
-          const completeness = product.dataCompleteness || Math.round((1 - missingFields.length / criticalFields.length) * 100);
+          // Calculate data completeness for standard fields
+          const standardFields = [
+            { key: 'loadCapacity', label: 'Load Capacity' },
+            { key: 'liftingSpeed', label: 'Lifting Speed' },
+            { key: 'motorPower', label: 'Motor Power' },
+            { key: 'weight', label: 'Weight' },
+            { key: 'dimensions', label: 'Dimensions' },
+            { key: 'classification', label: 'Classification' },
+            { key: 'images', label: 'Images' },
+            { key: 'pdfs', label: 'Product Manual' },
+            { key: 'url', label: 'Product Link' }
+          ];
+
+          const checkField = (f) => {
+            const val = product[f.key];
+            if (f.key === 'images') {
+              return val && Array.isArray(val) && val.length > 0;
+            }
+            if (f.key === 'pdfs') {
+              return (product.pdfs && Array.isArray(product.pdfs) && product.pdfs.length > 0) ||
+                     (product.downloadedPDFs && Array.isArray(product.downloadedPDFs) && product.downloadedPDFs.length > 0);
+            }
+            if (f.key === 'classification') {
+              return val && Array.isArray(val) && val.length > 0;
+            }
+            if (f.key === 'weight' || f.key === 'dimensions') {
+              return val && val !== '' && val !== '-' && val !== 'Not specified' && val !== 'Not visible';
+            }
+            return val && val !== '' && val !== '-';
+          };
+
+          const presentFields = standardFields.filter(checkField);
+          const missingFields = standardFields.filter(f => !checkField(f));
+          const completeness = Math.round((presentFields.length / standardFields.length) * 100);
           const completenessClass = completeness >= 80 ? 'bg-success' : completeness >= 50 ? 'bg-warning' : 'bg-danger';
         %>
         <div class="mb-3">
           <div class="d-flex align-items-center gap-2 mb-1">
             <small class="text-muted">Data completeness:</small>
-            <div class="progress flex-grow-1" style="height: 8px; max-width: 200px;" title="<%= completeness %>% of critical specifications available">
+            <div class="progress flex-grow-1" style="height: 8px; max-width: 200px;" title="<%= presentFields.length %>/<%= standardFields.length %> standard fields available">
               <div class="progress-bar <%= completenessClass %>" role="progressbar" style="width: <%= completeness %>%;" aria-valuenow="<%= completeness %>" aria-valuemin="0" aria-valuemax="100"></div>
             </div>
-            <small class="<%= completeness >= 80 ? 'text-success' : completeness >= 50 ? 'text-warning' : 'text-danger' %>"><%= completeness %>%</small>
+            <small class="<%= completeness >= 80 ? 'text-success' : completeness >= 50 ? 'text-warning' : 'text-danger' %>"><%= presentFields.length %>/<%= standardFields.length %></small>
           </div>
           <% if (missingFields.length > 0) { %>
             <small class="text-muted">
-              <i class="bi bi-info-circle"></i> Missing: <%= missingFields.map(f => {
-                const labels = {
-                  loadCapacity: 'Load Capacity',
-                  liftingSpeed: 'Lifting Speed',
-                  motorPower: 'Motor Power',
-                  classification: 'Classification',
-                  dutyCycle: 'Duty Cycle'
-                };
-                return labels[f] || f;
-              }).join(', ') %>
+              <i class="bi bi-info-circle"></i> Missing: <%= missingFields.map(f => f.label).join(', ') %>
               <% if (product.url) { %>
                 <a href="<%= product.url %>" target="_blank" class="ms-2 text-decoration-none">
                   <i class="bi bi-box-arrow-up-right"></i> Check manufacturer site
@@ -751,6 +769,18 @@
                 <tr>
                   <td class="spec-label">Motor Power</td>
                   <td><%= product.motorPower %></td>
+                </tr>
+                <% } %>
+                <% if (product.weight && product.weight !== 'Not specified' && product.weight !== 'Not visible') { %>
+                <tr>
+                  <td class="spec-label">Weight</td>
+                  <td><%= product.weight %></td>
+                </tr>
+                <% } %>
+                <% if (product.dimensions && product.dimensions !== 'Not specified' && product.dimensions !== 'Not visible') { %>
+                <tr>
+                  <td class="spec-label">Dimensions</td>
+                  <td><%= product.dimensions %></td>
                 </tr>
                 <% } %>
                 <% if (product.dutyCycle) { %>
@@ -1037,70 +1067,71 @@
         </div>
         <% } %>
 
-        <% if (product.url || product.datasheet) { %>
-          <div class="mt-4 btn-group-mobile">
-            <% if (product.url) { %>
-              <a href="<%= product.url %>" target="_blank" class="btn" style="background: var(--brand-secondary); color: white;">
-                <i class="bi bi-box-arrow-up-right"></i> View Original Source
-              </a>
-            <% } %>
-            <% if (product.datasheet) { %>
-              <a href="<%= product.datasheet %>" target="_blank" class="btn btn-outline-primary">
-                <i class="bi bi-file-earmark-pdf"></i> Download Datasheet
-              </a>
-            <% } %>
-          </div>
-        <% } %>
-
-        <% if (product.pdfs && product.pdfs.length > 0) { %>
-          <div class="mt-4">
-            <h5 class="section-title"><i class="bi bi-file-earmark-text"></i> Available Documents</h5>
-            <div class="list-group">
-              <% product.pdfs.forEach(function(pdf) { %>
-                <a href="<%= pdf.url %>" target="_blank" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
-                  <span>
-                    <% if (pdf.type === 'datasheet') { %>
-                      <span class="badge bg-info me-2">Datasheet</span>
-                    <% } else if (pdf.type === 'manual') { %>
-                      <span class="badge bg-warning text-dark me-2">Manual</span>
-                    <% } else if (pdf.type === 'brochure') { %>
-                      <span class="badge bg-success me-2">Brochure</span>
-                    <% } else { %>
-                      <span class="badge bg-secondary me-2">Document</span>
-                    <% } %>
-                    <%= pdf.title || 'Download PDF' %>
-                  </span>
-                  <span class="text-muted small">PDF</span>
+        <!-- Product Links & Documents Section -->
+        <div class="row mt-4">
+          <% if (product.url) { %>
+          <div class="col-md-6 mb-3">
+            <div class="card h-100" style="border-left: 4px solid var(--brand-secondary);">
+              <div class="card-body">
+                <h5 class="card-title"><i class="bi bi-link-45deg" style="color: var(--brand-secondary);"></i> Manufacturer Product Page</h5>
+                <p class="card-text small text-muted mb-2">View official product information, specifications, and ordering details on the manufacturer's website.</p>
+                <a href="<%= product.url %>" target="_blank" class="btn" style="background: var(--brand-secondary); color: white;">
+                  <i class="bi bi-box-arrow-up-right"></i> Visit Product Page
                 </a>
-              <% }); %>
+              </div>
             </div>
           </div>
-        <% } %>
+          <% } %>
 
-        <% if (product.downloadedPDFs && product.downloadedPDFs.length > 0) { %>
-          <div class="mt-4">
-            <h5 class="section-title"><i class="bi bi-download"></i> Downloaded Documents</h5>
-            <div class="list-group">
-              <% product.downloadedPDFs.forEach(function(pdf) { %>
-                <a href="/media/pdfs/<%= pdf.localPath.split(/[/\\]/).pop() %>" target="_blank" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
-                  <span>
-                    <% if (pdf.type === 'datasheet') { %>
-                      <span class="badge bg-info me-2">Datasheet</span>
-                    <% } else if (pdf.type === 'manual') { %>
-                      <span class="badge bg-warning text-dark me-2">Manual</span>
-                    <% } else if (pdf.type === 'brochure') { %>
-                      <span class="badge bg-success me-2">Brochure</span>
-                    <% } else { %>
-                      <span class="badge bg-secondary me-2">Document</span>
-                    <% } %>
-                    <%= pdf.title || 'Download PDF' %>
-                  </span>
-                  <span class="text-muted small">Local</span>
-                </a>
-              <% }); %>
+          <%
+            const hasPdfs = (product.pdfs && product.pdfs.length > 0) || (product.downloadedPDFs && product.downloadedPDFs.length > 0) || product.datasheet;
+            const allPdfs = [];
+            if (product.pdfs) {
+              product.pdfs.forEach(p => allPdfs.push({ ...p, source: 'remote' }));
+            }
+            if (product.downloadedPDFs) {
+              product.downloadedPDFs.forEach(p => allPdfs.push({
+                ...p,
+                url: '/media/pdfs/' + p.localPath.split(/[/\\]/).pop(),
+                source: 'local'
+              }));
+            }
+          %>
+          <% if (hasPdfs) { %>
+          <div class="col-md-6 mb-3">
+            <div class="card h-100" style="border-left: 4px solid var(--brand-primary);">
+              <div class="card-body">
+                <h5 class="card-title"><i class="bi bi-file-earmark-pdf" style="color: var(--brand-primary);"></i> Product Manuals & Documents</h5>
+                <div class="list-group list-group-flush">
+                  <% if (product.datasheet) { %>
+                    <a href="<%= product.datasheet %>" target="_blank" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center px-0">
+                      <span><span class="badge bg-info me-2">Datasheet</span> Official Datasheet</span>
+                      <i class="bi bi-download text-muted"></i>
+                    </a>
+                  <% } %>
+                  <% allPdfs.forEach(function(pdf) { %>
+                    <a href="<%= pdf.url %>" target="_blank" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center px-0">
+                      <span>
+                        <% if (pdf.type === 'datasheet') { %>
+                          <span class="badge bg-info me-2">Datasheet</span>
+                        <% } else if (pdf.type === 'manual') { %>
+                          <span class="badge bg-warning text-dark me-2">Manual</span>
+                        <% } else if (pdf.type === 'brochure') { %>
+                          <span class="badge bg-success me-2">Brochure</span>
+                        <% } else { %>
+                          <span class="badge bg-secondary me-2">Document</span>
+                        <% } %>
+                        <%= pdf.title || 'Product Document' %>
+                      </span>
+                      <i class="bi bi-download text-muted"></i>
+                    </a>
+                  <% }); %>
+                </div>
+              </div>
             </div>
           </div>
-        <% } %>
+          <% } %>
+        </div>
       </div>
     </div>
   </div>
