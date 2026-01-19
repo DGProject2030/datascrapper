@@ -1,27 +1,48 @@
 {
-  "totalRecords": 390,
-  "processedRecords": 390,
+  "totalRecords": 677,
+  "processedRecords": 673,
   "skippedRecords": 0,
-  "missingDataFields": {},
+  "missingDataFields": {
+    "motorPower": {
+      "count": 298,
+      "percentage": "44.0%"
+    },
+    "capacityKg": {
+      "count": 287,
+      "percentage": "42.4%"
+    },
+    "speedMMin": {
+      "count": 305,
+      "percentage": "45.1%"
+    },
+    "liftingSpeed": {
+      "count": 293,
+      "percentage": "43.3%"
+    },
+    "loadCapacity": {
+      "count": 278,
+      "percentage": "41.1%"
+    }
+  },
   "manufacturerStats": {
-    "Columbus McKinnon": 18,
+    "Columbus McKinnon": 203,
     "Konecranes": 17,
-    "Demag": 15,
-    "Harrington Hoists": 2,
-    "ABUS Kransysteme": 26,
+    "Demag": 16,
+    "Harrington Hoists": 3,
+    "ABUS Kransysteme": 27,
     "GIS AG": 1,
     "Verlinde": 19,
     "Chainmaster": 15,
-    "Movecat": 16,
+    "Movecat": 18,
     "Kito": 20,
-    "Hitachi Industrial Equipment": 1,
-    "PLANETA-Hebetechnik": 3,
+    "Hitachi Industrial Equipment": 7,
+    "PLANETA-Hebetechnik": 11,
     "Yale Hoists": 28,
     "Ingersoll Rand": 16,
     "Coffing Hoists": 16,
     "Budgit Hoists": 15,
-    "R&M Materials Handling": 18,
-    "Street Crane": 15,
+    "R&M Materials Handling": 25,
+    "Street Crane": 24,
     "SWF Krantechnik": 21,
     "JDN Monocrane": 2,
     "Elephant Lifting Products": 22,
@@ -29,29 +50,35 @@
     "Tiger Lifting": 23,
     "Nitchi": 2,
     "TXK": 2,
-    "Donati Sollevamenti": 2,
-    "Gorbel": 1,
+    "Donati Sollevamenti": 6,
+    "Gorbel": 8,
     "J.D. Neuhaus": 17,
-    "Stahl CraneSystems": 19
+    "Stahl CraneSystems": 20,
+    "LIFTKET": 3,
+    "Carl Stahl": 1,
+    "Hoist UK": 10,
+    "Prolyft": 2,
+    "JR Clancy": 2,
+    "CHENG DAY": 33
   },
   "capacityDistribution": {
-    "501-1000 kg": 64,
+    "501-1000 kg": 67,
     "251-500 kg": 61,
-    ">2000 kg": 96,
-    "1001-2000 kg": 57,
+    ">2000 kg": 98,
+    "1001-2000 kg": 62,
     "≤250 kg": 95
   },
   "classificationDistribution": {
-    "d8": 149,
-    "d8+": 119,
-    "ansi": 56,
+    "d8": 151,
+    "d8+": 126,
+    "ansi": 58,
     "ce": 80,
     "eu directives compliance": 4,
     "dguv regulation 54": 4,
     "fem 9.511": 4,
     "fem 9.755": 4,
     "din 15020": 4,
-    "bgv-c1": 60,
+    "bgv-c1": 63,
     "jis": 18,
     "atex": 37,
     "iso 3834-2:2021": 1,
@@ -106,8 +133,8 @@
     "dnv": 7
   },
   "processingErrors": [],
-  "localImagesFound": 636,
-  "localImagesMapped": 974,
+  "localImagesFound": 306,
+  "localImagesMapped": 654,
   "qualityGates": {
     "passed": true,
     "failedGates": [],
@@ -115,90 +142,95 @@
       {
         "name": "Minimum Records",
         "threshold": "≥10",
-        "actual": 390,
+        "actual": 677,
         "passed": true,
-        "message": "Database has 390 records"
+        "message": "Database has 677 records"
       },
       {
         "name": "Missing Load Capacity",
         "threshold": "≤80%",
-        "actual": "0.3%",
+        "actual": "41.1%",
         "passed": true,
-        "message": "1 of 390 records missing loadCapacity"
+        "message": "278 of 677 records missing loadCapacity"
       },
       {
         "name": "Missing Lifting Speed",
         "threshold": "≤85%",
-        "actual": "4.1%",
+        "actual": "43.3%",
         "passed": true,
-        "message": "16 of 390 records missing liftingSpeed"
+        "message": "293 of 677 records missing liftingSpeed"
       },
       {
         "name": "Missing Motor Power",
         "threshold": "≤95%",
-        "actual": "2.8%",
+        "actual": "44.0%",
         "passed": true,
-        "message": "11 of 390 records missing motorPower"
+        "message": "298 of 677 records missing motorPower"
       },
       {
         "name": "Missing Classification",
         "threshold": "≤50%",
-        "actual": "4.4%",
+        "actual": "43.4%",
         "passed": true,
-        "message": "17 of 390 records missing classification"
+        "message": "294 of 677 records missing classification"
       },
       {
         "name": "Source Tracking",
         "threshold": "≥90%",
         "actual": "100.0%",
         "passed": true,
-        "message": "390 of 390 records have source tracking"
+        "message": "677 of 677 records have source tracking"
       }
     ],
     "gates": [
       {
         "name": "Minimum Records",
         "threshold": "≥10",
-        "actual": 390,
+        "actual": 677,
         "passed": true,
-        "message": "Database has 390 records"
+        "message": "Database has 677 records"
       },
       {
         "name": "Missing Load Capacity",
         "threshold": "≤80%",
-        "actual": "0.3%",
+        "actual": "41.1%",
         "passed": true,
-        "message": "1 of 390 records missing loadCapacity"
+        "message": "278 of 677 records missing loadCapacity"
       },
       {
         "name": "Missing Lifting Speed",
         "threshold": "≤85%",
-        "actual": "4.1%",
+        "actual": "43.3%",
         "passed": true,
-        "message": "16 of 390 records missing liftingSpeed"
+        "message": "293 of 677 records missing liftingSpeed"
       },
       {
         "name": "Missing Motor Power",
         "threshold": "≤95%",
-        "actual": "2.8%",
+        "actual": "44.0%",
         "passed": true,
-        "message": "11 of 390 records missing motorPower"
+        "message": "298 of 677 records missing motorPower"
       },
       {
         "name": "Missing Classification",
         "threshold": "≤50%",
-        "actual": "4.4%",
+        "actual": "43.4%",
         "passed": true,
-        "message": "17 of 390 records missing classification"
+        "message": "294 of 677 records missing classification"
       },
       {
         "name": "Source Tracking",
         "threshold": "≥90%",
         "actual": "100.0%",
         "passed": true,
-        "message": "390 of 390 records have source tracking"
+        "message": "677 of 677 records have source tracking"
       }
     ],
     "summary": "✓ PASSED: All 6 quality gates passed"
+  },
+  "deduplication": {
+    "beforeCount": 677,
+    "afterCount": 673,
+    "duplicatesRemoved": 4
   }
 }

@@ -72,6 +72,7 @@
     "lodash": "^4.17.21",
     "morgan": "^1.10.0",
     "node-cron": "^3.0.3",
+    "openai": "^6.16.0",
     "pdf-parse": "^1.1.1",
     "pdfkit": "^0.14.0",
     "playwright": "^1.57.0",

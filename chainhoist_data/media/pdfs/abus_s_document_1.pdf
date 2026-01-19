@@ -237,8 +237,7 @@
                         </a>
 
                                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                                                                                    <a class="dropdown-item" href="/contact" target="_self">Overview Contact</a>
-                                
+                                                                                                
                                                                     
                                                                                                                                                 
                                                                                                                 
@@ -750,9 +749,11 @@
                                             </li>
                                     
                                                             
+                                                                                                                            
+                                                
                     
                     <li class="navigation-desktop-main__li">
-                        <a class="navigation-desktop-main__nav-link" href="/contact" target="_self">
+                        <a class="navigation-desktop-main__nav-link" href="/contact/contact-person" target="">
                             Contact
                         </a>
                         <div class="navigation-desktop-main__active">
