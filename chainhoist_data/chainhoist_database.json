@@ -1322,7 +1322,8 @@
         "DNV"
       ],
       "_pdfEnriched": true,
-      "_pdfEnrichedAt": "2026-01-17T18:01:09.933Z"
+      "_pdfEnrichedAt": "2026-01-17T18:01:09.933Z",
+      "weight": "4.000 kg"
     },
     {
       "manufacturer": "ABUS Kransysteme",
@@ -1426,7 +1427,9 @@
       "protectionClass": "IP 55 (GM2-GM8), IP 21 (GMC hoist), IP 65 (pendant control)",
       "_pdfEnriched": true,
       "_pdfEnrichedAt": "2026-01-17T18:01:09.934Z",
-      "motorPower": "0.18 kW"
+      "motorPower": "0.18 kW",
+      "dimensions": "length 3000 mm",
+      "weight": "4000 kg"
     },
     {
       "manufacturer": "ABUS Kransysteme",
@@ -1527,7 +1530,9 @@
         "slipClutch": true
       },
       "protectionClass": "IP 55 (GM2-GM8), IP 21 (GMC hoist), IP 65 (pendant control)",
-      "motorPower": "0.18 kW"
+      "motorPower": "0.18 kW",
+      "dimensions": "length 3000 mm",
+      "weight": "4000 kg"
     },
     {
       "manufacturer": "ABUS Kransysteme",
@@ -1616,8 +1621,8 @@
         "operatingTemperature"
       ],
       "dutyCycle": "FEM groups up to 4m",
-      "weight": "Not specified",
-      "dimensions": "Not specified",
+      "weight": "4000 kg",
+      "dimensions": "length 3000 mm",
       "noiseLevel": "Not specified",
       "brakeType": "DC disk brake with asbestos-free brake linings",
       "chainSpecification": "High-strength, galvanized profile steel chain",
@@ -1694,7 +1699,9 @@
       "llmEnriched": true,
       "llmEnrichedAt": "2026-01-16T08:14:40.591Z",
       "llmProvider": "claude",
-      "motorPower": "0.25 kW"
+      "motorPower": "0.25 kW",
+      "dimensions": "length 3000 mm",
+      "weight": "4000 kg"
     },
     {
       "manufacturer": "ABUS Kransysteme",
@@ -1765,7 +1772,9 @@
       "llmEnriched": true,
       "llmEnrichedAt": "2026-01-16T08:14:44.715Z",
       "llmProvider": "claude",
-      "motorPower": "0.55 kW"
+      "motorPower": "0.55 kW",
+      "dimensions": "length 3000 mm",
+      "weight": "4000 kg"
     },
     {
       "manufacturer": "ABUS Kransysteme",
@@ -1836,7 +1845,9 @@
       "llmEnriched": true,
       "llmEnrichedAt": "2026-01-16T08:14:48.985Z",
       "llmProvider": "claude",
-      "motorPower": "0.55 kW"
+      "motorPower": "0.55 kW",
+      "dimensions": "length 3000 mm",
+      "weight": "4000 kg"
     },
     {
       "manufacturer": "ABUS Kransysteme",
@@ -1907,7 +1918,9 @@
       "llmEnriched": true,
       "llmEnrichedAt": "2026-01-16T08:14:53.241Z",
       "llmProvider": "claude",
-      "motorPower": "1.1 kW"
+      "motorPower": "1.1 kW",
+      "dimensions": "length 3000 mm",
+      "weight": "4000 kg"
     },
     {
       "manufacturer": "ABUS Kransysteme",
@@ -1978,7 +1991,9 @@
       "llmEnriched": true,
       "llmEnrichedAt": "2026-01-16T08:14:57.468Z",
       "llmProvider": "claude",
-      "motorPower": "1.1 kW"
+      "motorPower": "1.1 kW",
+      "dimensions": "length 3000 mm",
+      "weight": "4000 kg"
     },
     {
       "manufacturer": "ABUS Kransysteme",
@@ -2067,8 +2082,8 @@
         "operatingTemperature"
       ],
       "dutyCycle": "FEM groups up to 4m",
-      "weight": "Not specified",
-      "dimensions": "Not specified",
+      "weight": "4000 kg",
+      "dimensions": "length 3000 mm",
       "noiseLevel": "Not specified",
       "brakeType": "DC disk brake with asbestos-free brake linings",
       "chainSpecification": "High-strength, galvanized profile steel chain",
@@ -2309,7 +2324,8 @@
       "operatingTemperature": "-40°C to +400°C (for chains)",
       "_pdfEnriched": true,
       "_pdfEnrichedAt": "2026-01-17T18:01:09.935Z",
-      "motorPower": "0.25-0.37 kW (estimated)"
+      "motorPower": "0.25-0.37 kW (estimated)",
+      "dimensions": "height: 3 m"
     },
     {
       "manufacturer": "Kito",
@@ -2538,7 +2554,8 @@
       "operatingTemperature": "-40°C to +400°C (for chains)",
       "_pdfEnriched": true,
       "_pdfEnrichedAt": "2026-01-17T18:01:09.935Z",
-      "motorPower": "0.25-0.37 kW (estimated)"
+      "motorPower": "0.25-0.37 kW (estimated)",
+      "dimensions": "height: 3 m"
     },
     {
       "manufacturer": "Kito",
@@ -3828,7 +3845,8 @@
       "operatingTemperature": "-40°C to +400°C (for chains)",
       "_pdfEnriched": true,
       "_pdfEnrichedAt": "2026-01-17T18:01:09.936Z",
-      "motorPower": "0.25-0.37 kW (estimated)"
+      "motorPower": "0.25-0.37 kW (estimated)",
+      "dimensions": "height: 3 m"
     },
     {
       "manufacturer": "Yale Hoists",
@@ -4313,7 +4331,9 @@
       "brakeType": "Verschiebeanker-Bremsmotor (Sliding armature brake motor) with adjustable, asbestos-free brake",
       "chainSpecification": "Standard and stainless steel chain options available",
       "_pdfEnriched": true,
-      "_pdfEnrichedAt": "2026-01-17T18:01:09.937Z"
+      "_pdfEnrichedAt": "2026-01-17T18:01:09.937Z",
+      "dimensions": "headroom\n\n     8     CM",
+      "weight": "5.000 kg"
     },
     {
       "manufacturer": "R&M Materials Handling",
@@ -4808,7 +4828,7 @@
       "liftingSpeed": "Not visible",
       "motorPower": "",
       "weight": "Not visible",
-      "dimensions": "Not visible",
+      "dimensions": "headroom\n\n73    \nm",
       "safetyFeatures": [
         "Hook with safety latch",
         "Pendant control for operator safety",
@@ -4961,7 +4981,9 @@
         "Construction",
         "Manufacturing"
       ],
-      "motorPower": "0.18-0.25 kW (estimated)"
+      "motorPower": "0.18-0.25 kW (estimated)",
+      "dimensions": "headroom\n\n73    \nm",
+      "weight": "0.25550250kg"
     },
     {
       "manufacturer": "Elephant Lifting Products",
@@ -5107,7 +5129,9 @@
       "chainSpecification": "Grade 105 galvanized load chain adhering to German DIN 5684 standard, stainless steel chains available for corrosion resistant models",
       "operatingTemperature": "-20°C to +150°C (-4°F to +302°F) for manual hoists, varies by series",
       "_pdfEnriched": true,
-      "_pdfEnrichedAt": "2026-01-17T18:01:09.940Z"
+      "_pdfEnrichedAt": "2026-01-17T18:01:09.940Z",
+      "dimensions": "headroom\n\n73    \nm",
+      "weight": "0.25550250kg"
     },
     {
       "manufacturer": "Elephant Lifting Products",
@@ -5237,7 +5261,9 @@
         "Material handling",
         "Construction",
         "Manufacturing"
-      ]
+      ],
+      "dimensions": "headroom\n\n73    \nm",
+      "weight": "0.25550250kg"
     },
     {
       "manufacturer": "Elephant Lifting Products",
@@ -5367,7 +5393,9 @@
         "Construction",
         "Manufacturing"
       ],
-      "motorPower": "0.18-0.25 kW (estimated)"
+      "motorPower": "0.18-0.25 kW (estimated)",
+      "dimensions": "headroom\n\n73    \nm",
+      "weight": "0.25550250kg"
     },
     {
       "manufacturer": "LiftingSafety",
@@ -6055,7 +6083,8 @@
       "operatingTemperature": "-20°C to +70°C",
       "_pdfEnriched": true,
       "_pdfEnrichedAt": "2026-01-17T18:01:09.941Z",
-      "motorPower": "15+ kW (estimated)"
+      "motorPower": "15+ kW (estimated)",
+      "dimensions": "length - 2.5m"
     },
     {
       "manufacturer": "Tiger Lifting",
@@ -6220,7 +6249,8 @@
       "operatingTemperature": "-20°C to +70°C",
       "_pdfEnriched": true,
       "_pdfEnrichedAt": "2026-01-17T18:01:09.941Z",
-      "motorPower": "15+ kW (estimated)"
+      "motorPower": "15+ kW (estimated)",
+      "dimensions": "length - 2.5m"
     },
     {
       "manufacturer": "Tiger Lifting",
@@ -6394,7 +6424,8 @@
       "operatingTemperature": "-20°C to +70°C",
       "_pdfEnriched": true,
       "_pdfEnrichedAt": "2026-01-17T18:01:09.941Z",
-      "motorPower": "15+ kW (estimated)"
+      "motorPower": "15+ kW (estimated)",
+      "dimensions": "length - 2.5m"
     },
     {
       "id": "columbus-mckinnon-lodestar-classic-250",
@@ -9046,7 +9077,8 @@
       "scrapedAt": "2026-01-17T18:12:31.351Z",
       "confidence": 0.9,
       "createdAt": "2026-01-17T18:12:31.351Z",
-      "lastUpdated": "2026-01-17T18:12:31.351Z"
+      "lastUpdated": "2026-01-17T18:12:31.351Z",
+      "dimensions": "length 3000 mm"
     },
     {
       "id": "abus-abucompact-gm2-250",
@@ -9071,7 +9103,8 @@
       "scrapedAt": "2026-01-17T18:12:31.351Z",
       "confidence": 0.9,
       "createdAt": "2026-01-17T18:12:31.351Z",
-      "lastUpdated": "2026-01-17T18:12:31.351Z"
+      "lastUpdated": "2026-01-17T18:12:31.351Z",
+      "dimensions": "length 3000 mm"
     },
     {
       "id": "abus-abucompact-gm4-250",
@@ -9096,7 +9129,8 @@
       "scrapedAt": "2026-01-17T18:12:31.351Z",
       "confidence": 0.9,
       "createdAt": "2026-01-17T18:12:31.351Z",
-      "lastUpdated": "2026-01-17T18:12:31.351Z"
+      "lastUpdated": "2026-01-17T18:12:31.351Z",
+      "dimensions": "length 3000 mm"
     },
     {
       "id": "abus-abucompact-gm4-500",
@@ -9121,7 +9155,8 @@
       "scrapedAt": "2026-01-17T18:12:31.351Z",
       "confidence": 0.9,
       "createdAt": "2026-01-17T18:12:31.351Z",
-      "lastUpdated": "2026-01-17T18:12:31.351Z"
+      "lastUpdated": "2026-01-17T18:12:31.351Z",
+      "dimensions": "length 3000 mm"
     },
     {
       "id": "abus-abucompact-gm4-800",
@@ -9145,7 +9180,8 @@
       "scrapedAt": "2026-01-17T18:12:31.351Z",
       "confidence": 0.9,
       "createdAt": "2026-01-17T18:12:31.351Z",
-      "lastUpdated": "2026-01-17T18:12:31.351Z"
+      "lastUpdated": "2026-01-17T18:12:31.351Z",
+      "dimensions": "length 3000 mm"
     },
     {
       "id": "abus-abucompact-gm6-500",
@@ -9169,7 +9205,8 @@
       "scrapedAt": "2026-01-17T18:12:31.351Z",
       "confidence": 0.9,
       "createdAt": "2026-01-17T18:12:31.351Z",
-      "lastUpdated": "2026-01-17T18:12:31.351Z"
+      "lastUpdated": "2026-01-17T18:12:31.351Z",
+      "dimensions": "length 3000 mm"
     },
     {
       "id": "abus-abucompact-gm6-1000",
@@ -9193,7 +9230,8 @@
       "scrapedAt": "2026-01-17T18:12:31.351Z",
       "confidence": 0.9,
       "createdAt": "2026-01-17T18:12:31.351Z",
-      "lastUpdated": "2026-01-17T18:12:31.351Z"
+      "lastUpdated": "2026-01-17T18:12:31.351Z",
+      "dimensions": "length 3000 mm"
     },
     {
       "id": "abus-abucompact-gm6-1600",
@@ -9217,7 +9255,8 @@
       "scrapedAt": "2026-01-17T18:12:31.351Z",
       "confidence": 0.9,
       "createdAt": "2026-01-17T18:12:31.351Z",
-      "lastUpdated": "2026-01-17T18:12:31.351Z"
+      "lastUpdated": "2026-01-17T18:12:31.351Z",
+      "dimensions": "length 3000 mm"
     },
     {
       "id": "abus-abucompact-gm8-1000",
@@ -9241,7 +9280,8 @@
       "scrapedAt": "2026-01-17T18:12:31.351Z",
       "confidence": 0.9,
       "createdAt": "2026-01-17T18:12:31.351Z",
-      "lastUpdated": "2026-01-17T18:12:31.351Z"
+      "lastUpdated": "2026-01-17T18:12:31.351Z",
+      "dimensions": "length 3000 mm"
     },
     {
       "id": "abus-abucompact-gm8-2000",
@@ -9265,7 +9305,8 @@
       "scrapedAt": "2026-01-17T18:12:31.351Z",
       "confidence": 0.9,
       "createdAt": "2026-01-17T18:12:31.351Z",
-      "lastUpdated": "2026-01-17T18:12:31.351Z"
+      "lastUpdated": "2026-01-17T18:12:31.351Z",
+      "dimensions": "length 3000 mm"
     },
     {
       "id": "abus-abucompact-gm8-3200",
@@ -9289,7 +9330,8 @@
       "scrapedAt": "2026-01-17T18:12:31.351Z",
       "confidence": 0.9,
       "createdAt": "2026-01-17T18:12:31.351Z",
-      "lastUpdated": "2026-01-17T18:12:31.351Z"
+      "lastUpdated": "2026-01-17T18:12:31.351Z",
+      "dimensions": "length 3000 mm"
     },
     {
       "id": "abus-abucompact-gmc-2000",
@@ -9313,7 +9355,8 @@
       "scrapedAt": "2026-01-17T18:12:31.351Z",
       "confidence": 0.9,
       "createdAt": "2026-01-17T18:12:31.351Z",
-      "lastUpdated": "2026-01-17T18:12:31.351Z"
+      "lastUpdated": "2026-01-17T18:12:31.351Z",
+      "dimensions": "length 3000 mm"
     },
     {
       "id": "abus-abucompact-gmc-3200",
@@ -9337,7 +9380,8 @@
       "scrapedAt": "2026-01-17T18:12:31.351Z",
       "confidence": 0.9,
       "createdAt": "2026-01-17T18:12:31.351Z",
-      "lastUpdated": "2026-01-17T18:12:31.351Z"
+      "lastUpdated": "2026-01-17T18:12:31.351Z",
+      "dimensions": "length 3000 mm"
     },
     {
       "id": "abus-abucompact-gmc-5000",
@@ -9361,7 +9405,8 @@
       "scrapedAt": "2026-01-17T18:12:31.351Z",
       "confidence": 0.9,
       "createdAt": "2026-01-17T18:12:31.351Z",
-      "lastUpdated": "2026-01-17T18:12:31.351Z"
+      "lastUpdated": "2026-01-17T18:12:31.351Z",
+      "dimensions": "length 3000 mm"
     },
     {
       "id": "abus-abucompact-gmc-6300",
@@ -9385,7 +9430,8 @@
       "scrapedAt": "2026-01-17T18:12:31.351Z",
       "confidence": 0.9,
       "createdAt": "2026-01-17T18:12:31.351Z",
-      "lastUpdated": "2026-01-17T18:12:31.351Z"
+      "lastUpdated": "2026-01-17T18:12:31.351Z",
+      "dimensions": "length 3000 mm"
     },
     {
       "id": "donati-drh",
@@ -16705,7 +16751,8 @@
           "title": "Manual Hoist Catalog",
           "localPath": "chainhoist_data\\media\\pdfs\\harrington_products_manual_1.pdf"
         }
-      ]
+      ],
+      "weight": "15kg"
     },
     {
       "model": "VMK-S",
@@ -16855,7 +16902,8 @@
           "url": "https://www.youtube.com/watch?v=HAqArV9VW5E",
           "embed": "https://www.youtube.com/embed/HAqArV9VW5E"
         }
-      ]
+      ],
+      "weight": "4.000 kg"
     },
     {
       "manufacturer": "Donati Sollevamenti",
@@ -16930,7 +16978,8 @@
       ],
       "id": "donati-donati-lifting-designer",
       "createdAt": "2026-01-19T10:50:08.808Z",
-      "lastUpdated": "2026-01-19T11:54:52.967Z"
+      "lastUpdated": "2026-01-19T11:54:52.967Z",
+      "weight": "4.000 kg"
     },
     {
       "manufacturer": "PLANETA-Hebetechnik",
@@ -17620,7 +17669,8 @@
       ],
       "id": "gorbel-free-standing-bridge-crane",
       "createdAt": "2026-01-19T10:51:18.733Z",
-      "lastUpdated": "2026-01-19T11:56:23.657Z"
+      "lastUpdated": "2026-01-19T11:56:23.657Z",
+      "weight": "000 lbs"
     },
     {
       "manufacturer": "Gorbel",
@@ -17780,7 +17830,8 @@
       ],
       "id": "gorbel-ceiling-mounted-bridge-crane",
       "createdAt": "2026-01-19T10:51:18.733Z",
-      "lastUpdated": "2026-01-19T11:56:23.657Z"
+      "lastUpdated": "2026-01-19T11:56:23.657Z",
+      "weight": "000 lbs"
     },
     {
       "manufacturer": "Gorbel",
@@ -17925,7 +17976,8 @@
       ],
       "id": "gorbel-monorails",
       "createdAt": "2026-01-19T10:51:18.733Z",
-      "lastUpdated": "2026-01-19T11:56:23.657Z"
+      "lastUpdated": "2026-01-19T11:56:23.657Z",
+      "weight": "000 lbs"
     },
     {
       "manufacturer": "R&M Materials Handling",
@@ -18446,7 +18498,9 @@
       "rawSpecifications": {},
       "id": "hoist-uk--buy-british-range",
       "createdAt": "2026-01-19T11:01:28.455Z",
-      "lastUpdated": "2026-01-19T12:06:49.508Z"
+      "lastUpdated": "2026-01-19T12:06:49.508Z",
+      "weight": "000 kg",
+      "dimensions": "Width :                         36 mm"
     },
     {
       "manufacturer": "Hoist UK",
@@ -18480,7 +18534,9 @@
       ],
       "id": "hoist-uk-s-3-phase-",
       "createdAt": "2026-01-19T11:01:28.455Z",
-      "lastUpdated": "2026-01-19T12:06:49.508Z"
+      "lastUpdated": "2026-01-19T12:06:49.508Z",
+      "weight": "000 kg",
+      "dimensions": "Width :                         36 mm"
     },
     {
       "manufacturer": "Hoist UK",
@@ -18514,7 +18570,9 @@
       ],
       "id": "hoist-uk-electric-wire-rope-hoists",
       "createdAt": "2026-01-19T11:01:28.455Z",
-      "lastUpdated": "2026-01-19T12:06:49.508Z"
+      "lastUpdated": "2026-01-19T12:06:49.508Z",
+      "weight": "000 kg",
+      "dimensions": "Width :                         36 mm"
     },
     {
       "manufacturer": "Hoist UK",
@@ -18540,7 +18598,9 @@
       ],
       "id": "hoist-uk-electric-winches",
       "createdAt": "2026-01-19T11:01:28.455Z",
-      "lastUpdated": "2026-01-19T12:06:49.508Z"
+      "lastUpdated": "2026-01-19T12:06:49.508Z",
+      "weight": "000 kg",
+      "dimensions": "Width :                         36 mm"
     },
     {
       "manufacturer": "Hoist UK",
@@ -18588,7 +18648,9 @@
       ],
       "id": "hoist-uk-eurolift-bh-electric-belt-hoists-bh1-bh2-bh5-",
       "createdAt": "2026-01-19T11:01:28.455Z",
-      "lastUpdated": "2026-01-19T12:06:49.508Z"
+      "lastUpdated": "2026-01-19T12:06:49.508Z",
+      "weight": "000 kg",
+      "dimensions": "Width :                         36 mm"
     },
     {
       "manufacturer": "Hoist UK",
@@ -18622,7 +18684,9 @@
       ],
       "id": "hoist-uk-eurobloc-vf-electric-fibre-rope-hoist",
       "createdAt": "2026-01-19T11:01:28.455Z",
-      "lastUpdated": "2026-01-19T12:06:49.509Z"
+      "lastUpdated": "2026-01-19T12:06:49.509Z",
+      "weight": "000 kg",
+      "dimensions": "Width :                         36 mm"
     },
     {
       "manufacturer": "Hoist UK",
@@ -18648,7 +18712,9 @@
       ],
       "id": "hoist-uk-clean-room-hygienic-and-pharmaceutical-lifting-and",
       "createdAt": "2026-01-19T11:01:28.456Z",
-      "lastUpdated": "2026-01-19T12:06:49.509Z"
+      "lastUpdated": "2026-01-19T12:06:49.509Z",
+      "weight": "000 kg",
+      "dimensions": "Width :                         36 mm"
     },
     {
       "manufacturer": "Hoist UK",
@@ -18674,7 +18740,9 @@
       ],
       "id": "hoist-uk-s-clean-room",
       "createdAt": "2026-01-19T11:01:28.456Z",
-      "lastUpdated": "2026-01-19T12:06:49.509Z"
+      "lastUpdated": "2026-01-19T12:06:49.509Z",
+      "weight": "000 kg",
+      "dimensions": "Width :                         36 mm"
     },
     {
       "model": "Aetos",
@@ -19325,7 +19393,9 @@
       ],
       "id": "abus-s",
       "createdAt": "2026-01-19T11:51:39.943Z",
-      "lastUpdated": "2026-01-19T11:51:39.944Z"
+      "lastUpdated": "2026-01-19T11:51:39.944Z",
+      "dimensions": "length 3000 mm",
+      "weight": "4000 kg"
     },
     {
       "manufacturer": "Hitachi Industrial Equipment",
@@ -20196,7 +20266,8 @@
         "url": "https://www.prolyft.com/products/hoists",
         "error": "read ECONNRESET"
       }
-    ]
+    ],
+    "pdfExtractedAt": "2026-01-19T12:27:01.879Z"
   },
   "scrapedAt": "2026-01-19T12:07:31.008Z",
   "version": "3.0"
