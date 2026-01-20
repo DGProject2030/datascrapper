@@ -12,3 +12,4 @@ env:
     secret: SESSION_SECRET
   - variable: NODE_ENV
     value: production
+
