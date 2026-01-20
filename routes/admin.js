@@ -17,16 +17,13 @@ function stripAnsi(str) {
   return str.replace(ANSI_REGEX, '');
 }
 
-// Admin password from environment (required)
-const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD;
-
-if (!ADMIN_PASSWORD) {
-  console.warn('[WARN] ADMIN_PASSWORD not set - admin panel will be disabled');
+// Auth middleware - reads password at request time for flexibility
+function getAdminPassword() {
+  return process.env.ADMIN_PASSWORD;
 }
 
-// Auth middleware
 function requireAuth(req, res, next) {
-  if (!ADMIN_PASSWORD) {
+  if (!getAdminPassword()) {
     return res.status(503).render('admin/disabled');
   }
   if (req.session && req.session.isAdmin) {
@@ -37,7 +34,7 @@ function requireAuth(req, res, next) {
 
 // Login page
 router.get('/login', (req, res) => {
-  if (!ADMIN_PASSWORD) {
+  if (!getAdminPassword()) {
     return res.status(503).render('admin/disabled');
   }
   res.render('admin/login', { error: null });
@@ -45,13 +42,13 @@ router.get('/login', (req, res) => {
 
 // Login handler
 router.post('/login', (req, res) => {
-  if (!ADMIN_PASSWORD) {
+  if (!getAdminPassword()) {
     return res.status(503).render('admin/disabled');
   }
 
   const { password } = req.body;
 
-  if (password === ADMIN_PASSWORD) {
+  if (password === getAdminPassword()) {
     req.session.isAdmin = true;
     req.session.loginTime = new Date().toISOString();
     res.redirect('/admin');
