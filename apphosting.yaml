@@ -4,3 +4,11 @@ runConfig:
   minInstances: 0
   maxInstances: 2
   concurrency: 80
+
+env:
+  - variable: ADMIN_PASSWORD
+    secret: ADMIN_PASSWORD
+  - variable: SESSION_SECRET
+    secret: SESSION_SECRET
+  - variable: NODE_ENV
+    value: production
