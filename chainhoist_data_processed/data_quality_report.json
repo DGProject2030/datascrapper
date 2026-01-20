@@ -1,27 +1,10 @@
 {
-  "totalRecords": 659,
-  "processedRecords": 655,
+  "totalRecords": 501,
+  "processedRecords": 501,
   "skippedRecords": 0,
-  "missingDataFields": {
-    "motorPower": {
-      "count": 281,
-      "percentage": "42.6%"
-    },
-    "capacityKg": {
-      "count": 270,
-      "percentage": "41.0%"
-    },
-    "speedMMin": {
-      "count": 288,
-      "percentage": "43.7%"
-    },
-    "liftingSpeed": {
-      "count": 278,
-      "percentage": "42.2%"
-    }
-  },
+  "missingDataFields": {},
   "manufacturerStats": {
-    "Columbus McKinnon": 203,
+    "Columbus McKinnon": 49,
     "Konecranes": 17,
     "Demag": 16,
     "Harrington Hoists": 3,
@@ -129,8 +112,8 @@
     "dnv": 7
   },
   "processingErrors": [],
-  "localImagesFound": 306,
-  "localImagesMapped": 558,
+  "localImagesFound": 362,
+  "localImagesMapped": 810,
   "qualityGates": {
     "passed": true,
     "failedGates": [],
@@ -138,95 +121,95 @@
       {
         "name": "Minimum Records",
         "threshold": "≥10",
-        "actual": 659,
+        "actual": 501,
         "passed": true,
-        "message": "Database has 659 records"
+        "message": "Database has 501 records"
       },
       {
         "name": "Missing Load Capacity",
         "threshold": "≤80%",
-        "actual": "39.9%",
+        "actual": "21.0%",
         "passed": true,
-        "message": "263 of 659 records missing loadCapacity"
+        "message": "105 of 501 records missing loadCapacity"
       },
       {
         "name": "Missing Lifting Speed",
         "threshold": "≤85%",
-        "actual": "42.2%",
+        "actual": "24.0%",
         "passed": true,
-        "message": "278 of 659 records missing liftingSpeed"
+        "message": "120 of 501 records missing liftingSpeed"
       },
       {
         "name": "Missing Motor Power",
         "threshold": "≤95%",
-        "actual": "42.6%",
+        "actual": "24.6%",
         "passed": true,
-        "message": "281 of 659 records missing motorPower"
+        "message": "123 of 501 records missing motorPower"
       },
       {
         "name": "Missing Classification",
         "threshold": "≤50%",
-        "actual": "42.0%",
+        "actual": "23.8%",
         "passed": true,
-        "message": "277 of 659 records missing classification"
+        "message": "119 of 501 records missing classification"
       },
       {
         "name": "Source Tracking",
         "threshold": "≥90%",
         "actual": "100.0%",
         "passed": true,
-        "message": "659 of 659 records have source tracking"
+        "message": "501 of 501 records have source tracking"
       }
     ],
     "gates": [
       {
         "name": "Minimum Records",
         "threshold": "≥10",
-        "actual": 659,
+        "actual": 501,
         "passed": true,
-        "message": "Database has 659 records"
+        "message": "Database has 501 records"
       },
       {
         "name": "Missing Load Capacity",
         "threshold": "≤80%",
-        "actual": "39.9%",
+        "actual": "21.0%",
         "passed": true,
-        "message": "263 of 659 records missing loadCapacity"
+        "message": "105 of 501 records missing loadCapacity"
       },
       {
         "name": "Missing Lifting Speed",
         "threshold": "≤85%",
-        "actual": "42.2%",
+        "actual": "24.0%",
         "passed": true,
-        "message": "278 of 659 records missing liftingSpeed"
+        "message": "120 of 501 records missing liftingSpeed"
       },
       {
         "name": "Missing Motor Power",
         "threshold": "≤95%",
-        "actual": "42.6%",
+        "actual": "24.6%",
         "passed": true,
-        "message": "281 of 659 records missing motorPower"
+        "message": "123 of 501 records missing motorPower"
       },
       {
         "name": "Missing Classification",
         "threshold": "≤50%",
-        "actual": "42.0%",
+        "actual": "23.8%",
         "passed": true,
-        "message": "277 of 659 records missing classification"
+        "message": "119 of 501 records missing classification"
       },
       {
         "name": "Source Tracking",
         "threshold": "≥90%",
         "actual": "100.0%",
         "passed": true,
-        "message": "659 of 659 records have source tracking"
+        "message": "501 of 501 records have source tracking"
       }
     ],
     "summary": "✓ PASSED: All 6 quality gates passed"
   },
   "deduplication": {
-    "beforeCount": 659,
-    "afterCount": 655,
-    "duplicatesRemoved": 4
+    "beforeCount": 501,
+    "afterCount": 501,
+    "duplicatesRemoved": 0
   }
 }
