@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Disabled - Chainhoist Database</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .card {
+      background: rgba(255,255,255,0.95);
+      border-radius: 16px;
+      padding: 2.5rem;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+      max-width: 500px;
+      text-align: center;
+    }
+    .icon { font-size: 4rem; color: #dc3545; }
+    code {
+      background: #f8f9fa;
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="icon">&#128274;</div>
+    <h2 class="mt-3">Admin Panel Disabled</h2>
+    <p class="text-muted">The admin panel is not configured.</p>
+    <hr>
+    <p class="small text-start">To enable, set the <code>ADMIN_PASSWORD</code> environment variable:</p>
+    <pre class="text-start bg-light p-3 rounded small">ADMIN_PASSWORD=your-secure-password</pre>
+    <a href="/" class="btn btn-outline-dark mt-3">Back to Database</a>
+  </div>
+</body>
+</html>

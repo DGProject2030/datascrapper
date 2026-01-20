@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Login - Chainhoist Database</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .login-card {
+      background: rgba(255,255,255,0.95);
+      border-radius: 16px;
+      padding: 2.5rem;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+      max-width: 400px;
+      width: 100%;
+    }
+    .login-card h1 {
+      font-size: 1.5rem;
+      color: #1a1a2e;
+      margin-bottom: 0.5rem;
+    }
+    .login-card .subtitle {
+      color: #666;
+      font-size: 0.9rem;
+      margin-bottom: 2rem;
+    }
+    .form-control:focus {
+      border-color: #ffc107;
+      box-shadow: 0 0 0 0.2rem rgba(255,193,7,0.25);
+    }
+    .btn-warning {
+      padding: 0.75rem 2rem;
+      font-weight: 600;
+    }
+    .error-msg {
+      background: #f8d7da;
+      color: #721c24;
+      padding: 0.75rem 1rem;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-card">
+    <h1>Maintenance Admin</h1>
+    <p class="subtitle">Chainhoist Database Management</p>
+
+    <% if (error) { %>
+      <div class="error-msg"><%= error %></div>
+    <% } %>
+
+    <form method="POST" action="/admin/login">
+      <div class="mb-4">
+        <label for="password" class="form-label">Admin Password</label>
+        <input type="password" class="form-control form-control-lg" id="password" name="password" required autofocus>
+      </div>
+      <button type="submit" class="btn btn-warning btn-lg w-100">Login</button>
+    </form>
+
+    <p class="text-center mt-4 mb-0">
+      <a href="/" class="text-muted">Back to Database</a>
+    </p>
+  </div>
+</body>
+</html>

@@ -2,8 +2,12 @@
 // Exports the Express app for testing and server startup
 
 const express = require('express');
+const session = require('express-session');
 const fs = require('fs');
 const path = require('path');
+
+// Load environment variables
+require('dotenv').config();
 
 // Schema validation
 const {
@@ -33,6 +37,22 @@ app.use(express.static('public'));
 app.use('/media', express.static(path.join(__dirname, 'chainhoist_data', 'media')));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
+// Session middleware for admin panel
+app.use(session({
+  secret: process.env.SESSION_SECRET || 'chainhoist-db-session-secret-change-me',
+  resave: false,
+  saveUninitialized: false,
+  cookie: {
+    secure: process.env.NODE_ENV === 'production',
+    httpOnly: true,
+    maxAge: 24 * 60 * 60 * 1000 // 24 hours
+  }
+}));
+
+// Admin routes (password protected)
+const adminRoutes = require('./routes/admin');
+app.use('/admin', adminRoutes);
 
 // ============ CACHING LAYER ============
 const cache = {

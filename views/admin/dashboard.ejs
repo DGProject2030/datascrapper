@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard - Chainhoist Database</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    body { background: #f5f6fa; }
+    .navbar { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); }
+    .stat-card {
+      background: white;
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+      height: 100%;
+    }
+    .stat-card .number {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #1a1a2e;
+    }
+    .stat-card .label {
+      color: #666;
+      font-size: 0.9rem;
+    }
+    .task-card {
+      background: white;
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+      margin-bottom: 1rem;
+    }
+    .task-btn {
+      min-width: 120px;
+    }
+    .output-box {
+      background: #1a1a2e;
+      color: #0f0;
+      font-family: 'Courier New', monospace;
+      font-size: 0.85rem;
+      padding: 1rem;
+      border-radius: 8px;
+      max-height: 400px;
+      overflow-y: auto;
+      white-space: pre-wrap;
+      display: none;
+    }
+    .output-box.show { display: block; }
+    .backup-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .backup-list li {
+      padding: 0.5rem 0;
+      border-bottom: 1px solid #eee;
+      display: flex;
+      justify-content: space-between;
+    }
+    .backup-list li:last-child { border-bottom: none; }
+    .spinner-border-sm { width: 1rem; height: 1rem; }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-dark mb-4">
+    <div class="container">
+      <span class="navbar-brand">
+        <i class="bi bi-gear-fill me-2"></i>Maintenance Dashboard
+      </span>
+      <div class="d-flex align-items-center">
+        <span class="text-light me-3 small">Logged in</span>
+        <a href="/admin/logout" class="btn btn-outline-light btn-sm">Logout</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <% if (typeof error !== 'undefined' && error) { %>
+      <div class="alert alert-danger"><%= error %></div>
+    <% } %>
+
+    <!-- Stats Row -->
+    <% if (stats) { %>
+    <div class="row g-3 mb-4">
+      <div class="col-md-2">
+        <div class="stat-card text-center">
+          <div class="number"><%= stats.total %></div>
+          <div class="label">Products</div>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="stat-card text-center">
+          <div class="number"><%= stats.manufacturers %></div>
+          <div class="label">Manufacturers</div>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="stat-card text-center">
+          <div class="number"><%= Math.round(stats.withCapacity / stats.total * 100) %>%</div>
+          <div class="label">Has Capacity</div>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="stat-card text-center">
+          <div class="number"><%= Math.round(stats.withImages / stats.total * 100) %>%</div>
+          <div class="label">Has Images</div>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="stat-card text-center">
+          <div class="number"><%= Math.round(stats.withPdfs / stats.total * 100) %>%</div>
+          <div class="label">Has PDFs</div>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="stat-card text-center">
+          <div class="number"><%= backups.length %></div>
+          <div class="label">Backups</div>
+        </div>
+      </div>
+    </div>
+    <% } %>
+
+    <div class="row">
+      <!-- Tasks Column -->
+      <div class="col-lg-8">
+        <div class="task-card">
+          <h5 class="mb-3"><i class="bi bi-clipboard-check me-2"></i>Reports</h5>
+          <div class="d-flex flex-wrap gap-2">
+            <button class="btn btn-outline-primary task-btn" onclick="runTask('report:health')">
+              <i class="bi bi-heart-pulse me-1"></i>Health
+            </button>
+            <button class="btn btn-outline-primary task-btn" onclick="runTask('report:stats')">
+              <i class="bi bi-bar-chart me-1"></i>Stats
+            </button>
+            <button class="btn btn-outline-primary task-btn" onclick="runTask('report:missing')">
+              <i class="bi bi-search me-1"></i>Missing
+            </button>
+          </div>
+        </div>
+
+        <div class="task-card">
+          <h5 class="mb-3"><i class="bi bi-search me-2"></i>Cleanup (Dry Run)</h5>
+          <div class="d-flex flex-wrap gap-2">
+            <button class="btn btn-outline-warning task-btn" onclick="runTask('cleanup:duplicates')">
+              <i class="bi bi-files me-1"></i>Duplicates
+            </button>
+            <button class="btn btn-outline-warning task-btn" onclick="runTask('cleanup:empty')">
+              <i class="bi bi-file-earmark-x me-1"></i>Empty
+            </button>
+            <button class="btn btn-outline-warning task-btn" onclick="runTask('cleanup:stale')">
+              <i class="bi bi-clock-history me-1"></i>Stale
+            </button>
+            <button class="btn btn-outline-warning task-btn" onclick="runTask('cleanup:invalid')">
+              <i class="bi bi-exclamation-triangle me-1"></i>Invalid
+            </button>
+          </div>
+        </div>
+
+        <div class="task-card">
+          <h5 class="mb-3"><i class="bi bi-wrench me-2"></i>Maintenance</h5>
+          <div class="d-flex flex-wrap gap-2">
+            <button class="btn btn-outline-success task-btn" onclick="runTask('maintain:backup')">
+              <i class="bi bi-download me-1"></i>Backup
+            </button>
+            <button class="btn btn-outline-success task-btn" onclick="runTask('maintain:process')">
+              <i class="bi bi-arrow-repeat me-1"></i>Process
+            </button>
+          </div>
+        </div>
+
+        <div class="task-card">
+          <h5 class="mb-3"><i class="bi bi-trash me-2"></i>Apply Cleanup (Destructive)</h5>
+          <p class="text-muted small mb-3">These operations will permanently remove data. A backup is created automatically.</p>
+          <div class="d-flex flex-wrap gap-2">
+            <button class="btn btn-danger task-btn" onclick="runCleanup('cleanup:empty')">
+              <i class="bi bi-trash me-1"></i>Remove Empty
+            </button>
+            <button class="btn btn-danger task-btn" onclick="runCleanup('cleanup:invalid')">
+              <i class="bi bi-trash me-1"></i>Remove Invalid
+            </button>
+          </div>
+        </div>
+
+        <!-- Output Area -->
+        <div class="task-card">
+          <div class="d-flex justify-content-between align-items-center mb-2">
+            <h5 class="mb-0"><i class="bi bi-terminal me-2"></i>Output</h5>
+            <button class="btn btn-sm btn-outline-secondary" onclick="clearOutput()">Clear</button>
+          </div>
+          <div id="output" class="output-box"></div>
+        </div>
+      </div>
+
+      <!-- Backups Column -->
+      <div class="col-lg-4">
+        <div class="task-card">
+          <h5 class="mb-3"><i class="bi bi-archive me-2"></i>Recent Backups</h5>
+          <% if (backups.length > 0) { %>
+            <ul class="backup-list">
+              <% backups.forEach(b => { %>
+                <li>
+                  <span><%= b.date %></span>
+                  <span class="text-muted"><%= b.size %></span>
+                </li>
+              <% }) %>
+            </ul>
+          <% } else { %>
+            <p class="text-muted mb-0">No backups yet</p>
+          <% } %>
+        </div>
+
+        <div class="task-card">
+          <h5 class="mb-3"><i class="bi bi-info-circle me-2"></i>Quick Links</h5>
+          <div class="d-grid gap-2">
+            <a href="/" class="btn btn-outline-dark">
+              <i class="bi bi-house me-1"></i>View Database
+            </a>
+            <a href="/stats" class="btn btn-outline-dark">
+              <i class="bi bi-graph-up me-1"></i>Statistics Page
+            </a>
+            <a href="/search" class="btn btn-outline-dark">
+              <i class="bi bi-search me-1"></i>Search Products
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const outputBox = document.getElementById('output');
+
+    function showOutput(text) {
+      outputBox.classList.add('show');
+      outputBox.textContent = text;
+      outputBox.scrollTop = outputBox.scrollHeight;
+    }
+
+    function clearOutput() {
+      outputBox.classList.remove('show');
+      outputBox.textContent = '';
+    }
+
+    async function runTask(task) {
+      const btn = event.target.closest('button');
+      const originalText = btn.innerHTML;
+      btn.disabled = true;
+      btn.innerHTML = '<span class="spinner-border spinner-border-sm me-1"></span>Running...';
+
+      try {
+        const res = await fetch('/admin/api/run-task', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ task })
+        });
+        const data = await res.json();
+        showOutput(data.output || data.error || 'No output');
+      } catch (err) {
+        showOutput('Error: ' + err.message);
+      } finally {
+        btn.disabled = false;
+        btn.innerHTML = originalText;
+      }
+    }
+
+    async function runCleanup(task) {
+      if (!confirm('This will permanently delete data. Are you sure?')) return;
+      if (!confirm('A backup will be created. Continue?')) return;
+
+      const btn = event.target.closest('button');
+      const originalText = btn.innerHTML;
+      btn.disabled = true;
+      btn.innerHTML = '<span class="spinner-border spinner-border-sm me-1"></span>Running...';
+
+      try {
+        const res = await fetch('/admin/api/cleanup', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ task, confirm: 'CONFIRM' })
+        });
+        const data = await res.json();
+        showOutput(data.output || data.error || 'No output');
+        if (data.success) {
+          setTimeout(() => location.reload(), 2000);
+        }
+      } catch (err) {
+        showOutput('Error: ' + err.message);
+      } finally {
+        btn.disabled = false;
+        btn.innerHTML = originalText;
+      }
+    }
+  </script>
+</body>
+</html>
