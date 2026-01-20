@@ -1,8 +1,10 @@
-// Enhanced Electric Chainhoist Data Scraper v3.1
+// Enhanced Electric Chainhoist Data Scraper v3.2
 // Scrapes real data from manufacturer websites including images, videos, PDFs
 // Now with LLM-powered data extraction using Google Gemini
+// Added: Scrape validation to filter out non-hoist and non-product data
 
 const axios = require('axios');
+const { validateProduct } = require('./scrape-validator');
 const cheerio = require('cheerio');
 const fs = require('fs/promises');
 const fsSync = require('fs');
@@ -1630,6 +1632,14 @@ class EnhancedScraper {
   }
 
   addProduct(product, manufacturer) {
+    // Validate product before adding
+    const validation = validateProduct(product, { strict: false, logWarnings: false });
+    if (!validation.valid) {
+      logger.debug(`Skipped (validation): ${product.manufacturer} - ${product.model}: ${validation.reasons.join(', ')}`);
+      this.stats.skippedProducts = (this.stats.skippedProducts || 0) + 1;
+      return false;
+    }
+
     // Generate ID
     const id = `${manufacturer.id}-${this.sanitizeFilename(product.model)}`.toLowerCase();
 
@@ -1650,6 +1660,7 @@ class EnhancedScraper {
       this.stats.totalProducts++;
       logger.info(`Added: ${product.manufacturer} ${product.model}`);
     }
+    return true;
   }
 
   sanitizeFilename(name) {

@@ -576,6 +576,69 @@ async function cleanupStale(dryRun = true) {
   return { found: staleRecords.length, records: staleRecords };
 }
 
+async function cleanupInvalid(dryRun = true) {
+  console.log(c('bright', `\n=== Find Non-Hoist/Invalid Records ${dryRun ? '(DRY RUN)' : ''} ===\n`));
+
+  const { validateProduct } = require('./scrape-validator');
+  const data = loadDatabase();
+
+  const invalidRecords = [];
+  for (const p of data) {
+    const result = validateProduct(p, { strict: false, logWarnings: false });
+    if (!result.valid) {
+      invalidRecords.push({ product: p, reasons: result.reasons });
+    }
+  }
+
+  if (invalidRecords.length === 0) {
+    console.log(c('green', 'No invalid records found. All products are valid hoists/winches/trolleys/jacks.'));
+    return { found: 0 };
+  }
+
+  console.log(c('yellow', `Found ${invalidRecords.length} invalid records:\n`));
+
+  // Group by reason
+  const byReason = {};
+  for (const { product, reasons } of invalidRecords) {
+    const mainReason = reasons[0] || 'Unknown';
+    if (!byReason[mainReason]) {
+      byReason[mainReason] = [];
+    }
+    byReason[mainReason].push(product);
+  }
+
+  for (const [reason, products] of Object.entries(byReason).slice(0, 5)) {
+    console.log(c('cyan', `  ${reason}:`));
+    for (const p of products.slice(0, 3)) {
+      console.log(`    - ${p.manufacturer}: ${p.model}`);
+    }
+    if (products.length > 3) {
+      console.log(c('dim', `    ... and ${products.length - 3} more`));
+    }
+  }
+
+  if (!dryRun) {
+    await createBackup();
+
+    const confirm = await prompt(`\nRemove ${invalidRecords.length} invalid records? (yes/no): `);
+    if (confirm.toLowerCase() !== 'yes') {
+      console.log(c('yellow', 'Cancelled.'));
+      return { found: invalidRecords.length, removed: 0 };
+    }
+
+    const idsToRemove = new Set(invalidRecords.map(r => r.product.id));
+    const newData = data.filter(p => !idsToRemove.has(p.id));
+    saveDatabase(newData);
+
+    console.log(c('green', `Removed ${invalidRecords.length} invalid records.`));
+    return { found: invalidRecords.length, removed: invalidRecords.length };
+  }
+
+  console.log(c('dim', '\nRun with --apply to remove these records.'));
+  console.log('');
+  return { found: invalidRecords.length, records: invalidRecords };
+}
+
 // ===================== SCRAPING TASKS =====================
 
 async function scrapeImages(options = {}) {
@@ -716,6 +779,7 @@ async function showMenu() {
   console.log('    2.1 Find duplicates');
   console.log('    2.2 Find empty records');
   console.log('    2.3 Find stale records');
+  console.log('    2.4 Find non-hoist items');
 
   console.log(c('cyan', '\n[3] Scraping'));
   console.log('    3.1 Scrape missing images');
@@ -739,6 +803,7 @@ async function showMenu() {
   case '2': case '2.1': await cleanupDuplicates(true); break;
   case '2.2': await cleanupEmpty(true); break;
   case '2.3': await cleanupStale(true); break;
+  case '2.4': await cleanupInvalid(true); break;
   case '3': case '3.1': await scrapeImages({ dryRun: true }); break;
   case '4': case '4.1': await runProcessor(); break;
   case '4.2': await createBackup(); break;
@@ -797,6 +862,7 @@ function listTasks() {
     ['cleanup:duplicates', 'Find duplicate records'],
     ['cleanup:empty', 'Find empty records'],
     ['cleanup:stale', 'Find stale records'],
+    ['cleanup:invalid', 'Find non-hoist/invalid records'],
     ['scrape:images', 'Scrape missing images'],
     ['maintain:process', 'Run data processor'],
     ['maintain:backup', 'Create backup'],
@@ -819,6 +885,7 @@ async function runTask(task, options) {
   case 'cleanup:duplicates': return cleanupDuplicates(dryRun);
   case 'cleanup:empty': return cleanupEmpty(dryRun);
   case 'cleanup:stale': return cleanupStale(dryRun);
+  case 'cleanup:invalid': return cleanupInvalid(dryRun);
   case 'scrape:images': return scrapeImages({ dryRun, limit: options.limit || 50 });
   case 'maintain:process': return runProcessor();
   case 'maintain:backup': return createBackup();
